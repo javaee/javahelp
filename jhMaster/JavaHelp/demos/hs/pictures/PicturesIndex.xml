@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='ISO-8859-1'  ?>
+
+<!--
+ @(#)PicturesIndex.xml	1.5 06/10/30
+ 
+ Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+ 
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 
+ - Redistribution of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ 
+ - Redistribution in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+ 
+ Neither the name of Sun Microsystems, Inc. or the names of
+ contributors may be used to endorse or promote products derived
+ from this software without specific prior written permission.
+ 
+ This software is provided "AS IS," without a warranty of any
+ kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND
+ WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY
+ EXCLUDED. SUN MICROSYSTEMS, INC. ("SUN") AND ITS LICENSORS SHALL
+ NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF
+ USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+ DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR
+ ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,
+ CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND
+ REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR
+ INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGES.
+ 
+ You acknowledge that this software is not designed, licensed or
+ intended for use in the design, construction, operation or
+ maintenance of any nuclear facility. 
+-->
+
+<!DOCTYPE index
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Index Version 1.0//EN" 
+         "http://java.sun.com/products/javahelp/index_1_0.dtd">
+
+<index version="1.0">
+	<indexitem text="arctic wolves" target="arcticwolf"/>
+	<indexitem text="butterflies" target="butterfly"/>
+	<indexitem text="bats" target="bats"/>
+	<indexitem text="bears">
+         <indexitem text="black bears" target="blackbear"/>
+	   <indexitem text="grizzly bears" target="grizzly"/>
+	   <indexitem text="koala bears" target="koala"/>
+      </indexitem> 
+	<indexitem text="birds" target="bird"/>
+	<indexitem text="butterflies" target="butterfly"/>
+	<indexitem text="cougars" target="cougar"/>
+	<indexitem text="clams" target="mollusk"/>
+	<indexitem text="crabs" target="crab"/>
+ 	<indexitem text="crocodiles" target="crocodile"/>
+	<indexitem text="dolphins" target="dolphin"/>
+	<indexitem text="dragonflies" target="dragonfly"/>
+       <indexitem text="elephants" target="elephant"/>
+	<indexitem text="fish" target="fish"/>
+	<indexitem text="frogs" target="frog"/>
+	<indexitem text="giraffes" target="giraffe"/>
+	<indexitem text="grizzly bears" target="grizzly"/>
+	<indexitem text="insects">
+        <indexitem text="butterfly" target="butterfly"/>
+        <indexitem text="dragonfly" target="dragon"/>
+      </indexitem>
+	<indexitem text="kangaroos" target="kangaroo"/>
+	<indexitem text="koala bears" target="koala"/>
+	<indexitem text="leopards" target="leopard" />
+	<indexitem text="lizards" target="lizard"/>
+	<indexitem text="mollusks" target="mollusk"/>
+	<indexitem text="orca" target="orca"/>
+	<indexitem text="sea stars" target="seastar"/>
+	<indexitem text="seals" target="seal"/>
+	<indexitem text="sharks" target="shark"/>
+	<indexitem text="snakes" target="snake"/>
+	<indexitem text="spiders" target="spider"/>
+	<indexitem text="sponges" target="sponge"/>
+	<indexitem text="timber wolves" target="timberwolf"/>
+	<indexitem text="worms" target="worms"/>
+	<indexitem text="wolves">
+	   <indexitem text="arctic wolf" target="arcticwolf"/>
+	   <indexitem text="timber wolf" target="timberwolf"/>
+      </indexitem>
+</index>
+

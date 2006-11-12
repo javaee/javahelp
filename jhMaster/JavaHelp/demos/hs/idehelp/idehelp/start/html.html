@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercise 1: Editing the HTML File
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Exercise 1: Editing the HTML File</h1>
+
+In this lesson, you will edit the HTML file that Java WorkShop created for you when you ran the Blink project. You will specify an applet parameter and add a link to the source code. Once you edit the file, you will save it under a different file name so that your changes will not be overwritten the next time you run the project.
+<p>
+If you haven't yet created and built the Blink project, you should do so now using the instructions in <a href="create.html">Creating the Blink Project</a>.
+<ol>
+<li>Check the project manager for the name of the current project.
+<br>If the current project is not Blink, double-click on the Blink project name.
+<li>In the source editor, choose File -> Open.
+<br>Java WorkShop opens a file chooser.
+<li>Open the file <kbd>Blink.tmp.html</kbd> in your <kbd>Blink</kbd> directory.
+<br>The file contains an applet tag that looks something like this:
+<pre>
+<applet
+   name="Blink"
+   code="Blink.class"
+   codebase="/<i>your_home_directory</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt="If you had a java-enabled browser, 
+   you would see an applet here."
+> 
+<param name="lbl" value="Java WorkShop is really cool :-)">
+<hr>If your browser recognized the applet tag,
+      you would see an applet here.<hr>
+</applet>
+</pre>
+<p>
+Java WorkShop created this file when you ran the project. The information in this file is based on the information in the Run tab in the Edit Project window. If you have not previously run the project, see <a href="run.html">Running the Project</a>.
+
+<li>Choose File -> Save As from the Java WorkShop menu bar.
+<br>The Save Current File dialog box is displayed.
+<li>Select the Blink directory; then, type a new name for the HTML file and click OK.
+<br>Be sure to rename the HTML file; otherwise your changes will be overwritten the next time you run the project. Also be sure you save the file in your <kbd>Blink</kbd> directory. 
+<li>In the source editor, change the value of height to 75.
+<li>Add the following parameter before the <kbd>lbl</kbd> parameter to increase the speed at which the words blink:
+<pre>
+<param name="speed" value="50">
+</pre>
+
+<li>Add the following link to the source code after the <applet> tag:
+<pre>
+<p>
+<a href="Blink.java">Source Code</a>
+</pre>
+
+The path to the source code must be relative to the directory containing the HTML file.
+<li>Click the Save button <img src="../images/file-save_u.gif" align=MIDDLE>on the Edit/Debug toolbar.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>Next lesson:</strong>
+<dl>
+<dd><a href="runpage.html">Exercise 2:  Updating the Run Page</a></dl>
+<p>
+</BODY>
+</HTML>

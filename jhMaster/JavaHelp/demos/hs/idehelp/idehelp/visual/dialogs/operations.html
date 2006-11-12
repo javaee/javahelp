@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Operations Dialog Box
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<H1>Operations Dialog Box</H1>
+
+The term "operation" refers to specialized callbacks that you can
+define using the GUI builder Operations dialog box.  Callbacks are
+typically implemented by adding custom code to the Group file
+(<i>project</i><tt>.java</tt>).  However, for simple callbacks, it is
+often more convenient to use a GUI builder operation than to add
+custom code to the group class. In many cases a GUI builder operation
+can automate all of the code generation for a callback. You may find
+that you can use the Operations dialog box for all or most of your
+callbacks.
+
+
+<h2>Editing Operations Using GUI Builder</h2>
+
+The Operations dialog box has Insert and Delete buttons: 
+<ul>
+<li>Use the Insert button to create a new operation and add
+it to the list of operations.
+<li>Use the Delete button to remove operations from the list.  
+</ul>
+If you accidentally delete operations, you can click Reset
+to return the list to its state after the last Apply
+operation. There is no undo operation, so you cannot
+reverse changes you have applied.  
+<p>
+Each time you click Insert, an operation is added to the
+list. GUI builder automatically assigns a unique name for
+each operation you create.  You can edit that name in the Op Name
+field. Note that operations names must be unique within a group. 
+<p>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To create an operation:</strong> 
+<ol>
+<li>Click Insert to create the operation
+<li>Click on the Filter button to modify the filter associated
+with the operations. Filters are described in <A HREF="filter1.html">Filter Editor</A>.
+<li>Click on the Action button to modify the operation's
+action. Actions are described in <A HREF="action.html">Action Editor</A>.
+</ol>
+<IMG SRC="../../../images/hg_note.gif">
+<br>
+As you add most filters and actions you can test them
+"live" in the layout window.  For example, if you specify an operation
+that changes the foreground color of a label when a specific button is
+clicked, the label will change color in the layout window when the
+button is clicked. 
+<p>
+Custom actions added in the Action dialog box are available only when
+running the application and are not available live in the layout
+panel.
+
+<p>
+<IMG SRC="../../../images/hg_see.gif"><strong>See also:</strong>
+<dl>
+<dd><A HREF="../addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="../ops.html">What Is a Component Operation?</A>
+<dd><A HREF="../running.html">GUI Builder Runtime Classes</A>
+<dd><A HREF="../menus.html">Creating Menus</A>
+<dd><A HREF="../groups_basic.html">What Are Groups and Shadows?</A>
+<dd><A HREF="../groups_advanced.html">More On Groups and Shadows</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../../api/visual/packages.html">Visual Java GUI
+Builder Runtime Packages</A>
+<dd><A HREF="../../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+
+</body>
+</HTML>

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1998  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<html>
+<head>
+  <title>Popup Demo</title>
+</head>
+<body bgcolor="#ffffff">
+<h1>Popup Demo</h1>
+The following examples demonstrate different ways that
+popup windows can be used. You can view the HTML source for
+this topic in a text editor. The source file can be found at:
+<pre>
+    demos\hs\object\popup_demo.html
+</pre>  
+<table width=98% border=0 cellpadding=5>
+<tr valign="top">
+<td><IMG SRC="images/hg_proc.gif" width="18" height="13" height="13" width="18">
+</td>
+<td width=250> 
+Click the button on the right to see information displayed
+in a popup.  
+<p>
+If you look at the source for this topic, you'll see that
+the topic is passed in to the popup as a file name.
+</td>
+<td width=30 align="right">
+<object CLASSID="java:com.sun.java.help.impl.JHSecondaryViewer">
+<param name="content" value="popup_contents.html">
+<param name="viewerSize" value="400,270">
+<param name="viewerStyle" value="javax.help.Popup">
+</object>
+</td>
+</tr>
+<tr valign="top">
+<td><IMG SRC="images/hg_proc.gif" width="18" height="13">
+</td>
+<td>
+Click the button on the right to see the same information
+displayed in a larger popup.  
+<p>
+If you look at the source for this topic, you'll see that
+this time the topic is passed as an ID. The size of the
+viewer is specified to make it larger.
+</td>
+<td align="right">
+<object CLASSID="java:com.sun.java.help.impl.JHSecondaryViewer">
+<param name="id" value="popup_contents">
+<param name="viewerStyle" value="javax.help.Popup">
+<param name="viewerSize" value="300,400">
+</object>
+</td>
+</tr>
+<tr valign="top">
+<td><IMG SRC="images/hg_proc.gif" width="18" height="13">
+</td>
+<td> 
+Click the button on the right to see the same information
+displayed in a popup.
+<p>
+If you look at the source for this topic, you'll see that
+the "button" is a graphic object specified in the
+&lt;OBJECT&gt; tag.
+</td>
+<td align="right"><object CLASSID="java:com.sun.java.help.impl.JHSecondaryViewer">
+<param name="content" value="popup_contents.html">
+<param name="viewerActivator" value="javax.help.LinkLabel">
+<param name="iconByName" value="images/rel_topic_button.gif">
+<param name="viewerStyle" value="javax.help.Popup">
+<param name="viewerSize" value="300,200">
+</object>
+</td>
+</tr>
+<tr valign="top">
+<td><IMG SRC="images/hg_proc.gif" width="18" height="13">
+</td>
+<td> 
+<object CLASSID="java:com.sun.java.help.impl.JHSecondaryViewer">
+<param name="content" value="popup_contents.html">
+<param name="viewerActivator" value="javax.help.LinkLabel">
+<param name="viewerStyle" value="javax.help.Popup">
+<param name="viewerSize" value="600,150">
+<param name="text" value="Click here">
+<param name="textFontFamily" value="SansSerif">
+<param name="textFontSize" value="large">
+<param name="textFontWeight" value="plain">
+<param name="textFontStyle" value="italic">
+<param name="textColor" value="red">
+</object> 
+to see information displayed in a popup. 
+In this example an inline text object was used to activate the
+popup.  
+<p>
+If you look at the source for this topic, you'll see that
+you can specify a number of font characteristics.
+</td>
+<td>
+ 
+</td>
+</tr>
+</table>
+</body>
+</html>

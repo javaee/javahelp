@@ -1,0 +1,5 @@
+Main-Class: sunw.demo.jhdemo.Runner
+Class-Path: ../../javahelp/lib/jh.jar hsviewer.jar ../../doc/jhug/
+Run-Class: sunw.demo.jhdemo.JHLauncher
+Arguments: -helpset jhug.hs
+

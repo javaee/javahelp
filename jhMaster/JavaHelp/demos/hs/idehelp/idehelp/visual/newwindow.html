@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Choosing Windows or Panels
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Choosing Windows or Panels</H1>
+
+When you run GUI builder, it provides a default container type, Panel,
+for your layout. A panel is a defined area of a top-level window that
+can contain elements of a window, such as buttons, checkboxes, and
+text fields; it does not create a separate window of its own. A panel
+cannot have a menubar. It should be used as the main container for
+applets that display their GUIs in a browser page or applet viewer.
+
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To get a container other
+than a panel:</strong>
+<ul>
+<li>Choose GUI -> Add New Window.
+
+<p>
+The following container types are available:
+
+<ul>
+<li><a href=#choosingframes>Empty Frame</a> 
+<li><a href=#choosingdialogboxes>Empty Dialog Box</a> 
+<li><a href=#choosingfilechoosers>File Dialog Box</a>
+<li><a href=#choosingcustomwindows>Generic Window</a>
+</ul>
+</ul>
+
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+To change a panel container to a frame container (or frame to a
+panel), see <a href=chg_container.html>Changing the Main Container Type</a>.
+
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To delete a container:</strong>
+<ol>
+<li>Select the container by clicking in the background of the layout window.
+<li>Choose GUI -> Delete Component.
+<p>
+If the container to be deleted was never saved, pressing the Delete
+key removes the container; no verification window will appear.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add a title to a
+top-level window:</strong>
+
+<ol>
+<li>Open the attribute editor for the window by double-clicking in the
+background of the layout window. 
+<li>Type the window name in the title box.
+<li>Click OK to establish the change.
+</ol>
+
+<a name=choosingpanels></a>
+<h2>Panels</h2>
+
+If you run a project whose top-level container is a panel
+as a standalone application, GUI builder automatically
+creates a frame in which the panel can run.
+
+<h3>Special Attributes</h3>
+
+<table>
+<tr>
+<td valign="baseline"><code><strong>labelAlignment</strong></code></td>
+<td>Sets the position (left, right, center) of the
+<code>borderLabel</code> on the top edge of the panel.</td>
+</tr>
+</table>
+
+<a name=choosingframes></a>
+<h2>Frames</h2>
+
+A frame is a top-level application window with a title and a border.
+A frame should be used as the main container for:
+<ul>
+<li>A standalone application
+<li>An applet whose GUI exists outside of the browser, not within the page
+</ul>
+<p>
+Frames are the only types of containers to which you can add menu bars.
+
+
+<h3>Special Attributes</h3>
+
+<table>
+<tr>
+<td valign="baseline"><code><strong>icon</strong></code></td>
+<td>The path name of the file that contains the image to be contained
+in the icon.  A semicolon followed by the size of the image (in
+pixels) must be appended after the path name. 
+<p>
+The path to the image can be a URL or (preferably)
+a path name relative to the codebase of the
+applet. If the applet's <code>.class</code> file and image
+files are in the same directory, only the simple file name is
+required.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>location</strong></code></td>
+<td>Sets the initial coordinates of the frame on the screen.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>menubar</strong></code></td>
+<td>Invokes the Menu Editor. For details about creating menus,
+see <A HREF="menus.html">Adding a Menu Bar and Menus</A>.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>resizable</strong></code></td>
+<td>Determines if the size of the frame can be changed by the user.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>size</strong></code></td>
+<td>Sets the initial size of the frame.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>visible</strong></code></td>
+<td>Determines if the frame is initially visible.</td>
+</tr>
+</table>
+
+<a name=choosingdialogboxes></a>
+<h2>Dialog Boxes</h2>
+
+A dialog box is a pop-up window that is accessed from frames and panels.
+
+<h3>Special Attributes</h3>
+
+<table>
+<tr>
+<td valign="baseline"><code><strong>location</strong></code></td>
+<td>Sets the initial coordinates of the dialog box on the screen.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>modal</strong></code></td>
+<td>Determines whether or not the dialog box is modal.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>resizable</strong></code></td>
+<td>Determines if the size of the dialog box can be changed by the user.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>size</strong></code></td>
+<td>Sets the initial size of the dialog box.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>visible</strong></code></td>
+<td>Determines if the dialog box is initially visible.</td>
+</tr>
+</table>
+
+<a name=choosingfilechoosers></a>
+<h2>File Dialogs</h2>
+
+A file dialog box is a point-and-click file chooser. 
+The File dialog box cannot be shown while you are editing
+the interface in GUI builder because it is a modal dialog
+box and would block other windows. The File dialog box
+attributes are a straightforward mapping of the attributes
+for <code>java.awt.FileDialog</code>. See the <a
+href="../../../../api/jdk1.1/java.awt.FileDialog.html"> JDK API
+documentation</a> to examine <code>java.awt.FileDialog</code>.
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To edit the File Dialog Box
+attributes:</strong>
+<ul>
+<li>Select the dialog box from the Window list and choose
+GUI -> Edit Attributes.
+<li>Change the attributes you want and click OK to apply them.
+</ul> 
+<p>
+
+If you want the file dialog to show when an action occurs (such as a
+button press or menu selection), you must add an operation to the
+component that is intended to open the file dialog box.
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To show the file dialog:</strong>
+
+<ol>
+<li>Select the component which opens the dialog box.
+<li>Open the Attribute Editor by clicking on its button in the main
+toolbar.
+<li>Click on the Edit operations button.
+<li>Click Insert in the Operations Editor.
+<li>Click the Action button.
+<li>Select the action type Execute Code.
+<li>Add the following code:
+
+<pre>
+gui.filedialog1.show();
+String dir = (String)gui.fileDialog1.get("directory");
+                String file = (String)gui.fileDialog1.get("file");
+</pre>
+</ol>
+
+<a name=choosingcustomwindows></a>
+<h2>Generic Windows</h2>
+
+A generic window is a custom window that you can incorporate into your
+application. For more information see <A
+HREF="../visual/custom.html#custom_windows">Adding Custom Components
+and Windows</A>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="palette.html">GUI Builder Palette</A>
+<dd><A HREF="layout.html">Laying Out the Interface</A>
+<dd><A HREF="chg_container.html">Changing the Main Container Type</A>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI
+Builder Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+all Fields and Methods</A>
+</dl>
+</dl>
+<p>
+  </body>
+</html>

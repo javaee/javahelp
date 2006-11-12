@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    901 San Antonio Road
+ *    Palo Alto, California  94303
+ *
+-->
+
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_JP">
+<TITLE>
+実習 1: 実行属性を編集する
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>実習 1: 実行属性を編集する</h1>
+
+チュートリアル 1 で生成された &lt;applet&gt; タグには、アプレットを Web ページに配置するために最低限必要な属性が設定されています。この実習では、パラメータを追加してアプレットの表示をカスタマイズします。
+<p>
+この実習では、Blink プロジェクトを使用します。Blink プロジェクトの作成と構築をまだ行なっていない場合は、ここで <a href="create.html">Blink プロジェクトを作成する</a>の手順に沿って Blink プロジェクトの作成および構築を完了させてから、以下の実習に進んでください。
+
+<ol>
+<li>「プロジェクトマネージャ」ウィンドウで、現在のプロジェクトの名前を確認します。
+<br>現在のプロジェクトが Blink でない場合は、プロジェクト名「Blink」をダブルクリックします。
+
+<li>「プロジェクトマネージャ」ウィンドウで、<nobr>「プロジェクト」-&gt;「編集」</nobr>を選択します。
+<br>「プロジェクト編集」ウィンドウが表示されます。このウィンドウには、<nobr>「一般」、</nobr>「構築」、「デバッグ/ブラウズ」、「実行」という 4 つのタブ付きページがあります。
+<li>「実行」タブをクリックします。
+<br>このタブ付きページの属性は、<kbd>Blink.tmp.html</kbd> ファイル中に &lt;applet&gt; タグを生成するために使用されます。
+
+<li>「パラメータ」テキストフィールド (ウィンドウの中央付近) を探します。
+<br>現在は、アプレットにはパラメータは定義されていません。パラメータとは、アプレットの表示について定義する非標準の属性です。パラメータには、名前と値を指定します。パラメータを追加して、点滅するテキスト文字列中の単語を変更します。
+
+<li>「名前」テキストフィールド (「パラメータ」テキストフィールドの右側) に、<kbd>lbl</kbd> と入力します。
+<br><kbd>lbl</kbd>は、label の略です。
+
+<li>「値」テキストフィールドに、以下の文字列を入力します。
+<br><kbd>Java WorkShop ってステキ！</kbd>
+
+<li>「追加」ボタンをクリックします。
+<br>「<kbd>lbl=Java WorkShop ってステキ！</kbd>」の行が、「パラメータ」テキストフィールドに表示されます。
+
+<li>「了解」ボタンをクリックして、変更内容を保存します。
+
+<li>メインツールバー上の「実行」ボタン <img src="../../../../images/24/tb-run_u.gif" align=BOTTOM>をクリックします。
+<p>
+<code>&lt;param name="lbl" value="Java WorkShop ってステキ！"&gt;</code>
+<br>
+
+
+という行が <kbd>Blink.tmp.html</kbd> ファイル中の &lt;applet&gt; タグに追加されます。このファイルがブラウザに読み込まれ、<nobr>「Java WorkShop ってステキ！」</nobr>という文字がさまざまな色で点滅して表示されます。
+<p>
+このアプレットの実行を終了するには、アプレットビューアで<nobr>「アプレット」-&gt;「終了」</nobr>を選択します。
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>次のレッスン:</strong>
+<dl>
+<dd><a href="editbuild.html">実習 2: 構築属性を編集する</a>
+</dl>
+<p>
+</body>
+</html>
+

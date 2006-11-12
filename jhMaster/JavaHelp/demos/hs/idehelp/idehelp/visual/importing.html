@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Importing Components
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<H1>Importing Components</H1>
+
+You can import a component into GUI builder in the following ways:
+
+<ul>
+<li>By importing a <a href=#jarfile>JAR</a> file for one or more beans
+<li>By manually writing a <a href=#shadowclass>shadow class</a> for a
+component, wrapping it around the component class, and <a
+href=#importshadow>importing</a> the shadow class
+<li>By adding a component directly to the layout using Generic
+Component; see <a href=custom.html>Adding Custom Components and
+Windows</a> for information on how to add components using Generic
+Component and how to add a custom window to your layout
+</ul>
+
+See <a href="chg_palette.html">Customizing the Component Palette</a>
+for information on rearranging, removing, or renaming tabs or
+components in the palette.
+
+<p>
+<a name=jarfile></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To import a JAR file:</strong>
+<ol>
+<li>Choose GUI -> Import Components to Palette to open
+the Import Components To Palette dialog box.
+<li>Click the JAR tab.
+<li>Click on the Browse button next to the text box to
+select and load the desired JAR file from the file chooser.
+<p>
+You can also type the absolute path name of the JAR file
+in the Select JAR file text box. Press Return or Enter to load the
+JAR file.
+<li>Select a class name from the JAR file list.
+<li>Select a folder name in the Palette Components list and click Add to
+include the bean in the palette. 
+<p>
+When you click Add, a shadow class  (which allows JWS to manipulate the
+bean) is generated and automatically inserted into the JAR file. The
+JAR file is then added to the </tt>Imported Components</tt> directory.
+<li>(Optional) You can change the Tool Tip and Footer labels
+for the bean:
+<ol>
+<li> select the bean's name in the Palette Components list 
+and click Customize.
+<li>In the pop-up window, type the Tool Tip and Footer labels for the
+component. 
+</ol>
+<li>Click OK in the Import Components To Palette dialog box to
+add the bean to the palette.
+</ol>
+
+<p>
+<a name=shadowclass></a> 
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To manually create a
+shadow class:</strong> 
+<ol>
+<li>Choose the appropriate base shadow class from which your shadow
+class will be derived. 
+<p>
+You might try choosing the shadow class that corresponds to the
+parent class of the class being wrapped.
+<li>Write a <tt>.java</tt> file to create the shadow class and hook it
+up to the component class. This step involves writing "get" methods
+and "set" methods for the component class.   
+<li>Compile the <i>shadow</i><tt>.java</tt> file to generate a
+<i>shadow</i><tt>.class</tt> file.
+</ol>
+
+<p>
+<a name=defattributes></a>
+When you write a custom component and add new shadow classes or group
+classes, all the standard component attributes are available (for
+example, <code>foreground</code>, <code>background</code>
+<code>colors</code>, <code>font</code>), since a new shadow or group
+class extends an already existing class.  Any new attributes specific
+to the custom component are also available through the attribute
+editor.
+<p>
+You must define attributes for custom shadows or groups in the
+constructor method of the class. A source code example, <A
+HREF="labelshadow.html"><code>LabelShadow</code></A> (the shadow class
+for labels), shows you how to write a shadow class and demonstrates
+how attributes are defined.  Look for the <code>attributes.add</code>
+calls. <code>LabelShadow</code> extends <code>ComponentShadow</code>,
+and so inherits all of the attributes of <code>ComponentShadow</code>.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+GUI builder group and shadow classes are discussed in <a
+href="groups_basic.html">What Are Groups and Shadows?</a> and
+<a href="groups_advanced.html">More on Groups and Shadows</a>.
+
+<p>
+<a name=importshadow></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To import the shadow class:</strong>
+<ol>
+<li>Choose GUI -> Import Components to Palette to open
+the Import Components to Palette dialog box.
+<li>Click the Shadow tab.
+<li>Fill in the text boxes:
+<ul>
+<li><code>Class Name</code>. Full package and class name of the component
+<li><code>Icon</code> (<b>Palette only</b>). The path name of the file
+that contains the image displayed in the palette.
+<p>
+The path to the image can be a URL (<tt>file:/</tt><i>pathname</i>)
+or, preferably, a <em>relative</em> path name (relative to the
+codebase of the applet). If the applet's <code>.class</code> file and
+image files are in the same directory, only the simple file name is
+required.  
+<li><code>Tool Tip Label</code>. Label that
+appears in the component palette when the pointer is over the
+component's button 
+<li><code>Footer Label</code>. Label that
+appears in the footer area of Java WorkShop window
+</ul>
+<li>In the Palette Components list, select the name of the palette
+folder to contain the component. 
+<li>Click Add.
+<li>Click on the up or down arrows to position the component in the
+palette. 
+</ol>
+
+<p>
+To see what component classes are currently in use in your project,
+choose Class Usage Report from the GUI menu for a list of class names
+and their sources.
+
+<p>
+For an example of how a component is imported, see the card file
+example, <a href=../visual/gui_examples.html>Card File - Examples of
+Creating an Application</a>.
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="chg_palette.html">Customizing the Component Palette</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI Builder
+Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+  </body>
+</html>

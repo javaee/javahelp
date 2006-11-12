@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE map
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/map_1_0.dtd">
+
+<map version="1.0">
+	<mapID target="protozoa" url="Pages/Protozoa_Desc.html" />
+	<mapID target="echinoderms" url="Pages/Echinoderms_Desc.html" />
+        <mapID target="annelids" url="Pages/Annelids_Desc.html"/>
+	<mapID target="mollusks" url="Pages/Mollusks_Desc.html" />
+	<mapID target="arthropods" url="Pages/Arthropods_Desc.html" />
+	<mapID target="crustaceans" url="Pages/Crustaceans_Desc.html" />
+	<mapID target="arachnids" url="Pages/Arachnids_Desc.html" />
+	<mapID target="insects" url="Pages/Insects_Desc.html" />
+        <mapID target="invertebrates" url="Pages/Invertebrates.html" />
+	<mapID target="crab.picture" url="Pages/Pictures/Crab.html"/>
+	<mapID target="seastar.picture" url="Pages/Pictures/SeaStar.html"/>
+	<mapID target="sponge.picture" url="Pages/Pictures/Sponge.html"/>
+	<mapID target="worms.picture" url="Pages/Pictures/Worms.html"/>
+	<mapID target="clam.picture" url="Pages/Pictures/Mollusk.html"/>
+	<mapID target="spider.picture" url="Pages/Pictures/Spider.html"/>
+	<mapID target="butterfly.picture" url="Pages/Pictures/Butterfly.html"/>
+	<mapID target="dragon.picture" url="Pages/Pictures/Dragon.html"/>
+</map>

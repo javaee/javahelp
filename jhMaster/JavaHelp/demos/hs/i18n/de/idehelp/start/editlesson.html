@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<META http-equiv="Content-Language" content="de">
+<TITLE>
+&Uuml;bung 1:  Bearbeiten von
+Ausf&uuml;hr-Attributen
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>&Uuml;bung 1:  Bearbeiten von
+Ausf&uuml;hr-Attributen</h1>
+
+In der &lt;applet&gt;-Markierung, die Sie in Kapitel 1 des
+Trainingshandbuchs erstellt haben, sind nur die absolut notwendigen
+Informationen angegeben, die erforderlich sind, um ein Applet auf
+einer Web-Seite einzubinden. In dieser &Uuml;bung werden Sie weitere
+Parameter hinzuf&uuml;gen, mit denen gesteuert werden kann, auf
+welche Weise das Applet angezeigt wird.
+<p>
+In dieser &Uuml;bung werden Sie mit dem Blink-Projekt arbeiten. Wenn
+Sie das Blink-Projekt noch nicht erstellt haben, so holen Sie
+dies jetzt nach. Verfahren Sie dabei nach den Anweisungen in
+<a href="create.html">Erstellen des Blink-Projekts</a>.
+<ol>
+<li>&Uuml;berpr&uuml;fen Sie den Projekt-Manager f&uuml;r den Namen
+des aktuellen Projekts.
+<br>Wenn das aktuelle Projekt nicht "Blink" ist, doppelklicken Sie
+auf den Projektnamen "Blink".
+<li>Klicken Sie im Projekt-Manager auf <nobr>"Projekt" -&gt; "Bearbeiten".</nobr>
+<br>Im Fenster "Projekt bearbeiten" werden vier Registerkarten
+angezeigt: "Allgemein", "Erstellen", "Fehlersuche/Durchsuchen" und
+"Ausf&uuml;hren".
+<li>Klicken Sie auf die Registerkarte "Ausf&uuml;hren".
+<br>Mit den auf dieser Registerkarte enthaltenen Attributen wird die
+&lt;applet&gt;-Markierung in der Datei <kbd>Blink.tmp.html</kbd>
+generiert.
+<li>Suchen Sie das Feld "Parameter" (etwa in der Mitte des
+Fensters).
+<br>Derzeit sind f&uuml;r dieses Applet keine Parameter
+festgelegt. Bei einem Parameter handelt es sich um ein nicht
+standardisiertes Attribut, mit dem die Art und Weise festgelegt wird,
+wie das Applet angezeigt wird. Ein Parameter hat einen Namen und
+einen Wert. Durch das Hinzuf&uuml;gen eines Parameters werden Sie den
+Wortlaut des blinkend angezeigten Textes &auml;ndern.
+<li>Geben Sie <kbd>lbl</kbd> (Abk&uuml;rzung f&uuml;r "label"
+("Bezeichnung")) in das Feld "Name" rechts vom Feld "Parameter" ein.
+<li>Geben Sie den folgenden Text in das Feld "Wert" ein:
+<br><kbd>Java Development Environment ist echt spitze :-)</kbd>
+<li>Klicken Sie auf "Hinzuf&uuml;gen".
+<br>Im Feld "Parameter" wird die Zeile <kbd>lbl=Java Development Environment ist
+echt spitze :-)</kbd> angezeigt.
+<li>Klicken Sie auf "OK", um die von Ihnen vorgenommenen
+&Auml;nderungen zu speichern.
+<li>Klicken Sie auf die Schaltfl&auml;che "Ausf&uuml;hren" <img src="../../../../images/24/tb-run_u.gif" align=BOTTOM> auf
+der Hauptsymbolleiste von Java Development Environment.
+<br>Java Development Environment f&uuml;gt die Zeile
+<pre>
+&lt;param name="lbl" value="Java Development Environment ist echt spitze :-)"&gt;
+</pre>
+in die &lt;applet&gt;-Markierung in der Datei
+<kbd>Blink.tmp.html</kbd> ein. Die Datei wird in den Browser geladen,
+und Sie sehen, wie die Worte "Java Development Environment ist echt spitze :-)"
+in verschiedenen Farben aufblinken.
+<p>
+Um das laufende Projekt anzuhalten, w&auml;hlen Sie <nobr>"Applet"
+-&gt; "Beenden"</nobr>  im Fenster "Applet Viewer".
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;chste &Uuml;bung:</strong>
+<dl>
+<dd><a href="editbuild.html">&Uuml;bung 2:  Bearbeiten der
+Erstell-Attribute</a>
+</dl>
+<p>
+</body>
+</html>
+

@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Profiler
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>JDE Profiler</H1>
+The JDE profiler helps you analyze the performance of
+your program.  Use the profiler to determine:
+<ul>
+<li>How much time is spent in each of the program's methods (and
+optionally, in the methods that they in turn call)
+<li>How many times each of the methods is executed
+</ul> 
+<p>
+
+<A NAME="collect"></A>
+<IMG SRC="../../images/hg_proc.gif"><strong>To collect profile data:</strong>
+
+<ul>
+<li>Run your project using one of the following methods:
+<ul>
+<li>Choose Project -> Profile from the main menubar.
+<li>Click <strong><IMG SRC="../images/tb-profile_u.gif" ALIGN=MIDDLE></strong> on the main toolbar.
+</ul>
+At the end of execution, profile data is written to the file <em>project-name</em><code>.prof</code> in the project source directory (defined when you <A HREF="../manager/CreateApplet.html">created the project</A>).
+<p>
+<IMG SRC="../../images/hg_note.gif"><br>
+The profile data file <em>project-name</em><code>.prof</code>
+is overwritten each time you run the program.  To
+save the data from a given run, rename it before
+you run the program again.
+</ul>
+
+<A NAME="view"></A>
+<IMG SRC="../../images/hg_proc.gif"><strong>To view profile data:</strong>
+
+<ul>
+<li>After the project run terminates, the Profile Display window
+automatically opens with the profile data from that run.
+<p>
+<IMG SRC="../../images/hg_note.gif"><br> You can manually
+start the profiler by choosing Windows -> Profile Results from the main JDE menubar.  Then
+choose File -> Open in the Profile Display
+window to load profile data for a particular project into
+the display.
+<p>
+<IMG SRC="../../images/profiler/profiler_small.gif">
+<p>
+The top pane of the profiler window lists the names of all
+the methods (except those filtered out) in your program
+that were executed.  When you select a method in any of the
+three panes, the names of methods that they in turn call
+and are called <em>by</em> are displayed in the bottom two
+panes.  Information about those methods is displayed both
+graphically (as a bar graph) and numerically.
+<p>
+<A NAME="data">
+You can view three types of data about methods:
+</A>
+<table width=90% border=0 cellspacing=12>
+<tr valign="top">
+<td><strong>Self Times</strong></td>
+<td width=60%>
+The time (in milliseconds) spent in the body
+of the displayed method (does not include the time spent
+in methods called by this method)
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Cumulative Times</strong></td>
+<td>
+The time (in milliseconds) spent in the displayed
+method, in all methods called by the displayed method,
+in all methods called by <em>those</em> methods, and so
+on
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Call Counts</strong></td>
+<td>
+The number of times the method was called by any
+other methods
+</td>
+</tr>
+
+</table>
+</ul>
+
+<A NAME="change_type"></A>
+<IMG SRC="../../images/hg_proc.gif"><strong>To change data type:</strong>
+
+<ul>
+<li>Use the items in the <A HREF="menus.html#data">Data
+menu</A> to change the display data type.
+</ul>
+<p>
+
+<A NAME="change_view"></A>
+<IMG SRC="../../images/hg_proc.gif"><strong>To change the data view:</strong>
+
+<ul>
+<li>Use the menu items in the <A HREF="menus.html#view">View menu</A> to control how data is displayed in the profiler window.
+</ul>
+
+
+
+<p>
+<IMG SRC="../../images/hg_see.gif" WIDTH=18 HEIGHT=13><strong>See also:</strong>
+<dl>
+<dd><A HREF="menus.html">Profiler Menus</A>
+</dl>
+<p>
+</BODY>
+</HTML>

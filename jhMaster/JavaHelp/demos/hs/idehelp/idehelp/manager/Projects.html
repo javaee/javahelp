@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>What Is a Project?</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>What Is a Project?</h1>
+Projects organize the files that are required to produce:
+<ul>
+<li>Applets
+<li>Standalone programs
+<li>Java packages
+<li>JavaBeans<sup>TM</sup>
+</ul>
+<p>
+A project includes information that defines each project's individual characteristics, such as the project's name and main class file.
+<p>
+JDE stores a project in a file called <i>projectname</i><tt>.prj</tt>, and creates the file using the name, source file names, and other information you provide when you create the project.
+<p>
+After creating a project, you can add to and update its information. For example, you might add information on how to display the project on an HTML page, or which compiler options to use to build the project. You never directly edit the <tt>.prj</tt> or other project files. JDE updates the files based on the actions you perform in the source editor.
+<p>
+The project you are currently working with is called the <i>current project</i>. The current project sets the context for all of the JDE tools. For example, when you click the <IMG SRC="../images/db-restart_u.gif" width="24" height="24" ALIGN=BOTTOM><img src="../../images/spacer2_t.gif"> button to start the debugger, you will be debugging the current project. The name of the current project appears in the JDE title bar.
+
+<a NAME=projtypes><h2>Project Types</h2>
+In JDE, you can create and maintain the following types of projects:
+<dl>
+<dt><b>Applet</b>
+<dd>A program that is written in the Java language and runs in a browser (such as HotJava). You can build, browse, debug, and run an applet in JDE. You can also copy an applet from a portfolio and paste it into an HTML file.
+<p>
+<dt><b>Standalone Program</b>
+<dd>A program written in the Java language that runs outside a web browser, usually from a command line. You can build, browse, debug, and run a standalone program in JDE.
+<p>
+<dt><b>Java Package</b>
+<dd>A group of classes declared with the same package name. You can build and browse packages in JDE.
+<p>
+<dt><b>JavaBeans</b>
+<dd>JavaBeans components are reuseable software components that can be manipulated in the GUI builder. Beans can be combined to create traditional applications or applets. Applets can also be designed to work as reusable beans. You can build and browse a bean project in JDE.
+</dl>
+
+<h2>Project Files</h2>
+
+For a file to be part of a project, it must be recorded in the project's <tt>.prj</tt> file. Project files include:
+<ul>
+<li>The <tt>.java</tt> source code files
+<li>The <tt>.class</tt> files created when the project was built
+<li>The <tt>.map</tt> file created when the project was built (JDE uses this file internally)
+<li>The HTML file that displays the project (if the project is an applet)
+<li>The <tt>.gui</tt> file, if the project contains GUI builder information
+<li>Other data files (for example, <tt>.gif</tt> and <tt>.au</tt> files) that the project needs and which the project's author specified using the project manager
+</ul>
+
+<h2>Subprojects</h2>
+Subprojects can be included as elements of other projects. Subprojects are useful when you have a standalone program that uses the packages you wrote. You create the standalone program as a project and each package as a subproject of the standalone. By creating the packages as subprojects, you ensure that the standalone program is always up to date.  
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><a href="CreateApplet.html">Creating an Applet Project</a></dd>
+<dd><a href="CreateStandalone.html">Creating a Standalone Program Project</a>
+<dd><a href="CreatePackage.html">Creating a Java Package Project</a>
+<dd><a href="BeansProject.html">Creating a Bean Project</a>
+<dd><a href="ProjectWizard.html">Using the Create Project Wizard</a>
+</dl>
+</body>
+</html>
+
+
+
+
+
+

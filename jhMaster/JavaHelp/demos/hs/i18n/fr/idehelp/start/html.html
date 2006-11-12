@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercice 1 : Edition du fichier HTML
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Exercice 1 : Edition du fichier HTML</h1>
+
+Au cours de cette le&ccedil;on, vous &eacute;diterez le fichier HTML que Java Development Environment a cr&eacute;&eacute; pour vous lorsque
+vous avez ex&eacute;cut&eacute; le projet Blink. Vous sp&eacute;cifierez un param&egrave;tre d'appliquette et ajouterez un lien
+au code source. Une fois ce fichier &eacute;dit&eacute;, enregistrez-le sous un nom diff&eacute;rent, faute de
+quoi vos modifications seront &eacute;cras&eacute;es lors de la prochaine ex&eacute;cution du projet. <p>
+Si vous n'avez pas encore cr&eacute;&eacute; et construit ce projet, faites cela maintenant en suivant les
+instructions de <a href="create.html">Cr&eacute;ation du projet Blink</a>.
+<ol>
+<li>V&eacute;rifiez dans le gestionnaire de projet le nom du projet en cours.
+<br>Si celui-ci n'est pas Blink, double-cliquez sur le nom de projet Blink.
+<li>Dans l'&eacute;diteur de source, s&eacute;lectionnez <nobr>Fichier
+-&gt; Ouvrir</nobr>.
+<br>Java Development Environment ouvre un s&eacute;lecteur de fichier.
+<li>Ouvrez le fichier <kbd>Blink.tmp.html</kbd> dans votre r&eacute;pertoire <kbd>Blink</kbd>.
+<br>Le fichier contient une balise d'appliquette se pr&eacute;sentant comme suit :
+<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+   codebase="/<i>votre_r&eacute;p_d'origine</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt="Si vous aviez un explorateur compatible Java, vous verriez une appliquette ici."
+&gt;
+&lt;param name="lbl" value="Java Development Environment est vraiment super :-)"&gt;
+&lt;hr&gt;Si votre explorateur a reconnu la balise de l'appliquette,
+      vous voyez une appliquette ici.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+Java Development Environment a cr&eacute;&eacute; ce fichier lorsque vous avez ex&eacute;cut&eacute; le projet.
+Les informations qu'il contient sont bas&eacute;es sur les informations se trouvant dans l'onglet Ex&eacute;cuter
+de la fen&ecirc;tre Edition de projet. Si vous n'avez pas ex&eacute;cut&eacute; le projet auparavant, reportez-vous &agrave;
+<a href="run.html">Ex&eacute;cution du projet</a>.
+<li>Choisissez <nobr>Fichier -&gt; Enregistrer sous</nobr> dans la barre de menu de Java Development Environment.
+<br>La bo&icirc;te de dialogue Enregistrement du fichier en cours appara&icirc;t.
+<li>S&eacute;lectionnez le r&eacute;pertoire Blink, puis entrez un nouveau nom pour le fichier HTML et cliquez
+sur OK.
+<br>Vous devez donner un nouveau nom au fichier HTML, faute de quoi vos
+modifications seront &eacute;cras&eacute;es la prochaine fois que vous ex&eacute;cuterez le projet.
+Vous devez aussi enregistrer le fichier dans votre r&eacute;pertoire <kbd>Blink</kbd>.
+<li>Dans l'&eacute;diteur de source, remplacez la valeur de hauteur par 75.
+<li>Ajoutez le param&egrave;tre suivant avant le param&egrave;tre <kbd>lbl</kbd> afin d'accro&icirc;tre la vitesse de
+clignotement des mots :
+<pre>
+&lt;param name="speed" value="50"&gt;
+</pre>
+
+<li>Ajoutez le lien suivant au code source apr&egrave;s la balise
+&lt;applet&gt; :
+<pre>
+&lt;p&gt;
+&lt;a href="Blink.java"&gt;Source Code&lt;/a&gt;
+</pre>
+
+Le chemin d'acc&egrave;s au code source doit &ecirc;tre relatif au r&eacute;pertoire contenant le fichier HTML.
+<li>Cliquez sur le bouton Enregistrer <img src="../../../../images/24/file-save_u.gif" align=MIDDLE>de
+la barre d'outils Edition/D&eacute;bogage.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Le&ccedil;on suivante :</strong>
+<dl>
+<dd><a href="runpage.html">Exercice 2 :  Mise &agrave; jour de la page d'ex&eacute;cution</a></dl>
+<p>
+</BODY>
+</HTML>

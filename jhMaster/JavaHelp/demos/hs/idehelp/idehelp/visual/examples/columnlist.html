@@ -1,0 +1,394 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding Items to Multiple Column List
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Adding Items to Multiple Column List</h1>
+
+This code example demonstrates how to add items, including graphic
+objects, to the Multiple Column List component (the class name for this
+component is ColumnList). The example places a
+row of integers, buttons, and jellybean images into the columns.
+
+<pre>
+/**
+ * This is a template.  You may modify this file.
+ *
+ * Runtime vendor: SunSoft, Inc.
+ * Runtime version: 1.0
+ *
+ * Visual vendor: SunSoft, Inc.
+ * Visual version: 1.0
+ */
+
+
+import sunsoft.jws.visual.rt.base.*;
+import sunsoft.jws.visual.rt.shadow.java.awt.*;
+import sunsoft.jws.visual.rt.awt.*;
+import java.awt.*;
+
+/*
+ * since we're using additional Java APIs, we need to
+ * import some more packages.
+ */
+import java.applet.*;
+import java.net.*;
+
+
+public class AddToColumn extends Group {
+  private AddToColumnRoot gui;
+  /**
+   * Sample method call ordering during a group's lifetime:
+   *
+   * Constructor
+   * initRoot
+   * initGroup
+   * (setOnGroup and getOnGroup may be called at any time in any
+   *  order after initGroup has been called)
+   * createGroup
+   * showGroup/hideGroup + startGroup/stopGroup
+   * destroyGroup
+   */
+
+  /**
+   * All the attributes used by the group must be defined in the
+   * constructor.  setOnGroup is called at initialization for all
+   * the attributes.  If the attribute has not been set prior to
+   * initialization, setOnGroup is called with the default value.
+   */
+  public AddToColumn() {
+    /**
+     * Define the group's custom attributes here.
+     *
+     * For example:
+     *
+     * attributes.add("customString", "java.lang.String",
+     *		      "Default String", 0);
+     */
+
+    /**
+     * This method defines the attributes that will be forwarded to
+     * the main child (either a window or a panel).  All attributes
+     * defined by this method are marked with the FORWARD flag.
+     */
+    addForwardedAttributes();
+  }
+
+  /**
+   * initRoot must be overridden in group subclasses to initialize
+   * the shadow tree.  The return value must be the root of the
+   * newly initialized shadow tree.
+   */
+  protected Root initRoot() {
+    /**
+     * Initialize the gui components
+     */
+    gui = new AddToColumnRoot(this);
+
+    /**
+     * This method registers an attribute manager with the group, such
+     * that attributes marked with the FORWARD flag will be sent to
+     * this attribute manager.
+     */
+    addAttributeForward(gui.getMainChild());
+
+    return gui;
+  }
+
+  /**
+   * initGroup is called during initialization.  It is called just after
+   * initRoot is called, but before the sub-groups are initialized and
+   * before the attributes are sent to the setOnGroup method.
+   *
+   * initGroup is only called once in the lifetime of the Group.
+   * This is because groups cannot be uninitialized.  Anything that
+   * needs to be cleaned up should be created in createGroup instead
+   * of initGroup, and then can be cleaned up in destroyGroup.
+   * createGroup and destroyGroup may be called multiple times during
+   * the lifetime of a group.
+   */
+  protected void initGroup() { }
+
+  /**
+   * showGroup may be overridden by group subclasses that want
+   * to know when the group becomes visible.  It is called just before
+   * the group becomes visible.  The group will already be initialized
+   * and created at this point.
+   */
+  protected void showGroup() { }
+
+  /**
+   * hideGroup may be overridden by group subclasses that want
+   * to know when the group becomes non-visible.  It is called just
+   * before the group becomes non-visible.
+   */
+  protected void hideGroup() { }
+
+  /**
+   * createGroup is called during group creation.  Groups can be
+   * created and destroyed multiple times during their lifetime.
+   * Anything that is created in createGroup should be cleaned up
+   * in destroyGroup.  createGroup is called just after the group
+   * has been created.  Anything that needs to be done before the
+   * group is created should be done in initGroup.
+   */
+  protected void createGroup() { }
+
+  /**
+   * destroyGroup is called during the destroy operation.  Groups can
+   * be created and destroyed multiple times during their lifetime.
+   * Anything that has been created in createGroup should be cleaned up
+   * in destroyGroup.  destroyGroup is called just before the group
+   * is destroyed.
+   */
+  protected void destroyGroup() { }
+
+  /**
+   * This method may be overridden by group subclasses that want
+   * to be informed when the application is starting.  This method is
+   * only called after the entire application has been initialized and
+   * created.
+   *
+   * For applets, startGroup is called whenever start is called on the
+   * applet.
+   */
+  protected void startGroup() { }
+
+  /**
+   * This method may be overridden by group subclasses that want
+   * to be informed when the application is stopping.  This method
+   * will be called before a destroy is done.
+   *
+   * For applets, stopGroup is called whenever stop is called on the
+   * applet.
+   */
+  protected void stopGroup() { }
+
+  /**
+   * "getOnGroup" may be overridden by sub-groups that
+   * store attribute values themselves, and do not depend on the
+   * group superclass to store them.  This method should be overridden
+   * instead of "get".  Any attributes handled in setOnGroup where
+   * super.setOnGroup is not called must also be handled in getOnGroup.
+   *
+   * The default implementation of getOnGroup retrieves the value
+   * from the attribute table.
+   *
+   * The reason that "getOnGroup" should be overridden instead
+   * of "get" is that "getOnGroup" is guaranteed not to be called
+   * until the group class is initialized.  This means that initRoot
+   * will always be called before any calls to getOnGroup are made.
+   *
+   * Also, this method is only for attributes that are defined in the
+   * sub-groups.  It is not called for forwarded attributes.
+   */
+  protected Object getOnGroup(String key) {
+    return super.getOnGroup(key);
+  }
+
+  /**
+   * "setOnGroup" may be overridden by sub-groups that
+   * want notification when attributes are changed.  This method
+   * should be overridden instead of "set".  Any attributes handled
+   * in setOnGroup where super.setOnGroup is not called must also be
+   * handled in getOnGroup.
+   *
+   * The default implementation of setOnGroup puts the value
+   * in the attribute table.
+   *
+   * The reason that "setOnGroup" should be overridden instead
+   * of "set" is that "setOnGroup" is guaranteed not to be called
+   * until the group class is initialized.  This means that initRoot
+   * will always be called before any calls to setOnGroup are made.
+   *
+   * During initialization, "setOnGroup" will be called for all
+   * the group's attributes even if they have not be changed from
+   * the default value.  But for attributes that have the DEFAULT
+   * flag set, "setOnGroup" will only be called if the value
+   * of the attribute has changed from the default.
+   *
+   * Also, this method is only called when attributes defined in the
+   * sub-groups are updated.  It is not called for forwarded attributes.
+   */
+  protected void setOnGroup(String key, Object value) {
+    super.setOnGroup(key, value);
+  }
+
+  /**
+   * handleMessage may be overridden by subclasses that want to act
+   * on messages that are sent to the group.  Typically, messages are
+   * either AWT events that have been translated to messages, or they
+   * are messages that have been sent by other groups.
+   * super.handleMessage should be called for any messages that aren't
+   * handled.  If super.handleMessage is not called, then handleEvent
+   * will not be called.
+   *
+   * The default implementation of handleMessage returns "true".  This
+   * means that no events will be passed up the group tree, unless a
+   * subclass overrides this method to return "false".  AWT events are
+   * not propagated regardless of the return value from handleEvent.
+   *
+   * If you want a message to go to the parent group, override
+   * handleMessage to return false for that message.
+   *
+   * If you want an AWT event to go to the parent group, you need to
+   * call postMessageToParent() with the event message.
+   */
+  public boolean handleMessage(Message msg) {
+    return super.handleMessage(msg);
+  }
+
+  /**
+   * handleEvent may be overridden by subclasses that want to get
+   * notified when AWT events that are sent by the gui components.
+   * The return value should be true for handled events, and
+   * super.handleEvent should be called for unhandled events.
+   * If super.handleEvent is not called, then the specific event
+   * handling methods will not be called.
+   *
+   * The message's target is set to the shadow that sent the event.
+   * The event's target is set to the AWT component that sent the event.
+   *
+   *
+   * The following specific event handling methods may also be overridden:
+   *
+   * public boolean mouseDown(Message msg, Event evt, int x, int y);
+   * public boolean mouseDrag(Message msg, Event evt, int x, int y);
+   * public boolean mouseUp(Message msg, Event evt, int x, int y);
+   * public boolean mouseMove(Message msg, Event evt, int x, int y);
+   * public boolean mouseEnter(Message msg, Event evt, int x, int y);
+   * public boolean mouseExit(Message msg, Event evt, int x, int y);
+   * public boolean keyDown(Message msg, Event evt, int key);
+   * public boolean keyUp(Message msg, Event evt, int key);
+   * public boolean action(Message msg, Event evt, Object what);
+   * public boolean gotFocus(Message msg, Event evt, Object what);
+   * public boolean lostFocus(Message msg, Event evt, Object what);
+   */
+  public boolean handleEvent(Message msg, Event evt) {
+    return super.handleEvent(msg, evt);
+  }
+  
+
+  /*
+   * These methods are auxiliary methods to help add rows
+   * of objects to the column list.
+   *
+   */
+  private Integer[] newRowOfIntegers(int len) {
+      Integer z [] = new Integer [len];
+      for (int i=0;i&lt;len;i++) {
+         z[i] = new Integer (i);
+      } 
+      return z;
+  }
+  
+  /**
+   *  Get a new row of images. 
+   *   Notes:
+   *     We need to get the applet in order to load
+   *       the images.
+   *     Then we're actually creating ImageLabels to 
+   *       display the images in the columnlist.
+   *     If there are more columns than images 
+   *       then the extra columns will be blank, and
+   *       no exception will be thrown.
+   */ 
+  private ImageLabel[] newRowOfImages(int len) {
+     ImageLabel iml [] = new ImageLabel[len];
+     Applet app = getApplet();
+     URL codebase=app.getCodeBase();
+      for (int i=0;i&lt;len;i++) {
+	 String filename="image"+i+".gif";
+	 Image im=app.getImage(codebase, filename);
+	 int w=im.getWidth(null);
+	 int h=im.getHeight(null);
+         iml[i] = new ImageLabel(im, w, h);
+      } 
+      return iml;
+  }  
+  
+  private Button[] newRowOfButtons(int len) {
+      Button b [] = new Button [len];
+      for (int i=0;i&lt;len;i++) {
+	 String s="Button "+i; // Create a numbered label.
+         b[i] = new Button (s);
+      } 
+      return b;
+  }
+
+  /*
+   * These methods are called by the Execute Code operations
+   * attached to the buttons.
+   */
+
+  /**
+   *  Add a row of integers to the column list.
+   *
+   */
+  public void addRowOfInts() {
+	ColumnList c = (ColumnList) gui.columnlist1.getBody ();
+	int n=c.getColumns();
+	Integer z[] = newRowOfIntegers(n);
+	c.addItem (z, true);
+  }
+
+  /**
+   *  Add a row of Buttons to the column list.
+   *
+   */
+  public void addRowOfButtons() {
+	ColumnList c = (ColumnList) gui.columnlist1.getBody ();
+	int n=c.getColumns();
+
+	Button b[] = newRowOfButtons(n);
+	c.addItem (b, true);
+  }
+  
+  /**
+   *  Add a row of Images to the column list.
+   *  (Note that we're really adding ImageLabels to show the images).
+   *
+   */
+  public void addRowOfImages() {
+	 ColumnList c = (ColumnList) gui.columnlist1.getBody ();
+	 int n=c.getColumns();
+
+	 ImageLabel i[] =newRowOfImages(n);
+	 c.addItem (i, true);
+  }
+  
+ /**
+   *  Remove the first row of items from the column list.
+   *
+   */
+  public void removeRowOfItems() {
+	ColumnList c = (ColumnList) gui.columnlist1.getBody ();
+	c.delItems (0,0);
+  } 
+
+}
+</pre>
+
+</body>
+</html>
+

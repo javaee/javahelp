@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Basic Editing
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<H1>Basic Editing Functions</H1>
+This page describes basic editing functions of the JDE 
+source editor.
+<ul>
+<li><A HREF=#new>Creating a new file</A>
+<li><A HREF=#opening>Opening an existing file</A>
+<li><A HREF=#saving>Saving files</A>
+<li><A HREF=#inserting>Inserting text</A>
+<li><A HREF=#deleting>Deleting text</A>
+<li><A HREF=#selecting>Selecting text</A>
+<li><A HREF=#searching>Finding and replacing text</A>
+<li><A HREF=#keyboard>Keyboard Commands</A>
+<li><A HREF=#multiple>Editing multiple views of the same file</A>
+
+</ul>
+<A NAME="new"></A>
+<h2>Creating a New File</h2>
+There are two
+ways you can create and edit a new file:
+<ul>
+<li>Choose File -> New. This opens a
+new file in the main source editor window (after prompting you
+to save changes in the current file).
+<li>Choose File -> New Editor Window.  This
+opens a new file in a new editor window.
+</ul>
+
+<A NAME="opening"></A>
+<h2>Opening an Existing File</h2>
+There are three ways you can open an existing file:
+<ul>
+<li>Click the Open file button <IMG SRC="../images/file-open_u.gif" ALIGN=MIDDLE WIDTH=24 HEIGHT=24> in the editor.
+<li>Choose File -> Open.
+<li>Choose a file from the <A HREF="../menus/file.html#picklist">picklist</A> in the File menu.
+</ul>
+
+<A NAME="saving"></A>
+<h2>Saving Files</h2>
+There are two ways to save the file you are currently editing:
+<ul>
+<li>Click the Save Current File button <IMG SRC="../images/file-save_u.gif" ALIGN=MIDDLE WIDTH=24 HEIGHT=24>.
+<li>Choose File -> Save.
+</ul>
+If you want to save the current file to a different file name:
+<ul>
+<li>Choose File -> Save As.
+</ul>
+To save all the files currently being edited in all
+open editors:
+<ul>
+<li>Choose File -> Save All.
+</ul>
+
+<A NAME="inserting"></A>
+<h2>Inserting Text</h2>
+Move the cursor
+to a location in the text and start typing.  You can move
+the cursor using either the mouse or the arrow keys.
+
+<A NAME="deleting"></A>
+<h2>Deleting Text</h2>
+There are a number of ways to delete text:
+<ul>
+<li>Delete one character to the left of the cursor using the Back Space key.
+<li>Delete one character to the right of the cursor using the Delete key.
+<li>Delete selected text using the Delete key.
+<li>Delete the current line using Control+D.
+<li>Delete the next word to the left using Control+BackSpace
+<li>Delete the next word to the right using Control+Delete
+</ul>
+
+<A NAME="selecting"></A>
+<h2>Selecting Text</h2>
+You can select text in the following ways:
+<ul>
+<li>Drag through the text you wish to select.
+<li>Click at the beginning of a selection and
+Shift-click at the end of the selection.
+<li>Double-click on a word to select it.
+<li>Triple-click on a line to select it.  You can
+also select a line by clicking next to it in the left margin.
+<li>Use Shift and the arrow keys to select text.
+</ul>
+<p>
+You can perform the following actions on selected text:
+<ul>
+<li>Copy the text to the clipboard.  Choose Edit
+-> Copy or use Control+C.
+<li>Cut the text and place it on the clipboard. Choose Edit
+-> Cut menu item or use Control+X.
+<li>Paste copied or cut text to a new insert point.  Choose
+Edit -> Paste or use Control+V.
+<li>Type-to-replace the selected text.  If you type while
+text is selected, the selected text is replaced with the
+characters you type.
+</ul>
+
+<A NAME="searching"></A>
+<h2>Finding and Replacing Text</h2>
+<table width=90% border=0 cellspacing=12>
+<tr valign="top">
+<td width=40%>To find a text string</td>
+<td width=60%>
+Choose Edit -> Find or use
+Control+F to open the Find dialog box
+</td>
+</tr>
+
+<tr valign="top">
+<td width=40%>To find and then replace a text string</td>
+<td width=60%>
+Choose Edit -> Replace or use Control+T
+to open the Replace dialog box
+</td>
+</tr>
+
+<tr valign="top">
+<td width=40%>To repeat a find operation</td>
+<td width=60%>
+Choose either the Edit -> Find Forward or
+Edit -> Find Backward menu item, press F3,
+Shift + F3, or click on the Find Backward checkbox in the dialog
+box.
+</td>
+</tr>
+
+</table>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13"><br>
+<ul>
+<li>Both the Find and Replace dialog boxes automatically place
+text selected in the editor window in the Find text box.
+<li>Both the Find and Replace dialog boxes maintain a list
+of the 20 most recent strings.  You can move
+up down the list using the arrow keys when the Find text box
+has focus.
+<li>Regular expressions (substitution
+characters) are not supported in this release.
+
+</ul>
+<p>
+
+<A NAME="keyboard"></A>
+<h2>Keyboard Commands</h2>
+You can use the keyboard to execute many source editor
+commands and to navigate within the source editor window.
+See <A HREF=dialogs/actions.html#editing>Keyboard
+Actions</A> for a list of these commands.
+<p>
+You can customize the keys that are assigned to these
+commands.  Use the Keyboard Preferences dialog box
+(Preferences -> Keyboard) to view, add, or
+delete key assignments.
+
+
+
+<A NAME="multiple"></A>
+<h2>Editing Multiple Views of the Same File</h2>
+There are two ways to edit the same file in multiple editor
+windows:
+<ul>
+<li>Choose File -> Clone Editor Window.
+<ul>
+<li>A new editor window is loaded with the same file.  
+<li>The cursor in the cloned editor is positioned at the
+same location.
+<li>This process can be repeated multiple times.
+</ul>
+<li>Use File -> Open to open a file that is
+already loaded in another editor window.
+</ul>
+Things to be aware of when editing files in
+multiple editors:
+<ul>
+<li>The multiple editors all operate on the same copy of
+the file in memory.
+<li>When you change the contents of the file in one of the
+editors, the displays in all of the other connected editors are
+updated.
+<li>When you save the file in one of the editors, the file
+is considered saved in all of the editors.
+</ul>
+
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13" WIDTH=18 HEIGHT=13><strong>See also:</strong>
+<dl>
+<dd><A HREF="edit_source.html">Editing Source</A>
+<dd><A HREF="controls.html">Editor Controls</A>
+<dd><A HREF="version.html">Version Control</A>
+</dl>
+<p>
+</BODY>
+</HTML>

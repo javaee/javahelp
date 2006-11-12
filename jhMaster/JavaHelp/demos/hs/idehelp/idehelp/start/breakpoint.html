@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercise 2: Setting a Breakpoint
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Exercise 2: Setting a Breakpoint</h1>
+
+Setting a breakpoint is useful to track down trouble spots in your program. In this exercise, you will set a breakpoint in <kbd>Blink.java</kbd> while the program is running. The program runs to the breakpoint and stops.
+<p>
+The source line numbers given in this tutorial assume you have added the additional code given in <a href="editcode.html">Editing Source Code</a>.
+
+<ol>
+<li>Choose Debug -> Breakpoints.
+<br>The Java WorkShop Breakpoints window is displayed.
+
+<li>Type <kbd>Blink</kbd> in the Class name box.
+
+<li>Type <kbd>45</kbd> in the Location box.</b>
+
+<li>Click Set Breakpoint.
+<br>The source editor highlights the line:
+<br><pre>     if (x + w > d.width) {</pre>
+<p>
+This line was chosen so that you can track the change in the values of variables as the program goes through the loop. In most cases, you will set a breakpoint in a line where you think a bug occurs in your program.
+</ol>
+<p>
+Java WorkShop runs the program until it reaches the breakpoint. The line containing the new breakpoint changes to green to indicate where program execution stopped. The Threads/Stack window is updated.
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>Next lesson:</strong>
+<dl>
+<dd><a href="threads.html">Exercise 3: Examining Threads</a>
+</dl>
+<p>
+
+</body>
+</html>

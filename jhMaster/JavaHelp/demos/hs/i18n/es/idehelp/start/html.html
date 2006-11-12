@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Ejercicio 1: Edici&oacute;n del archivo HTML
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Ejercicio 1: Edici&oacute;n del archivo HTML</h1>
+
+En esta lecci&oacute;n, editar&aacute; el archivo HTML que Java Development Environment cre&oacute; cuando
+ejecut&oacute; el proyecto Blink. Especificar&aacute; un par&aacute;metro de applet
+y a&ntilde;adir&aacute; un enlace al c&oacute;digo fuente. Una vez haya editado el
+archivo, lo guardar&aacute; con un nombre de archivo diferente para que los
+cambios no se sobreescriban la pr&oacute;xima vez que ejecute el proyecto.
+<p>
+Si no ha creado ni construido a&uacute;n el proyecto Blink, debe hacerlo ahora
+utilizando las instrucciones de <a href="create.html">Creaci&oacute;n del
+proyecto Blink</a>.
+<ol>
+<li>Compruebe el nombre del proyecto actual en la ventana del
+administrador de proyectos.
+<br>Si el proyecto actual no es Blink, pulse dos veces en
+el nombre del proyecto Blink.
+<li>En el editor de c&oacute;digo fuente, seleccione <nobr>"Archivo -&gt; Abrir"</nobr>.
+<br>Java Development Environment abre un selector de archivos.
+<li>Abra el archivo <kbd>Blink.tmp.html</kbd> en el directorio <kbd>Blink.</kbd> 
+<br>El archivo contiene una etiqueta de applet que tiene un aspecto
+similar al siguiente:
+<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+
+codebase="/<i>su_directorio_principal</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt="Si tiene un examinador habilitado para java,
+        aqu&iacute; ver&aacute; una applet."
+&gt; 
+&lt;param name="lbl" value="Java Development Environment es estupendo :-)"&gt;
+&lt;hr&gt;Si el examinador hubiera reconocido la etiqueta de applet,
+   aqu&iacute; ver&iacute;a una applet.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+Java Development Environment cre&oacute; este archivo cuando ejecut&oacute; el proyecto. La
+informaci&oacute;n contenida en este archivo se basa en la informaci&oacute;n de
+la pesta&ntilde;a "Ejecutar" de la ventana "Editar proyecto". Si no ha
+ejecutado con anterioridad el proyecto, v&eacute;ase
+<a href="run.html">Ejecuci&oacute;n del proyecto</a>.
+<li>Seleccione <nobr>"Archivo -&gt; Guardar como"</nobr> en la barra de
+men&uacute;s de Java Development Environment.
+<br>Aparece el cuadro de di&aacute;logo "Guardar archivo actual".
+<li>Seleccione el directorio Blink; despu&eacute;s, escriba un nuevo nombre
+para el archivo HTML y pulse en "Aceptar".
+<br>Aseg&uacute;rese de cambiar el nombre del archivo HTML; de lo
+contrario, los cambios se sobreescribir&aacute;n la pr&oacute;xima vez que
+ejecute el proyecto. Aseg&uacute;rese tambi&eacute;n de guardar el archivo en el directorio <kbd>Blink.</kbd>  
+<li>En el editor de c&oacute;digo fuente, cambie el valor de altura a 75.
+<li>A&ntilde;ada el siguiente par&aacute;metro antes del par&aacute;metro <kbd>lbl</kbd> para aumentar la velocidad de la intermitencia de las
+palabras:
+<pre>
+&lt;param name="speed" value="50"&gt;
+</pre>
+
+<li>A&ntilde;ada el siguiente enlace con el c&oacute;digo fuente despu&eacute;s de la
+etiqueta &lt;applet&gt;:
+<pre>
+&lt;p&gt;
+&lt;a href="Blink.java"&gt;Source Code&lt;/a&gt;
+</pre>
+
+La ruta del c&oacute;digo fuente debe ser relativa al directorio que
+contiene al archivo HTML.
+<li>Pulse en el bot&oacute;n "Guardar" <img src="../../../../images/24/file-save_u.gif"
+align=MIDDLE> en la barra de herramientas de edici&oacute;n/depuraci&oacute;n.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Siguiente lecci&oacute;n:</strong>
+<dl>
+<dd><a href="runpage.html">Ejercicio 2:  Actualizaci&oacute;n de la
+p&aacute;gina de ejecuci&oacute;n</a></dl>
+<p>
+</BODY>
+</HTML>

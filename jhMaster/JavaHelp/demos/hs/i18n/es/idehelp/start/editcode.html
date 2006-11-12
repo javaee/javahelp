@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Ejercicio 1: Edici&oacute;n de c&oacute;digo fuente
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Ejercicio 1: Edici&oacute;n de c&oacute;digo fuente</h1>
+
+Como introducci&oacute;n al trabajo con el editor de c&oacute;digo fuente, introducir&aacute;
+c&oacute;digo en el archivo <kbd>Blink.java</kbd> para hacer subir y bajar
+las palabras.
+<p>
+Si no ha creado a&uacute;n el proyecto Blink, debe hacerlo ahora
+utilizando las instrucciones de <a href="create.html">Creaci&oacute;n del
+proyecto Blink</a>.
+<ol>
+<li>Compruebe el nombre del proyecto actual en la ventana del
+administrador de proyectos de Java Development Environment.
+<br>Si el proyecto actual no es Blink, pulse dos veces en en
+el nombre del proyecto Blink.
+<li>Escriba debajo las l&iacute;neas de c&oacute;digo fuente.
+<br>Este c&oacute;digo tiene errores intencionados porque la siguiente
+lecci&oacute;n muestra la forma de corregirlos.
+<p>
+Puede ir a un n&uacute;mero de l&iacute;nea espec&iacute;fico seleccionando <nobr>"Editar
+-&gt; Ir a l&iacute;nea".</nobr> El n&uacute;mero de l&iacute;nea del puntero aparece a la
+derecha del pie.
+<dl>
+<dt>Despu&eacute;s de la l&iacute;nea 17
+<dd><pre>int speed;</pre>
+<dt>escriba:
+<dd>
+<pre>boolean offset;</pre>
+<p>
+<dt>Despu&eacute;s de la l&iacute;nea 25
+<dd><pre>lbl = (att == null) ? "Blink" : att;</pre>
+<dt>escriba:
+<dd>
+<pre>offset = false;</pre> 
+<p>
+<dt>Despu&eacute;s de las l&iacute;neas 53-54
+<dd><pre>g.setColor(Color.lightGray);
+}</pre>
+<dt>escriba:
+<dd>
+<pre>
+if offset
+   y = y * 2;
+</pre>
+<p>
+<dt>Despu&eacute;s de la l&iacute;nea 57
+<dd><pre>g.drawString(word, x, y);</pre>
+<dt>escriba:
+<dd>
+<pre>
+if (offset) {
+   offset = false;
+   y = y / 2
+ } else {
+    offset = true;
+}
+</pre>
+</dl>
+<p>
+<li>Pulse en el bot&oacute;n "Guardar"
+<img src="../../../../images/24/file-save_u.gif"
+align=BOTTOM> en la barra de herramientas de edici&oacute;n/depuraci&oacute;n.
+<br>El nombre de ruta del archivo guardado aparece en el pie del
+editor de c&oacute;digo fuente.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Siguiente lecci&oacute;n:</strong>
+<dl>
+<dd><a href="fixbuild.html">Ejercicio 2:  Correcci&oacute;n de errores
+en una construcci&oacute;n</a>
+</dl>
+<p>
+</body>
+</html>

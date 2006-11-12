@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<META http-equiv="Content-Language" content="de">
+<TITLE>
+Wichtige Konzepte: Threads
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Wichtige Konzepte: Threads</h1>
+
+Java-Programme bestehen aus Threads. Bei einem <i>Thread</i> handelt
+es sich um eine unabh&auml;ngige Aneinanderreihung von
+ausf&uuml;hrbaren Befehlen innerhalb eines Programms. Wenn ein
+Java-Programm ausgef&uuml;hrt wird, laufen unter Umst&auml;nden
+mehrere Threads auf einmal und f&uuml;hren dabei unterschiedliche
+Aktionen aus. Ein solches Programm wird als
+<i>Multithread-Programm</i> bezeichnet.
+<p>
+Jeder einzelne Thread geh&ouml;rt zu einer Thread-Gruppe. Dabei
+stellt eine Thread-Gruppe einfach eine logische Gruppierung
+zusammengeh&ouml;riger Threads dar.
+<p>
+Die Thread-Gruppe <kbd>main</kbd> ist Bestandteil jedes Programms. Jede durch einen Benutzer
+ausgef&uuml;hrte Tastaturaktion interagiert mit den Threads in der
+Thread-Gruppe <kbd>main</kbd>.
+<p>
+Wenn ein Thread gestoppt wird, k&ouml;nnen Sie den Aufrufstapel
+anzeigen, aus dem der Thread besteht. Sie k&ouml;nnen auch den
+Aufrufstapel eines laufenden Thread anzeigen, aber die angezeigte
+Information ist nur so aktuell wie der letzte Schnappschu&szlig; des
+Threads.
+<p>
+Der Aufrufstapel enth&auml;lt s&auml;mtliche Methoden, die
+aufgerufen, jedoch nicht an das aufrufende Programm
+zur&uuml;ckgegeben wurden. Eine <i>Methode</i> ist mit einer Prozedur
+oder einer Funktion vergleichbar. Die im Aufrufstapel
+enthaltenen Methoden sind in der Reihenfolge ihres
+Aufrufs aufgef&uuml;hrt. Die Methode, die bei Abbruch des Programms
+ausgef&uuml;hrt wurde, befindet sich an der obersten Position im
+Stapel.
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;chste &Uuml;bung:</strong>
+<dl>
+<dd><a href="startdebug.html">&Uuml;bung 1:  Starten einer
+Fehlersuche</a>
+</dl>
+<p>
+</body>
+</html>

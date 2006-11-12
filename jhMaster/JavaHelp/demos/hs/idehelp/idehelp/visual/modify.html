@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+
+<HTML>
+<HEAD>
+<TITLE>
+Modifying Components in the Grid
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Modifying Components in the Grid</H1>
+
+This section explains how to:
+
+<ul>
+<li><A HREF="#copy">Copy a component to another cell</A></li>
+<li><A HREF="#delete">Delete a component</A></li>
+<li><A HREF="#change">Change a component's attributes</A></li>
+</ul>
+
+<p>
+<A NAME=copy></A>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To copy a component to another cell:</strong>
+
+<ol>
+<li>Select the component.
+<li>Choose GUI -> Copy Component.
+<li>Click in the cell in which you want to paste a copy of the
+component.
+<li>Choose GUI -> Paste Component.  
+</ol>
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+A shortcut to copying and pasting components is to select the
+component then while holding the Control key down, click in the grid
+cells where you want to place the component.
+
+<p>
+<A NAME=delete></A>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To delete a component:</strong>
+<ol>
+<li>Select the component.
+<li>Choose GUI -> Delete Component.
+</ol>
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+You can also choose GUI -> Cut Component to remove the
+component and place it on the clipboard. Click on a cell
+and choose GUI -> Paste Component to paste the component
+into the selected cell. 
+
+<p>
+<A NAME=change></A>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To change a component's attributes:</strong>
+
+<ol>
+<li>Open the attribute editor by
+selecting a component in the gridbag and clicking on its button in the
+main toolbar.  
+<br>
+A shortcut method for opening the attribute editor is to
+double-click while the cursor is positioned
+in the area between the component and its cell border.
+<li>Changes the values for the attributes you want to modify.
+<li>Click OK to establish the changes.
+</ol>
+
+<p>
+Component attributes vary, depending on the function of the component.
+Not all characteristics of a component can be modified. The attribute
+editor displays only those aspects of a component that you can
+change. Specialized attributes are explained with the description of
+their associated components; for a list of the palette components, see
+<A HREF="palette.html">GUI Builder Palette</A>. General attributes
+that apply to most of the components are described in <A
+HREF="dialogs/attributes.html">Attribute Editor</A>.
+<p>
+For more details about component attributes, see the API documentation. 
+
+<p>
+<A NAME=changebean></A>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To customize a bean:</strong>
+<ol>
+<li>Select a bean that you've placed in the gridbag.
+<li>Open the attribute editor by clicking on its button in the main toolbar.
+<li>Click the Customizer button to open the Customizer dialog box.
+<li>Set the attributes you want to change (attributes displayed in the
+dialog box are specific for the actual bean).
+<li>Click OK to close the dialog box, then click OK in the attribute
+editor to establish the changes.
+</ol>
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+You can modify a bean if the bean contains a customizer in its JAR
+file. No action results if you click the Customizer button for a bean
+without a customizer in its JAR file.
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="menus.html">Adding a Menu Bar and Menus</A>
+<dd><A HREF="ops.html">Adding Behavior to Components</A>
+<dd><A HREF="custom.html">Adding Custom Components and Windows</A> 
+<dd><A HREF="palette.html">GUI Builder Palette</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI Builder
+Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Starting a Debugging Session
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Starting a Debugging Session</h1>
+
+This page explains how to start debugging a standalone program or applet project. To begin, you must have a project that you compiled inside JDE with the <kbd>-g</kbd> option. If you don't have such a project, debugging is disabled.
+<p>
+<img src="../../images/hg_proc.gif" width="18" height="13" ALGIN=MIDDLE><b>To start debugging a project:</b>
+<ol>
+<li>Double-click a project in the Project Manager window to select the project you want to debug.
+<br>The source editor window automatically loads your program source files (if the sources are available).
+<li><a href="Breakpoint.html">Set a breakpoint</a> in your program.
+<li>Click the Restart button <IMG SRC="../images/db-restart_u.gif" ALIGN=MIDDLE><img src="../../images/spacer2_t.gif"> on the Edit/Debug toolbar.
+<br>The following actions occur:
+<ul>
+<li>JDE begins debugging your project. If you set a breakpoint in your source code,the line with the breakpoint changes from red to green to indicate where program execution stopped. You can now set additional breakpoints.
+
+<li>If your project is an applet, JDE launches the applet viewer. You execute the applet in the applet viewer using the Go button <IMG SRC="../images/db-resume_u.gif" ALIGN=MIDDLE><img src="../../images/spacer2_t.gif">on the Edit/Debug toolbar. 
+</ul>
+</ol>
+
+
+On Microsoft Windows 95 and Microsoft Windows NT, the applet viewer does not respond to window operations, such as repainting, when the applet is suspended at a breakpoint. To manipulate the viewer under these circumstances, do one of the following:
+<ul>
+<li>Press Alt+Tab to bring the viewer to the front.
+<li>Press Control+Escape to display the task list.
+</ul>
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><a href="Editor.html">Debugging in the Source Editor</a>
+</dl>
+</BODY>
+</HTML>

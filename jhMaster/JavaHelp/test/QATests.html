@@ -1,0 +1,1098 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+  <HEAD>
+    <TITLE>JavaHelp Quality Assurance Tests</TITLE>
+  </HEAD>
+  <BODY BGCOLOR="#ffffff">
+    
+    <H1 CLASS="Title">
+      JavaHelp Quality Assurance Test Plan and Tests
+    </H1>
+    <P>
+      06/11/11 12:57:35
+    </P>
+    <P>
+      (Updated for V1.1.1)
+    </P>
+    
+    <H2 >
+      Overview
+    </H2>
+    <p>
+      This is the test plan for JavaHelp V1.1.1. It is a comprehensive
+      document to insure the quality of the bundles that are released on
+      java.sun.com as well as the Solaris packages that are distributed for
+      the Solaris installation CD. As such it includes additional test
+      requirement for java.sun.com JavaHelp web pages.
+    </p>
+    <p>
+      Bundles and Solaris packages are initially tested after a
+      release engineer has successfully completed a build. They are
+      not forwarded to java.sun.com or to the java consolidation until
+      all the tests have been successfully completed. Once available
+      on java.sun.com or in the Solaris Operating System the packages
+      are retested.
+    </p>
+
+    <H2>
+      External Testing
+    </H2>
+    <P>
+      JavaHelp V1.1.1 was provided in beta form and has been released
+      on the web since September 2000. At the time of it's web release
+      there were no P1 or P2 bugs filed against JavaHelp. There is
+      currently one P2 bug filed against V1.1.1.
+    </p>
+    <H2>
+      Overall
+    </H2>
+    <P>
+      The main bundles to test are the &quot;fool-proof&quot;
+      bundles.&quot;Fool-prof&quot; bundles have a JRE included. The
+      &quot;small&quot; bundles will be tested only by content and by short
+      tests on a few platforms since a &quot;fool-proof&quot; bundle is
+      based on the small bundle. The Solaris packages will be tested as a
+      main bundle
+    </P>
+    <p>
+      Each bundle or package will have at least one of the following tests
+      executed.
+    </p>
+    <table Border="1">
+      
+      <TR>
+	<TH><b>Test</b></TH>
+	<TH><b>Description</b></th>
+      </TR>
+      
+      <TR>
+	<TD>Documentation Review</TD>
+	<TD>Full review of the product Documentation</TD>
+      </TR>
+
+      <TR>
+	<TD>TCK Test</TD> 
+	<TD>JavaHelp Technical Compatibility Kit for
+	JavaHelp 1.0 Specification
+	</TD>
+      </TR>
+
+      <TR>
+	<TD>Contents Verification</TD>
+	<TD>Verification of a bundles/packages contents</td>
+      </TR>
+
+      <TR>
+	<TD>Installation Verification</TD>
+	<TD>Verification package installs correctly</td>
+      </tr>
+
+      <TR>
+	<TD>Full Functionality</TD>
+	<TD>A complete test of functionality of JavaHelp via the demos</td>
+      </tr>
+
+      <tr>
+	<td>Short Functionality</TD>
+	<TD>A shorten version of the Full Functionality tests</td>
+      </tr>
+
+      <tr>
+	<td>Web Pages</td>
+	<td>A comprehensive test of the Web pages</td>
+      </tr>
+
+    </TABLE>
+
+    <p>
+      The tests executed on a given package are described in 
+      <a href="#configurations">Testing Configurations</a>.
+    </p>
+
+
+
+    <H2>
+      Bundles and Packages</H2>
+    <P>
+      The release of JavaHelp V1.1.1 comes in 4 different
+      packages, as indicated below:
+    </P>
+    <P>
+      <TABLE BORDER="1">
+	<CAPTION>
+	  <b>Bundles for JH V1.1.1</b>
+	</CAPTION>
+	<TR>
+	  <TH ROWSPAN="1" COLSPAN="1">
+	    Name</TH>
+	  <TH ROWSPAN="1" COLSPAN="1">
+	    Platform</TH>
+	  <TH ROWSPAN="1" COLSPAN="1">
+	    Approx Size
+	  </TH>
+	  <TH ROWSPAN="1" COLSPAN="1">
+	    JRE included
+	  </TH>
+	</TR>
+
+	<TR>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    javahelp1_1_1-solsparc-rt.bin
+	  </TD>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    Solaris/SPARC
+	  </TD>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    23,356,630
+	  </TD>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    1.2.2
+	  </TD>
+	</TR>
+
+	<TR>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    javahelp1_1_1-win-rt.exe
+	  </TD>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    win32
+	  </TD>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    17,056,357
+	  </TD>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    1.2
+	  </TD>
+	</TR>
+
+	<TR>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    javahelp1_1_1-unix-no_rt.bin
+	  </TD>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    Unix platform
+	  </TD>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    8,291,388
+	  </TD>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    None
+	  </TD>
+	</TR>
+
+	<TR>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    javahelp1_1_1-win-no_rt.exe
+	  </TD>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    win32
+	  </TD>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    8,672,334
+	  </TD>
+	  <TD ROWSPAN="1" COLSPAN="1">
+	    None
+	  </TD>
+	</TR>
+
+      </TABLE>
+      <P>
+	The JavaHelp V1.1.1 Solaris install packages comes in 4
+	different packages, as indicated below. The packages are
+	designed to be installed against the Java1.2 and Java2 Solaris
+	packages.
+      </P>
+      <P>
+	<TABLE BORDER="1">
+	  <CAPTION>
+	    <b>JH V1.1.1 Solaris Packages</b>
+	  </CAPTION>
+	  <TR>
+	    <TH ROWSPAN="1" COLSPAN="1">
+	      Name</TH>
+	    <TH ROWSPAN="1" COLSPAN="1">
+	      Description</TH>
+	    <TH ROWSPAN="1" COLSPAN="1">
+	      Size</TH>
+	  </TR>
+
+	  <TR>
+	    <TD ROWSPAN="1" COLSPAN="1">
+	      SUNWjhrt
+	    </TD>
+	    <TD ROWSPAN="1" COLSPAN="1">
+	      JavaHelp runtime
+	    </TD>
+	    <TD ROWSPAN="1" COLSPAN="1">
+	      407,552
+	    </TD>
+	  </TR>
+
+	  <TR>
+	    <TD ROWSPAN="1" COLSPAN="1">
+	      SUNWjhdev
+	    </TD>
+	    <TD ROWSPAN="1" COLSPAN="1">
+	      JavaHelp developer tools
+	    </TD>
+	    <TD ROWSPAN="1" COLSPAN="1">
+	      391,680
+	    </TD>
+	  </TR>
+
+	  <TR>
+	    <TD ROWSPAN="1" COLSPAN="1">
+	      SUNWjhdoc
+	    </TD>
+	    <TD ROWSPAN="1" COLSPAN="1">
+	      JavaHelp documentation
+	    </TD>
+	    <TD ROWSPAN="1" COLSPAN="1">
+	      2,944,512
+	    </TD>
+	  </TR>
+
+	  <TR>
+	    <TD ROWSPAN="1" COLSPAN="1">
+	      SUNWjhdem
+	    </TD>
+	    <TD ROWSPAN="1" COLSPAN="1">
+	      JavaHelp demos
+	    </TD>
+	    <TD ROWSPAN="1" COLSPAN="1">
+	      5,427,712
+	    </TD>
+	  </TR>
+
+	</TABLE>
+	<p>
+
+
+	  <A name="configurations">
+	    <H2>
+	      Testing Configurations: Priorities</H2>
+	  </a>
+	  <TABLE BORDER="1">
+	    <CAPTION>
+	      <H6 CLASS="TableTitle">
+		Descending Priority Order</H6>
+	    </CAPTION>
+
+	    <TR>
+	      <TH ROWSPAN="1" COLSPAN="1">
+		OS
+	      </TH>
+	      <TH ROWSPAN="1" COLSPAN="1">
+		Install Bundle
+	      </TH>
+	      <TH ROWSPAN="1" COLSPAN="1">
+		TYPE
+	      </TH>
+	    </TR>
+	    
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		N/A
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		javahelp1_1_1-win-no_rt.exe
+		<P>
+		  javahelp1_1_1-unix-no_rt.bin
+		</P>
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Documentation Review
+		<P>
+		  TCK Test
+		</P>
+	      </TD>
+	    </TR>
+	    
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Win95
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		javahelp1_1_1-win-rt.exe
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Full Functionality
+	      </TD>
+	    </TR>
+	    
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Solaris 2.7
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		javahelp1_1_1-solsparc-rt.bin
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Full Functionality
+	      </TD>
+	    </TR>
+	    
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		NT4.0
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		javahelp1_1_1-win-rt.exe
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Full Functionality
+	      </TD>
+	    </TR>
+
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Win98
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		javahelp1_1_1-win-rt.exe
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Full Functionality
+	      </TD>
+	    </TR>
+
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Solaris 2.8
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Solaris install packages
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Contents Verification
+		<p>
+		  Installation Verification
+		</p>
+		<p>
+		  Full Functionality
+		</P>
+	      </TD>
+	    </TR>
+
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Solaris 2.9
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Solaris install packages
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Contents Verification
+		<p>
+		  Installation Verification
+		</p>
+		<p>
+		  Full Functionality
+		</p>
+	      </TD>
+	    </TR>
+	    
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Any Solaris<A HREF="#footnote2"> 2</A>
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		javahelp1_1_1-unix-no_rt.bin
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Contents Verification
+		<P>
+		  Installation Verification
+		</P>
+	      </TD>
+	    </TR>
+
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Any Win32
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		javahelp1_1_1-win-no_rt.exe
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Contents Verification
+		<P>
+		  Installation Verification
+		</P>
+	      </TD>
+	    </TR>
+	    
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Any win32
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		javahelp1_1_1-win-rt.exe
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Contents Verification
+		<P>
+		  Installation Verification
+		</P>
+	      </TD>
+	    </TR>
+
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		<P CLASS="CellBody">
+		  Any Solaris
+		</P>
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		javahelp1_1_1-solsparc-rt.bin
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Contents Verification
+		<P>
+		  Installation Verification
+		</P>
+	      </TD>
+	    </TR>
+
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		N/A
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		N/A
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		Web Pages
+	      </TD>
+	    </TR>
+	    
+	  </TABLE>
+
+	  
+	  <H2>Documentation Review</H2>
+	  <p>
+	    Proof read manuals for technical accuracy. All examples
+	    and procedures will be tested.
+	  </p>
+
+	  <H2>Technical Compatibility Kit Tests</H2>
+	  <P>
+	    Execute the JavaHelp TCK tests against a given
+	    installation.
+	    </p>
+
+	  
+	  <H2>Contents Verification</H2>
+	  <p>
+	    Verify that doc/welcome/content.html and
+	    doc/welcome/CONTENS.html matches what is in the release.
+	  </P>
+	  
+	  <H2>Installation verification</H2>
+	  <p>
+	    Including installation instructions, product documents,
+	    and Release Notes.
+	  </P>
+	  <p>
+	    (Review documentation from a user's perspective)
+	  </P>
+
+	  <H4>
+	    Verifying &quot;JRE (aka VM)&quot; Installation on Solaris
+	  </H4>
+	  <OL>
+	    <LI CLASS="Numbered1">
+	      Install the JRE-full release (InstallAnywhere script)
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Verify the version of the JRE installed as:</LI>
+	    <P CLASS="Indented">
+	      &lt;installdir&gt/jre/bin/java -fullversion
+	    </P>
+	    <P CLASS="Indented">
+	      java full version &quot;JDK-1.2-V&quot;
+	    </P>
+	    <LI CLASS="Numbered">
+	      Test demo programs activation.</LI>
+	    <LI CLASS="Numbered">
+	      Test jhindexer.</LI>
+	  </OL>
+
+
+	  <H4>
+	    Verifying &quot;JRE (aka VM)&quot; Installation on Win32
+	  </H4>
+	  <OL>
+	    <LI CLASS="Numbered1">
+	      Install the JRE-full release (InstallAnywhere script)
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Verify the version of the JRE installed from the MSDOS prompt as:
+	    </LI>
+	    <P CLASS="Indented">
+	      &lt;installdir&gt;/jre/bin/java -fullversion
+	    </P>
+	    <P CLASS="Indented">
+	      java full version &quot;JDK-1.2-V&quot;
+	    </P>
+	    <LI CLASS="Numbered">
+	      Test demo programs activation for installed program group.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Test jhindexer.
+	    </LI>
+	  </OL>
+
+
+	  <H4>Verifying NoVm Installation</H4>
+	  <P>
+	    Do this in one win32 and one Solaris machine.</P>
+	  <OL>
+	    <LI CLASS="Numbered1">
+	      Verify the version of the JRE installed as:
+	    </LI>
+	    <P CLASS="Indented">
+	      java -fullversion
+	    </P>
+	    <P CLASS="Indented">
+	      java full version &quot;JDK-1.2-V&quot; [or 1.1.8]
+	    </P>
+	    <LI CLASS="Numbered">
+	      Install the NoVM release.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Adjust CLASSPATH and PATH as XXXX.  Verify as YYYY.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Execute short tests.
+	    </LI>
+	  </OL>
+	  <P>
+	    Do a content difference between the small and the full releases.
+	    Changes should be limited to:
+	  </P>
+	  <OL>
+	    <LI CLASS="Numbered1">
+	      jre/ directory is missing
+	    </LI>
+	    <LI CLASS="Numbered">
+	      README_small file is new
+	    </LI>
+	  </OL>
+
+
+	  <H4>Verifying Solaris Package Installation</H4>
+	  <P>
+	    Do this in on Solaris 8 update 5 and Solaris 9.
+	  </P>
+	  <OL>
+	    <LI CLASS="Numbered1">
+	      Verify the version of the JRE installed as:
+	    </LI>
+	    <P CLASS="Indented">
+	      java -fullversion
+	    </P>
+	    <P CLASS="Indented">
+	      java full version &quot;JDK-1.2.2-W&quot;
+	    </P>
+	    <LI CLASS="Numbered">
+	      Install the four JavaHelp Solaris packages.
+	      <P class="Indented">
+		Verify proper installation against:
+		<UL>
+		  <LI>
+		    No JDK package installed
+		  </LI>
+		  <LI>
+		    JAVA1.2 Solaris package installed
+		  </li>
+		  <LI>
+		    JAVA2 Solaris package installed
+		  </li>
+		</UL>
+	      </P>
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Test demo programs activation for installed program group.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Test jhindexer.
+	    </LI>
+	  </OL>
+
+	  <h2 CLASS="HEADING1">Full Functionality Tests</H2>
+	  <p>
+	    These tests are a complete test of the functionality of
+	    JavaHelp. They rely heavily on the JavaHelp demos as the
+	    testing mechanism.
+	  </p>
+
+	  <OL>
+	    <LI CLASS="Numbered">
+	      Test hsviewer. (short)
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Test hsviewer. (full)
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Test apiviewer.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Test IdeDemo.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Test merge.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Test object.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Test jhindexer.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Rebuild IdeDemo
+	    </LI>
+	  </OL>
+
+
+	  <h2 CLASS="HEADING1">Short Functionality Tests</H2>
+	  <p>
+	    These tests are an abbreviated test of the functionality of
+	    JavaHelp. They rely heavily on the JavaHelp demos as the testing
+	    mechanism. Short Functionality tests are executed as a sanity check that the 
+	    installation proceeded correctly. They test only a minimal amount of
+	    the functionality. In all cases the Full Functionality test has already been
+	    executed on the platform and it is only necessary to retest with
+	    the short test.
+	  </p>
+	  
+	  <OL>
+	    <LI CLASS="Numbered">
+	      Test hsviewer. (short)
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Test apiviewer.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Test jhindexer.
+	    </LI>
+	  </OL>
+
+
+	  <H2>
+	    Short Test for HSViewer (JavaHelp User's Guide) 
+	  </H2>
+	  <p>
+	    This tests that the main information available to the
+	    users in the release is available.  It also tests that the
+	    basic JavaHelp machinery is OK.
+	  </P>
+	  <OL>
+	    <LI CLASS="Numbered1">
+	      Start HSViewer with no arguments: you should get the
+	      JavaHelp User's Guide HelpSet up.  There are three
+	      navigators: TOC, Index and Search
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Try all the entries in the JHUG TOC navigator.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Collapse/expand some nodes.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Check its contents, including LICENSE and COPYRIGHT.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Verify that FORWARD and BACKWARD arrows work as desired
+	      (should not be active until there is something that can
+	      be done with them).
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Try some entries in the JHUG Index navigator.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Try some queries in the JHUG Search navigator.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Click on some returned values
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Exit hsviewer
+	    </LI>
+	  </OL>
+	  
+
+	  <H2>Long Test for HSViewer</H2> 
+	  <p>
+	    This tests that different ways of locating and accessing
+	    at HelpSet information are working.  Most of these tests
+	    could be done using the &quot;Merge&quot; application, but
+	    this application came quite late, so we are sticking to
+	    this mechanism.
+	  </P>
+	  <P>
+	    The welcome documentation lists a number of other helpsets
+	    that can be tried, some of them are given as JAR files,
+	    some of them as directories.  Each entry should be tested.
+	    Here is the list:
+	  </P>
+	  <TABLE>
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		welcome.hs
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		doc\welcome
+	      </TD>
+	    </TR>
+	    
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		HolidayHistory.hs
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		demos\hsjar\holidays.jar
+	      </TD>
+	    </TR>
+
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		HolidayHistory.hs
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		demos\hs\holidays
+	      </TD>
+	    </TR>
+
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		IdeHelp.hs
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		demo\hsjar\idehelp.jar
+	      </TD>
+	    </TR>
+	    
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		api.hs
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		demos\hsjar\apidoc.jar;demos\lib\classviewer.jar
+	      </TD>
+	    </TR>
+
+	    <TR>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		HolidayHistory.hs
+	      </TD>
+	      <TD ROWSPAN="1" COLSPAN="1">
+		demos\lib\jhsearch.jar
+	      </TD>
+	    </TR>
+	  </TABLE>
+	  
+	  <P>
+	    Go to File|Open Page and look at some .html page.
+	  </P>
+
+
+	  <H2>Testing APIViewer</H2>
+	  <P>
+	    This tests the extension mechanism for navigators.  It
+	    also tests that the users can navigate through the API
+	    documentation.
+	  </P>
+	  <OL>
+	    <LI CLASS="Numbered1">
+	      You should get API viewer.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      There may be an issue with the vertical separator
+	      between the Navigators and the content.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Select a class, select some methods/constructors
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Repeat for a few classes and interfaces.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Test with Index navigator
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Search on the Full-Text Search.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Exit APIViewer
+	    </LI>
+	  </OL>
+
+
+	  <H2>Testing IdeDemo</H2>
+	  <p>
+	    This tests Context-Sensitive Help, Embedded Help, multiple
+	    independent Help viewers.
+	  </P>
+	  <OL>
+	    <LI CLASS="Numbered1">
+	      Launch IdeDemo.  There should be one Frame split into
+	      two panes.  The Frame has a toolbar.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Select Help-&gt;Demo JDE - Help.  After a few seconds
+	      the HelpViewer on the IdeHelp HelpSet will show up.
+	      Check that the TOC is alive by collapsing and
+	      compressing some; check that the search database is
+	      working by querying on &quot;breakpoints&quot;; there
+	      should be around 25 hits.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Close the viewer.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Try again; it should appear much faster.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Now try Help-&gt;API Reference.  Should open a new
+	      viewer. Check that it is alive by expanding and
+	      collapsing the TOC.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Close the viewer.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Click on the &quot;?&quot; button.  The cursor should
+	      change to one including a ?.  A known bug in Solaris
+	      makes this happen only the first time; it does not
+	      happen at all on win32.  Now click on the Save Icon in
+	      the toolbar; the Help viewer for IdeHelp will show on
+	      the JDE Main Toolbar.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Now try Window-&gt;Class inspector.  A TOC-like
+	      Navigator (actually the ClassViewer Navigator) without
+	      the Viewer will show in the Desktop pane.  Select a
+	      class, select a method.  The content will be shown in
+	      the tabbed lower pane.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Now select the Search Navigator.  Type in the phrase
+	      compiling a java source file, you should get a hit.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      File-&gt;Exit.  Click on Help.  Should show help.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      File-&gt;Exit again.  Click OK and exit.
+	    </LI>
+	  </OL>
+
+
+	  <H2>Testing Merge</H2>
+	  <p>
+	    This tests Merging HelpSets.  Also it provides an
+	    interface to locating HelpSets and the such.
+	  </P>
+	  <OL>
+	    <LI CLASS="Numbered1">
+	      Start Merge.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Click on Locate HelpSet.  This will locate HolidayHistory.hs
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Click on AddHelpSet
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Click on show MasterHelp.  This should show a HelpSet
+	      viewer that has TOC, Index, and Search corresponding to
+	      the &quot;master&quot; helpset, plus the holidays.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      On the TOC, expand and contract some nodes.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Select some nodes.  Beware of selecting the intro of the
+	      HolidayHistory since there is a bug somewhere that
+	      raises an exception.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Select the Index, do the same.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Select the Search, search for holidays; search for helpset
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Back to the main Window, change the HelpSet name to say
+	      &quot;IdeHelp.hs&quot;.  Locate the Help Set, then add
+	      it.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      The HelpSet viewer should show how the HelpSet for
+	      IdeHelp is added dynamically.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Collapse, expand, and select an entry in the new portion
+	      of the TOC and in the old one.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Back to the main Window, select the holidays helpset from the
+	      list; then click on &quot;Show Selected HelpSet&quot;.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      A new HelpSet viewer will be shown with the content only
+	      of the Holidays helpset.  Navigations on both viewers
+	      should be independent.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Exit Merge
+	    </LI>
+	  </OL>
+
+
+	  <H2>Testing Object</H2>
+	  <p>
+	    This tests components within HTML content.
+	  </p>
+	  <OL>
+	    <LI CLASS="Numbered1">
+	      Start Object.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Click on Text Flyover Demo.  This will bring up the
+	      flyover demo
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Place the cursor over the work object
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Click on Popup Window Demo in the TOC.  This will bring
+	      up the popup demo
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Click on the Help Button. The HTML text appears in a popup.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Exit Object
+	    </LI>
+	  </OL>
+
+
+	  <H2>Testing JHIndexer</H2>
+	  <p>
+	    This tests building a Full Text Search.
+	  </P>
+	  <OL>
+	    <LI CLASS="Numbered1">
+	      cd to doc/jhug directory
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Delete the directory JavaHelpIndex if it exists.
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Execute jhindexer with the command
+	      <P>
+		&quot;../../javahelp/bin/jhindexer -verbose -db
+		JavaHelpIndex2 .&quot;.
+	      </P>
+	    </LI>
+	    <LI CLASS="Numbered">
+	      Test the Index with the following command
+	      <P>
+		&quot;../../javahelp/bin/jhsearch JavaHelpIndex2&quot;
+	      </P>
+	    </LI>
+	  </OL>
+
+	  <H2>Testing Building IdeDemo:</H2>
+	  <p>
+	    This tests that the users can rebuild the IdeDemo example.
+	  </P>
+	  <OL>
+	    <LI CLASS="Numbered1">
+	      See instructions in demos/README.
+	    </LI>
+	  </OL>
+
+
+
+	  <H2>Web page Verification</H2>
+
+	  <H4>Home page</H4>
+	  <p>
+	    Product Marketing owns this
+	  </P>
+	  <UL>
+	    <LI CLASS="Bulleted">
+	      Main Help Page, once installed:
+	    </LI>
+	    <P CLASS="Indented">
+	      http://java.sun.com/products/javahelp/ - 
+	    </P>
+	    <LI CLASS="Bulleted">
+	      Main JavaHelp page, in progress, at:
+	    </LI>
+	    <P CLASS="Indented">
+	      http://webwork/products/javahelp/ - 
+	    </P>
+	  </UL>
+
+
+	  <H4>Release</H4>
+	  <p>
+	    Product Marketing owns this. I don't remember where the
+	    &quot;in-progress&quot; pages live.  These are the
+	    installed pages:
+	  </P>
+	  <UL>
+	    <LI CLASS="Bulleted">
+	      Top of JDC.
+	    </LI>
+	    <P CLASS="Indented">
+	      http://developer.java.sun.com/
+	    </P>
+	    <LI CLASS="Bulleted">
+	      Top of JH EA.
+	    </LI>
+	    <P CLASS="Indented">
+	      http://developer.java.sun.com/developer/earlyAccess/javahelp/index.html
+	    </P>
+	  </UL>
+	  <p>
+	    Things to check</P>
+	  <UL>
+	    <LI CLASS="Bulleted">
+	      Content in general,.
+	    </LI>
+	    <LI CLASS="Bulleted">
+	      README, Features, FAQ, License off of this last
+	      page
+	    </LI>
+	    <LI CLASS="Bulleted">
+	      Downloading instructions,
+	    </LI>
+	  </UL>
+
+	  
+	  <HR>
+	    
+	    <P CLASS="TableFootnote">
+	      <SPAN CLASS="footnoteNumber">
+		1.</SPAN> <A NAME="footnote1"></A> Install Bundles
+		come with Swing1.1beta.  Using a different Swing
+		requires intervention.
+	    </P>
+
+	    <P CLASS="TableFootnote">
+	      <SPAN CLASS="footnoteNumber">
+		2.</SPAN> <A NAME="footnote2"></A> Any Solaris will
+		do.  The contents is also tested implicitly with every
+		full test.
+	    </P>
+	    
+	    
+  </BODY>
+</HTML>
+
+

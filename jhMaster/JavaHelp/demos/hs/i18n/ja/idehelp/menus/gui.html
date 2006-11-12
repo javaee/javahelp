@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    901 San Antonio Road
+ *    Palo Alto, California  94303
+ *
+-->
+
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_JP">
+<TITLE>
+「GUI」メニュー
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+
+<H1>「GUI」メニュー</H1>
+
+<table width=100% BORDER=0 cellspacing=12>
+
+<tr valign="top">
+<td><strong>GUI ビルダー表示</strong></td>
+<td width=60%>
+Java WorkShop のメインウィンドウに、GUI ビルダーのコントロールを追加します。このメニュー項目は、Java WorkShop の GUI ビルダーを使って作られたプロジェクトに対してのみ使用できます。
+</td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr valign="top">
+<td><b>GUI ファイルをマージ</b></td>
+<td width=60%>ファイル選択ダイアログを開き、選択されたファイル (アプリケーションに取り込みたい GUI を含むファイル) をインポートします。ファイルの拡張子は、<code>.gui</code> でなければなりません。</td>
+
+
+</tr>
+<tr>
+<td valign="top"><b>GUI ファイルの保存と生成</b> </td>
+<td width=60% valign="top">
+レイアウトを「<em>プロジェクト名</em><code>.gui</code>」ファイルとしてディスクに保存し、そのレイアウトファイルから Java ソースコードを生成します。詳細については、<A HREF="../visual/generate.html">Java ソースコードを生成する</A>を参照してください。</td>  
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td  valign="top"><b>コンポーネントをカット</b></td>
+<td width=60%  valign="top">選択したコンポーネントやウィンドウをカットして、クリップボードに保存します。カットされたコンポーネントやウィンドウは、レイアウト中の別のセルにペーストできます。</td> 
+</tr>
+<tr>
+<td  valign="top"><b>コンポーネントをコピー</b></td>
+<td width=60% valign="top">選択したコンポーネントやウィンドウを、クリップボードにコピーします。コピーされたコンポーネントやウィンドウは、クリップボードからレイアウト中の別のセルにペーストできます。</td>
+</tr>
+<tr>
+<td  valign="top"><b>コンポーネントをペースト</b></td>
+<td width=60% valign="top">カットまたはコピーされたコンポーネントやウィンドウを、レイアウト中の別のセルにペーストします。</td>
+</tr>
+<tr>
+<td  valign="top"><b>コンポーネントを削除</b></td>
+<td width=60% valign="top">選択されたコンポーネントやウィンドウを削除します。<em>クリップボードにコピーを保存しないため、この処理の結果を「元に戻す」ことはできません。</em></td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td  valign="top"><b>属性を編集</b><IMG
+SRC="../../../../images/24/vj_attributes_up.gif" ALIGN="left" WIDTH=24
+HEIGHT=24></td>
+<td width=60% valign="top"><A HREF="../visual/dialogs/attributes.html">「属性を編集」ダイアログ</A>を開き、選択されたコンポーネントやウィンドウの属性を表示します。コンポーネントの属性を変更する方法については、「属性を編集」ダイアログのヘルプを参照してください。メインツールバーには、このメニュー項目へのショートカットボタンが用意されています。</td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td  valign="top"><b>列を追加</b></td>
+<td width=60% valign="top">選択されたセルやコンポーネントの、左または右に列を追加します。</td>
+</tr>
+<tr>
+<td  valign="top"><b>行を追加</b></td>
+<td width=60% valign="top">選択されたセルやコンポーネントの、上または下に行を追加します。</td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td  valign="top"><b>新規ウィンドウを追加</b><<IMG SRC="jdoc:/lib/visual/images/palette/newwindow.gif" ALIGN="left" WIDTH=24 HEIGHT=24></td>
+<td width=60% valign="top"><A HREF="../visual/newwindow.html">「新規ウィンドウ」ダイアログ</A>を開きます。リストから特定のコンテナを選択して「作成」をクリックすると、そのコンテナの新しいグリッドバッグレイアウトが開きます。「新規ウィンドウ」ダイアログは、GUI ビルダーのパレットの左にあるボタンを押しても開きます。</td>
+</tr>
+<tr>
+<td  valign="top" ><b>新規ウィンドウの種類を設定</b></td>
+<td width=60% valign="top"><A HREF="../visual/chg_container.html">最上位コンテナ</A>を含むダイアログを開きます。このダイアログで、メインコンテナの種類をフレームやパネルに変更できます。</td> 
+</tr>
+<tr>
+<td  valign="top"><b>パネルを入れ子にする</b></td>
+<td width=60% valign="top">選択されたレイアウトパネルコンポーネントを、グリッドバッグレイアウトパネルコンポーネントの中に<A HREF="../visual/nest_panels.html">入れ子</A>にします。</td> 
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td  valign="top" ><b>パレットをカスタマイズ</b></td>
+<td width=60% valign="top"><A HREF="../visual/chg_palette.html">「パレットをカスタマイズ」ダイアログ</A>を開きます。このダイアログを使うと、パレットタブ付きページ上のコンポーネントのカスタマイズ、削除、並べ変えを行うことができます。</td>
+</tr>
+<tr>
+<td  valign="top"><b>パレットにコンポーネントをインポート</b></td>
+<td width=60% valign="top">「パレットへコンポーネントをインポート」ダイアログを開きます。このダイアログを使うと、JavaBeans<sup>TM</sup> や、シャドウクラスを持つコンポーネントをインポートできます。詳細については、<a href=../visual/importing.html>コンポーネントをインポートする</a>を参照してください。</td>  
+</tr>
+<tr>
+<td  valign="top" ><b>パレットの設定を出荷時に戻す</b></td>
+<td width=60% valign="top">GUI ビルダーの標準のパレットタブ付きページ (AWT、パネル、その他) の内容を、最初の状態に戻します。</td> 
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td  valign="top"><b>選択されているコンポーネントの JavaBeans 情報</b></td>
+<td width=60% valign="top">「JavaBeans 情報」ダイアログが開きます。このダイアログには、個々の JavaBeans の固有のプロパティやイベントなどの情報が表示されます。</td> 
+</tr>
+<tr>
+<td  valign="top"><b>デザインのコンポーネントクラスを更新</b></td>
+<td width=60% valign="top">JavaBeans のクラスを表示した<a href=../visual/upgrade.html>「デザインのコンポーネントクラスを更新」ダイアログ</a>が開きます。このダイアログでクラスを選択 (複数可) すると、パレット中の対応するコンポーネントが更新されます。ただし、レイアウトウィンドウ中のコンポーネントは、コンポーネントを再読み込みしないと更新されません。更新する必要がある場合は、「更新後にデザインを再読み込み」ダイアログが自動的に開きます。
+
+
+ 
+</td>
+</tr>
+<tr>
+<td  valign="top" ><b>クラス使用レポート</b></td>
+<td width=60% valign="top">現在のプロジェクトで使用されているコンポーネントクラスが表示されます。
+</td>
+</tr>
+
+</table>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>関連項目:</strong>
+<dl>
+<dd><A HREF="../visual/palette.html">GUI ビルダーのパレット</A>
+<dd><A HREF="../visual/layout.html">インタフェースをレイアウトする</A>
+<dd><A HREF="../visual/menus.html">メニューバーとメニューを追加する</A>
+<dd><A HREF="../visual/custom.html">カスタムコンポーネントとカスタムウィンドウを追加する</A> 
+</dl>
+<p>
+</BODY>
+</HTML>

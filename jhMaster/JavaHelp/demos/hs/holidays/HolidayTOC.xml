@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+
+<!--
+ @(#)HolidayTOC.xml	1.17 06/10/30
+ 
+ Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+ 
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 
+ - Redistribution of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ 
+ - Redistribution in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+ 
+ Neither the name of Sun Microsystems, Inc. or the names of
+ contributors may be used to endorse or promote products derived
+ from this software without specific prior written permission.
+ 
+ This software is provided "AS IS," without a warranty of any
+ kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND
+ WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY
+ EXCLUDED. SUN MICROSYSTEMS, INC. ("SUN") AND ITS LICENSORS SHALL
+ NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF
+ USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+ DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR
+ ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,
+ CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND
+ REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR
+ INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGES.
+ 
+ You acknowledge that this software is not designed, licensed or
+ intended for use in the design, construction, operation or
+ maintenance of any nuclear facility. 
+-->
+
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+
+<toc version="1.0" categoryclosedimage="chapter" topicimage="topic">
+  <tocitem text="History of the Holidays" image="toplevelfolder">
+    <tocitem text="Introduction" target="hol_intro"/>
+    <tocitem text=" History of American Holidays">
+      <tocitem text="September">
+	<tocitem text="Labor Day" target="laborday"/>
+      </tocitem>	
+      <tocitem text="October">
+        <tocitem text="Halloween" target="halloween"/>
+        <tocitem text="Jack-o-Lantern" target="jackolantern"/>
+        <tocitem text="Martin Luther" target="mluther"/>
+        <tocitem text="Information Reformation" target="reformation"/>
+      </tocitem>
+      <tocitem text="November">
+        <tocitem text="Guy Fawkes" target="fawkes"/>
+        <tocitem text="Thanksgiving" target="thanksgiving">
+          <tocitem text="Squanto" target="squanto"/>
+          <tocitem text="First Thanksgiving Proclamation - 1676" target="1thanksproc"/>
+          <tocitem text="George Washington's Thanksgiving Proclamation - 1789" target="gwthanksproc"/>
+          <tocitem text="Abraham Lincoln's Thanksgiving Proclamation - 1863" target="althanksproc"/>
+        </tocitem>
+      </tocitem>
+      <tocitem text="December">
+        <tocitem text="Christmas" target="date"/>
+      </tocitem>
+      <tocitem text="February">
+        <tocitem text="Groundhog Day" target="groundhog"/>
+        <tocitem text="Valentines" target="valentine"/>
+        <tocitem text="On Love" target="onlove"/>
+      </tocitem>
+      <tocitem text="March">
+        <tocitem text="The Ides" target="ides"/>
+        <tocitem text="St. Patrick" target="stpatty"/>
+      </tocitem>
+      <tocitem text="April">
+        <tocitem text="April Fools" target="aprilfools"/>
+      </tocitem>
+      <tocitem text="May">
+        <tocitem text="Cinco de Mayo" target="cinco"/>
+        <tocitem text="Memorial Day" target="memorial"/>
+      </tocitem>
+      <tocitem text="June">
+        <tocitem text="Father's Day" target="fathers"/>
+      </tocitem>
+      <tocitem text="July">
+        <tocitem text="Independence Day" target="july4"/>
+        <tocitem text="Thomas Jefferson" target="jefferson1"/>
+      </tocitem>
+    </tocitem>
+    <tocitem text="History of Christmas">
+      <tocitem text="The Date" target="date"/>
+      <tocitem text="The season" target="season"/>
+      <tocitem text="The Year" target="year"/>
+      <tocitem text="The Star" target="star"/>
+      <tocitem text="The Magi" target="magi"/>
+      <tocitem text="Herod" target="herod"/>
+      <tocitem text="Christmas Traditions" target="traditions"/>
+      <tocitem text="Santa Lucia" target="stlucia"/>
+      <tocitem text="The Creche" target="creche"/>
+      <tocitem text="The Poinsettia" target="poinsettia"/>
+      <tocitem text="The Sacred Oratorio" target="handle"/>
+      <tocitem text="Christmas Music" target="music"/>
+      <tocitem text="The Tree" target="tree"/>
+      <tocitem text="Santa Claus" target="santa"/>
+      <tocitem text="A Visit" target="visit"/>
+      <tocitem text="A Christmas Carol" target="carol"/>
+      <tocitem text="Augustus" target="augustus"/>
+	  <tocitem text="Epiphany" target="epiphany"/>
+    </tocitem>
+    <tocitem text="History of Jewish Holidays">
+      <tocitem text="Rosh Hashanah" target="rosh"/>
+      <tocitem text="Yom Kippur" target="yom"/>
+      <tocitem text="Chanukah" target="chanukah"/>
+      <tocitem text="Passover" target="passover"/>
+    </tocitem>
+    <tocitem text="History of Easter">
+      <tocitem text="Mardi Gras" target="mardigras"/>
+      <tocitem text="Ash Wednesday" target="ashwed"/>
+      <tocitem text="Easter" target="easter"/>
+      <tocitem text="Historical Climate" target="climate"/>
+      <tocitem text="Palm Sunday" target="palmsun"/>
+      <tocitem text="Pontius Pilate" target="pilate"/>
+      <tocitem text="Herod" target="herod2"/>
+      <tocitem text="The Sanhedrin" target="sanhedrin"/>
+      <tocitem text="The Trial" target="trial"/>
+      <tocitem text="Good Friday" target="goodfri"/>
+      <tocitem text="The Players" target="players"/>
+    </tocitem>
+  </tocitem>
+</toc>
+
+

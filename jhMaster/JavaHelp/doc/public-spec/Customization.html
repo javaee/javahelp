@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JavaHelp 1.0 - Customization</title>
+  </head>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup><font size="-2">TM</font></sup> 1.0 - Customization
+</h1>
+      <h2 align=center>
+<br>
+<a href="Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+<br>
+</h2>
+
+
+<hr>
+    <p>
+<h2>Introduction</h2>
+    <p>
+There are several mechanisms for customizing JavaHelp:
+
+<ul>
+<li>Defining a different default <a href="#help broker">HelpBroker</a>
+<li>Associating alternate <a href="#content viewers">content viewers</a> with MIME types
+<li>Using non-standard <a href="#help navigator">NavigatorView or JHelpNavigator</a>
+<li>Choosing <a href="#search">SearchEngine</a>
+<li>Exploiting the URL <a href="#protocols">protocols</a>
+</ul>
+
+<a name="help broker">
+<h2>Help Broker</h2></a>
+<p>
+A 
+<a href="../api/javax/help/HelpBroker.html">HelpBroker</a>
+provides abstraction of the presentation details of a HelpSet.
+There are two ways of obtaining a HelpBroker:
+through an explicit instantiation of
+<a href="../api/javax/help/DefaultHelpBroker.html">DefaultHelpBroker</a>,
+or by invoking the
+<a href="../api/javax/help/HelpSet.html#createHelpSet()">createHelpBroker()</a>
+method on a <code>HelpSet</code> instance.
+The default <code>HelpBroker</code> returned by the
+<code>createHelpBroker()</code> call is implementation dependent--the reference implementation returns <code>DefaultHelpBroker</code>.
+
+<p>
+Constructors of <code>HelpBroker</code>s take a HelpSet
+instance as an argument;
+<code>DefaultHelpBroker</code> uses a
+<a href="../api/javax/help/JHelp.html">JHelp</a>
+for its presentation,
+adding to it all the <code>HelpNavigator</code>s that were
+requested in the <code>HelpSet</code> file
+and arranging them so they all share the same <code>HelpSetModel</code>.
+
+<p>
+A JavaHelp system implementation may choose not to create
+a <code>DefaultHelpBroker</code> as the default <code>HelpBroker</code>
+for any of several reasons, for example
+to maintain a consistent presentation.
+Thus, it is often best to use
+<code>createHelpBroker()</code> to obtain the <code>HelpBroker</code>.
+
+
+<a name="content viewers">
+<h2>Content Viewers</h2></a>
+    <p>
+The JavaHelp reference implementation uses <code>JEditorPane</code>
+to present the HTML content of a given URL.  This class
+supports a registration mechanism by which you can add
+viewers for given MIME types.  This mechanism is
+exported through the
+<a href="../api/javax/help/JHelpContentViewer.html">JHelpContentViewer</a>
+JavaHelp class and can be used to
+display additional MIME types,
+or to change the presentation of a given type from the default
+presentation.
+The mapping can be changed globally or on a per-HelpSet instance.
+For additional information, see
+<a href="#keydatamap">Key-Data Map</a> below.
+
+<a name="help navigator">
+<h2>NavigatorView and JHelpNavigator</h2>
+
+<p>
+The <a href="../api/javax/help/NavigatorView.html">NavigatorView</a>
+class defines a NavigatorView type and provides access to
+the information in a <tt>&lt;view&gt;</tt> tag in a HelpSet
+file.  A NavigatorView also provides a
+<code>JHelpNavigator</code> through its <code>create</code>
+method.  <a
+href="../api/javax/help/JHelpNavigator.html">JHelpNavigator</a>
+is the Swing class used in the JavaHelp system to capture
+the presentation of a NavigatorView.  A
+<code>JHelpNavigator</code> can be created directly, but
+more commonly it is created implicitly through the
+<code>create()</code> method in a NavigatorView.
+
+
+<h3>View-Specific Knowledge</h3>
+
+<p>
+Specific <code>NavigatorView</code> may have additional methods and fields
+that encode specific information on the view type.
+For instance, both
+<a href="../api/javax/help/TOCView.html">TOCView</a>
+and
+<a href="../api/javax/help/IndexView.html">IndexView</a>
+provide a <code>parse</code> method that can be used to parse
+a URL that conforms to the file format.  These methods
+use a <code>Factory</code> class to provide access for customizing the
+result of the parsing.
+
+<p>
+The separation of view data and its presentation means that
+it is possible to access the view data without having to actually
+create the presentation.  It also means that it is easy to modify
+the presentation without having to duplicate some data-specific
+information; for example, by reusing the parsing methods.
+
+<h3>Different Formats</h3>
+<p>
+The Help Navigator mechanism can also be used to provide access
+to meta-data that is in a "foreign" or "legacy" format.  This might enable an
+application to access information from 
+legacy applications or an alternate meta-data format such sitemap,
+or
+meta-data from the Library of Congress, or other library
+system.
+This may be done by creating a new NavigatorView that can parse
+the "foreign" format but that reuses the presentation from the
+JavaHelp <tt>JHelpNavigator</tt>.
+<p>
+A variation of this last case, the data is not stored anywhere but
+it is created dynamically.  This is easily acomplished by subclassing
+TOCView (for instance) and redefining the method
+<a href="../api/javax/help/TOCView.html#getDataAsTree()">getDataAsTree()</a>
+to return the data whenever invoked.
+</p>
+
+<h3>Different Presentations</h3>
+<p>
+A JHelpNavigator selects its presentation through the standard Swing
+method <tt>getUIClassID()</tt> to indicate its ComponentUI class.
+A new JHelpNavigator that is not capable or willing to reuse an
+existing ComponentUI
+needs to return an appropriate class value in
+<tt>getUIClassID()</tt>.
+If appropriate, this ComponentUI may be a subclass of the standard
+ComponentUI classes
+(<tt>BasicTOCNavigatorUI.java</tt>,
+<tt>BasicIndexNavigatorUI.java</tt> and
+<tt>BasicSearchNavigatorUI.java</tt>)
+with some methods redefined.
+A useful method to redefine is
+<a href="../api/javax/help/plaf/basic/BasicTOCNavigatorUI.html#setCellRenderer(javax.swing.JTree)">
+setCellRenderer</a>
+which permits to change the presentation details of the Tree
+in both TOC and Index presentations.
+
+
+<h3>Two Examples of Custom Views</h3>
+<p>
+The three standard Views included in JavaHelp 1.0
+(TOCView, IndexView, SearchView) cover most online documentation needs,
+but there are other situations where one might want to have
+custom views and navigators. As a first example,
+the 
+<a href="http://java.sun.com/docs/books/tutorial/">Java Tutorial</a>
+could be used to illustrate the concept of a Help Navigator.  The
+Java Tutorial is an online document that describes the Java Platform. The
+tutorial is organized into trails: groups of lessons on a particular
+subject.  A version of the tutorial could take advantage of a
+NavigatorView that supported the notion of a <em>trail</em>.  Such a view
+could remember the position within the trail, quickly reference
+examples within the trail, and navigate to other trails.</p>
+<p>
+Another example is an API class viewer.  Such a viewer was
+created for demonstration purposes and is included in the 
+reference implementation.  This NavigatorView uses information 
+collected from source files that are annotated using the
+<a href="http://java.sun.com/products/jdk/javadoc/"><tt>javadoc</tt></a> system.
+The traditional data generated by <tt>javadoc</tt> is produced as HTML files. Static HTML indexes and trees are used to provide navigational
+information.  The result is useful but it is difficult to effectively
+navigate.  The classviewer NavigatorView is customized to dynamically display this information.
+A picture of an early version of the presentation is shown next:</p>
+
+<center>
+<IMG ALIGN=center ALT="Class Viewer" SRC="../images/classviewer.gif">
+</center>
+
+<p>
+In this example there are three navigational views:
+TOC, Index, and Search. 
+Index is an index
+of all the methods, classes, and packages, and Search provides
+a full-text search of all the <tt>javadoc</tt> information.
+The TOC view uses the new classview NavigatorView.  When a
+class is selected in the top pane of the navigator, the
+<tt>JHelpNavigator</tt> determines if it has already loaded the
+metadata for that class.  If not, it
+presents the fields, constructors and methods in the bottom
+pane.  When a method is selected, the appropriate  content
+file is presented in the JavaHelp system TOC pane.
+In this particular prototype, the information presented is
+only that of the selected class but the navigator could
+easily provide access to inherited information too.</p>
+<p>
+For this example, we use the new Doclet facility in JDK1.2 to generate
+the desired metadata.
+ </p>
+
+<a name="search"></a>
+<h2>Search Engines</h2>
+
+<p>
+The standard <code>NavigatorView</code> and <code>JHelpNavigator</code>
+search classes (<code>javax.help.SearchView</code> and
+<code>javax.help.JHelpSearchNavigator</code>) provide an interaction
+with search engines via the classes in the <code>javax.help.search</code>
+package.
+<code>SearchView</code> views may have an optional <tt>&lt;engine&gt;</tt>
+attribute of their <tt>data</tt> tag indicating the specific
+<code>javax.help.search.SearchEngine</code>
+subclass to use to perform searches.
+The default is
+<code>com.sun.java.help.search.DefaultSearchEngine</code>,
+which is the search engine included in the reference implementation.
+
+<p>
+The same view and presentation can be used with other search engines
+following the same protocol, by naming the <code>SearchEngine</code>
+class in the <tt>&lt;engine&gt;</tt> attribute and making the class available.
+
+<p>
+Different view and or presentations of search can be provided using
+the standard customization mechanisms for this.  These may, or not,
+reuse the default search engine.
+
+
+<a name="keydatamap"></a>
+<h2>Key-Data Map</h2>
+
+<p>
+<code>HelpSet</code> provides a simple registry mechanism that
+provides per-instance or global key-data mapping.  The mechanism can
+be accessed via the <code>setKeyData</code>,
+<code>setDefaultKeyData</code> and <code>getKeyData</code> methods.
+This mechanism is used by the <code>JHelpContentViewer</code> to
+determine the EditorKit to use for a given MIME type,
+and also to determine the HelpBroker to use in the
+<code>HelpSet.createHelpBroker()</code> method.
+</p>
+
+<p>
+The per-HelpSet registry will be instantiated from the
+contents of the <tt>&lt;impl&gt;</tt> section of the
+HelpSet file in the 1.0 version of the JavaHelp system.
+</p>
+
+<a name="protocols"></a>
+<h2>Using new URL protocols</h2>
+    <p>
+Another mechanism for extending JavaHelp is by providing
+new protocols that can, for example, provide SGML -&gt; HTTP
+translation.  This is very easy to do in a Java application
+by defining a few simple URL classes; it is not possible to
+do in an Applet in JDK1.1 since there is no support for downloadable
+URL protocols.</p>
+
+<hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 16:46:01 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>

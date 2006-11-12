@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Beans in JDE
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Beans in JDE</h1>
+
+JavaBeans are reusable software components that you can use to create
+applications or applets with the JDE GUI builder. They can
+be elemental, such as a text box or label, or they can be complex,
+such as a mail tool or a data inspector. Beans typically have a set
+of properties, methods, and events. These properties are discovered by
+the GUI builder at design time.
+<p>
+The following diagram demonstrates the process a bean goes through in
+JDE:
+
+<pre>
+<IMG SRC="beanflow.gif" width="421" height="126">
+</pre>
+
+<p>
+There are two aspects to beans in JDE: the <em>producer</em>
+side and the <em>consumer</em> side. On the producer side is the
+creation of beans (that you would either use yourself or make
+available for others). On the consumer side, is the import, use,
+and update of the beans in your application or applet. These beans
+could be ones that you created or acquired.
+
+<a name=beangenesis></a>
+<h2>Creating a Bean</h2>
+
+JDE has a project type called <tt>beans project</tt>.  You
+create a bean project by using the Create Project wizard. A template
+is provided in the source editor to help you construct the bean. When
+you create a bean project in JDE, a JAR (Java Archive) file
+is automatically generated when the project is built and it is stored
+in the beans project directory.
+<p>
+A JAR file can contain files for multiple beans. Each bean and its
+dependencies should be packaged in a separate JAR file.  This is
+because each JAR file is used in the application/applet as a whole;
+JDE does not unpack the JAR file. The JAR file is not
+unpacked since there is no way to determine the runtime dependencies
+of each bean. For instance, if you have multiple beans in a JAR file
+but you need only one, you have the overhead of loading the unused
+beans in the JAR file along with the one you want. After the JAR file
+is created, you can import the bean into the GUI builder component
+palette.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+For detailed information on the JAR format, read <a
+href="http://java.sun.com/products/jdk/1.1/docs/guide/jar/index.html">JAR
+- Java Archive</a>.
+You may have to reset the proxies on the Java Workshop help browser if
+you have difficulties reaching the Java Archive discussion.
+
+<a name=consumebean></a>
+<h2>Importing a Bean</h2>
+
+On the production side, a bean is created and a JAR file is
+generated. (The GUI builder can only import beans that are packaged in
+JARs.) Once the bean exists, it is ready to be used (consumed). You
+must first import the bean to the component palette. From the
+component palette, you can select a bean to add to your GUI
+design. Later on, you can reimport a another version of the same
+bean to the component palette and update the project to use the other
+version.
+<p>
+You can import the bean into the GUI builder component palette by
+choosing GUI -> Import Component to Palette. When you
+import a bean, its JAR file is modified: shadow classes are
+automatically generated and added to the JAR file. This modified JAR
+file is copied to the components library (the component palette is the
+visual representation of the components library).  The source files
+for generated shadow classes are stored in the same directory. Only
+import by copying is supported at this time. Support for import by
+reference will be available in a future release.
+<p>
+The components library is located at
+<p>
+On Solaris:
+<br>
+<tt>$HOME/.jws2.0/ImportedComponents</tt> directory
+<p>
+On Microsoft Windows 95 and Windows NT:
+<br>
+<tt>%HOME%\jws20\ImportedComponents</tt> directory
+
+<a name=instantbean></a>
+<h2>Instantiating a Bean</h2>
+<p>
+Once a bean is added to the component palette, it can be used in the
+GUI design. Invisible beans are supported and can be added to the
+component palette. They do not have a visible representation in the
+design. Clicking on an invisible bean in the component palette adds it
+to the design (the attribute editor opens for the bean verifying its
+selection.  
+<p> 
+All the JAR files containing the beans used in the design are copied
+to the project directory. Usage by copy is supported
+in the current release; usage by reference will be supported in a
+future release.  Once a bean has been added to the design, you can
+customize the instance of a bean through the attribute editor or the
+bean's customizer, if present. However, if a property editor is
+provided with a bean, GUI builder does not invoke it. When a
+customizer is provided, the bean customization information is
+serialized. Serialization and deserialization is handled automatically by
+the generated application for you.
+<p>
+You can add behavior visually with the Operations dialog box, which
+allows you to add behavior quickly with minimal to no manual coding. Code
+generated for the operations are in the JDK 1.0.2 propagation-style
+events. To use new-style event handling, you must implement the code
+manually.
+<p>
+When you add operations to a bean using the Operations dialog box, the
+events fired by the bean do not show up on the list of event
+filters. To register listeners for those events, you must manually add
+code.  As an aide in adding operations to a bean, you can bring up the
+Bean Information dialog box to get specific information about a bean's
+properties, events, and methods. For an example of registering listeners,
+see <a href="addcallbacks.html#addbeanops">Adding Operations to Beans</a>.
+<p>
+When you finish your layout, save it and generate the <tt>.java</tt>
+files (choose GUI -> Save Generate GUI File). You
+can then build and test your application or applet.
+<p>
+When you are ready to deploy the application or applet, you can find
+out what classes are being used in a project by looking at the Class
+Usage Report. This dialog box lists all the classes and their sources
+for all components in the project. You need to copy these files along
+with your application or applet to the location from which the 
+application or applet is deployed.
+
+<a name=upbeans></a>
+<h2>Updating a Bean</h2>
+
+When you need to update the beans in your design to a different
+version of those beans, you can perform either an automatic or manual
+update:
+<ul>
+<li>An automatic update of a bean occurs when you import different
+versions of the beans being used in the current project. Conflicts are
+automatically detected and you are notified that the instances in
+the current project will be updated to the reimported versions of the beans.  
+<li>When you manually update one or more beans in your project, you
+update the beans in the project to the version that are in the
+components library (this is assuming that you have reimported
+different versions of the beans to the components library). You can
+choose which beans to update from the Update Component Classes in
+Design dialog box.
+</ul>
+<p>
+The updated beans are not reflected in your design until you reload
+the design. For both types of updates, a dialog box appears asking if
+you want to reload the design.
+<p>
+For an example of creating a bean project and importing and updating
+beans in JDE, see, <a
+href=../start/clock/BeansOverview.html>Tutorial Eight: Creating
+JavaBeans</a>.
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="../manager/BeansProject.html">Creating a Bean Project</A>
+<dd><A HREF="importing.html">Importing Components</A>
+<dd><A HREF="upgrade.html">Updating Beans</A>
+<dd><A HREF="editbean.html">Customizing Beans</A>
+<dd><A
+HREF="http://splash.javasoft.com/beans/related.html">JavaBeans - Related APIs</A>
+</dl>
+<p>
+  </body>
+</html>

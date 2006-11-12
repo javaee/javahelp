@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercise 4: Stepping Through a Method
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Exercise 4: Stepping Through a Method</h1>
+
+Stepping through your code is another way to get to the line that is causing a problem. In this exercise, you will learn to step through code and track the changes in variable values in the Threads/Stack window. You will also learn how to remove a breakpoint.
+<ol>
+<li>Click the Over button <img src="../images/db-step-over_u.gif" align="BOTTOM"><img src="../../images/spacer2_t.gif"> in the Edit/Debug toolbar.
+<br>Java WorkShop executes one source line and stops in:
+<p>
+<kbd>If (Math.random() < 0.5) {</kbd>
+<p>
+The source editor highlights the line with the breakpoint in red, and the line in which program execution stopped in green. If the line had been a method call, the Step Over command would run to the next line in the program. If the line had been a method call and you issued the Step Into command, Java WorkShop would execute the first statement of the method and stop.
+<p>
+The Threads/Stack window shows the current state of the program and its data. For example, <kbd>Blink.paint</kbd> now indicates it is stopped in line 49.
+<li>Click the Over button two more times and watch how the debugger steps through your program.
+<li>In the source editor, move the pointer to line 45, which has a breakpoint.
+<li>Click the Breakpoint <img src="../images/db-stop-at_u.gif" align=MIDDLE> button.
+<br>
+Java WorkShop removes the breakpoint.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>Next lesson:</strong>
+<dl>
+<dd><a href="evaluate.html">Exercise 5:  Evaluating Variables</a>
+</dl>
+<p>
+
+</body>
+</html>

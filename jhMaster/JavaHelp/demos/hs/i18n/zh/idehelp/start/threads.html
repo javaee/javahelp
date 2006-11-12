@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_CN">
+<HEAD>
+<TITLE>
+练习3：检查线程
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>练习3：检查线程</h1>
+
+您将在本练习中查看组成Blink项目的线程组、线程和栈帧。您还将学习如何在程序执行的过程中 跟踪变量值的变化。
+
+<ol>
+<li>选择<nobr>调试-&gt;线程/堆栈</nobr>。
+<br>将显示“Java Development Environment线程/堆栈”窗口。
+<p>
+Blink项目共包含三个线程组，每个线程组都带有一个<img src="../../images/spacer2_t.gif"><img src="../../../../images/db_01_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">小图形：
+
+<ul>
+<li><kbd>main</kbd> -- 包含在Java Development Environment中运行的线程
+<li><kbd>sun.applet.AppletViewer.main</kbd> -- 包含在applet小程序查看器中运行的线程
+<li><code>file:/<b>your-installation-directory</b>/jws/Blink/-threadGroup</code> -- 包含与Blink项目直接相关的线程 
+</ul>
+
+<kbd>sun.applet.AppletViewer.main</kbd>线程组共包括三个线程；而<kbd>Blink</kbd>文件线程组则包括两个线程。
+
+<li>请看<kbd>sun.applet.AppletViewer.main</kbd>线程组中的第一个线程<kbd>"AWT-EventQueue-0"</kbd>。
+<p>您将看到下列内容：
+
+<ul>
+<li>线程名是<kbd>java.awt.EventDispatch</kbd>
+<li>线程状态是“位于断点处”。
+<li>运行线程的优先级是5。优先级最高的线程最先执行。
+</ul>
+
+<p>
+线程旁边的小图形可以作为判断线程状态的另一个线索。您可能见到的小图形包括：
+<br>
+<img src="../../../../images/db_19_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">线程处于暂停状态。
+<br>
+<img src="../../../../images/db_20_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">线程停在一个断点上。
+<br>
+<img src="../../../../images/db_13_u.gif"><img src="../../images/spacer2_t.gif">无法确定线程的状态。
+<br>
+<img src="../../../../images/db_14_u.gif"><img src="../../images/spacer2_t.gif">线程处于僵化状态。
+<br>
+<img src="../../../../images/db_15_u.gif"><img src="../../images/spacer2_t.gif">线程处于运行状态。
+<br>
+<img src="../../../../images/db_16_u.gif"><img src="../../images/spacer2_t.gif">线程处于睡眠状态。
+<br>
+<img src="../../../../images/db_18_u.gif"><img src="../../images/spacer2_t.gif">线程正等待一个条件变量。
+
+
+<li>请看组成线程类的调用栈。
+<br>调用栈中包括所有已经调用，但尚未<nobr>返回的方法。程序停止时正在执行的<img src="../../images/spacer2_t.gif"></nobr><kbd>Blink.paint</kbd> 位于堆栈的最上面。栈帧被高亮显示，以便可以很容易地指出程序停止的地方。 每个栈帧都带有一个<img src="../../../../images/db_02_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">小图形。
+<li>单击<img src="../../../../images/db_02_u.gif" align=BOTTOM>小图形旁边的 +，打开<kbd>Blink.paint</kbd>栈帧。
+<br>Java Development Environment将显示<kbd>Blink.paint</kbd>中的局部变量及其当前值。请看变量<kbd>word</kbd>。 再看<code>word</code>变量的值。
+<li>单击“编辑/调试”工具栏中的“继续”按钮。
+<br>程序将继续运行这个循环，并在第二次到达断点时停下来。“线程/堆栈”显示会被更新， <kbd>word</kbd>变量的值也随之更改。其值在“Java Development Environment is really cool :-)”中循环。
+<li>单击<img src="../../../../images/db_24_u_data.gif" align=BOTTOM>小图形旁边的 +，打开<kbd>this</kbd>对象。
+<br>Java Development Environment将该对象展开，以显示项目内含的所有变量。您可以对嵌入对象（例如，<kbd>peer</kbd>） 重复这个动作。
+<li>单击<kbd>this</kbd>对象左边的 - 。
+<br>Java Development Environment又把该对象折叠起来。
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>下一课：</strong>
+<dl>
+<dd><a href="step.html">练习4：单步执行一个方法</a>
+</dl>
+
+<p>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_TW">
+<HEAD>
+<TITLE>
+îûá£ 1¡¨î¾òÒÔÏÌîá£È¢î£
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>îûá£ 1¡¨î¾òÒÔÏÌîá£È¢î£</h1>
+
+Ò³Ä§üéÚÀüÕäÄËðÆîËôäãî¾òÒðÂÎûãöú¼¡¢ÚÀÙòÇã <kbd>Blink.java</kbd> óòÕùÄãòÓÄ«á£È¢î£¡¢ÅèüéÇóÆàÄ¸Ä¶æüÙ¯¡¤
+<p>
+ÇñÎªÚÀÌþÆÜÐúÇ¡ Blink ÙñÕù¡¢ÚÀÜ¢ÇãóÜæÚò×äù <a href="create.html">Ðúé¬ Blink ÙñÕù</a>ÄãÎûÑÀÆüÇñÈºØø¡¤
+
+<ol>
+<li>óôÑç Java Development Environment ¡ÖÙñÕùê§Ü¡ÔÞ¡×áþá§ÄãÆøÐ©ÙñÕùÎûÇØê¢¡¤
+<br>ÇñÎªÆøÐ©ÙñÕùÄâÑÒ Blink Îûæã¡¢Çã Blink ÙñÕùÇØê¢Ä¸ÝÙÑºÌ¥Ä¶¡¤
+
+<li>ÆÔÄ«Ä¶Óòí°Èçá£È¢î£¡¤
+<br>ÆÛá£È¢î£ÑÊãôÉÖÈ´òãë¨¡¢ÇÞÒ³Ä¶Ä¡îûÙòÉËâ«ÚÀÇñÈôÊÑÆßòãë¨¡¤
+<p>
+÷³ÆñòÙÌ½<nobr>¡Öî¾òÒ¡×-&gt;¡ÖÌ¯ÑÜÈç¡×</nobr>¡¢ÚÀÆ«ÅèÜÃÌ¯ÑÀÌùÎûÈçí°¡¤ÑÀíºÍÔÇãÈçí°üÏÆüÇãÓ÷æ¦Æ­ÅÉ¡¤
+
+<dl>
+<dt>ÇãÜÉ 17 ÈçÑ¥Óò
+<dd><pre>int speed;</pre>
+<dt>òÓÄ«¡¨
+<dd>
+<pre>boolean offset;</pre>
+<p>
+<dt>ÇãÜÉ 25 ÈçÑ¥Óò
+<dd><pre>lbl = (att == null) ? "Blink" : att;</pre>
+<dt>òÓÄ«¡¨
+<dd>
+<pre>offset = false;</pre> 
+<p>
+<dt>ÇãÜÉ 53 Ì¯ 54 ÈçÑ¥Óò
+<dd><pre>g.setColor(Color.lightGray);
+}</pre>
+<dt>òÓÄ«¡¨
+<dd>
+<pre>
+if offset
+   y = y * 2;
+</pre>
+<p>
+<dt>ÇãÜÉ 57 ÈçÑ¥Óò
+<dd><pre>g.drawString(word, x, y);</pre>
+<dt>òÓÄ«¡¨
+<dd>
+<pre>
+if (offset) {
+   offset = false;
+   y = y / 2
+ } else {
+    offset = true;
+}
+</pre>
+</dl>
+<p>
+<li>ÑºÄ¡Ä¶¡Öî¾òÒ/Øæòã¡×ÄÖÌ¦ÇÄÄ¸Îû¡ÖóÃÇô¡×ÑºâÚ <img src="../../../../images/24/file-save_u.gif" align=BOTTOM>¡¤
+<br>Ëôäãî¾òÒðÂÎûÓ÷æ¦Ä¸ÅøÜ¢ÍÔóÃÇôóòÕùÎûæûÕÀÇØê¢¡¤
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Ä¶Ä¡îû¡¨</strong>
+<dl>
+<dd><a href="fixbuild.html">îûá£ 2¡¨Ðúé¬Ñ¥ÔºÆßòãë¨</a>
+</dl>
+<p>
+</body>
+</html>

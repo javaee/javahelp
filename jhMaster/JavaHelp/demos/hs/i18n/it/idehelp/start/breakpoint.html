@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Esercizio 2: Impostazione di un breakpoint
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Esercizio 2: Impostazione di un breakpoint</h1>
+
+L'impostazione di un breakpoint semplifica l'individuazione dei problemi presenti nel proprio programma. In questo esercizio verr&agrave; impostato un breakpoint nel file <kbd>Blink.java</kbd> durante l'esecuzione del programma. L'esecuzione del programma si interromper&agrave; pertanto nel punto specificato.
+<p>
+Per i numeri di riga del file sorgente forniti in questa esercitazione si presuppone l'inserimento del codice aggiuntivo fornito nella sezione <a href="editcode.html">Modifica del codice sorgente</a>.
+
+<ol>
+<li>Scegliere <nobr>Debug -&gt; Breakpoint.</nobr>
+<br>Verr&agrave; visualizzata la finestra dei breakpoint di Java Development Environment.
+
+<li>Digitare <kbd>Blink</kbd> nella casella Nome classe.
+
+<li>Digitare <kbd>45</kbd> nella casella Posizione.</b>
+
+<li>Scegliere il pulsante Imposta breakpoint.
+<br>All'interno dell'editor del codice sorgente verr&agrave; visualizzata la seguente riga:
+<br><pre>     if (x + w &gt; d.width) {</pre>
+<p>
+Questa riga consente di controllare le modifiche apportate ai valori delle variabili durante l'esecuzione del ciclo. I breakpoint vengono in genere impostati all'interno di una riga in cui si ritiene che si possa verificare un problema.
+</ol>
+<p>
+Il programma viene eseguito fino al breakpoint specificato. La riga contenente il nuovo breakpoint viene visualizzata in verde per indicare il punto in cui l'esecuzione si &egrave; interrotta. La
+finestra Thread/stack viene quindi aggiornata.
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Lezione successiva</strong>
+<dl>
+<dd><a href="threads.html">Esercizio 3: Controllo dei thread</a>
+</dl>
+<p>
+
+</body>
+</html>

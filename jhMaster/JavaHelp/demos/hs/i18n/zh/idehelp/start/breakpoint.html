@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_CN">
+<HEAD>
+<TITLE>
+练习2：设置断点
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>练习2：设置断点</h1>
+
+设置断点可以帮助您跟踪程序中的出错点。在本练习中，您将在<kbd>Blink.java</kbd>的运行过程中设置一个断点。 程序运行到该断点位置就停止执行。
+<p>
+本教程所给出的源代码行号将假定您已经添加了<a href="editcode.html">编辑源代码</a>中给出的附加代码。
+
+<ol>
+<li>选择<nobr>调试-&gt;断点。</nobr>
+<br>将显示“Java Development Environment断点”窗口。
+
+<li>在“类名”框中输入<kbd>Blink</kbd>。
+
+<li>在“位置”框中输入<kbd>45</kbd>。</b>
+
+<li>单击“设置断点”。
+<br>源代码编辑器会高亮显示下面这一行：
+<br><pre>     if (x + w &gt; d.width) {</pre>
+<p>
+选中这一行，您就可以在程序循环执行时跟踪变量值的变化。大多数情况都会把断点设置在程序中 认为可能发生错误的那一行上。
+</ol>
+<p>
+Java Development Environment将一直运行这个程序，直到到达断点为止。这时，包含新断点的行就变成绿色， 表示程序将运行到这里停下来。“线程/堆栈”窗口也随即被更新。
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>下一课：</strong>
+<dl>
+<dd><a href="threads.html">练习3：检查线程</a>
+</dl>
+<p>
+
+</body>
+</html>

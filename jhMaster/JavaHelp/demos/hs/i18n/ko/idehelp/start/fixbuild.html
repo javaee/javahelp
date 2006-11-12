@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          본 소스 코드 제품에 대한 판권 표시는
+ *          출판된다는 의미가 아닙니다. 
+ * 
+ * 권리 제한 규정: 미국 정부에 의한 사용, 복제, 누설 등은
+ * DFARS 252.227-7013 (1988년 10월)과 FAR 52.227-19 (c) 
+ * (1987년 6월)의 기술 관련 데이터와 컴퓨터 소프트웨어에
+ * 대한 권리 조항의 (c)(1)(ii) 항목에 서술된 제한 규정의 
+ * 적용을 받습니다.
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_KR">
+<HEAD>
+<TITLE>
+제 2과: 빌드 중에 오류 바로잡기
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>제 2과: 빌드 중에 오류 바로잡기</h1>
+
+이 과에서는 빌드 중에 발견된 오류의 원인이 되는 소스 라인을 빠르게 찾아서 바로잡는 방법을 보여 줍니다. 빌드 오류에는 보통, 부정확한 언어 구문, 선언되지 않은 변수, 그리고 철자가 잘못된 키워드 등이 포함됩니다.
+<p>
+Blink 프로젝트에 단어들을 튀어오르게 하는 코드를 아직 추가하지 않았다면, <a href="editcode.html">소스 코드 수정하기</a>를 참조하여 지금 코드를 추가하십시오.
+
+<h2>오류 찾아내기</h2>
+<ol>
+<li>프로젝트 관리자에서 현재 프로젝트의 이름을 확인하십시오.
+<br>현재 프로젝트가 Blink가 아니라면, Blink라는 프로젝트 이름을 마우스로 두 번 연속 누르십시오.
+<li>Java Development Environment 주 도구 모음에서 [빌드] 단추 <img src="../../../../images/24/tb-build_u.gif" align=BOTTOM>를 마우스로 누르십시오.
+<br>Java Development Environment은 기본 설정에 따라 Java Development Environment Compiler를 사용하여 Blink 프로젝트를 컴파일합니다. 이 컴파일러는 일반적인 JDK Java Compiler보다 빠릅니다.
+<p>
+[빌드] 탭에는 두 가지 오류가 나옵니다. 소스 편집기는 첫번째 오류의 원인이 된 소스 라인을 노랑색으로 반전 표시합니다.
+</ol>
+
+<h2>오류 바로잡기</h2>
+<ol>
+<li><kbd>offset</kbd> 앞뒤에 괄호를 추가하여 라인 55에 있는 첫번째 오류를 바로잡으십시오.
+<br>코드 라인이 다음과 같은 모양이 되어야 합니다:
+<br><code>if (offset)</code>
+<li>[빌드] 탭에서, 두 번째 오류인 <kbd>Blink.java: 61</kbd>를 선택하십시오.
+<br>소스 편집기에서 그 다음 오류의 원인이 된 소스 라인이 반전 표시됩니다.
+<li>라인 60에서 <kbd>y = y / 2</kbd> 다음에 <kbd>;</kbd>를 추가하여 오류를 바로잡으십시오.
+<br>코드 라인이 다음과 같은 모양이 되어야 합니다:
+<br><kbd>y = y / 2;</kbd>
+<li>편집/디버그 도구 모음에서 [파일 저장] <img src="../../../../images/24/file-save_u.gif" align=BOTTOM> 단추를 마우스로 누르십시오.
+<br>이제 프로그램의 오류가 바로잡아졌으므로 프로그램을 다시 빌드할 수 있습니다.
+</ol>
+
+<h2>프로젝트를 다시 빌드하기</h2>
+<ol>
+<li>주 도구 모음에서 [빌드] 단추 <img src="../../../../images/24/tb-build_u.gif" align=BOTTOM>를 마우스로 누르십시오.
+<br>아무 오류 메시지도 나오지 않을 것입니다. 오류 메시지가 나오면, 소스 편집기로 돌아가 정보를 올바로 입력했는지 소스 코드를 다시 확인하십시오.
+<li>Java Development Environment 주 도구 모음에서 [실행] 단추 <img src="../../../../images/24/tb-run_u.gif" align=BOTTOM>를 마우스로 누르십시오.
+<br>프로젝트가 실행되고 텍스트는 깜박거리면서 위 아래로 오르락 내리락합니다.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>다음 과:</strong>
+<dl>
+<dd>본 자습서의 각 과를 전부 익혔습니다.  다음 자습서는 <a href="browse.html">자습서 4:  프로젝트 찾아보기</a>입니다.
+</dl>
+<p>
+</body>
+</html>

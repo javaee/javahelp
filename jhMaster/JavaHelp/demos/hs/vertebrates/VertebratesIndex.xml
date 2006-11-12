@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='ISO-8859-1'  ?>
+
+<!--
+ @(#)VertebratesIndex.xml	1.8 06/10/30
+ 
+ Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+ 
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 
+ - Redistribution of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ 
+ - Redistribution in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+ 
+ Neither the name of Sun Microsystems, Inc. or the names of
+ contributors may be used to endorse or promote products derived
+ from this software without specific prior written permission.
+ 
+ This software is provided "AS IS," without a warranty of any
+ kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND
+ WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY
+ EXCLUDED. SUN MICROSYSTEMS, INC. ("SUN") AND ITS LICENSORS SHALL
+ NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF
+ USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+ DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR
+ ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,
+ CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND
+ REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR
+ INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGES.
+ 
+ You acknowledge that this software is not designed, licensed or
+ intended for use in the design, construction, operation or
+ maintenance of any nuclear facility. 
+-->
+
+<!DOCTYPE index
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Index Version 1.0//EN" 
+         "http://java.sun.com/products/javahelp/index_1_0.dtd">
+
+<index version="1.0">
+  <indexitem text="Categories">
+    <indexitem text="Vertebrates" target="vertebrates" >
+        <indexitem text="Fish" target="fish" />
+        <indexitem text="Amphibians" target="amphibians" />
+        <indexitem text="Reptiles" target="reptiles" />
+        <indexitem text="Birds" target="birds" />
+        <indexitem text="Mammals" target="mammals" >
+                <indexitem text="Marsupials" target="marsupials" />
+                <indexitem text="Primates" target="primates" />
+                <indexitem text="Rodents" target="rodents" />
+                <indexitem text="Cetaceans" target="cetaceans" />
+                <indexitem text="Animals such a seals" target="seals" />
+        </indexitem>
+    </indexitem>
+    <indexitem text="Pictures" mergetype="javax.help.SortMerge" >
+        <indexitem text="Dolphin" target="dolphin.picture"/>
+        <indexitem text="Frog" target="frog.picture"/>
+        <indexitem text="Bears">
+                <indexitem text="Grizzly" target="grizzly.picture"/>
+                <indexitem text="Koala" target="koala.picture"/>
+                <indexitem text="Black Bear" target="blackbear.picture"/>
+        </indexitem>
+        <indexitem text="Leopard" target="leopard.picture"/>
+        <indexitem text="Crocodile" target="crocodile.picture"/>
+        <indexitem text="Giraffe" target="giraffe.picture"/>
+        <indexitem text="Elephant" target="elephant.picture"/>
+        <indexitem text="Kangaroo" target="kangaroo.picture"/>
+        <indexitem text="Fish" target="fish.picture"/>
+        <indexitem text="Bird" target="bird.picture"/>
+        <indexitem text="Wolves">
+                <indexitem text="Timber Wolf" target="timberwolf.picture"/>
+                <indexitem text="Arctic Wolf" target="arcticwolf.picture"/>
+        </indexitem>
+        <indexitem text="Lizard" target="lizard.picture"/>
+        <indexitem text="Snake" target="snake.picture"/>
+        <indexitem text="Cougar" target="cougar.picture"/>
+        <indexitem text="Bat" target="bat.picture"/>
+        <indexitem text="Monkey" target="monkey.picture"/>
+        <indexitem text="Orca" target="orca.picture"/>
+        <indexitem text="Seal" target="seal.picture"/>
+        <indexitem text="Shark" target="shark.picture"/>
+        <indexitem text="Ape" target="chimp.picture"/>
+        <indexitem text="Chimpanzee" target="chimp.picture"/>
+    </indexitem>
+  </indexitem>
+
+</index>
+

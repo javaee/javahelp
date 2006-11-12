@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997 Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding Labels
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Adding Labels</H1>
+
+You can add a label into your layout in the following forms:
+
+<ul>
+<li><a href=#onelinelabel>Text Label</a>. Creates a plain text label (a
+simple string of text)
+<li><a href=#multilinelabel>Multi-line label</a>. Creates a label
+displaying more than one line of text
+<li><a href=#labelbar>Labeled bar</a>. Creates a labeled bar
+(horizontal rule with a text string) 
+</ul> 
+
+<a name=onelinelabel></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add a single-line label</strong>:
+
+<ol>
+<li>Click on the Text Label component in the AWT palette tab.
+<li>Click in the cell where you want to place the component.
+<li>Open the attribute editor by clicking on its button in the main
+toolbar. 
+<li>Type a unique component ID in the name box.
+<li>Type the label name in the text box.
+</ol> 
+
+<h3>Special Attributes</h3>
+
+<table>
+<tr>
+<td valign="baseline"><code><strong>alignment</strong></code></td>
+<td>Aligns text to the left, right, or center of the bar.</td>
+</tr>
+</table>
+
+<p>
+<a name=multilinelabel></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add a multiline label</strong>:
+
+<ol>
+<li>Click on the Multi-line Label component in the Additional palette
+tab. 
+<li>Click in the cell where you want to place the component.
+<li>Open the attribute editor by clicking on its button in the main
+toolbar.
+<li>Type a unique component ID in the name box.
+<li>Make sure the <tt>maxColumns</tt> attribute has a value of -1.
+<li>Click on the button to the right of the text box.
+<li>In the dialog box, type text for the label. Each line of text in
+the dialog box appears as a row in the label. You cannot wrap a line
+of text. 
+</ol>
+
+<h3>Special Attributes</h3>
+
+<table>
+<tr>
+<td valign="baseline"><code><strong>alignment</strong></code></td>
+<td>Aligns text to the left, right, or center of the bar.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>maxColumns</strong></code></td>
+<td>A value of 1 disables the multicolumn feature; multiple
+lines of text will be formatted in a single column. A value of -1
+enables the multicolumn feature. </td> 
+</tr>
+</table>
+
+<p>
+<a name=labelbar></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add a labeled bar</strong>:
+
+<ol>
+<li>Click on the Labeled Bar component in the Additional palette tab.
+<li>Click in the cell where you want to place the component.
+<li>Open the attribute editor by clicking on its button in the main toolbar.
+<li>Type a unique component ID in the name box.
+<li>Type the label name in the text box.
+<li>(Optional)Select left, center, or right from the alignment list to
+set the position of the text on the rule.
+</ol> 
+
+<h3>Special Attributes</h3>
+
+<table>
+<tr>
+<td valign="baseline"><code><strong>alignment</strong></code></td>
+<td>Aligns text to the left, right, or center of the bar.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>textOffsetFromEdge</strong></code></td>
+<td>Number of pixels the text is offset from the edge of the
+cell.</td>
+</tr>
+</table>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="layout.html">Laying Out the Interface</A>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="palette.html">GUI Builder Palette</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI Builder
+Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+</body>
+</html>
+
+

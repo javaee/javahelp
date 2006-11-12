@@ -1,0 +1,4 @@
+A HelpSet for the idedemo mockup example.
+
+There will be a Makefile and a GNUmakefile that will generate JAR files
+but we will arrange the installation so it can run directly from here

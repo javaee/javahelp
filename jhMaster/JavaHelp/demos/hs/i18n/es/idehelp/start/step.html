@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Ejercicio 4: An&aacute;lisis de un m&eacute;todo
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Ejercicio 4: An&aacute;lisis de un m&eacute;todo</h1>
+
+El an&aacute;lisis del c&oacute;digo es otra forma de llegar a la l&iacute;nea
+que est&aacute; causando un problema. En este ejercicio aprender&aacute; a realizar
+el seguimiento del c&oacute;digo y detectar los cambios de los valores de
+las variables en la ventana "Subprocesos/Pila". Tambi&eacute;n aprender&aacute; a
+eliminar un punto de interrupci&oacute;n.
+<ol>
+<li>Pulse en el bot&oacute;n "Analizar por procedimiento" <img src="../../../../images/24/db-step-over_u.gif"
+align="BOTTOM"><img src="../../images/spacer2_t.gif"> en la barra de
+herramientas de edici&oacute;n/depuraci&oacute;n.
+<br>Java Development Environment ejecuta una l&iacute;nea de c&oacute;digo fuente y para en:
+<p>
+<kbd>If (Math.random() < 0.5) {</kbd>
+<p>
+El editor de c&oacute;digo fuente resalta en rojo la l&iacute;nea con un punto de
+interrupci&oacute;n y en verde la l&iacute;nea donde se par&oacute; la ejecuci&oacute;n. Si la l&iacute;nea
+hubiera sido una llamada de m&eacute;todo, el comando "An&aacute;lisis por procedimiento"
+se habr&iacute;a ejecutado hasta la siguiente l&iacute;nea del programa. Si la l&iacute;nea
+hubiera sido una llamada de m&eacute;todo y el usuario hubiera emitido el
+comando "An&aacute;lisis l&iacute;nea a l&iacute;nea", Java Development Environment habr&iacute;a ejecutado la primera
+sentencia del m&eacute;todo y habr&iacute;a parado.
+<p>
+La ventana subprocesos/Pila muestra el estado actual del programa y
+sus datos. Por ejemplo, <kbd>Blink.paint</kbd> ahora indica que se
+para en la l&iacute;nea 49.
+<li>Pulse en el bot&oacute;n "An&aacute;lisis por procedimiento" dos veces m&aacute;s y observe
+c&oacute;mo el depurador realiza el an&aacute;lisis l&iacute;nea por l&iacute;nea del programa.
+<li>En el editor de c&oacute;digo fuente, mueva el puntero hasta la l&iacute;nea
+45, que era un punto de interrupci&oacute;n.
+<li>Pulse en el bot&oacute;n "Punto de interrupci&oacute;n" <img src="../../../../images/24/db-stop-at_u.gif"
+align=MIDDLE>.
+<br>
+Java Development Environment suprime el punto de interrupci&oacute;n.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Siguiente lecci&oacute;n:</strong>
+<dl>
+<dd><a href="evaluate.html">Ejercicio 5:  Evaluaci&oacute;n de variables</a>
+</dl>
+<p>
+
+</body>
+</html>

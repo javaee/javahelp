@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          본 소스 코드 제품에 대한 판권 표시는
+ *          출판된다는 의미가 아닙니다. 
+ * 
+ * 권리 제한 규정: 미국 정부에 의한 사용, 복제, 누설 등은
+ * DFARS 252.227-7013 (1988년 10월)과 FAR 52.227-19 (c) 
+ * (1987년 6월)의 기술 관련 데이터와 컴퓨터 소프트웨어에
+ * 대한 권리 조항의 (c)(1)(ii) 항목에 서술된 제한 규정의 
+ * 적용을 받습니다.
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_KR">
+<HEAD>
+<TITLE>
+제 3과: 스레드 검사하기
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>제 3과: 스레드 검사하기</h1>
+
+이 과에서는, Blink 프로젝트를 구성하는 스레드 그룹, 스레드, 그리고 스택 프레임 등을 살펴볼 것입니다. 프로그램이 진행될 때 변수 값의 변화를 추적하는 법도 배울 것입니다.
+
+<ol>
+<li><nobr>[디버그] -&gt; [스레드/스택]</nobr>을 선택하십시오.
+<br>[Java Development Environment 스레드/스택] 창이 화면에 나타납니다.
+<p>
+Blink 프로젝트에는 세 개의 스레드 그룹이 포함되어 있으며, 각 스레드에는 <img src="../../images/spacer2_t.gif"><img src="../../../../images/db_01_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif"> 기호 문자가 붙어 있습니다:
+
+<ul>
+<li><kbd>main</kbd>--Java Development Environment에서 실행되는 스레드들이 포함되어 있습니다
+<li><kbd>sun.applet.AppletViewer.main</kbd>--애플릿 뷰어에서 실행되는 스레드들이 들어 있습니다
+<li><code>file:/<b>your-installation-directory</b>/jws/Blink/-threadGroup</code>--Blink 프로젝트와 직접 연관이 있는 스레드들이 들어 있습니다
+</ul>
+
+<kbd>sun.applet.AppletViewer.main</kbd> 스레드 그룹에는 세 개의 스레드가 들어 있으며, <kbd>Blink</kbd> 파일 스레드 그룹에는 두 개의 스레드가 들어 있습니다.
+
+<li><kbd>sun.applet.AppletViewer.main</kbd> 스레드 그룹의 첫번째 스레드인 <kbd>"AWT-EventQueue-0"</kbd>를 살펴보십시오.
+<p>다음과 같은 것들이 보일 것입니다:
+
+<ul>
+<li>스레드 이름은 <kbd>java.awt.EventDispatch</kbd>입니다
+<li>스레드 상태는 "at breakpoint"입니다.
+<li>스레드 실행 우선 순위는 priority 5입니다. 우선 순위가 가장 높은 스레드가 가장 먼저 실행됩니다.
+</ul>
+
+<p>
+스레드에 붙어 있는 기호 문자는 스레드의 상태를 알려 주는 또 다른 단서입니다. 나타날 수 있는 가능한 기호 문자는 다음과 같습니다:
+<br>
+<img src="../../../../images/db_19_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">스레드가 일시 정지 상태입니다.
+<br>
+<img src="../../../../images/db_20_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">스레드가 중단점에서 멈추었습니다.
+<br>
+<img src="../../../../images/db_13_u.gif"><img src="../../images/spacer2_t.gif">스레드의 상태를 판단할 수 없습니다.
+<br>
+<img src="../../../../images/db_14_u.gif"><img src="../../images/spacer2_t.gif">스레드가 되살아난 시체와 같습니다.
+<br>
+<img src="../../../../images/db_15_u.gif"><img src="../../images/spacer2_t.gif">스레드가 실행 중입니다.
+<br>
+<img src="../../../../images/db_16_u.gif"><img src="../../images/spacer2_t.gif">스레드가 잠자고 있습니다.
+<br>
+<img src="../../../../images/db_18_u.gif"><img src="../../images/spacer2_t.gif">스레드가 조건 변수를 기다리고 있습니다.
+
+
+<li>스레드 클래스를 구성하는 호출 스택을 살펴 봅시다.
+<br>호출 스택에는 호출되었지만 <nobr>실행 결과<img src="../../images/spacer2_t.gif">를 돌려 주지는 않은 모든 메서드들이 들어 있습니다. 프로그램이 멈추었을 때 실행 중이었던 </nobr><kbd>Blink.paint</kbd>이 스택의 제일 위에 있습니다. 스택 프레임은 반전 표시되어 있으므로 프로그램이 어디에서 멈추었는지 쉽게 알 수 있습니다. 각 스택 프레임에는 <img src="../../../../images/db_02_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif"> 기호 문자가 붙어 있습니다.
+<li><img src="../../../../images/db_02_u.gif" align=BOTTOM> 기호 문자 옆에 있는 +를 마우스로 눌러서 <kbd>Blink.paint</kbd> 스택 프레임을 여십시오. 
+<br>Java Development Environment는 <kbd>Blink.paint</kbd>과 관련이 있는 변수 및 현재의 변수 값을 보여 줍니다. 변수 <kbd>word</kbd>를 살펴 보십시오. <code>word</code> 변수의 값을 살펴 보십시오.
+<li>편집/디버그 도구 모음에서 [진행] 단추를 마우스로 누르십시오.
+<br>프로그램이 루프를 따라 실행되다가 다시 중단점에 도달하면 멈춥니다. 스레드/스택 디스플레이가 갱신되고, <kbd>word</kbd> 변수의 값이 변경됩니다. 이 값은 "Java Development Environment is really cool :-)"과 함께 순환이 됩니다.
+<li><img src="../../../../images/db_24_u_data.gif" align=BOTTOM> 기호 문자 옆에 있는 +를 마우스로 눌러서 <kbd>이</kbd> 객체를 여십시오.
+<br>Java Development Environment은 이 객체를 확장시켜 객체 내에 있는 모든 포함된 변수들이 나타나게 합니다. 중첩된 객체 (예를 들면,  <kbd>peer</kbd>)에서 이 동작을 반복할 수 있습니다.
+<li><kbd>이</kbd> 객체의 왼쪽에 있는 -를 마우스로 누르십시오.
+<br>객체 구조 표시가 축소됩니다.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>다음 과:</strong>
+<dl>
+<dd><a href="step.html">제 4과:  메서드를 프로시저 단위로 실행하기</a>
+</dl>
+
+<p>
+</body>
+</html>

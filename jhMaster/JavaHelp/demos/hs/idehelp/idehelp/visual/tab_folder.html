@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Creating Tabbed Folder Panels and Card Layout Panels
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Creating Tabbed Folder Panels and Card Layout Panels</H1>
+
+This section covers:
+<ul>
+<li><a href="#addcardpanels">Card panels</a>. Creates a stack of
+panels that can be displayed one at a time.  
+<li><a href="#addtabfolders">Tabbed folder panels</a>. Creates a stack
+of tabbed pages that can be displayed one at a time. (A Tabbed Folder
+Panel is a variant of the Card Layout Panel, in which each panel has a
+labeled tab that is used to select the panel from the stack.)
+</ul>
+
+<a name=addcardpanels></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add card panels:</strong>
+
+<ol>
+<li>Click on the Card Layout Panel component in the Panel palette tab.
+<li>Click in the cell where you want to place the component.
+<li>Open the attribute editor by clicking on its button in
+the main toolbar. 
+<li>Click on the Edit cards button in the attribute editor to open
+the Cards dialog box. 
+<li>Click Insert to create a panel.
+<li>For each panel added, enter a unique ID in the name box
+and type a label for the folder in the label box.
+<li>Click OK to add the folders to the layout.
+<li>In each panel in the layout, click in the empty gridbag panel and
+use the arrow keys to add rows and columns.
+<li>Click on a palette component and click in the cell where you want
+to place the component.
+</ol>
+
+<h3>Special Attributes</h3>
+
+<table>
+<tr>
+<td valign="baseline"><code><strong>cards</strong></code></td>
+<td>Opens the Cards dialog box. Use this dialog box to add, delete,
+name, and label the stack of panels (cards).</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>delayedCreation</strong></code></td>
+<td>If set to true, delays creation of the component until it
+is requested by the program.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>labelAlignment</strong></code></td>
+<td>Sets the position (left, right, center) of the
+label on the top edge of the panel.</td>
+</tr>
+</table>
+
+<p>
+<a name=addtabfolders></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add Tabbed Folders:</strong>
+
+<ol>
+<li>Click on the Tabbed Folder Panel component in the Panel palette tab. 
+<li>Click in the cell where you want to place the component.
+<li>Open the attribute Editor by clicking on its button in
+the main toolbar. 
+<li>Click on the Edit cards button in the attribute editor to open
+the Cards dialog box. 
+<li>Click Insert to create a tab.
+<li>For each tab added, enter a unique ID in the name box
+and type a label for the tab in the label box.
+<li>Click OK to add the tabs to the layout.
+<li>In each folder in the layout, click in the empty gridbag panel and
+use the arrow keys to add rows and columns.
+<li>Click on a palette component and click in the cell where you want
+to place the component.
+</ol>
+
+<h3>Special Attributes</h3>
+
+<table>
+<tr>
+<td valign="baseline"><code><strong>cards</strong></code></td>
+<td>Opens the Cards dialog box. Use this dialog box to add, delete,
+name, and label the stack of panels. The string in the Label field is displayed
+on the folder's tab.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>delayedCreation</strong></code></td>
+<td>If set to true, delays creation of the component until it
+is requested by the program.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>labelAlignment</strong></code></td>
+<td>Sets the position (left, right, center) of the
+label on the top edge of the panel.</td>
+</tr>
+</table>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="palette.html">GUI Builder Palette</A>
+<dd><A HREF="layout.html">Laying Out the Interface</A>
+<dd><A HREF="nest_panels.html">Layout Managers and Nesting Panels</A>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI
+Builder Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+
+</body>
+</html>

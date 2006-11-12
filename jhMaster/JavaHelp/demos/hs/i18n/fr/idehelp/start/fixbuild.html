@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercice 2 : Correction d'erreurs dans un programme g&eacute;n&eacute;r&eacute;
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Exercice 2 : Correction d'erreurs dans un programme g&eacute;n&eacute;r&eacute;</h1>
+
+Cet exercice pr&eacute;sente comment localiser rapidement puis corriger la ligne de
+source responsable d'une erreur survenue lors de la g&eacute;n&eacute;ration. Les erreurs de
+g&eacute;n&eacute;ration r&eacute;sultent g&eacute;n&eacute;ralement d'une syntaxe du langage incorrecte, de
+variables non d&eacute;clar&eacute;es ou de mots-cl&eacute;s mal orthographi&eacute;s.
+<p>
+Si vous n'avez pas encore ajout&eacute; le code faisant clignoter les mots dans le
+projet Blink, faites-le maintenant en suivant les instructions d&eacute;crites dans
+<a href="editcode.html">Edition de code source</a>.
+<h2>Localisation des erreurs</h2>
+<ol>
+<li>V&eacute;rifiez dans le gestionnaire de projet le nom du projet en cours.
+<br>Si celui-ci n'est pas Blink, double-cliquez sur le nom de projet Blink.
+<li>Cliquez sur le bouton G&eacute;n&eacute;rer <img src="../../../../images/24/tb-build_u.gif" align=BOTTOM> de la barre d'outils principale de Java
+WorkShop.
+<br>Java Development Environment compile le projet Blink en utilisant le compilateur Java par
+d&eacute;faut de Java Development Environment, qui est plus rapide que le compilateur
+Java JDK standard.
+<p>
+L'onglet G&eacute;n&eacute;rer indique deux erreurs. L'&eacute;diteur de source met en &eacute;vidence la
+ligne responsable de la premi&egrave;re erreur avec la couleur jaune.
+</ol>
+
+<h2>Correction d'erreurs</h2>
+<ol>
+<li>Corrigez la premi&egrave;re erreur, &agrave; la ligne 55, en ajoutant des parenth&egrave;ses
+pour d&eacute;limiter le mot <kbd>offset</kbd>.
+<br>La ligne doit se pr&eacute;senter ainsi :
+<br><code>if (offset)</code>
+<li>Dans l'onglet G&eacute;n&eacute;rer, s&eacute;lectionnez la deuxi&egrave;me erreur <kbd>Blink.java:
+61</kbd>
+<br>L'&eacute;diteur de source met en &eacute;vidence la
+ligne responsable de cette erreur avec la couleur jaune.
+<li>Corrigez l'erreur en ajoutant un <kbd>;</kbd> apr&egrave;s <kbd>y = y / 2</kbd> &agrave;
+la ligne 60.
+<br>La ligne doit se pr&eacute;senter ainsi :
+<br><kbd>y = y / 2;</kbd>
+<li>Cliquez sur Enregistrer fichier <img src="../../../../images/24/file-save_u.gif" align=BOTTOM> de
+la barre d'outils Editer/D&eacute;boguer.
+<br>En principe, votre programme est maintenant corrig&eacute; et vous pouvez le
+r&eacute;g&eacute;n&eacute;rer.
+</ol>
+
+<h2>R&eacute;g&eacute;n&eacute;ration du projet</h2>
+<ol>
+<li>Cliquez sur le bouton G&eacute;n&eacute;rer <img src="../../../../images/24/tb-build_u.gif" align=BOTTOM> dans la barre d'outils principale.
+<br>Vous ne devez normalement obtenir aucun message d'erreur. Si cela est le
+cas cependant, retournez dans l'&eacute;diteur de source et v&eacute;rifiez que vous avez
+correctement saisi les informations.
+<li>Cliquez sur le bouton Ex&eacute;cuter <img src="../../../../images/24/tb-run_u.gif" align=BOTTOM> de
+la barre d'outils principale.
+<br>Java Development Environment ex&eacute;cute le projet en faisant &agrave; la fois rebondir et clignoter le
+texte.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Le&ccedil;on suivante :</strong>
+<dl>
+<dd>Vous avez maintenant &eacute;tudi&eacute; toutes les le&ccedil;ons de ce didacticiel. Le
+didacticiel suivant s'intitule <a href="browse.html">Didacticiel Quatre :
+Exploration d'un projet</a>.
+</dl>
+<p>
+</body>
+</html>

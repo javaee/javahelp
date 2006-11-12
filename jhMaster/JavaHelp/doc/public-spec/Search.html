@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JavaHelp 1.0 - Content Search</title>
+  </head>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup><font size="-2">TM</font></sup> 1.0 - Content Search
+</h1>
+      <h2 align=center>
+<br>
+<a href="Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+<br>
+</h2>
+
+<hr>
+<p>
+
+<h2>Search API</h2>
+<p>
+JavaHelp provides full-text searching of help topics.
+Development of full-text searching raised interesting
+questions, both in the implementation and in the
+specification. For example, whether the search database is created
+before or during queries, and how the format of the search database
+is specified.
+</p>
+
+<p>
+The search API 
+<code>javax.help.search.*</code>
+can be used to create and query the
+search database.
+The default NavigatorView,
+<a href="../api/javax/help/SearchView.html">SearchView</a>
+knows how to interact with any subclass of
+<a href="../api/javax/help/search/SearchEngine.html">SearchEngine</a>.
+Similarly
+the search database can be created through
+the
+<a href="../api/javax/help/search/IndexBuilder.html">IndexBuilder</a>
+class.
+<p>
+One of the benefits of the <tt>javax.help.search</tt> API is that it
+enables the use of search engines that require moderatedly
+complex database formats without the difficult and
+constraining task of specifying these formats in full.
+One such search engine is the one provided in Sun's
+<a href="misc/RefImpl.html">reference implementation</a>.
+</p>
+
+<p>
+The intention of the <code>javax.help.search</code> package
+is to provide insulation between client and customers of a
+full-text search database in the context of the <code>javax.help</code>
+package.
+It is important to emphasize that although the <tt>javax.help.search</tt> API is
+intented to be of general applicability, it is not intented to be a
+replacement for more powerful query mechanisms.
+</p>
+
+<h2>Search Database Creation</h2>
+
+<p>
+Search databases are created through instances of <code>IndexBuilder</code>.
+The parsing of each file is specific to its MIME content;
+this is encoded in the notion of an
+<a href="../api/javax/help/search/IndexerKit.html">IndexerKit</a>.
+An indexer kit provides a <code>parse()</code> method that knows how
+to parse the specific MIME type and call back into the <tt>IndexBuilder</tt>
+instance to capture the information of this source.
+</p>
+
+<p>
+When capturing search information there are a number of parameters
+that you can configure using a 
+<a href="../api/javax/help/search/ConfigFile.html">ConfigFile</a>:
+</p>
+
+<ul>
+<li>Change the path names of the files as they are stored
+in the search database.  This is useful when you
+create the search database using paths to topic files that
+are different from the paths the help system will later
+use to find them.
+<li>Explicitly specify the names of the topic files you
+want indexed
+<li>Specify your own list of stopwords
+</ul>
+
+<A NAME="stopwords">
+<H4>Stopwords</H4>
+</A>
+You can direct the JavaHelp system full-text search indexer
+to exclude certain words from the database index--these
+words are called <em>stopwords</em>.  The default 
+stopwords are:
+<pre>
+a	all	am	an	and	any	are	as
+at	be	but	by	can	could	did	do
+does	etc	for	from	goes	got	had	has
+have	he	her	him	his	how   	if	in
+is	it	let	me	more	much	must	my
+nor	not	now	of	off	on	or	our
+own	see 	set	shall	she	should	so	some
+than	that	the	them	then	there	these   this
+those   though	to	too	us	was	way	we
+what	when	where	which   who	why	will	would
+yes	yet	you
+</pre>
+
+<h3>ConfigFile Directives</h3>
+<p>
+A config file may contain the following directives
+</p>
+
+
+<p>
+<table>
+<tr>
+<th>Directive
+<th>Description
+</tr>
+
+<tr>
+<td>
+<tt>IndexRemove</tt> <em>path</em>    
+<td>
+Remove a <em>path</em> that is a prefix to the given files
+</tr>
+
+<tr>
+<td>
+<tt>IndexPrepend</tt> <em>path</em>  
+<td>
+Prepend <em>path</em> to the names of the given files.
+</tr>
+
+<tr>
+<td>
+<tt>File</tt> <em>filename</em>
+<td>
+Request that the <em>filename</em> be processed
+</tr>
+
+<tr>
+<td>
+<tt>StopWords</tt> <em>word, word, word...</em>
+<td>
+Set the stopwords to the ones indicated
+</tr>
+
+<tr>
+<td>
+<tt>StopWordsFile</tt> <em>filename</em>
+<td>
+<tt>StopWordsFile</tt> must contain a list of stopwords, one stopword
+per line.
+</tr>
+
+
+</table>
+
+
+<h2>Search Database Use</h2>
+
+<p>
+The <code>javax.help.search</code> package is used in JavaHelp 1.0
+by <code>SearchView</code>.
+This view expects an <em>engine</em> property that specifies the
+name of the subclass of <code>javax.help.search.SearchEngine</code>
+to use when making queries.
+The default value of this property is
+<code>com.sun.java.help.search.SearchEngine</code>.
+</p>
+
+<p>
+The steps involved in using the search engine from
+a <code>SearchView</code> are:
+</p>
+
+<ul>
+<li>A SearchView is instantiated, for example, when the default HelpBroker for
+the HelpSet is created.
+<li>When the first query is made, the <em>engine</em> property of the
+view is obtained to determine what <code>SearchEngine</code> to instantiate.
+The <em>data</em> and other attributes are passed to this instance.
+<li>For a query, a <code>SearchQuery</code> instance is obtained, then
+the query is passed to it.
+<li>Hits found are either obtained directly, or they are generated as
+events.
+</ul>
+
+<p>
+More details may be added in the next iteration of the specification.
+</p>
+
+
+
+<hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 16:46:00 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+&Ouml;vning 2: &Aring;tg&auml;rda fel i ett bygge
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>&Ouml;vning 2: &Aring;tg&auml;rda fel i ett bygge</h1>
+
+Med den h&auml;r &ouml;vningen f&aring;r l&auml;ra dig hur du snabbt hittar den k&auml;llrad som inneh&aring;ller
+ett fel som p&aring;tr&auml;ffades under byggprocessen, och &aring;tg&auml;rdar felet. Byggfel beror ofta p&aring;
+felaktig spr&aring;ksyntax, odeklarerade variabler och felstavade nyckelord.
+<p>
+Om du &auml;nnu inte har lagt till koden som f&aring;r orden att studsa i projektet Blink, b&ouml;r du
+g&ouml;ra det nu enligt instruktionerna i <a href="editcode.html">Redigera k&auml;llkod</a>.
+<h2>S&ouml;ka efter fel</h2>
+<ol>
+<li>Kontrollera namnet p&aring; det aktuella projektet (det finns i projekthanteraren).
+<br>Om det aktuella projektet inte &auml;r ett Blink-projekt dubbelklickar du p&aring; Blink-projektets namn.
+<li>Klicka p&aring; knappen Bygg <img src="../../../../images/24/tb-build_u.gif" align=BOTTOM> i
+verktygsf&auml;ltet i Java Development Environments huvudf&ouml;nster.
+<br>Java Development Environment anv&auml;nder som standard Java-kompileraren f&ouml;r att kompilera Blink-projektet.
+Den &auml;r snabbare &auml;n standardkompileraren JDK Java.
+<p>
+P&aring; fliken Bygg listas tv&aring; fel. K&auml;llraden som inneh&aring;ller det f&ouml;rsta felet markeras med gult.
+</ol>
+
+<h2>&Aring;tg&auml;rda fel</h2>
+<ol>
+<li>&Aring;tg&auml;rda det f&ouml;rsta felet p&aring; rad 55 genom att l&auml;gga till parenteser runt <kbd>offset</kbd>.
+<br>Raden b&ouml;r se ut s&aring; h&auml;r:
+<br><code>if (offset)</code>
+<li>Markera det andra felet, <kbd>Blink.java: 61</kbd> p&aring; fliken Bygg.
+<br>K&auml;llraden som inneh&aring;ller felet markeras.
+<li>&Aring;tg&auml;rda felet genom att l&auml;gga till ett semikolon (<kbd>;</kbd>) efter
+<kbd>y = y / 2</kbd> p&aring; rad 60.
+<br>Raden b&ouml;r se ut s&aring; h&auml;r:
+<br><kbd>y = y / 2;</kbd>
+<li>Klicka p&aring; knappen Spara fil <img src="../../../../images/24/file-save_u.gif" align=BOTTOM> i
+verktygsf&auml;ltet f&ouml;r redigering och fels&ouml;kning.
+<br>Programmet b&ouml;r nu vara &aring;tg&auml;rdat s&aring; att du kan bygga om det.
+</ol>
+
+<h2>Bygga om projektet</h2>
+<ol>
+<li>Klicka p&aring; knappen Bygg <img src="../../../../images/24/tb-build_u.gif" align=BOTTOM> i
+huvudverktygsf&auml;ltet.
+<br>Inget felmeddelande b&ouml;r uppst&aring;. Om det h&auml;nder &aring;terg&aring;r du till k&auml;llredigeraren och
+kontrollerar om du har skrivit r&auml;tt.
+<li>Klicka p&aring; knappen K&ouml;r <img src="../../../../images/24/tb-run_u.gif" align=BOTTOM> i
+verktygsf&auml;ltet i Java Development Environments huvudf&ouml;nster.
+<br>N&auml;r projektet k&ouml;rs b&aring;de studsar och blinkar texten.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;sta lektion:</strong>
+<dl>
+<dd>Du har nu klarat av lektionerna i den h&auml;r sj&auml;lvstudien. N&auml;sta
+sj&auml;lvstudie &auml;r <a href="browse.html">Sj&auml;lvstudie fyra:  Bl&auml;ddra igenom ett projekt</a>.
+</dl>
+<p>
+</body>
+</html>

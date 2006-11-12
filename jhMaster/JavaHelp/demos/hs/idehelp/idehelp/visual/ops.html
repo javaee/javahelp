@@ -1,0 +1,418 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+What Is a Component Operation?
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>What Is a Component Operation?</H1>
+
+When you add a behavior to a component, you are defining an operation
+for it. The term "operation" refers to specialized callbacks that you
+can define using the GUI builder Operations dialog box. Callbacks are
+typically implemented by adding custom code to the Group file
+(<i>project</i><tt>.java</tt>).
+<p>
+This section covers: 
+
+<ul>
+<li><a href=#callbacks>Operations</a>
+<li><a href=#filtertypes>Filters</a>
+<li><a href=#actiontypes>Actions</a>
+</ul>
+
+For instructions on adding a specific behavior to a component,
+see <a href=addcallbacks.html>Adding Operations to Components</a>.
+
+<a name=callbacks></a>
+<h2>Operations</h2>
+
+Operations can be implemented by adding custom code to the Ops file
+through the Operations dialog box. However, code added to the Ops file
+should be kept to a minimum as that code can be overwritten when the
+file is regenerated. A better method is to add minimal lines of code
+to the Ops file (for example, a single line that calls an operation)
+and add the main body of code to the Group file (the
+<i>project</i><tt>.java</tt> file).
+<p>
+In many cases, you can go through the Operations dialog box to use
+predefined GUI builder operations, which might automate all of the
+code generation. Another way to add operations is to edit the group
+file directly through the source editor.
+<p>
+An operation consists of two parts: 
+<ul>
+<li>A <em>filter</em> that defines when an action happens (the cause)
+<li>An <em>action</em> that defines what the action is (the effect)
+</ul>
+
+For example, consider an operation that shows a window when the user
+clicks a button. The operation is defined for the button with a filter
+of Action Event (the button is pressed) and an action of Show Window.
+
+<a name=matchevents></a>
+<p>
+You must associate operations with a specific component. An operation
+is usually triggered by events and messages that originate from its
+associated component. More than one operation can be defined for each
+component. If two operations match the same event, the operation that
+is closer to the beginning of the list is called first.
+
+<a name=filtertypes></a>
+<h2>Filters</h2>
+
+There are two different types of filters: <em>event filters</em> and
+<em>message filters</em>. An event filter is triggered by AWT events, and
+a message filter is triggered by messages from other groups.  The target
+for these messages must match the component or group for which the
+operation is being defined. 
+<p>
+For information on new-style and old-style event handling, see the JDK
+documentation, <a
+href="http://java.sun.com/products/jdk/1.1/docs/guide/awt/designspec/events.html">"Java
+AWT: Delegation Event Model</a>." (You may have to reset the proxies
+on the Java Workshop help browser if you have difficulties reaching
+the Delegation Event Model.)
+<p>
+For a demonstration of how to use the new style 1.1 events, see 
+<p>
+On Solaris:
+<br>
+<em>install-dir-path</em><tt>/examples/JellyBeanExample</tt>
+
+<p>
+On Microsoft Windows 95 and Windows NT:
+<br>
+<em>install-dir-path</em><tt>\examples\JellyBeanExample</tt>
+
+
+<a name=eventfilter</a>
+<h3>Event Filter</h3>
+
+There are many event filters that can be defined for an action. Some
+examples are Mouse Down, Key Press, and Action Event. An event
+filter is used to select particular types of AWT events for which an
+action should be called (see the JDK documentation of the AWT Event
+class for more details).
+<p>
+An event filter has four parameters: 
+<ul>
+<li>Id
+<li>Key
+<li>Modifier
+<li>Click Count
+</ul>
+
+The only required element is the Id. The Event Id determines the type
+of event for the filter. The Key, Modifier, and Click Count fields
+are used to further narrow the scope of the filter for a given Event
+Id.
+<p>
+
+For example, the set of events selected by the Key Press Event Id
+can be further narrowed by specifying the key, <tt>C</tt>.  The event
+filter can be narrowed even further by specifying the modifier
+<tt>Control</tt>. The event filter, Key Press, will be triggered when
+the operation's component is selected and the user presses
+<tt>Control-C</tt>.
+
+<p> 
+The types of modifiers available depend on the Event Id.  For
+key events, the modifiers are:
+<ul>
+<li>Shift
+<li>Control
+<li>Meta
+<li>Alt
+</ul>  
+For mouse events, the modifiers are:
+<ul>
+<li>Left Mouse
+<li>Middle Mouse
+<li>Right Mouse
+</ul>
+<p> 
+The Click Count is important only for mouse events.  To catch a
+double-click, the Event Id is Mouse Down, the Modifier is Left
+Mouse, and the Click Count is 2.
+
+<a name=messfilter></a>
+<h3>Message Filter</h3>
+
+Currently, GUI builder, does not automatically generate messages.
+You must write the code that generates a message. You can use the
+Operations dialog box to specify incoming messages and the actions
+that they trigger when they are received.
+
+<p>
+A message filter has three parts: 
+<ul>
+<li>Name
+<li>Type
+<li>Target Name
+</ul>
+
+Each of these parts is a string that is matched against any messages
+that are received. You must specify the message Name, but the Type and
+Target Name fields can be left blank. The Type and Target Name are
+additional filters within the scope of the message name. Note that the
+target object is always searched for and must match the Target Name if
+a Target Name is supplied.
+
+<p>
+The component for which the operation is defined must be the target of
+the message (if the target is defined), or the filter will not be
+triggered. For example, you might have a custom subgroup that sends
+out "Apply" messages.  To trigger off of the "Apply" message, you should
+select the group and then edit its <tt>operations</tt> attribute. Then define
+an operation that has a message filter with the name
+"Apply." Optionally, you can define the target to be the group.
+
+
+<A NAME=actiontypes></A>
+<H2>Actions</H2>
+
+An operation's action determines what happens when there is a matching
+event. GUI builder specifically supports some common actions, such as
+showing and hiding a component, exiting the application, and setting
+an attribute on a component. You can specify custom code that is
+called when the action is triggered. 
+
+<p>
+Common actions and custom code actions are not treated in quite the
+same way.  Common actions are live both while the application is
+running and while you are building the application. Custom code
+actions are live only while the program is running. Future versions of
+GUI builder may support live code actions while building the
+application.
+
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+The exit action is not live while building the application because it
+would cause GUI builder to exit and unsaved changes would be lost.
+
+<h3>Action Types</h3>
+Choose one of the following action types from the Action
+Type menu:
+<ul>
+<li>Show
+<li>Hide
+<li>Exit
+<li>Set Attribute
+<li>Execute Code
+</ul>
+
+<h4>Show, Hide</h4> 
+
+After you choose one of these actions from the menu, you must select a
+target for the action from the Target pane. The target is the
+component that will be shown or hidden when the action is invoked.
+
+<h4>Exit</h4>
+
+There is no target for the exit action.
+
+<h4>Set Attribute</h4>
+
+If you choose Set Attribute, you must:
+<ol>
+<li>Select a component from the Target pane and an
+attribute of that component from the Name pane.
+<li>Choose either Constant or Event Arg from the Value Source menu.
+<p>If you choose Constant, you can
+statically set the value using the provided windows, text boxes, and so on.
+<p>
+If you choose Event Arg, the event argument must be the same type as the
+attribute that you have selected. For example, checkboxes have
+Boolean event arguments. The <tt>enabled</tt> attribute defined for components
+is also a Boolean value. Therefore, you can legally choose the Event Arg
+option for the checkbox as long as you select the <tt>enabled</tt> attribute
+for the target component. Defining an action this way causes the
+checkbox to toggle the component between the enabled and disabled
+states.
+</ol>
+
+<A NAME=CustomCode></A>
+<h4>Execute Code</h4>
+
+If you choose Execute Code from the Action Type menu, a text
+box is available for you to enter code. You can enter custom
+operations that are automatically included in your application.
+<p>
+The code you enter in the Execute Code box is saved in the
+<code>.gui</code> file, and is later generated into the
+<em>project-name</em><code>Ops.java</code> file.
+<p>
+The preferred method is to write custom code as individual handlers in
+the group file (the <i>project</i><tt>.java</tt> file). Then invoke
+the handler from the Execute Code box. For example, in the Execute
+Code box you call:
+<pre>
+group.myActionHandler();
+</pre>
+In the group file, you define the operation:
+<pre>
+public void myActionHandler(){
+       ...
+}
+</pre>
+
+<h4>Special Variables</h4>
+
+There are several important variables that are available
+within the scope of the custom code segment.
+<p>
+For a group named <code>MyProg</code>:
+<ul>
+<li><code>MyProg group;</code>
+<br>
+Group variable.  The group is guaranteed to be
+initialized when the action is invoked.
+<p>
+<li><code>MyProgRoot gui;</code>
+<br>
+  Root variable.  The root will be non-null when the action
+  is invoked.
+<p>
+<li><code>Message msg;</code>
+<br>
+  The message that triggered the action.  The message will
+  always be non-null.
+<p>
+<li><code>Event evt;</code>
+<br>
+  AWT event that triggered the action.  This will be null
+  only if the triggering message is not an AWT event.  This
+  can happen if the operation is using a message filter
+  instead of an event filter.
+<p>
+For more information on message handling and AWT events, see 
+<a href=groups_basic.html#awtmsghandling>Message Handling
+(Operations)</a>.
+</ul>
+<p>
+
+The following is a code segment that shows the window
+<tt>frame1</tt> when a button is clicked:
+<pre>
+  gui.frame1.set("visible", Boolean.TRUE);
+</pre>
+<p>
+The following is a code segment that shows or hides the window
+<tt>frame1</tt> depending on the state of a checkbox:
+<pre>
+  gui.frame1.set("visible", evt.arg);
+</pre>
+
+<a name=importstatement></a>
+<h4>Import Statements</h4>
+
+You can add import statements at the top of your custom
+code. The code generator will place them in the correct
+location in the generated sources.  For example, if you
+type:
+<pre>
+  import java.net.*;
+  URL url = new URL(gui.urlTF.get("text"));
+  URLConnection connection = url.openConnection();
+
+</pre>
+the following code is generated into the
+<em>project-name</em><code>Ops.java</code> file.
+Note the position of the import statement.
+<pre>
+  import java.io.net.*;
+  private void handleCallback(int index, Message msg, Event evt) {
+    switch (index) {
+    case 1:
+      {
+group.exit();
+      }
+      break;
+    case 2:
+      {
+URL url = new URL(gui.urlTF.get("text"));
+URLConnection connection = url.openConnection();
+      }
+     }
+  }
+
+</pre>
+<br>
+<A NAME=GetBody></A>
+<h4>Accessing AWT Methods for Shadows Classes</h4>
+The <code>getBody()</code> call allows you to access
+methods of the classes on which shadow classes are based.
+For example, if you want to determine which item is
+selected in a <code>ListShadow</code> object, type:
+
+<pre>
+  String string_selected=((List) listShadow.getBody()).getSelectedItem();
+</pre>
+
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+To access the methods, you must cast the result of the <tt>getBody</tt> call.
+<p>
+You can use either the shadow class for the <code>get()</code> and
+<code>set()</code> methods or the <code>getBody()</code> method, which
+accesses the AWT component directly. The shadow class methods utilize
+workarounds and optimizations. For example:
+
+<pre>
+String string_selected=listShadow.get("selectedItem");
+</pre>
+
+<a name=accessapples></a>
+<h4>Accessing the Applet</h4>
+
+The <code>group</code> class provides a method for
+accessing the applet. For example, if in your operation
+you need to access a parameter supplied to the applet (in
+this case the blink rate), type:
+<pre>
+ Applet ap = getApplet();
+ String param = ap.getParameter("blinkrate");
+</pre>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="running.html">GUI Builder Runtime Classes</A>
+<dd><A HREF="groups_basic.html">What Are Groups and Shadows?</A>
+<dd><A HREF="groups_advanced.html">Using>More On Groups and Shadows</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI
+Builder Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+</body>
+</HTML>

@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          본 소스 코드 제품에 대한 판권 표시는
+ *          출판된다는 의미가 아닙니다. 
+ * 
+ * 권리 제한 규정: 미국 정부에 의한 사용, 복제, 누설 등은
+ * DFARS 252.227-7013 (1988년 10월)과 FAR 52.227-19 (c) 
+ * (1987년 6월)의 기술 관련 데이터와 컴퓨터 소프트웨어에
+ * 대한 권리 조항의 (c)(1)(ii) 항목에 서술된 제한 규정의 
+ * 적용을 받습니다.
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_KR">
+<head>
+<title>
+제 4과: 성능 분석 데이터 수집하기
+</title>
+</head>
+<body bgcolor="ffffff">
+
+<bodytext><h1>제 4과: 성능 분석 데이터 수집하기</h1>
+
+이 과에서는 Java Development Environment 성능분석기를 사용하여 Blink 프로젝트를 실행하는 방법을 보여줍니다. 성능분석기는 프로그램의 성능을 분석하여 프로그램의 각 메서드에 얼마나 많은 시간이 사용되는지 그리고 각 메서드가 몇 번이나 실행되는지를 판단하는데 사용됩니다.
+<ol>
+<li>프로젝트 관리자에서 현재 프로젝트의 이름을 확인하십시오.
+<br>현재 프로젝트가 Blink가 아니라면, Blink라는 프로젝트 이름을 마우스로 두 번 연속 누르십시오.</li>
+<li>Java Development Environment 주 도구 모음에서 [성능 분석] <img src="../../../../images/24/tb-profile_u.gif"> 단추를 마우스로 눌러서 Blink 프로젝트의 성능 분석을 시작하십시오.
+<br>[애플릿 뷰어] 창이 화면에 나타납니다.</li>
+<li>다음 단계로 넘어가기 전에 적어도 45 초를 기다리십시오.</li>
+<br>이렇게 하면 쓸모있는 성능 분석 디스플레이를 만드는데 충분한 데이터가 마련됩니다.
+<li>애플릿 뷰어에서 <nobr>[애플릿] -&gt; [종료]</nobr>를 선택하여 성능 분석 세션을 끝내십시오.
+<br>프로그램을 성능 분석한 후에, [성능분석기] 창에 프로젝트 소스 디렉터리의 <kbd>Blink.prof</kbd> 파일에 기록된 데이터가 나타납니다.</li>
+<li>[성능분석기] 창에서, <nobr>[필터] -&gt; [없음]</nobr>을 선택하여 시스템 클래스 데이터가 화면에 나타나게 하십시오.</li>
+<li><nobr>[보기] -&gt; [이름별로 소트]</nobr>를 선택하여 메서드 데이터가 영문자숫자 순으로 화면에 나타나게 하십시오.</li>
+<li><kbd>Blink.paint (Ljava/awt/Graphics;)</kbd> 메서드를 선택하십시오.</li>
+<li>성능 분석 데이터를 검토하십시오. 결과는 아래 그림과 비슷할 것입니다:</li>
+</ol>
+<p>
+<img src="../../images/tProfile.gif"></p>
+<p>
+이 결과는 다음을 의미합니다:
+<ul>
+<li>Java Development Environment이 <kbd>Blink.paint (Ljava/awt/Graphics;)</kbd> 메서드를 호출하는데 93 밀리초를 사용했습니다.</li>
+<li><kbd>Blink.paint (Ljava/awt/Graphics;)</kbd>는 <kbd>java.awt.Color.&lt;init&gt; (III)</kbd>, <kbd>java.awt.Component.size ()</kbd>, 그리고 <kbd>java.awt.Font.getSize ()</kbd> 등의 세 가지 메서드를 호출합니다.
+<li><kbd>Blink.paint (Ljava/awt/Graphics;)</kbd> 메서드를 호출하는 두 가지 메서드는 <kbd>java.awt.Component.dispatchEventImpl (Ljava/awt/AWTEvent;)</kbd>와 <kbd>java.awt.Component.update (Ljava/awt/Graphics;)</kbd>입니다.
+</ul>
+<p>
+<img src="../../images/hg_see.gif"><strong>다음 과:</strong></p>
+<dl>
+<dd>본 자습서의 각 과를 전부 익혔습니다. 다음 자습서는 <a href="edit.html">자습서 2: 프로젝트 속성 수정하기</a>입니다.</dd>
+</dl></bodytext>
+</body>
+</html>

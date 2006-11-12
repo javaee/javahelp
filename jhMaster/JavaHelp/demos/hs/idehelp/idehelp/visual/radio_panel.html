@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding Checkboxes and Radio Buttons
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Adding Checkboxes and Radio Buttons</H1>
+
+Besides the standard text button, you can add checkboxes or radio
+buttons to your layout:
+
+<ul>
+<li><a href=#checkboxcomp>Checkbox</a>. Allows for multiple selection
+when more than one checkbox is added
+<li><a href=#rdbpanel>Radio Button Panel</a>. Creates a panel into
+which you can add a series of radio buttons
+<li><a href=#rbcomp>Radio Button</a>. Toggles a Boolean state; only
+one radio button selection can be made
+</ul>
+
+<p>
+<a name=checkboxcomp></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add a checkbox:</strong>
+<ol>
+
+<li>Click on the Checkbox/Radio Button component in the AWT palette tab. 
+<li>Click in the cell where you want to place the button.
+<li>Open the attribute editor by clicking on its button in the main
+toolbar. 
+<li>Type a unique component ID in the name box.
+<li>For a labeled checkbox, type a label in the text box.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+You cannot add checkboxes to a Radio Button panel. When you add
+the Checkbox/Radio Button component to a cell within a Radio Button
+panel, radio buttons are inserted.
+</ol>
+
+<p>
+<a name=rdbpanel></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add a radio button panel:</strong>
+<ol>
+<li>Click on the Radio Button Panel component in the AWT palette tab.
+<li>Click in the cell where you want to place the component.
+<li>Click in the radio button panel cell and click the arrow keys
+to create rows (arrow up or down) and columns (arrow left or right).
+<li>Open the attribute editor by clicking on its button in the main
+toolbar. 
+<li>Type a unique component ID in the name box for the radio button
+panel. 
+</ol>
+
+<p>
+<a name=rbcomp></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add a radio button to
+the panel:</strong>
+<ol>
+
+<li>Click on the Checkbox/Radio Button component in the AWT palette tab.
+<li>Press and hold the Control key and click in the cells within
+the radio button panel in which you want to add radio buttons.
+<li>Open the attribute editor by clicking on its button in the main
+toolbar. 
+<li>Type a unique component ID in the name box for each radio button.
+<li>For a labeled radio button, type a label in the text box.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+You cannot add radio buttons to a cell that is not in a radio button
+panel. When you add the Checkbox/Radio Button component to a cell
+not within a radio button panel, a checkbox is inserted.
+</ol>
+
+<h2>Special Attributes</h2>
+
+<p>
+For checkbox or radio button:
+<table>
+<tr>
+<td valign="baseline"><code><strong>state</strong></code></td>
+<td>Sets the initial state of the checkbox or radio button to true or
+false.</td> 
+</tr>
+</table>
+
+For radio panel:
+<table>
+<tr>
+<td valign="baseline"><code><strong>borderlabelAlignment</strong></code></td>
+<td>Sets the position (left, right, center) of the
+label on the top edge of the panel.</td>
+</tr>
+</table>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="layout.html">Laying Out the Interface</A>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="palette.html">GUI Builder Palette</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI
+Builder Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+  </body>
+</html>

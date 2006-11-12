@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Creating a Java Package Project
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Creating a Java Package Project</h1>
+
+A Java package is a group of classes declared with the same package name. You can create a Java package project in any portfolio for which you have write permission. 
+<p>
+<img src="../../images/hg_proc.gif" width="18" height="13"><b>To create a Java package:</b>
+<ol>
+<li>Click the Project's button <img src="../images/tb-project-manager_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif"> on the Java WorkShop main toolbar.
+<li>Double-click on the portfolio name where you want the Java package project to be placed.
+<li>Choose File -> New ->Project.
+<li>Type the name of your project in the box where the <kbd>untitled</kbd> name appears.
+<br>Make sure you are consistent in the use of capitalization in project and file names (even if you are working on Microsoft Windows NT or Windows 95, where file names are not case-sensitive). Java WorkShop is case-sensitive. 
+<li>Click the Package radio button.
+<li>Click Next.
+<li>Type your package name, using the <kbd>sun.jws.browse</kbd> format, in the Package name box.
+<li>Type the root directory of the class hierarchy in the Root directory box.
+<br>For example, typing <kbd>mydir</kbd> causes the <code>.class</code> files in the Java source file to be saved in the directory <kbd>mydir</kbd>. This field is equivalent to using the <kbd>-d</kbd> option to the <kbd>javac</kbd> command.
+<li>In the last text box, Java WorkShop lists a directory where the source files will be placed. 
+<br>If you want the source files to be located in another directory, replace this directory with the one you want to use.
+<li>If you want to add existing files to this Java package project, click the Yes radio button.
+<li>Click Finish.
+</ol>
+<br>Java WorkShop creates the project <kbd>.prj</kbd> file using the name, source file names, and other information you supplied, and stores the project in the directory you specified. The project name is added to the project manager.
+<p>
+If you are creating a new source file, the source editor opens with the file <i>projectname</i>.<kbd>java</kbd> loaded. If you are using existing source files, the project manager opens with the new project selected.
+<p>
+You can change the default attribute values for the project by choosing Edit -> Project. See <a href="EditProject.html">Editing Project Attributes</a> for information.
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><a href="CreateApplet.html">Creating an Applet Project</a></dd>
+<dd><a href="CreateStandalone.html">Creating a Standalone Program Project</a>
+<dd><a href="BeansProject.html">Creating a Beans Project</a>
+<dd><a href="ProjectWizard.html">Using the Create Project Wizard</a>
+</dl>
+<p>
+</body>
+</html>

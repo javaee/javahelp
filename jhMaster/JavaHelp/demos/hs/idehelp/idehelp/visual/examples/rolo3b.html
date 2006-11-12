@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding a Mail Dialog Box, Part 2
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<H1>Adding a Mail Dialog Box, Part 2</H1>
+
+This part of the mail dialog box example contains the following steps:
+
+<ul>
+<li><a href=#addmailbox>Adding the Mail Panel component to the
+palette</a>
+<li><a href=#putpaneltodialog>Putting the mail panel into a dialog
+box</a> 
+<li><a href=#addemailtocard>Calling the Mail dialog box from the card
+file's Email button</a>
+<li><a href=#testcard>Testing the new Mail dialog box feature</a>
+</ul>
+
+<p>
+<a name=addmailbox></a>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To add the Mail Panel
+component to the palette:</strong> 
+
+<ol>
+<li>Select the card file project from the project manager.
+<li>Choose GUI -> Customize Palette.
+<li>Click on the Shadow tab.
+<li>Enter the class name for the component, <tt>MailDialog</tt>, a
+
+descriptive name for the component.
+<li>Assign an icon for it by giving a path for the icon.
+<p>
+When assigning an icon, use an absolute path in the form of a fully
+qualified URL (for example:
+<code>file:/C:\home\images\icon.gif</code>).   
+<li>Select the Additional palette folder in the Palette Components list.
+<li>Click Add to insert the component into the palette folder.
+<p>
+Use the Up Arrow and Down Arrow buttons to position the component in the
+actual palette folder. 
+<li>Click OK in the Import Components to Palette dialog box to add the
+component to the GUI builder palette.
+</ol>
+
+<p>
+<a name=putpaneltodialog></a>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To put the mail panel in
+a dialog box:</strong>
+
+<ol>
+<li>Choose GUI -> Add New Window.
+<li>Select Empty Dialog.
+<li>Reduce the gridbag layout to one cell.
+<li>Add the Mail Panel component to the cell.
+<li>Open the attribute edior for the dialog box (click in the area
+around the grid).
+<li>In the title box, type a window title for the Mail dialog box.
+<li>Set the visible attribute to false so the dialog box does not
+automatically appear with the card file.
+</ol>
+
+<p>
+<a name=addemailtocard></a>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To call the Mail dialog
+box from the card file:</strong>
+
+<ol>
+<li>Open the layout for the card file.
+<p>
+You need to be in the card file project; click on the card file project
+in the project manager.
+<li>Add a labeled button in the cell to the right of the Find button.
+<li>Open the attribute editor for the new button, give it a component
+ID (<tt>emailButton</tt>), and label the button <tt>Email</tt>.
+<li>Click the Edit operations button to add behavior to the Email
+button.
+<li>Click Insert to add an operation, then click the Action button.
+<p>
+The default Filter type, Event Filter, is used. There is no
+need to set the Filter.
+<li>Choose the action type, Set Attribute.
+<li>Select <tt>mailDialog</tt> as the target.
+<li>Select <tt>visible</tt> as the attribute for the Mail dialog box.
+<li>Open the card file's <i>project</i><tt>.java</tt> in the source
+editor.
+<li>Search for the line:
+<pre>
+public boolean handleMessage(Message msg);
+</pre>
+<p>
+Add code that closes the dialog box:
+<pre>
+ public boolean handleMessage(Message msg) {
+    if (msg.name.equals("Send") ||
+        msg.name.equals("Cancel")) {
+        gui.mailDialog.set("visible", Boolean.FALSE);
+        return true;
+    } else 
+        return super.handleMessage(msg);
+  }
+</pre>
+<li>Choose GUI -> Save Generate GUI File to update the
+<tt>.gui</tt> file for the card file.
+</ol>
+
+<p>
+<a name=testcard></a>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To test the application:</strong>
+
+<ol>
+<li>Click the Build button in the main toolbar.
+<li>When the build completes, click the Run button in the main
+toolbar.
+<li>Click on the Email button in the card file to see if the Mail dialog box
+opens.
+<li>Click on the Send or Cancel button in the Mail dialog box to see if the
+window closes.
+</ol>
+
+<p>
+<IMG SRC="../../../images/hg_see.gif"><strong>See also:</strong>
+<dl>
+<dd><A HREF="rolo3.html">Adding a Mail Dialog, Part 1</A>
+<dd><A HREF="../layout.html">Laying Out the Interface</A>
+<dd><A HREF="../modify.html">Modifying Components in the Grid</A>
+<dd><A HREF="../position_comps.html">Positioning Components in
+Cells</A>
+<dd><A HREF="../wdw-resize.html">Resizing the Window</A>
+</dl>
+<p>
+  </body>
+</html>

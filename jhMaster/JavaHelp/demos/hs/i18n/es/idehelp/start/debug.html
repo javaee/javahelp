@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Conceptos importantes: Subprocesos
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Conceptos importantes: Subprocesos</h1>
+
+Los programas Java se componen de subprocesos. Un
+<i>subproceso</i> es una secuencia de ejecuciones independiente
+dentro de un programa. Cuando se ejecuta un programa Java,
+pueden ejecutarse varios subprocesos a la vez, realizando diferentes acciones. Este tipo de programa
+recibe el nombre de <i>programa de subprocesos m&uacute;ltiples</i>.
+<p>
+Cada subproceso pertenece a un grupo de subprocesos. Un grupo de
+subprocesos es sencillamente un agrupamiento l&oacute;gico de
+subprocesos relacionados entre s&iacute;.
+<p>
+El grupo de subprocesos <kbd>main</kbd> forma parte de
+todos los programas. Cada vez que se utilice el teclado, Java
+WorkShop interactuar&aacute; con los subprocesos del grupo de subprocesos <kbd>main</kbd>.
+<p>
+Cuando se detiene un subproceso, podr&aacute; ver la pila de llamadas de
+que consta. Sin embargo, esta informaci&oacute;n
+no es del todo actual ya que corresponde al estado del subproceso
+en el momento en que se ejecut&oacute; por &uacute;ltima vez.
+<p>
+La pila de llamadas incluye todos los m&eacute;todos que han sido
+llamados, pero que no se han devuelto al
+llamador. Un <i>m&eacute;todo</i> es similar a un procedimiento
+o a una funci&oacute;n. Los m&eacute;todos de la pila de llamadas aparecen
+listados en el orden en que han sido llamados. El m&eacute;todo que
+estaba ejecut&aacute;ndose en el momento en que se detuvo el programa
+aparece en la parte superior de la pila.
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Lecci&oacute;n siguiente:</strong>
+<dl>
+<dd><a href="startdebug.html">Ejercicio 1:  Inicio de una sesi&oacute;n
+de depuraci&oacute;n</a>
+</dl>
+<p>
+</body>
+</html>

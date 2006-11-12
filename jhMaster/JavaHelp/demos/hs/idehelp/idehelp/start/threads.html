@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercise 3: Examining Threads
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Exercise 3: Examining Threads</h1>
+
+In this exercise, you will view the thread groups, threads, and stack frames that make up the Blink project. You will also learn how to track the changes in variable values as the program progresses.
+
+<ol>
+<li>Choose Debug -> Threads/Stack.
+<br>The Java WorkShop Threads/Stack window is displayed.
+<p>
+The Blink project includes three thread groups, each of which is accompanied by the <img src="../../images/spacer2_t.gif"><img src="../../../../images/db_01_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">glyph:
+
+<ul>
+<li><kbd>main</kbd>--includes threads that run in Java WorkShop
+<li><kbd>sun.applet.AppletViewer.main</kbd>--includes threads that run in the applet viewer
+<li><code>file:/<b>your-installation-directory</b>/jws/Blink/-threadGroup</code>--contains threads directly related to the Blink project
+</ul>
+
+The <kbd>sun.applet.AppletViewer.main</kbd> threads group contains three threads; and the <kbd>Blink</kbd> file thread group contains two threads.
+
+<li>Look at <kbd>"AWT-EventQueue-0"</kbd>, the first thread in the <kbd>sun.applet.AppletViewer.main</kbd> thread group.
+<p>You'll see the following:
+
+<ul>
+<li>The thread name is <kbd>java.awt.EventDispatch</kbd>
+<li>The thread state is "at breakpoint".
+<li>The priority for running the thread is priority 5. The thread with the highest priority is run first.
+</ul>
+
+<p>
+The glyph accompanying a thread is an additional clue as to the state of the thread. Possible glyphs you might come across include:
+<br>
+<img src="../../../../images/db_19_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">The thread is suspended.
+<br>
+<img src="../../../../images/db_20_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">The thread is stopped at a breakpoint.
+<br>
+<img src="../../../../images/db_13_u.gif"><img src="../../images/spacer2_t.gif">The state of the thread cannot be determined.
+<br>
+<img src="../../../../images/db_14_u.gif"><img src="../../images/spacer2_t.gif">The thread is a zombie.
+<br>
+<img src="../../../../images/db_15_u.gif"><img src="../../images/spacer2_t.gif">The thread is running.
+<br>
+<img src="../../../../images/db_16_u.gif"><img src="../../images/spacer2_t.gif">The thread is sleeping.
+<br>
+<img src="../../../../images/db_18_u.gif"><img src="../../images/spacer2_t.gif">The thread is waiting on a conditional variable.
+
+
+<li>Look at the call stack that makes up the thread class.
+<br>The call stack includes all the methods that have been called but have not returned.<img src="../../images/spacer2_t.gif"><kbd>Blink.paint</kbd>, which was executing when the program stopped, is at the top of the stack. The stack frame is highlighted so you can easily tell where the program stopped. Each stack frame is accompanied by the <img src="../../../../images/db_02_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif"> glyph.
+<li>Open the <kbd>Blink.paint</kbd> stack frame by clicking the + next to the <img src="../../../../images/db_02_u.gif" align=BOTTOM> glyph.
+<br>Java WorkShop shows the variables and their current values local to <kbd>Blink.paint</kbd>. Look at the variable <kbd>word</kbd>. Look at the value of the <code>word</code> variable.
+<li>Click the Go button on the Edit/Debug toolbar.
+<br>The program runs through the loop and stops when it hits the breakpoint a second time. The Threads/Stack display is updated, the value of the <kbd>word</kbd> variable changes. The value cycles through "Java WorkShop is really cool :-)".
+<li>Open the <kbd>this</kbd> object by clicking the + next to the <img src="../../../../images/db_24_u_data.gif" align=BOTTOM> glyph.
+<br>Java WorkShop expands the object to show all contained variables within the object. You can repeat this action on nested objects (for example, <kbd>peer</kbd>).
+<li>Click the - to the left of the <kbd>this</kbd> object.
+<br>Java WorkShop contracts the object.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>Next lesson:</strong>
+<dl>
+<dd><a href="step.html">Exercise 4:  Stepping Through a Method</a>
+</dl>
+
+<p>
+</body>
+</html>

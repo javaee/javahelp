@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+&Ouml;vning 1: Redigera k&auml;llkod
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>&Ouml;vning 1: Redigera k&auml;llkod</h1>
+
+F&ouml;r att du ska f&aring; en uppfattning om hur det g&aring;r till att arbeta med en k&auml;llredigerare,
+kommer du nu att ange kod i filen <kbd>Blink.java</kbd>, som g&ouml;r s&aring; att orden studsar.
+<p>
+Om du &auml;nnu inte har skapat ett Blink-projekt kan du g&ouml;ra det nu utifr&aring;n anvisningarna
+i <a href="create.html">Skapa Blink-projektet</a>.
+<ol>
+<li>Kontrollera namnet p&aring; det aktuella projektet (det finns i f&ouml;nstret
+Java Development Environment Projekthanteraren.
+<br>Om ett annat projekt &auml;n Blink-projektet &auml;r markerat dubbelklickar du p&aring; Blink-projektets
+namn.
+<li>Skriv nedanst&aring;ende rader med k&auml;llkod.
+<br>Koden &auml;r avsiktligt felaktig s&aring; att du i n&auml;sta lektion kan l&auml;ra dig hur du &aring;tg&auml;rdar felen.
+<p>
+Du g&aring;r till en viss rad genom att v&auml;lja <nobr>Redigera -&gt; G&aring; till rad.</nobr> Radnumret
+visas till h&ouml;ger i fottexten.
+<dl>
+<dt>Efter rad 17
+<dd><pre>int speed;</pre>
+<dt>skriv:
+<dd>
+<pre>boolean offset;</pre>
+<p>
+<dt>Efter rad 25
+<dd><pre>lbl = (att == null) ? "Blink" : att;</pre>
+<dt>skriv:
+<dd>
+<pre>offset = false;</pre> 
+<p>
+<dt>Efter raderna 53-54
+<dd><pre>g.setColor(Color.lightGray);
+}</pre>
+<dt>skriv:
+<dd>
+<pre>
+if offset
+   y = y * 2;
+</pre>
+<p>
+<dt>Efter rad 57
+<dd><pre>g.drawString(word, x, y);</pre>
+<dt>skriv:
+<dd>
+<pre>
+if (offset) {
+   offset = false;
+   y = y / 2
+ } else {
+    offset = true;
+}
+</pre>
+</dl>
+<p>
+<li>Klicka p&aring; knappen Spara <img src="../../../../images/24/file-save_u.gif" align=BOTTOM>i
+verktygsf&auml;ltet f&ouml;r redigering och fels&ouml;kning.
+<br>Den sparade filens s&ouml;kv&auml;g visas i k&auml;llredigerarens fottext.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;sta lektion:</strong>
+<dl>
+<dd><a href="fixbuild.html">&Ouml;vning 2:  &Aring;tg&auml;rda fel i ett bygge</a>
+</dl>
+<p>
+</body>
+</html>

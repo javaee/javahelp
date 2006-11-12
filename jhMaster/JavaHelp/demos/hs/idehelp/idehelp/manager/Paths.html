@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>Where Are Project Files Stored?
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Where Are Project Files Stored?</h1>
+
+JDE creates a project in a source directory relative to its portfolio. Relative path names allow JDE to access a portfolio across a local network. 
+
+<h2>Example 1</h2>
+Suppose you have the following portfolio in the Solaris computing environment:
+<dl>
+<dd><tt>/home/smith/examples/example.psf</tt>
+</dl>
+<p>
+In this portfolio, you create the following two projects:
+<dl>
+<dd><tt>/home/smith/examples/blink/blink.prj</tt>
+<dd><tt>/home/smith/demos/bubbles/bubbles.prj</tt>
+</dl>
+JDE stores the projects in the <tt>example.psf</tt> portfolio file as follows: 
+<dl>
+<dd><tt>blink/blink.prj</tt>
+<dd><tt>../demos/bubbles/bubbles.prj</tt>
+</dl>
+
+<h2>Example 2 </h2>
+Suppose you are working on Microsoft Windows NT or Windows 95 and you have the following portfolio:
+<dl>
+<dd><tt>c:\examples\example.psf</tt>
+</dl>
+Into this portfolio, you import the following projects:
+<dl>
+<dd><tt>c:\examples\bubbles\bubbles.prj</tt>
+<dd><tt>e:\examples\blink\blink.prj</tt>
+</dl>
+The first project is on the same drive as the portfolio. JDE stores the project in the <tt>example.psf</tt> file as <tt>bubbles\bubbles.prj</tt>.
+<p>
+The second project is on a different drive than the portfolio. JDE can't make this path relative. JDE stores the project in the 
+<tt>example.psf</tt> file as <tt>e:\examples\blink\blink.prj</tt>.  
+<p>
+Now suppose a user on the Internet accesses <tt>c:\examples\example.psf</tt> and copies the Bubbles project to his or her current portfolio, <tt>c:\demos\new\newdemos.psf</tt>. JDE puts the copy in <tt>c:\demos\new\bubbles\bubbles.prj</tt>.
+<p>
+If the user copies the Blink project into his or her current portfolio, JDE places it in <tt>e:\examples\blink\blink.prj</tt>. If this location does not exist, the copy/paste operation fails.
+
+<h2>Example 3</h2>
+Some project information requires that you enter a path name. For example, the Build tab in the Edit Project window contains an attribute in which you specify the path to the root directory of the class hierarchy.  JDE creates project attributes that require a path name relative to the project (<tt>.prj</tt>) file.
+<p>
+If you specify a path that cannot be made relative to the project, then other users may not be able to access or use the project.  For example, suppose you are working on Microsoft Windows NT or Windows 95 and you enter <tt>e:\myclasses</tt> as the root directory of the class hierarchy.  If other users copy your project, the "root directory of class hierarchy" works only if they have an e: drive with a <tt>myclasses</tt> directory.
+
+<p>
+</BODY>
+</HTML>
+

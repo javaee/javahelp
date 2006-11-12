@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding a Canvas
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<H1>Adding a Canvas</H1>
+
+<a name=canvascomp></a>
+<ol>
+<li>Click on the Canvas component in the AWT palette tab.
+<li>Click in the cell where you want to place the drawing canvas.
+<li>Open the attribute editor by clicking on its button in the main toolbar.
+<li>Type a unique component ID in the name box.
+</ol>
+
+The Canvas component is a subclass, VJCanvas, of the AWT Canvas
+class. You can draw objects in it programmatically. It generates
+<tt>VJCanvas.PAINT_EVENT</tt> and <tt>VJCanvas.UPDATE_EVENT</tt>
+events when <tt>paint</tt> and <tt>update</tt> are called.
+
+<p>
+To paint on the canvas, you need to respond to the
+<tt>PAINT_EVENT</tt>, which is generated from a canvas when
+<tt>paint</tt> is called.
+
+<p>
+To respond, add code to the <tt>handleEvent()</tt> function of the
+object containing the canvas or to the <tt>handleEvent()</tt> function
+contained in your project group file (<i>project-name</i><tt>.java</tt>).
+
+<p>
+For example, if you have a canvas component called canvas1, you can add
+paint behavior to the group file by entering the following code:
+
+<pre>
+  public boolean handleEvent(Message msg, Event evt) {
+    switch (evt.id) {
+    	case PAINT_EVENT:
+    	  if (msg.target == gui.canvas1) {
+    	      // create canvas object and graphics object
+              VJCanvas vjcanvas = (VJCanvas)gui.canvas1.getBody();
+              Graphics g = vjcanvas.getGrahpics();
+              // call your paint function here
+    	  }
+    }
+    return super.handleEvent(msg, evt);
+  }
+</pre>
+
+<H2>Special Attributes</H2>
+
+<table>
+<tr>
+<td><code><strong>minHeight</strong></code></td>
+<td>Minimum height (in pixels) of the canvas.</td>
+</tr>
+<tr>
+<td><code><strong>minWidth</strong></code></td>
+<td>Minimum width (in pixels) of the canvas.</td>
+</tr>
+</table>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="layout.html">Laying Out the Interface</A>
+<dd><A HREF="palette.html">Visual Java GUI Builder Palette</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI Builder
+Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+  </body>
+</html>

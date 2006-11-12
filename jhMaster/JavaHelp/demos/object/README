@@ -1,0 +1,20 @@
+Start by doing a "gnumake all".  Compile on 1.2fcs-I.  Then:
+
+On 1.1.7 with Swing 1.1b3, the presentation is good.
+On 1.2fcs-I, the CSS attributes are wrong but it comes up.
+On 1.2fcs-J, the CSS attributes are right, but there is
+a problem with the "-target 1.1" on that build.
+
+To use the HelpSet in the JAR:
+
+	sh ../bin/hsviewer Object.hs all.jar
+
+To use the HelpSet from the filesystem:
+
+	sh ../bin/hsviewer hs/Object.hs object.jar
+
+On Win32:
+
+	set JHHOME=<path>\JavaHelp
+	..\bin\hsviewer hs/Object.hs object.jar
+

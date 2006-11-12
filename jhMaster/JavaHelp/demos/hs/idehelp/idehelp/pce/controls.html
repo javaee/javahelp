@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+ <!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Editor Menu and Toolbar Commands
+</TITLE>
+<!-- Changed by: Leif Samuelsson, 22-Apr-1996 -->
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Editor Menu and Toolbar Commands</H1>
+This page describes:
+<ul>
+<li><A HREF="#menus">Menu commands</A>
+<li><A HREF="#toolbar">Toolbar commands</A>
+<li><A HREF="#line_col">Line/Column indicator</A>
+</ul>
+<A NAME="menus"></A>
+<H2>Source Editor Menu Commands</H2>
+<H3>File Menu</H3>
+Many of the items in the main File menu are editor commands.
+
+<table width=100% border=0 cellspacing=12>
+<tr valign="top">
+<td width=40%><strong>New</strong></td>
+<td width=60%>
+Empties the contents of the source editor. You can enter
+text and save it as a new file.
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Open</strong></td>
+<td>
+Opens an existing file in the source editor.
+</td>
+
+<tr valign="top">
+<td><strong>New Editor Window</strong></td>
+<td>
+Starts a new source editor window with no file loaded.
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Clone Editor Window</strong></td>
+<td>
+Opens a new editor window loaded with the same file
+as the editor window from which it was cloned.  This process
+can be repeated multiple times.  See <A HREF="basic.html#multiple">Basic
+Editing</A> for more information.
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Reload Source File</strong></td>
+<td>
+Reloads the file currently loaded in the source editor.
+</td>
+</tr>
+
+<tr>
+<th colspan=2><hr></th>
+</tr>
+
+<tr valign="top">
+<td><strong>Save</strong></td>
+<td>
+Saves the file currently loaded in the source editor
+using the file's current name. 
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Save As</strong></td>
+<td>
+Saves the file currently loaded in the source editor
+with a name you provide using a file chooser dialog box. 
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Save All Source Files</strong></td>
+<td>
+Saves all files currently loaded in active source
+editor windows.
+</td>
+</tr>
+
+<tr>
+<th colspan=2><hr></th>
+</tr>
+
+<tr valign="top">
+
+
+<td><strong>File Picklist</strong></td>
+<td>
+JDe maintains a list of files that you load into
+the source editor.  Whenever you load a file into the
+editor, its name is added to the top of the list.  Choose a
+file from this list to load it in the source editor.
+<p>
+This list contains the 20 most recently edited files in the
+order they were loaded into the editor.  This list is
+maintained across JDe sessions.  If a file is
+deleted from the file system, it is deleted from the list.
+</td>
+</tr>
+
+</table>
+
+
+<A NAME=edit_menu></A>
+<H3>Edit Menu</H3>
+Many of these menu items have shortcut keys listed to the
+right of the associated menu items.
+
+<table width=100% border=0 cellspacing=12>
+<tr valign="top">
+<td width=40%><strong>Undo</strong></td>
+<td width=60%>
+Reverses (one at a time) a series of
+editor actions (except Save).  The list of
+editor actions is maintained even when the
+files is saved.  Therefore, you can undo changes
+you made prior to saving the file.
+</tr>
+
+<tr valign="top">
+<td><strong>Redo</strong></td>
+<td>
+Reverses (one at a time) a series of
+Undo commands. The list of
+editor actions is maintained even when the
+files is saved.  Therefore, you can redo changes
+you made prior to saving the file.
+</tr>
+
+<tr valign="top">
+<td><strong>Cut</strong></td>
+<td>
+Cuts the current selection to the clipboard
+</tr>
+
+<tr valign="top">
+<td><strong>Copy</strong></td>
+<td>
+Copies the current selection to the clipboard
+</tr>
+
+<tr valign="top">
+<td><strong>Paste</strong></td>
+<td>
+Pastes the contents of the
+clipboard at the insert point
+</tr>
+
+<tr valign="top">
+<td><strong>Delete Line</strong></td>
+<td>
+Deletes the line the cursor is on
+</tr>
+
+<tr valign="top">
+<td><strong>Insert A File</strong></td>
+<td>
+Inserts a file at the cursor 
+position.  Opens a file chooser.
+</tr>
+
+<tr valign="top">
+<td><strong>Find</strong></td>
+<td>
+Finds a string of text
+</tr>
+
+<tr valign="top">
+<td><strong>Replace</strong></td>
+<td>
+Finds and then replaces a
+string of text
+</tr>
+
+<tr valign="top">
+<td><strong>Find Forward</strong></td>
+<td>
+Finds the next forward match of the current search text
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Find Backward</strong></td>
+<td>
+Finds the next backward match of the current search text
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Go To Line</strong></td>
+<td>
+Takes you to a specified line in the file
+</tr>
+
+</table>
+
+<A NAME="toolbar"></A>
+<H2>Toolbar Buttons</H2>
+The following buttons in the Edit/Debug toolbar are editor
+commands:
+<table width=100% border=0 cellspacing=12>
+<tr valign="top">
+<td width=40%><IMG SRC="../images/file-open_u.gif" ALIGN=MIDDLE WIDTH=24 HEIGHT=24></td>
+<td width=60%>
+Opens a file (equivalent to choosing File -> Open)
+</tr>
+
+<tr valign="top">
+<td><IMG SRC="../images/file-save_u.gif" ALIGN=MIDDLE WIDTH=24 HEIGHT=24></td>
+<td>
+Saves the current file (equivalent to choosing File -> Save)
+</tr>
+
+</table>
+
+<A NAME="line_col"></A>
+<H2>Line/Column Indicator</H2>
+The cursor position (<em>line number</em>:<em>column
+number</em>) is displayed in lower-right portion of the
+window footer.
+
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="basic.html">Basic Editing</A>
+<dd><A HREF="syntax.html">Syntax Highlighting</A>
+<dd><A HREF="tabs.html">Setting Tabs and Indents</A>
+<dd><A HREF="font.html">Changing Editor Fonts</A>
+</dl>
+
+</BODY>
+</HTML>

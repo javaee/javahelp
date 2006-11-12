@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JavaHelp 1.0 - Localization</title>
+  </head>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup><font size="-2">TM</font></sup> 1.0 - Localization
+</h1>
+<h2 align=center>
+<a href="Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+</h2>
+
+
+<hr>
+<h2>A Network Environment</h2>
+    <p>
+JavaHelp follows the standard localization conventions used for
+<A HREF="http://www.javasoft.com/products/jdk/preview/docs/api/java.util.ResourceBundle.html">
+ResourceBundle.getBundle()</A>.
+In a networked environment, each such query may require a number of
+requests across a network to determine the desired bundle for a given
+Locale. JavaHelp is designed so that only one such search is
+required to locate the HelpSet file.  All other information is
+obtained by simple requests that start from this file.</p>
+<p>
+Although the HelpSet file is localized following the same naming conventions as
+with
+<A HREF="http://www.javasoft.com/products/jdk/preview/docs/api/java.util.PropertyResourceBundle.html">Java
+Property Resource Bundle</A>, for technical reasons
+they are not property files.  Instead, the method
+<tt>HelptSet.getHelpSet()</tt>
+is used.</p>
+<p>
+An invocation of
+<tt>HelpSet.getHelpSet(name, locale)</tt> invokes
+<tt>HelpUtilities.getLocalizedResource()</tt>.
+<tt>HelpUtitities.getLocalizedResource()</tt> eventually calls into
+<tt>ClassLoader.getResource()</tt>
+with resource names that are based on the name passed and on the
+Desired locale and the Default locale.</p>
+<p>
+If the first argument to <tt>getHelpSet()</tt>
+is "name", the search is conducted in the order shown below (from
+most specific to least specific).  The extension is fixed to
+be "<tt>.hs</tt>":</p>
+
+<pre>
+    name_<em>language</em>_<em>country</em>_<em>variant</em>.hs
+    name_<em>language</em>_<em>country</em>.hs
+    name_<em>language</em>
+    name
+    name_<em>defaultlanguage</em>_<em>defaultcountry</em>_<em>defaultvariant</em>
+    name_<em>defaultlanguage</em>_<em>defaultcountry</em>
+    name_<em>defaultlanguage</em>
+</pre>
+
+<p>
+This search order is the one used for
+<tt>ResourceBundle</tt>,
+where it is not exposed.  It is captured and exposed in
+<tt>HelpUtilities.getCandidates()</tt>.
+
+<h2>Localized Documents</h2>
+<p>
+The HTML viewers are required to support localization as specified
+by the W3C HTML 4.0 standard.</p>
+
+<h2>Full Text Search</h2>
+<p>
+Java uses Unicode internally and it is well suited to
+internationalization and localization.  One specific requirement is
+that the search code be able to deal with documents that are written
+in both English and another language.  This combination occurs often
+when some documents have been translated but others have not.</p>
+
+<h2>More Details</h2>
+<p>
+The "Localizing Help Information" section of the <em>JavaHelp
+User's Guide</em> describes the localization process in
+detail.
+<p>
+<hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 16:46:01 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>

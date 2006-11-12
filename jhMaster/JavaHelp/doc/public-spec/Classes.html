@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>JavaHelp 1.0 - The JFC Architecture</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup>TM</sup> 1.0 - JavaHelp Class Structure
+</h1>
+      <h2 align=center>
+<a href="Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+<br>
+</h2>
+
+<hr>
+
+<h2>Packages</h2>
+
+<p>
+JavaHelp is a
+<a href="http://java.sun.com/products/jdk/1.2/docs/guide/extensions/">
+standard extension</a> for
+<a href="http://java.sun.com/products/jdk/1.1/">
+JDK1.1</a> and
+<a href="http://java.sun.com/products/jdk/1.2/">
+JDK1.2</a>.
+The API is defined in the
+<tt>javax.help</tt> package,
+with the exceptions of the search API classes,
+which are defined mainly in the <tt>javax.help</tt> package,
+but other packages are also involved.  The complete list is:
+
+<p>
+<table>
+<tr>
+<th>Package
+<th>Description
+</tr>
+
+<tr>
+<td>javax.help
+<td>Main package
+</tr>
+
+<tr>
+<td>javax.help.event
+<td>Event & Listener classes
+</tr>
+
+<tr>
+<td>javax.help.plaf
+<td>Interface to the ComponentUI classes
+</tr>
+
+<tr>
+<td>javax.help.plaf.basic
+<td>Basic look and feel; currently no specific PLAF classes are needed
+</tr>
+
+<tr>
+<td>javax.help.resources
+<td>Localization classes.
+</tr>
+
+<tr>
+<td>javax.help.search
+<td>search classes.
+</tr>
+
+</table>
+
+
+<p>
+An implementation of the extension may also include some
+implementation classes that are not intented to be used directly.
+The <a href="misc/RefImpl.html">Reference Implementation</a>
+also includes additional classes of utility to Help authors.
+</p>
+
+<h2>API Structure</h2>
+
+<p>
+This section describes the general principles behind the
+API classes.
+More details are available in the <a href="javadoc">javadoc</a>
+information on the classes.
+The reference implementation also provides code fragments
+exemplifying the use of these classes.
+</p>
+
+<p>
+As indicated in <a href="Overview.html#API Structure">Overview.html</a>,
+the API classes in javax.help are conceptually structured in
+several collections.
+The different collections are addressed to different
+tasks and users.
+The boundaries between some of these collections are not sharp,
+but the classification helps to reduce the number of concepts,
+and actions,
+needed to perform simple tasks.
+</p>
+
+<p>
+<ul>
+<li>Basic Content Presentation
+<li>Complete Access to JavaHelp Functionality
+<li>Swing classes
+<li>Full-Text Search
+</ul>
+
+
+<h3>Basic Content Presentation</h3>
+
+<p>
+Some applications only are interested in presenting some
+help information to the user,
+minimizing the interaction between the help author and the
+application developer.
+The basic actions to perform are:
+<ul>
+<li>Locating a HelpSet, perhaps after localization;</li>
+<li>Reading that HelpSet, including any related data, like
+Map files, TOCs, Indices, and Search database; and</li>
+<li>Visually presenting this HelpSet.</li>
+</ul>
+
+<p>
+The abstraction of a HelpSet is
+<a href="../api/javax/help/HelpSet.html">javax.help.HelpSet</a>,
+while the abstraction of its visual presentation is
+<a href="../api/javax/help/HelpBroker.html">javax.help.HelpBroker</a>.
+A <code>HelpBroker</code> provides for
+some interaction with the presentation regardless of the actual
+visual details;
+the default presentation is <code>DefaultHelpBroker</code>.
+An application can provide on-line help using only these two classes.
+
+<p>
+Sub-HelpSets listed in the HelpSet file using
+the &lt;subhelpset&gt; tag will be merged automatically before presenting
+them to the user.
+</p>
+
+<p>
+These two classes (an ancillary classes, like Exception classes) do not
+have any dependency on Swing for their definition, although
+<code>DefaultHelpBroker</code> depends on Swing for its implementation.
+</p>
+
+<h3>Detailed Control and Access</h3>
+<p>
+The <tt>HelpBroker</tt> interface provides substantial
+control of the presentation of a HelpSet,
+without leaking unwanted GUI details of the presentation.
+For example,
+this interface can be used to interact with the two-pane
+default presentation of the reference implementation,
+as well as to interact with some presentation embedded
+within the application.
+Additionally, since the HelpBroker does not use any
+Swing types or concepts,
+it does not require Swing for its implementation.
+But some applications will want access to such details
+as the map from ID to URLs.
+JavaHelp provides classes for this.
+</p>
+
+
+<h3>Extensibility</h3>
+
+Content extensibility is described through a
+<code>NavigatorView</code>
+which provides access to some context information plus a way of
+presenting this information.
+<code>TOCView</code>,
+<code>IndexView</code>,
+and
+<code>SearchView</code>
+are standard views for Table Of Contents,
+Index, and full-text search.
+
+<p>
+The standard views yield standard
+<code>JHelpTOCNavigator</code>,
+<code>JHelpIndexNavigator</code>,
+and
+<code>JHelpSearchNavigator</code>
+Swing components.
+The standard views also provide access to
+the content;
+this access uses subclasses of
+<code>TreeItem</code>.
+
+<p>
+New views can be added;
+for instance a new TOC presentation can be obtained by
+subclassing TOCView and just changing the JHelpNavigator
+returned by it.
+Another view may keep the same JHelpNavigator but use a
+format for the encoding of the view data (perhaps even
+generating the data dynamically); this is done by
+redefining the
+<a href="../api/javax/help/TOCView.html#getDataAsTree()">
+getDataAsTree</a> method.
+The presentation of new Views can be derived from the standard
+ones by subclassing.
+
+<h3>Swing components</h3>
+
+JavaHelp provides a collection of Swing components that are used
+to implement the DefaultHelpBroker and can also be used directly,
+as in <em>embedded help</em>.
+The components follow the standard MVC from Swing.
+There are two main models: <code>HelpModel</code> and <code>TextHelpModel</code>.
+<p>
+<code>HelpModel</code> models changes to the location within a HelpSet;
+components that want to respond to these changes should
+listen to events originating within the model - this is how
+synchronized views work.
+The location within the model is represented by objects of type
+<code>Map.ID</code>;
+these correspond to a String (an ID), and a HelpSet providing context
+to that ID.
+A HelpSet needs to be explicitly given (in general) because of the
+ability of merging HelpSets.
+<code>TextModel</code> provides additional information when the content
+is textual.
+A TextModel can queried for the current <em>highlights</em>,
+which a client may present visually.
+The <code>DefaultHelpModel</code>
+is the default model implementing both models.
+
+<p>
+<code>JHelpContentViewer</code>
+is the Swing component for the content,
+while context corresponds to several subclasses of
+<code>JHelpNavigator</code>.
+<code>JHelp</code> is a common grouping of these
+classes into synchronized views of content.
+
+<p>
+The basic structure of the Swing classes is shown in the next
+figure;
+for additional information about the Swing classes check
+<a href="http://java.sun.com/products/jfc/swingdoc-current/doc/">
+the Swing Connection home page</a>
+</p>
+
+<p align="center"><img src="../images/MVC.gif">
+
+<p> 
+A Swing control acts as the main interface to
+developers.  All <tt>ComponentUI</tt> objects for a
+particular look and feel are managed by a JFC object called
+<tt>UIFactory</tt>. When a new Swing component is
+created, it asks the current <tt>UIFactory</tt> to create a
+<tt>ComponentUI</tt> object.  Vendors or developers can
+ship different <tt>ComponentUI's</tt> to suit their
+specific needs.
+</p>
+
+<p>
+A Swing control then delegates the tasks of rendering,
+sizing and performing input and output operations to the
+<tt>ComponentUI</tt>. The <tt>ComponentUI's</tt>
+<tt>installUI</tt> and <tt>deinstallUI</tt> methods add
+behavior and structure to the raw Swing component by
+adding listeners, setting the layout manager, and adding
+children.
+</p>
+
+<p>
+The Swing model defines the component's
+non-view-specific state. The Swing component
+communicates changes to the model and listens (through
+listeners) to the model for changes. Finally, the model
+provides data to the <tt>ComponentUI</tt> for display.
+</p>
+
+<p>
+The ComponentUI objects in the JavaHelp Swing classes are currently
+fully defined in terms of the other components,
+hence, there are only <code>javax.help.plaf.basic</code> classes,
+and none of the other PLAF packages are needed.</p>
+
+
+
+<h3>Context Sensitive Help</h3>
+
+JavaHelp supports a <code>Map</code>
+between identifiers and URLs.
+<code>FlatMap</code> and
+<code>TryMap</code> are two implementations;
+sofisticated users can provide their own implementations
+to satisfy different requirements (for example, the map data
+may be generated dynamically).
+
+The main class used to associate specific content with graphic
+objects is <code>CSH</code>.
+
+<h3>Search</h3>
+JavaHelp supports a standard full-text search view and navigator.
+The view interacts with a search engine through the types in the
+<code>javax.help.search</code> package.
+The reference implementation provides a search engine implementing
+these interfaces but others can also be used;
+the specific search engine used is part of the information given to
+the search view.
+By doing this separation we provide the capability of full-text searching
+while not imposing specific formats.
+
+<p>
+The search package has not conceptual dependencies on any
+other portions of JavaHelp,
+and it can be used independently.
+The
+<a href="misc/RefImpl.html">Reference Implementation</a>
+provides one such implementation packaged in a JAR file
+that depends only on the basic platform.
+</p>
+
+
+      <hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 16:46:01 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>

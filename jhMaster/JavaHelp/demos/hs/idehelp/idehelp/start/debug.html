@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Important Concepts: Threads
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Important Concepts: Threads</h1>
+
+Java programs are made up of threads. A <i>thread</i> is an independent sequence of executions within a program. When a Java program runs, several threads may be running at once, performing different actions. This type of program is known as a <i>multithreaded program</i>.
+<p>
+Every thread belongs to a thread group. A thread group is simply a logical grouping of related threads.
+<p>
+The <kbd>main</kbd> thread group is part of every program. Anytime you use the keyboard, Java WorkShop interacts with the threads in the <kbd>main</kbd> thread group.
+<p>
+When a thread is stopped, you can view the call stack that makes up the thread. You can view the call stack of a running thread, but the information you see is only as current as the last snapshot of the thread.
+<p>
+The call stack includes all methods that have been called, but have not returned to the caller. A <i>method</i> is similar to a procedure or function. The methods in the call stack are listed in the order that they were called. The method that was executing when the program stopped is at the top of the stack. 
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>Next lesson:</strong>
+<dl>
+<dd><a href="startdebug.html">Exercise 1:  Starting a Debugging Session</a>
+</dl>
+<p>
+</body>
+</html>

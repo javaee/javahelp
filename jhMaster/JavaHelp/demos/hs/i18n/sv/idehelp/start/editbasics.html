@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Viktiga begrepp:  Projektattribut
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Viktiga begrepp:  Projektattribut</h1>
+
+Attribut definierar projektets individuella egenskaper som namn, typ och hur
+det visas p&aring; en HTML-sida. Blink-projektet som du skapade kr&auml;vde attribut f&ouml;r:
+<ul>
+<li>Projekttyp
+<li>Katalogen som inneh&aring;ller <kbd>.java</kbd>-k&auml;llfilerna f&ouml;r projektet
+<li>Klassfilen som inneh&aring;ller <kbd>init ()</kbd>-metoden f&ouml;r miniprogrammet.
+</ul>
+
+<p>
+N&auml;r du skapade projektet angav du v&auml;rden f&ouml;r dessa attribut.
+<p>
+Projektet Blink inneh&aring;ller dessutom flera attribut som inte &auml;r obligatoriska. Dessa avg&ouml;r
+till exempel hur projektet visas i projekthanteraren och vilka kompileraralternativ som anv&auml;nds
+n&auml;r projektet byggs. Java Development Environment tillhandah&ouml;ll standardv&auml;rden f&ouml;r dessa attribut n&auml;r du skapade projektet.
+<p>
+I n&auml;sta lektion kommer du att redigera attributen som utg&ouml;r m&auml;rket &lt;miniprogram&gt;. 
+T&auml;nk p&aring; att n&auml;r du k&ouml;rde Blink-projektet i f&ouml;reg&aring;ende lektion skapades m&auml;rket
+&lt;miniprogram&gt; med endast de krav som beh&ouml;vs f&ouml;r att visa ett miniprogram p&aring; en
+webbsida. Java Development Environment skapade m&auml;rket i filen <kbd>Blink.tmp.html</kbd> i katalogen
+<kbd>Blink</kbd>. Just nu ser filen ut ungef&auml;r s&aring; h&auml;r:
+<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+   codebase="/<i>your_home_directory</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt="If you had a java-enabled browser, you would see an applet here."
+&gt;
+&lt;hr&gt;Om l&auml;saren k&auml;nde igen m&auml;rket miniprogram visas ett miniprogram h&auml;r.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+Filen <kbd>Blink.class</kbd> inneh&aring;ller miniprogrammets kompilerade Java-kod. Katalogen
+<code>Kodbas</code> inneh&aring;ller filen <kbd>Blink.class</kbd>. Bredden och h&ouml;jden p&aring;
+det omr&aring;de som webbl&auml;saren beh&ouml;ver f&ouml;r att visa miniprogrammet anges i bildpunkter.
+<p>
+Du beh&ouml;ver inte redigera filen <kbd>.html</kbd> direkt, utan Java Development Environment kommer att
+uppdatera den utifr&aring;n &aring;tg&auml;rderna som du utf&ouml;r i projekthanteraren.
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;sta lektion:</strong>
+<dl>
+<dd><a href="editlesson.html">&Ouml;vning 1:  Redigera k&ouml;rattribut</a>
+</dl>
+<p>
+</body>
+</html>

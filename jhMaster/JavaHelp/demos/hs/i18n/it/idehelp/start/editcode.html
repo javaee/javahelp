@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Esercizio 1: Modifica del codice sorgente
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Esercizio 1: Modifica del codice sorgente</h1>
+
+Per consentire di acquisire una certa familiarit&agrave; con l'editor del
+codice sorgente, nel corso di questo esercizio verr&agrave; immesso nel file
+<kbd>Blink.java</kbd> del
+codice che produrr&agrave; l'effetto di far rimbalzare le parole.
+<p>
+Se il progetto Blink non &egrave; stato ancora creato, crearlo
+seguendo le istruzioni riportate in
+<a href="create.html">Creazione del progetto Blink</a>.
+<ol>
+<li>Individuare il nome del progetto corrente nella finestra del
+gestore progetti di Java Development Environment.
+<br>Se il progetto corrente non &egrave; Blink, fare doppio clic sul nome
+del progetto Blink.
+<li>Digitare le righe di codice sorgente riportate di seguito.
+<br>Questo codice contiene intenzionalmente degli errori in quanto
+la correzione degli errori sar&agrave; l'argomento della lezione successiva.
+<p>
+&Egrave; possibile andare a un numero di riga specifico scegliendo <nobr>Modifica -&gt; Vai alla
+riga.</nobr> Il numero della riga su cui &egrave; posizionato il puntatore viene
+visualizzato nell'angolo destro del pi&egrave; di pagina.
+<dl>
+<dt>Dopo la riga 17
+<dd><pre>int speed;</pre>
+<dt>digitare:
+<dd>
+<pre>boolean offset;</pre>
+<p>
+<dt>Dopo la riga 25
+<dd><pre>lbl = (att == null) ? "Blink" : att;</pre>
+<dt>digitare:
+<dd>
+<pre>offset = false;</pre> 
+<p>
+<dt>Dopo le righe 53-54
+<dd><pre>g.setColor(Color.lightGray);
+}</pre>
+<dt>digitare:
+<dd>
+<pre>
+if offset
+   y = y * 2;
+</pre>
+<p>
+<dt>Dopo la riga 57
+<dd><pre>g.drawString(word, x, y);</pre>
+<dt>digitare:
+<dd>
+<pre>
+if (offset) {
+   offset = false;
+   y = y / 2
+ } else {
+    offset = true;
+}
+</pre>
+</dl>
+<p>
+<li>Fare clic sul pulsante Salva <img src="../../../../images/24/file-save_u.gif" align=BOTTOM>sulla
+barra degli strumenti dell'editor/debug.
+<br>Il nome del percorso del file salvato viene visualizzato nel pi&egrave;
+di pagina dell'editor del codice sorgente.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Lezione successiva</strong>
+<dl>
+<dd><a href="fixbuild.html">Esercizio 2: Correzione degli errori di compilazione</a>
+</dl>
+<p>
+</body>
+</html>

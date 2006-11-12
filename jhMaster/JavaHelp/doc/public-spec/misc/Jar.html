@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JavaHelp 1.0 - Proposed jar: Specification</title>
+  </head>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup><font size="-2">TM</font></sup> 1.0
+<br>
+Proposed jar: Specification
+    </h1>
+    <h2 align=center>
+<br>
+<a href="../Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+<br>
+</h2>
+
+<hr>
+
+<EM>NOTE</EM>: the main body of this document is taken verbatim from the
+original
+<a href="http://java.sun.com/products/jdk/1.2/docs/guide/jar/">
+1.2 proposal</a>.
+
+<h2>JAR URL Syntax Proposal</h2>
+
+<h3>Summary</h3>
+<p>
+The following is a proposed URL syntax for representing JAR file entries.
+This new URL syntax can be used to refer to resources stored in both local
+and remote JAR files, and also replaces the need for the systemresource
+protocol handler.</p>
+
+<h3>Absolute URLs</h3>
+<p>
+An absolute JAR URL has the following syntax:
+<p>
+<pre>
+    abs-jar-url = "jar:" jar-file-url "!" [ sub-jar-path ] [ entry-path ]
+    jar-file-url = abs-url ( absolute URL of JAR file )
+    sub-jar-path = entry-path "!" [ sub-jar-path ]
+    entry-path = abs-path ( absolute path of JAR file entry )
+</pre>
+<p>
+The optional component 'sub-jar-path' can be used to refer to JAR files
+embedded within JAR files. If 'entry-path' is omitted then it defaults to
+the root path entry '/'.
+<p>
+Examples,
+<p>
+<pre>
+    jar:http://foo/foo.jar!/foo/bar/gif
+    jar:http://foo/foo.jar!/baz.jar!/foo.gif
+</pre>
+<p>
+The seconds example refers to a JAR file 'baz.jar' embedded within the
+JAR file at URL http://foo/foo.jar.
+<p>
+Since the '!' character has special meaning within a JAR URL then it must
+be encoded if appearing as the last character in a JAR entry path or the
+embedded JAR file URL.
+<p>
+A JAR URL without any '!' character is equivalent to the URL obtained by
+removing 'jar' scheme. For example,
+<p>
+<pre>
+    jar:http://foo/foo.html -> http://foo.foo.html
+</pre>
+<p>
+This makes it possible for a relative URL to "jump out" of a JAR URL if
+necessary.
+<h3>Relative URLs</h3>
+<p>
+When resolving relative URLs against an absolute JAR URL as the base URL,
+similar rules are employed as with file URLs. The one exception is if the
+character '!' appears alone as a component of the relative URL then it will
+cause every component following the last '!' to be removed from the absolute
+URL. This makes it possible to immediately jump to the root of the last
+embedded JAR file.
+<p>
+For example, if the base URL is 'jar:http://foo/foo.jar!/foo/bar.html'
+then the following relative URLs as resolve as follows:
+<p>
+<pre>
+    baz.html	    -> jar:http://foo/foo.jar!/foo/baz.html
+    !/../bar.jar!/  -> jar:http://foo/bar.jar!/
+    !/../foo.gif    -> jar:http://foo/foo.gif -> http://foo/foo.gif
+    /bozo.html	    -> jar:http://foo/bozo.html -> http://foo/bozo.html
+</pre>
+
+<a name="jax">
+<h3>JDK1.2 support JAX files</h3></a>
+<p>
+With JDK1.2, the invocation of kiosks can be made even
+simpler through the use of the JAR auto-invocation
+mechanism.  The underlying platform's process start-up
+mechanism distinguishes a class file with a
+<code>main()</code> entry in the JAR file's MANIFEST.
+ Then the platform's normal mechanism (double click,
+explicit launch, magic number) is used to launch the file.
+A JAX file is a JAR file intented to be used in this
+fashion with a different extension; this is useful with
+the standard win32 "launcher by extension" mechanism.</p>
+
+<hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 16:46:03 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JavaHelp 1.0 - Relaxation Searching</title>
+  </head>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup>TM</sup> 1.0 - Relaxation Searching
+</h1>
+      <h2 align=center><a href="../Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+<br>
+</h2>
+
+<h3>Introduction</h3>
+<p>
+The default search engine in
+<code>com.sun.java.help.search.DefaultSearchEngine</code>
+uses an
+effective natural language search technology that not only retrieves
+documents, but locates specific passages within those documents where
+the answers to a request are likely to be found.  The technology
+involves a conceptual indexing engine that analyzes documents to
+produce an index of their content and a query engine that uses this
+index to find relevant passages in the material.
+</p>
+
+<h3>Relaxation Ranking</h3>
+<p>
+The query engine makes use of a technique called "relaxation ranking"
+to identify and score specific passages of material where the answer to
+a request is likely to be found.  This is referred to as "specific
+passage retrieval" and is contrasted with the traditional "document
+retrieval" which retrieves documents but leaves the user with the task
+of finding the relevant information within the document (or finding
+that the desired information is not in the document after all).
+</p>
+<p>
+The relaxation ranking algorithm looks at the search terms and compares
+them to occurrences of the same or related terms in the documents.  The
+algorithm attempts to find passages in the documents in which as many
+as possible of the query terms occur in as nearly as possible to the
+same form and the same order, but will automatically relax these
+constraints to identify passages in which not all of the terms occur or
+they occur in different forms or they occur in different order or they
+occur with intervening words, and it assigns appropriate penalties to the
+passages for the various ways in which a passage departs from an exact
+match of the requested information.  Passages with words in the
+same order as the search terms are scored better than passages with
+the matching words in some other order.  Passages with matching words
+in any order are scored better than passages which do not contain
+matches for all of the requested terms.
+</p>
+
+<h3>Conceptual Indexing</h3>
+
+<p>
+Conceptual index consists of the following linguistic resources
+<ul>
+<li>tokens
+<li>lexicons
+<li>lexicons - domain specific
+<li>morphology
+<li>classification
+</ul>
+The more of the linguistic resources built into an indexer the better 
+	the conceptual index.
+    The best indexer incorporate all of the above resources. 
+</p>
+
+<p>
+<em>IMPORTANT: </em>
+Although the core search engine in the reference implementation
+supports all these concepts,
+the indexer (search builder) available in JavaHelp 1.0
+only incorporates tokens.
+Details of the other concepts are included below just for the interested
+reader.
+</p>
+
+<hr>
+
+<p>
+The indexing engine can perform linguistic content processing of the
+indexed material to analyze the structure and interrelationships of
+words and phrases and to organize all of the words and phrases from the
+indexed material into a conceptual taxonomy that can be browsed and can
+be used to make connections between terms in a query and related terms
+in the material that you'd like to find.
+</p>
+
+
+<h3>Morphological and Semantic Relationships</h3>
+
+<p>
+The relaxation ranking algorithm is a very effective retrieval method
+all by itself, but can produce significantly improved results by using
+morphological and semantic relationships from the conceptual taxonomy
+to automatically make connections between query terms and related terms
+that may occur in desired passages.
+</p>
+<p>
+Morphological relationships refer to relationships between different
+inflected and derived forms of a word, such as the relationship between
+"renew" and "renewed" (past tense inflection) and "renew" and "renewal"
+(derived nominalization).  Derived and inflected forms of a word are
+treated as more specific terms in the conceptual taxonomy, so that a
+request for "renew" will automatically match "renewed" and "renewal"
+(with a small penalty).
+</p>
+<p>
+Semantic relationships refer to relationships between terms that are
+more general or more specific than other terms or that imply other terms.
+For example, "washing" is a kind of "cleaning" and since it is
+more specific than "cleaning" it will automatically be matched by a
+request for "cleaning" (again with a small penalty).
+</p>
+<p>
+Passages with exact word matches are scored better than passages with
+morphological matches or matches using semantic relationships.
+</p>
+
+<hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="http:mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 20:03:44 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>

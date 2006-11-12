@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Evaluating Data Values
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<h1>Evaluating Data Values
+</h1>Using the Expression Evaluation window, you can evaluate an expression that is within the scope of the method you are stopped in. An expression has a value when it is within the scope of the current location on the call stack.
+<p>
+You can use either the Expression Evaluation window or the Threads/Stack window to get the value of an expression. If you want to track the changes in a variable as the program progresses, use the Threads/Stack window.
+<p>
+<img src="../../images/hg_proc.gif" width="18" height="13"><b>To evaluate an expression:</b>
+<ol>
+<li>Choose Debug -> Evaluate.
+<li>Type the expression you want to evaluate in the Expression box.
+<li>Click Evaluate.
+</ol>
+<p>
+JDE prints the expression and its value in the <a href="Messages.html">Debug tab</a>, below the source editor window.
+<p>
+When evaluating an expression, JDE does not distinguish package names from expression names. Consider the strings <kbd>java.io.File.separator</kbd> and <kbd>myObj.myMember.myString</kbd>. JDE does not recognize that <kbd>java.io.File</kbd> is a package name and that <kbd>myObj.myMember</kbd> is a member of an object. In all cases, the debugger treats package names as members of objects.
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><a href="Eval.html">Evaluating Expressions</a>
+<dd><a href="Threads.html">Threads/Stack Overview</a>
+</dl>
+<p>
+</BODY>
+</HTML>

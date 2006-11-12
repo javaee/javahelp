@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_CN">
+<HEAD>
+<TITLE>
+练习1：编辑运行属性 
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>练习1：编辑运行属性</h1>
+
+“教程一”中所生成的&lt;applet&gt;标签指定了在web页面上放置applet小程序所需的最低要求。 在本练习中，您将添加一些能定制applet小程序显示方式的参数。
+<p>
+本练习要使用Blink项目。如果您还没有创建和生成Blink项目，就应先按<a href="create.html">创建Blink项目</a>中的说明 去完成这项工作。
+
+<ol>
+<li>在项目管理器中检查当前项目的名字。
+<br>如果当前项目不是Blink，就双击Blink项目名。
+<li>在项目管理器中，选择<nobr>项目-&gt;编辑。</nobr>
+<br>“编辑项目”窗口中共有四个制表项：通用、生成、调试/浏览和运行。
+<li>单击“运行”制表项。
+<br>该制表项中的属性可用来在<kbd>Blink.tmp.html</kbd>文件中产生&lt;applet&gt;标签。
+<li>查找“参数”域（大约在窗口的中下部分）。
+<br>当前，还没有为applet小程序定义任何参数。参数是
+一个非标准的属性，用来定义显示applet小程序的方式。每个参数
+都有一个名字和值。下面您将添加一个参数来更改出现在闪烁文本
+中的单词。
+<li>在“参数”域右边的“名字”文本框中输入<kbd>lbl</kbd>（“label”的缩写）。 
+<li>在“值”框中输入下列文本：
+<br><kbd>Java Development Environment is really cool :-)</kbd>
+<li>单击“添加”按钮。
+<br> <kbd>lbl=Java Development Environment is really cool :-)</kbd>一行就出现在“参数”域中。
+<li>单击“确定”保存所做的更改。
+<li>单击Java Development Environment主工具栏中的“运行”<img src="../../../../images/24/tb-run_u.gif" align=BOTTOM>按钮。
+<br>Java Development Environment将下列行：
+<pre>
+&lt;param name="lbl" value="Java Development Environment is really cool :-)"&gt;
+</pre>
+包括在<kbd>Blink.tmp.html</kbd>文件的&lt;applet&gt;标签中。该文件将被装入浏览器，您现在可以看到 “Java Development Environment is really cool :-)”一行正以不同的颜色交替闪烁。
+<p>
+要想终止正在运行的applet小程序，可在“Applet小程序查看器”窗口中选择 
+<nobr>Applet小程序-&gt;退出</nobr>。
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>下一课：</strong>
+<dl>
+<dd><a href="editbuild.html">练习2：编辑生成属性</a>
+</dl>
+<p>
+</body>
+</html>
+

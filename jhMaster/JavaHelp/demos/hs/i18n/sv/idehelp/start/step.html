@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+&Ouml;vning 4: Stega igenom en metod
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>&Ouml;vning 4: Stega igenom en metod</h1>
+
+Att stega igenom koden &auml;r ett annat s&auml;tt att ta reda p&aring; vad det
+&auml;r som orsakar ett visst problem. I den h&auml;r &ouml;vningen f&aring;r du l&auml;ra dig
+att stega igenom koden och sp&aring;ra &auml;ndringarna i variabelv&auml;rdena i f&ouml;nstret
+Tr&aring;dar/stack. Dessutom f&aring;r du veta hur du tar bort brytpunkter.
+<ol>
+<li>Klicka p&aring; knappen Hoppa &ouml;ver <img src="../../../../images/24/db-step-over_u.gif" align="BOTTOM"><img src="../../images/spacer2_t.gif"> i
+verktygsf&auml;ltet f&ouml;r redigering och fels&ouml;kning.
+<br>Java Development Environment exekverar en k&auml;llrad och stoppar p&aring;:
+<p>
+<kbd>If (Math.random() < 0.5) {</kbd>
+<p>
+K&auml;llredigeraren markerar raden med brytpunkten med r&ouml;d f&auml;rg, och
+raden d&auml;r programexekveringen stoppades visas i gr&ouml;nt. Om raden hade
+varit ett metodanrop skulle kommandot Hoppa &ouml;ver ha k&ouml;rt till n&auml;sta
+rad i programmet. Om raden hade varit ett metodanrop och du angav
+kommandot Stega i, skulle Java Development Environment ha exekverat den f&ouml;rsta
+satsen i metoden och sedan stoppat.
+<p>
+F&ouml;nstret Tr&aring;dar/stack visar det aktuella l&auml;get f&ouml;r programmet och
+dess data. <kbd>Blink.paint</kbd> visar exempelvis att det har
+stoppats p&aring; rad 49.
+<li>Klicka p&aring; knappen Hoppa &ouml;ver tv&aring; g&aring;nger till och se hur
+fels&ouml;karen stegar igenom programmet.
+<li>Flytta pekaren i k&auml;llredigeraren till rad 45, d&auml;r det finns en
+brytpunkt.
+<li>Klicka p&aring; knappen Brytpunkt.<img src="../../../../images/24/db-stop-at_u.gif" align=MIDDLE> 
+<br>
+Java Development Environment tar bort brytpunkten.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;sta lektion:</strong>
+<dl>
+<dd><a href="evaluate.html">&Ouml;vning 5:  Utv&auml;rdera variabler</a>
+</dl>
+<p>
+
+</body>
+</html>

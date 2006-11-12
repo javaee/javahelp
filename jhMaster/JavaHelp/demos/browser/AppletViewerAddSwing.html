@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Browser IDE Demo</title>
+  </head>
+  <!-- Intended to be used with JDK1.1.7 -->
+  <!-- This gets swingall.jar and jhall.jar via ARCHIVE -->
+  <!-- The HelpSet is pulled in dynamically.  A JAR would probably work but
+   the test code does not do a HelpSet.findHelpSet() and instead just looks
+   directly at the value of HELPSETURL, which means we must use a URL spec,
+   and in 1.1 there is no jar: protocol -->
+
+  <body>
+    <hr>
+    <applet codebase="classes/" code="sunw.demo.browser.BrowserApiDemo.class" width=600 height=600 ARCHIVE="../../../swing/swingall.jar, ../../../javahelp/lib/jhall.jar, ../../hsjar/idehelp.jar">
+      <param name=HELPSETNAME value="IdeHelp">
+    </applet>
+  </body>
+</html>

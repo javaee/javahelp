@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE map
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/map_1_0.dtd">
+
+<map version="1.0">
+	<mapID target="toplevelfolder" url="images/toplevel.gif" />
+	<mapID target="hol_intro" url="hol/hol.html" />
+	<mapID target="laborday" url="hol/laborday.html" />
+	<mapID target="halloween" url="hol/hall.html" />
+	<mapID target="jackolantern" url="hol/jacko.html" />
+	<mapID target="mluther" url="hol/luther.html" />
+	<mapID target="reformation" url="hol/inforefo.html" />
+	<mapID target="fawkes" url="hol/guy.html" />
+	<mapID target="thanksgiving" url="hol/thanks.html" />
+	<mapID target="squanto" url="hol/squanto.html" />
+	<mapID target="1thanksproc" url="hol/thanks2.html" />
+	<mapID target="gwthanksproc" url="hol/thanks3.html" />
+	<mapID target="althanksproc" url="hol/thanks4.html" />
+	<mapID target="groundhog" url="hol/groundhog.html" />
+	<mapID target="valentine" url="hol/val.html" />
+	<mapID target="onlove" url="hol/love.html" />
+	<mapID target="ides" url="hol/ides.html" />
+	<mapID target="stpatty" url="hol/pat.html" />
+	<mapID target="aprilfools" url="hol/fool.html" />
+	<mapID target="cinco" url="hol/5may.html" />
+	<mapID target="memorial" url="hol/war.html" />
+	<mapID target="fathers" url="hol/fathers.html" />
+	<mapID target="july4" url="hol/4th.html" />
+	<mapID target="jefferson1" url="hol/jefferson1.html" />
+	<mapID target="date" url="hol/xmas/date.html" />
+	<mapID target="season" url="hol/xmas/season.html" />
+	<mapID target="year" url="hol/xmas/year.html" />
+	<mapID target="star" url="hol/xmas/star12.html" />
+	<mapID target="magi" url="hol/xmas/magi.html" />
+	<mapID target="herod" url="hol/xmas/herod12.html" />
+	<mapID target="traditions" url="hol/xmas/trad.html" />
+	<mapID target="stlucia" url="hol/xmas/lucia.html" />
+	<mapID target="creche" url="hol/xmas/creche.html" />
+	<mapID target="poinsettia" url="hol/xmas/poinsett.html" />
+	<mapID target="handle" url="hol/xmas/handel.html" />
+	<mapID target="music" url="hol/xmas/music.html" />
+	<mapID target="tree" url="hol/xmas/tree.html" />
+	<mapID target="santa" url="hol/xmas/santa2.html" />
+	<mapID target="visit" url="hol/xmas/visit.html" />
+	<mapID target="carol" url="hol/xmas/carol.html" />
+	<mapID target="augustus" url="hol/xmas/augustus2.html" />
+	<mapID target="epiphany" url="hol/xmas/epiphany.html" />
+	<mapID target="rosh" url="hol/rosh.html" />
+	<mapID target="yom" url="hol/yom.html" />
+	<mapID target="chanukah" url="hol/xmas/chan12.html" />
+	<mapID target="passover" url="hol/passover.html" />
+	<mapID target="mardigras" url="hol/easter/mardigras.html" />
+	<mapID target="ashwed" url="hol/easter/ash.html" />
+	<mapID target="easter" url="hol/easter/easter.html" />
+	<mapID target="climate" url="hol/easter/hist.html" />
+	<mapID target="palmsun" url="hol/easter/palm.html" />
+	<mapID target="pilate" url="hol/easter/pilate.html" />
+	<mapID target="herod2" url="hol/easter/herod.html" />
+	<mapID target="sanhedrin" url="hol/easter/sanhed.html" />
+	<mapID target="trial" url="hol/easter/trial.html" />
+	<mapID target="goodfri" url="hol/easter/friday.html" />
+	<mapID target="players" url="hol/easter/now.html" />
+	<mapID target="jeru1" url="hol/jerusalem1.html" />
+	<mapID target="jeru2" url="hol/jerusalem2.html" />
+	<mapID target="jeru3" url="hol/jerusalem3.html" />
+	<mapID target="gloss.herod" url="hol/gloss_herod.html" />
+        <mapID target="gloss.cinco" url="hol/gloss_cinco.html" />
+        <mapID target="gloss.halloween" url="hol/gloss_halloween.html" />
+        <mapID target="gloss.fawkes" url="hol/gloss_fawkes.html" />
+        <mapID target="gloss.ash" url="hol/gloss_ash.html" />
+        <mapID target="gloss.easter" url="hol/gloss_easter.html" />
+        <mapID target="gloss.friday" url="hol/gloss_friday.html" />
+        <mapID target="gloss.eucharist" url="hol/gloss_eucharist.html" />
+        <mapID target="gloss.saturday" url="hol/gloss_saturday.html" />
+	<mapID target="topic" url="images/topic.gif" />
+	<mapID target="chapter" url="images/chapTopic.gif" />
+</map>

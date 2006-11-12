@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding an Exception
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<h1>Adding an Exception</h1>
+
+Using the Exceptions window, you can instruct the debugger to handle exceptions generated in your code. An exception is a signal that indicates some type of condition has occurred. 
+<p>
+<img src="../../images/hg_proc.gif" width="18" height="13"><b>To add an exception to the list:</b>
+<ol>
+<li>Open the Exceptions window by choosing Debug -> Exceptions.
+<li>Type the class name of the exception in the Exception box.
+<br>For example, <kbd>java.lang.ThreadDeath</kbd> is thrown when the thread terminates.
+<li>Click Add.
+<br>JDE inserts the exception into the scrolling list. 
+</ol>
+<p>
+JDE supports three types of exception settings.
+<p>
+<dl>
+<dt><b>Break on Uncaught</b>
+<dd>This setting is the default. The debugger intercepts the exception only if there is no corresponding catch block. 
+<p>
+<dt><b>Break Always</b>
+<dd>If you set an exception to Break Always, the exception is treated like a breakpoint even if you have recovery code in your program.
+<p>
+<dt><b>Ignore</b>
+<dd>If you set an exception to Ignore, then the debugger does not intervene; you will get the same behavior as you would if you were running the program without the debugger.
+</dl>
+<p>
+You can change an exception's setting by selecting the exception and then 
+clicking the button of the desired setting.
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><a href="Exceptions.html">Using the Exceptions Window</a>
+</dl>
+<p>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JavaHelp 1.0 - The JavaHelp 1.0 Reference Implementation</title>
+  </head>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup><font size="-2">TM</font></sup> 1.0 
+<br>
+JavaHelp System 1.0 Reference Implementation
+</h1>
+      <h2 align=center>
+<br>
+<a href="../Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+<br>
+</h2>
+
+<hr>
+<p>
+
+<h2>JavaHelp System 1.0 Reference Implementation</h2>
+<p>
+Sun's reference implementation of the JavaHelp system
+implements the the JavaHelp system specification and
+supports additional useful features that are not appropriate
+for inclusion in the
+specification at this time.  Some of these features may
+move to the specification unchanged, others may be replaced
+by equivalent or more powerful features in future versions
+of the specification, and others may never show up in
+the specification.  In all cases, these features will
+be supported in future versions of the reference
+implementation and their presence can be assumed when writing content
+targeted to this implementation.
+</p>
+<p>
+The latest release available at the time of writing
+is the FCS release,
+released in April 1999. 
+The FCS release implements this version of the specification.
+This specification is also supported by <tt>javadoc</tt> API documents.
+</p>
+
+<p>
+Sun's reference implementation provides
+<a href="#basicsearch">a search engine</a> that
+can be used to create and access a search database created from
+HTML-base topic files.
+The reference implementation also supports
+lightweight <a href="JComponents.html">AWT Java Components</a>
+that can be embedded in HTML pages using the <A HREF="#jcomponents"><tt>&lt;OBJECT&gt;</tt> tag</A>. Two example components
+are provided: one component
+provides HTML <em>popup</em> functionality, the other provides in-line
+glossary definitions.
+
+<p>
+Information about the JavaHelp system reference
+implementation as well as other JavaHelp system information
+is available at
+<a href="http://java.sun.com/products/javahelp"><tt>http://java.sun.com/products/javahelp</tt></a>.
+</p>
+
+<h3>HelpBroker</h3>
+
+<p>
+The <code>HelpBroker</code> created by default upon invocation of the
+<code>createHelpBroker()</code> method of HelpSet is a
+<a href="../../api/javax/help/DefaultHelpBroker.html">DefaultHelpBroker</a>.
+
+
+<a name="basicsearch">
+<h3>Search Engine</h3></a>
+<p>
+The reference implementation includes a
+<code>com.javax.help.search.DefaultSearchEngine</code>
+search engine.
+This search engine uses a single <em>data</em> attribute that
+is a relative URL that specifies the directory that contains
+the search database.
+Multi-word queries are supported and are interpreted using
+a relaxation algorithm described in 
+<a href="DefaultSearch.html">Relaxation Searching</a>.
+</p>
+
+<p>
+The implementation of the search engine is independent and does not depend
+on the rest of the JavaHelp system.
+The client classes do not depend on Swing,
+ the classes that create the search database (the indexer)
+depend only on the Swing parser for the HTML IndexerKit.
+</p>
+
+<A NAME="jcomponents">
+<h3>Java Components in &lt;OBJECT&gt; Tag</h3></A>
+
+<p>
+The reference implementation supports a powerful <tt>&lt;OBJECT&gt;</tt>
+tag.
+In the reference implementation the <tt>CLASSID</tt> that
+denotes the class name is used to instantiate the class.
+The result is expected to be a lightweight AWT Component.
+This class is interpreted as a JavaBeans component
+--the <tt>&lt;PARAM&gt;</tt> tag
+associated with the <tt>&lt;OBJECT&gt;</tt> tag is used to provide
+<tt>NAME</tt>/<tt>VALUE</tt> pairs. Each <tt>NAME</tt> is
+interpreted as the name of a String property of the JavaBeans component
+and the value is assigned to it.
+
+<p>
+If the created Component supports the
+<code>ViewAwareComponent</code>, then the
+<code>javax.swing.text.View</code> is passed to the object through a
+call to <code>setViewData</code>.
+This mechanism is very powerful and provides access to much useful
+information, for example, the URL to the document where the
+<tt>&lt;OBJECT&gt;</tt> tag is present.
+See the documentation about the Swing text package for more details.
+
+
+<h3>Launcher Application</h3>
+
+<p>
+A simple application (<tt>hsviewer</tt>) that can be used
+to create a HelpBroker on a given HelpSet is included in
+the FCS release.  The <tt>hsviewer</tt> is described in the reference
+implementation release documentation.
+
+
+<h3>Packaging</h3>
+<p>
+The reference implementation includes the following JAR files
+in the FCS release:
+
+<table>
+
+<tr>
+<th align="left">JAR file
+<th align="left">Description
+</tr>
+
+<tr valign="top">
+<td width=20%><tt>jh.jar</tt>
+<td>Client-side JAR.  Includes all default types, and the client-side
+search engine.
+</tr>
+
+<tr valign="top">
+<td><tt>jhall.jar</tt>
+<td>Complete JAR.  Like <tt>jh.jar</tt> but also includes the indexer classes.
+</tr>
+
+<tr valign="top">
+<td><tt>jhbasic.jar</tt>
+<td>Minimal client-side JAR.  Includes all default types except SearchView.
+</tr>
+
+<tr valign="top">
+<td><tt>jhtools.jar</tt>
+<td>Tools JAR.  Includes the indexer and search classes, as well as
+a simple launcher class.
+</tr>
+
+<tr valign="top">
+<td><tt>jsearch.jar</tt>
+<td>Search JAR.  Includes only the Search classes, both indexer and
+the search classes.
+</tr>
+
+</table>
+<p>
+<hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 19:17:03 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>

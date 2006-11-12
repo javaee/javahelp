@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JavaHelp 1.0 - JavaBeans Help data</title>
+  </head>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup><font size="-2">TM</font></sup> 1.0 - JavaBeans Help data
+</h1>
+      <h2 align=center>
+<br>
+<a href="Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+<br>
+</h2>
+
+<hr>
+<h2>Introduction</h2>
+
+    <p>
+There are different types of help information associated with
+<a href="http://java.sun.com/beans">JavaBeans components</a>.
+
+<ul>
+<li>Help information about the JavaBeans component to use by a "container"
+<li>Help information used by the JavaBeans component itself (for example, a popup)
+<li>Help information to be attached to a JavaBeans component instance
+</ul>
+
+<p>
+In the first case, information is associated with the presence
+of the JavaBeans component in its container.  For example, this is what happens when a
+JavaBeans component is added to a Builder tool palette, or when a new JavaBeans component
+plug-in is dropped into JMAPI.</p>
+    <p>
+The second case occurs at runtime within a JavaBeans component.  For
+example, the JavaBeans component is a complex plug-in.  While in a popup
+window for that plug-in, we want to display the help
+information in a form that is consistent with whatever display
+presentation the container uses for help information.</p>
+    <p>
+The third case occurs when a JavaBeans component is instantiated into
+a container and it is given some semantics by customizing it and
+by attaching to events and actions.  In this case we want an easy
+mechanism to assign help data that describes the semantics so that a
+gesture can retrieve that help data.</p>
+    <p>
+The mechanisms described in the following section pertain
+to the first two cases. The third situation is covered by
+the mechanisms for context-sensitive help
+and other, more ad hoc, mechanisms.</p>
+
+<a name="beaninfo">
+<h2>Help Information</h2></a>
+    <p>
+The needs of the two cases described above require the association and
+retrieval of two pieces of information per JavaBeans component:
+<ul>
+<li><tt>helpSetName</tt>: the name of a HelpSet that contains help information
+<li><tt>helpID</tt>: a home ID within that HelpSet to use to present data
+</ul>
+
+<p>
+Having two different pieces of information (cf. having the HelpID be a
+fixed value) provides for additional packaging flexibility and leads
+to a nice default convention, and useful default values are
+important to keep within the JavaBeans design philosophy.  The default for
+this information depends on whether the name of the JavaBeans component is in the
+unnamed package or not:</p>
+
+<p>
+Name is of the form <em>OurButton</em>:
+
+<ul>
+<li><tt>helpSetName</tt>: add a <em>Help.hs</em> to name: <em>OurButtonHelp</em>.<tt>hs</tt>
+<li><tt>helpID</tt>: add ".topID" to name: <em>OurButton.topID</em>
+</ul>
+
+<p>
+If the name is of the form <em>sunw.demo.buttons.OurButton</em>:
+
+<ul>
+<li><tt>helpSetName</tt>: drop the shortname, replace '.' with '/' and add a '/Help.hs':
+<em>sunw/demo/buttons/Help.hs</em>.
+<li><tt>helpID</tt>: add ".topID" to name: <em>sunw.demo.buttons.OurButton.topID</em>:
+</ul>
+
+<h2>Mechanism</h2>
+<p>
+The proposed mechanism is to use two optional String-valued BeanInfo
+attributes with the names suggested above: <em>"helpSetName"</em>, and
+<em>"helpID"</em>.  This mechanism is relatively simple, does not require
+the JavaBeans component to be initialized, and it is consistent with other uses
+of BeanInfo attributes (e.g. Swing's use for container information).</p>
+<p>
+To simplify following the default rules described above, we
+add two methods to a JavaHelp class that take a Class object and
+return the desired Strings after consulting the appropriate methods.</p>
+
+<h2>An Example:</h2>
+<p>
+Below is the 
+<a href="http://java.sun.com/beans/software/examples.html#OurButton">
+buttons example from the BDK
+</a>, modified to provide Help information.
+This example uses the default values for HelpSetName and HelpId:</p>
+
+<h3>Manifest and JAR File</h3>
+    <p>
+The manifest file just changes to include the Help files; it
+would look like:</p>
+
+<pre>
+<code>
+    // Beans, Implementation Classes, and Gif images are as before
+    
+    // the HelpSet file
+    Name: sunw/demo/buttons/Help.hs
+    
+    // The Map file
+    Name: sunw/demo/buttons/help/Map.html
+    
+    // Actual html data - in this case all in one file
+    Name: sunw/demo/buttons/help/Buttons.html
+
+    // View data
+    Name: sunw/demo/buttons/help/toc.xml
+
+    Name: sunw/demo/buttons/help/index.xml
+
+    Name: sunw/demo/buttons/help/search.dat
+
+</code>
+</pre>
+
+<h3>The HelpSet File</h3>
+<p>
+All the HelpSet files are the same.
+The HelpSet file is quite simple (see <a href="#hs_file">below</a>
+for details on the classes view).
+    <p>
+<pre>
+<code>
+    # ...
+
+    # map URL
+    &lt;homeID&gt;sunw.demo.buttons.topId&lt;/homeID&gt;
+    &lt;map&gt;
+        &lt;data&gt;!/sunw/demo/buttons/help/Map.html&lt;/data&gt;
+    &lt;/map&gt;
+
+    # data views
+    &lt;view&gt;
+        &lt;name&gt;TOC&lt;/name&gt;
+        &lt;label&gt;Table of Contents&lt;/label&gt;
+	&lt;type&gt;javax.help.TOCView&lt;/type&gt;
+        &lt;data&gt;!/sunw/demo/buttons/help/toc.xml&lt;/data&gt;
+    &lt;/view&gt;
+
+    &lt;view&gt;
+        &lt;name&gt;Index&lt;/name&gt;
+        &lt;label&gt;Index&lt;/label&gt;
+        &lt;type&gt;javax.help.IndexView&lt;/type&gt;
+        &lt;data&gt;!/sunw/demo/buttons/help/index.xml&lt;/data&gt;
+    &lt;/view&gt;
+
+    &lt;view&gt;
+        &lt;name&gt;Search&lt;/name&gt;
+        &lt;label&gt;Search&lt;/label&gt;
+        &lt;type&gt;javax.help.SearchView&lt;/type&gt;
+        &lt;engine&gt;com.sun.java.help.search.DefaultSearchEngine&lt;/engine&gt;
+        &lt;data&gt;!/sunw/demo/buttons/help/search.dat&lt;/data&gt;
+    &lt;/view&gt;
+</code>
+</pre>
+
+<h3>The Help Map</h3>
+    <p>
+In this simple example, the Map just handles the top IDs, plus a
+global introduction to the buttons package.
+
+<pre>
+<code>
+    sunw.demo.buttons.topId="!/sunw/demo/buttons/help/Buttons.html#Top"
+    sunw.demo.buttons.OurButton.topId="!/sunw/demo/buttons/help/Buttons.html#OurButton"
+    sunw.demo.buttons.ExplicitButton.topId="!/sunw/demo/buttons/help/Buttons.html#ExplicitButton"
+    sunw.demo.buttons.OrangeButton.topId="!/sunw/demo/buttons/help/Buttons.html#OrangeButton"
+    sunw.demo.buttons.BlueButton.topId="!/sunw/demo/buttons/help/Buttons.html#BlueButton"
+</code>
+</pre>
+
+
+<h2>An Alternative Arrangement</h2>
+    <p>
+A alternative arrangement would have been to place all the help data
+in a single nested JAR file.  For example:</p>
+
+<h3>Manifest and JAR file</h3>
+
+<pre>
+<code>
+	// The Beans, Implementation Classes and Gifs as before
+
+	// The Help data
+	Name: sunw/demo/buttons/Help.hs
+
+	// The rest of the Help data
+	Name: sunw/demo/buttons/help.jar
+</code>
+</pre>
+
+<A NAME="hs_file">
+<h3>The HelpSet File</h3></A>
+The Help file has to change a bit:
+<pre>
+<code>
+    # no property requests
+
+    # map URL
+    &lt;homeID&gt;sunw.demo.buttons.topId&lt;/homeID&gt;
+    &lt;map&gt;
+        &lt;data&gt;!/sunw/demo/buttons/help.jar!/Map.html&lt;/data&gt;
+    &lt;/map&gt;
+
+    # data views
+    &lt;view&gt;
+        &lt;name&gt;TOC&lt;/name&gt;
+        &lt;label&gt;Table of Contents&lt;/label&gt;
+        &lt;type&gt;javax.help.TOCView&lt;/type&gt;
+        &lt;data&gt;!/sunw/demo/buttons/help.jar!/toc.xml&lt;/data&gt;
+    &lt;/view&gt;
+
+    &lt;view&gt;
+        &lt;name&gt;Index&lt;/name&gt;
+        &lt;label&gt;Index&lt;/label&gt;
+        &lt;type&gt;javax.help.IndexView&lt;/type&gt;
+        &lt;data&gt;!/sunw/demo/buttons/help.jar!/index.xml&lt;/data&gt;
+    &lt;/view&gt;
+
+    &lt;view&gt;
+        &lt;name&gt;Search&lt;/name&gt;
+        &lt;label&gt;Search&lt;/label&gt;
+        &lt;type&gt;javax.help.SearchView&lt;/type&gt;
+        &lt;engine&gt;com.sun.java.help.search.DefaultSearchEngine&lt;/engine&gt;
+        &lt;data&gt;!/sunw/demo/buttons/help.jar!/search.dat&lt;/data&gt;
+    &lt;/view&gt;
+</code>
+</pre>
+
+<h3>The Help Map</h3>
+In this example, we can choose to use exactly the same Help map
+as what we used in the previous arrangement.
+<p>
+
+      <hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 16:42:45 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>

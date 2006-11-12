@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercise 10: Updating DeskClock
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Exercise 10: Updating DeskClock</h1>
+
+In this exercise, you will update the Clock bean in the DeskClock
+project by reimporting the <tt>Clock.jar</tt> file that you modified in
+the previous exercise to the component library. You will also update
+the DeskClock project to use this latest version.
+
+<ol>
+<li>Make sure you are in the DeskClock project. Open the Project
+Manager window and check to see that DeskClock is highlighted. If not,
+double-click on the DeskClock name to open the project.
+<li>Choose GUI -> Import Components to Palette.
+<li>Click the Browse button on the JAR tab.
+<li>Load the <tt>Clock.jar</tt> file, which contains the modified Clock bean.
+<li>In the JAR page, click on <tt>Clock.class</tt> to select it.
+<li>Click on the Beans folder name in the Palette Components list.
+<li>Click the Add button that is between the JAR page and the
+Palette Components list.
+<li>Click OK to add the beans to the palette.
+<p>
+An automatic update occurs for all the beans in
+<tt>Clock.jar</tt>. You wiil be notified that an update has been detected.
+<li>Click Import and Upgrade when the Upgrade detected dialog box opens.
+<li>Click Reload Design in the Reload Design After Update dialog box
+opens.
+<p>
+Look in the layout window and check that the name of the month appears
+larger.
+<li>Click Build in the main toolbar.
+<li>Click Run in the main toolbar after the build completes. Your
+DeskClock should look like this now: 
+<pre>
+<IMG SRC="updateclock.gif" WIDTH=68 HEIGHT=83>
+</pre>
+</ol>
+
+You have completed the tutorial on the production and use of beans in
+Java WorkShop.
+
+<p>
+For an example of another bean project, see the JellyBean example in
+the <tt>examples</tt> directory.
+
+<p>
+On Microsoft Windows 95 and Windows NT:
+<br>
+<tt>JavaWorkShop-</tt><em>install-dir-path</em><tt>\examples\JellyBeanExample</tt>
+
+<p>
+On Solaris:
+<br>
+<tt>Root-JavaWorkShop-</tt><em>install-dir-path</em><tt>/examples/JellyBeanExample</tt>
+
+
+  </body>
+</html>

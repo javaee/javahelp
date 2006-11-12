@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Console Input Dialog Box
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Console Input Dialog Box</H1>
+Programs that normally accept command-line input use the
+Console window for that input in JDE. Use the
+Console Input dialog box to control how that input is
+treated.
+<p>
+<table width=100% border=0 cellspacing=12>
+<tr valign="top">
+<td width=30%><strong>A line at a time</strong></td>
+<td width=70%>
+Sends the input to the process when the user presses Return
+(or Enter).  In this mode, you can use Backspace to modify
+input before it is sent.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=30%><strong>Include prompt</strong></td>
+<td width=70%>
+This suboption allows you to use cut and paste, or
+click-to-insert, to edit the input before it is sent.
+<em>All</em> text on the current line is sent, including
+prompts that the program prints.  
+<p>
+<IMG SRC="../../images/hg_note.gif" HEIGHT=13 WIDTH=18>
+<br>
+If you use cut and paste, enable this option and delete the
+prompt (using Backspace or Cut) before pasting the input
+and pressing Enter or Return.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=30%><strong>Each keystroke immediately</strong></td>
+<td width=70%>
+Sends each keystroke as it is typed.  The input may not be
+edited.  This mode is suitable when debugging applications
+(like vi) that expect to see literal Backspace characters.
+This option is similar to the UNIX "raw mode."
+</td>
+</tr>
+</table>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>See also:</strong>
+<dl>
+<dd><A HREF="../../common/browser/console.html">Console Output Window</A>
+</dl>
+<p>
+
+</BODY>
+</HTML>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Browsing Class Files
+</TITLE>
+<!-- Changed by: Leif Samuelsson, 22-Apr-1996 -->
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<H1>Browsing Class Files</H1>
+If the sources are available, the JDE class
+viewer enables you to browse the classes, methods, and
+comments that constitute a program. The class viewer is
+based on <A HREF="javadoc.html"><tt>javadoc</tt></A>,
+the Java API Documentation Generator.
+<p>
+The class viewer extracts information from the program's
+source files and presents it in a format that you can use
+to:
+<ul>
+<li>Understand how the program's classes are derived and
+easily follow links to the source of classes that the
+program extends (if available)
+<li>Display the methods contained in the program and easily
+follow links to their definitions in source files
+<li>View special comments included in the source by the
+author (see <A
+HREF="javadoc.html"><tt>javadoc</tt></A> for details)
+</ul>
+<p>
+<IMG SRC="../../images/hg_proc.gif"><strong>To browse a
+program:</strong>
+<ol>
+<li>Choose Browse -> View Classes to
+open the View Classes dialog box.
+<li>Specify the source files you wish to
+browse. There are two ways to do that:
+<ul>
+<li>Click the Current Project radio button. This enables
+you to browse the source files you included as part of the
+current <A HREF="../manager/Projects.html">project</A> when you
+created it.
+<li>Click the Directory radio button, then specify the
+directory name in the text box.  This enables you to browse
+the source files (with a <code>.java</code> suffix) in the
+directory that you specify in the text box.  Press Return
+or click Show Files to browse the directory.
+</ul>
+By default, the current project is automatically selected.
+
+<li>Use the Recursive check box to control whether the
+search descends into sub-projects (Current Project) or
+directories beneath the one you specify (Directory).  By
+default, the search descends recursively.
+<li>The list of source files is loaded into the class viewer
+list area. Click on the file in the list that you wish
+to browse and its information is displayed in the window.
+<p>
+When you follow a link to view information, the appropriate
+source file is automatically loaded into the JDE
+source editor.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>See also:</strong>
+<dl>
+<dd><A HREF="strings.html">Searching for Strings</A>
+<dd><A HREF="../start/starttoc.html">Java WorkShop Tutorial</A>
+<dd><A HREF="../manager/Projects.html">What Is a Project?</A>
+</dl>
+<p>
+
+</BODY>
+</HTML>

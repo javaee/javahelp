@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Remotely Debugging a Program
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<h1>Remotely Debugging a Program
+</h1>You can run a program on one machine and debug the program from another machine using your network connection. Your network file system must be available from both the remote and local computers.
+<p>
+
+<img src="../../images/hg_proc.gif" width="18" height="13"><b>To debug a program on a remote machine:</b>
+<ol>
+<li>From a command line on your local computer, log on to the remote computer.
+<li>Start up a debugger agent with the classpath for your application:
+   <ul>
+   <li>Check to see that the Java Workshop bin directory is in your path.
+   <li>Type the following:
+   <br><code>jws_rdebug -classpath <your classpath></code>
+   <li>Note the Agent password that is printed.
+   </ul>
+<li>Then, on the local machine:
+   <ul>
+   <li>Start Java Workshop, if necessary.
+   <li>Choose the project corresponding to your application.
+   <li>Choose Project -> Edit.
+   <li>Click the Debug/Browse tab.
+   <li>Click the Remote Debugging radio button and click OK.
+   <li>Click the Restart button on the Edit/Debug toolbar.
+   <li>In the Remote Debugging window, type the name of the remote computer and the Agent password from step 2.
+   <li>Click OK.
+   </ul>
+</ol>
+JDE now begins the remote debugging session. You can use all of the local debugging functions to debug a program on your remote machine.
+</BODY>
+</HTML>

@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>
+Building Projects
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Building Projects</H1>
+When you click on the Java WorkShop Build button 
+<IMG
+SRC="../images/tb-build_u.gif" ALIGN=BOTTOM
+WIDTH=24 HEIGHT=24> the builder builds the current 
+
+<OBJECT CLASSID="java:com.sun.java.help.impl.JHSecondaryViewer">
+<param name="content" value="project_gloss.html">
+<param name="viewerActivator" value="javax.help.LinkLabel">
+<param name="viewerStyle" value="javax.help.Popup">
+<param name="viewerSize" value="400,160">
+<param name="text" value="project">
+<param name="textColor" value="blue">
+</OBJECT> 
+
+based on the information (source files, compiler options,
+class paths, and so on) that you specified when you created
+the project.  You can change the project's build
+information at any time by editing the project's build
+attributes.
+
+<OBJECT CLASSID="java:com.sun.java.help.impl.JHSecondaryViewer">
+<param name="id" value="proj.editproject">
+<param name="viewerActivator" value="javax.help.LinkLabel">
+<param name="iconByName" value="../../images/rel_topic_button.gif">
+<param name="viewerLocation" value="400,100">
+<param name="viewerSize" value="550,600">
+</OBJECT>
+
+<p>
+Build commands can also be accessed from the <A
+HREF="../menus/build.html">Build menu</A>.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13"><br>
+This page describes the most typical method for building
+projects.  You may want to consider the following options when
+building your programs:
+<ul>
+<li>You can choose to use the the standard
+JavaSoft<sup>TM</sup> Java Compiler instead of the default
+Java WorkShop compiler -- both are included with Java
+WorkShop.  The Java WorkShop compiler is much faster, but
+does not support some <A
+HREF="compiler_pref.html">JDK 1.1 features</A>.  Choose
+Preferences.  -> Builder to switch compilers.
+<li>You can use the <A HREF="jwsbuild.html"><tt>jwsbuild</tt></A> 
+command to build projects from the command line and from
+within makefiles and scripts.
+<li>You can use Build -> <A
+HREF="compilefile.html">Compile File</A> to build the file
+currently loaded in the main source editor window.
+</ul>
+<p>
+
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To build a project:</strong>
+<ol>
+<li>Use the <A HREF="../manager/ProjectManager.html">Project Manager</A> to choose a project.
+
+<li>Click on <IMG SRC="../images/tb-build_u.gif"
+ALIGN=MIDDLE WIDTH=24 HEIGHT=24> to start the build.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+You can also start the build using commands in the Build
+menu.
+
+<li>As the build proceeds, the command line passed to the
+compiler is displayed in the Build tab at the bottom
+of the window.  This information consists of:
+<ul>
+<li>The <A HREF="javac.html#Options">compiler options</A> being used
+to compile the program
+<li>The names of the source files being compiled
+</ul>
+<p>
+If the build completes without encountering any errors, the
+message "Done building <em>project-name</em>" is displayed
+in the Build tab.
+<p>
+If errors are encountered:
+<ul>
+<li>They are reported in the Build tab
+<li>The file containing the first error is loaded into the 
+editor with the first error highlighted in yellow.
+</ul>
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To stop a build
+before it completes, choose Build -> Stop Build.</strong>
+<p>
+<A NAME="syntax"></A>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To correct syntax errors reported during compilation:</strong>
+<ol>
+<li>In the Build tab, click on the link that contains the name
+of the file in which the error occurred.  This
+automatically loads that file into
+the WorkShop source editor. The line containing the error
+is centered and highlighted.
+<p>
+A message is issued in the Build tab for each
+error.  Error messages have the following
+components:
+<ul>
+<li>A link that contains the name of the file and the line
+number on which the error occurred
+<li>The compiler error message
+</ul>
+<li>If necessary, check the file out from the <A HREF="../pce/version.html">version control
+system</A>.
+<li>Fix the errors using the <A HREF="../pce/basic.html">source editor</A>, and save the file.
+<li>When you have fixed all of the errors, click
+on <IMG SRC="../images/tb-build_u.gif"
+ALIGN=BOTTOM WIDTH=24 HEIGHT=24> to restart the
+build.
+<p>
+<IMG SRC="../../images/hg_note.gif" ALIGN=MIDDLE><br>
+You can use Build -> Next Error and Build -> Previous Error to move back and forth
+between errors in the Build tab.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="../menus/build.html">Build Menu</A>
+<dd><A HREF="javac.html">Javac Help Page</A>
+<dd><A HREF="compiler_pref.html">Java Compiler Preferences Dialog Box</A>
+<dd><A HREF="jwsbuild.html">jwsbuild -- Batch Builder</A>
+<dd><A HREF="../pce/edit_source.html">Editing Source</A>
+<dd><A HREF="../debug/DebugTOC.html">Debugging Projects</A>
+<dd><A HREF="../manager/Projects.html">What Is a Project?</A>
+</dl>
+<p>
+</body>
+</HTML>

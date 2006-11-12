@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Layout Managers and Nesting Panels
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<H1>Layout Managers and Nesting Panels</H1>
+
+You can nest panels within cells using the following layout managers:
+<ul>
+<li><a href="#usegridpanel">Gridbag layout panel</a>. Enables you
+to nest a layout panel inside an existing cell
+<li><a href="#useflowpanel">Flow layout panel</a>. Enables you to
+arrange components from left to right in rows, fitting as many
+components in the row as possible before creating additional rows
+<li><a href="#useborderpanel">Border layout panel</a>. Creates a
+layout that lets you position grids in north, south, east, west
+locations in the layout, and position another component in the
+center (the center component receives all remaining space in the
+panel)
+</ul>
+
+To create card panels or Tabbed Folders, see <a
+href=../visual/tab_folder.html>Creating Tabbed Folders and Card Panels</a>.
+
+<p>
+<a name="usegridpanel"></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To use the gridbag layout panel:</strong>
+
+<ol>
+<li>Select the GridBag Layout Panel component in the Panel palette
+tab. 
+<li>Click in the cell where you want to place the component. 
+<li>Click in the single cell to select it and use the arrow keys to
+add rows and columns.  
+<li>Add components to the grid by selecting them from the palette and
+clicking in the desired cells.
+</ol>
+<p>
+Components in the nested gridbag can be resized. See <a
+href="../visual/wdw-resize.html">Resizing the Layout</a> for details.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+A shortcut for placing a component into a gridbag layout panel:
+<ol>
+<li>Select a component you have already inserted into the layout grid.
+<li>Choose GUI -> Nest Panel. 
+<p>
+The component is automatically placed within a gridbag layout panel.
+</ol>
+
+<p>
+<a name="useflowpanel"></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To use the flow layout panel:</strong>
+
+<ol>
+<li>Select the Flow Layout Panel component in the Panel palette
+tab. 
+<li>Click in the cell where you want to place the flow panel. 
+<li>Open the attribute editor by clicking on its button in the toolbar.
+<li>Click on the Edit items button to open the Flow Panel dialog box.
+<li>Click on the Insert button in the dialog box to create a gridbag
+for the panel. 
+<li>Enter a unique ID in the Name box for the selected gridbag.
+<li>Click Apply to add the gridbag to the panel.
+<li>Click in the single cell to select it and use the arrow keys to
+add rows and columns.
+<li>Add components to the grid by selecting them from the palette and
+clicking in the cells where you want to place the components.
+<li>Continue with steps 3-6 to add more gridbags to the panel. 
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+Components in grids within flow panels do not resize. 
+
+<h3>Special Attributes</h3>
+
+<table>
+<tr>
+<td valign="baseline"><code><strong>hgap</strong></code></td>
+<td>The horizontal distance (in pixels) between components.
+Also controls the distance of the leftmost and rightmost
+components from the edges of the panel.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>items</strong></code></td>
+<td>A dialog box that enables you to add and delete panels
+from the flow layout panel and to change the names of those
+panels.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>labelAlignment</strong></code></td>
+<td>Sets the position (left, right, center) of the
+label on the top edge of the panel.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>vgap</strong></code></td>
+<td>The vertical distance (in pixels) between rows of
+components.  Also controls the distance between components
+and the top and bottom edges of the panel.</td>
+</tr>
+</table>
+<p>
+
+<a name="useborderpanel"></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To use the border layout panel:</strong>
+
+<ol>
+<li>Select the Border Layout Panel component in the Panel palette
+tab.
+<li>Click in the cell where you want to place the border panel. 
+<li>Click in the single cell to select it and use the arrow keys to
+add rows and columns. 
+<p>
+To add a single component, click on a component in the palette
+and click in the section where you want to place the component.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+To resize a component in a border layout section, you must do two
+things:
+<ol>
+<li>Select the component and use the resize controls to allow the
+component to expand.
+<li>Select the Border Layout panel and use the resize controls to
+allow the panel to stretch. Single-line text fields within a Border
+Layout panel expand in the horizontal direction only.
+</ol>
+
+<p>
+For more information on resizing components, see <a
+href="../visual/wdw-resize.html">Resizing the Window</a>.
+
+<h3>Special Attributes</h3>
+
+<table>
+<tr>
+<td valign="baseline"><code><strong>labelAlignment</strong></code></td>
+<td>Sets the position (left, right, center) of the
+label on the top edge of the panel.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>useCenter</strong></code></td>
+<td>Removes or includes the center cell in the panel.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>useEast</strong></code></td>
+<td>Removes or includes the east cell in the panel.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>useNorth</strong></code></td>
+<td>Removes or includes the north cell in the panel.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>useSouth</strong></code></td>
+<td>Removes or includes the south cell in the panel.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>useWest</strong></code></td>
+<td>Removes or includes the west cell in the panel.</td>
+</tr>
+</table>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="palette.html">GUI Builder Palette</A>
+<dd><A HREF="layout.html">Laying Out the Interface</A>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI
+Builder Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+</body>
+</html>

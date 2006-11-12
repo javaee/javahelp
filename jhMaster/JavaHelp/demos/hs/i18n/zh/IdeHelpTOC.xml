@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='EUC_CN'  ?>
+
+<!--
+ @(#)IdeHelpTOC.xml	1.5 06/10/30
+ 
+ Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+ 
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 
+ - Redistribution of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ 
+ - Redistribution in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+ 
+ Neither the name of Sun Microsystems, Inc. or the names of
+ contributors may be used to endorse or promote products derived
+ from this software without specific prior written permission.
+ 
+ This software is provided "AS IS," without a warranty of any
+ kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND
+ WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY
+ EXCLUDED. SUN MICROSYSTEMS, INC. ("SUN") AND ITS LICENSORS SHALL
+ NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF
+ USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+ DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR
+ ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,
+ CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND
+ REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR
+ INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGES.
+ 
+ You acknowledge that this software is not designed, licensed or
+ intended for use in the design, construction, operation or
+ maintenance of any nuclear facility. 
+-->
+
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+<toc xml:lang="zh">
+<tocitem text="Java Development Environment" image="toplevelfolder">
+
+   <tocitem text="Java Development Environment帮助主页" target="jde.intro"/>
+
+   <tocitem text="Java Development Environment教程" target="tut.starttoc">
+       <tocitem text="Java Development Environment简介" target="tut.overview"/>
+       <tocitem text="教程1：创建Blink项目" target="tut.quickstart"/>
+       <tocitem text=" 教程2：编辑项目属性" target="tut.edit"/>
+       <tocitem text="教程3：改正源代码中的错误" target="tut.errors"/>
+       <tocitem text="教程4：浏览项目" target="tut.browse"/>
+       <tocitem text="教程5：调试项目" target="tut.simpledebug"/>
+       <tocitem text="教程6：定制运行页面" target="tut.customize"/>
+       <tocitem text="教程7：创建GUI" target="tut.visual"/>
+       <tocitem text="教程8：创建Clock项目" target="tut.beansoverview"/>
+   </tocitem>
+
+   <tocitem text="菜单">
+      <tocitem text="文件菜单" target="menus.file"/>
+      <tocitem text="编辑菜单" target="menus.edit"/>
+      <tocitem text="建立菜单" target="menus.build"/>
+      <tocitem text="调试菜单" target="menus.debug"/>
+      <tocitem text="优选菜单" target="menus.preferences"/>
+      <tocitem text="窗口菜单" target="menus.windows"/>
+      <tocitem text="帮助菜单" target="menus.help"/>
+   </tocitem>
+
+</tocitem>
+</toc>

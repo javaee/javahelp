@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    901 San Antonio Road
+ *    Palo Alto, California  94303
+ *
+-->
+
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_JP">
+<TITLE>
+実習 4: メソッドをステップ実行する
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>実習 4: メソッドをステップ実行する</h1>
+
+エラーの原因となっているプログラム中の行を特定するには、コードをステップ実行するという方法もあります。この実習では、コードをステップ実行し、「スレッド/スタック」ウィンドウで変数値の変化を追跡する方法について学習します。また、ブレークポイントを削除する方法についても学習します。
+<ol>
+<li>編集デバッグツールバー上の「オーバー」ボタン <img src="../../../../images/24/db-step-over_u.gif" align="BOTTOM"><img src="../../images/spacer2_t.gif">をクリックします。
+<br>ソース行が 1 行実行され、以下の行で停止します。
+<p>
+<kbd>If (Math.random() &lt; 0.5) {</kbd>
+
+
+<p>
+ソースエディタでは、ブレークポイントが設定されている行は赤色で、またプログラムが実行を停止した行は緑色で強調表示されます。メソッド呼び出しの行でステップオーバーを実行すると、プログラムの次の行まで実行されます。メソッド呼び出しの行でステップインを実行すると、呼び出されたメソッドの最初の文が実行された後に、プログラムが停止します。
+<p>
+「スレッド/スタック」ウィンドウには、プログラムの現在の状態とそのデータが表示されます。たとえば、<kbd>Blink.paint</kbd> は現在 49 行目で停止していることを表わしています。
+
+<li>「オーバー」ボタンをさらに 2 回クリックして、デバッガでプログラムがステップ実行される様子を確認します。
+<li>ソースエディタで、ブレークポイントが設定されている 45 行目にポインタを移動します。
+<li>「ブレーク切替」ボタン <img src="../../../../images/24/db-stop-at_u.gif" align=MIDDLE>をクリックします。
+<br>ブレークポイントが削除されます。
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>次のレッスン:</strong>
+<dl>
+<dd><a href="evaluate.html">実習 5: 式を評価する</a>
+</dl>
+<p>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Ejercicio 1:  Edici&oacute;n de atributos de ejecuci&oacute;n
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Ejercicio 1:  Edici&oacute;n de atributos de ejecuci&oacute;n</h1>
+
+La etiqueta &lt;applet&gt; que gener&oacute; en el Tutorial Uno especifica
+los requisitos m&iacute;nimos para colocar el applet en una p&aacute;gina Web. En
+este ejercicio, a&ntilde;adir&aacute; par&aacute;metros que le permitir&aacute;n personalizar la
+forma de visualizar el applet.
+<p>
+Este ejercicio funciona con el proyecto Blink. Si no ha creado
+y construido a&uacute;n el proyecto Blink, debe hacerlo ahora
+utilizando las instrucciones de <a href="create.html">Creaci&oacute;n del
+proyecto Blink</a>.
+<ol>
+<li>Compruebe el nombre del proyecto actual en la ventana del
+administrador de proyectos.
+<br>Si el proyecto actual no es Blink, pulse dos veces en en
+el nombre del proyecto Blink.
+<li>En el administrador de proyectos, seleccione <nobr>"Proyecto -&gt;
+Editar".</nobr>
+<br>La ventana "Editar proyecto" muestra cuatro pesta&ntilde;as: "General",
+"Construir", "Depurar/Examinar" y "Ejecutar".
+<li>Pulse en la pesta&ntilde;a "Ejecutar".
+<br>Los atributos de esta pesta&ntilde;a se utilizan para generar la
+etiqueta &lt;applet&gt; en el archivo <kbd>Blink.tmp.html.</kbd> 
+<li>Busque el campo "Par&aacute;metros" (en la mitad de la ventana).
+<br>Actualmente no hay par&aacute;metros definidos para el applet. Un
+par&aacute;metro es un atributo no est&aacute;ndar que define c&oacute;mo se visualiza el
+applet. Un par&aacute;metro tiene un nombre y un valor. A&ntilde;adir&aacute; un
+par&aacute;metro para cambiar las palabras del texto intermitente.
+<li>Escriba <kbd>lbl</kbd> (una abreviatura de "label"), en el
+cuadro de texto "Nombre" a la derecha del campo "Par&aacute;metros".
+<li>Escriba lo siguiente en el cuadro "Valor:"
+<br><kbd>Java Development Environment es estupendo :-)</kbd>
+<li>Pulse en el bot&oacute;n "A&ntilde;adir".
+<br>La l&iacute;nea <kbd>lbl=Java Development Environment es estupendo :-)</kbd> aparece en
+el campo "Par&aacute;metros".
+<li>Pulse en "Aceptar" para guardar los cambios que ha hecho.
+<li>Pulse en el bot&oacute;n "Ejecutar" <img src="../../../../images/24/tb-run_u.gif" align=BOTTOM>
+en la barra de herramientas principal de Java Development Environment.
+<br>Java Development Environment incluye la l&iacute;nea siguiente:
+<pre>
+&lt;param name="lbl" value="Java Development Environment es estupendo :-)"&gt;
+</pre>
+en la etiqueta &lt;applet&gt; en el archivo <kbd>Blink.tmp.html.</kbd>  El
+archivo se carga en el examinador, y ahora puede ver las palabras
+"Java Development Environment es estupendo :-)" de forma intermitente en diferentes colores.
+<p>
+Para detener la ejecuci&oacute;n del applet, seleccione <nobr>"Applet -&gt;
+Salir"</nobr> en la ventana "Visualizador de applets".
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Siguiente lecci&oacute;n:</strong>
+<dl>
+<dd><a href="editbuild.html">Ejercicio 2: Edici&oacute;n de atributos de construcci&oacute;n</a>
+</dl>
+<p>
+</body>
+</html>
+

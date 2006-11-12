@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding Images
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<H1>Adding Images</H1>
+
+You can insert graphic images into your layout with the following
+components:
+<ul>
+<li><b>Image Button</b>. Inserts an icon that, when clicked, displays
+the image in a browser. 
+<li><b>Image Label</b>. Inserts a text label that, when clicked,
+displays the image in a browser. The path to the image is specified in
+the attribute editor. 
+</ul>
+
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add an image to
+the layout:</strong>
+
+<ol>
+<li>Click on either the Image Button or Image Label component in the
+Additional palette tab.
+<li>Click in the cell where you want to place the component.
+<li>Open the attribute editor by clicking on its button in the toolbar.
+<li>Type a unique component ID in the name box.
+<li>Type the names of the menu options in the items box. Each name
+should be separated by a comma.
+<li>Type the relative path to the image in the image box.
+</ol>
+
+<h2>Special Attributes</h2>
+
+<table>
+<tr>
+<td valign="baseline"><code><strong>image</strong></code></td>
+<td>The path name of the file that contains the image.
+<p>
+The path to the image can be an URL or (preferably) a path
+name relative to the codebase of the applet.  So, if the
+applet's <code>.class</code> file and image files are in
+the same directory, only the simple file name is required.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>pressMovement</strong></code></td>
+<td>The number of pixels down and to the left that the image moves when the 
+button is clicked. (Not an attribute of Image Label.)</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>lineWidth</strong></code></td>
+<td>The width (in pixels) of the button bevel. (Not an attribute of
+Image Label.)</td> 
+</tr>
+<tr>
+<td valign="baseline"><code><strong>padWidth</strong></code></td>
+<td>The number of pixels between the edge of the button and the image
+displayed within it.</td> 
+</tr>
+</table>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="layout.html">Laying Out the Interface</A>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="palette.html">GUI Builder Palette</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI Builder
+Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+</body>
+</html>
+

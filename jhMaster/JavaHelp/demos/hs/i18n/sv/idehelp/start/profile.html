@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<html>
+<head>
+<title>
+&Ouml;vning fyra: Insamling av profildata
+</title>
+</head>
+<body bgcolor="ffffff">
+
+<bodytext><h1>&Ouml;vning fyra: Insamling av profildata</h1>
+
+I den h&auml;r &ouml;vningen visar vi hur du ska k&ouml;ra projektet Blink med Java Development Environments profiler. Profilerna
+hj&auml;lper dig analysera ditt programs prestanda f&ouml;r att kunna avg&ouml;ra hur mycket tid som l&auml;ggs ned i
+varje varje programs metod och hur m&aring;nga g&aring;nger varje metod exekveras.
+<ol>
+<li>Kontrollera i Projekthanteraren efter namnet p&aring; aktuellt projekt.
+<br>Om aktuellt projekt inte &auml;r Blink dubbelklickar du p&aring; projektnamnet Blink.</li>
+<li>Starta profileringen av projektet Blink genom att klicka p&aring; knappen Profilera <img src="../../../../images/24/tb-profile_u.gif"> i
+Java Development Environments verktygsf&auml;lt.
+<br>F&ouml;nstret Applet Viewer visas.</li>
+<li>V&auml;nta minst 45 sekunder innan du forts&auml;tter med n&auml;sta steg.</li>
+<br>P&aring; s&aring; s&auml;tt f&aring;r du tillr&auml;ckligt med data f&ouml;r att kunna visa profileringen.
+<li>Avsluta profiler-sessionen genom att v&auml;lja <nobr>Miniprogram -&gt; Avsluta</nobr> i
+Applet Viewer.
+<br>Efter profileringen av programmet visar f&ouml;nstret Profil de data som skrivits till
+projektets fil i k&auml;llkatalogen,  <kbd>Blink.prof</kbd>.</li>
+<li>I f&ouml;nstret Profil v&auml;ljer du <nobr>Filter -&gt; Inga</nobr> f&ouml;r att visa systemets
+klassdata.</li>
+<li>V&auml;lj <nobr>Visa -&gt; Sortera efter namn</nobr> f&ouml;r att visa metoddata i alfabetisk ordning.</li>
+<li>V&auml;lj metoden <kbd>Blink.paint (Ljava/awt/Graphics;)</kbd>.</li>
+<li>Titta p&aring; profildata igen, med resultat som liknar det nedanst&aring;ende:</li>
+</ol>
+<p>
+<img src="../../images/tProfile.gif"></p>
+<p>
+Resultaten visar att:
+<ul>
+<li>Java Development Environment har anv&auml;nt 93 millisekunder f&ouml;r att anropa metoden <kbd>Blink.paint
+(Ljava/awt/Graphics;)</kbd>.</li>
+<li><kbd>Blink.paint (Ljava/awt/Graphics;)</kbd> anropar tre metoder:
+<kbd>java.awt.Color.&lt;init&gt; (III)</kbd>, <kbd>java.awt.Component.size ()</kbd> och
+<kbd>java.awt.Font.getSize ()</kbd>.
+<li>De tv&aring; metoderna som anropar metoden <kbd>Blink.paint
+(Ljava/awt/Graphics;)</kbd> &auml;r:
+<kbd>java.awt.Component.dispatchEventImpl (Ljava/awt/AWTEvent;)</kbd> och <kbd>java.awt.Component.update (Ljava/awt/Graphics;)</kbd>.
+</ul>
+<p>
+<img src="../../images/hg_see.gif"><strong>N&auml;sta lektion:</strong></p>
+<dl>
+<dd>Nu &auml;r du klar med lektionerna i den h&auml;r sj&auml;lvstudien. N&auml;sta sj&auml;lvstudie &auml;r
+<a href="edit.html">Sj&auml;lvstudie tv&aring;: Redigera projektattribut</a>.</dd>
+</dl></bodytext>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Esercizio 2: Correzione degli errori durante la creazione
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Esercizio 2: Correzione degli errori durante la creazione</h1>
+
+In questo esercizio verr&agrave; spiegato come individuare e correggere rapidamente la riga del codice sorgente responsabile dell'errore riscontrato durante il processo di creazione. Gli errori di compilazione includono in genere errori di sintassi, variabili non dichiarate e parole chiave scritte in maniera errata.
+<p>
+Se non &egrave; ancora stato aggiunto il codice relativo alla posizione delle parole nel progetto Blink, sar&agrave; innanzitutto necessario eseguire questa operazione attenendosi alle istruzioni fornite in <a href="editcode.html">Modifica del codice sorgente</a>.
+
+<h2>Individuazione degli errori</h2>
+<ol>
+<li>Verificare nel gestore progetti il nome del progetto corrente.
+<br>Se il progetto corrente non &egrave; Blink, fare doppio clic sul nome del progetto Blink.
+<li>Fare clic sul pulsante Compila <img src="../../../../images/24/tb-build_u.gif" align=BOTTOM> sulla barra degli strumenti principale di Java Development Environment.
+<br>In base all'impostazione predefinita, il progetto Blink viene creato utilizzando il compilatore Java Development Environment, pi&ugrave; veloce del compilatore JDK Java normale.
+<p>
+Nella scheda Compila sono elencati due errori. Nell'editor del codice sorgente verr&agrave; evidenziata in giallo la riga del codice sorgente responsabile del primo errore.
+</ol>
+
+<h2>Correzione degli errori</h2>
+<ol>
+<li>Correggere il primo errore, alla riga 55, aggiungendo le parentesi in corrispondenza di <kbd>offset</kbd>.
+<br>La riga deve essere uguale alla seguente:
+<br><code>if (offset)</code>
+<li>Nella scheda Compila selezionare il secondo errore <kbd>Blink.java: 61</kbd>.
+<br>Nell'editor del codice sorgente verr&agrave; evidenziata la riga sorgente responsabile dell'errore successivo.
+<li>Correggere l'errore aggiungendo un punto e virgola (<kbd>;</kbd>) dopo <kbd>y = y / 2</kbd> alla riga 60.
+<br>La riga deve essere uguale alla seguente:
+<br><kbd>y = y / 2;</kbd>
+<li>Fare clic sul pulsante Salva file <img src="../../../../images/24/file-save_u.gif" align=BOTTOM> sulla barra degli strumenti dell'editor/debug.
+<br>Il programma &egrave; stato corretto. Sar&agrave; pertanto possibile ricompilarlo.
+</ol>
+
+<h2>Ricompilazione del progetto</h2>
+<ol>
+<li>Fare clic sul pulsante Compila <img src="../../../../images/24/tb-build_u.gif" align=BOTTOM> sulla barra degli strumenti principale.
+<br>Non deve essere visualizzato alcun messaggio di errore. In caso contrario, controllare attentamente il codice nell'editor del codice sorgente per verificare di avere immesso le informazioni in modo corretto.
+<li>Fare clic sul pulsante Esegui <img src="../../../../images/24/tb-run_u.gif" align=BOTTOM> sulla barra degli strumenti principale di Java Development Environment.
+<br>Durante l'esecuzione del progetto il testo risulter&agrave; intermittente e verr&agrave; posizionato alternativamente all'inizio e alla fine della pagina.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Lezione successiva</strong>
+<dl>
+<dd>Le lezioni di questa esercitazione sono terminate.  L'esercitazione successiva &egrave; l'<a href="browse.html">Esercitazione Quattro: Ricerca di un progetto</a>.
+</dl>
+<p>
+</body>
+</html>

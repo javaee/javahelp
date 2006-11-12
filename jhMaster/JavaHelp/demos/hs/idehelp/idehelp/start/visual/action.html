@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercise 6: Adding Code
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Exercise 6: Adding Code</h1>
+
+Java WorkShop has given you templates for the Calculator class in the file <br><kbd>Calculator.java</kbd>. Now you need to add an action method, which is called whenever an action event occurs on an object in the interface. A button, for example, will generate an action event when the user clicks it.
+<p>
+You will not actually write any code in this lesson. To simplify the tutorial, the action methods have been written for you. You will add them to your code by running the applet on this page.
+<ol>
+<li>Java WorkShop opens the source editor with the <kbd>Calculator.java</kbd> file loaded.
+<br>This file contains a template for your Calculator code. You need to add the following:
+<ul>
+<li>The action method for the button call
+<li>Code for figuring out which button the user clicks
+<li>Code that performs the action
+<li>Code that updates the text label
+</ul>
+<li>Type the path to your <kbd>Calculator.java</kbd> file in the box below and click the Copy button.
+<br>This step is specific to this tutorial. It copies a file that includes the code into your Calculator project directory, overwriting the existing <kbd>Calculator.java</kbd> file. This step has been included so you don't have to actually type in the code.
+<p>
+
+<p>
+<li>Reload the <kbd>Calculator.Java</kbd> file in the source editor.
+<li>Go to line 49, which contains the action method:
+<p>
+<kbd>public boolean action (Message msg, Event evt, Object what)</kbd>
+<p>
+The <kbd>msg</kbd> argument is of a special Visual Java type that contains all of the information about the action event. The <kbd>evt</kbd> argument is a regular AWT event. It contains information about the event, such as the kind of event it was. The <kbd>what</kbd> argument is passed to the action command by AWT. It is not particularly useful for buttons, but for scrolling lists it might indicate when an item was selected.
+<li>Look at lines 50 through 89.
+<br>These lines contain the code that figures out what button the user clicked. The <kbd>target</kbd> field of the <kbd>msg</kbd> argument is the object in which the event occurred. When you created the interface, you named the buttons <kbd>b0</kbd>, <kbd>b1</kbd>, <kbd>b2</kbd>, and so forth. The <kbd>gui</kbd> variable is the way to reference the objects in the GUI. So, <kbd>gui.b0</kbd> refers to the button that was named <kbd>b0</kbd> when you created the interface.
+<p>
+Comparing the <kbd>msg.target</kbd> to these buttons tells you which button was clicked. Once the program determines which button was clicked, it calls a method which performs the button action. For example, if the user clicks button 7, the program calls the method <kbd>number(7)</kbd> (lines 94 through 104).
+<li>Look at line 90.
+<p>
+<kbd>gui.display.set("text", new Double(value).toString());</kbd>
+<p>
+This line changes the text in the label (named <kbd>display</kbd>).
+</ol>
+<p>
+<IMG SRC="../../../images/hg_see.gif"><strong>Next lesson:</strong>
+<dl>
+<dd><a href="build.html">Exercise 7:  Building and Running the Project
+</a>
+</dl><p>
+</BODY>
+</HTML>

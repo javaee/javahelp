@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_CN">
+<HEAD>
+<TITLE>
+GUI菜单 
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<!--
+<jhelp-index label="GUI menu">
+-->
+
+<H1>GUI菜单</H1>
+
+<table BORDER=0 cellspacing=12>
+<tr valign="top">
+<td><strong>显示GUI生成器</strong></td>
+<td>
+在Java Development Environment窗口中添加GUI生成器控制。
+只有对使用Visual Java GUI生成器创建的项目，
+该菜单项才是激活的。
+</td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>合并GUI文件</b></td>
+<td valign="top">打开文件选择器并引入选中的文件
+（该文件内含一个准备包括在应用程序中的
+GUI生成器窗口）。该文件必须带有<code>.gui</code>扩展名。</td>
+</tr>
+<tr>
+<td valign="top"><b>保存&生成GUI文件</b> </td>
+<td valign="top">把布局保存到磁盘的
+<em>project-name</em><code>.gui</code>文件中，
+同时生成这种布局的Java源代码。请参阅<A HREF="../visual/generate.html">生成
+Java源代码</A>中的详细介绍。</td>  
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>剪切组件</b></td>
+<td valign="top">剪切选中组件或窗口，并将其
+放入剪贴板中。您可以把剪下的组件或窗口粘贴到
+布局的另一个单元上。</td> 
+</tr>
+<tr>
+<td valign="top"><b>复制组件</b></td>
+<td valign="top">把选中组件或窗口复制到剪贴板上。
+您可以从剪贴板上把复制的组件或窗口粘贴到布局的
+另一个单元上。</td>
+</tr>
+<tr>
+<td valign="top"><b>粘贴组件</b></td>
+<td valign="top">把剪下或复制的组件或窗口粘贴到
+布局的另一个单元上。</td>
+</tr>
+<tr>
+<td valign="top"><b>删除组件</b></td>
+<td valign="top">删除选中组件或窗口。<em>不会
+把复本放到剪贴板上，也不能撤销。</em></td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>编辑属性</b><IMG
+SRC="../../../../images/24/vj_attributes_up.gif" ALIGN="left" WIDTH=24
+HEIGHT=24></td>
+<td valign="top">打开<A HREF="../visual/dialogs/attributes.html">属性编辑器</A>，
+显示选中组件或窗口的属性。有关如何修改组件属性的细节，
+请参阅属性编辑器的帮助信息。该命令
+在主工具栏中也有一个按钮。</td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>添加列</b></td>
+<td valign="top">在选中单元或组件的左边或者右边
+添加一列。</td>
+</tr>
+<tr>
+<td valign="top"><b>添加行</b></td>
+<td valign="top">在选中单元或组件的上边或者下边
+添加一行。</td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>添加新窗口</b><IMG
+SRC="../../../../images/24/vj_newframe_up.gif" ALIGN="left" WIDTH=24 HEIGHT=24></td>
+<td valign="top">打开<A HREF="../visual/newwindow.html">新窗口
+</A>对话框。从列表中选择一个指定的容器，然后
+单击“创建”，即可打开给定容器的一个新的
+网格包布局。该命令有一个对应的按钮在
+组件工具板的左边。</td>
+</tr>
+<tr>
+<td valign="top" nowrap><b>设置窗口类型</b></td>
+<td  valign="top">打开<A HREF="../visual/chg_container.html">主容器
+</A>对话框。利用该对话框可以把主容器的类型
+更改成框架或面板。</td> 
+</tr>
+<tr>
+<td valign="top"><b>嵌入面板</b></td>
+<td  valign="top">在“网格包布局面板”组件的内部
+<A HREF="../visual/nest_panels.html">嵌入</A>（放置）
+选中的布局面板组件。</td> 
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top" nowrap><b>定制工具板</b></td>
+<td valign="top">打开<A HREF="../visual/chg_palette.html">
+工具板编辑器</A>。利用工具板编辑器可以对工具板文件夹中
+的组件进行定制、删除和重新编排。</td>
+</tr>
+<tr>
+<td valign="top" nowrap><b>为工具板引入组件</b></td>
+<td valign="top">打开“为工具板引入组件”对话框。
+使用该对话框可以引入JavaBeans或带有
+shadow类的组件。请参阅<a href=../visual/importing.html>引入组件
+</a>中的详细说明。</td>  
+</tr>
+<tr>
+<td valign="top" nowrap><b>复位至出厂时的工具板</b></td>
+<td valign="top">使标准GUI生成器工具板（AWT、
+面板和附加制表项）的内容返回至其原始状态。</td> 
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top" nowrap><b>选中组件的程序节信息</b></td>
+<td valign="top">打开“程序节信息”对话框，显示
+包括属性、事件和方法在内的程序节专用
+的信息。</td>  
+</tr>
+<tr>
+<td valign="top" nowrap><b>更新设计中的组件类</b></td>
+<td valign="top">打开<a href=../visual/upgrade.html>更新设计中的
+组件类</a>对话框，显示程序节类的一个列表。
+选择一个类（或几个类）即可进行更新。
+被更新的只有工具板中的组件，不包括布局窗口中的
+组件。当需要重新装入时，会显示一个“重新装入设计中的组件”
+对话框。</td>
+</tr>
+<tr>
+<td valign="top" nowrap><b>类使用情况报告</b></td>
+<td valign="top">显示在当前项目中用到的组件类
+的列表。</td> 
+</tr>
+</table>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>另见：</strong>
+<dl>
+<dd><A HREF="../visual/palette.html">GUI生成器工具板</A>
+<dd><A HREF="../visual/layout.html">界面布局</A>
+<dd><A HREF="../visual/menus.html">添加菜单栏和菜单</A>
+<dd><A HREF="../visual/custom.html">添加定制组件和创建</A> 
+</dl>
+<p>
+</BODY>
+</HTML>

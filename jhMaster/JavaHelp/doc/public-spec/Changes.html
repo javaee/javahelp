@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JavaHelp 1.0 - Change History</title>
+  </head>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup><font size="-2">TM</font></sup> 1.0 - Change History
+</h1>
+      <h2 align=center>
+<br>
+<a href="Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+<br>
+</h2>
+
+<hr>
+
+
+    <p>
+
+<h2>Changes from 0.90 to 1.0</h2>
+<p>
+This is the final set of changes so they are documented
+in more detail than the other sets.
+<ul>
+<li>Refined the documentation of several methods. Fully defined when
+NullPointers are allowed and the resulting actions.
+<li>The method getIcon in BasicSearchCellRenderer was made private.
+<li>The method getCurrentNav was added to BasicHelpUI and HelpUI.
+<li>The method setNavigatorDisplay was removed from HelpUI and BasicHelpUI.
+<li>The method reloadData was changed to private in BasicTOCNavigatorUI,
+BasicIndexNavigatorUI, and BasicSearchNavigatorUI.
+<li>The method installLookAndFeelDefaults was changed to package in
+HelpUtilities.
+<li>Changed occurances of IllegalArgumentException to throw 
+NullPointerException, except for classes that were copied from Swing.
+</ul>
+
+<h2>Changes from 0.70 to 0.90</h2>
+<p>
+This is intented to be the last set of changes so they are documented
+in more detail than the other sets.
+<ul>
+<li>
+Package name is now javax.help, rather than javax.javahelp.  This
+is consistent with other packages in the Java Platform.
+<li>
+Adjusted examples so they follow the Reference Implementation, in
+particular, the package names in the RI have also changed from
+*.javahelp.* to *.help.* and the default search database directory
+has changed from JavaHelpSearch to JavaHelpSearch.
+<li>
+Better use of XML:
+<ul>
+<li>
+Moderate cleanup of HelpSet format to improve consistency and
+to better employ XML features, including Processing Instructions
+and empty tags.
+<li>
+Removed &lt;impl&gt; tag from the HelpSet (use PIs instead).
+<li>
+Dropped claim that the keydata registry of HelpSet would be initialized
+from the &lt;impl&gt; section.
+<li>
+Map files are now described as XML files.
+<li>
+All XML formats (HelpSet, TOC, Index, Map) are now formally described
+using a DTD.  DTDs are versioned to allow for future changes.
+</ul>
+<li>
+Standard Views now can be "empty" (i.e. without any &lt;data&gt;; this
+is useful when merging HelpSets) and
+clarified that non-existing subHelpSets are not to give an error.
+<li>
+The DialogSupport class is no longer in the specification as
+it had too many limitations.
+We are planning direct support for Help in a future version of
+Swing's JOptionPane.
+<li>
+CSH methods now accept both AWT Components as well as JComponents.
+<li>
+The default CSH listener classes moved from DefaultHelpBroker to CSH
+and changed their name.
+<li>
+The enabling methods on HelpBroker were modified to work on AWT components
+and some also changed their names.
+<li> Refinements to the API to either fix bugs or improve reusability
+of functionality:
+<ul>
+<li>
+TOCView and IndexView now include a <tt>getDataAsTree()</tt> method.
+<li>
+Small changes in HelpSet to allow the creation of HelpSets programatically.
+<li>
+Cleaned up some more the parsing interface used in HelpSet, TOCView
+and IndexView.
+<li>
+Normalized a number of exceptions in corner cases (like when a null is
+passed in, etc).
+<li>
+Added <tt>removeNavigator()</tt> to several UI classes,
+<tt>setCellRenderer()</tt> to the ComponentUI classes,
+and
+<tt>merge()</tt> and <tt>remove()</tt> to <tt>BasicSearchNavigatorUI</tt>.
+<li>
+Made some additional methods public or protected so they can be reused.
+<li>
+Promoted UnsupportedOperationException from an inner to a top-level class.
+</ul>
+</ul>
+
+<h2>Changes from 0.50 to 0.70</h2>
+<ul>
+<li>Significantly improved support for internationalization and localization.
+<li>We no longer claiming to comply with RDF,
+although we are still trying to be consistent with it.
+<li>Created the notion of a NavigatorView to provide additional flexibility.
+<li>Added the notion of Factories to access TOC, Index, and HelpSet
+parsers, including errors.
+<li>Added support for a <tt>&lt;subhelpset&gt;</tt> tag in HelpSet files.
+<li>Added a method to HelpUtilities to better support <tt>jar:</tt> in JDK1.2.
+<li>Switched to using <tt>&lt;OBJECT&gt;</tt> tags instead of <tt>&lt;APPLET&gt;</tt> tags
+<li><tt>&lt;OBJECT&gt;</tt> tags are no longer part of the specification
+<li>Clarified the role of the search engine.
+<li>Added a section to this specification about the reference implementation.
+<li>Classified Scenarios as a companion doc to the specification.
+<li>Changed the package name of the search engine in the reference implementation.
+</ul>
+
+<h2>Changes from 0.33 to 0.50 (unpublished but implemented in jhEA2)</h2> 
+<ul>
+<li>Added proper XML prefix to XML-based formats (TOC, Index, HelpSet).
+<li>Now supports both JDK 1.1 and JDK 1.2 platforms.
+<li>Removed mandated protocols from specification;
+instead we rely on the underlying platform.
+<li>Added HelpBroker, Context-Sensitive Help, Search API.
+<li>Dropped <em>format</em> from Views; <em>type</em> is enough.
+<li>HelpSet nest (for merging) and IDs are now scoped within them.
+</ul>
+
+<h2>Changes from 0.30 to 0.33</h2>
+<ul>
+<li>First public draft.
+<li>Improved the Beans proposed mechanism
+<li>Cleaned up some the Merge examples
+<li>Clarified some activation issues
+<li>Added some references to the forthcoming Search Database Spec.
+</ul>
+
+
+<h2>Changes from 0.20 to 0.30</h2>
+<ul>
+<li>Improved pictures in the Scenarios.  Improvements to the
+language of the document.
+<li>The Navlet API was folded into JHelpNavigator and cleaned up
+<li>Improvements on merging of HelpSets.
+<li>Added initial description of DB format.
+<li>Added Changes.html file.
+<li>Added an intro to the JavaSoft API
+evolution process in preparation for a more public draft release.
+</ul>
+
+<h2>Changes from 0.10 to 0.20</h2>
+<ul>
+<li>Added a number of JavaHelp usage scenarios.
+<li>Improved on applicability of map files using jar: format.
+<li>Added navigational views.
+<li>Added an overview to the spec.
+<li>First cut at JavaBeans support.
+<li>Provided examples of code fragments.
+</ul>
+<hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 16:56:07 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>
+

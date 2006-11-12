@@ -1,0 +1,121 @@
+
+There are two .html files:
+
+	AppletViewer.html
+and
+	AppletViewerAddSwing.html
+
+the first one does not include swingall.jar explicitly, while
+the second does.
+
+
+
+Browsers
+========
+
+Browser's work best when used the Java Plugin.
+
+
+IE4.0
+======
+
+IE4.0 will not support getResource() into resources that are inside
+a JAR file in an ARCHIVE tag.  Thus, the current code will NOT correctly
+locate a HelpSet that is placed like so.  To make things work, unjar
+idehelp.jar into classes.
+
+We will provide a way to address this problem in the FCS release.  Most
+likely a HelpSet constructor that takes an InputStream.
+
+
+
+
+AppletViewer
+============
+
+These instructions are as of October 20th, 1998.  Using JDK1.2fcs-O
+(1.2fcs-RC1) and Swing 1.1beta3.
+
+The HTML package has several bugs related to running under a security manager.
+There are:
+
+a. unprivileged calls to getResourceAsStream() to get at the .CSS
+   and the .bdtd files
+b. more calls to get similar .GIF images for some Icons (like NotFound)
+c. calls to System.getProperty() for "awt.image.incrementaldraw" and
+   "awt.image.redrawrate"
+
+
+(1) On JDK1.1.7
+
+Bug (a) does not affect JDK1.1
+Bug (b) causes some failures
+Bug (c) will cause major problems.
+
+(1a) JDK1.1.7; swingall.jar in CLASSPATH; AppletViewer.html via file:
+
+% setenv CLASSPATH ../../swing/swingall.jar
+% appletviewer AppletViewer.html
+
+
+(1b) JDK1.1.7; swingall.jar in CLASSPATH; AppletViewer.html via http:
+
+% setenv CLASSPATH ../../swing/swingall.jar
+% appletviewer http://calterra.eng/calterra.tmp/JH/JavaHelp/demos/browser/AppletViewer.html
+
+
+(1c) JDK1.1.7; AppletViewerAddSwing.html via file:
+
+% unsetenv CLASSPATH
+% appletviewer AppletViewerAddSwing.html
+
+PROBLEMS: (b).  SOME PROBLEMS.  (c) also?
+
+
+(1d) JDK1.1.7; AppletViewerAddSwing.html via http:
+
+% unsetenv CLASSPATH
+% appletviewer http://calterra.eng/calterra.tmp/JH/JavaHelp/demos/browser/AppletViewerAddSwing.html
+
+PROBLEMS: (b) & (c).  EVEN MORE PROBLEMS
+
+
+(2) On JDK1.2fcs-O
+
+On 1.2, bug (a) makes everything pretty unworkable.  So, you will need
+to fix this by modifying the jre/lib/security/java.policy.  Here is what
+I've added:
+
+	// added permissions to work around problems in Swing's HTML package
+
+	permission java.io.FilePermission "/export/home2/pelegri/jdk1.2fcs/jre/lib/rt.jar", "read";
+	permission java.util.PropertyPermission "awt.image.incrementaldraw", "read";
+	permission java.util.PropertyPermission "awt.image.redrawrate", "read";
+	permission java.awt.AWTPermission "accessEventQueue";
+
+The first one addresses (a) and (c)
+The next two address (b)
+The last one is to avoid a warning.
+
+(2a) JDK1.2fcs ; AppletViewer.html via file
+
+% unsetenv CLASSPATH
+% appletviewer AppletViewer.html
+
+PROBLEMS: this fails because the ../* files are not accessible from the
+AppletViewer.  This is a digression from 1.1 functionality.  I don't know
+if it will affect our customers.
+
+To run successfully, copy both jhall.jar and idehelp.jar into classes,
+then run
+
+% appletviewer AppletViewerPatch.html
+
+(2a) JDK1.2fcs ; AppletViewer.html via file
+
+% unsetenv CLASSPATH
+% appletviewer http://calterra.eng/calterra.tmp/JH/JavaHelp/demos/browser/AppletViewer.html
+
+(2c) & (2d) don't apply
+
+

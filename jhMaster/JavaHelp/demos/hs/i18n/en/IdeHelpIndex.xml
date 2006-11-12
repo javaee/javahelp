@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='ISO-8859-1'  ?>
+
+<!--
+ @(#)IdeHelpIndex.xml	1.5 06/10/30
+ 
+ Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+ 
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 
+ - Redistribution of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ 
+ - Redistribution in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+ 
+ Neither the name of Sun Microsystems, Inc. or the names of
+ contributors may be used to endorse or promote products derived
+ from this software without specific prior written permission.
+ 
+ This software is provided "AS IS," without a warranty of any
+ kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND
+ WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY
+ EXCLUDED. SUN MICROSYSTEMS, INC. ("SUN") AND ITS LICENSORS SHALL
+ NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF
+ USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+ DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR
+ ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,
+ CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND
+ REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR
+ INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGES.
+ 
+ You acknowledge that this software is not designed, licensed or
+ intended for use in the design, construction, operation or
+ maintenance of any nuclear facility. 
+-->
+
+<!DOCTYPE index
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Index Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/index_1_0.dtd">
+
+<index version="1.0">
+
+   <indexitem text=".prof extension (profile data)" target="prof.profile"/>
+   <indexitem text="accelerators (keyboard), see 'keyboard commands'"/>
+   <indexitem text="adding an existing portfolio" target="proj.import"/>
+   
+   <indexitem text="adding an existing project">
+      <indexitem text="naming the project" target="proj.importdirectory"/>
+      <indexitem text="naming the storage directory" target="proj.importdirectory"/>
+      <indexitem text="procedures for" target="proj.importproject2"/>
+   </indexitem>
+   
+   <indexitem text="analyzing program performance, see 'profiler'"/>
+   
+   <indexitem text="arguments">
+      <indexitem text="passing" target="debug.arguments"/>
+      <indexitem text="specifying" target="debug.arguments"/>
+   </indexitem>
+
+   <indexitem text="assignments (keyboard), see 'keyboard commands'"/>
+   <indexitem text="auto indent, source editor" target="edit.tabs"/>
+   <indexitem text="background color, source editor" target="edit.syntax"/>
+   <indexitem text="BeanInfo file" target="proj.beansproject"/>
+
+   <indexitem text="beans">
+      <indexitem text="adding existing sources to a bean project" target="proj.existingbeans"/>
+      <indexitem text="changing bean file status" target="proj.existingbeans"/>
+      <indexitem text="creating a bean project" target="proj.beansproject"/>
+      <indexitem text="removing existing sources from a bean project" target="proj.existingbeans"/>
+   </indexitem>
+   
+   <indexitem text="bindings (keyboard), see 'keyboard commands'"/>
+   <indexitem text="break exception always" target="debug.addexception"/>
+   <indexitem text="break exception on uncaught" target="debug.addexception"/>
+   
+   <indexitem text="breakpoints">
+      <indexitem text="advanced functions" target="debug.breakpoint"/>
+      <indexitem text="conditional" target="debug.conditional"/>
+      <indexitem text="list of" target="debug.breakpoint"/>
+      <indexitem text="location" target="debug.breakpoint"/>
+      <indexitem text="window" target="debug.breakpoint"/>
+   </indexitem>
+   
+   <indexitem text="browsing source code, see 'source browser'"/>
+   
+   <indexitem text="building projects">
+      <indexitem text="Build menu" target="menus.build"/>
+      <indexitem text="building projects" target="build.build"/>
+      <indexitem text="javac" target="build.build"/>
+   </indexitem>
+
+
+   <indexitem text="call stack, moving on the" target="debug.stack"/>
+   <indexitem text="callbacks, see `adding operations'"/>
+   <indexitem text="changing the current project" target="proj.changeproject"/>
+   <indexitem text="changing the status of a bean file" target="proj.existingbeans"/>
+   <indexitem text="check in (version control)" target="version.version"/>
+   <indexitem text="check in new (version control)" target="version.version"/>
+   <indexitem text="choosing a Java compiler" target="build.compiler_pref"/>
+   <indexitem text="Fast Javac" target="build.compiler_pref"/>
+   <indexitem text="compiling a single file" target="build.compilefile"/>
+   <indexitem text="compiling projects" target="build.build"/>
+   <indexitem text="counted breakpoints" target="debug.counted"/>
+
+   <indexitem text="Create Project Wizard">
+      <indexitem text="adding existing sources to a bean project" target="proj.existingbeans"/>
+      <indexitem text="naming a source file location" target="proj.appletwizard"/>
+   </indexitem>
+
+   <indexitem text="creating a portfolio">
+      <indexitem text="steps for" target="proj.createportfolio"/>
+      <indexitem text="using the dialog box for" target="proj.createportfolio"/>
+   </indexitem>
+   
+   <indexitem text="Customizer file" target="proj.beansproject"/>
+   
+   <indexitem text="Debug/Browse Tab">
+      <indexitem text="editing project attributes" target="proj.editproject"/>
+      <indexitem text="output" target="debug.messages"/>
+   </indexitem>
+   
+   <indexitem text="debugging">
+      <indexitem text="-g option" target="debug.overview"/>
+      <indexitem text="evaluating expressions" target="debug.eval"/>
+      <indexitem text="prerequisites" target="debug.overview"/>
+      <indexitem text="stack frames, viewing" target="debug.viewthreads"/>
+      <indexitem text="starting" target="debug.start"/>
+      <indexitem text="window, tab" target="debug.messages"/>
+   </indexitem>
+   
+   <indexitem text="displaying a portfolio" target="proj.changeportfolio"/>
+   <indexitem text="displaying a project" target="proj.changeproject"/>
+   <indexitem text="editor, see 'source editor'"/>
+   <indexitem text="evaluation history" target="debug.eval"/>
+   
+   <indexitem text="exceptions">
+      <indexitem text="adding" target="debug.addexception"/>
+      <indexitem text="break always" target="debug.addexception"/>
+      <indexitem text="using the window" target="debug.exceptions"/>
+      <indexitem text="window" target="debug.exceptions"/>
+   </indexitem>
+   
+   <indexitem text="expanding objects and arrays" target="debug.eval"/>
+   
+   <indexitem text="expressions">
+      <indexitem text="defined" target="debug.eval"/>
+      <indexitem text="evaluating" target="debug.eval"/>
+      <indexitem text="evaluation history" target="debug.eval"/>
+      <indexitem text="using the evaluate button" target="debug.eval"/>
+      <indexitem text="value of" target="debug.eval"/>
+   </indexitem>
+   
+   
+   
+   <indexitem text="Fast Javac compiler" target="build.compiler_pref"/>
+   <indexitem text="files, storing project" target="proj.paths"/>
+   <indexitem text="flags, compiler see 'compiler options'"/>
+   <indexitem text="fonts, setting in source editor" target="edit.font"/>
+   <indexitem text="generating an HTML page" target="jws/manager/GenerateHtml.html"/>
+   
+   <indexitem text="HTML file">
+      <indexitem text="editing" target="proj.edithtml"/>
+      <indexitem text="saving" target="proj.edithtml"/>
+      <indexitem text="updating a run page URL" target="proj.edithtml"/>
+   </indexitem>
+   
+   <indexitem text="ignore, exceptions list" target="debug.addexception"/>
+   
+   <indexitem text="JAR files">
+      <indexitem text="defined" target="proj.beansproject"/>
+   </indexitem>
+   
+   <indexitem text="JavaBeans, see 'beans'"/>
+   <indexitem text="javadoc, use in class browser" target="browse.class"/>
+   <indexitem text="line/column indicator, source editor" target="edit.controls"/>
+   <indexitem text="local variables" target="debug.threads"/>
+   <indexitem text="location of breakpoints" target="debug.breakpoint"/>
+   <indexitem text="location, debugging" target="debug.run"/>
+   <indexitem text="managing projects" target="proj.managertoc"/>
+   <indexitem text="methods, stepping into" target="debug.step"/>
+   <indexitem text="naming a project" target="proj.projectwizard"/>
+   <indexitem text="opening a portfolio" target="proj.changeportfolio"/>
+   <indexitem text="opening a project" target="proj.changeproject"/>
+   
+   <indexitem text="package">
+     <indexitem text="creating a package project" target="proj.createpackage"/>
+     <indexitem text="editing the name" target="proj.generaldisplay"/>
+     <indexitem text="naming" target="proj.generaldisplay"/>
+   </indexitem>
+   
+   <indexitem text="passing arguments to a standalone project" target="debug.arguments"/>
+   <indexitem text="performance analysis, see 'profiler'"/>
+   
+   <indexitem text="portfolios">
+      <indexitem text="Add Portfolio dialog box" target="proj.importportfolio"/>
+      <indexitem text="changing" target="proj.changeportfolio"/>
+      <indexitem text="Create Portfolio dialog box" target="proj.createportfolio"/>
+      <indexitem text="removing" target="proj.removeportfolio"/>
+   </indexitem>
+   
+   <indexitem text="Preferences menu" target="menus.preferences"/>
+   <indexitem text="prerequisites, debugging" target="debug.overview"/>
+   <indexitem text="printing profile data" target="prof.menus"/>
+
+   <indexitem text="profiler">
+      <indexitem text="customizing data filters" target="prof.custom"/>
+   </indexitem>
+   
+   <indexitem text="Project Manager" target="proj.projectmanager"/>
+   <indexitem text="project name" target="proj.generaldisplay"/>
+   <indexitem text="project type" target="proj.generaldisplay"/>
+   
+   <indexitem text="projects">
+      <indexitem text="contents" target="proj.managertoc"/>
+      <indexitem text="copying an added project" target="proj.importwizard"/>
+      <indexitem text="manager" target="proj.projectmanager"/>
+      <indexitem text="using the project manager" target="proj.projectmanager"/>
+   </indexitem>
+   
+   
+   <indexitem text="quitting debugging" target="debug.enddebug"/>
+   <indexitem text="RCS (version control)" target="version.version"/>
+   <indexitem text="referencing an added project" target="proj.importwizard"/>
+   
+   <indexitem text="remote debugging">
+      <indexitem text="agent password" target="debug.remotedebug"/>
+      <indexitem text="classpaths" target="debug.remotedebug"/>
+      <indexitem text="network connection" target="debug.remotedebug"/>
+      <indexitem text="password" target="debug.remotedebug"/>
+   </indexitem>
+   
+   <indexitem text="removing a portfolio" target="proj.removeportfolio"/>
+   <indexitem text="removing a project" target="proj.removeproject"/>
+   <indexitem text="replacing text, source editor" target="edit.replace"/>
+   <indexitem text="requirements, debugging" target="debug.overview"/>
+   <indexitem text="running a program to collect profile data" target="prof.profile"/>
+   <indexitem text="running a project" target="proj.run"/>
+   <indexitem text="running to a specific location" target="proj.run"/>
+   <indexitem text="saving an HTML file" target="proj.edithtml"/>
+   <indexitem text="SCCS (version control)" target="version.version"/>
+   <indexitem text="shortcuts (keyboard), see 'keyboard commands'"/>
+   <indexitem text="showing the stack frame source" target="debug.source"/>
+      
+   <indexitem text="source browser">
+      <indexitem text="Browse menu" target="menus.browse"/>
+      <indexitem text="browsing class files" target="browse.class"/>
+      <indexitem text="javadoc, use in class browser" target="browse.class"/>
+      <indexitem text="strings, searching for in source code" target="browse.strings"/>
+   </indexitem>
+   
+   <indexitem text="source directory" target="proj.generaldisplay"/>
+   
+   <indexitem text="standalone project">
+      <indexitem text="creating" target="proj.createstandalone"/>
+      <indexitem text="running" target="proj.run"/>
+      <indexitem text="specifying program arguments" target="debug.arguments"/>
+   </indexitem>
+   
+   <indexitem text="starting debugging" target="debug.start"/>
+   <indexitem text="starting over, debugging" target="debug.startover"/>
+   <indexitem text="subprojects, creating" target="proj.nestedprojects"/>
+   <indexitem text="subprojects, defined" target="proj.projects"/>
+   <indexitem>tabs, see 'component palette'</indexitem>
+
+   <indexitem text="threads">
+      <indexitem text="data values" target="debug.variables"/>
+      <indexitem text="evaluating data values" target="debug.variables"/>
+      <indexitem text="variables, defined" target="debug.threads"/>
+      <indexitem text="viewing threads" target="debug.viewthreads"/>
+   </indexitem>
+   
+   <indexitem text="using the debugger" target="debug.overview"/>
+   <indexitem text="using the Exceptions Window" target="debug.exceptions"/>
+   <indexitem text="defined" target="debug.eval"/>
+   <indexitem text="evaluating" target="debug.eval"/>
+   <indexitem text="viewing" target="debug.threads"/>
+   
+   <indexitem text="version control">
+      <indexitem text="check in" target="version.version"/>
+      <indexitem text="check in new" target="version.version"/>
+      <indexitem text="uncheckout" target="version.version"/>
+   </indexitem>
+   
+   <indexitem text="viewing stack frames" target="debug.viewthreads"/>
+   <indexitem text="Windows menu" target="menus.windows"/>
+
+
+</index>
+

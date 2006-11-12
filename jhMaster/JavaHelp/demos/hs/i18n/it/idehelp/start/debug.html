@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Concetti importanti: Thread
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Concetti importanti: Thread</h1>
+
+I programmi Java sono composti da thread. Un <i>thread</i> consiste
+in una sequenza autonoma di esecuzioni all'interno di un programma.
+All'interno di un programma Java possono essere contemporaneamente
+in esecuzione pi&ugrave; thread che eseguono pi&ugrave; azioni. Un programma di
+questo tipo &egrave; denominato <i>programma multithread</i>.
+<p>
+Ciascun thread appartiene a un gruppo. Un gruppo di thread consiste in un raggruppamento logico di thread correlati.
+<p>
+Il gruppo di thread <kbd>main</kbd> fa parte di ciascun programma. Ogni volta che si utilizza la tastiera,
+si verifica un'interazione con i thread del gruppo <kbd>main</kbd>.
+<p>
+All'interruzione di un thread &egrave; possibile osservarne lo stack di
+chiamate. Le informazioni visualizzate costituiscono tuttavia solo
+l'ultima istantanea dell'esecuzione del thread.
+<p>
+Nello stack di chiamate sono visualizzati tutti i metodi richiamati
+ma non ancora completati. Il funzionamento di un <i>metodo</i> &egrave;
+simile a quello di una procedura o di una funzione. I metodi nello
+stack sono visualizzati in base all'ordine di chiamata. Il metodo
+in esecuzione al momento dell'interruzione del programma si trover&agrave;
+quindi all'inizio dello stack.
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Lezione successiva</strong>
+<dl>
+<dd><a href="startdebug.html">Esercizio 1: Avvio di una sessione di debug</a>
+</dl>
+<p>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_CN">
+<HEAD>
+<TITLE>
+重要概念：项目属性
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>重要概念：项目属性</h1>
+
+属性定义了项目的独有特性，比如它的名字、类型及其在HTML页面中出现的方式。 您所创建的Blink项目 就包含一些要求的属性，它们定义了：
+
+<ul>
+<li>项目类型
+<li>包含项目的<kbd>.java</kbd>源文件的
+目录
+<li>包含applet <kbd>init ()</kbd>方法的类文件。
+</ul>
+
+<p>
+这些要求的属性值是在您创建该项目时提供的。
+
+<p>
+Blink还包括许多任选的属性。这些任选属性决定了诸如项目出现在项目管理器中的外观， 以及生成项目所使用的编译器选项等事项。这些属性的缺省值是在创建项目时由Java Development Environment提供的。
+
+<p>
+在下一课中，您将对组成&lt;applet&gt;标签的属性进行编辑。现在让我们回想在前一课运行Blink项目时， Java Development Environment使用最低要求创建了&lt;applet&gt;标签，从而将applet小程序放入web页面中。 Java Development Environment把该标签创建在<kbd>Blink</kbd>目录的<kbd>Blink.tmp.html</kbd>文件中。该文件当前大约是这样的：
+<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+   codebase="/<i>your_home_directory</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt="If you had a java-enabled browser, you would see an applet here."
+&gt;     
+&lt;hr&gt;If your browser recognized the applet tag,
+   you would see an applet here.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+<kbd>Blink.class</kbd>是包含applet小程序的已编译Java代码的文件。<code>Codebase</code>是包含<kbd>Blink.class</kbd>文件的目录。 宽度和高度定义了浏览器显示该applet小程序所需的区域，以象素为单位。
+<p>
+您不可以直接编辑<kbd>.html</kbd>文件。Java Development Environment将根据您使用项目管理器所执行的动作来更新这个文件。
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>下一课：</strong>
+<dl>
+<dd><a href="editlesson.html">练习1：编辑运行属性</a>
+</dl>
+<p>
+</body>
+</html>

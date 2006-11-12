@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is s
+ubject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Laying Out the GUI Interface
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<H1>Laying Out the Interface</H1>
+
+This section describes how to start laying out an interface:
+<ul>
+<li><a href="#startgui">Create a GUI builder project</a> 
+<li><a href="#create_layoutgrid">Lay out the design</a>
+</ul>
+
+<a name=startgui></a>
+<h2>Some Basics</h2>
+This section describes how you start GUI builder, add and delete
+cells in the layout grid, and add components to the grid.
+
+<h3>Start GUI Builder</h3> 
+
+To create an application with GUI builder, you must first create a GUI
+project. Choose Project -> New and use the project
+wizard to create a GUI project. When you have created the project, the
+GUI builder panel is displayed between the Java WorkShop main toolbar
+and the Edit/Debug toolbar. The panel displays the component palette,
+name of the current container, the current mode state (Edit or
+Preview), and the name of the selected component.
+<p>
+When GUI builder starts, a separate layout window opens with a default
+panel container. The layout window displays a gridbag layout.
+GUI builder uses a grid system that enables you to
+place GUI components, such as buttons and text fields, in
+the <em>cells</em> of a grid.  You can nest grids within the
+cells of other grids using the <A
+HREF="../visual/nest_panels.html">Gridbag Layout Panel</A> component.
+<p>
+At any time during the layout process, you can view a close
+approximation of how the layout will look in your
+application by switching the GUI builder mode from
+Edit to Preview.
+
+<a name=create_layoutgrid></a>
+<h3>Create the Layout</h3>
+
+When you start a new layout, a 12-cell grid is positioned in the
+layout window.You can create a grid with as many cells as you need by
+clicking in any cell and pressing on the arrow keys. A row or column
+of cells is added to the grid in the direction of the arrow key each
+time you press it.
+<p>
+Delete empty rows and columns from the grid by selecting them and pressing
+the Delete key. The row and column containing the selected cell will
+be deleted (you cannot delete individual cells). To delete a row or
+column that contains a component, you must first delete the component.
+
+<p> 
+<A NAME=addcomps></A>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add components to the layout
+grid:</strong>
+
+<ol>
+<li>Click on a component in one of the palette folders to select it.
+<li>Click in the cell where you want to place the component.
+</ol>
+
+<p> 
+<A NAME=addinvbeans></A> 
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add an invisible bean
+to the layout grid:</strong>
+
+<ul>
+<li>Click on an invisible bean in the palette.
+<p>
+Because the bean has no visible representation, it cannot be viewed in
+the layout. To verify that you have added the invisible bean, check
+the Windows list to the right of the palette. Each time an invisible
+bean is selected, it's name is added to the Windows choice list. The
+attribute editor for the invisible bean should also appear each time
+the bean is selected.
+</ul>
+
+<p>
+<A NAME=continue_cells></A>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add a component to more than one cell:</strong>
+<ol>
+<li>Click on the component in the palette folder.
+<li>Press the Control key.
+<li>Click in the cells in which you want to add the component.
+</ol>
+
+<p>
+Once you have placed a component in a cell, you can adjust its size
+and location in the grid. To resize a component, see <a
+href="resize.html">Resizing a Component</a>. To set the resizing
+behavior of individual components with respect to the resizing of the
+window that contains them, see <a href="wdw-resize.html">Resizing the
+Layout</a>. To stretch components across cells, delete components, or
+change their attributes, see <a href=modify.html>Modifying Components
+in a Grid</a>.
+
+<p>
+To see examples of how to design a layout, see:
+<ul>
+<li><a href="gui_examples.html">Card File - Examples of Creating an Application</a>
+<li><a href="../start/visual/visual.html">Tutorial Seven: Creating a
+GUI</a>
+</ul>
+
+<p>
+See <a href="../visual/palette.html">GUI Builder Palette</a> for
+information about components in the GUI builder palette.
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="palette.html">GUI Builder Palette</A>
+<dd><A HREF="menus.html">Adding a Menu Bar and Menus</A>
+<dd><A HREF="importing.html">Importing Components</A>
+<dd><A HREF="editbean.html">Customizing a Bean</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="custom.html">Adding Custom Components and Windows</A> 
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI Builder
+Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+</body>
+</HTML>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Esercizio 3: Esame dei thread
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Esercizio 3: Esame dei thread</h1>
+
+In questo esercizio verranno esaminati i gruppi di thread, i thread e le cornici dello stack che costituiscono il progetto Blink. Verr&agrave; inoltre spiegato come tenere traccia delle modifiche nei valori delle variabili durante l'esecuzione del programma.
+
+<ol>
+<li>Scegliere <nobr>Debug -&gt; Thread/stack.</nobr>
+<br>Verr&agrave; visualizzata la finestra Thread/stack di Java Workshop.
+<p>
+Il progetto Blink &egrave; costituito da tre gruppi di thread, ciascuno dei quali &egrave; accompagnato dal simbolo <img src="../../images/spacer2_t.gif"><img src="../../../../images/db_01_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">:
+
+<ul>
+<li><kbd>main</kbd>--comprende i thread che vengono eseguiti in Java Development Environment.
+<li><kbd>sun.applet.AppletViewer.main</kbd>--comprende i thread che vengono eseguiti nel visualizzatore applet.
+<li><code>file:/<b>directory-di-installazione</b>/jws/Blink/-threadGroup</code>--comprende i thread direttamente correlati con il progetto Blink.
+</ul>
+
+Il gruppo di thread <kbd>sun.applet.AppletViewer.main</kbd> contiene tre thread, mentre il gruppo di thread di file <kbd>Blink</kbd> ne contiene due.
+
+<li>Di seguito viene esaminato <kbd>"AWT-EventQueue-0"</kbd>, il primo thread del gruppo di thread <kbd>sun.applet.AppletViewer.main</kbd>.
+<p>Sar&agrave; possibile notare quanto segue:
+
+<ul>
+<li>Il nome del thread &egrave; <kbd>java.awt.EventDispatch</kbd>.
+<li>Lo stato del thread &egrave; "al breakpoint".
+<li>La priorit&agrave; per l'esecuzione del thread &egrave; 5. Il thread con priorit&agrave; pi&ugrave; alta viene eseguito per primo.
+</ul>
+
+<p>
+Il simbolo associato a ciascun thread &egrave; un'ulteriore indicazione sullo stato del thread. Alcuni dei simboli che possono essere associati ai thread sono:
+<br>
+<img src="../../../../images/db_19_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">Il thread &egrave; sospeso.
+<br>
+<img src="../../../../images/db_20_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">Il thread &egrave; interrotto a un breakpoint.
+<br>
+<img src="../../../../images/db_13_u.gif"><img src="../../images/spacer2_t.gif">&Egrave; impossibile determinare lo stato del thread.
+<br>
+<img src="../../../../images/db_14_u.gif"><img src="../../images/spacer2_t.gif">Il thread &egrave; uno zombie.
+<br>
+<img src="../../../../images/db_15_u.gif"><img src="../../images/spacer2_t.gif">Il thread &egrave; in esecuzione.
+<br>
+<img src="../../../../images/db_16_u.gif"><img src="../../images/spacer2_t.gif">Il thread &egrave; inattivo.
+<br>
+<img src="../../../../images/db_18_u.gif"><img src="../../images/spacer2_t.gif">Il thread &egrave; in attesa di una variabile condizionale.
+
+
+<li>Esaminare lo stack delle chiamate che compone la classe del thread.
+<br>Lo stack delle chiamate include tutti i metodi che sono stati richiamati, ma che non sono stati <nobr>restituiti.<img src="../../images/spacer2_t.gif"></nobr><kbd>Blink.paint</kbd>, che era in esecuzione quando &egrave; stato interrotto il programma, &egrave; il primo dello stack. La cornice dello stack &egrave; evidenziata in modo da facilitare l'individuazione del punto in cui &egrave; stato interrotto il programma. Ciascuna cornice dello stack &egrave; accompagnata dal simbolo <img src="../../../../images/db_02_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">.
+<li>Aprire la cornice dello stack <kbd>Blink.paint</kbd> facendo clic sul segno pi&ugrave; (+) accanto al simbolo <img src="../../../../images/db_02_u.gif" align=BOTTOM>.
+<br>Verranno visualizzati le variabili e i valori correnti locali di <kbd>Blink.paint</kbd>. Esaminare la variabile <kbd>word</kbd> e il valore a essa associato.
+<li>Fare clic sul pulsante Vai sulla barra degli strumenti dell'editor/debug.
+<br>Il programma esegue il ciclo e si interrompe quando incontra il breakpoint per la seconda volta. I dati visualizzati nella finestra Thread/stack verranno aggiornati e il valore associato alla variabile <kbd>word</kbd> modificato. Il
+valore torner&agrave; ciclicamente a "Java Development Environment &egrave; davvero incredibile :-)".
+<li>Aprire l'oggetto <kbd>this</kbd> facendo clic sul segno pi&ugrave; (+) accanto al simbolo <img src="../../../../images/db_24_u_data.gif" align=BOTTOM>.
+<br>Java Development Environment espander&agrave; l'oggetto in modo da mostrare tutte le variabili contenute al suo interno. Questa operazione pu&ograve; essere ripetuta sugli oggetti annidati, ad esempio <kbd>peer</kbd>.
+<li>Fare clic sul segno meno (-) a sinistra dell'oggetto <kbd>this</kbd>.
+<br>L'oggetto verr&agrave; compresso.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Lezione successiva</strong>
+<dl>
+<dd><a href="step.html">Esercizio 4: Esecuzione di un metodo un'istruzione o una routine alla volta</a>
+</dl>
+
+<p>
+</body>
+</html>

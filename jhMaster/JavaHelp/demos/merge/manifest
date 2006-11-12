@@ -1,0 +1,3 @@
+Main-Class: sunw.demo.merge.Merge
+Class-Path: ../../javahelp/lib/jh.jar ../hs/merge/ ../hsjar/holidays.jar
+

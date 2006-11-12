@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercice 1 : Edition du code source
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Exercice 1 : Edition du code source</h1>
+
+Pour vous familiariser avec le travail effectu&eacute; avec l'&eacute;diteur de source, vous entrerez dans le
+fichier <kbd>Blink.java</kbd> un code qui aura pour effet de faire rebondir les mots.
+<p>
+Si vous n'avez pas encore cr&eacute;&eacute; le projet Blink, faites-le maintenant en suivant les instructions
+donn&eacute;es dans <a href="create.html">Cr&eacute;ation du projet Blink</a>.
+
+<ol>
+<li>V&eacute;rifiez dans la fen&ecirc;tre Gestionnaire de projet de Java Development Environment le nom du projet en cours.
+<br>Si celui-ci n'est pas Blink, double-cliquez sur le nom de projet Blink.
+
+<li>Entrez les lignes de code source suivantes.
+<br>Le code comporte intentionnellement des erreurs ; en effet, dans
+la le&ccedil;on suivante vous apprendrez &agrave; corriger les erreurs. <p>
+Vous pouvez atteindre un num&eacute;ro de ligne sp&eacute;cifique en choisissant <nobr>Editer -&gt; Aller &agrave; la
+ligne.</nobr> Le num&eacute;ro de ligne o&ugrave; se trouve le pointeur est indiqu&eacute; &agrave; droite en bas de l'&eacute;cran.
+<dl>
+<dt>Apr&egrave;s la ligne 17
+<dd><pre>int speed;</pre>
+<dt>entrez :
+<dd>
+<pre>boolean offset;</pre>
+<p>
+<dt>Apr&egrave;s la ligne 25
+<dd><pre>lbl = (att == null) ? "Blink" : att;</pre>
+<dt>entrez :
+<dd>
+<pre>offset = false;</pre> 
+<p>
+<dt>Apr&egrave;s les lignes 53-54
+<dd><pre>g.setColor(Color.lightGray);
+}</pre>
+<dt>entrez :
+<dd>
+<pre>
+if offset
+   y = y * 2;
+</pre>
+<p>
+<dt>Apr&egrave;s la ligne 57
+<dd><pre>g.drawString(word, x, y);</pre>
+<dt>entrez :
+<dd>
+<pre>
+if (offset) {
+   offset = false;
+   y = y / 2
+ } else {
+    offset = true;
+}
+</pre>
+</dl>
+<p>
+<li>Cliquez sur le bouton Enregistrer <img src="../../../../images/24/file-save_u.gif" align=BOTTOM>de
+la barre d'outils Edition/D&eacute;bogage.
+<br>Le chemin d'acc&egrave;s du fichier enregistr&eacute; appara&icirc;t au bas de l'&eacute;cran de l'&eacute;diteur de source.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Le&ccedil;on suivante :</strong>
+<dl>
+<dd><a href="fixbuild.html">Exercice 2 :  Correction d'erreurs dans un programme g&eacute;n&eacute;r&eacute;</a>
+</dl>
+<p>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Invoking JavaHelp from a WebPage through an Applet</title>
+  </head>
+
+  <body>
+      <h1>Invoking JavaHelp from a WebPage through an Applet</h1>
+
+This is a simple example of invoking JavaHelp from a WebPage through
+an Applet.
+<p>
+Here is the Applet!
+
+<OBJECT WIDTH=32 HEIGHT=32 align="baseline" border="0"
+CLASSID="CLSID:8AD9C840-044E-11D1-B3E9-00805F499D93"codebase="http://javaweb.eng/~rrussell/signature/jinstall-11-ea3-win32.cab#Version=1,0,3,1"
+>
+<PARAM NAME="code" VALUE="JHInvoker">
+<PARAM NAME="codebase" VALUE=".">
+<PARAM NAME="GLYPH" VALUE = "superhero32.gif">
+<PARAM NAME="HELPSET" VALUE = "IdeHelp">
+<PARAM NAME="HELPSETURL" VALUE = "http://calterra.eng/home/ws/JavaHelp/demos/share/idehelp/IdeHelp.hs">
+
+	JavaHelp Invocation
+</OBJECT>
+
+<!--
+<APPLET  CODE = "X" WIDTH = 32 HEIGHT = 32 >
+<PARAM NAME = GLYPH VALUE = "superhero32.gif">
+<PARAM NAME = HELPSET VALUE = "HolidayHistory">
+JavaHelp Invocation
+
+</APPLET>
+-->
+<!--"END_CONVERTED_APPLET"-->
+
+There it was.
+<pre>
+   HELPSETURL = "file:/home/pelegri/ws/JavaHelp/demos/share/browsers/HolidayHistory.dat"
+</pre>
+      <hr>
+      <address><a href="mailto:pelegri@eng.sun.com">Eduardo Pelegri-Llopart</a></address>
+<!-- Created: Tue Jan 13 10:48:46 PST 1998 -->
+<!-- hhmts start -->
+Last modified: Thu Mar 19 10:47:08 PST 1998
+<!-- hhmts end -->
+  </body>
+</html>
+

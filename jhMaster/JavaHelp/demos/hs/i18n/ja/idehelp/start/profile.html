@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    901 San Antonio Road
+ *    Palo Alto, California  94303
+ *
+-->
+
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_JP">
+<TITLE>
+実習 4: プロファイルデータを収集する
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>実習 4: プロファイルデータを収集する</h1>
+
+この実習では、Blink プロジェクトを実行しながらプロファイルデータを収集する方法について説明します。プロファイルデータには、プログラム中の各メソッドで費やされる時間や各メソッドが実行される回数などのデータが含まれており、プログラムのパフォーマンスを分析するのに役立ちます。
+
+
+<ol>
+<li>「プロジェクトマネージャ」ウィンドウで、現在のプロジェクト名を確認します。
+<br>現在のプロジェクトが Blink でない場合は、プロジェクト名「Blick」をダブルクリックします。
+<li>メインツールバー上の「プロファイル」ボタン <img src="../../../../images/24/tb-profile_u.gif">をクリックして、Blink プロジェクトのプロファイルデータ収集を開始します。
+<br>アプレットビューアのウィンドウが表示されます。
+<li>充分にデータが収集されるように、ここで少なくとも 45 秒以上待ってから次の手順に進みます。
+
+<li>アプレットビューアで<nobr>「アプレット」-&gt;「終了」</nobr>を選択して、プロファイルデータの収集を終了します。
+<br>プログラムのプロファイルデータを収集後、「プロファイラ」ウィンドウが開き、プロジェクトのソースコードがあるディレクトリ中の <kbd>Blink.prof</kbd> ファイルに書き込まれたデータが表示されます。
+<li>システムクラスのデータを表示するには、「プロファイラ」ウィンドウで<nobr>「フィルタ」-&gt;「フィルタなし」</nobr>を選択します。
+<li>メソッドのデータをアルファベット順に表示するには、<nobr>「表示」-&gt;「名前でソート」</nobr>を選択します。
+<li>メソッド「<kbd>Blink.paint (Ljava/awt/Graphics;)</kbd>」を選択します。
+<li>プロファイルデータを確認します。プロファイル結果が以下の例のように表示されているはずです。<br>
+<img src="../../images/tProfile.gif">
+
+</ol>
+
+<p>
+上記のプロファイル結果の例について
+<ul>
+<li><kbd>Blink.paint (Ljava/awt/Graphics;)</kbd> メソッドの呼び出しに、10 ミリ秒かかっています。
+
+<li><kbd>Blink.paint (Ljava/awt/Graphics;)</kbd> メソッドによって呼び出されているのは、<nobr><kbd>java.awt.Color.&lt;init&gt; (III)</kbd>、</nobr><nobr><kbd>java.awt.Component.getSize()</kbd>、</nobr><kbd>java.awt.Font.getSize()</kbd></nobr> などのメソッドです。
+
+<li><kbd>Blink.paint (Ljava/awt/Graphics;)</kbd> メソッドを呼び出しているのは、<kbd>java.awt.Component.dispatchEventImpl (Ljava/awt/AWTEvent;)</kbd> および <kbd>java.awt.Component.update (Ljava/awt/Graphics;)</kbd> の 2 つのメソッドです。
+</ul>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>次のレッスン:</strong>
+<dl>
+<dd>チュートリアル 1 の内容はこれで終わりです。次は、<a href="edit.html"> チュートリアル 2: プロジェクト属性の編集</a>に進んでください。
+</dl>
+</body>
+</html>

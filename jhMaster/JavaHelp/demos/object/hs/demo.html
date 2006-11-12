@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1998  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Popups and Secondary Windows
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Popups and Secondary Windows</H1>
+The JavaHelp 1.0 release contains support for 
+
+<OBJECT CLASSID="java:com.sun.java.help.impl.JHSecondaryViewer">
+<param name="content" value="popup_gloss.html">
+<param name="viewerActivator" value="javax.help.LinkLabel">
+<param name="viewerStyle" value="javax.help.Popup">
+<param name="viewerSize" value="400,250">
+<param name="text" value="popup windows">
+<param name="textColor" value="blue">
+<param name="viewerName" value="glossary">
+</OBJECT> 
+
+and 
+
+<OBJECT CLASSID="java:com.sun.java.help.impl.JHSecondaryViewer">
+<param name="content" value="secondary_gloss.html">
+<param name="viewerActivator" value="javax.help.LinkLabel">
+<param name="viewerStyle" value="javax.help.Popup">
+<param name="viewerSize" value="400,250">
+<param name="text" value="secondary windows">
+<param name="textColor" value="bllue">
+</OBJECT> 
+(click on the blue text for glossary definitions).
+These windows are added to HTML topic pages using the 
+&lt;OBJECT&gt; tag and are implemented using JComponents.
+<p>
+This demo demonstrates how these windows work--the HTML
+source files used in the demo can be used as templates.
+The <A HREF="popup_demo.html">Popup Demo</A> and <A
+HREF="secondary_demo.html">Secondary Window Demo</A> topics
+contains a number of examples that show how these windows
+can be used.
+<p>
+More information about using popups and secondary windows
+as well as information about how to create custom
+JComponents can be found in the <em>JavaHelp User's
+Guide</em> which is included in this release.
+
+<p>
+<b>Sources</b>
+<p>
+The HTML pages that comprise this demo can be found in:
+<pre>
+   demos\object\hs
+</pre>
+<p>
+The source code for the components can be found in
+<tt>src.jar</tt> at:
+<pre>
+    src\impl\com\sun\java\javahelp\impl
+</pre>
+
+
+</body>
+</HTML>

@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Conceptos importantes: atributos de proyecto
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Conceptos importantes: atributos de proyecto</h1>
+
+Los atributos definen las caracter&iacute;sticas individuales de un
+proyecto, como su nombre, tipo y la forma en que aparecen en una p&aacute;gina HTML. El
+proyecto Blink que ha creado ha requerido atributos para determinar:
+<ul>
+<li>El tipo de proyecto.
+<li>El directorio que contiene los archivos fuente <kbd>.java</kbd> del
+proyecto.
+<li>El archivo de clase que contiene el m&eacute;todo de applet <kbd>init ()</kbd> 
+</ul>
+
+<p>
+Al crear el proyecto, proporcion&oacute; valores para estos atributos
+requeridos.
+<p>
+Blink tambi&eacute;n contiene numerosos atributos opcionales. Los
+atributos opcionales determinan cosas como la forma en que aparece el
+proyecto en el administrador de proyectos y las opciones de
+compilaci&oacute;n utilizadas para construir el proyecto. Java Development Environment
+proporcion&oacute; valores predeterminados para estos atributos
+cuando cre&oacute; el proyecto.
+<p>
+En la siguiente lecci&oacute;n, editar&aacute; los atributos que forman la etiqueta
+&lt;applet&gt;. Recuerde que cuando ejecut&oacute; el proyecto Blink
+en la lecci&oacute;n anterior, Java Development Environment cre&oacute; la etiqueta &lt;applet&gt;
+utilizando los requisitos m&iacute;nimos para poner el applet en un p&aacute;gina
+Web. Java Development Environment cre&oacute; la etiqueta en el archivo <kbd>Blink.tmp.html</kbd> en el directorio <kbd>Blink.</kbd>  El
+archivo actualmente tiene esta apariencia:
+<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+   codebase="/<i>su_directorio_inicial</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt=Si tuviera un examinador habilitado para Java, aqu&iacute; ver&iacute;a una applet."
+&gt;     
+&lt;hr&gt;Si el examinador reconociera la etiqueta de applet,
+   aqu&iacute; ver&iacute;a un applet.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+<kbd>Blink.class</kbd> es el archivo que contiene el c&oacute;digo Java
+compilado de la aplicaci&oacute;n. <code>Codebase</code>
+es el directorio que contiene el archivo <kbd>Blink.class.</kbd>  La
+anchura y la altura definen el &aacute;rea, en pixels, que el examinador
+necesita para visualizar el applet.
+<p>
+No puede editar directamente el archivo <kbd>.html.</kbd>  Java
+WorkShop actualiza el archivo bas&aacute;ndose en las acciones realizadas
+utilizando el administrador de proyectos.
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Siguiente lecci&oacute;n:</strong>
+<dl>
+<dd><a href="editlesson.html">Ejercicio 1:  Edici&oacute;n de atributos de ejecuci&oacute;n</a>
+</dl>
+<p>
+</body>
+</html>

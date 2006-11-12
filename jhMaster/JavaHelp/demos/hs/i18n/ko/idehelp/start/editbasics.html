@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          본 소스 코드 제품에 대한 판권 표시는
+ *          출판된다는 의미가 아닙니다. 
+ * 
+ * 권리 제한 규정: 미국 정부에 의한 사용, 복제, 누설 등은
+ * DFARS 252.227-7013 (1988년 10월)과 FAR 52.227-19 (c) 
+ * (1987년 6월)의 기술 관련 데이터와 컴퓨터 소프트웨어에
+ * 대한 권리 조항의 (c)(1)(ii) 항목에 서술된 제한 규정의 
+ * 적용을 받습니다.
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_KR">
+<HEAD>
+<TITLE>
+중요한 개념:  프로젝트 속성
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>중요한 개념:  프로젝트 속성</h1>
+
+속성은 프로젝트의 이름, 유형, 프로젝트가 HTML 페이지에 나타나는 방식 등과 같은 프로젝트의 개별적인 특징들을 정의합니다. 이미 만들어 놓은 Blink 프로젝트에는 다음을 결정하는 속성들이 필요했습니다:
+
+<ul>
+<li>프로젝트의 유형
+<li>프로젝트의 <kbd>.java</kbd> 소스 파일들이 들어 있는 디렉터리
+<li>애플릿 <kbd>init ()</kbd> 메서드가 들어 있는 클래스 파일. 
+</ul>
+
+<p>
+프로젝트를 만들 때 이러한 필요한 속성들의 값을 사용자가 지정했습니다.
+
+<p>
+Blink에는 또한 선택적인 속성들도 많이 있습니다. 선택적인 속성들은 프로젝트가 프로젝트 관리자에 나타나는 방식과 프로젝트를 빌드하는데 사용되는 컴파일러 옵션 등과 같은 것들을 결정합니다. 프로젝트를 만들 때 이러한 속성들에 대해서는 기본값이 자동으로 지정됩니다.
+
+<p>
+다음 과에서는, &lt;applet&gt; 태그를 구성하는 속성들을 수정하게 될 것입니다. 앞 과에서 Blink 프로젝트를 실행했을 때 애플릿을 웹 페이지에 올려 놓는데 필요한 최소 요구 조건을 사용하여 &lt;applet&gt; 태그가 자동으로 만들어졌다는 점을 기억하기 바랍니다. Java Development Environment은 <kbd>Blink</kbd> 디렉터리에 있는 <kbd>Blink.tmp.html</kbd> 파일에 이 태그를 만들었습니다. 현재 이 파일의 모양은 다음과 비슷합니다:
+<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+   codebase="/<i>your_home_directory</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt="If you had a java-enabled browser, you would see an applet here."
+&gt;     
+&lt;hr&gt;If your browser recognized the applet tag,
+   you would see an applet here.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+<kbd>Blink.class</kbd>는 애플릿의 컴파일된 Java 코드를 담고 있는 파일입니다. <code>codebase</code>는 <kbd>Blink.class</kbd> 파일이 들어 있는 디렉터리입니다. width와 height는 브라우저가 애플릿을 화면에 표시하는데 필요한 영역을 픽셀 단위로 정의합니다.
+<p>
+사용자가 <kbd>.html</kbd> 파일을 직접 수정하지는 않을 것입니다. 프로젝트 관리자를 사용하여 실행하는 동작을 기초로 파일이 자동으로 갱신될 것입니다.
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>다음 과:</strong>
+<dl>
+<dd><a href="editlesson.html">제 1과:  실행 속성 수정하기</a>
+</dl>
+<p>
+</body>
+</html>

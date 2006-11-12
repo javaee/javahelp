@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercise 6:  Designing DeskClock
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Exercise 6:  Designing DeskClock</h1>
+
+In this exercise, you will add the beans to the DeskClock layout and
+edit some of their properties.
+
+<ol>
+<li>Open the attribute editor for the frame container and select the frame,
+<tt>Unnamed Frame</tt>, in the Windows list. The Windows list is to
+the right of the component palette.
+<li>Type <kbd>DeskClock</kbd> in the title text box and click OK.
+<li>Click on the Beans tab to expose the Beans folder if it is not
+already displayed.
+<li>Click on the Clock bean, and then click in the top left cell in the grid.
+<p>
+Once the bean has been placed in the grid, it has been
+instantiated. A copy of the bean's JAR file is automatically put in
+the project directory.
+<li>Click on the Marquee bean in the palette and click in the bottom
+cell.
+<li>Click on the SoundPlayer bean.
+<p>
+Because SoundPlayer is an invisible bean, it does not appear in the
+layout window. To verify that the bean has been selected, look at the
+Windows list and see if SoundPlayer is listed. Currently, each
+time an invisible bean is selected, its name appended to the Windows
+list.
+<li>To reduce visual clutter, remove the unused cells in the grid by
+clicking in the upper-right cell in the grid and choosing GUI
+-> Delete Component. Repeat until only the column containing
+the beans remains. 
+<li>Click in the bottom cell and choose GUI -> Delete
+Component to remove the empty cell. 
+<p>
+You should now have a grid that contains one column with two rows of
+cells:
+<pre>
+<IMG SRC="clock-layout.gif" WIDTH=421 HEIGHT=367>
+</pre>
+</ol>
+
+<p>
+<IMG SRC="../../../images/hg_see.gif"><strong>Next lesson:</strong>
+<dl>
+<dd><a href="ChangeClock.html">Exercise 7: Editing the Beans</a>
+</dl>
+<p>
+  </body>
+</html>
+

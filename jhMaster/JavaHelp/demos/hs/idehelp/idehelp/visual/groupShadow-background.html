@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Quick Start on Groups and Shadows
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#ffffff">
+
+
+<h1>Quick Start on Groups and Shadows</h1>
+
+The groups and shadows framework provides a component mechanism that 
+allows the Java WorkShop GUI builder to import and manipulate
+components.
+
+<h2>Shadows</h2>
+
+A shadow class is a wrapper around an AWT component or bean.  The
+wrapped object is called the body, and you access it by using the
+<tt>getBody()</tt> method. The shadow provides an API for accessing
+the attributes of the body using the <tt>get</tt> and <tt>set</tt>
+methods. The body's methods are also available and can be used
+directly instead of the shadow's accessors.
+
+<h3>Getting the Component Body From the Shadow</h3>
+
+In the Group and Ops files there is a variable <tt>gui</tt> that is an
+instance of the application's Root class, which is the root of the
+hierarchy of shadow instances for the application's graphical user
+interface. When you set the name of the component using the attribute
+editor, that name is available as a data member of the Root class, and
+contains the shadow instance rather than the component itself. To get
+the AWT component or bean that the shadow is wrapping, use the
+<tt>getBody</tt> method, and cast it to the appropriate class.
+
+<a name=grouptips></a>
+<h2>Groups</h2>
+
+Groups provide a mechanism for creating interchangeable components
+that can be plugged together using GUI builder or by programmatic
+means. 
+
+<h3>Customizing Application Startup</h3>
+
+The file you edit to add your own code is the Group file
+(<em>project</em><tt>.java</tt>). The Main file contains the entry
+pint methods for the application or applet. You cannot edit the Main
+file; if you need to customize some of the startup behavior of your
+application, there are hooks provided in the group class to do so.
+
+<a name=groupmethods></a>
+<p>
+There are several methods in the Group file that are called during
+the startup sequence. Overriding these methods allows you to have
+code executed at the appropriate time.
+
+<p>
+<table>
+<tr valign=top>
+<td>
+<tt>initGroup</tt> 
+</td>
+<td>
+Called after the shadow tree is created. At this point all
+the shadows are available, but the AWT component bodies and beans have
+not been created yet. You can get and set properties on the shadows
+using the <tt>get</tt> and <tt>set</tt> methods.
+<p>
+This method is called only once during the lifetime of a group.
+Usually, you do not need to put any code in this method. 
+</tr>
+<tr valign=top>
+<td>
+<tt>createGroup</tt> 
+</td>
+<td>
+Called when the group's AWT component bodies are created which
+happens the first time the group is made visible or when the group's
+<tt>create</tt> method is called explicitly.
+<p>
+This method should contain any code that is needed when the AWT
+components or bean bodies are initialized.
+</tr>
+<tr valign=top>
+<td>
+<tt>destroyGroup</tt> 
+</td>
+<td>
+Called when the group is destroyed and the AWT component hierarchy
+is destroyed. The shadow hierarchy is not destroyed.
+<p>
+This method should contain code that cleans up data structures created
+in the <tt>createGroup</tt> method.
+</tr>
+<tr valign=top>
+<td>
+<tt>showGroup</tt><br>
+<tt>hideGroup</tt>
+<td>
+Called when the group is made visible or invisible. 
+<p>
+These methods should contain code that is related to groups becoming
+visible or invisible.
+</tr>
+</table>
+
+The generated Group file has comments that explain each of these
+methods in more detail.
+
+<a name=guib_genfiles></a>
+<h2>Overview of the Generated Files</h2>
+
+Currently, GUI builder generates four files that are compiled into
+the application: 
+
+<ul>
+<li><i>project</i><tt>Root.java</tt> (the Root file) contains the code
+that creates the component tree, sets properties and layout
+information.
+
+<li><i>project</i><tt>Ops.java</tt> (the Ops file) contains the
+operations and event handler code.
+
+<li><i>project</i><tt>Main.java</tt> (the Main file) contains the
+application (or applet) subclass and the <tt>main()</tt> routine for
+calling the application in a standalone mode.
+ 
+<li><i>project</i><tt>.java</tt> (the Group file) glues it all together,
+and is where the GUI programmer puts custom initialization code and
+other methods needed by the application.
+</ul>
+
+<a name=eventtips></a>
+<h2>Events</h2>
+
+Java WorkShop supports both JDK 1.0 and JDK 1.1 style events.  You can
+mix both types in your application. However, you can use only one
+style for a given component. Specifically, if you add event listeners
+to a component, the JDK 1.0 style events no longer propagate.
+
+<h3>Filters</h3>
+
+GUI builder provides a mechanism for filtering JDK 1.0 style events on
+AWT components using the Filters dialog box. This dialog box allows you
+to specify which events an operation responds to.
+
+<h3>Actions</h3>
+
+The Actions dialog box supports several action types.      
+The Show, Hide, Set Property, and Exit actions perform simple
+operations without your having to write any code. The Execute Code
+actions allow you to customize the operation by writing a small amount
+of code. 
+<p>
+The Actions dialog box shows a text field in which you write code
+fragments. This code is generated into the Ops file. There are two
+variables, <tt>group</tt> and <tt>gui</tt>, available in the scope of
+this code fragment. A simple way to use this mechanism is to declare a
+public method in the group class and call it in the code fragment.
+<p>
+For example, you can put a method in your group class:
+
+<pre>
+ public void doSomething() {
+   // do something
+ }
+</pre>
+and then call it from the dialog box:
+<pre>
+ group.doSomething();
+</pre>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="beantips.html">Tips on Using Beans and Shadows</A>
+<dd><A HREF="ops.html">What Is a Component Operation?</A>
+<dd><A HREF="groups_basic.html">What Are Groups and Shadows?</A>
+<dd><A HREF="groups_advanced.html">More On Groups and Shadows</A>
+</dl>
+<p>
+</body>
+</html>
+

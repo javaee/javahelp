@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding Scrollbars
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Adding Scrollbars</H1>
+
+Two types of scrolling components are available from the component
+palette:
+
+<ul>
+<li><a href=#addscrollbar>Scrollbar</a>. Creates a standard vertical or
+horizontal scrollbar.
+<li><a href=#addscrollpanel>Scrolling panel</a>. Creates a panel that can be
+scrolled to view all the elements it contains.
+</ul> 
+
+<a name=addscrollbar></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add a scrollbar</strong>:
+
+<ol>
+<li>Click on the scrollbar component in the AWT palette tab.
+<li>Click in the cell where you want to place the component.
+<li>Open the attribute editor by clicking on its button in the main
+toolbar. 
+<li>Type a unique component ID in the name box.
+<li>(Optional) Set the vertical or horizontal orientation of the
+scrollbar with the orientation attribute in the attributes editor. The
+default position is vertical.
+</ol>
+<p>
+
+
+<h3>Special Attributes</h3>
+
+<table>
+<tr>
+<td valign="baseline"><code><strong>minimum</strong></code>/
+<code><strong>maximum</strong></code></td>
+<td>Scrollbars are associated with an integer value that
+represents the user's location in the window. Use <code>minimum</code> and
+<code>maximum</code> to determine the range of those
+values. For example, if <code>minimum</code> and
+<code>maximum</code> are set to 0 and 100, and the
+scroll box is in the middle of the scrollbar,
+its value is 50. This value is available to the programmer
+to manipulate scrolling.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>lineIncrement</strong></code></td>
+<td>The number added to or subtracted from the location
+value when the user clicks on the arrows at the ends of
+the scrollbar.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>headers</strong></code></td>
+<td>Inserts the names of column headers.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>orientation</strong></code></td>
+<td>Determines whether the scrollbar is oriented horizontally or
+vertically.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>pageIncrement</strong></code></td>
+<td>The number added to or subtracted from the location value when
+the user clicks in the area between the scroll box
+and the arrows at each end of the scrollbar.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>value</strong></code></td>
+<td>The integer value that represents the initial position of the
+slider/thumb relative to the values of
+<code>minimum</code> and <code>maximum</code>.</td>
+<tr>
+<td valign="baseline"><code><strong>visiblePageSize</strong></code></td>
+<td>The initial length (in value units) of the slider/thumb.
+This length usually indicates the percentage of the entire
+document that can be viewed in the window that the scrollbar controls.</td>
+</tr>
+</table>
+
+<a name=addscrollpanel></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add a scrolling panel</strong>:
+
+<ol>
+<li>Click on the Scrolling Panel component in the Panel palette tab.
+<li>Click in the cell where you want to place the component.
+<li>Add the desired components to the panel.
+<li>Open the attribute editor by clicking on its button in the toolbar.
+<li>Set the scrollAreaHeight attribute to determine the vertical
+scrolling area of the panel.
+<li>(Optional) Set the <tt>scrollAreaWidth</tt> attribute to determine
+the horizontal scrolling area of the panel.
+<li>Type a unique component ID in the name box.
+</ol>
+
+<h3>Special Attributes</h3>
+
+<table>
+<tr>
+<td valign="baseline"><code><strong>borderLabel</strong></code></td>
+<td>Inserts the name of the panel at the top border.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>borderLabelAlignment</strong></code></td>
+<td>Sets the position (left, right, center) of the
+label on the top border of the panel.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>borderRelief</strong></code></td>
+<td>Sets the type of the border around the panel.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>borderWidth</strong></code></td>
+<td>Sets the width of the border around the panel.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>scrollAreaHeight</strong></code></td>
+<td>Sets the height of the visible portion of the panel.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>scrollAreaInsets</strong></code></td>
+<td>Sets the placement of the scrollbar within the panel.</td>
+</tr>
+<tr>
+<td valign="baseline"><code><strong>scrollAreaWidth</strong></code></td>
+<td>Sets the width of the visible portion of the panel, which
+determines whether a horizontal scrollbar is added.</td>
+</tr>
+</table>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="layout.html">Laying Out the Interface</A>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="palette.html">GUI Builder Palette</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI Builder
+Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+  </body>
+</html>
+

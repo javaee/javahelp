@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Searching for Strings
+</TITLE>
+<!-- Changed by: Leif Samuelsson, 22-Apr-1996 -->
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Searching for Strings</H1>
+Use the string searcher to search for strings of text in
+specified files.
+<p>
+<IMG SRC="../../images/hg_proc.gif" WIDTH=18
+HEIGHT=13><strong>To search for a string of text:</strong>
+<ol>
+<li>Open the String Search dialog box in one of the
+following ways:
+<ul>
+<li>Click on <IMG SRC=../images/tb-string-search_u.gif
+ALIGN=BOTTOM  WIDTH=24 HEIGHT=24>.
+<li>Choose Browse -> String Search.
+</ul>
+<li>Type the text that you wish to search for in the String
+box.  Use the Ignore Case check box to turn case
+sensitivity on or off.
+<p>
+<IMG SRC="../../images/hg_note.gif" WIDTH=18 HEIGHT=13>
+<br>
+This
+version of JDE does not support regular
+expressions; only the characters that you specify are used.
+<li>Set whether to search the current
+project or a specified directory:
+<ul>
+<li>Click Current Project to limit the search to those
+source files you included as part of the current
+project when you created it.
+<li>Click Directory to focus the search on a specified directory
+and enter the path of the directory to search
+</ul>
+<li>Set the scope of your search:
+<ul>
+<li>Use the File Types box to specify the types of files
+to search.  File types are specified by their suffixes.
+Items in the list are separated by a space.  You can add or
+delete files from this list. By default <code>.java</code> and
+<code>.html</code> are included.
+<li>Use the Recursive Search check box to control whether the
+search descends into sub-projects (Current Project) or directories beneath the one you
+specify (Directory).  By default, the search descends recursively.
+</ul>
+<li>You can start the search in two ways:
+<ul>
+<li>Press Enter or Return after you type the text in the
+String box.
+<li>Click Search.
+</ul>
+<li>The results of the search are displayed in the String
+Search tab at the bottom of the main window.  Each line
+consists of:
+<ul>
+<li>The name of a file found to contain the string (the
+file name is a link to the file)
+<li>The line number on which the match was found
+<li>The text of the matched line
+</ul>
+<li>Click on the file name link to display the file in the
+JDE source editor.  Choose Browse
+-> Next and Browse ->
+Previous to move from match to match.
+</ol>
+<p>
+<IMG SRC="../../images/hg_proc.gif" WIDTH=18 HEIGHT=13><strong>To stop a search, choose Browse -> Stop Search.</strong>
+<p>
+<IMG SRC="../../images/hg_see.gif" WIDTH=18 HEIGHT=13><strong>See also:</strong>
+<dl>
+<dd><A HREF="class.html">Browsing Class Files</A>
+<dd><A HREF="../manager/Projects.html">What Is a Project?</A>
+</dl>
+<p>
+
+
+</BODY>
+</HTML>

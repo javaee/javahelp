@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Using the Exceptions Window
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<h1>Using the Exceptions Window
+</h1>Open the Exceptions window by choosing Debug -> Exceptions. Use the Exceptions window to tell the debugger how to handle exceptions generated in your code.
+
+<h2>Exceptions List
+</h2>Scrolling list that shows the <a href="../../../../api/langspec1.0/11.doc.html">standard runtime exceptions</a>. JDE automatically sets these standard runtime exceptions to <i>break always</i>, and each entry is listed alphabetically by package name. 
+
+<h2>Command Buttons</h2>
+<dl>
+<dt><b>Break on Uncaught.</b></dt>
+<dd>Changes the setting of the selected exception to "break on uncaught." When the exception is thrown, but not caught, the debugger stops your program and treats it as if you had hit a breakpoint.
+
+<dt><b>Break Always.</b></dt>
+<dd>Changes the setting of the selected exception to "break always". When the exception is thrown, the debugger stops your program and treats it as if you had hit a breakpoint even if you have recovery code in your program.
+
+<dt><b>Ignore.</b></dt>
+<dd>Changes the setting of the selected exception to "ignore". The debugger does not cause a breakpoint when the exception is thrown.
+
+<dt><b>Show Source.</b></dt>
+<dd>Shows the source code of the selected exception in the source editor.
+
+<dt><b>Add.</b></dt>
+<dd>Adds the exception you typed in the Exception box to the Exceptions list. The default setting will be <i>break on uncaught</i>.
+
+<dt><b>Close.</b></dt>
+<dd>Closes the Exceptions window.
+</dl>
+
+<h2>Text Box</h2>
+<dl>
+<dt><b>Exception</b></dt>
+<dd>Type the name of an exception you want to add to the exceptions list. 
+<br>Click Add to add the exception to the list. When you set an exception it will be set to <i>break on uncaught</i> by default.
+
+</dl>
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><a href="AddException.html">Adding an Exception</a>
+</dl>
+<p>
+</BODY>
+</HTML>

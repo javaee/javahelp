@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Concepts importants : les threads
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Concepts importants : les threads</h1>
+
+Les programmes Java sont compos&eacute;s de threads. Un <i>thread</i> est une s&eacute;quence ind&eacute;pendante
+d'ex&eacute;cutions au sein d'un programme.
+Lors du d&eacute;roulement d'un programme Java, plusieurs threads peuvent s'ex&eacute;cuter en m&ecirc;me temps et
+r&eacute;aliser des actions diff&eacute;rentes.
+Ce type de programme est appel&eacute; <i>programme multithread</i>.
+<p>
+Chaque thread appartient &agrave; un groupe de threads. Un groupe de threads est simplement un groupement
+logique de threads associ&eacute;s.
+<p>
+Le groupe de threads <kbd>main</kbd> est pr&eacute;sent dans tous les programmes.
+Chaque fois que vous utilisez le clavier, Java Development Environment interagit avec les
+threads du groupe <kbd>main</kbd>.
+<p>
+Lorsqu'un thread s'arr&ecirc;te, vous pouvez visualiser la pile d'appels qui le constitue. Vous avez
+aussi la possibilit&eacute; de visualiser la pile d'appels d'un thread en cours d'ex&eacute;cution, mais dans ce cas
+les informations que vous verrez ne seront pas plus r&eacute;centes que le dernier instantan&eacute;
+du thread.
+<p>
+La pile d'appels comprend toutes
+les m&eacute;thodes qui ont &eacute;t&eacute; appel&eacute;es mais ne sont pas revenues vers l'appelant. Une <i>m&eacute;thode</i> est
+semblable &agrave; une proc&eacute;dure ou une fonction. Les m&eacute;thodes de la pile sont list&eacute;es dans l'ordre dans lequel elles ont &eacute;t&eacute; appel&eacute;es. La m&eacute;thode
+qui &eacute;tait en cours d'ex&eacute;cution lors de l'arr&ecirc;t du programme appara&icirc;t en haut de la pile.
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Le&ccedil;on suivante :</strong>
+<dl>
+<dd><a href="startdebug.html">Exercice 1 :  D&eacute;marrage d'une session de d&eacute;bogage</a>
+</dl>
+<p>
+</body>
+</html>

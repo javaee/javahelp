@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_CN">
+<head>
+<title>
+练习四：收集简要表数据
+</title>
+</head>
+<body bgcolor="ffffff">
+
+<bodytext><h1>练习四：收集简要表数据</h1>
+
+本练习将向您展示如何运行带有Java Development Environment简要表的Blink项目。简要表可以帮助您分析程序的性能， 确定程序中各方法所耗费的时间，以及每个方法被执行的次数。
+<ol>
+<li>在项目管理器中检查当前项目的名字。
+<br>如果当前项目不是Blink，就双击Blink项目名。</li>
+<li>通过单击Java Development Environment主工具栏中的“简要表”<img src="../../../../images/24/tb-profile_u.gif">按钮来启动简要表。
+<br>将显示“Applet小程序查看器”窗口。</li>
+<li>最少等45秒钟再继续执行下面的步骤。</li>
+<br>这样可以提供足够数据来生成有用的简要表屏幕。
+<li>在applet小程序查看器中选择<nobr>Applet小程序-&gt;退出</nobr>，结束简要表会话过程。
+<br>程序经简要化之后，“简要表”窗口将显示写入项目源代码目录的<kbd>Blink.prof</kbd>文件中的数据。</li>
+<li>在“简要表”窗口中，选择<nobr>过滤器-&gt;无</nobr>，显示系统类数据。</li>
+<li>选择<nobr>查看-&gt;按名字排序</nobr>，按字母顺序显示方法数据。</li>
+<li>选择<kbd>Blink.paint (Ljava/awt/Graphics;)</kbd>方法。</li>
+<li>检查简要表数据，其结果类似于下图：</li>
+</ol>
+<p>
+<img src="../../images/tProfile.gif"></p>
+<p>
+这样的结果说明：
+<ul>
+<li>Java Development Environment用了93毫秒来调用<kbd>Blink.paint (Ljava/awt/Graphics;)</kbd>方法。</li>
+<li><kbd>Blink.paint (Ljava/awt/Graphics;)</kbd>调用了三个方法： <kbd>java.awt.Color.&lt;init&gt; (III)</kbd>、<kbd>java.awt.Component.size ()</kbd>和<kbd>java.awt.Font.getSize ()</kbd>。
+<li>两个调用方法<kbd>Blink.paint (Ljava/awt/Graphics;)</kbd>的方法是： <kbd>java.awt.Component.dispatchEventImpl (Ljava/awt/AWTEvent;)</kbd>和<kbd>java.awt.Component.update (Ljava/awt/Graphics;)</kbd>。
+</ul>
+<p>
+<img src="../../images/hg_see.gif"><strong>下一课：</strong></p>
+<dl>
+<dd>您已经完成了本教程中的所有练习。下一个教程是<a href="edit.html">教程二：编辑项目属性</a>。</dd>
+</dl></bodytext>
+</body>
+</html>

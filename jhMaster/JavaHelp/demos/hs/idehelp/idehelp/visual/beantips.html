@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Tips on Using Beans Effectively
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<h1>Tips on Using Beans Effectively</h1>
+
+Since JDE is becoming a bean-based tool there are things you
+should do when you are designing applications or applets in the
+current version of JDE.
+<p>
+For highlights on groups and shadows, generated code, and events, see
+<a href="groupShadow-background.html">A Groups and Shadows Quick Start
+Guide</a>.
+
+<h2>Customizing Component Properties</h2>
+
+When you want to set or get a component property programmatically, you
+should code directly to the shadow's underlying AWT component or bean
+(the body) by using the <tt>getBody</tt> method.
+<p>
+Here is an example of how to set the label on an AWT component, such
+as a button:
+
+<pre>
+     Button myButtonBody=(Button)gui.myButton.getBody();
+     myButtonBody.setLabel("New Button Label");
+     String theLabel=myButtonBody.getLabel();
+</pre>
+
+Here is an example of how to call a method on a bean. In this example
+the bean is called <tt>Pinto</tt>.
+
+<pre>
+     Pinto myPintoBody=(Pinto)gui.myPinto.getBody();
+     myPintoBody.createBurrito("Hot sauce");
+</pre>
+
+<h2>Adding Operations to AWT Components and Beans</h2>
+
+You can add events to components and beans in the following ways:
+
+<ul>                    
+<li>If you want to use 1.0 events on AWT components, use the
+<a href="addcallbacks.html">Operations dialog box</a>.  
+
+<li>If you are adding behavior to beans in your application or applet, you
+should hook up behavior using listeners. You can add listeners in the
+<tt>createGroup</tt> method in the application's Group file. For example:
+
+<pre>
+   public class Button extends Group implements ActionListener {
+     ...
+     private Button myButtonBody;
+     public void createGroup() {
+       myButtonBody=(Button)gui.myButton.getBody();
+       myButtonBody.addActionListener(this);
+     }
+
+     public void actionPerformed(ActionEvent e) {
+       if (e.target == myButtonBody) {
+            // code to handle the event here
+       } 
+     }
+   }
+</pre>
+
+<p>
+As soon as you register a listener on a component, the operations you
+defined for the same component using the Operations dialog box will
+not operate. The reason is because the code generated for the
+operations are in the JDK 1.0 style events.
+</ul>
+
+<p>
+The Message filters in the Filter dialog box does not translate well
+to the JDK 1.1 event style. You should use the JDK's event listener
+mechanism to implement the equivalent functionality.
+
+<h2>Additional Information</h2>
+
+For an overview of how beans are created and used in JDE,
+see <a href=jbeanstory.html>Beans in JDE</a>. The overview
+discusses the bean cycle from the creation of JAR files to the
+importation, the instantiation, and the updating of beans.
+
+<p>
+For an example of how to create and use beans in the JDE,
+see <a href="../start/clock/BeansOverview.html">Tutorial Eight: Creating
+the Clock Project</a>.
+
+  </body>
+</html>

@@ -1,0 +1,780 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JavaHelp 1.0 - File Formats</title>
+  </head>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup><font size="-2">TM</font></sup> 1.0 - File Formats</h1>
+<h2 align=center>
+<a href="Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+</h2>
+
+<HR>
+
+<h2>Overview</h2>
+
+The JavaHelp system defines the file formats for the meta
+data files: HelpSet
+file, Map file, and the data for the standard TOC and
+Index views.
+
+The file formats used in JavaHelp are based on industry standards:
+
+<ul>
+<li>
+The HelpSet (help content and meta information) is encapsulated
+and compressed using the JAR (Java Archive) format.</li>
+<li>
+Map, table of contents and index file models are described in
+<a href="http://www.w3.org/TR/xml">XML</a>.
+<li>
+The HelpSet file is based on the Extended Markup Language (XML) as
+defined by the World Wide Web Consortium (<A HREF="http://w3c.org/XML/"><tt>http://w3c.org/XML/</tt>)</A>.</li>
+<li>
+Localization is done following the I18N Java conventions.</li>
+</ul>
+
+<p>
+JavaHelp provides for an extensible set of navigational types, but predefines
+a few types.&nbsp;&nbsp; The standard types are:
+
+<ul>
+<LI>
+<tt>javax.help.TOCView</tt> for the <A HREF="#toc">Table of Contents.</A></LI>
+
+<LI>
+<tt>javax.help.IndexView</tt> for the <A HREF="#index">Index.</A></LI>
+
+<LI>
+<tt>javax.help.SearchView</tt> for the <A HREF="#search">Search.</A></LI>
+</UL>
+The typical files involved in a HelpSet are:
+<UL>
+<LI>
+<A HREF="#HelpSet">HelpSet file</A>: Identifies the map, and navigational
+views (e.g. TOCs, indexes and search database files).</LI>
+
+<LI>
+<A HREF="#map">Map file(s)</A>: Defines the map that associates topic
+IDs used
+by the application to refer to HTML topic files.</LI>
+
+<LI>
+<A HREF="#toc">Table of contents:</A> Defines the table of contents entries,
+their structure,
+and the IDs to which they map</LI>
+
+<LI>
+<A HREF="#index">Index:</A> Defines the index entries and the IDs to
+which they map</LI>
+
+<LI>
+<A HREF="#search">Search Database:</A> The search database searched
+by the search engine.  The default search database is created
+using the JavaHelp system <tt>jhindexer</tt> command.
+</LI>
+
+<LI>
+<A HREF="#content">Content</A>: The HTML topic files that provide information
+to help users</LI>
+</UL>
+<p>
+Document Type Definitions (DTDs) for HelpSet, Map, TOC View and Index View
+data are included in this specification and can be used for validation.
+In each of these cases,
+the valid documents are those valid XML documents conformant with the DTD
+except that the DOCTYPE section must not have any inner DTD subset
+(this is the same restriction used in the W3C SMIL recommended specification).
+<p>
+<A HREF="http://java.sun.com/products/jdk/1.1/docs/guide/jar/index.html">JAR</A>
+is used to encapsulate and compress a HelpSet into a single file.
+Encapsulation and compression are not required, but recommended in most
+production environments.</P>
+
+<hr>
+
+<A NAME="HelpSet"></A>
+<H2>
+HelpSet File</H2>
+	  <P>
+The HelpSet file is
+<a href="I18N.html">localized</a>
+following the same naming conventions used with
+ResourceBundle.  Once a HelpSet file for a given locale
+has been found, no additional localization searches are
+needed, which is very important in a networked
+environment.</P>
+
+<H3>Format</H3>
+    <p>
+HelpSet files are encoded in an XML-based syntax;
+The DTD is
+<a href="dtd/helpset_1_0.dtd">dtd/helpset_1_0.dtd</a>.
+The top level tag is
+<tt>&lt;helpset&gt;</tt>. 
+A version attribute is optional, when present
+its value must be "1.0".
+  </p>
+
+<table border=1 cellpadding=5>
+
+<tr>
+<th>Tag
+<th>Description
+<th>Allowed In
+<th>Body
+<th>Attributes
+</tr>
+
+<tr>
+<th>helpset
+<td>HelpSet definition
+<td>top-level
+<td>none
+<td>
+  <table>
+	<tr>
+	<th><tt>xml:lang</tt>="lang"</th>
+	<td>Language for this item
+	</tr>
+	<tr>
+	<th><tt>version</tt>="1.0"</th>
+	<td>(optional) version
+	</tr>
+  </table>
+</tr>
+
+</table>
+<p>
+    <p>
+The HelpSet file is organized into sections within the
+<tt>&lt;helpset&gt;</tt> tag.
+There is a section for ID maps,
+sections for the navigational views,
+and a final section for subhelpsets.
+The general outline of a HelpSet file is:</p>
+
+
+<pre>
+<font size="-1">
+   
+
+    &lt;?xml version='1.0' encoding='ISO-8859-1' ?&gt;
+    &lt;!DOCTYPE helpset
+      PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp HelpSet Version 1.0//EN"
+             "http://java.sun.com/products/javahelp/helpset_1_0.dtd"&gt;
+
+    &lt;!-- next is a Processing Instruction (PI).
+      This is ignored by the Reference Implementation -->
+    &lt;?MyFavoriteApplication this is data for my favorite application ?&gt;
+
+    &lt;helpset version="1.0"&gt;
+
+	&lt!-- Global properties --&gt;
+	&lt;title&gt;My Title&lt;/title&gt;
+
+	&lt!-- maps section --&gt;
+	&lt;maps&gt;
+	    &lt;homeID&gt;my homeID&lt;/homeID&gt;
+	    &lt;mapref location="url"/&gt;
+	&lt;/maps&gt;
+
+	&lt;!-- Zero or more View sections --&gt;
+	&lt;view&gt;
+	    &lt;name&gt;TOC&lt;/name&gt;
+	    &lt;type&gt;javax.help.TOCView&gt;&lt;/type&gt;
+	    &lt;data&gt;jar:file:/c:/Program Files/JW3.0/JW3.0.jar!/TOC.xml&lt;/data&gt;
+	&lt;/view&gt;
+
+	&lt;!-- Optional subHelpSet section &gt;
+        &lt;subhelpset location="file:/c:/Foobar/HelpSet1.hs"/&gt;
+    &lt;/helpset&gt;
+</FONT>
+</pre>
+
+
+    <p>
+Whenever a relative URL specification appears in a HelpSet, it is to
+be interpreted relative to the URL of the HelpSet (note that the constructor
+for a HelpSet takes a URL).</p>
+
+<h3>Processing Instructions</h3>
+      <p>
+The reference implementation ignores the Processing Instructions.
+
+<a name="global">
+<h3>HelpSet properties</h3></a>
+
+A HelpSet has a title that is used mostly in the presentation.
+
+<p>
+<table border=1 cellpadding=5>
+
+<tr>
+<th>Tag
+<th>Description
+<th>Allowed In
+<th>Body
+<th>Attributes
+</tr>
+
+<tr>
+<th>title
+<td>Title of the HelpSet
+<td>helpset
+<td>Actual title
+<td>none
+</tr>
+
+</table>
+
+
+<a name="map section">
+<h3>ID Map Section</h3></a>
+  <p>
+The second section of a HelpSet file contains information
+on the mapping of IDs to URLs used for context sensitive
+help.  The homeId tag provides the default entry to present
+when a HelpSet is first shown.
+The mapref tag provides a reference to a map file.
+  <p>
+
+<table border=1 cellpadding=5>
+
+<tr>
+<th>Tag
+<th>Description
+<th>Allowed In
+<th>Body
+<th>Attributes
+</tr>
+
+<tr>
+<th>maps
+<td>Map definition
+<td>helpset
+<td>empty
+<td>none
+</tr>
+
+<tr>
+<th>homeID
+<td>Default ID of the HelpSet
+<td>maps
+<td>ID string
+<td>none
+</tr>
+
+<tr>
+<th>mapref
+<td>URL to map
+<td>maps
+<td>empty
+<td>location, the spec relative to HelpSet
+</tr>
+
+</table>
+
+  <p>
+Finally, an ID Map section corresponding to a Bean
+will want to include a topic ID corresponding to the
+<a href="Beans.html#beaninfo">BeanInfo.getHelpId()</a>.
+If there is a single Bean for this HelpSet file,
+the value of
+<tt>&lt;homeID&gt;</tt>
+could be used.
+If several Beans share the HelpSet file,
+several topic IDs are needed</p>
+  <p>
+<h4>Map Example</h4>
+
+The following is an example of a map definition in a HelpSet file:
+
+<pre>
+<font size="-1">
+&lt;map&gt;
+   &lt;data&gt;jar:file:/c:Program Files/JWS3.0/JW3.0.jar!/TheMap.map&lt;/data&gt;
+   &lt;data&gt;jar:http://www.sun.com/devpro/JWS3.0Encyclopedia.jar!/TheMap.map&lt;/data&gt;
+&lt;/map&gt;
+</font>
+</pre>
+
+<p>
+<em>NOTE: </em>There is a bug in the JavaHelp 1.0 reference
+implementation which only supports one map.
+
+<a name="navigational views">
+<h3>Navigational Views Section</h3></a>
+      <p>
+The final sections of a HelpSet file describe the
+navigational views, which include tables of contents,
+indices, and search.  There are three mandatory tags for each
+view: <tt>&lt;label&gt;</tt>, <tt>&lt;name&gt;</tt>, and <tt>&lt;type&gt;</tt>.
+Additionally, most views will define &lt;data&gt;.
+
+<p>
+<table border=1 cellpadding=5>
+
+<tr>
+<th>Tag
+<th>Description
+<th>Allowed In
+<th>Body
+<th>Attributes
+</tr>
+
+<tr>
+<th>view
+<td>View definition
+<td>helpset
+<td>none
+<td><tt>xml:lang</tt>
+</tr>
+
+<tr>
+<th>name
+<td>a name identifying the view
+<td>view
+<td>text of the name
+<td>none
+</tr>
+
+<tr>
+<th>label</th>
+<td>a label to show in the presentation
+<td>view
+<td>text for the label
+<td>none
+</tr>
+
+<tr>
+<th>type
+<td>a subclass of NavigatorView
+<td>view
+<td>name of the class
+<td>none
+</tr>
+
+<tr>
+<th>data
+<td>URL spec
+<td>view
+<td>text of the spec
+<td>optional "engine", a class implementing SearchEngine
+</tr>
+
+</table>
+
+<p>
+The language specified in the <tt>xml:lang</tt> attribute of name
+must not be different that of the view, if that was given explicitly.
+The language specified in the <tt>xml:lang</tt> attribute of view
+must not be different to that the HelpSet, if that was given explicitly.
+
+<p>
+<h4>View Example</font></h4>
+
+The following is an example of a view section in a HelpSet file:
+
+<pre>
+<font size="-1">
+&lt;view&gt;
+   &lt;name&gt;TOC&lt;/name&gt;
+   &lt;name&gt;Table of Contents&lt;/name&gt;
+   &lt;type&gt;javax.help.TOCView&lt;/type&gt;
+   &lt;data&gt;jar:file:/c:Program Files/JWS3.0/JW3.0.jar!/toc.xml&lt;/data&gt;
+&lt;/view&gt;
+</font>
+</pre>
+
+<a name="subHelpSet section">
+<h3>SubHelpSet Section</h3></a>
+
+  <p>
+A HelpSet file can statically include other HelpSets 
+using the <tt>&lt;subhelpset&gt;</tt> tag.
+The HelpSets indicated using this tag are <em>merged</em> automatically
+into the HelpSet where the tag is included.
+If the URL spec refers to a non-existing file,
+the subhelpset tag is silently ignored;
+this permits an enclosing HelpSet to refer to subhelpsets that may
+or not be installed.
+More details about merging can be found in <a href="Merge.html">Merge</a>.
+
+<p>
+<table border=1 cellpadding=5>
+
+<tr>
+<th>Tag
+<th>Description
+<th>Allowed In
+<th>Body
+<th>Attributes
+</tr>
+
+<tr>
+<th>subhelpset
+<td>Static subHelpSet to merge
+<td>helpset
+<td>empty
+<td>location="URL spec to HelpSet file"
+</tr>
+
+</table>
+<p>
+
+<hr>
+<A NAME="map">
+<h2>Map Files</h2></A>
+   <p>
+Each map file provides a mapping of topic IDs to URLs.
+Map files are encoded in an XML-based syntax;
+The DTD is
+<a href="dtd/map_1_0.dtd">dtd/map_1_0.dtd</a>.
+The top level tag is
+<tt>&lt;map&gt;</tt>. 
+A version attribute is optional, when present
+its value must be "1.0".
+<p>
+The main tag is <tt>mapID</tt>
+relating a topic ID and a URL specification.
+Relative URL
+specifications are to be resolved against the absolute URL for
+the map file.</p>
+
+
+A Map can contain only the following two tags:
+
+<p>
+
+<table border=1 cellpadding=5>
+
+<tr>
+<th>Tag
+<th>Description
+<th>Allowed In
+<th>Body
+<th>Attributes
+</tr>
+
+<tr>
+<th>map
+<td>A Map
+<td>top level
+<td>empty
+<td>
+  <table>
+	<tr>
+	<th><tt>xml:lang</tt>="lang"</th>
+	<td>Language for this item
+	</tr>
+	<tr>
+	<th><tt>version</tt>="1.0"</th>
+	<td>(optional) version
+	</tr>
+  </table>
+</tr>
+
+<tr>
+<th>mapID
+<td>An individual map entry
+<td>empty
+<td>map
+<td>
+	<table>
+	<tr>
+	<th>target="string"</th>
+	<td>ID
+	</tr>
+
+	<tr>
+	<th>url="string"</th>
+	<td>URL spec
+	</tr>
+
+	<tr>
+	<th><tt>xml:lang</tt>="lang"</th>
+	<td>Language for this item
+	</tr>
+
+
+	</table>
+</tr>
+
+</table>
+
+
+
+
+
+    <p>
+The following is an example of a simple map file:</p>
+
+<pre>
+<FONT size="-1">
+&lt;?xml version='1.0' encoding='ISO-8859-1' ?&gt;
+&lt;!DOCTYPE map
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/map_1_0.dtd"&gt;
+
+&lt;map version="1.0"&gt;
+
+    &lt;mapID target="intro" url="hol/hol.html" />
+    &lt;mapID target="halloween" url="hol/hall.html" />
+    &lt;mapID target="jackolantern" url="hol/jacko.html" />
+    &lt;mapID target="mluther" url="hol/luther.html" />
+    &lt;mapID target="reformation" url="hol/inforefo.html" />
+&lt;/map&gt;
+</FONT>
+</pre>
+
+<p>
+Note that the IDs should be unique within the HelpSet
+(although they may also appear in a subhelpset of this HelpSet).
+</p>
+
+<hr>
+
+<P><A NAME="toc"></A>
+<H2>Table of Contents
+</H2>
+  <p>
+JavaHelp1.0 specifies one table of contents type:
+<tt>javax.help.TOCView</tt>.
+This navigational view models a table of contents.
+TOC files are encoded in an XML-based syntax;
+The DTD is
+<a href="dtd/map_1_0.dtd">dtd/toc_1_0.dtd</a>.
+The top level tag is
+<tt>&lt;toc&gt;</tt>. 
+A version attribute is optional, when present
+its value must be "1.0".
+  <p>
+A TOC can contain only the following two tags:
+
+<p>
+
+<table border=1 cellpadding=5>
+
+<tr>
+<th>Tag
+<th>Description
+<th>Allowed In
+<th>Body
+<th>Attributes
+</tr>
+
+<tr>
+<th>toc
+<td>Table of contents
+<td>top level
+<td>empty
+<td>
+  <table>
+	<tr>
+	<th><tt>xml:lang</tt>="lang"</th>
+	<td>Language for this item
+	</tr>
+	<tr>
+	<th><tt>version</tt>="1.0"</th>
+	<td>(optional) version
+	</tr>
+  </table>
+</tr>
+
+<tr>
+<th>tocitem
+<td>Table of contents item.  Tags can be nested to create
+hierarchical entries.
+<td>Text to show in the presentation
+<td>toc, tocitem
+<td>
+	<table>
+	<tr>
+	<th>target="string"</th>
+	<td>destination ID
+	</tr>
+
+	<tr>
+	<th>image="string"</th>
+	<td>destination ID
+	</tr>
+	<tr>
+	<th><tt>xml:lang</tt>="lang"</th>
+	<td>Language for this item
+	</tr>
+
+	</table>
+</tr>
+
+</table>
+
+<p>
+<h4>Table of Contents Example</h4>
+
+The following is an example of a table of contents file:
+
+<pre>
+<font size="-1">
+&lt;?xml version='1.0' encoding='ISO-8859-1' ?&gt;
+&lt;!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/toc_1_0.dtd"&gt;
+
+&lt;toc version="1.0"&gt;
+   &lt;tocitem&gt;Introducing JavaHelp
+      &lt;tocitem target="api" image="image/document.gif"&gt;
+         JavaHelp API
+      &lt;/tocitem&gt;
+      &lt;tocitem target="platform" image="image/document.gif"&gt;
+         JavaHelp platforms
+      &lt;/tocitem&gt;
+   &lt;/tocitem&gt;
+&lt;/toc&gt;
+</font>
+</pre>
+
+<hr>
+<A NAME="index"></A>
+<h2>Index</h2>
+<p>
+JavaHelp1.0 specifies one index navigator view:
+<tt>javax.help.IndexView</tt>.
+This navigational view models an index.
+Index files are encoded in an XML-based syntax;
+The DTD is
+<a href="dtd/map_1_0.dtd">dtd/index_1_0.dtd</a>.
+The top level tag is
+<tt>&lt;index&gt;</tt>. 
+A version attribute is optional, when present
+its value must be "1.0".
+<p>
+An index can contain the following two tags:
+
+<p>
+<table border=1 cellpadding=5>
+
+<tr>
+<th>Tag
+<th>Description
+<th>Allowed In
+<th>Body
+<th>Attributes
+</tr>
+
+<tr>
+<th>index
+<td>Index
+<td>top-level
+<td>empty
+<td>
+  <table>
+	<tr>
+	<th><tt>xml:lang</tt>="lang"</th>
+	<td>Language for this item
+	</tr>
+	<tr>
+	<th><tt>version</tt>="1.0"</th>
+	<td>(optional) version
+	</tr>
+  </table>
+</tr>
+
+<tr>
+<th>indexitem
+<td>Index item. <tt>indexitem</tt> tags can be nested to
+create hierarchical entries.
+<td>index, indexitem
+<td>text to show in the presentation
+<td>
+	<table>
+	<tr>
+	<th>target="string"</th>
+	<td>destination ID
+	</tr>
+	<tr>
+	<th><tt>xml:lang</tt>="lang"
+	<td>what language to use
+	</tr>
+	</table>
+</tr>
+
+</table>
+
+<p>
+<h4>Index Example</h4>
+
+The following is an example of an index file:
+
+
+<pre>
+<font size="-1">
+&lt;?xml version='1.0' encoding='ISO-8859-1'  ?&gt;
+&lt;!DOCTYPE index
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Index Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/index_1_0.dtd"&gt;
+&lt;index version="1.0"&gt;
+   &lt;indexitem&gt;Java Applets
+      &lt;indexitem target="applet_over"&gt;
+         Overview
+      &lt;/indexitem&gt;
+      &lt;indexitem&gt;Usage
+         &lt;indexitem target="applet_insert"&gt; 		   
+            Inserting an applet in a content page
+         &lt;/indexitem&gt;	
+         &lt;indexitem target="applet_editing"&gt;
+            Editing an applet in a content page
+         &lt;/indexitem&gt;	
+      &lt;/indexitem&gt;
+   &lt;/indexitem&gt;
+&lt;/index&gt;
+</font>
+</pre>
+
+<hr>
+<A NAME="content"></A>
+<H2>
+Help Content</H2>
+JavaHelp displays help topic files formatted using HTML version 3.2.
+Links are resolved
+using the URL protocols supported by the underlying platform.
+Lightweight
+JComponents can be added to topic pages using the <tt>&lt;OBJECT&gt;</tt>
+tag.
+</p> 
+
+<hr>
+<A NAME="search"></A>
+<H2>
+Search Database</H2>
+<p>
+JavaHelp1.0 specifies one search navigator view:
+<code>javax.help.SearchView</code>.
+This navigational view models a search interacting with a search
+database though objects that implement the
+<code>javax.help.search</code> package.
+The view has an <tt>&lt;engine&gt;</tt> tag that is the name of
+a class that is a subclass of <code>SearchEngine</code>.
+That class is responsible for interpreting
+the search database that is described by the
+URL in <tt>&lt;data&gt;</tt>.</p>
+
+
+<hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 17:07:13 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>
+

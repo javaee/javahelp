@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<META http-equiv="Content-Language" content="de">
+<TITLE>
+&Uuml;bung 1: Bearbeiten der HTML-Datei
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff"> 
+<h1>&Uuml;bung 1: Bearbeiten der HTML-Datei</h1>
+
+In dieser &Uuml;bung wird das Bearbeiten einer HTML-Datei beschrieben, die von Java Development Environment beim
+Ausf&uuml;hren des Blink-Projekts erstellt wurde. Im Quellcode dieser Datei
+definieren Sie einen Applet-Parameter und f&uuml;gen einen Hyperlink ein. Nach dem
+Bearbeiten speichern Sie die Datei unter einem anderen Namen, damit
+Ihre &Auml;nderungen bei der n&auml;chsten Ausf&uuml;hrung des Projekts nicht
+&uuml;berschrieben werden.
+<p>
+Falls noch nicht geschehen, sollten Sie
+jetzt das Blink-Projekt anlegen und aufbauen, wie im Abschnitt
+<a href="create.html">Erstellen
+des Blink-Projekts</a> beschrieben.
+<ol>
+<li>Pr&uuml;fen Sie, welches aktuelle Projekt im Projekt-Manager
+angezeigt wird.
+<br>Handelt es sich bei dem aktuellen Projekt nicht um das
+Blink-Projekt, doppelklicken Sie auf den Projektnamen "Blink".
+<li>W&auml;hlen Sie im Quelleditor den Befehl <nobr>"Datei" -&gt; "&Ouml;ffnen"</nobr>.
+<br>Java Development Environment &ouml;ffnet ein Dialogfeld zur Dateiauswahl.
+<li>&Ouml;ffnen Sie die Datei <kbd>Blink.tmp.html</kbd> im Verzeichnis
+<kbd>Blink</kbd> Ihres Blink-Projekts.
+<br>Die Datei enth&auml;lt eine Applet-Markierung nach folgendem Muster:
+<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+  
+codebase="/<i>your_home_directory</i>/jws/Blink"
+   width="500"
+  
+height="600"
+   align="Top"
+   alt="Mit einem Java-f&auml;higen Browser
+wird hier ein Applet
+angezeigt."
+&gt; 
+&lt;param name="lbl" value="Java Development Environment ist echt cool
+:-)"&gt;
+&lt;hr&gt;Wenn der Browser die Applet-Markierung erkennt,
+      wird das Applet hier
+angezeigt.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+Diese Datei wurde von Java Development Environment beim Ausf&uuml;hren des Projekts erstellt. Der Inhalt der Datei basiert auf den Informationen
+im Register "Ausf&uuml;hren" des Fensters "Projekt bearbeiten". Falls Sie
+das Projekt noch nicht ausgef&uuml;hrt haben, siehe
+<a href="run.html">Ausf&uuml;hren des Projekts</a>.
+<li>W&auml;hlen Sie <nobr>"Datei" -&gt; "Speichern als"</nobr> aus der
+Men&uuml;leiste von Java Development Environment.
+<br>Das Dialogfeld "Aktuelle Datei speichern" wird angezeigt.
+<li>W&auml;hlen Sie das Blink-Verzeichnis; geben Sie danach einen neuen
+Namen f&uuml;r die HTML-Datei ein, und klicken Sie auf "OK".
+<br>Vergewissern Sie sich, da&szlig; Sie die HTML-Datei tats&auml;chlich
+umbenannt haben; andernfalls wird ihr Inhalt beim n&auml;chsten Ausf&uuml;hren
+des Projekts &uuml;berschrieben. Achten Sie auch darauf, da&szlig; die Datei im
+Verzeichnis <kbd>Blink</kbd> gespeichert wird.
+<li>&Auml;ndern Sie im Quelleditor den Wert f&uuml;r "Height" in 75.
+<li>F&uuml;gen Sie den folgenden Parameter vor dem Parameter
+<kbd>lbl</kbd> ein, um die Blinkfrequenz der Textanzeige zu erh&ouml;hen:
+<pre>
+&lt;param name="speed" value="50"&gt;
+</pre>
+
+<li>F&uuml;gen Sie den
+folgenden Hyperlink nach der &lt;Applet&gt;-Markierung ein:
+<pre>
+&lt;p&gt;
+&lt;a href="Blink.java"&gt;Quellcode&lt;/a&gt;
+</pre>
+
+Der Pfad auf den Quellcode mu&szlig; relativ zum
+Verzeichnis angegeben werden, in dem sich die HTML-Datei befindet.
+<li>Klicken Sie auf die Schaltfl&auml;che "Speichern"
+<img src="../../../../images/24/file-save_u.gif"
+align=MIDDLE> der Symbolleiste "Bearbeiten/Debug".
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;chste &Uuml;bung:</strong>
+<dl>
+<dd><a href="runpage.html">&Uuml;bung 2:  Aktualisieren einer
+Run-Page</a></dl>
+<p>
+</BODY>
+</HTML>

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Ejercicio 2: Correcci&oacute;n de errores en una construcci&oacute;n </TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Ejercicio 2: Correcci&oacute;n de errores en una construcci&oacute;n</h1>
+
+Este ejercicio muestra c&oacute;mo localizar r&aacute;pidamente y corregir
+la l&iacute;nea de c&oacute;digo fuente responsable de un error encontrado durante
+el proceso de construcci&oacute;n. Los errores de construcci&oacute;n normalmente
+son de sintaxis de lenguaje incorrecta, variables no declaradas y
+palabras clave mal escritas.
+<p>
+Si a&uacute;n no ha a&ntilde;adido el c&oacute;digo para hacer subir y bajar palabras
+en el proyecto Blink, h&aacute;galo ahora utilizando las instrucciones de <a
+href="editcode.html">Edici&oacute;n de c&oacute;digo fuente</a>.
+<h2>Localizaci&oacute;n de errores</h2>
+<ol>
+<li>Compruebe el nombre del proyecto actual en la ventana del
+administrador de proyectos.
+<br>Si el proyecto actual no es Blink, pulse dos veces en en
+el nombre del proyecto Blink.
+<li>Pulse en el bot&oacute;n "Construir"
+<img src="../../../../images/24/tb-build_u.gif"
+align=BOTTOM> en la barra de herramientas principal de Java Development Environment.
+<br>Java Development Environment compila el proyecto Blink utilizando el
+compilador de Java Development Environment predeterminado; este compilador es m&aacute;s
+r&aacute;pido que el compilador de Java est&aacute;ndar de JDK.
+<p>
+La pesta&ntilde;a "Construir" lista dos errores. El editor de c&oacute;digo fuente
+resalta en amarillo la l&iacute;nea de c&oacute;digo fuente responsable del primer error.
+</ol>
+
+<h2>Correcci&oacute;n de errores</h2>
+<ol>
+<li>Corrija el primer error, en la l&iacute;nea 55, a&ntilde;adiendo par&eacute;ntesis
+alrededor de <kbd>offset</kbd>.
+<br>La l&iacute;nea debe aparecer como sigue:
+<br><code>if (offset)</code>
+<li>En la pesta&ntilde;a "Construir", seleccione el segundo error de construcci&oacute;n
+<kbd>Blink.java: 61</kbd>
+<br>El editor de c&oacute;digo fuente
+resalta la l&iacute;nea de c&oacute;digo fuente responsable del siguiente error.
+<li>Corrija el error a&ntilde;adiendo <kbd>;</kbd> despu&eacute;s de <kbd>y = y / 2</kbd> en
+la l&iacute;nea 60.
+<br>La l&iacute;nea debe aparecer como sigue:
+<br><kbd>y = y / 2;</kbd>
+<li>Pulse en el bot&oacute;n "Guardar archivo"
+<img src="../../../../images/24/file-save_u.gif"
+align=BOTTOM> en la barra de herramientas de edici&oacute;n/depuraci&oacute;n.
+<br>Ahora el programa debe estar corregido y puede volverlo a construir.
+</ol>
+
+<h2>Reconstrucci&oacute;n del proyecto</h2>
+<ol>
+<li>Pulse en el bot&oacute;n "Construir"
+<img src="../../../../images/24/tb-build_u.gif"
+align=BOTTOM> en la barra de herramientas principal.
+<br>No deber&iacute;a recibir ning&uacute;n mensaje de error. Si recibe alguno,
+regrese al editor de c&oacute;digo fuente y vuelva a comprobar el c&oacute;digo
+para ver si la informaci&oacute;n est&aacute; bien introducida.
+<li>Pulse en el bot&oacute;n "Ejecutar"
+<img src="../../../../images/24/tb-run_u.gif"
+align=BOTTOM> en la barra de herramientas principal de Java
+WorkShop.
+<br>Java Development Environment ejecuta el proyecto con el texto saltando de arriba
+a abajo, adem&aacute;s de aparecer de forma intermitente.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Siguiente lecci&oacute;n:</strong>
+<dl>
+<dd>Ha terminado las lecciones de este tutorial.  El siguiente
+tutorial es el <a href="browse.html">Tutorial Cuatro:  Examen de un proyecto</a>.
+</dl>
+<p>
+</body>
+</html>

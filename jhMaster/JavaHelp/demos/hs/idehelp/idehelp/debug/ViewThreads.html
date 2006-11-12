@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Viewing Threads and Stack Frames
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<h1>Viewing Threads and Stack Frames
+</h1>Using the Threads/Stack window, you can view the threads in a thread group, the stack frames in a thread, the variables local to each stack frame, and the variables contained within objects and arrays. You can also keep track of the value of a variable while you step through your code.
+<p>
+<img src="../../images/hg_proc.gif" width="18" height="13"><b>To view threads, stack frames, and variables:</b>
+<ol>
+<li>Choose Debug -> Threads/Stack.
+<br>The Threads/Stack window lists the all thread groups in your project, including the system thread groups.
+<li>Click the + icon next to the <img src="../../../../images/db_01_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif"> thread group.
+<br>JDE expands the thread group to show the threads that make up the thread group.
+<li>Continue clicking the + icons on the left until you reach the variables in a stack frame.
+<li>Click the - icon to contract the item.
+</ol>
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13"><b>Tips</b>
+<ul>
+<li>If a stack frame does not display local variables, try recompiling your program with the <kbd>-g</kbd> option.
+<li>Applets run in multiple threads.  For example, the <kbd>init</kbd>, 
+<kbd>start</kbd>, and <kbd>stop</kbd> methods run under one thread, while 
+<kbd>paint</kbd> and <kbd>handleEvents</kbd> run under another (AWT-Motif on Solaris<sup>TM</sup> computing environments and AWT-CallBack-Win32 on Microsoft Windows NT or Windows 95 systems.)
+</ul>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><a href="Threads.html">Threads/Stack Overview</a>
+</dl>
+<p>
+</BODY>
+</HTML>
+

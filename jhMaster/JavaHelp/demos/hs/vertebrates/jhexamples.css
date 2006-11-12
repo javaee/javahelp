@@ -1,0 +1,102 @@
+/*
+ * @(#)jhexamples.css	1.2 06/10/30
+ * 
+ * Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 
+ * - Redistribution of source code must retain the above copyright
+ *   notice, this list of conditions and the following disclaimer.
+ * 
+ * - Redistribution in binary form must reproduce the above copyright
+ *   notice, this list of conditions and the following disclaimer in
+ *   the documentation and/or other materials provided with the
+ *   distribution.
+ * 
+ * Neither the name of Sun Microsystems, Inc. or the names of
+ * contributors may be used to endorse or promote products derived
+ * from this software without specific prior written permission.
+ * 
+ * This software is provided "AS IS," without a warranty of any
+ * kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND
+ * WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY
+ * EXCLUDED. SUN MICROSYSTEMS, INC. ("SUN") AND ITS LICENSORS SHALL
+ * NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF
+ * USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+ * DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR
+ * ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,
+ * CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND
+ * REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR
+ * INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGES.
+ * 
+ * You acknowledge that this software is not designed, licensed or
+ * intended for use in the design, construction, operation or
+ * maintenance of any nuclear facility. 
+ */
+
+body  {font-size: small;
+	font-family: SansSerif, Arial, Helvetica, sans-serif;
+	margin-left: 10;
+	margin-right: 5;
+	color: Black;
+	background-color: White}
+
+p  {font-size: small;
+     margin-top: 5;
+     margin-bottom: 5}
+
+
+h2 { font-size: large;
+     font-weight: bold;
+     margin-top: 20;
+     margin-bottom: 10}
+
+h3 { font-size: medium;
+     font-weight: bold;
+     margin-top: 10;
+     margin-bottom: 5}
+
+h4 { font-size: small;
+     font-weight: bold;
+     margin-top: 10;
+     margin-bottom: 5}
+
+ol {margin-top: 5;
+     margin-bottom: 0;
+     margin-left: 30}
+
+li {margin-top: 0;
+    margin-bottom: 5}
+        
+li p{margin-top: 5;
+        margin-bottom: 0}
+
+ul {margin-top: 5;
+    margin-bottom: 0;
+    margin-left: 30}
+        
+table {border-style: none;
+       border-color: silver;
+       margin-top: 5;
+       margin-bottom: 5}
+
+td {border-style: none;
+    border-color: silver;
+    padding-left: 1;
+    padding-right: 1;
+    padding-top: 1;
+    padding-bottom: 1}
+
+th {border-style: none;
+    border-color: silver;
+    padding-left: 1;
+    padding-right: 1;
+    padding-top: 1;
+    padding-bottom: 1}
+
+small {font-size: x-small}
+

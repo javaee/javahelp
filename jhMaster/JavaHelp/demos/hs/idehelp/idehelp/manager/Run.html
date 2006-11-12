@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Running a Project
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Running a Project</h1>
+
+You can run any project in Java WorkShop without opening a separate web browser. Java WorkShop runs the project using the attributes you specify in the Edit Project Run tab.
+<p>
+<img src="../../images/hg_proc.gif" width="18" height="13"><b>Run a project in one of the following ways:</b>
+<ul>
+<li>Click the Run button <img src="../images/tb-run_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif"> on the Java WorkShop main toolbar.
+<li>Choose  Project -> Run.
+<li>Click the Project's button <img src="../images/tb-project-manager_u.gif" align=BOTTOM>. In the project manager, select the project name; then, choose Project -> Run.
+<p>
+The action that Java WorkShop performs depends on the type of project you are running.
+</ul>
+
+<h1>Results of Running a Project</h1>
+
+<table BORDER=0 cellspacing=12>
+<tr>
+<td valign="top"><b>Applet</b></td>
+<td valign="top">The HTML file that Java WorkShop runs depends on the setting of the Existing Run Page URL attribute. You can find this attribute in the Edit Project Run tab. If Existing Run Page URL is set to No, Java WorkShop creates the file <i>projectname</i>.<kbd>tmp.html</kbd> in your project directory and loads it into the browser. Java WorkShop generates this file based on the attributes and parameters you specify in the Run tab. If you did not specify any attributes, the file contains the minimum requirements to place the applet on a web page.
+<p>
+If Existing Run Page URL is set to Yes, Java WorkShop loads the file specified in the Existing Run Page URL text box into the browser.
+</td>
+</tr>
+
+<tr>
+<td valign="top"><b>Standalone Program</b></td>
+<td valign="top">Java WorkShop creates an MS-DOS command window or a shell tool in the UNIX operating environment and runs the program. You can specify arguments to pass to the program's <kbd>main</kbd> method in the Edit Project Run tab. See <a href="../debug/Arguments.html">Specifying Program Arguments</a>.
+</td>
+</tr>
+
+</table>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><a href="../manager/RunDisplay.html">Run Tab for Applet Project</a>
+<dd><a href="../manager/RunStandalone.html">Run Tab for Standalone Program Project</a>
+<dd><a href="../manager/EditHtml.html">Editing the Project HTML file</a>
+</dl>
+<p>
+</BODY>
+</HTML>
+

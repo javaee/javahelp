@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Run Tab for Applet Project
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Run Tab for Applet Project</h1>
+The Run tab contains the following attributes for running an applet project. If you change information in this tab, click the Apply button to enter the changes before moving to another tab.
+<dl>
+<dt><b>Existing Run Page URL</b>
+<dd>Radio buttons that indicate whether or not a run page (HTML file) exists for the applet. If a run page exists, select Yes and type the URL of the HTML file in the text box.  All other fields in the tab will be dimmed. Java WorkShop will run the file you specified when you click on the Project Tester control. 
+<p>
+If no run page exists, Java WorkShop creates the file <i>projectname.</i><code>tmp.html</code> in your project directory. Java WorkShop generates this file based on the attributes and parameters you specify in the Run tab.
+<p>
+<dt><b>Main Class</b>
+<dd>The <kbd>.class</kbd> file in which the <code>init</code> method is 
+defined.
+<p>
+<dt><b>Codebase</b>
+<dd>The base URL or file name of the applet. The applet code is relative to this URL or file name. If you do not specify this attribute, Java WorkShop uses the URL or file name of the document in which the applet is specified.
+<p>
+<dt><b>Width</b>
+<dd>Initial width, in pixels, needed to display the applet.
+<p>
+<dt><b>Height</b>
+<dd>Initial height, in pixels, needed to display the applet.
+<p>
+<dt><b>Horizontal Space</b>
+<dd>Number of pixels on each side of the applet.
+<p>
+<dt><b>Vertical Space</b>
+<dd>Number of pixels above and below the applet.
+<p>
+<dt><b>Instance Name</b>
+<dd>Name for the applet instance. This name makes it possible for applets running on the same page to communicate with one another.
+<p>
+<dt><b>Alignment</b>
+<dd>The alignment of the applet on the page. Possible values are Top, Bottom, Middle, Left, Right, TextTop, Absmiddle, Baseline, and Absbottom.
+<p>
+<dt><b>Parameters</b>
+<dd>Parameters to be passed to the applet. Parameters are specified by name = value. To create a parameter, enter its name in the Name box and a value in the Value box. Then click the Add button. The parameter name and value appear in the list to the left of the Name box. If you make a mistake, you can delete a parameter by selecting it in the Parameters list and clicking the Delete button. Click Delete All to delete all parameters.
+<p>
+<dt><b>Alternate Text</b>
+<dd>Alternate text to be displayed by web browsers that understand the <applet> tag but cannot run an applet.
+<p>
+<dt><b>Alternate HTML</b>
+<dd>Alternate HTML code to be displayed by browsers that do not recognize the 
+<applet> tag.
+</dl>
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><a href="EditProject.html">Editing Project Attributes</a>
+</dl>
+<p>
+</body>
+</html>
+
+

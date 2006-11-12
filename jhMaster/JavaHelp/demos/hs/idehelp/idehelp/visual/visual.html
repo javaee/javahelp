@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Visual Java GUI Builder 
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Visual Java GUI Builder</H1>
+
+With the Visual Java<sup>TM</sup> GUI builder you can easily design
+graphical user interfaces (GUIs) for your Java applets and
+applications.
+
+<p>
+This page briefly explains:
+<ul>
+<li><a href="#guitypes">Types of GUIs</a> you can create with Visual
+Java GUI builder  
+<li>The <a href="#paletteitems">palette</a>
+<li>The grid <a href="#layoutgrid">layout</a>
+<li>How to <a href="#import">items import beans</a>
+<li>How to <a href="#runapp">build and run</a> your new application 
+<li><a href="#introgroups">Groups and shadows</a>
+<li>The <a href="#guiexs">examples and tutorials</a> available for GUI
+builder
+</ul>
+
+<a name=guitypes></a>
+<h2>Types of GUIs</h2>
+
+Use GUI builder to create graphical interfaces for both
+applets and standalone projects. You can create three types of
+top-level containers for your applet or standalone project:
+
+<ul>
+<li><a HREF="newwindow.html#choosingpanels">Panels</a></li>
+<li><a HREF="newwindow.html#choosingframes">Frames</a></li>
+<li><a HREF="newwindow.html#choosingdialogboxes">Dialog boxes</a></li>
+</ul>
+
+<p>
+A container is an object that encases the elements of a GUI. When you
+select a container, it is entered in the container list.  Selecting a
+container in the list brings its layout window to the front of the
+display. For more information on containers, see <a
+href=newwindow.html>Choosing Windows or Panels</a>.
+
+<a NAME=paletteitems></a>
+<h2>GUI Builder Palette</h2>
+
+The palette contains all the basic components found in a typical
+window, such as a text label, a scrollbar, and a radio button. See the
+<a HREF="palette.html">GUI Builder Palette</a> page for the list of
+components. All components in the GUI builder palette have attributes
+that you can modify. You can change the attributes by selecting the
+component in the layout grid and choosing GUI -> Edit
+Attributes.
+
+<p>
+Attributes common to most components are described in the <A
+HREF="../visual/dialogs/attributes.html">attribute editor</A>
+discussion.
+
+<a name=layoutgrid></a>
+<h2>Layout Grid</h2>
+GUI builder uses a grid system that enables you to place GUI
+components, such as buttons and text boxes, in the cells of a grid.
+Grids can be nested within the cells of other grids. 
+<p>
+The grid-based system enables you to lay out components relative to
+each other. A relative layout is essential in multiplatform
+environments since components in different native window toolkits vary
+in size and appearance.
+
+<a NAME=importitems></a>
+<h2>Importing Beans</h2>
+
+The components provided by GUI builder are available from three
+palette pages (the AWT, Panels, and Additional tabs). You can import
+beans into Java WorkShop and add them to the palette pages,
+or you can create additional palette pages. Beans are added by
+importing their JAR files. If, however, you already have shadow
+classes for components that you want to add, you can import the shadow
+classes. Importing Beans into Java WorkShop is a simple
+process described in <A HREF="importing.html">Importing
+Components</A>.
+
+For information on how beans are used in Java WorkShop, see <a
+href="jbeanstory.html">Beans in Java WorkShop</a>. 
+
+<p>
+<a NAME=runapp></a>
+<h2>Development of the Application</h2>
+
+Before you can run your application, you must generate Java source
+code for the application, add behavior to the components, and build
+the application.
+
+<h3>Generating the GUI</h3>
+
+Once you have laid out the GUI to your satisfaction, choose GUI
+-> Save & Generate GUI File to generate the source code that
+implements the GUI. This process is described in <A
+HREF="generate.html">Generating Java Source Code</A>.
+
+<p>
+The generated code is based on the information displayed in
+your layout. If you modify the layout after you generate the code,
+you must regenerate to include the changes in the source code.
+<p>
+The GUI is automatically generated from your most
+recently saved layout whenever you build the project. It is generally
+unnecessary for you to explicitly generate the code.
+
+<h3>Adding Operations</h3>
+
+GUI builder provides an Operations dialog box that enables you
+to associate behavior (with event filters and actions) with your
+components. The Operations dialog box is available from the 
+attribute editor.  See <A HREF="ops.html">
+What Is a Component Operation?</A> for more information.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+For information on new-style (JDK1.1) and old-style (JDK1.0.2) event handling, see the JDK
+documentation, <a
+href="http://java.sun.com/products/jdk/1.1/docs/guide/awt/designspec/events.html">
+"Java AWT: Delegation Event Model."</a> (You may have to reset the proxies
+on the Java WorkShop help browser if you have difficulties reaching
+the Delegation Event Model document.)
+<p>
+For a demonstration of how to use the new-style 1.1 events, see:
+<p>
+On Solaris:
+<br>
+<em>install-dir-path</em><tt>/examples/JellyBeanExample</tt>
+
+<p>
+On Microsoft Windows 95 and Windows NT:
+<br>
+<em>install-dir-path</em><tt>\examples\JellyBeanExample</tt>
+
+
+<h3>Building the Project</h3>
+
+After you have saved the GUI interface, compile the project. Building
+in Java WorkShop automatically generates Java source files from the most
+recently saved layout file
+(<em>project-name</em><code>.gui</code>), and adds
+the new source files to the project.
+
+<h3>Running the Project</h3>
+
+After you have built the project, you can run it by clicking the Run
+button <IMG SRC="../images/tb-run_u.gif" ALIGN=BOTTOM
+WIDTH=24 HEIGHT=24>. 
+<p>
+If your program is a standalone application, or if it is an
+applet that runs in a browser such as Netscape
+Navigator<sup>TM</sup>, you should read <A HREF="running.html">GUI Builder
+Runtime Classes</A>.   
+
+<a name=introgroups></a>
+<h2>Groups and Shadows</h2>
+
+GUI builder components are implemented as <em>shadow classes</em>
+(wrappers) of AWT components.  Groups are collections of shadow
+classes and other groups.  Applications created using GUI builder are
+actually groups. Although GUI builder generates only one group, an
+application can use more than one group.
+<p>
+In the next release of Java WorkShop, groups and shadows will not be
+required. 
+<p>
+For information about groups and shadows, see <A
+HREF="groups_basic.html">What Are Groups and Shadows?</A> and <A
+HREF="groups_advanced.html">More On Groups and Shadows</A>.
+
+<a name=guiexs></a>
+<h2>GUI Builder Tutorials and Examples</h2>
+
+The following examples and tutorials are available to help you learn
+how to use the GUI builder to design and build applications:
+
+<ul>
+<li><a href="../start/visual/visual.html">Tutorial Seven: Creating a
+GUI</a>--This tutorial shows you how to design a simple standalone
+application, a calculator, using GUI builder. 
+<li><a href="../start/clock/BeansOverview.html">Tutorial Eight:
+Creating the Clock Project</a>--This tutorial walks you through the
+entire process of creating a bean project (Clock), producing visible
+and invisible beans (clock, marquee, and sound player), creating a
+Desk Clock GUI project, importing the beans to the component palette,
+designing the application, and adding operations to the beans.
+<li><a href="gui_examples.html">Card File - Examples of Creating an
+Application</a>--Card File is an extended example that highlights the
+application construction features of the GUI builder. It shows you how
+to create a card file that lets you look up names and phone
+numbers. The example also shows you how to create your own component
+that you can call up from the card file to send an Email message to
+the person currently listed on the card.
+</ul>
+
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI Builder
+Runtime Packages</A> 
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+</body>
+</HTML>

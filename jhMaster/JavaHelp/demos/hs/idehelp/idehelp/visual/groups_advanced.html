@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+More on Groups and Shadows 
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>More on Groups and Shadows</H1>
+
+This is a continuation of the <A HREF="groups_basic.html"> groups and
+shadows</A> discussion.
+
+<h2>Groups</h2>
+
+The primary purpose of GUI builder is to help you create groups. To
+be considered a group, a class must be a subclass of the Group class.
+
+<a name=writegrp></a>
+<h3>Rules for Writing a Group</h3>
+
+<ul>
+<li>All attributes must be defined in the constructor. The helper methods
+<CODE>addComponentAttributes</CODE>, <CODE>addFrameAttributes</CODE>,
+and <CODE>addDialogAttributes</CODE> should be called in the
+constructor to add a set of forwarded attributes to the group.
+
+<li>In general, all attributes defined in the group should be handled
+in method overrides of <CODE>getOnGroup</CODE> and
+<CODE>setOnGroup</CODE>. Any attributes that are not handled should
+be passed up using a call to super.
+
+<p>
+You may call <CODE>super.setOnGroup</CODE> with an attribute, even if 
+the attribute is already being handled by your <CODE>setOnGroup</CODE> 
+method. This will cause the attribute value to be stored in the
+group's list of attributes. Then, the <CODE>getOnGroup</CODE> method
+will automatically look up this attribute's value from the list. 
+
+<p>
+So make sure that any attributes that are handled in
+<CODE>setOnGroup</CODE> without calling super are also handled in the
+<CODE>getOnGroup</CODE> method. 
+
+<li><CODE>initRoot</CODE> must be overridden to initialize the root of
+the application.  The root contains all the children that are
+contained by the group.  The default generated group contains an
+<CODE>initRoot</CODE> method that does the right thing. 
+
+<li>The <CODE>startGroup</CODE> and <CODE>stopGroup</CODE> methods can
+be overridden to get notification when the applet starts and stops.
+Also <CODE>startGroup</CODE> will be called when standalone
+applications are completely done initializing. This can be useful if,
+for example, you want to do something that may cause an error, and you
+want to immediately display an error dialog box. 
+
+<li>The <CODE>handleMessage</CODE> and <CODE>handleEvent</CODE>
+methods should be overridden to receive AWT events from the root
+children. For AWT events, the target of the message is the shadow
+corresponding to the AWT component that sent the event. The target of
+the AWT event is (of course) the AWT component itself.
+
+<p>
+For AWT components that do not have a shadow, the target of the
+message will be set to the AWT component itself. 
+
+<li>You need to be careful about delayed instantiation. The
+<CODE>setOnGroup</CODE> and <CODE>getOnGroup</CODE> methods will not
+be invoked until the group has been initialized. When the group is
+initialized, <CODE>setOnGroup</CODE> will be invoked for all the
+attributes. 
+
+<p>
+However, any custom methods that you write need to handle the case of
+the group not being initialized or created. This is not a problem if
+the user of the group is careful not to call the group's methods until
+it is initialized-but better safe than sorry. Dealing with the group
+not being initialized almost always consists of doing a null check on
+the <CODE>gui</CODE> instance variable. 
+</ul>
+
+<h2>Shadows</h2>
+
+To import a custom AWT component into the GUI builder's palette, you must
+write a shadow class for it. GUI builder includes shadow classes for
+all the standard AWT components.
+
+<a name=writeshadow></a>
+<h3>Rules for Writing a Shadow</h3>
+
+<ul>
+<li>All attributes must be declared in the constructor.  Attributes
+should only be added or removed in the constructor.
+
+<li>All attributes must be handled by the <CODE>getOnBody</CODE> and
+<CODE>setOnBody</CODE> methods in the shadow class where they are
+declared (attributes flagged with <CODE>NONBODY</CODE> are the
+exception to this rule). 
+
+<li><CODE>getOnBody</CODE> and <CODE>setOnBody</CODE> should invoke
+super for all attributes that aren't handled in that particular shadow
+class. 
+
+<li>The default value of an attribute can be overridden by a shadow
+class. Overriding the default value does require handling of the
+attribute by the overriding shadow. The attribute can be handled by
+the class in which it was originally declared. 
+
+<li>In general, attributes do not need any flags. If you use an
+attribute flag, be sure that you know what it does. 
+</ul>
+
+<p>
+Both shadows and groups can be imported into the palette of GUI
+builder. For information on how this can be done, see <A
+HREF="ops.html#GetBody">Accessing AWT Methods for Shadows Classes</A>.
+
+<a name=noshadow></a>
+<h3>Putting AWT Components That Do Not Have a Shadow Inside a Group</h3>
+
+If an AWT component does not have a shadow, add it as a child of an
+existing panel or frame that is already inside the group. The events
+from the AWT component will be delivered to the group. The message
+target will be the same as the AWT event target. Normally the message
+target is set to the shadow corresponding to the AWT event target, but
+in this case there is no corresponding shadow.
+<p>
+Another method for adding an AWT component is to use the Generic
+Component. The Generic Component is a special component that you can
+use to import any custom AWT component class that you write. See <a
+href=custom.html>Adding Custom Components and Windows</a> for a
+discussion of Generic Component.
+
+<a name=nogenmain></a>
+<h3>How to Use Groups Without the Generated Main</h3>
+
+The following examples show how to use groups without the 
+generated main.
+<p>
+<strong>Main</strong>
+<pre>
+  // Construct the group
+
+  Group group = new MyFancyGroup();
+
+  // Set the group environment.  The "args" are command 
+  // line arguments.
+
+  group.setEnvironmentInfo(null, args);
+
+  // Initialize the group
+
+  group.initialize();
+
+  // Set the top level on the group
+
+  WindowShadow win = (WindowShadow)group.getWindow();
+  if (win instanceof FrameShadow) {
+    win.createBody();
+    group.setTopLevel((Frame)win.getBody());
+  }
+  else {
+    group.setTopLevel(/* Pass in an existing frame window
+			 from your application */);
+  }
+
+  // Create the group
+
+  group.create();
+
+  // If the group is a panel group, add it in the 
+  // hierarchy somewhere
+
+  if (group.getPanel() != null) {
+    myApplicationFrame.add((Panel)group.getPanel().getBody());
+  }
+
+  // Start the group
+
+  group.start();
+
+</pre>
+<p>
+<strong>Applet</strong>
+<pre>
+  // Construct the group
+
+  Group group = new MyFancyGroup();
+
+  // Set the group environment.  The "applet" must be available here.
+
+  group.setEnvironmentInfo(myApplet, null);
+
+  // Initialize the group
+
+  group.initialize();
+
+  // Set the top level on the group
+
+  WindowShadow win = (WindowShadow)group.getWindow();
+  if (win instanceof FrameShadow) {
+    win.createBody();
+    group.setTopLevel((Frame)win.getBody());
+  }
+  else {
+    // Figure out the applet's frame
+
+    Component comp = applet;
+    while (comp != null && !(comp instanceof Frame))
+      comp = comp.getParent();
+    group.setTopLevel((Frame)comp);
+  }
+
+  // Create the group
+
+  group.create();
+
+  // If the group is a panel group, add it in the 
+  // hierarchy somewhere
+
+  if (group.getPanel() != null) {
+    myApplet.add((Panel)group.getPanel().getBody());
+  }
+
+</pre>
+<p>
+The start, stop, and destroy methods should be forwarded from the
+applet to the group:
+<pre>
+  group.start();
+  group.stop();
+  group.destroy();
+</pre>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="groups_basic.html">What Are Groups and Shadows?</A>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="running.html">GUI Builder Runtime Classes</A>
+<dd><A HREF="menuops.html">Adding Operations to Menus</A>
+<dd><A HREF="importing.html">Importing Components</A> 
+<p>
+<dd><strong>Visual Java API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI
+Builder Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+
+</body>
+</HTML>
+
+

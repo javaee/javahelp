@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Configuring TCP/IP
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Configuring TCP/IP</H1>
+To use the Java WorkShop debugger, you must install and
+configure TCP/IP software on your Microsoft Windows 95 or
+Windows NT system.
+
+<h2>Microsoft Windows 95</h2>
+<IMG SRC="../../images/hg_proc.gif" HEIGHT=13 WIDTH=18><strong>To install TCP/IP on your computer:</strong>
+<ol>
+<li>From the Windows 95 Start menu, select
+Settings -> Control Panel.
+<li>In the Control Panel window, double-click on the Network icon. 
+<li>In the Configuration tab of the Network window, click Add.
+<li>In the Select Network Component Type window, select the
+Protocol item from the list and click Add.
+<li>In the Select Network Protocol window, select Microsoft from the Manufacturers pane, and select TCP/IP from the Network pane. Click OK. 
+<li>In the Select Device window, select Microsoft from the
+Manufacturers pane.  Dial-Up Adapter is automatically
+selected in the Models pane. Click OK.
+<li>TCP/IP (as well as a number of other components) should
+now appear in the Network window components pane. Click OK
+in the Network window.  A window appears to indicate
+that the protocols are being installed.
+<li>When you are prompted to restart the computer, click Yes.
+</ol>
+<p>
+If your computer is set up to prompt you whenever it uses
+dial-up networking, you will see the same prompt when you
+start the Java WorkShop debugger (once per Java WorkShop
+session).  If you want to discontinue dial-up prompting,
+follow these steps:
+<ol>
+<li>Double-click on the My Computer icon.
+<li>In the My Computer window, double-click on the Dial-Up Networking
+icon.
+<li>From the main menu, choose Connections -> Settings.
+<li>Click on Don't prompt to use Dial-Up Networking.
+</ol>
+<p>
+<h2>Microsoft Windows NT</h2>
+Use these instructions to install TCP/IP on a Windows NT 
+standalone machine.  These instructions describe one
+method of installation; there are others that work as well.
+<p>
+If your machine is part of a network and you are encountering
+this error, please contact your system administrator.
+<p>
+<IMG SRC="../../images/hg_proc.gif" HEIGHT=13 WIDTH=18><strong>To install TCP/IP on a Standalone System:</strong>
+<p>
+<ol>
+<li>In the Main window, double-click on the Control Panel icon.
+<li>In the Control Panel, double-click on the Network icon.
+<li>Click Yes when prompted whether to install networking.
+This starts the Windows NT Setup program.
+<li>In the Window NT Setup dialog box, type the path of the Windows NT distribution files.
+<li>In the Network Adapter Card Detection dialog box, click
+Do Not Detect.
+<li>In the Network Adapter Card Detection dialog box, click
+Continue.
+<li>In the Windows NT TCP/IP Installation Options dialog
+box, click Continue.
+<li>In the Add Network Adapter dialog box, choose MS Loopback
+Adapter from the Network Adapter Card list.  Click Continue.
+<li>In MS Loopback Adapter Card Setup dialog box, click 
+Continue to accept the default value.
+<li>In the Windows NT Setup dialog box, make sure that the
+TCP/IP Transport item is selected and click Continue.
+<li>In the Windows NT TCP/IP Installation Options dialog box,
+make sure that the Connectivity Utilities item is selected and
+click Continue.
+<li>In the Network Settings dialog box, click OK.
+<li>In the TCP/IP Configuration dialog box:
+<ol>
+<li>In the IP Address field, type: <NOBR><kbd>1.1.1.1</kbd></NOBR>
+<li>In the Subnet Mask field, type: <NOBR><kbd>255.0.0.0</kbd></NOBR>
+<li>Click OK.
+</ol>
+<li>In the Domain/Workgroup Settings dialog box, click OK.
+<li>Click Restart to restart the system and make the changes
+effective.
+</ol>
+
+
+<p>
+<hr>
+<p>
+<IMG SRC="../../images/hg_see.gif" HEIGHT=13 WIDTH=18><strong>See also:</strong>
+<dl>
+<dd><A HREF="../start/starttoc.html">Java WorkShop Tutorial</A>
+<dd><A HREF="../debug/DebugTOC.html">Debugging Projects</A>
+<dd><A HREF="../build/build.html">Building Projects</A>
+<dd><A HREF="../manager/ManagerTOC.html">Managing Projects</A>
+</dl>
+<p>
+
+</BODY>
+</HTML>

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Esercizio 1: Modifica degli attributi di esecuzione
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Esercizio 1: Modifica degli attributi di esecuzione</h1>
+
+Il tag dell'&lt;applet&gt; generato nell'Esercitazione 1 consente di
+specificare i requisiti minimi per inserire l'applet in una pagina
+web. In questo esercizio verranno aggiunti i parametri che
+consentono di personalizzare il modo in cui l'applet viene
+visualizzato.<p>
+In questo esercizio verr&agrave; utilizzato il progetto Blink. Se il progetto Blink non &egrave; stato ancora creato, crearlo
+seguendo le istruzioni riportate in
+<a href="create.html">Creazione del progetto Blink</a>.
+
+<ol>
+<li>Individuare il nome del progetto corrente nella finestra del
+gestore progetti di Java Development Environment.
+<br>Se il progetto corrente non &egrave; Blink, fare doppio clic sul nome
+del progetto Blink.
+<li>Nel gestore progetti scegliere <nobr>Progetto -&gt; Modifica.</nobr>
+<br>Nella finestra Modifica progetto sono visualizzate:
+Generale, Compila, Debug/cerca ed Esegui.
+<li>Fare clic sulla scheda Esegui.
+<br>Gli attributi riportati in questa scheda vengono utilizzati per
+generare il tag &lt;applet&gt; nel file <kbd>Blink.tmp.html</kbd>.
+<li>Individuare il campo Parametri (posto nella parte inferiore
+della finestra).
+<br>Attualmente, non &egrave; stato definito alcun parametro per l'applet. 
+Un parametro &egrave; un attributo non standard che definisce il modo in cui
+l'applet viene visualizzato. Un parametro presenta un nome e
+un valore. Nell'esercizio verr&agrave; aggiunto un parametro per modificare le
+parole nel testo lampeggiante.
+<li>Digitare <kbd>lbl</kbd> (abbreviazione di "label"), nella casella
+di testo Nome a destra del campo Parametri.
+<li>Digitare il seguente testo nella casella Valore:
+<br><kbd>Java Development Environment &egrave; davvero incredibile :-)</kbd>
+<li>Fare clic sul pulsante Aggiungi.
+<br>La riga <kbd>lbl=Java Development Environment &egrave; davvero incredibile :-)</kbd>
+viene visualizzata nel campo Parametri.
+<li>Fare clic su OK per salvare le modifiche apportate.
+<li>Fare clic sul pulsante Esegui <img src="../../../../images/24/tb-run_u.gif" align=BOTTOM> sulla
+barra degli strumenti principale di Java Development Environment.
+<br>La riga
+<pre>
+&lt;param name="lbl" value="Java Development Environment &egrave; davvero incredibile :-)"&gt;
+</pre>
+viene inclusa nel tag dell'&lt;applet&gt; nel file
+<kbd>Blink.tmp.html</kbd>. Il file viene caricato nel browser e le
+parole "Java Development Environment &egrave; davvero incredibile :-)" lampeggeranno
+in diversi colori.
+<p>
+Per interrompere l'esecuzione del progetto, scegliere <nobr>Applet -&gt; Esci</nobr> nella finestra
+del visualizzatore applet.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Lezione successiva</strong>
+<dl>
+<dd><a href="editbuild.html">Esercizio 2: Modifica degli attributi di compilazione</a>
+</dl>
+<p>
+</body>
+</html>
+

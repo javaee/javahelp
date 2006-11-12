@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercise 5:  Importing the Beans
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Exercise 5:  Importing the Beans</h1>
+
+In this exercise you will create a new tab in the GUI builder palette and
+import the Clock, Marquee, and SoundPlayer beans to the palette.
+
+<h2>Create a New Palette Tab</h2>
+
+In this part of the exercise you are going to create a new tab called
+Beans.
+
+<ol>
+<li>Choose GUI -> Import Components to Palette.
+<li>Click New Folder under the Palette Components list.
+<li>Type <kbd>Beans</kbd> in the Folder text box and click OK in the Name
+new palette folder dialog box.
+<li>Look in the list of palette components to verify that the Bean
+folder was created.
+</ol>
+
+Keep the Import Components to Palette dialog box open and proceed to the
+next part of the exercise, Import the Beans.
+
+<h2>Import the Beans</h2>
+
+When you import the beans in <tt>Clock.jar</tt>, you will place them
+in the new Beans tab of the palette:
+
+<ol>
+<li>Click the Browse button on the JAR tab.
+<li>Load the <tt>Clock.jar</tt> file in your <tt>Clock</tt> project directory.
+<li>In the JAR page, select <tt>Clock.class</tt>, <tt>Marquee.class</tt>, and
+<tt>SoundPlayer.class</tt>.
+<li>Click on the Beans folder name in the Palette Components list.
+<p>
+The Add button is activated when both the class and the folder names
+are selected. 
+<li>Click the Add button that is between the JAR tab and the
+Palette Components list.
+<li>Check the components list to see if the beans have been added
+to the Beans folder.
+<li>Click OK to add the beans to the palette.
+<li>In the GUI builder palette, click the Beans tab.
+<p>
+You should see custom icons for Clock and Marquee and a default
+icon for SoundPlayer.
+<pre>
+<IMG SRC="beanstab.gif" WIDTH=352 HEIGHT=104>
+</pre>
+</ol>
+
+You have successfully imported the beans into the palette. When the
+beans were imported, shadow classes were automatically generated for
+each bean class and added to the JAR file. This modified version of
+the JAR file was then stored in the component library (the <tt>Imported
+Components</tt> directory). 
+
+<p>
+<IMG SRC="../../../images/hg_see.gif"><strong>Next lesson:</strong>
+<dl>
+<dd><a href="BeanLayout.html">Exercise 6:  Designing DeskClock</a>
+</dl>
+<p>
+  </body>
+</html>

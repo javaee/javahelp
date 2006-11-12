@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE map
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/map_1_0.dtd">
+
+<map version="1.0">
+	<mapID target="toplevelfolder" url="images/toplevel.gif" />
+	<mapID target="top" url="idehelp/jde.html" />
+	<mapID target="jde.intro" url="idehelp/jde.html" />
+	<mapID target="tut.starttoc" url="idehelp/start/starttoc.html" />
+	<mapID target="tut.overview" url="idehelp/start/overview.html" />
+	<mapID target="tut.quickstart" url="idehelp/start/quickstart.html" />
+	<mapID target="tut.edit" url="idehelp/start/edit.html" />
+	<mapID target="tut.errors" url="idehelp/start/errors.html" />
+	<mapID target="tut.browse" url="idehelp/start/browse.html" />
+	<mapID target="tut.simpledebug" url="idehelp/start/simpledebug.html" />
+	<mapID target="tut.customize" url="idehelp/start/customize.html" />
+	<mapID target="tut.visual" url="idehelp/start/visual/visual.html" />
+	<mapID target="tut.beansoverview" url="idehelp/start/clock/BeansOverview.html" />
+	<mapID target="menus.file" url="idehelp/menus/file.html" />
+	<mapID target="menus.edit" url="idehelp/menus/edit.html" />
+	<mapID target="menus.build" url="idehelp/menus/build.html" />
+	<mapID target="menus.debug" url="idehelp/menus/debug.html" />
+	<mapID target="menus.browse" url="idehelp/menus/browse.html" />
+	<mapID target="menus.project" url="idehelp/menus/project.html" />
+	<mapID target="menus.gui" url="idehelp/menus/gui.html" />
+	<mapID target="menus.preferences" url="idehelp/menus/preferences.html" />
+	<mapID target="menus.windows" url="idehelp/menus/windows.html" />
+	<mapID target="menus.help" url="idehelp/menus/help.html" />
+</map>

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='ISO-8859-1'  ?>
+
+<!--
+ @(#)VertebratesTOC.xml	1.8 06/10/30
+ 
+ Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+ 
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 
+ - Redistribution of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ 
+ - Redistribution in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+ 
+ Neither the name of Sun Microsystems, Inc. or the names of
+ contributors may be used to endorse or promote products derived
+ from this software without specific prior written permission.
+ 
+ This software is provided "AS IS," without a warranty of any
+ kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND
+ WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY
+ EXCLUDED. SUN MICROSYSTEMS, INC. ("SUN") AND ITS LICENSORS SHALL
+ NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF
+ USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+ DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR
+ ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,
+ CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND
+ REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR
+ INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGES.
+ 
+ You acknowledge that this software is not designed, licensed or
+ intended for use in the design, construction, operation or
+ maintenance of any nuclear facility. 
+-->
+
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+<toc version="1.0">
+  <tocitem text="Animal Categories">
+    <tocitem text="Vertebrates" target="vertebrates" >
+	<tocitem text="Fish" target="fish" />
+	<tocitem text="Amphibians" target="amphibians" />
+	<tocitem text="Reptiles" target="reptiles" />
+	<tocitem text="Birds" target="birds" />
+	<tocitem text="Mammals" target="mammals" >
+		<tocitem text="Marsupials" target="marsupials" />
+		<tocitem text="Primates" target="primates" />
+		<tocitem text="Rodents" target="rodents" />
+		<tocitem text="Cetaceans" target="cetaceans" />
+		<tocitem text="Animals Similar to Seals" target="seals" />
+	</tocitem>
+    </tocitem>
+    <tocitem text="Pictures" mergetype="javax.help.SortMerge" expand="true">
+	<tocitem text="Dolphin" target="dolphin.picture"/>
+	<tocitem text="Frog" target="frog.picture"/>
+	<tocitem text="Bears">
+		<tocitem text="Grizzly" target="grizzly.picture"/>
+		<tocitem text="Koala" target="koala.picture"/>
+		<tocitem text="Black Bear" target="blackbear.picture"/>
+	</tocitem>
+	<tocitem text="Leopard" target="leopard.picture"/>
+	<tocitem text="Crocodile" target="crocodile.picture"/>
+	<tocitem text="Giraffe" target="giraffe.picture"/>
+	<tocitem text="Elephant" target="elephant.picture"/>
+	<tocitem text="Kangaroo" target="kangaroo.picture"/>
+	<tocitem text="Fish" target="fish.picture"/>
+	<tocitem text="Bird" target="bird.picture"/>
+	<tocitem text="Wolves">
+		<tocitem text="Timber Wolf" target="timberwolf.picture"/>
+		<tocitem text="Arctic Wolf" target="arcticwolf.picture"/>
+	</tocitem>
+	<tocitem text="Lizard" target="lizard.picture"/>
+	<tocitem text="Snake" target="snake.picture"/>
+	<tocitem text="Cougar" target="cougar.picture"/>
+	<tocitem text="Bat" target="bat.picture"/>
+	<tocitem text="Ape" target="chimp.picture"/>
+	<tocitem text="Orca" target="orca.picture"/>
+	<tocitem text="Seal" target="seal.picture"/>
+	<tocitem text="Shark" target="shark.picture"/>
+    </tocitem>		
+  </tocitem>
+</toc>
+

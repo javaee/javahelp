@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    901 San Antonio Road
+ *    Palo Alto, California  94303
+ *
+-->
+
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_JP">
+<TITLE>
+重要な概念: プロジェクト属性
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>重要な概念: プロジェクト属性</h1>
+
+プロジェクトの名前、種類、HTML ページへの表示方法など、各プロジェクトの特性を定義する情報のことを「属性」と呼びます。実習で作成した Blink プロジェクトには、以下の事柄を特定する属性が指定されています。これらは、必ず指定する必要がある属性です。
+
+<ul>
+<li>プロジェクトの種類
+<li>プロジェクトの <kbd>.java</kbd> ソースファイルを保存するディレクトリ
+<li>アプレットの <kbd>init()</kbd> メソッドを含むクラスファイル
+</ul>
+
+<p>
+これらの属性に対する値は、プロジェクトを作成した時に指定しました。
+
+<p>
+Blink には、その他省略可能な属性が含まれています。省略可能な属性によって、「プロジェクトマネージャ」ウィンドウでのプロジェクトの表示形式や、プロジェクトの構築に使用されるコンパイラオプションについて指定することができます。プロジェクトを作成した時に、これらの属性に対してはデフォルト値が設定されます。
+<p>
+次の自習では、&lt;applet&gt; タグを構成する属性を編集します。チュートリアル 1 で Blink プロジェクトを実行した時には、アプレットを Web ページ上に表示するために最低限必要な属性によって、&lt;applet&gt; タグが作成されたことを思い出してください。タグは、<kbd>Blink</kbd> ディレクトリの <kbd>Blink.tmp.html</kbd> というファイルに作成されました。現在このファイルは、以下のように記述されています。
+
+
+
+
+
+
+
+
+
+<p>
+<code>&lt;applet</code><br>
+<code>　name="Blink"</code><br>
+<code>　code="Blink.class"</code><br>
+<code>　codebase="file:/</code><i>自分のホームディレクトリ</i><code>/jws/Blink"</code><br>
+<code>　width="500"</code><br>
+<code>　height="600"</code><br>
+<code>　align="Top"</code><br>
+<code>　alt="ブラウザが Java に対応している場合は, ここにアプレットを表示することができます."</code><br>
+<code>&gt;</code><br>
+<code>&lt;param name="lbl" value="Java WorkShop ってステキ！"&gt;</code><br>
+<code>&lt;hr&gt;ブラウザが applet タグを認識すれば,</code><br>
+<code>　ここにアプレットが表示されます&lt;hr&gt;</code><br>
+<code>&lt;/applet&gt;</code><br>
+
+
+
+<p>
+<kbd>Blink.class</kbd> は、Blink アプレット用のコンパイル後の Java コードが含まれているファイルです。<code>codebase</code> には、<kbd>Blink.class</kbd> ファイルがあるディレクトリを設定します。width および height には、アプレットをブラウザに表示するために必要な領域をピクセル単位で設定します。
+<p>
+<kbd>.html</kbd> ファイルは、ユーザーが直接編集しないでください。プロジェクトマネージャを使用して設定した内容にもとづいて、<nobr>Java WorkShop</nobr> によって更新されます。
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>次のレッスン:</strong>
+<dl>
+<dd><a href="editlesson.html">実習 1: 実行属性を編集する</a>
+</dl>
+<p>
+</body>
+</html>

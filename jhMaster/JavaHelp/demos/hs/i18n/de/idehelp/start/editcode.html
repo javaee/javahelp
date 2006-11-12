@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<META http-equiv="Content-Language" content="de">
+<TITLE>
+&Uuml;bung 1:  Bearbeiten von
+Quellcode
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>&Uuml;bung 1:  Bearbeiten von
+Quellcode</h1>
+
+Um Ihnen ein Gef&uuml;hl f&uuml;r das Arbeiten mit dem Quelleditor zu
+vermitteln, werden Sie in die Datei <kbd>Blink.java</kbd> Code
+eingeben, so da&szlig; die angezeigten W&ouml;rter auf und ab
+springen.
+<p>
+Wenn Sie das Blink-Projekt noch nicht erstellt haben, so holen Sie
+dies jetzt nach. Verfahren Sie dabei nach den Anweisungen in
+<a href="create.html">Erstellen des Blink-Projekts</a>.
+
+<ol>
+<li>&Uuml;berpr&uuml;fen Sie den Namen des aktuellen Projekts im
+Fenster des Java Development Environment Projekt-Managers.
+<br>Wenn das aktuelle Projekt nicht "Blink" ist, doppelklicken Sie
+auf den Projektnamen "Blink".
+
+<li>Geben Sie die folgende Zeile in den Quellcode ein.
+<br>Die in diesem Code-Beispiel enthaltenen Fehler sind
+beabsichtigt, da in der n&auml;chsten &Uuml;bung gezeigt werden soll,
+wie Fehler behoben werden k&ouml;nnen.
+<p>
+Sie k&ouml;nnen zu einer bestimmten Zeilennummer springen, indem Sie <nobr>"Bearbeiten"
+-&gt; "Gehe zu Zeile" ausw&auml;hlen.</nobr> Die Nummer der Zeile, in
+der sich der Zeiger gerade befindet, wird rechts in der
+Fu&szlig;zeile angezeigt.
+<dl>
+<dt>Geben Sie in Zeile 17 hinter
+<dd><pre>int speed;</pre>
+<dt>folgendes ein:
+<dd>
+<pre>boolean offset;</pre>
+<p>
+<dt>Geben Sie in Zeile 25 hinter
+<dd><pre>lbl = (att == null) ? "Blink" : att;</pre>
+<dt>folgendes ein:
+<dd>
+<pre>offset = false;</pre> 
+<p>
+<dt>Geben Sie in Zeile 53/54 hinter
+<dd><pre>g.setColor(Color.lightGray);
+}</pre>
+<dt>folgendes ein:
+<dd>
+<pre>
+if offset
+   y = y * 2;
+</pre>
+<p>
+<dt>Geben Sie in Zeile 57 hinter
+<dd><pre>g.drawString(word, x, y);</pre>
+<dt>folgendes ein:
+<dd>
+<pre>
+if (offset) {
+   offset = false;
+   y = y / 2
+ } else {
+    offset = true;
+}
+</pre>
+</dl>
+<p>
+<li>Klicken Sie auf die Schaltfl&auml;che "Speichern" <img src="../../../../images/24/file-save_u.gif" align=BOTTOM>auf
+der Symbolleiste "Bearbeiten/Debug".
+<br>Der Pfadname der gespeicherten Datei wird in der Fu&szlig;zeile
+angezeigt.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;chste &Uuml;bung:</strong>
+<dl>
+<dd><a href="fixbuild.html">&Uuml;bung 2:  Korrigieren von Fehlern im
+Aufbau eines Programms</a>
+</dl>
+<p>
+</body>
+</html>

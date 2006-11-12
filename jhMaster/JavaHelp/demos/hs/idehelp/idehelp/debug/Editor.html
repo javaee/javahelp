@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Debugging in the Source Editor
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Debugging in the Source Editor
+</h1>When you open a project, the source editor automatically loads your program sources into its window. The Edit/Debug toolbar, above the source editor window, provides nine debugging buttons. These buttons are activated at different times depending on when you can perform the debugging function. For example, after you click the Restart button, all of the debugging buttons are active. 
+<p>
+<dl>
+<dt><img src="../images/db-restart_u.gif" width="24" height="24" align="MIDDLE"><img src="../../images/spacer2_t.gif" width="8" height="8"><b>Restart</b>
+<dd>Starts or restarts debugging of the project. All breakpoints and exceptions are retained after restarting the debugger.
+<p>
+<dt><img src="../images/db-stop-at_u.gif" width="24" height="24" align=MIDDLE><img src="../../images/spacer2_t.gif" width="8" height="8" align=MIDDLE><b>Breakpoint</b>
+<dd>Sets and removes breakpoints in the selected line of a class. If you click a line that does not have a breakpoint and click this button, JDE sets a breakpoint on the line. If you click a line that has a breakpoint and click this button, the breakpoint is removed.
+<p>
+To set and remove breakpoints, your source file must meet one of the following conditions:
+<ul>
+<li>The source file was built within JDE
+<li>The file is a JDK class or source file
+<li>The class is already loaded into memory
+</ul>
+<p>
+
+<dt><img src="../images/db-eval_u.gif" width="24" height="24" align="middle"><img src="../../images/spacer2_t.gif" width="8" height="8"><b>Evaluate</b>
+<dd>Evaluates an expression that you've selected in the source editor window.
+<p>
+<dt><img src="../images/db-resume_u.gif" width="24" height="24" align="MIDDLE"><img src="../../images/spacer2_t.gif" width="8" height="8"><b>Go</b>
+<dd>Resumes execution of all threads.
+<p>
+<dt><img src="../images/db-run-to-here_u.gif" width="24" height="24" align="MIDDLE"><img src="../../images/spacer2_t.gif" width="8" height="8"><b>To here</b>
+<dd>Executes the program until it reaches the line that contains the insertion point.
+<p>
+<dt><img src="../images/db-step-over_u.gif" width="24" height="24" align="MIDDLE"><img src="../../images/spacer2_t.gif" width="8" height="8"><b>Over</b>
+<dd>Executes one source line; if the source line is a method call, JDE executes the entire method without stepping through the individual method instructions.
+<p>
+<dt><img src="../images/db-step-into_u.gif" width="24" height="24" align="MIDDLE"><img src="../../images/spacer2_t.gif" width="8" height="8"><b>Into</b>
+<dd>Executes one source line; if the source line is a method call, JDE stops just before executing the first statement of the method.
+<p>
+<dt><img src="../images/db-down-frame_u.gif" width="24" height="24" align="MIDDLE"><img src="../../images/spacer2_t.gif" width="8" height="8"><b>Callee</b>
+<dd>Moves up the call stack one frame.
+<p>
+<dt><img src="../images/db-up-frame_u.gif" width="24" height="24" align="MIDDLE"><img src="../../images/spacer2_t.gif" width="8" height="8"><b>Caller</b>
+<dd>Moves down the call stack one frame.
+</dl>
+<p>
+The source editor uses these color highlights to relate information about a line of code:
+<dl>
+<dt><b>Green</b>
+<dd>Indicates the line that was executing when the program stopped
+<p>
+<dt><b>Red</b>
+<dd>Indicates a breakpoint is set in the line
+<p>
+<dt><b>Yellow</b>
+<dd>Indicates the line contains an error
+<p>
+<dt><b>Purple</b>
+<dd>Indicates one of the following:
+<ul>
+<li>A method was stepped into for which the source code was not available
+<li>The method call of the current stack frame is highlighted, if you selected a stack frame in the interior of the current thread's stack
+<li>Code viewed from the class viewer
+</ul>
+<p>
+<dt><b>Blue</b>
+<dd>Indicates a string search match
+</dl>
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><a href="Overview.html">Debugging with JDE</a>
+<dd><a href="Threads.html">Threads/Stack Overview</a>
+<dd><a href="BreakpointOverview.html">Introduction to Breakpoints</a>
+</dl>
+</BODY>
+</HTML>

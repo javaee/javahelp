@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>jws - The Java WorkShop Command</title>
+</head>
+<BODY BGCOLOR="#FFFFFF">
+
+
+<h1>jws - The Java WorkShop Command</h1>
+<blockquote>
+<code>jws</code> starts Java WorkShop.
+</blockquote>
+
+<h3>Synopsis</h3>
+<blockquote>
+<code>jws</code> <code>[</code> <a
+href="#Options"><em>options</em></a> <code>]</code>
+
+</blockquote>
+
+<h3>Description</h3>
+<blockquote>
+The <code>jws</code> command starts Java WorkShop.
+
+</blockquote>
+
+<a name=Options></a>
+<h3>Options</h3>
+<blockquote>
+Many of the Java WorkShop options emulate standard Java
+options.  Relevant Java options are provided in a separate
+table for completeness.
+</blockquote>
+<p>
+<table border=2 width=95% cellpadding=5>
+<caption>Java WorkShop Options</caption>
+<tr>
+<td width=30%>
+<code>-classpath</code> <em>path</em>
+</td>
+<td width=70%>
+Specifies the path that the <code>java</code> virtual
+machine running Java WorkShop uses to lookup classes.
+<em>path</em> is a list of directories separated by
+colons.  Java WorkShop specific paths are appended to this
+path by Java WorkShop.  Java WorkShop always ignores the CLASSPATH
+environment variable.  See <A HREF="#java">Java Options</A>
+below.
+</td>
+</tr>
+
+<tr>
+<td>
+<code>-display</code>
+<br>
+(Solaris Only) 
+</td>
+<td>
+Specifies the X Window system on which to display
+Java WorkShop.
+</td>
+</tr>
+
+<tr>
+<td>
+<code>-J</code>-<em>javaoption</em>
+</td >
+<td>
+Passes the string -<em>javaoption</em>  through  as  a
+single  argument  to  the Java virtual machine.  The
+argument  should  not  contain spaces.   Multiple argument
+words  must all begin with the prefix <code>-J</code>,
+which is  stripped.  Note that there is no space between
+"<code>-J</code>" and "<em>-javaoption</em>".
+</td>
+</tr>
+
+<tr>
+<td>
+<code>-ms</code><em>x</em>
+</td>
+<td>
+Equivalent to the Java <code>-ms</code> option.  Sets the
+startup size of the memory allocation pool (the garbage
+collected heap) to <em>x</em>.  This effects the Java
+virtual machine running Java WorkShop.  The default value
+is 5 megabytes. See <A HREF="#java">Java Options</A>
+below.
+</td>
+</tr>
+
+<tr>
+<td>
+<code>-nojit</code>
+</td>
+<td>
+Runs Java WorkShop with the Just In Time Compiler (JIT)
+turned off.
+</td>
+</tr>
+
+<tr>
+<td>
+<code>-remotedebug</code>
+</td>
+<td>
+Starts a Java WorkShop remote debugger.  See <A
+HREF="../debug/RemoteDebug.html">Remotely Debugging a
+Program</A> for details about the Java WorkShop remote
+debugging feature.
+</td>
+</tr>
+
+<tr>
+<td>
+<code>-ss</code><em>x</em>
+</td>
+<td>
+Equivalent to the Java <code>-ss</code> option.  Sets the C
+code maximum stack size for a thread to <em>x</em>.  This
+effects the Java virtual machine running Java WorkShop.
+The default is 384 kilobytes. See <A HREF="#java">Java Options</A>
+below.
+</td>
+</tr>
+
+</table>
+
+<p>
+<table border=2 width=95% cellpadding=5>
+<A NAME="java"></A>
+<caption>Java Options</caption>
+<tr>
+<td width="30%">
+<code>-classpath</code> <em>path</em>
+</td>
+<td width="70%">
+Specifies the path that java uses to look up
+classes.    This  overrides  the  default  or
+CLASSPATH environment variable, if it is set.
+Directories  are  separated  by colons. Thus,
+the general format for path is:
+<br>
+.:<em>your_path</em>
+<br>
+For example:
+<br>
+<code>
+<font size="-1">
+.:/home/avh/classes:/usr/java/classes
+</font>
+</code>
+</td>
+</tr>
+
+<tr>
+<td>
+<code>-ms</code><em>x</em>
+</td>
+<td>
+Sets the startup size of the memory  allocation  pool (the
+garbage collected heap) to <em>x</em>.  The default is 16
+megabytes  of  memory.   <em>x</em> must be > 1000
+bytes.  By default,  <em>x</em>  is  measured  in  bytes.
+To specify  <em>x</em>  in either kilobytes or megabytes,
+append "k" for kilobytes or  "m"  for  megabytes.
+</td>
+</tr>
+
+<tr>
+<td>
+<code>-ss</code><em>x</em>
+</td>
+<td>
+Each Java thread has  two  stacks:  one  for Java  code and
+one for C code. The <code>-ss</code> option sets the
+maximum stack size that can be  used by C code in a thread
+to <em>x</em>. Every thread that is spawned during the
+execution of  the  program  passed  to  java  has
+<em>x</em> as its C stack size. The default units for
+<em>x</em> are bytes and x must be > 1000 bytes.  To modify
+the meaning of <em>x</em>, append either the letter  "k"
+for kilobytes or the letter "m" for megabytes. The default
+stack size is  128 kilobytes (-ss128k).
+</td>
+</tr>
+
+</table>
+<p>
+</body>
+</html>

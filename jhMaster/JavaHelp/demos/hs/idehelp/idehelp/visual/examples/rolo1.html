@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997 Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Making Your Own Card File
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<H1>Making Your Own Card File</H1>
+
+In this example, a simple standalone card file application is
+designed. Ultimately, the card file will contain:
+<ul>
+<li>Three text boxes with labels:  Name, Phone, and Email
+<li>An Add button to add the information in the text boxes to the
+scrolling list
+<li>A Find button to display the name specified in the Name text field
+<li>A labeled scrolling list text box to display names and phone numbers
+<li>A Delete button to remove the selected name from the card file
+</ul>
+
+When all the components have been added to the layout, your card file
+should look like this:
+<a name=cardfile_gif></a>
+<pre>
+<img src="../../../images/visual/examples/cardfile.gif" ALIGN=TOP WIDTH=289 HEIGHT=360>
+</pre>
+
+<h2>Select the Right Container</h2>
+<p>
+Since the application being built is meant to run outside of a
+browser, the main container should be a frame instead of a panel.
+<p>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To change container
+type from Panel (the default) to Frame:</strong>
+
+<ol>
+<li>Choose GUI -> Set Window Type.
+<li>In the Main Container dialog box, select the untitled panel and
+click Frame. 
+<li>Click OK to establish the change.
+</ol>
+
+<h2>Modify the Gridbag</h2>
+
+The gridbag layout panel should have a 6 (rows) by 4 (columns) grid.
+<pre>
+<img src="../../../images/visual/examples/grid_panel1.gif" ALIGN=TOP WIDTH=154 HEIGHT=181>
+</pre>
+
+To add a row, click on a corner square and press the Up Arrow or
+Down Arrow key.
+<p>
+To delete a column, click on a corner square and press the
+Delete key.
+<p>
+For detailed information on changing the grid, see <a
+href="../layout.html#create_layoutgrid">Create a Layout Grid</a>. 
+
+
+<h2>Add the Components</h2>
+
+You will need to add the following components:
+
+<ul>
+<li>Text Label (3)</li>
+<li>Single-line TextField (3)</li>
+<li>Text Button (3)</li>
+<li>List (1)</li>
+</ul>
+<p>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To add a component:</strong>
+<ol>
+<li>Click on a component in the GUI builder palette. 
+<li>Click on a cell in the gridbag.
+</ol>
+<p>
+For details on adding, modifying, and deleting components from the
+gridbag, see <a href="../layout.html#addcomps">Add Components to the
+Layout Grid</a>.
+<p>
+Once all the components have been added, save the file.
+
+<h3>Label Text Fields and Buttons</h3>
+
+The next step in creating the card file is to label the text fields and
+buttons. 
+<p>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To add labels to the buttons:</strong>
+<ol>
+<li>Select a button component.
+<li>Open the attribute editor by clicking on its button in the main toolbar.
+<li>Apply the label for the button by typing its name in the text box.
+</ol>
+
+<p>
+Although Gui builder provides a unique name for each component
+added to the layout, the names are generic and indistinguishable (for
+example, button1, button2, ...). You should assign unique
+IDs to the components to ensure that behavior is added to
+the correct component. For example, the following component IDs were
+made for the card file:
+
+<dl>
+<dd>Replaced the <tt>textfield1</tt> ID with <tt>nameTextfield</tt>.
+<dd>Replaced the <tt>textfield2</tt> ID with <tt>phoneTextfield</tt>.
+<dd>Replaced the <tt>textfield3</tt> ID with <tt>emailTextfield</tt>.
+<dd>Replaced the <tt>button1</tt> ID with <tt>addButton</tt>.
+<dd>Replaced the <tt>button2</tt> ID with <tt>findButton</tt>.
+<dd>Replaced the <tt>list1</tt> ID with <tt>namesList</tt>.
+<dd>Replaced the <tt>button3</tt> ID with <tt>deleteButton</tt>.
+</dl>
+<p>
+You will see these component IDs in the Adding Behavior to the Card
+File section.
+
+<h2>Preview the Card File</h2>
+
+Preview the card file GUI by choosing Preview from the Mode
+list. The Mode list is located to the right of the palette.
+
+<h2>Generate Java Code</h2>
+
+Once the card file layout is complete, you need to generate the Java
+source file for the layout:
+
+<ol>
+<li>Select the frame by clicking in the area around the GUI layout in
+the layout window.
+<li>Choose GUI -> Save Generate GUI File.
+<li>Check your <i>project</i> directory for a
+<tt>.gui</tt> file. 
+</ol>
+
+Now you are ready to add <a href=rolo2.html>behavior</a> to the components.
+
+<p>
+<IMG SRC="../../../images/hg_see.gif"><strong>See also:</strong>
+<dl>
+<dd><A HREF="rolo2.html">Adding Behavior to the Card File</A>
+<dd><A HREF="rolo3.html">Adding a Third Party Component</A>
+<dd><A HREF="../layout.html">Laying Out the Interface</A>
+<dd><A HREF="../modify.html">Modifying Components in the Grid</A>
+<dd><A HREF="../position_comps.html">Positioning Components in
+Cells</A>
+<dd><A HREF="../wdw-resize.html">Resizing the Window</A>
+</dl>
+</body>
+</HTML>

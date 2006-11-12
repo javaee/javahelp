@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Concepts importants : Attributs de projet
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Concepts importants : Attributs de projet</h1>
+
+Les attributs d&eacute;finissent les caract&eacute;ristiques propres &agrave; un projet telles que son nom, son type,
+et son aspect sur une page HTML. Le projet Blink que vous avez cr&eacute;&eacute; n&eacute;cessitait des attributs qui
+d&eacute;terminaient :
+<ul>
+<li>Le type du projet
+<li>Le r&eacute;pertoire contenant les fichiers source <kbd>.java</kbd> du projet
+<li>Le fichier de classe contenant la m&eacute;thode <kbd>init
+()</kbd> de l'appliquette.
+</ul>
+
+<p>
+Vous avez fourni la valeur de ces attributs au moment de la cr&eacute;ation du projet.
+<p>
+Blink contient &eacute;galement de nombreux attributs facultatifs.
+Ces derniers d&eacute;terminent par exemple l'aspect du projet dans le gestionnaire de projet ainsi que
+les options de compilateur employ&eacute;es pour g&eacute;n&eacute;rer celui-ci.
+Java Development Environment a fourni la valeur par d&eacute;faut de ces attributs lors de la cr&eacute;ation du projet.
+<p>
+Dans la le&ccedil;on suivante, vous &eacute;diterez les attributs constituant la balise &lt;applet&gt;. N'oubliez
+pas que lorsque vous avez ex&eacute;cut&eacute; le projet Blink dans la le&ccedil;on pr&eacute;c&eacute;dente, Java Development Environment avait
+cr&eacute;&eacute; la balise &lt;applet&gt; en utilisant les conditions minimales pour placer l'appliquette dans
+une page Web.
+Java Development Environment a cr&eacute;&eacute; cette balise dans le fichier <kbd>Blink.tmp.html</kbd> de votre r&eacute;pertoire
+<kbd>Blink</kbd>. Le fichier a maintenant l'aspect suivant :
+<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+   codebase="/<i>votre_r&eacute;p_d'origine</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt="Si vous aviez un explorateur compatible Java, vous verriez une appliquette ici."
+&gt;
+&lt;hr&gt;Si votre explorateur a reconnu la balise d'appliquette,
+   vous voyez une appliquette ici.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+<kbd>Blink.class</kbd> est le fichier contenant le code Java compil&eacute; de l'appliquette. <code>Codebase</code>
+est le r&eacute;pertoire contenant le fichier <kbd>Blink.class</kbd>. La largeur et la hauteur
+d&eacute;finissent la zone, en pixels, dont l'explorateur a besoin pour afficher l'appliquette.
+<p>
+Vous ne pouvez pas &eacute;diter le fichier <kbd>.html</kbd> directement. Java Development Environment le mettra &agrave; jour
+en fonction des actions que vous effectuez dans le gestionnaire de projet.
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Le&ccedil;on suivante :</strong>
+<dl>
+<dd><a href="editlesson.html">Exercice 1 :  Edition des attributs d'ex&eacute;cution</a>
+</dl>
+<p>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Ejercicio 3: Examen de subprocesos
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Ejercicio 3: Examen de subprocesos</h1>
+
+En este ejercicio, visualizar&aacute; los grupos de subprocesos, subprocesos
+y marcos de pila que forman el proyecto Blink. Tambi&eacute;n aprender&aacute; a
+realizar el seguimiento de los cambios de los valores de las
+variables a medida que progresa el programa.
+<ol>
+<li>Seleccione <nobr>"Depurar -&gt; Subprocesos/Pila".</nobr>
+<br>Aparece la ventana "Subprocesos/Pila" de Java Development Environment.
+<p>
+El proyecto Blink incluye tres grupos de subprocesos, cada uno de los
+cuales est&aacute; acompa&ntilde;ado por la representaci&oacute;n <img src="../../images/spacer2_t.gif"><img
+src="../../../../images/db_01_u.gif" align=BOTTOM><img
+src="../../images/spacer2_t.gif">:
+<ul>
+<li><kbd>main</kbd>--incluye los subprocesos que se ejecutan en Java
+WorkShop.
+<li><kbd>sun.applet.AppletViewer.main</kbd>--incluye los
+subprocesos que se ejecutan en el visualizador de applets.
+<li><code>file:/<b>directorio-instalaci&oacute;n</b>/jws/Blink/-threadGroup</code>--contiene
+subprocesos directamente relacionados con el proyecto Blink.
+</ul>
+
+El grupo de subprocesos <kbd>sun.applet.AppletViewer.main</kbd> contiene
+tres subprocesos; y el grupo de subprocesos de los archivos de
+<kbd>Blink</kbd> contiene dos.
+<li>Mire en <kbd>"AWT-EventQueue-0"</kbd>, el primer subproceso del
+grupo de subprocesos <kbd>sun.applet.AppletViewer.main.</kbd> 
+<p>Ver&aacute; lo siguiente:
+<ul>
+<li>El nombre del subproceso es <kbd>java.awt.EventDispatch</kbd>
+<li>El estado del subproceso es "punto de interrupci&oacute;n".
+<li>La prioridad para ejecutar el subproceso es la prioridad 5. El
+subproceso con la prioridad m&aacute;s alta se ejecuta primero.
+</ul>
+
+<p>
+La representaci&oacute;n que acompa&ntilde;a a un subproceso es una clave adicional del
+estado del subproceso. Las representaciones que pueden aparecer son las siguientes:
+<br>
+<img src="../../../../images/db_19_u.gif" align=BOTTOM><img
+src="../../images/spacer2_t.gif">El subproceso est&aacute; suspendido.
+<br>
+<img src="../../../../images/db_20_u.gif" align=BOTTOM><img
+src="../../images/spacer2_t.gif">El subproceso est&aacute; parado en un punto
+de interrupci&oacute;n.
+<br>
+<img src="../../../../images/db_13_u.gif"><img
+src="../../images/spacer2_t.gif">El estado del subproceso no se puede
+determinar.
+<br>
+<img src="../../../../images/db_14_u.gif"><img
+src="../../images/spacer2_t.gif">El subproceso es un zombie.
+<br>
+<img src="../../../../images/db_15_u.gif"><img
+src="../../images/spacer2_t.gif">El subproceso se est&aacute; ejecutando.
+<br>
+<img src="../../../../images/db_16_u.gif"><img
+src="../../images/spacer2_t.gif">El subproceso est&aacute; dormido.
+<br>
+<img src="../../../../images/db_18_u.gif"><img
+src="../../images/spacer2_t.gif">En subproceso est&aacute; esperando en una
+variable condicional.
+<li>Observe la pila de llamadas que forman la clase de subprocesos.
+<br>La pila de subprocesos incluye todos los m&eacute;todos que se han
+llamado pero no <nobr>devuelto.<img src="../../images/spacer2_t.gif"></nobr><kbd>Blink.paint</kbd>,
+que se estaba ejecutando cuando se detuvo el proceso, est&aacute; en la
+parte superior de la pila. El marco de pila est&aacute; resaltado, de modo
+que puede saber f&aacute;cilmente d&oacute;nde se detuvo el programa. Cada marco de
+pila est&aacute; acompa&ntilde;ado por la representaci&oacute;n <img
+src="../../../../images/db_02_u.gif" align=BOTTOM><img
+src="../../images/spacer2_t.gif"> correspondiente.
+<li>Abra el marco de pila <kbd>Blink.paint</kbd> pulsando en el
+signo + junto a la representaci&oacute;n <img
+src="../../../../images/db_02_u.gif" align=BOTTOM>.
+<br>Java Development Environment muestra las variables y sus valores actuales
+locales en <kbd>Blink.paint</kbd>. Mire la variable
+<kbd>word</kbd>. Observe el valor de la variable
+<code>word</code>.
+<li>Pulse en el bot&oacute;n "Ir" en la barra de herramientas de
+edici&oacute;n/depuraci&oacute;n.
+<br>El programa ejecuta el bucle y de detiene cuando llega al punto
+de interrupci&oacute;n por segunda vez. La pantalla de subprocesos/pila se
+actualiza, y el valor de la variable <kbd>word</kbd> cambia. El valor
+pasa a "Java Development Environment es estupendo :-)".
+<li>Abra el objeto <kbd>this</kbd> pulsando en el signo + junto aa la
+representaci&oacute;n <img src="../../../../images/db_24_u_data.gif" align=BOTTOM>.
+<br>Java Development Environment expande el objeto para mostrar todas las
+variables contenidas en el objeto. Puede repetir esta acci&oacute;n en los
+objetos anidados (por ejemplo, <kbd>peer</kbd>).
+<li>Pulse en el signo - a la izquierda del objeto <kbd>this.</kbd> 
+<br>Java Development Environment contrae el objeto.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Siguiente lecci&oacute;n:</strong>
+<dl>
+<dd><a href="step.html">Ejercicio 4:  Seguimiento de un m&eacute;todo</a>
+</dl>
+
+<p>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Filter Editor
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<H1>Filter Editor</H1>
+
+There are two different types of filters: <em>event filters</em> and
+<em>message filters</em>. An event filter triggers on AWT events, and
+a message filter triggers on messages from other groups. The target
+for these events and messages must match the component or group for
+which the operation is being defined.
+
+<h2>Event Filter</h2>
+
+There are many different event filters that can be defined for an
+action. Some examples are Mouse Press, Key Down, and Action
+Event. An event filter is used to select particular types of AWT
+events for which an action should be invoked (see the JDK
+documentation of the AWT Event class for more details).
+<p>
+There are four aspects to an event filter: 
+<ul>
+<li>Id
+<li>Key
+<li>Modifier
+<li>Click Count
+</ul>
+<p>
+The only required element is the Id. The Id determines
+the type of event for the filter. The Key, Modifiers, and Click Count
+fields are used to further narrow the scope of the filter for a given
+event Id.
+<p>
+For example, the set of events selected by the Key Down event Id can
+be further narrowed by specifying a Key filter of C. This can be
+narrowed even further by specifying the Modifier Control.  This filter
+will be triggered when the operation's component has the keyboard
+focus and the user presses Control+C.  
+<p> 
+Available modifiers depend on the event Id. For Key events, the
+modifiers are: 
+<ul>
+<li>Shift
+<li>Control
+<li>Meta
+<li>Alt
+</ul>  
+For mouse
+events, the modifiers are:
+<ul>
+<li>Left Mouse
+<li>Middle Mouse
+<li>Right Mouse
+</ul>
+<p> 
+The Click Count element is important only for mouse events.  To
+catch a double-click, the event Id is "Mouse Down" and the Click Count
+is 2.
+
+<h2>Message Filter</h2>
+
+With this version of GUI builder, messages are not automatically
+generated, you must write the code that generates a message. You can
+use the operations dialog box to specify incoming messages and the
+actions that they trigger when they are received.
+<p>
+A message filter has three parts: 
+<ul>
+<li>Name 
+<li>Type 
+<li>Target Name 
+</ul>
+<p>
+Each of these parts is a string that is matched against any messages
+that are received. The message Name and Target Name must be specified,
+but the Type can be left blank. The Type is an additional filter
+within the scope of the message name. Note that the target object is
+always searched for and must match the Target Name if a Target Name is
+supplied.
+<p>
+The component for which the operation is defined must be the
+originator of the message, or the filter will not be triggered. For
+example, you might have a custom subgroup that sends out Apply
+messages. To trigger off of the Apply message, you should select the
+subgroup and then edit its operations attribute. Then define an
+operation that has a message filter with the name Apply.
+
+<p>
+<IMG SRC="../../../images/hg_see.gif"><strong>See also:</strong>
+<dl>
+<dd><A HREF="../ops.html">What Is a Component Operation?</A>
+<dd><A HREF="../addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="../running.html">GUI Builder Runtime Classes</A>
+<dd><A HREF="../groups_basic.html">What Are Groups and Shadows?</A>
+<dd><A HREF="../groups_advanced.html">More On Groups and Shadows</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../../api/visual/packages.html">Visual Java GUI
+Builder Runtime Packages</A>
+<dd><A HREF="../../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+
+</body>
+</HTML>

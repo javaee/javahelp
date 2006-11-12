@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE map
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/map_1_0.dtd">
+
+<map version="1.0">
+	<mapID target="arcticwolf" url="Pages/ArcticWolf.html" />
+	<mapID target="bats" url="Pages/Bats.html" />
+	<mapID target="bird" url="Pages/Bird.html" />
+	<mapID target="blackbear" url="Pages/BlackBear.html" />
+	<mapID target="butterfly" url="Pages/Butterfly.html" />
+	<mapID target="chimp" url="Pages/Chimp.html" />
+	<mapID target="cougar" url="Pages/Cougar.html" />
+	<mapID target="crab" url="Pages/Crab.html" />
+	<mapID target="crocodile" url="Pages/Crocodile.html" />
+	<mapID target="dolphin" url="Pages/Dolphin.html" />
+	<mapID target="dragon" url="Pages/Dragon.html" />
+        <mapID target="elephant" url="Pages/Elephant.html"/>
+	<mapID target="fish" url="Pages/Fish.html" />
+	<mapID target="frog" url="Pages/Frog.html" />
+	<mapID target="giraffe" url="Pages/Giraffe.html" />
+	<mapID target="grizzly" url="Pages/Grizzly.html" />
+	<mapID target="kangaroo" url="Pages/Kangaroo.html" />
+	<mapID target="koala" url="Pages/Koala.html" />
+	<mapID target="leopard" url="Pages/Leopard.html" />
+	<mapID target="lizard" url="Pages/Lizard.html" />
+	<mapID target="mullusk" url="Pages/Mullusk.html" />
+	<mapID target="orca" url="Pages/Orca.html" />
+	<mapID target="seal" url="Pages/Seal.html" />
+	<mapID target="seastar" url="Pages/SeaStar.html" />
+	<mapID target="shark" url="Pages/Shark.html" />
+	<mapID target="snake" url="Pages/Snake.html" />
+	<mapID target="spider" url="Pages/Spider.html" />
+	<mapID target="sponge" url="Pages/Sponge.html" />
+	<mapID target="timberwolf" url="Pages/TimberWolf.html" />
+	<mapID target="worms" url="Pages/Worms.html" />
+</map>

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<!--
+
+  @(#)package.html	1.3 99/04/07
+
+  Copyright 1998 by Sun Microsystems, Inc.,
+  901 San Antonio Road, Palo Alto, California, 94303, U.S.A.
+  All rights reserved.
+
+  This software is the confidential and proprietary information
+  of Sun Microsystems, Inc. ("Confidential Information").  You
+  shall not disclose such Confidential Information and shall use
+  it only in accordance with the terms of the license agreement
+  you entered into with Sun.
+
+-->
+
+</head>
+<body bgcolor="white">
+
+Supports simple access to search engines.  JavaHelp supports a
+standard full-text search view and navigator.  The view interacts
+with a search engine through this package.  The reference
+implementation provides a search engine that implements these
+interfaces, but others can also be used--the specific search engine
+is part of the information specified in the search view.  This separation
+provides full-text search functionality while not imposing specific
+formats.  These details are encapsulated in a search engine type.
+
+<p>
+<code>HelpSearch</code> is an abstract base class for the search
+engines, <code>SearchQuery</code> obtained from it can be used to
+perform the actual queries.  Individual items found by a search are
+<code>SearchItem</code>s which can be fired as
+<code>HelpEvent</code>s.
+
+<p>
+The creation of search databases is done by subclasses of the
+abstract class <code>IndexBuilder</code> based on the MIME type of
+each document being indexed.  Details of the index building process
+can be given through instances of <code>ConfigFile</code>.
+
+<p>
+<em>Note:</em> Registration of IndexerKits should probably be visible
+in this package.
+
+<!--
+<H2>Package Specification</H2>
+Link to updated API specification to be added here.
+-->
+
+<H2>Related Documentation</H2>
+
+<P>
+For overviews, tutorials, examples, guides, tool support,
+and other documentation,
+please see the <em>JavaHelp System User's Guide</em>.
+
+  </body>
+</html>

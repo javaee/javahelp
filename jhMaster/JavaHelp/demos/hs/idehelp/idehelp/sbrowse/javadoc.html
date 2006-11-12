@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!-- sccsid: @(#)javadoc.html	1.2 94/12/12 -->
+<HTML>
+<HEAD>
+<TITLE>javadoc-The Java API Documentation Generator</TITLE>
+<!-- Changed by: Leif Samuelsson, 22-Apr-1996 -->
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>javadoc - The Java API Documentation Generator</H1>
+<tt>javadoc</tt> generates  API documentation from source files.
+<P>
+<H2>Synopsis</H2>
+<tt>javadoc [</tt> <a
+href="javadoc.html#Options"><em>options</em></a>
+<tt>]</tt> <em>package</em> <tt>|</tt>
+<em>filename</em><tt>.java ...</tt>
+<P>
+<H2>Description</H2>
+<tt>javadoc</tt> parses the declarations and doc comments in Java source files 
+and formats the public API into a hypertext document.
+You can pass either a package or specific Java source files to <tt>javadoc</tt>.
+ In addition to 
+the usual comments, <tt>javadoc</tt> uses a special
+set of tags that it recognizes in the doc comments. 
+<p>
+<i>package</i> must be in your CLASSPATH. Note that
+<tt>javadoc</tt> uses <tt>.java</tt> files, not
+<tt>.class</tt> files.  <p> <tt>javadoc</tt>
+reformats and displays all public and protected
+declarations for:
+
+<ul>
+<li>Classes and interfaces
+<li>Methods
+<li>Variables
+</ul>
+<h3>Doc Comments</h3>
+Java source files can include doc comments. Doc comments
+begin with <tt>//*</tt> and indicate text to be
+included automatically in generated documentation.
+
+<h3>Standard HTML</h3>
+You can embed standard HTML tags within a doc comment.
+Don't use tags like <h1> and <hr>.
+<tt>javadoc</tt> creates an entire structured, document
+and these structural tags interfere with the formatting of
+the generated document.
+
+<h3>javadoc Tags</h3>
+
+<tt>javadoc</tt> parses special tags that are
+recognized when they are embedded within a Java doc
+comment. These tags enable you to autogenerate a
+complete, well-formatted API from your source code. The
+tags start with an <tt>@</tt>.
+
+Tags must start at the beginning of a line.  Keep tags with
+the same name together within a doc comment.  For example,
+put all your <tt>@author</tt> tags together so
+<tt>javadoc</tt> can tell where the list ends.<p>
+
+<h3>Class Documentation Tags</h3>
+<dl>
+<dt><tt>@see</tt> <em>classname</em>
+<dd>Adds a hyperlinked "See Also" entry to the class.
+<p>
+<dt><tt>@see</tt> <em> fully-qualified-classname</em>
+<dd>Adds a hyperlinked "See Also" entry to the class.
+<p>
+<dt><tt>@see</tt> <em>
+fully-qualified-classname</em><tt>#</tt><em>method-name</em>
+<dd>Adds a hyperlinked "See Also" entry to t
+he method in the specified class.
+<p>
+<dt><tt>@version</tt> <em> version-text</em>
+<dd>Adds a "Version" entry. 
+<p>
+<dt><tt>@author</tt> <em> your-name</em>
+<dd>Creates an "Author" entry. There can be multiple author tags.
+</dl>
+<p>An example of a class comment:
+<pre>
+/**
+ * A class representing a window on the screen.
+ * For example:
+ * <pre>
+ *    Window win = new Window(parent);
+ *    win.show();
+ * </pre>
+ *
+ * @see            awt.BaseWindow
+ * @see            awt.Button
+ * @version        1.2 12 Dec 1994
+ * @author         Sami Shaio
+ */
+class Window extends BaseWindow {
+        ...
+}
+</pre>
+
+<h3>Variable Documentation Tags</h3>
+
+In addition to HTML text, variable comments can contain only the 
+<tt>@see</tt> tag (see above).
+
+<p>An example of a variable comment:
+
+<pre>
+/**
+ * The X-coordinate of the window
+ * @see window#1
+ */
+int x = 1263732;
+</pre>
+
+<h3>Method Documentation Tags</h3>
+
+Method documentation tags contain <tt>@see</tt> tags,
+as well as:
+
+<dl>
+<dt><tt>@param</tt> <em>parameter-name description...</em>
+<dd>Adds a parameter to the "Parameters" section. The description may
+be continued on the next line.
+<p>
+<dt><tt>@return</tt> <em>description...</em>
+<dd>Adds a "Returns" section, which contains the description of the return value.
+<p>
+<dt><tt>@exception</tt> <em>fully-qualified-class-name description...</em>
+<dd>Adds a "Throws" entry, which contains the name of the exception that may be
+thrown by the method. The exception is linked to its class documentation.
+</dl>
+
+<p>An example of a method comment:
+
+<pre>
+/**
+ * Return the character at the specified index. An index ranges
+ * from <tt>0</tt> to <tt>length() - 1</tt>.
+ * @param index      The index of the desired character
+ * @return           The desired character
+ * @exception        StringIndexOutOfRangeException When the index 
+ *                   is not in the range <tt>0</tt>> to <tt>length() - 1</tt>.
+ */
+public char charAt(int index) {
+    ...
+}
+</pre>
+<a name=Options><h2>Options</h2></a>
+<dl>
+<dt><tt>-classpath</tt> <em>path</em>
+<dd> Specifies the path that <tt>javadoc</tt> uses to look up the <tt>.java</tt> files. Overrides 
+the default or the CLASSPATH environment variable, if it is set. Directories 
+are separated by colons, for example:
+<P>
+<pre>
+    .:/home/avh/classes/:/usr/local/java/classes
+</pre>
+<dt><tt>-d directory</tt>
+<dd> Specifies the directory where <tt>javadoc</tt> stores the generated HTML files.
+For example:
+<pre>
+    javadoc -d ~/public_html/doc java.lang
+</pre>
+<p>
+<dt><tt>-verbose</tt>
+<dd> Causes the compiler and linker to print out messages about what source 
+files are being compiled and what object files are being loaded.<P>
+</dl>
+<P>
+<H2>Environment Variables</H2>
+<dl>
+<dt>CLASSPATH
+<dd>Used to provide the system a path to user-defined classes. Directories are
+separated by colons, for example:
+<pre>
+    .:/home/avh/classes:/usr/local/java/classes
+</pre>
+</dl>
+
+
+<p>
+</BODY>
+</HTML>

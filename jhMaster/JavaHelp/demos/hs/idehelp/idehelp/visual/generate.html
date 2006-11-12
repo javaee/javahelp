@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Generating Java Source Code
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Generating Java Source Code</H1>
+
+Once you have laid out your window, you must generate the
+Java code that you will integrate with your program.
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To generate code for your layout:</strong>
+<ul>
+<li>Choose GUI -> Save Generate GUI File.
+</ul>
+
+<p>
+When you generate code, GUI builder automatically saves your
+layout.
+<p>
+When you generate code from your layout, the following files are
+generated in the project's source directory:
+<p>
+<strong><i>project</i><code>.gui</code></strong>
+<br>
+Contains the code that describes the GUI. This file is
+updated (or created) whenever you save the layout. One
+<code>.gui</code> file is generated per group. A Java
+WorkShop project can contain only one group, but projects
+can contain other projects.
+<p>
+<strong><i>project</i><code>Root.java</code></strong>
+<br>
+Contains the code necessary to initialize the components
+for the group.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+Do not make changes to this file--it is
+recreated every time you generate the interface.
+<p>
+<strong><i>project</i><code>Ops.java</code></strong>
+<br>
+Contains the operations for the group.  This file is
+generated only if you have defined operations on one or
+more of the components in the group.  Operations are described
+in <A HREF="dialogs/operations.html">Operations Dialog Box</A>.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+Do not make changes to this file--it
+is recreated every time you generate the
+interface.
+<p>
+<strong><i>project</i><code>Main.java</code></strong>
+<br>
+Contains the main method that is used to run the group as
+an applet or a standalone application.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+Do not make changes to this file--it
+is recreated every time you generate the
+interface.
+
+<p>
+<strong><i>project</i><code>.java</code></strong>
+<br>
+Contains a template for the group.  This file is 
+generated only once--you modify this file to implement event
+handlers, action handlers, and other functionality.
+
+<h2>Error Checking</h2>
+
+During code generation, some error checking is done on the
+<code>.gui</code> file.  The attribute types are checked for
+correctness, and the attribute values are matched against the
+attribute types.  However, the attribute types are not checked against
+the attribute names.  Also, the attribute names are not checked
+against the shadow or group inside which they are defined.
+<p>
+Errors of this nature are uncommon in a <code>.gui</code> file. This
+kind of error could be introduced by hand-editing the
+<code>.gui</code> file or by modifying the attributes of a shadow or
+group class that is used by an existing <code>.gui</code> file.
+<p>
+These errors are not caught because the code generator does not load
+any of the shadow or group classes listed in the <code>.gui</code>
+file. It is much faster to generate the code without loading all the
+shadows and groups, and not loading the groups avoids dependency
+problems.
+<p>
+The code generator instantiates all the shadows and groups during
+generation. Errors such as bad attribute names and attribute type
+mismatches are caught. The generator will throw an error if one of the
+group or shadow classes that it needs does not exist.
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="layout.html">Laying Out the Interface</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="running.html">GUI Builder Runtime Classes</A>
+<dd><A HREF="menus.html">Creating Menus</A>
+<dd><A HREF="groups_basic.html">What Are Groups and Shadows?</A>
+<dd><A HREF="groups_advanced.html">More On Groups and Shadows</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI
+Builder Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+
+</body>
+</HTML>

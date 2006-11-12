@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding a Menu Bar and Menus
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<H1>Adding a Menu Bar and Menus</H1> 
+
+You add and modify menus using the menu editor. Menu bars can be added
+only to frames. If you opened a different type of container, you can
+change its type to a frame by selecting the container name in the GUI
+builder's container list and choosing GUI -> Set Window
+Type. Click on the frame button and click OK.
+
+<p>
+This section covers:
+<ul>
+<li><a href="#openmenued">Opening the Menu Editor</a>
+<li><a href="#createmenus">Creating Menus</a>
+<li><a href="#changemenufont">Changing the Font Type</a>
+<li><a href="#menuseparator">Adding a Separator Bar in a Menu</a>
+<li><a href="#createmenutearoff">Creating a Tear-Off Menu</a>
+</ul>
+
+<a name="openmenued"></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To open the Menu Editor:</strong>
+<ol>
+<li>Select the frame in the layout window by clicking in the area
+between the layout grid and the window frame.
+<li>Open the attribute editor by clicking on its button in the main
+toolbar. 
+<li>Click on the Edit menubar button.
+</ol>
+
+<a name="createmenus"></a>
+<h2>Creating Menus</h2>
+
+The menu list that you create in the menu editor is hierarchical: 
+<ul>
+<li>Items that begin in the first column are <em>menus</em> on the
+menu bar. 
+<li>Items that begin in the second column are <em>items</em> in the
+menu that precedes it hierarchically. 
+<li>Items that begin in subsequent columns are pull-right items
+of the menu item that precedes them hierarchically.
+<li>Separators are added at the same hierarchical level as
+the menu items they separate.
+</ul>
+<p>
+<hr>
+<pre>
+<strong>This Menu Editor list:		  Produces this menu:</strong>
+
+</pre>
+<IMG SRC="../../images/visual/menu_editor_cropped.gif" ALIGN=TOP><IMG SRC="../../images/spacer2_t.gif" ALIGN=TOP><IMG SRC="../../images/spacer2_t.gif" ALIGN=TOP><IMG SRC="../../images/visual/file_menu.gif" ALIGN=TOP>
+<hr>
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To create a menu:</strong>
+<ol>
+<li>In the menu editor, click in the Name box and enter a unique ID
+for the menu (for example, <tt>fileMenu</tt>). 
+<li>Click in the Text box and enter a name for the menu item
+(for example, <tt>File</tt>, <tt>View</tt>, and so on). 
+<p>
+Click on button to the right of the font box to specify the font
+family, style, and size.
+<li>Click Insert to insert the next menu.
+<p>
+Add more menus by repeating steps 1 and 2. A list of the menus appear
+in order in the display area of the menu editor. Click Apply to add
+the menu bar (and any subsequent menus or menu items) to the
+GUI.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To create a menu item for a menu:</strong>
+<ol>
+<li>Select a menu name in the display area of the menu editor.
+<li>Click Insert to insert a menu item.
+<li>Click in the Name box and enter a unique ID for the menu item.
+<li>Click in the Text box and enter a name for the menu item. 
+<li>Click the right-pointing arrow to indent the item. 
+<p>
+Add more menu items by repeating steps 2 through 5. A list of the menu
+items appear, indented, under the name of the menu that
+contains them. Click Apply to add the menu items.
+</ol>
+<p>
+Repeat the procedure to add items to each menu in the menu bar.
+<p>
+Use the arrow keys to reorganize the placement of the menus and menu
+items.
+
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add a Help menu:</strong>
+<ol>
+<li> Click on Add Help Menu to automatically add a Help menu to the
+far right end of the menu bar. You add items to the Help menu just as
+you did for the other menus.
+<li>After you add the Help menu to the list, type <tt>Help</tt> in the
+Text box for the menu label.
+</ol>
+<p>
+The Help menu must be the last menu in the list. If you attempt to add
+additional menus, an error is generated when you apply the changes.
+<p>
+
+<a name="changemenufont"></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To change the font type:</strong>
+
+<ol>
+<li>Select a menu name in the display area of the menu editor.
+<li>Click on the button next to the font box.
+<li>Choose the font family, style, and point size and click OK.
+</ol>
+
+<a name="menuseparator"></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add a separator bar in a menu:</Strong>
+<ol>
+<li>Select a menu item name in the display area of the menu editor.
+<li>Click on the Separator button and click OK. In preview mode, a
+separator bar appears below the selected menu item.
+</ol>
+<p>
+
+<a name="createmenutearoff"></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To create a tear off menu:</strong>
+<ol>
+<li>Select a menu name in the display area of the menu editor.
+<li>Click on the Tearoff Menu button and click OK. In preview mode,
+the selected menu displays a broken line below the menu name.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="menuops.html">Adding Operations to Menus</A>
+<dd><A HREF="layout.html">Laying Out the Interface</A>
+<dd><A HREF="ops.html">What Is a Component Operation?</A>
+<dd><A HREF="custom.html">Adding Custom Components and Windows</A>
+</dl>
+<p>
+
+</BODY>
+</HTML>

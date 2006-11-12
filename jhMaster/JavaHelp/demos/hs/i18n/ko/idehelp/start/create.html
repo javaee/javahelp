@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          본 소스 코드 제품에 대한 판권 표시는
+ *          출판된다는 의미가 아닙니다. 
+ * 
+ * 권리 제한 규정: 미국 정부에 의한 사용, 복제, 누설 등은
+ * DFARS 252.227-7013 (1988년 10월)과 FAR 52.227-19 (c) 
+ * (1987년 6월)의 기술 관련 데이터와 컴퓨터 소프트웨어에
+ * 대한 권리 조항의 (c)(1)(ii) 항목에 서술된 제한 규정의 
+ * 적용을 받습니다.
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_KR">
+<HEAD>
+<TITLE>
+제 1과:  Blink 프로젝트 만들기
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>제 1과: Blink 프로젝트 만들기</h1>
+
+이 과에서는 애플릿 프로젝트--웹 브라우저 내에서 실행하도록 만들어진 Java 프로그램--을 만드는 방법을 보여줍니다. 이제 만들게 될 프로젝트인 Blink는 텍스트를 여러 가지 색으로 깜박거리게 하는 자그마한 애플릿입니다. <kbd>Blink</kbd> 디렉터리에 설치되어 있는 이미 존재하는 소스 파일인 <kbd>Blink.java</kbd>를 사용하여 프로젝트를 만들어 봅시다.
+
+<ol>
+<li>Java Development Environment 주 도구 모음에서 [프로젝트] 단추 <img src="../../../../images/24/tb-project-manager_u.gif" align=MIDDLE><img src="../../images/spacer2_t.gif">를 마우스로 누르십시오.
+<br>[Java Development Environment 프로젝트 관리자] 창이 화면에 나타납니다.
+
+<li>프로젝트 관리자에서 현재 포트폴리오의 이름을 확인하십시오--현재 포트폴리오의 이름은 파랑색 텍스트로 표시됩니다.
+<br>현재 포트폴리오가 <code>personal</code>이 아니라면, personal 포트폴리오 이름을 마우스로 두 번 연속 누르십시오. personal 포트폴리오가 없으면, <nobr><a href="import.html">personal 포트폴리오 추가하기</a>를 참조하십시오.</nobr>
+
+<li><nobr>[파일] -&gt; [새로 만들기] -&gt; [프로젝트]</nobr>를 선택하십시오 (반드시 [프로젝트 관리자] 창의 [파일] 메뉴로 가야 합니다).
+<br>[프로젝트 만들기 마법사] 창이 열립니다.
+
+<li>[프로젝트 이름] 란에서 <kbd>untitled</kbd>를 선택하고 <kbd>Blink</kbd>라고 입력하십시오.
+<br>Blink에서 "B"를 반드시 대문자로 표시해야 합니다. Java는 대소문자를 구분합니다. 프로젝트 이름 <kbd>Blink</kbd>는 소스 파일 이름 <kbd>Blink.java</kbd>과 일관성이 있어야 합니다. 소스 파일 이름도 첫 글자를 대문자로 표시하는 Java의 관례를 따릅니다.
+
+<li>응용 프로그램 유형으로 [애플릿] 선택형 단추를 마우스로 누르십시오.
+
+<li>[GUI 없음] 선택형 단추를 누르십시오.
+<br>이 프로젝트에서는 그래픽 방식 사용자 인터페이스를 사용하지 않을 것입니다.
+
+<li>[다음]을 마우스로 누르십시오.
+
+<li>Blink 프로젝트를 기본 설정된 디렉터리에 저장해야 합니다.
+
+<li>[예]를 마우스로 눌러 이미 존재하는 Java 파일을 Blink 프로젝트에 추가하십시오.
+
+<li>[다음]을 마우스로 누르십시오.
+
+<li>([프로젝트 파일] 목록 아래의) [디렉터리내 모든 항목 추가] 단추를 마우스로 누르십시오.
+<br>파일 이름 <kbd>Blink.java</kbd>가 [프로젝트 파일] 목록에 나타납니다.
+
+<li>[다음]을 마우스로 누르십시오.
+<br>[애플릿 클래스] 란에, <kbd>Blink</kbd>가 자동으로 입력됩니다. main 클래스 파일은 Java 라이브러리의 <kbd>Applet</kbd> 클래스를 확장하는 <kbd>.class</kbd> 파일입니다.
+
+<li>[다음]을 마우스로 누르십시오.
+
+<li>Java Development Environment이 생성한 html 페이지를 사용해야 합니다.
+
+<li>[마침]을 마우스로 누르십시오.
+<br>소스 편집기 창에 <code>Blink.java</code> 소스 파일이 나타나고 그 파일의 이름이 Java Development Environment 제목 표시줄에 나타납니다. 프로젝트 관리자에서, personal 포트폴리오에 Blink 프로젝트가 현재 프로젝트로 나타납니다. 현재 프로젝트는 java WorkShop의 모든 도구를 사용하는 환경이 됩니다.
+<p>
+이 예제에서는, <kbd>Blink</kbd> 디렉터리에 있는 <kbd>Blink.prj</kbd> 파일에 Blink 프로젝트를 만들었습니다. 앞으로 프로젝트를 만들 때는 사용하는 파일 시스템의 임의의 디렉터리에서 프로젝트를 만들 수 있습니다.
+<p>
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>다음 과:</strong>
+<dl>
+<dd><a href="build.html">제 2과:  프로젝트 빌드하기</a>
+</dl>
+<p>
+</BODY>
+</HTML>

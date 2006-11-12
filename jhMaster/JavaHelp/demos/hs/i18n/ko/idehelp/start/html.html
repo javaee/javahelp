@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          본 소스 코드 제품에 대한 판권 표시는
+ *          출판된다는 의미가 아닙니다. 
+ * 
+ * 권리 제한 규정: 미국 정부에 의한 사용, 복제, 누설 등은
+ * DFARS 252.227-7013 (1988년 10월)과 FAR 52.227-19 (c) 
+ * (1987년 6월)의 기술 관련 데이터와 컴퓨터 소프트웨어에
+ * 대한 권리 조항의 (c)(1)(ii) 항목에 서술된 제한 규정의 
+ * 적용을 받습니다.
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_KR">
+<HEAD>
+<TITLE>
+제 1과: HTML 파일 수정하기
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>제 1과: HTML 파일 수정하기</h1>
+
+이 과에서는, Blink 프로젝트를 실행했을 때 자동으로 만들어진 HTML 파일을 수정할 것입니다. 애플릿 매개 변수를 지정하고 소스 코드로 연결되는 링크를 추가할 것입니다. 파일을 수정한 후에 파일을 다른 파일 이름으로 저장하여 다음에 해당 프로젝트를 실행해도 변경 내용이 지워지지 않게 할 것입니다.
+<p>
+아직 Blink 프로젝트를 만들어서 빌드하지 않았다면, <a href="create.html">Blink 프로젝트 만들기</a>의 방법대로 지금 만들어서 빌드하십시오.
+<ol>
+<li>프로젝트 관리자에서 현재 프로젝트의 이름을 확인하십시오.
+<br>현재 프로젝트가 Blink가 아니라면, Blink라는 프로젝트 이름을 마우스로 두 번 연속 누르십시오.
+<li>소스 편집기에서, <nobr>[파일] -&gt; [열기]</nobr>를 선택하십시오.
+<br>파일 선택창이 열립니다.
+<li><kbd>Blink</kbd> 디렉터리에 있는 <kbd>Blink.tmp.html</kbd> 파일을 여십시오.
+<br>이 파일에는 다음과 비슷한 애플릿 태그가 들어 있습니다:
+<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+   codebase="/<i>your_home_directory</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt="If you had a java-enabled browser, 
+   you would see an applet here."
+&gt; 
+&lt;param name="lbl" value="Java Development Environment is really cool :-)"&gt;
+&lt;hr&gt;If your browser recognized the applet tag,
+      you would see an applet here.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+이 파일은 프로젝트를 실행했을 때 자동으로 만들어졌습니다. 이 파일에 들어 있는 정보는 [프로젝트 편집] 창의 [실행] 탭에 있는 정보에 기초한 것입니다. 프로젝트를 실행한 적이 없다면, <a href="run.html">프로젝트 실행하기</a>를 참조하십시오.
+
+<li>Java Development Environment 도구 모음에서 <nobr>[파일] -&gt; [다른 이름으로 저장]</nobr>을 선택하십시오.
+<br>[현재 파일 저장] 대화 상자가 화면에 나타납니다.
+<li>Blink 디렉터리를 선택한 다음, HTML 파일의 새 이름을 입력하고 [확인]을 마우스로 누르십시오.
+<br>반드시 HTML 파일의 이름을 변경해야 합니다. 그렇지 않으면, 다음에 해당 프로젝트를 실행할 때 변경 내용이 지워질 것입니다. 또한, 파일을 반드시 <kbd>Blink</kbd> 디렉터리에 저장해야 합니다.
+<li>소스 편집기에서, 높이의 값을 75로 변경하십시오.
+<li><kbd>lbl</kbd> 매개 변수 앞에 다음 매개 변수를 추가하여 단어가 깜박거리는 속도를 증가시키십시오:
+<pre>
+&lt;param name="speed" value="50"&gt;
+</pre>
+
+<li>&lt;applet&gt; 태그 다음의 소스 코드에 다음 링크를 추가하십시오:
+<pre>
+&lt;p&gt;
+&lt;a href="Blink.java"&gt;Source Code&lt;/a&gt;
+</pre>
+
+소스 코드의 경로는 HTML 파일이 들어 있는 디렉터리를 기준으로 한 것이어야 합니다.
+<li>편집/디버그 도구 모음에서 [저장] 단추 <img src="../../../../images/24/file-save_u.gif" align=MIDDLE>를 마우스로 누르십시오.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>다음 과:</strong>
+<dl>
+<dd><a href="runpage.html">제 2과:  실행 페이지 수정하기</a></dl>
+<p>
+</BODY>
+</HTML>

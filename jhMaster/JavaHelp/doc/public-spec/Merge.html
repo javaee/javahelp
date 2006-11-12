@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JavaHelp 1.0 - Merge</title>
+  </head>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup><font size="-2">TM</font></sup> 1.0 - Merge
+</h1>
+      <h2 align=center>
+<br>
+<a href="Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+<br>
+</h2>
+
+
+<h3>Introduction</h3>
+
+<p>
+JavaHelp provides a mechanism for <em>merging</em>
+HelpSets. For example, when two indexes are merged, the
+second index is appended to the first index.  Constituent
+HelpSets can be dynamically removed from the merged
+HelpSet, even while the merged HelpSet is displayed. When
+HelpSets are merged there is always a <em>master</em>
+HelpSet into which other HelpSets are marged.
+<p>
+In addition, a HelpSet file can use the
+<tt>&lt;subhelpset&gt;</tt> tag to statically include
+HelpSets, this behavior is identical to <code>add</code>ing
+the subhelpset to the enclosing HelpSet, except that if the
+subhelpset file does not exist, it is ignored.
+
+  <p>
+Here are some examples where merging might be appropriate:
+<ul>
+
+<li>
+An application suite may be comprised of a collection of
+constituent applications.  As constituent applications are
+purchased and installed, their help information can be
+merged with help information from the other applications in the suite.
+</li>
+
+<p>
+<li>
+A Builder tool uses JavaBeans to construct programs.  Each
+JavaBean provides help information about its
+functionality.  The help information of the constituent
+JavaBeans can be listed in the
+TOC, in the index, and be accessible to searches.</li>
+
+<p>
+<li>
+When JavaBeans are used to dynamically extend the
+functionality of an application
+(sometimes this functionality is described as <em>plug-in</em>)
+the JavaBeans contain help information that conforms to the nature of the
+application.  This help information can be meaningfully
+merged before being presented to the user.</li>
+
+</ul>
+
+<h3>The API</h3>
+
+The basic API comprises the 
+<a href="../api/javax/help/HelpSet.html#add(javax.help.HelpSet)">
+<tt>HelpSet.add(HelpSet)</tt></a> method,
+and its corresponding
+<a href="../api/javax/help/HelpSet.html#remove(javax.help.HelpSet)">
+<tt>HelpSet.remove(HelpSet)</tt></a> method.
+These methods fire 
+<a href="../api/javax/help/event/HelpSetEvent.html">
+<tt>HelpSetEvent</tt></a> events to the
+<a href="../api/javax/help/event/HelpSetListener.html">
+<tt>HelpSetListener</a>s</tt> that have registered interest in them.
+This is how the ComponentUIs for TOC, Index, and Search views
+are notified of these changes and react to them.
+
+<p>
+When a HelpSet A is added to a HelpSet B, all the views in A are
+compared to the views in B;
+if a view in A has a name that is the same as another view in B,
+then it is considered for merging into B, otherwise it is not.
+
+<p>
+When considering merging a view V<sub>a</sub> into
+a V<sub>b</sub> the following happens:
+
+<ul>
+<li>
+The navigator N<sub>b</sub> of V<sub>a</sub> is obtained.
+<li>
+<a href="../api/javax/help/JHelpNavigator.html#canMerge(javax.help.NavigatorView)">
+N<sub>b</sub>.canMerge(V<sub>a</sub>)</a> is invoked to
+determine if the views can be merged.
+<li>
+If then can be merged, then
+<a href="../api/javax/help/JHelpNavigator.html#merge(javax.help.NavigatorView)">
+N<sub>b</sub>.merge(V<sub>a</sub>)</a> is invoked.
+</ul>
+<p>
+If later the HelpSet A is removed from HelpSet B:
+<ul>
+<li>
+<a href="../api/javax/help/JHelpNavigator.html#remove(javax.help.NavigatorView)">
+N<sub>b</sub>.remove(V<sub>a</sub>)</a>
+will be invoked.
+</ul>
+
+
+<h3>Merging TOCs</h3>
+  <p>
+<code>TOCView</code> and <code>JHelpTOCNavigator</code>
+implement a merging rule that allows any TOCView with the same
+name to be merged.
+The resulting presentation adds the new TOC data as the last
+subtree of the top level of the original TOC.
+
+<p>
+A TOCView may have no &lt;data&gt; tag;
+such a view shows as an empty tree.
+This is useful for what is sometimes called "dataless" master
+views into which other views can merge.
+
+
+<h3>Merging Indices</h3>
+<p>
+<code>IndexView</code> and <code>JHelpIndexNavigator</code>
+implement a merging rule that allows any IndexView with the same
+name to be merged.
+The resulting presentation adds the new index data as the last
+subtree of the top level of the original index.
+No attempt to sort the data is provided in the standard types.
+
+<p>
+An IndexView may have no &lt;data&gt; tag;
+such a view shows as an empty tree.
+
+
+<h3>Merging Full-Text Search Databases</h3>
+<p>
+<code>SearchView</code> and <code>JHelpSearchNavigator</code>
+implement a merging rule that allows any SearchView with the same
+name to be merged.
+The resulting presentation adds the <code>SearchEngine</code>
+from the new view to the previous list--query results from all the <code>SearchEngine</code>s are
+collated and presented together.
+
+<p>
+A SearchView may have no &lt;data&gt; tag;
+such a view produces no matches against any queries.
+
+<p>
+
+
+<hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 16:46:00 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>

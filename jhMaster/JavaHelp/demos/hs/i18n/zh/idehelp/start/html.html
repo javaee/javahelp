@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_CN">
+<HEAD>
+<TITLE>
+练习1：编辑HTML文件
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>练习1：编辑HTML文件</h1>
+
+您将在本练习中学习编辑Java Development Environment在运行Blink项目时所创建的一个HTML文件。您将要指定一个 applet小程序参数，并添加一个到源代码的链接。在编辑好这个文件之后，要用一个不同的名字对其进行保存， 以便使这些更改内容不会在下一次运行该项目时被覆盖掉。
+<p>
+如果您还没有创建和生成Blink项目，就应先按<a href="create.html">创建Blink项目</a>中的说明去完成这项工作。
+<ol>
+<li>在项目管理器中检查当前项目的名字。
+<br>如果当前项目不是Blink，就双击Blink项目名。
+<li>在源代码编辑器中，选择<nobr>文件-&gt;打开</nobr>。
+<br>Java Development Environment将打开一个文件选择器。
+<li>打开<kbd>Blink</kbd>目录中的<kbd>Blink.tmp.html</kbd>文件。
+<br>该文件包含一个applet标签，内容如下：
+<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+   codebase="/<i>your_home_directory</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt="If you had a java-enabled browser, 
+   you would see an applet here."
+&gt; 
+&lt;param name="lbl" value="Java Development Environment is really cool :-)"&gt;
+&lt;hr&gt;If your browser recognized the applet tag,
+      you would see an applet here.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+这个文件是在运行该项目时由Java Development Environment创建的。文件中的内容主要根据“编辑项目”窗口的 “运行”制表项中的信息。如果您以前没运行过这个项目，请参阅<a href="run.html">运行项目</a>。
+
+<li>从Java Development Environment菜单栏中选择<nobr>文件-&gt;另存为</nobr>。
+<br>将显示“保存当前文件”对话框。
+<li>选择Blink目录；然后输入该HTML文件的新文件名并单击“确定”。
+<br>确保已经重命名HTML文件；否则这些更改内容会在下一次运行该项目时被覆盖掉。 另外，一定要将文件保存在<kbd>Blink</kbd>目录中。
+<li>在源代码编辑器中，把高度值更改成75。
+<li>在<kbd>lbl</kbd>参数之前添加下列参数，以加快单词闪烁的速度： 
+<pre>
+&lt;param name="speed" value="50"&gt;
+</pre>
+
+<li>在源代码的&lt;applet&gt;标签之后添加下列链接： 
+<pre>
+&lt;p&gt;
+&lt;a href="Blink.java"&gt;Source Code&lt;/a&gt;
+</pre>
+
+源代码的路径必须相对包含HTML文件的目录。
+<li>单击“编辑/调试”工具栏中的“保存”按钮<img src="../../../../images/24/file-save_u.gif" align=MIDDLE>。
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>下一课：</strong>
+<dl>
+<dd><a href="runpage.html">练习2：更新运行页面</a></dl>
+<p>
+</BODY>
+</HTML>

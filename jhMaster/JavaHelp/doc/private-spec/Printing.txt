@@ -1,0 +1,388 @@
+			 Printing a Text View
+
+JavaHelp had a strong need to be able to print documents. While it is
+possible to print a document that is represented on the screen with
+relative ease, there were a variety of limitations that made it
+necessary for JavaHelp to develop a printing system in which a
+document could be passed to the system and rendered for a printer
+instead of screen. We endevoured to use the existing Swing
+architecture in the design. Our efforts in this area have been
+successful in 1) Producing a system that can print individual
+documents without being displayed on a screen (albeit very slow on 1.2
+and some printers) and 2) Provide input into potential changes in the
+text and more specifically text/View API that would make this process
+easier.
+
+This document details the steps necessary to perform printing for 1.1
+and 1.2 in an actionListner and the steps to print a text
+View. Additonal information is provided concerning possible updates to
+the Swing text APIs.
+
+How to setup an printing ActionListener
+=======================================
+
+JavaHelp had a need to create an independent printing system that
+would be setup as an ActionListener. To do so a JHelpPrintHandler
+class was created.  The constructor for the class takes a HelpModel,
+which is used to determine which document(s) to print, and a
+component, which is used in JDK 1.1 printing to establish a Frame.
+
+The main method in the class is actionPerformed, an
+ActionListener. Once this method is activated (generally from a button
+press), printing is activated. The proper printing mechanisms are set
+up depending on which version of the JDK the user is running the 3
+steps to printing a text View are executed (see Steps to print a Text
+View below).
+
+On 1.2 the printing is done through a PrinterJob. The PageFormat is established
+and a Printable is set up. The Document is set, the View created and rendering
+is done by excuting print() on the PrinterJob.
+
+	    PrinterJob job = PrinterJob.getPrinterJob();
+	    pf = job.pageDialog(job.defaultPage());
+	    size = new Dimension((int)pf.getImageableWidth(), 
+				 (int)pf.getImageableHeight());
+	    job.setPrintable(new JH12Printable(), pf);
+	    if (job.printDialog()) {
+		try {
+		    setDocument();
+		    if (document == null) {
+			return;
+		    }
+		    createView();
+		    job.print();
+		} catch (Exception ex) {
+		}
+	    }
+
+On 1.1 a PrintJob is created from the Toolkit. Print sizes are determined then
+the three steps to printing a text view are executed (set Document, create View, and render view). The Print Job is then ended.
+
+	// Get a Frame for the 1.1 print code
+	Component test = comp;
+	while (test != null){
+	    if (test instanceof Frame) {
+		break;
+	    }
+	    test = test.getParent();
+	}
+	// If there is no Frame component then just return
+	if (test == null) {
+	    Toolkit.getDefaultToolkit().beep();
+	    return;
+	}
+	
+	pjob = Toolkit.getDefaultToolkit().getPrintJob((Frame)test,
+						       null, null);
+	if (pjob != null) {
+	    Dimension d = pjob.getPageDimension();
+	    size = new Dimension(d.width - 144, d.height - 144);
+	    print1_1();
+	}
+	pjob.end();
+	pjob = null;
+
+
+Steps to printing a Text View
+=============================
+
+In order the print a text View the following three steps are executed.
+
+
+1. Set the Document to be printed
+
+In some environments the document may already be created and can be
+extracted from the JEditorPane via the getDocument() method. In other
+cases like JavaHelp it is necessary to create the Document from some
+other model. A URL for the Document is either known or derived. The
+Document is then created from the URL using setPage() (See Printing
+Issues #1)
+
+2. Create a View of the Document. 
+
+To create a view get a ViewFactory from the current EditorKit using
+the getViewFactory method. Optain the default root Element from the
+Document created in step one using getDefaultRootElement(). Create a
+view using the ViewFactory method create() and pass the default
+root Element as the parameter. (See Print Issues #2 on RootView)
+
+3. Render the View (1.1 and 1.2 specific code)
+
+The Printing API was significantly improved between 1.1 and 1.2
+requiring separate rendering code for each platform. However, even
+with the different APIs there is some commonality in the code.
+
+JDK1.1 printing
+---------------
+
+On 1.1 the PrintJob provides a print Graphics. The rest is
+merely a matter of determing how much of the document to print on an
+individual pages until all of the pages have been printed.
+
+The first step is to initialize the print Rectangle and View
+Rectangle. The print Rectangle is equivalent to what can be printed on
+a single page. The View Rectangle is layout of the View. The View
+Rectangle must be no wider than the print Rectangle but can be less
+than or greater than the print Rectangle in height. The code below
+illustrates initializing the print and View Rectangle.
+
+	Rectangle printRec = new Rectangle(size.width, size.height);
+
+	// Initialize the rootView size
+	rootview.preferenceChanged(rootview, true, true);
+	Rectangle viewRec = getViewRect();
+
+After the Rectangles have been intialized, a loop is executed that
+will print a page until all the pages are printed. To determine what
+part of the view is printed on a given page the point in a document is
+derived by calling the viewToModel method with the printRec height
+plus the height of the viewRec from the last printed page.
+
+	    // Find the point that corresponds to the end of the current
+	    // page that we are printing.
+	    int point = rootview.viewToModel(0, printRec.height + curHeight,
+					     viewRec, bias);
+
+Once the point is established it is easy to determine a Rectangle
+associated with the that point using modelToView and getting the
+Bounds from the returning Shape.
+
+		// Get the Rectangle around that point
+		Shape s = rootview.modelToView(point, viewRec, bias[0]);
+		Rectangle pointRec = s.getBounds();
+
+The offset (yval) into the View Rectangle is then established.
+
+		// Create a proper offset on the printed page
+		if (curHeight == 0) {
+		    yval=0;
+		} else {
+		    yval = curHeight;
+		}
+
+
+To make sure that a line isn't split between two pages the Rectangle
+is checked to make sure it won't excede the printable height.
+
+		// Create the proper height to print.
+		// Be carefull not chop anything off.
+		// All print the full view if it will fit, otherwise
+		// print the point above.
+		int height = pointRec.y - 1;
+		if (printRec.height + curHeight >= 
+		    pointRec.y + pointRec.height) {
+		    height = pointRec.y + pointRec.height;
+		}
+
+And finally the page is printed by setting the tranlation and clipRect
+on the printGraphic. Note that for now we've hardcoded the margins to
+be 72 pixels.  72 Pixels is equivalent to the 1.2 printing API margins.
+
+		// Set the translation values and clipRect so we print the 
+		// correct part of the document and print using the the view's
+		// paint method. Dispose of the graphics when done.
+		pg.translate(72, -yval + 72);
+		pg.clipRect(0, yval, printRec.width, height);
+		rootview.paint(pg, viewRec);
+		pg.dispose();	// flush page
+
+To print additional pages the height of the previous page is set for
+future pages and as long as that height is less than the View
+Rectangle height the loop continues.
+
+		// Set the current Height for the next page.
+		curHeight = height;
+
+		// If the current Height is greater than the viewRec height
+		// then we are done.
+		if (curHeight >= viewRec.height) {
+		    break;
+		}
+
+
+JDK 1.2 printing
+----------------
+
+The 1.2 printing API is significantly different from the 1.1 API. The
+major difference is that instead of the developer calling a method to
+print a page, the system calls a method through a print callback
+method. Additionally, this method is called everytime a page is
+printed a minimium of 2 times. The first pass establishes what will be
+printed and the remaining passes to actually do the printing. If
+raster printing occurs the method will be called multiple times at
+various y values.
+
+In 1.2 printing the View Rectangle is initialized as it was in 1.1 but
+the print Rectangle is initialized using the PageFormat and the editor
+has to have the Graphics set. Initially the first step is to convert
+the print Graphics to a 2DGraphics.
+
+	    Graphics2D g2d = (Graphics2D)pg;
+	    editor.setGraphics(g2d);
+
+	    // Initialize the rootView bounding box
+	    rootview.preferenceChanged(rootview, true, true);
+
+	    // Determine the print Rectangle size
+	    Rectangle printRec = new Rectangle((int)pf.getImageableWidth(),
+					       (int)pf.getImageableHeight());
+	    viewRec = getViewRect();
+
+Because the 1.2 printing callback asks for a specific page the looping
+mechanism is designed to only find the page that needs to printed and
+then exit. The method for finding the point and it's assocated
+Rectangle as well as the page adjustment are the same as 1.1.
+
+		    // Get the Rectangle around that point
+		    Shape s = rootview.modelToView(point, viewRec, bias[0]);
+		    Rectangle pointRec = s.getBounds();
+
+		    // Create a proper offset on the printed page
+		    if (curHeight == 0) {
+			yval = 0;
+		    } else {
+			yval = curHeight;
+		    }
+
+		    // Create the proper height to print.
+		    // Be carefull not chop anything off.
+		    // All print the full view if it will fit, otherwise
+		    // print the point above.
+		    height = pointRec.y - 1;
+		    if (printRec.height + curHeight >= 
+			pointRec.y + pointRec.height) {
+			height = pointRec.y + pointRec.height;
+		    }
+
+However, the page is not printed unless this is the page to print and
+additional measures are required to make sure that we don't print
+pages that don't exist.
+
+		    // incrment the page counter
+		    page ++;
+
+		    // Set the current Height for the next page.
+		    curHeight = height;
+
+		    // If the current Height is greater than the viewRec height
+		    // then we are done.
+		    if (curHeight >= viewRec.height) {
+			return Printable.NO_SUCH_PAGE;
+		    }
+
+Once the proper page is established the translation and clipRect is
+set to print exactly the section of the View we want to print. Since
+we are using a Graphics2D we can take advantage of the
+translate(double, double) method that sets a new translation relative
+to previous tranlation. The final step is to let the rootview paint
+itself and return.
+
+	    // Set the translation values and clipRect so we print the 
+	    // correct part of the document and print using the the view's
+	    // paint method. Dispose of the graphics when done.
+	    g2d.translate(pf.getImageableX(), pf.getImageableY());
+	    g2d.translate((double)0, (double)-yval);
+	    g2d.setClip(0, yval, printRec.width, height);
+	    rootview.paint(g2d, viewRec);
+	    return Printable.PAGE_EXISTS;
+
+As noted earlier this method is called multiple times. At the current
+time 1.2.2 is performing raster based printing so it's printing 11.5
+pixels high at time. Performance is less than acceptable, especially
+compared to 1.1 where it is practically instantaneous. I'm looking
+into how to overcome the raster printing.
+
+
+Printing Issues:
+================
+
+1. setPage needs to be more generic and possibly moved to
+text/Utilities.java. This would allow shared use for Views that aren't
+rendered via a Component on the screen (printing for instance). This
+includes the following methods:
+
+	void read(InputStream in, Document doc) throws IOException
+	InputStream getStream (URL page) throws IOException
+	URL getPage()
+	final EditorKit getEditorKit()
+	final void setContentType(String type)
+	void setCharsetFromContentTypeParameters(String paramlist)
+	void setEditorKit(EditorKit kit)
+	EditorKit getEditorKitForContentType(String type)
+	EditorKit createEditorKitForContentType(String type)
+	void setEditorKitForContentType(String type, EditorKit kit)
+
+2. RootView is not publicly available. The class must be replicated
+when the View will not be rendered on the screen or is used as an
+alternative presentation.
+
+3. A Graphic is required for the creation of LableViewFragment to
+work. This requires the creation of MyJEditorPane with a setGraphics
+method and override the getGraphics method. Views should have no dependency
+on a component.
+
+4. ComponentView.setParent is doing a lot of extra events when the called from
+outside the eventDispatchThread. This means that the current code can only be
+called as an ActionListiner.
+
+Extending RootView
+==================
+
+If RootView were publicly available, a couple of methods would need to
+be extended to meet the needs of a printing environment
+
+1. preferenceChange needs to be modified as it is dependent on the
+editor doing the layout. The samething can be accomplished by getting
+the preferred span on the X and Y axis and reseting the size. The
+width needs to be restricted to printable width.
+
+        public void preferenceChanged(View child, boolean width, 
+				      boolean height) {
+	    Dimension d = new Dimension();
+	    d.width = (int) Math.min((long) getPreferredSpan(View.X_AXIS),
+				     size.width);
+	    d.height = (int) Math.min((long) getPreferredSpan(View.Y_AXIS),
+				      Integer.MAX_VALUE);
+	    setSize(d.width, d.height);
+	    debug ("preferenceChanged to " + d.width + "," + d.height);
+        }
+
+2. getDocument is dependent on an editor. In the JavaHelp environment
+there is not an editor as there isn't a presentation. The method needs
+to be overriden to point to the document associated with view. In the
+case of JHelpPrintHandler the document is a member of the class.
+
+        public Document getDocument() {
+            return document;
+        }
+
+3. getElement uses an editor to derive the Element from the Document
+if the view is null. In the JavaHelp environment there is not an
+editor as there isn't a presentation. The method needs to be overriden
+to point to the document associated with view. In the case of
+JHelpPrintHandler the document is a member of the class.
+
+        public Element getElement() {
+            if (view != null) {
+                return view.getElement();
+            }
+            return document.getDefaultRootElement();
+        }
+
+4. In the printing environment there isn't a need for a
+Container. Ideally, it a null would be returned but unfortunately,
+there are calls to getContainer that are expecting a real
+Container. (This is actually a bug and the view should not be
+dependent on a Container at all). For JavaHelp printing we've created
+a dummy container. It had to be an extension of the JEditorPane so the
+graphics could be set. (See Printing Issues #3)
+
+        public Container getContainer() {
+	    // any ol container will do because it is not used but we'll
+	    // need it anyway.
+	    if (editor == null) {
+		editor = new MyJEditorPane();
+	    }
+	    return editor;
+        }
+

@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject t1o restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding a Mail Dialog, Part 1
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Adding a Mail Dialog, Part 1</H1>
+
+In this example, a button labeled Email is added to the card
+file. When clicked, the Email button opens a dialog box that allows
+the user to write a message and close the dialog box. The dialog box
+contains a component called Mail Panel that is created using GUI
+builder. The following steps occur in this example:
+
+<ul>
+<li><a href=#createmailbox>Laying out the Mail Panel component</a>
+<li><a href=#opstomailbox>Adding behavior to the mail panel</a>
+</ul>
+
+<p>
+<a name=createmailbox></a>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To create the Mail Panel component:</strong>
+
+<ol>
+<li>Create a new GUI project for the mail panel.
+<li>Choose Project -> Edit.
+<li>Click the Build tab and type in the root directory of the class
+hierarchy. 
+<pre>
+On Solaris(TM):
+<em>home-dir</em>/.jws2.0/ImportedComponents/classes
+</pre>
+<p>
+<pre>
+On Windows 95 and Windows NT:
+<em>home-dir</em>\jws20\ImportedComponents\classes
+</pre>
+<p>
+<li>In the default panel layout window, add the following
+components to the grid: 
+<ul>
+<li>Text Label (3)
+<li>Single-line Textfield (2)
+<li>Multi-line Textfield (1)
+<li>Text Button (2)
+</ul>
+<li>Add labels and component IDs. 
+<p>
+The following component IDs were made for the Mail dialog in this example:
+
+<dl>
+<dd><tt>toLabel</tt>
+<dd><tt>subjectLabel</tt>
+<dd><tt>messageLabel</tt>
+<dd><tt>toTextfield</tt>
+<dd><tt>subjectTextfield</tt>
+<dd><tt>sendButton</tt>
+<dd><tt>cancelButton</tt>
+</dl>
+<p>
+</ol>
+The finished layout should look like this:
+
+<a name=cmaildialog_gif></a>
+<pre>
+<img src="../../../images/visual/examples/emailwin.gif" ALIGN=TOP
+WIDTH=240 HEIGHT=382>
+</pre>
+
+<p>
+Save the layout and generate the Java source code by choosing
+GUI -> Save Generate GUI File.
+<p>
+In this example, behavior is only added to the Send and Cancel
+buttons. You can add additional operations to the
+example as you wish.
+<p>
+<a name=opstomailbox></a>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To add behavior to the mail panel:</strong>
+
+<ol>
+<li>Select the Send button and open the attribute editor.
+<li>Click on Edit operations.
+<li>Click on Insert to add an operation.
+<li>Click on the Action button to open the Action dialog box.
+<li>Select the action type, Execute Code.
+<li>Add code that sends a message to the card file that the Send
+button was clicked: 
+<pre>
+group.postMessage(new Message(group, "Send", null));
+</pre>
+</ol>
+<p>
+Follow the same steps for the Cancel button, and add code that tells
+the card file that the Cancel button was clicked.
+<p>
+After the operations have been added, save and generate the source
+file by clicking on the Save Generate GUI File button in the
+main toolbar. Then build the application by clicking on the Build
+button in the main toolbar.
+<p>
+When the build completes, you can click on the Run button in the
+main toolbar to test the application.
+
+<p>
+<IMG SRC="../../../images/hg_see.gif"><strong>See also:</strong>
+<dl>
+<dd><A HREF="rolo3b.html">Adding a Mail Dialog, Part 2</A>
+<dd><A HREF="../layout.html">Laying Out the GUI Interface</A>
+<dd><A HREF="../modify.html">Modifying Components in the Grid</A>
+<dd><A HREF="../position_comps.html">Positioning Components in
+Cells</A>
+<dd><A HREF="../wdw-resize.html">Resizing the Window</A>
+</dl>
+<p>
+  </body>
+</html>

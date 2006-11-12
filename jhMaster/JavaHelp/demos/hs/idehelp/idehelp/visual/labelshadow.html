@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Sample Code: LabelShadow.java
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Sample Code: <code>LabelShadow.java</code></H1>
+<pre>
+/*
+ *              Copyright (C) 1997  SunSoft
+ *                  All rights reserved.
+ *
+ * @(#) LabelShadow.java 1.18 - last change made 25 Apr 1996
+ */
+
+package sunsoft.jws.visual.rt.shadow.java.awt;
+
+import sunsoft.jws.visual.rt.type.AlignmentEnum;
+import java.awt.Label;
+
+public class LabelShadow extends ComponentShadow {
+  public LabelShadow() {
+    attributes.add("text", "java.lang.String", "label", 0);
+    attributes.add("alignment", "sunsoft.jws.visual.rt.type.AlignmentEnum",
+		   new AlignmentEnum(Label.CENTER));
+  }
+
+  protected Object getOnBody(String key) {
+    if (key.equals("text"))
+      return(((Label) body).getText());
+    else if (key.equals("alignment"))
+      return(new AlignmentEnum(((Label) body).getAlignment()));
+    else
+      return(super.getOnBody(key));
+  }
+
+  protected void setOnBody(String key, Object value) {
+    if (key.equals("text"))
+      ((Label) body).setText((String) value);
+    else if (key.equals("alignment"))
+      ((Label) body).setAlignment(((AlignmentEnum) value).intValue());
+    else
+      super.setOnBody(key, value);
+  }
+
+  public void createBody() {
+    body = new Label();
+  }
+}
+</pre>
+
+
+</body>
+</HTML>

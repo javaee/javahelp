@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          본 소스 코드 제품에 대한 판권 표시는 
+ *          출판된다는 의미가 아닙니다  
+ * 
+ * 권리 제한 규정: 미국 정부에 의한 사용, 복제, 누설 등은 
+ * DFARS 252.227-7013 (1988년 10월)과 FAR 52.227-19 (c)  
+ * (1987년 6월)의 기술 관련 데이터와 컴퓨터 소프트웨어에 
+ * 대한 권리 조항의 (c)(1)(ii) 항목에 서술된 제한 규정의  
+ * 적용을 받습니다. 
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_KR">
+<HEAD>
+<TITLE>
+제 2과: 중단점 설정하기
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>제 2과: 중단점 설정하기</h1>
+
+중단점을 설정하는 것은 프로그램에서 문제가 발생하는 지점을 추적해 나가는데 도움이 됩니다. 이 과에서는, 프로그램을 실행한 상태에서 <kbd>Blink.java</kbd>에 중단점을 설정하게 될 것입니다. 중단점이 설정되면 프로그램이 중단점까지 실행한 다음 멈춥니다.
+<p>
+본 자습서에서 사용하는 소스 라인 번호는 사용자가 <a href="editcode.html">소스 코드 수정하기</a>에 나오는 추가 코드를 추가했다고 가정한 라인 번호입니다.
+
+<ol>
+<li><nobr>[디버그] -&gt; [중단점]</nobr>을 선택하십시오.
+<br>[Java Development Environment 중단점] 창이 화면에 나타납니다.
+
+<li>[클래스 이름} 란에 <kbd>Blink</kbd>라고 입력하십시오.
+
+<li>[위치] 란에 <kbd>45</kbd>라고 입력하십시오.</b>
+
+<li>[중단점 설정]을 마우스로 누르십시오.
+<br>소스 편집기에서 해당 라인이 반전 표시됩니다:
+<br><pre>     if (x + w &gt; d.width) {</pre>
+<p>
+이 라인이 이제 선택되었으므로 프로그램이 루프를 따라 진행할 때 변수의 값의 변화를 추적할 수 있습니다. 대부분의 경우, 프로그램에서 버그가 발생한다고 생각하는 라인에 중단점을 설정할 것입니다.
+</ol>
+<p>
+프로그램이 중단점에 도달할 때까지 프로그램이 실행됩니다. 새 중단점이 들어 있는 라인이 초록색으로 바뀌어 프로그램 실행이 멈춘 위치를 알려 줍니다. [스레드/스택] 창이 갱신됩니다.
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>다음 과:</strong>
+<dl>
+<dd><a href="threads.html">제 3과: 스레드 검사하기</a>
+</dl>
+<p>
+
+</body>
+</html>

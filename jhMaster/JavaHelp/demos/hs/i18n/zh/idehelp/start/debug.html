@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_CN">
+<HEAD>
+<TITLE>
+重要概念：线程
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>重要概念：线程</h1>
+
+Java程序是由线程组成的。<i>线程</i>是程序中的一串独立的执行序列。当Java程序运行时， 可能会有几个执行不同动作的线程在同时运行。这种类型的程序即是我们所说的<i>多线程程序</i>。
+<p>
+每个线程都从属于一个线程组。线程组只是相关线程的一个逻辑组合。
+<p>
+<kbd>main</kbd>线程组是每个程序的一部分。任何时候您使用键盘，Java Development Environment都会与<kbd>main</kbd> 线程组中的线程进行交互操作。
+<p>
+当一个线程被停止时，就可以查看组成该线程的调用栈。您可以查看一个正在运行的线程的调用栈， 但所看到的内容只是该线程在最后一刻的信息。
+<p>
+调用栈中包括所有已经调用，但尚未返回给调用者的方法。<i>方法</i>类似于一个过程或函数。 调用栈中的方法都按它们被调用的先后次序列出。程序停止时正在执行的方法位于堆栈的最上面。
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>下一课：</strong>
+<dl>
+<dd><a href="startdebug.html">练习1：启动调试会话过程</a>
+</dl>
+<p>
+</body>
+</html>

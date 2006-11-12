@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+&Ouml;vning 1:  Redigera k&ouml;rattribut
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>&Ouml;vning 1:  Redigera k&ouml;rattribut</h1>
+
+M&auml;rket f&ouml;r &lt;miniprogrammet&gt; som du genererade i Sj&auml;lvstudie 1 anger
+minimikraven f&ouml;r miniprogrammets placering p&aring; en webbsida. I den h&auml;r &ouml;vningen
+kommer du att l&auml;gga till parametrar f&ouml;r anpassning av visningen av miniprogrammet.
+<p>
+Anv&auml;nd Blink-projektet f&ouml;r den h&auml;r &ouml;vningen. Om du &auml;nnu inte har skapat ett Blink-projekt
+kan du g&ouml;ra det nu, utifr&aring;n anvisningarna i
+<a href="create.html">Skapa Blink-projektet</a>.
+<ol>
+<li>Kontrollera namnet p&aring; det aktuella projektet (det finns i projekthanteraren).
+<br>Om det aktuella projektet inte &auml;r ett Blink-projekt dubbelklickar du p&aring; Blink-projektets namn.
+<li>V&auml;lj <nobr>Projekt -&gt; Redigera i projekthanteraren.</nobr>
+<br>F&ouml;nstret Redigera projekt inneh&aring;ller fyra flikar: Allm&auml;n, Bygg, Fels&ouml;k/Bl&auml;ddra och
+K&ouml;r.
+<li>Klicka p&aring; fliken K&ouml;r.
+<br>Attributen p&aring; den h&auml;r fliken anv&auml;nds f&ouml;r att generera m&auml;rket f&ouml;r &lt;miniprogrammet&gt;
+i filen <kbd>Blink.tmp.html</kbd>.
+<li>S&ouml;k efter f&auml;ltet Parametrar (ungef&auml;r i mitten av f&ouml;nstret).
+<br>F&ouml;r n&auml;rvarande &auml;r inga parametrar definierade f&ouml;r miniprogrammet. En parameter &auml;r
+ett attribut som inte &auml;r standard och som anger hur miniprogrammet visas. En parameter
+har ett namn och ett v&auml;rde. N&auml;sta uppgift blir att l&auml;gga till en parameter som &auml;ndrar orden i
+den blinkande texten.
+<li>Skriv <kbd>lbl</kbd> (en f&ouml;rkortning f&ouml;r "label", etikett), i textrutan Namn till h&ouml;ger om
+f&auml;ltet Parametrar.
+<li>Skriv f&ouml;ljande text i rutan V&auml;rde:
+<br><kbd>Java Development Environment &auml;r toppen :-)</kbd>
+<li>Klicka p&aring; knappen L&auml;gg till.
+<br>Raden <kbd>lbl=Java Development Environment &auml;r toppen :-)</kbd> visas i f&auml;ltet Parametrar.
+<li>Klicka p&aring; OK s&aring; sparas &auml;ndringen.
+<li>Klicka p&aring; knappen K&ouml;r <img src="../../../../images/24/tb-run_u.gif" align=BOTTOM> i
+verktygsf&auml;ltet i huvudf&ouml;nstret.
+<br>Java Development Environment inkluderar raden:
+<pre>
+&lt;param name="lbl" value="Java Development Environment &auml;r toppen :-)"&gt;
+</pre>
+i m&auml;rket f&ouml;r &lt;miniprogrammet&gt; i filen <kbd>Blink.tmp.html</kbd>. Webbl&auml;saren &ouml;ppnar filen
+och du kan nu se att orden "Java Development Environment &auml;r toppen :-)" blinkar i olika f&auml;rger.
+<p>
+Du avslutar miniprogrammet genom att v&auml;lja <nobr>Miniprogram -&gt; Avsluta</nobr> i f&ouml;nstret
+Miniprogramgranskaren.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;sta lektion:</strong>
+<dl>
+<dd><a href="editbuild.html">&Ouml;vning 2: Redigera byggattribut</a>
+</dl>
+<p>
+</body>
+</html>
+

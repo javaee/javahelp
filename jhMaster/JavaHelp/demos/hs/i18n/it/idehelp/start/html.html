@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Esercizio 1: Modifica di un file HTML
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Esercizio 1: Modifica di un file HTML</h1>
+
+In questa lezione verr&agrave; modificato il file HTML creato quando &egrave; stato
+eseguito il progetto Blink. Verr&agrave; specificato un parametro applet e
+verr&agrave; aggiunto un collegamento al codice sorgente. Una volta
+modificato, il file verr&agrave; salvato con un nome diverso in modo
+che le modifiche non vengano sovrascritte alla successiva esecuzione
+del progetto.
+<p>
+Se il progetto Blink non &egrave; stato ancora creato, crearlo
+seguendo le istruzioni riportate in
+<a href="create.html">Creazione del progetto Blink</a>.
+<ol>
+<li>Individuare il nome del progetto corrente nella finestra del
+gestore progetti di Java Development Environment.
+<br>Se il progetto corrente non &egrave; Blink, fare doppio clic sul nome
+del progetto Blink.
+<li>Nell'editor del codice sorgente scegliere <nobr>File -&gt; Apri</nobr>.
+<br>Verr&agrave; visualizzata una finestra di dialogo per
+la selezione dei file.
+<li>Aprire il file <kbd>Blink.tmp.html</kbd> nella directory <kbd>Blink</kbd>.
+<br>Il file contiene un tag applet simile al seguente:
+<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+   codebase="/<i>directory_personale</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt="Se il browser in uso fosse compatibile Java, qui verrebbe visualizzata un'immagine."
+&gt;
+&lt;param name="lbl" value="Java Development Environment &egrave; davvero incredibile :-)"&gt;
+&lt;hr&gt;Se il browser in uso riconoscesse il tag applet,
+      qui verrebbe visualizzato un applet.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+Questo file &egrave; stato creato durante l'esecuzione del progetto. Le
+informazioni contenute nel file si basano su quelle
+riportate nella scheda Esegui della finestra di dialogo Modifica progetto. Se
+il progetto non &egrave; stato eseguito in precedenza, vedere
+<a href="run.html">Esecuzione del progetto</a>.
+<li>Scegliere <nobr>File -&gt; Salva con nome</nobr> sulla barra dei menu di Java Development Environment.
+<br>Verr&agrave; visualizzata la finestra di dialogo Salva file corrente.
+<li>Selezionare la directory Blink, quindi digitare un nuovo nome per
+il file HTML e fare clic su OK.
+<br>Verificare di aver ridenominato il file HTML; in caso contrario,
+le  modifiche verranno sovrascritte alla successiva esecuzione del
+progetto. Verificare inoltre di salvare il file nella directory
+<kbd>Blink</kbd>.
+<li>Nell'editor del codice sorgente specificare il valore 75
+per l'altezza.
+<li>Aggiungere il parametro seguente prima del parametro
+<kbd>lbl</kbd> per aumentare la velocit&agrave; di lampeggio delle parole:
+<pre>
+&lt;param name="speed" value="50"&gt;
+</pre>
+
+<li>Aggiungere il seguente collegamento al codice sorgente dopo il
+tag &lt;applet&gt;:
+<pre>
+&lt;p&gt;
+&lt;a href="Blink.java"&gt;Codice sorgente&lt;/a&gt;
+</pre>
+
+Il percorso del codice sorgente deve fare riferimento alla directory
+contenente il file HTML.
+<li>Fare clic sul pulsante Salva <img src="../../../../images/24/file-save_u.gif" align=MIDDLE>sulla
+barra degli strumenti dell'editor/debug.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Lezione successiva</strong>
+<dl>
+<dd><a href="runpage.html">Esercizio 2: Aggiornamento della pagina di esecuzione</a></dl>
+<p>
+</BODY>
+</HTML>

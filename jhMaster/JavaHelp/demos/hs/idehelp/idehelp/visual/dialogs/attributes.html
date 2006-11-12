@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Attribute Editor
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<H1>Attribute Editor</H1>
+
+Use the Attribute Editor window to change the attributes of GUI
+builder components, including frames, panels, and dialog
+boxes.
+<p>
+There are three ways to open the attribute editor:
+<ul>
+<li>Click the right mouse button while the pointer is positioned
+in the area between the component and its cell border.
+<li>Select the component and click on the Attribute Editor button,
+<IMG SRC="../../images/vj_attributes_up.gif" ALIGN=MIDDLE>,
+in the main toolbar.
+<li>Select the component, then choose GUI -> Edit
+Attributes. 
+</ul>
+
+<h2>Customizer</h2>
+
+This button is active for bean components only. A dialog box opens
+with custom attributes that are specific to the selected bean. Select
+the settings you want and click OK to close the box. Click OK in the
+attribute editor to establish the changes.
+<p>
+<IMG SRC="../../../images/hg_note.gif">
+<br>
+You can modify a bean if the bean contains a customizer in its JAR
+file. No action results if you click the Customizer button for a bean
+without a customizer in its JAR file.
+
+<p>
+Attributes vary from component to component.  The following
+list describes attributes that are common to many of the components.
+Some components have specialized attributes to fit their particular
+function; see the discussion of a component for its list of special
+attributes. For a list of components in GUI builder, see <a
+href=../palette.html>GUI Builder Palette</a>.
+<p>
+
+<table>
+<tr>
+<td valign=BASELINE><code><strong>anchor</strong></code></td>
+<td valign=BASELINE>Determines where the component is anchored within
+the cell.</td> 
+</tr>
+<tr>
+<td valign=BASELINE><code><strong>background</strong></code></td>
+<td valign=BASELINE>Changes the color of the component's background. A
+color chooser dialog box is provided.</td>
+</tr>
+<tr>
+<td valign=BASELINE><code><strong>borderLabel</strong></code></td>
+<td valign=BASELINE>Adds a text label to the panel border.</td>
+</tr>
+<tr>
+<td valign=BASELINE><code><strong>borderRelief</strong></code></td>
+<td valign=BASELINE>Adds a graphical border around the edge of the
+panel.</td> 
+</tr>
+<tr>
+<td valign=BASELINE><code><strong>borderWidth</strong></code></td>
+<td valign=BASELINE>Sets the width of <code>borderRelief</code></td>
+</tr>
+<tr>
+<td valign=BASELINE><code><strong>operations</strong></code></td>
+<td valign=BASELINE>Activates the Operations dialog box. Use the
+Operations dialog box to add callbacks to components. See <A
+HREF="operations.html">Operations Dialog Box</A> for details.</td>
+</tr>
+<tr>
+<td valign=BASELINE><code><strong>font</strong></code></td>
+<td valign=BASELINE>Changes font to use in the component (if
+it contains text).  A font chooser dialog box is provided.</td>
+</tr>
+<tr>
+<td valign=BASELINE><code><strong>foreground</strong></code></td>
+<td valign=BASELINE>Changes the color of the font. A color chooser
+dialog box is provided.</td>
+</tr>
+<tr>
+<td valign=BASELINE><code><strong>insets</strong></code></td>
+<td valign=BASELINE>The distance (in pixels) from the left, right,
+top, or bottom edge of the cell. A dialog box is provided for
+you to enter the values.<td>
+</tr>
+<tr>
+<td valign=BASELINE><code><strong>enabled</strong></code></td>
+<td valign=BASELINE>Controls whether the component is initially in the
+enabled or disabled state.</td>
+</tr>
+<tr>
+<td valign=BASELINE><code><strong>name</strong></code></td>
+<td valign=BASELINE>The name of the component. All components are
+uniquely named by Visual Java GUI builder when they are created.  You
+can change the name using this attribute. Be sure that all component
+names within a group are unique.
+<br>
+<IMG SRC="../../../images/hg_note.gif">
+<br>
+You can quickly change the name of a selected
+component by typing in the name box.</td>
+</tr>
+<tr>
+<td valign=BASELINE><code><strong>text</strong></code></td>
+<td valign=BASELINE>Text displayed on the component.
+<br>
+<IMG SRC="../../../images/hg_note.gif">
+<br>
+You can quickly add or change the text of a selected
+component by typing it in the text box.</td>
+</tr>
+</table>
+
+<p>
+<IMG SRC="../../../images/hg_see.gif"><strong>See also:</strong>
+<dl>
+<dd><A HREF="../visual.html">Visual Java GUI Builder Overview</A>
+<dd><A HREF="../palette.html">GUI Builder Palette</A>
+<dd><A HREF="../layout.html">Laying Out the Interface</A>
+<dd><A HREF="../menus.html">Creating Menus</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../../api/visual/packages.html">Visual
+Java GUI Builder Runtime Packages</A>
+<dd><A HREF="../../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+
+</body>
+</HTML>

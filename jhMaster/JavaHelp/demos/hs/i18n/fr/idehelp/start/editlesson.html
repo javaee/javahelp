@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercice 1 :  Edition des attributs d'ex&eacute;cution
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Exercice 1 :  Edition des attributs d'ex&eacute;cution</h1>
+
+La balise &lt;applet&gt; que vous avez g&eacute;n&eacute;r&eacute;e dans le Didacticiel Un d&eacute;finit le strict
+n&eacute;cessaire pour positionner l'appliquette dans une page Web. Dans cet exercice, vous ajouterez des
+param&egrave;tres qui vous permettront de personnaliser la mani&egrave;re dont l'appliquette sera affich&eacute;e.
+<p>
+Cet exercice est associ&eacute; au projet Blink. Si vous n'avez pas encore cr&eacute;&eacute; et construit ce projet, faites cela maintenant en suivant les
+instructions de <a href="create.html">Cr&eacute;ation du projet Blink</a>.
+<ol>
+<li>V&eacute;rifiez dans le gestionnaire de projet le nom du projet en cours.
+<br>Si celui-ci n'est pas Blink, double-cliquez sur le nom de projet Blink.
+<li>Dans le gestionnaire de projet, choisissez <nobr>Projet -&gt; Editer.</nobr>
+<br>La fen&ecirc;tre Edition de projet pr&eacute;sente quatre onglets : G&eacute;n&eacute;ralit&eacute;s, G&eacute;n&eacute;rer, D&eacute;boguer/Parcourir
+et Ex&eacute;cuter.
+<li>Cliquez sur l'onglet Ex&eacute;cuter.
+<br>Les attributs propos&eacute;s dans cet onglet servent &agrave; g&eacute;n&eacute;rer la balise &lt;applet&gt; dans le
+fichier <kbd>Blink.tmp.html</kbd>.
+<li>Trouvez le champ Param&egrave;tres (environ &agrave; mi-fen&ecirc;tre).
+<br>Actuellement, aucun param&egrave;tre n'est d&eacute;fini pour l'appliquette. Un param&egrave;tre est un attribut non
+standard qui d&eacute;finit la mani&egrave;re dont l'appliquette sera affich&eacute;e. Il comporte un nom et une valeur.
+Vous ajouterez un param&egrave;tre pour modifier les mots dans le texte clignotant. <li>Entrez
+<kbd>lbl</kbd> ("label" (&eacute;tiquette) en abr&eacute;g&eacute;), dans la zone de texte Nom situ&eacute;e &agrave; droite
+du champ Param&egrave;tres.
+<li>Dans la zone Valeur, saisissez le texte suivant :
+<br><kbd>Java Development Environment est vraiment super :-)</kbd>
+<li>Cliquez sur le bouton Ajouter.
+<br>La ligne <kbd>lbl=Java Development Environment est vraiment super :-)</kbd> appara&icirc;t dans le champ Param&egrave;tres.
+<li>Cliquez sur OK pour enregistrer vos modifications.
+<li>Cliquez sur le bouton Ex&eacute;cuter <img src="../../../../images/24/tb-run_u.gif" align=BOTTOM> de
+la barre d'outils principale de Java Development Environment.
+<br>Java Development Environment pr&eacute;sente maintenant cette ligne :
+<pre>
+&lt;param name="lbl" value="Java Development Environment est vraiment super :-)"&gt;
+</pre>
+dans la balise &lt;applet&gt; du fichier <kbd>Blink.tmp.html</kbd>. Le fichier est charg&eacute; dans
+l'explorateur, et vous voyez les mots "Java Development Environment est vraiment super :-)" clignotant en
+plusieurs couleurs.
+<p>
+Pour arr&ecirc;ter l'appliquette en cours d'ex&eacute;cution, choisissez <nobr>Appliquette -&gt; Quitter</nobr> dans
+la fen&ecirc;tre de l'afficheur d'appliquette.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Le&ccedil;on suivante :</strong>
+<dl>
+<dd><a href="editbuild.html">Exercice 2 : Edition des attributs de g&eacute;n&eacute;ration</a>
+</dl>
+<p>
+</body>
+</html>
+

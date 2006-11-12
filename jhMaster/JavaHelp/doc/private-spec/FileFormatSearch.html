@@ -1,0 +1,581 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>File Format for Search</title>
+  </head>
+
+  <body bgcolor="ffffff">
+      <h1>File Format for Search</h1>
+
+<br>
+HERE
+<br>
+
+<FONT FACE="Arial,Helvetica">javax.javahelp.BasicSearch.format</FONT>
+consists of 8 files:
+<UL>
+<LI>
+<A HREF="#schema">Schema</A>: defines key elements in various search
+database files.</LI>
+
+<LI>
+<A HREF="#tmap">Terminology Map</A>: a mapping of concepts names 
+to their unique ids.</LI>
+
+<LI>
+<A HREF="#positions">Positions</A>: a collection of document microindexes. 
+</LI>
+
+<LI>
+<A HREF="#posidx">Position Index:</A>: an association index of
+document ids and offsets of their corresponding microindexes
+in the Positions file
+</LI>
+
+<LI>
+<A HREF="#documents">Documents</A>: a collection of lists, where the list 
+is a collection of document indices (into the Positions Index) for a given 
+concept.
+</LI>
+
+<LI>
+<A HREF="#documentsidx">Documents Index:</A>: an association index of
+concepts and offsets of their corresponding list in the Documents file.
+</LI>
+
+<LI>
+<A HREF="#children">Children</A>: a collection of lists, where each list
+contains ids of more specific concepts for a given concept.</LI>
+
+<LI>
+<A HREF="#childidx">Children Index:</A>: an assocation index of 
+concepts and offsets of their corresponding list in the Children file</LI>
+
+</UL>
+
+<A Name="compression"><h3>Data Compression</h3></A>
+<p>
+Various data structures within the search database files contain a
+sequence of integers. To decrease the overall size of the files a
+compression algorithm takes a sequence of integers and produces a
+small number (k) and a sequence of bytes. Given k the byte sequence
+can be decoded to produce the original integer sequence.
+</p>
+<p>
+The compressed algorithm as follows:
+</p>
+<p>
+TO BE SUPPLIED
+</p>
+
+<A NAME="#associdx"><h3>Asociation Index</h3></a>
+<p>
+Association indexes are a pair of parallel tables: the first table contains
+elements; the second table contains offsets of data in an associated file.
+The <A HREF="#posidx">Positions Index</A>, <A HREF="#documentsidx">Documents
+Index</A>, and <A HREF="#childidx">Childrens Index</A> files are
+auxiliary microindex files.
+</p>
+<p>
+<img src="images/associndex.jpg" alt="Association Index">
+</p>
+Externally the files are stored in a compressed form. They use the
+data structure described below where the first byte is a compression
+factor for the compressed list encoded in following series of
+bytes. The number of bytes is a function of the compression factor,
+and contents of the list. This is followed by a second pair of compression
+factor and bytes for the offset list.
+</p>
+<p>
+The data structure of an auxiliary microindex file is as follows:
+</p>
+</p>
+<p>
+<table border=3 cellpadding=5 center=true>
+<caption>Auxilary Microindex Data Structure</caption>
+
+<tr>
+<th>byte
+<td>element list compression factor
+</tr>
+
+<tr>
+<th>n<sup>1</sup> bytes
+<td>compressed elements
+</tr>
+
+<tr>
+<th>byte
+<td>offset list compression factor
+</tr>
+
+<tr>
+<th>n<sup>1</sup> bytes
+<td>compressed offsets
+</tr>
+
+</table>
+<p>
+<sup><b>1</b></sup> The number of bytes is determined by the compression.
+</p>
+
+<A NAME="schema"><H3>Schema</H3></A>
+The schema file defines keys elements, such as blocksize, root position, free
+list of positions and the current number of elements in the various files in the
+search database. The schema file is encoded in an XML-based syntax.
+
+<table border=3 cellpadding=5>
+<caption>Schema Tags</caption>
+
+<tr>
+<th>Tag
+<th>Description
+<th>Allowed In
+<th>Attributes
+</tr>
+
+<tr>
+<th>tmap
+<td>Termonology Map
+<td><br>
+<td><br>
+</tr>
+
+<tr>
+<th>blocksize
+<td>Blocksize of a concept collection. Must be in increment of 32
+<td>tmap
+<td><br>
+</tr>
+
+<tr>
+<th>root
+<td>Root block position
+<td>tmap
+<td><br>
+</tr>
+
+<tr>
+<th>empty
+<td>First empty block position. A valid integer between -1 and <em>next-1</em>. 
+-1 indicates there are no empty blocks.
+<td>tmap
+<td><br>
+</tr>
+
+<tr>
+<th>free
+<td>List of free block positions. A list of valid integers between 0 and
+<em>next-1</em> separated with a "<em>,</em>".
+<td>tmap
+<td><br>
+</tr>
+
+<tr>
+<th>next
+<td>Next ID in list. next - 1 is current size of the list.
+<td>tmap
+<td><br>
+</tr>
+
+</table>
+
+<h4>Schema Example</h4>
+<p>
+The following is an example of a search database schema file:
+</p>
+<code>
+<pre>
+&lt;tmap&gt;
+	&lt;blocksize&gt;2048&lt;/blocksize&gt;
+	&lt;root&gt;4358&lt;/root&gt;
+	&lt;empty&gt;-1&lt;/empty&gt;
+	&lt;free&gt;-1&lt;/free&gt;
+	&lt;next&lt;1026585&lt;/next&gt;
+&lt;/tmap&gt;
+</pre>
+</code>
+
+<p>
+In this example the terminology map file has a blocksize of 2048. The root
+block is block 4358. There are no empty or free blocks and the next available
+block for additions is block 1026585.
+
+<A NAME="tmap"><H3>Terminology Map</H3></A>
+<p>
+The terminology map is a mapping of concept names to their unique
+ids. The name/id pair entries are stored in a btree in a
+lexicographical order according to their byte codes. 
+</p>
+<p>
+<h6 align=center>Terminology Map Structure
+<p>
+<img src="images/btree.jpg" alt="Terminology Map file"></h6>
+</p>
+<p>
+The btree blocks
+are stored sequentially in a file. Blocks are either internal or leaf
+blocks.  The size of blocks is determined by the
+<em>&lt;blocksize&gt;</em> tag in the schema file. By default the
+blocksize is 2048.
+</p>
+<p>
+<h6 align=center>Terminology Map File Layout
+<p>
+<img src="images/btreefile.jpg" alt="Terminology Map file"></h6>
+</p>
+<p>
+The generic terminology map block structure is described in the following table:
+</p>
+<p>
+
+<table border=3 cellpadding=5 center=true>
+<caption> Terminology Map Block Structure</caption>
+
+<tr>
+<th>int
+<td>block number
+</tr>
+
+<tr>
+<th>1 bit
+<td>leaf = 0<br>internal block = 1
+</tr>
+
+<tr>
+<th>31 bits
+<td>index of first free byte in entries/pointers
+</tr>
+
+<tr>
+<th>int
+<td>number of entries in block 
+</tr>
+
+<tr>
+<th>n<sup>1</sup> bytes
+<td>entries/pointers 
+</tr>
+
+</table> 
+
+<sup><b>1</b></sup> n = blocksize - 2*sizeof(int) - 32 bits
+</p>
+
+<h4>Leaf blocks</h4>
+<p>
+A leaf block stores a header followed by a series of lexicographically
+ordered entries. If an entry shares a prefix with a preceding entry,
+only the remaing suffix of the entry is stored. An entry describes a
+concept as specified below.
+</p>
+<p>
+<table border=3 cellpadding=5 center=true>
+<caption> Concept Entry Structure</caption>
+
+<tr>
+<th>byte
+<td>concept (or key) length
+</tr>
+
+<tr>
+<th>byte
+<td>length of the shared prefix
+</tr>
+
+<tr>
+<th>int
+<td>concept ID
+</tr>
+
+<tr>
+<th>n<sup>1</sup> bytes
+<td>concept name (suffix)
+</tr>
+
+</table> 
+<p>
+<sup><b>1</b></sup> n = concept length
+</p>
+<p>
+Compression of concept entries increases the number of concept entries
+in a block and reduces the overall file size.  If the first n bytes of
+a concept is identical to the prior concept. The matching bytes of the
+concept are removed from the concept string and the number of matching
+bytes is stored in compressed bytes. Note that the first concept entry
+of a block is not compressed.
+</p>
+<h4>Internal blocks</h4>
+<p>
+An internal block data differs from the leaf block as it also has a
+series of block numbers of its children. Concept entries (described
+above) are stored following the block header from the beginning of the
+to the middle of the entry/pointer region.  Block numbers are integers
+stored in reverse order from the end of entry/pointer region towards
+the middle.
+</p>
+<p>
+The first concept entry corresponds to the last block number.  The
+block pointed to by the corresponding block number contains entries
+that are lexicographically smaller than the concept entry.  In the
+Terminolgy Map Structure diagram in block 4, e0 is lexicographically
+greater than all the entries in block 5. All of the entries in block 6
+are between e0 and e1 and all of the entries in block 7 are greater
+than e1.
+</p>
+<A NAME="positions"><h3>Positions</h3> 
+<p>
+The Positions file is a collection of microindexes. Microindexes are
+independent of one another and are stored one after another. There is
+one microindex per indexed document.
+</p>
+<h6 align=center>Positions Data Structures
+<p>
+<img src="images/positions.jpg"></h6>
+<A NAME=posidx><H4>Position Index</H4></A>
+<p>
+The Positions Index is an <A HREF="associdx">association index</A> of
+document ids and corresponding offsets of microindexes in the Positions
+file.
+</p>
+<A NAME="microidx"><h4>Microindex</h4></A>
+<p>
+A microindex is fundamental unit of index.
+</p>
+<p>
+There are two types of microindexes: Single Group Index, Multiple Group Index.
+<p>
+Concept ids and positions are stored in concept groups of no more than
+16 concepts.  The first two bits of a microindex determines the
+type of group according to the table below:
+</p>
+<p>
+<table border=3 cellpadding=5>
+
+<tr>
+<th>00
+<td>Single Index. 16 or less concepts.
+</tr>
+
+<tr>
+<th>10
+<td>Multiple Indexes. 17 or more concepts.
+</tr>
+</table>
+
+<H5>Single Index</H5> A single index concept group contains 16 or less
+concepts. Usage of a single index in JavaHelp is unlikely. It is
+provided to support other technologies uses of the search engine. An
+example use would be the storing of subject lines in Mail. 
+</p>
+<h6 align=center>Single Group Index Structure
+<p>
+<img src="images/singleindex.jpg"></h6>
+<p>
+In the above diagram, the C/P group contains two compressed lists. The
+first, with a compression factor of K<sub>1</sub>, is a list of at
+most 16 concept ids in ascending order. The second, with a compression
+factor of K<sub>2</sub>, is a list of pairs of positions and 4 bit
+indexes into the first list.  Positions (offsets) are stored in
+ascending numerical order.The C/P group is on a byte boundary, but
+there is no byte boundary between the two compressed lists.
+</p>
+<p>
+<table border=3 cellpadding=5>
+<caption> Single Index - Concept Group Data Structure</caption>
+
+<tr>
+<th>3 bits
+<td> 0 - Single index
+</tr>
+
+<tr>
+<th>29 bits
+<td>concepts compression factor
+</tr>
+
+<tr>
+<th>byte
+<td>positions compression factor
+</tr>
+
+<tr>
+<th>n<sup>1</sup> bytes
+<td>A compressed list of concept ids.<br>
+A compressed list of positions.<br>
+Each positions is followed by 4 bit number
+identifying concept in this group.
+</tr>
+
+</table> 
+<p>
+<sup><b>1</b></sup> The number of bytes is determined by the compression.
+</p>
+
+<h5>Multiple Index</h5> A multiple index contains 17 or more
+concepts. Concept ids and positions are stored in concept groups of at
+most 16 concepts. Concept ids are sorted in ascending id order and
+then cut into groups.
+</p>
+<h6 align=center>Multiple Group Index Structure
+<p>
+<img src="images/multipleindex.jpg"></h6>
+<p>
+In the above diagram, the Index structure describes the actual data
+structure memory layout. The first byte contains the compression
+factor (KK) for the following compressed KTable. The KTable, LenTable,
+and MaxTable immediately follow the compression factor (KK) without
+byte boundaries. These are then followed by consecutive C/P groups on 
+byte boundaries.
+</p>
+<p>
+The contents of the KTable are pairs of compression factors for C/P
+groups. The last two entries in the table are the compression factors
+for the LenTable and MaxTable. The LenTable is a list of lengths for
+the first n-1 C/P groups. The MaxTable is a list of maximal concept id
+for the first n-1 C/P groups. 
+</p>
+<p>
+The C/P group contains two compressed lists. The first, with a
+compression factor of K<sub>1</sub> from the KTable, is a list of 15
+concept ids in ascending order for the first n-1 groups. The 16
+concept id for the first n-1 C/P groups is stored in the MaxTable. The
+last C/P group stores 16 or less concepts in ascending order.  The
+second list in each C/P group, with a compression factor of
+K<sub>2</sub> from the KTable, is a list of pairs of positions and 4
+bit indexes into the first list. Positions (offsets) are stored in
+ascending numerical order. The C/P group is on a byte boundary, but
+there is no byte boundary between the two compressed lists.
+</p>
+<p>
+<table border=3 cellpadding=5>
+<caption> Multiple Indexes - Concept Group Data Structure</caption>
+
+<tr>
+<th>3 bits
+<td> 2 - multiple index
+</tr>
+
+<tr>
+<th>29 bits
+<td>compression list compression factor 
+</tr>
+
+<tr>
+<th>n<sub>1</sub> bytes
+<td>3 compressed lists:<br>
+A compressed list of compression factors for the C/P groups<br>
+plus compression factors for LenTable and MaxTable.<br>
+A compressed list of C/P group lengths.<br>
+A compressed list of maximal concept id the C/P groups
+</tr>
+
+<tr>
+<th>n<sup>1</sup> bytes
+<td>concept groups.
+</tr>
+
+</table> 
+<p>
+<sup><b>1</b></sup> The number of bytes is determined by the compression of
+each concept group.
+</p>
+</table>
+
+<p>
+<table border=3 cellpadding=5>
+<caption> Concept Group Structure</caption>
+
+
+<tr>
+<th>n<sup>1</sup> bytes
+<td>A compressed list of concept ids.<br>
+A compressed list of positions.<br>
+Each positions is followed by 4 bit number
+identifying concept in this group.
+</tr>
+
+</table> 
+<p>
+<sup><b>1</b></sup> The number of bytes is determined by the compression.
+</p>
+<p>
+
+<A NAME=documentsidx><H3>Documents File</H3></a>
+<p>
+The Documents file is a collection of lists, where the list 
+is a collection of document indices (into the Positions Index) for a given 
+concept.</p>
+<H6 align=center>Documents Data Structure
+<p>
+<img src="images/docpos.jpg"></h6>
+
+<p>
+<table border=3 cellpadding=5 center=true>
+<caption>Documents List Data Structure</caption>
+
+<tr>
+<th>byte
+<td>document list compression factor
+</tr>
+
+<tr>
+<th>n<sup>1</sup> bytes
+<td>compressed indices into Positions Index tables.
+</tr>
+
+</table>
+<p>
+<sup><b>1</b></sup> The number of bytes is determined by the compression.
+</p>
+
+<A NAME=documentsidx><H4>Documents Index</H4></A>
+<p>
+The Documents Index is an <A HREF="associdx">association index</A> of
+concept ids and corresponding offsets of compressed lists of documents 
+in the Documents file as illustrated in the Documents Data Structure diagram.
+</p>
+<A NAME=childidx><H3>Children File</H3></a>
+<p>
+The Children file a collection of lists of ids, where each list contains ids of
+more specific concepts for a given concept. For example, "song" is a
+more specific concept of "music". 
+</p>
+<H6 align=center>Children Data Structure
+<p>
+<img src="images/children.jpg"></h6>
+
+<p>
+<table border=3 cellpadding=5 center=true>
+<caption>Children List Data Structure</caption>
+
+<tr>
+<th>byte
+<td>element list compression factor
+</tr>
+
+<tr>
+<th>n<sup>1</sup> bytes
+<td>compressed concept ids
+</tr>
+
+</table>
+<p>
+<sup><b>1</b></sup> The number of bytes is determined by the compression.
+</p>
+
+<A NAME=childidx><H4>Children Index</H4></A>
+<p>
+The Children Index is an <A HREF="associdx">association index</A> of
+concept ids and corresponding offsets of compressed lists of children 
+in the Children file as illustrated in the Children Data Structure diagram.
+</p>
+
+      <hr>
+      <address><a href="mailto:pelegri@eng.sun.com">Eduardo Pelegri-Llopart</a></address>
+<!-- Created: Sat Jan 31 17:51:00 PST 1998 -->
+<!-- hhmts start -->
+Last modified: Fri Feb 27 14:41:50 MST 1998
+<!-- hhmts end -->
+  </body>
+</html>

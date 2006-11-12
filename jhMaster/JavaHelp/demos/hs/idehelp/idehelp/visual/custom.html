@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding Custom Components and Windows
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Adding Custom Components and Windows</H1>
+
+You can add your own custom windows and components to the layout
+(without having to add them to a palette):
+<ul>
+<li><a href=#gencomp>Generic Component</a>. Creates a particular type
+of component when you specify a component class in the attribute
+editor and set its attributes. 
+<li><a href=#custom_windows>Generic Window</a>. Creates a top-level
+window when you specify a frame or dialog class in the attribute
+editor and set its attributes.
+</ul> 
+
+<p>
+<a name=gencomp></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><STRONG>To add a custom component
+with Generic Component:</STRONG>
+
+<ol>
+<li>Click on Generic Component in the Additional palette.
+<li>Click in the cell where you want to place the component.
+<li>Open the attribute editor by clicking on its button in the main
+toolbar.  
+<li>Use the <code>class</code> attribute to specify your
+custom component by its full package and class name. By
+default, the <code>class</code> attribute of Generic
+Component contains <code>java.awt.Button</code>, the
+standard AWT button object. 
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+The component must have a null constructor, and it must be a subclass
+of <code>java.awt.Component</code>. 
+<li>Enter a unique component ID in the name box.
+</ol>
+<p>
+Using Generic Component does not integrate your component into the GUI
+builder component palette. 
+<p>
+
+<A NAME=custom_windows></A>
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><STRONG>To add a custom window to
+the layout:</STRONG>
+
+<ol>
+<li>Choose GUI -> Add New Window to open the New Window
+dialog box.
+<li>Choose Generic Window from the list.
+<li>Click Create.
+<li>Select Generic Window in the mode list (next
+to the component palette) to open the <A
+HREF="dialogs/attributes.html">attribute editor.</A>
+<li>Use the <code>class</code> attribute to specify your
+custom window by its full package and class name. 
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+By default, the Generic Window <code>class</code> attribute
+contains <code>sunsoft.jws.visual.rt.awt.RootFrame</code>.
+Your custom window must be a subclass of
+<code>sunsoft.jws.visual.rt.awt.RootFrame</code> or
+<code>sunsoft.jws.visual.rt.awt.RootDialog</code>
+</ol>
+
+See <a href=importing.html#defattributes>Defining Attributes</a> for
+information on defining attributes for custom shadows or groups.
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="importing.html">Importing Components</A>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="ops.html">What Is a Component Operation?</A>
+<dd><A HREF="running.html">GUI Builder Runtime Classes</A>
+<dd><A HREF="palette.html">GUI Builder Palette</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI Builder
+Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+</body>
+</HTML>

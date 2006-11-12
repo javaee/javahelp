@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercice 3 : Examen des threads
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Exercice 3 : Examen des threads</h1>
+
+Vous ferez connaissance, dans cet exercice, avec les groupes de threads, les threads et les blocs
+de pile, qui constituent le projet Blink. Vous apprendrez &eacute;galement &agrave; surveiller les
+modifications des valeurs des variables au fur et &agrave; mesure du d&eacute;roulement du programme.
+<ol>
+<li>S&eacute;lectionnez <nobr>D&eacute;boguer -&gt; Threads/Pile.</nobr>
+<br>La fen&ecirc;tre Threads/Pile de Java Development Environment s'affiche.
+<p>
+Le projet Blink comprend trois groupes de threads, chacun d'eux accompagn&eacute; du glyphe :
+ <img src="../../images/spacer2_t.gif"><img src="../../../../images/db_01_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">
+
+<ul>
+<li><kbd>main</kbd> : est compos&eacute; des threads qui s'ex&eacute;cutent dans Java Development Environment.
+<li><kbd>sun.applet.AppletViewer.main</kbd> : comprend ceux qui s'ex&eacute;cutent dans l'afficheur
+d'appliquette.
+<li><code>file:/<b>your-installation-directory</b>/jws/Blink/-threadGroup</code> : contient les
+threads en rapport direct avec le projet Blink.
+</ul>
+
+Le groupe de threads <kbd>sun.applet.AppletViewer.main</kbd> contient trois
+ threads et le groupe <kbd>Blink</kbd> en comporte deux.
+<li>Observez <kbd>"AWT-EventQueue-0"</kbd>, le premier thread du groupe <kbd>sun.applet.AppletViewer.main</kbd>.
+<p>Vous remarquerez les caract&eacute;ristiques suivantes :
+
+<ul>
+<li>Le nom du thread est <kbd>java.awt.EventDispatch</kbd>
+<li>L'&eacute;tat du thread est "&agrave; un point d'arr&ecirc;t".
+<li>La priorit&eacute; d'ex&eacute;cution de ce thread est d'ordre 5.
+Le thread avec la plus haute priorit&eacute; est ex&eacute;cut&eacute; en premier.
+</ul>
+
+<p>
+Le glyphe accompagnant le thread est une indication suppl&eacute;mentaire de son &eacute;tat. Vous
+pourrez rencontrer divers glyphes, dont :
+<br>
+<img src="../../../../images/db_19_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">Le
+thread est interrompu.
+<br>
+<img src="../../../../images/db_20_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">Le
+thread est arr&ecirc;t&eacute; &agrave; un point d'arr&ecirc;t.
+<br>
+<img src="../../../../images/db_13_u.gif"><img src="../../images/spacer2_t.gif">L'&eacute;tat du
+ thread ne peut &ecirc;tre d&eacute;termin&eacute;.
+<br>
+<img src="../../../../images/db_14_u.gif"><img src="../../images/spacer2_t.gif">Le thread est un zombie.
+<br>
+<img src="../../../../images/db_15_u.gif"><img src="../../images/spacer2_t.gif">Le thread s'ex&eacute;cute.
+<br>
+<img src="../../../../images/db_16_u.gif"><img src="../../images/spacer2_t.gif">Le thread est en
+sommeil.
+<br>
+<img src="../../../../images/db_18_u.gif"><img src="../../images/spacer2_t.gif">Le thread attend
+une variable conditionnelle.
+
+<li>Observez la pile d'appel qui compl&egrave;te la classe thread.
+<br>La pile d'appel comprend toutes les m&eacute;thodes qui ont &eacute;t&eacute; appel&eacute;es mais qui n'ont pas encore
+ <nobr>rendu la main.<img src="../../images/spacer2_t.gif"></nobr> <kbd>Blink.paint</kbd>, qui
+&eacute;tait en cours d'ex&eacute;cution lorsque le programme s'est arr&ecirc;t&eacute;, est au sommet de la pile. Le bloc de
+pile est mis en &eacute;vidence de sorte que vous pouvez sans probl&egrave;me savoir o&ugrave; s'est
+arr&ecirc;t&eacute; le programme. Chaque
+bloc de pile est accompagn&eacute; du glyphe <img src="../../../../images/db_02_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif"> .
+<li>Ouvrez le bloc de pile <kbd>Blink.paint</kbd> en cliquant sur le signe + &agrave;
+c&ocirc;t&eacute; du glyphe <img src="../../../../images/db_02_u.gif" align=BOTTOM> .
+<br>Java Development Environment montre les variables et leurs valeurs actuelles dans le contexte de
+ <kbd>Blink.paint</kbd>. Observez la variable <kbd>word</kbd>. Notez la valeur de
+<code>word</code>.
+<li>Cliquez sur le bouton Aller de la barre d'outils Editer/D&eacute;boguer.
+<br>Le programme parcourt la boucle et s'arr&ecirc;te lorsqu'il rencontre le point d'arr&ecirc;t pour la
+seconde fois. L'affichage de Threads/Pile est mis &agrave; jour et la valeur de la variable
+<kbd>word</kbd> modifi&eacute;e. La valeur it&egrave;re jusqu'au bouclage du cycle de "Java Development Environment
+is really cool :-)".
+<li>Ouvrez l'objet <kbd>this</kbd> en cliquant sur le signe + &agrave; c&ocirc;t&eacute; du glyphe <img src="../../../../images/db_24_u_data.gif" align=BOTTOM> .
+<br>Java Development Environment d&eacute;veloppe l'objet pour pr&eacute;senter toutes les variables qu'il englobe. Vous pouvez
+reproduire cette action sur les objets embo&icirc;t&eacute;s (par exemple, <kbd>peer</kbd>).
+<li>Cliquez sur le signe - &agrave; gauche de l'objet <kbd>this</kbd>.
+<br>Java Development Environment condense l'objet.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Le&ccedil;on suivante :</strong>
+<dl>
+<dd><a href="step.html">Exercice 4 : Progression pas &agrave; pas dans une m&eacute;thode </a>
+</dl>
+
+<p>
+</body>
+</html>

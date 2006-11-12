@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<META http-equiv="Content-Language" content="de">
+<TITLE>
+&Uuml;bung 3: &Uuml;berpr&uuml;fen von Threads
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>&Uuml;bung 3: &Uuml;berpr&uuml;fen von Threads</h1>
+
+In dieser &Uuml;bung zeigen Sie die Thread-Gruppen, Threads und
+Stapelrahmen an, aus denen sich das Blinkprojekt zusammensetzt.
+Dar&uuml;ber hinaus verfolgen Sie die &Auml;nderungen der variablen
+Werte, w&auml;hrend das Programm ausgef&uuml;hrt wird.
+<ol>
+<li>W&auml;hlen Sie <nobr>"Fehlersuche" -&gt;
+"Threads/Stapel".</nobr>
+<br>Das Fenster "Java Development Environment Threads/Stapel" wird angezeigt.
+<p>
+Das Blinkprojekt enth&auml;lt drei Thread-Gruppen, denen die Symbole <img src="../../images/spacer2_t.gif"><img src="../../../../images/db_01_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">zugeordnet
+sind:
+<ul>
+<li><kbd>main</kbd>--enth&auml;lt Threads, die in Java
+WorkShop ausgef&uuml;hrt werden
+<li><kbd>sun.applet.AppletViewer.main</kbd>--enth&auml;lt Threads,
+die im Applet-Viewer ausgef&uuml;hrt werden
+<li><code>file:/<b>your-installation-directory</b>/jws/Blink/-threadGroup</code>--enth&auml;lt
+Threads, die direkt dem Blinkprojekt zugeordnet sind
+</ul>
+
+Die Thread-Gruppe <kbd>sun.applet.AppletViewer.main</kbd>
+enth&auml;lt drei Threads. Die Datei-Thread-Gruppe <kbd>Blink</kbd>
+enth&auml;lt zwei Threads.
+<li>Zeigen Sie <kbd>"AWT-EventQueue-0"</kbd> an. Hierbei handelt es
+sich um den ersten Thread in
+der Thread-Gruppe <kbd>sun.applet.AppletViewer.main</kbd>.
+<p>Folgende Angaben werden eingeblendet:
+
+<ul>
+<li>Der Thread-Name <kbd>java.awt.EventDispatch</kbd>.
+<li>Der Thread-Status "bei Haltepunkt".
+<li>Die Priorit&auml;t f&uuml;r die Thread-Ausf&uuml;hrung
+(Priorit&auml;t 5). Der Thread mit der h&ouml;chsten
+Priorit&auml;t wird zuerst ausgef&uuml;hrt.
+</ul>
+
+<p>
+Das neben dem Thread angegebene Symbol dient als zus&auml;tzlicher
+Hinweis auf den Thread-Status. Folgende Symbole k&ouml;nnen
+angezeigt werden:
+<br>
+<img src="../../../../images/db_19_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">Der
+Thread ist unterbrochen.
+<br>
+<img src="../../../../images/db_20_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">Der
+Thread wurde an einem Haltepunkt gestoppt.
+<br>
+<img src="../../../../images/db_13_u.gif"><img src="../../images/spacer2_t.gif">Der
+Status des Thread kann nicht bestimmt werden.
+<br>
+<img src="../../../../images/db_14_u.gif"><img src="../../images/spacer2_t.gif">Der
+Thread ist ein Zombie.
+<br>
+<img src="../../../../images/db_15_u.gif"><img src="../../images/spacer2_t.gif">Der
+Thread wird ausgef&uuml;hrt.
+<br>
+<img src="../../../../images/db_16_u.gif"><img src="../../images/spacer2_t.gif">Die
+Thread-Ausf&uuml;hrung pausiert.
+<br>
+<img src="../../../../images/db_18_u.gif"><img src="../../images/spacer2_t.gif">Der
+Thread wartet auf eine Bedingungsvariable.
+<li>Zeigen Sie den Aufrufstapel an, aus dem die Thread-Klasse
+besteht.
+<br>Der Aufrufstapel enth&auml;lt s&auml;mtliche Methoden, die
+aufgerufen, aber nicht zur&uuml;ckgegeben wurden. <nobr><img src="../../images/spacer2_t.gif"></nobr>Die
+zum Zeitpunkt der Unterbrechung ausgef&uuml;hrte
+Datei <kbd>Blink.paint</kbd>
+befindet sich an oberster Position des Stapels. Anhand des
+hervorgehobenen Stapelrahmens k&ouml;nnen Sie leicht erkennen, an
+welcher Stelle die Programmausf&uuml;hrung gestoppt wurde. Neben
+jedem Stapelrahmen sind die Symbole <img src="../../../../images/db_02_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif"> angezeigt.
+<li>&Ouml;ffnen Sie den Stapelrahmen <kbd>Blink.paint</kbd> durch
+Klicken auf das neben dem folgenden Symbol <img src="../../../../images/db_02_u.gif" align=BOTTOM> angezeigte
+Pluszeichen (+).
+<br>Die Variablen und deren aktuell f&uuml;r die Datei
+<kbd>Blink.paint</kbd> g&uuml;ltige Werte werden durch Java Development Environment
+angezeigt. &Uuml;berpr&uuml;fen Sie die Variable
+<kbd>word</kbd> und anschlie&szlig;end deren Wert.
+<li>Klicken Sie in der Symbolleiste "Bearbeiten/Debug" auf die
+Schaltfl&auml;che "Gehe zu".
+<br>Das Programm durchl&auml;uft die Schleife und stoppt, wenn der
+Haltepunkt ein zweites Mal erreicht wird. Die Anzeige
+"Threads/Stapel" wird aktualisiert, und der Wert der Variablen
+<kbd>word</kbd> wird ge&auml;ndert. Der Wert durchl&auml;uft
+nacheinander die Worte "Java Development Environment is really cool :-)".
+<li>&Ouml;ffnen Sie das Objekt <kbd>this</kbd> durch Klicken auf das
+Pluzeichen (+) neben dem Symbol <img src="../../../../images/db_24_u_data.gif" align=BOTTOM> 
+<br>Das Objekt wird durch Java Development Environment eingeblendet, so
+da&szlig; alle in dem Objekt enthaltenen Dateien angezeigt werden. Diese
+Aktion kann f&uuml;r verschachtelte Objekte wiederholt werden
+(z.&nbsp;B. <kbd>peer</kbd>).
+<li>Klicken Sie auf das Minuszeichen (-) links neben dem Objekt
+<kbd>this</kbd>.
+<br>Das Objekt wird durch Java Development Environment ausgeblendet.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;chste &Uuml;bung:</strong>
+<dl>
+<dd><a href="step.html">&Uuml;bung 4: &Uuml;berpr&uuml;fen der
+einzelnen Schritte einer Methode</a>
+</dl>
+
+<p>
+</body>
+</html>

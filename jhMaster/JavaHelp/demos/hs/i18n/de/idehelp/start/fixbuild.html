@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<META http-equiv="Content-Language" content="de">
+<TITLE>
+&Uuml;bung 2: Beheben von Fehlern w&auml;hrend des Aufbauprozesses
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff"> 
+<h1>&Uuml;bung 2: Beheben von Fehlern w&auml;hrend des Aufbauprozesses</h1>
+
+Diese &Uuml;bung zeigt, wie Sie beim Auftreten von Fehlern w&auml;hrend des
+Aufbauprozesses die verantwortliche Quellzeile schnell finden und
+korrigieren k&ouml;nnen. Die h&auml;ufigsten Fehler beim Aufbauen sind
+fehlerhafte Sprachsyntax, nicht deklarierte Variablen und falsch
+geschriebene Schl&uuml;sselw&ouml;rter.
+<p>
+Falls noch nicht geschehen, sollten Sie jetzt den Quelltext aus dem
+Blink-Projekt hinzuf&uuml;gen wie im Abschnitt <a
+href="editcode.html">Bearbeiten von Quellcode</a> beschrieben.
+<h2>Auffinden von Fehlern</h2>
+<ol>
+<li>Pr&uuml;fen Sie, welches aktuelle Projekt im Projekt-Manager angezeigt wird.
+<br>Handelt es sich bei dem aktuellen Projekt nicht um das
+Blink-Projekt, doppelklicken Sie auf den Projektnamen "Blink".
+<li>Klicken Sie in der Hauptsymbolleiste von Java Development Environment auf die
+Schaltfl&auml;che "Erstellen" <img src="../../../../images/24/tb-build_u.gif"
+align=BOTTOM>.
+<br>Java Development Environment kompiliert das Blink-Projekt standardm&auml;&szlig;ig mit
+dem Java Development Environment Java-Compiler; dieser Compiler ist schneller als
+der standardm&auml;&szlig;ige JDK Java-Compiler.
+<p>
+Die Registerkarte "Erstellen" f&uuml;hrt
+zwei Fehler auf. Im Quelleditor ist die f&uuml;r den ersten Fehler verantwortliche Quellzeile gelb gekennzeichnet.
+</ol>
+
+<h2>Beheben von Fehlern</h2>
+<ol>
+<li>Um den ersten Fehler zu beheben, setzen Sie die fehlenden
+Klammern um <kbd>offset</kbd>.
+<br>Die Zeile sollte jetzt
+folgenderma&szlig;en aussehen:
+<br><code>if (offset)</code>
+<li>W&auml;hlen Sie jetzt in der Registerkarte "Erstellen" den zweiten
+Fehler <kbd>Blink.java: 61</kbd>
+<br>Im Quelleditor ist die f&uuml;r den Fehler verantwortliche Quellzeile gekennzeichnet.
+<li>Beheben Sie den Fehler durch Hinzuf&uuml;gen von <kbd>;</kbd> nach <kbd>y = y / 2</kbd> in Zeile 60.
+<br>Die Zeile sollte jetzt folgenderma&szlig;en aussehen:
+<br><kbd>y = y / 2;</kbd>
+<li>Klicken Sie in der Symbolleiste "Bearbeiten/Debug" auf die Schaltfl&auml;che
+"Datei speichern" <img src="../../../../images/24/file-save_u.gif" align=BOTTOM>.
+<br>Damit sind die Fehler im Programm behoben, und Sie k&ouml;nnen es neu aufbauen.
+</ol>
+
+<h2>Erneutes Aufbauen des Projekts</h2>
+<ol>
+<li>Klicken Sie in der Hauptsymbolleiste auf die Schaltfl&auml;che
+"Erstellen" <img src="../../../../images/24/tb-build_u.gif" align=BOTTOM>.
+<br>Jetzt sollten beim Aufbau keine Fehler mehr auftreten. Andernfalls wechseln Sie wieder in den Quelleditor und
+pr&uuml;fen die eingegebenen &Auml;nderungen.
+<li>Klicken Sie in der Hauptsymbolleiste von Java Development Environment auf die
+Schaltfl&auml;che "Ausf&uuml;hren" <img src="../../../../images/24/tb-run_u.gif" align=BOTTOM>.
+<br>Java Development Environment f&uuml;hrt das Projekt mit dem sich auf
+und ab bewegenden Blinktext aus.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;chste &Uuml;bung:</strong>
+<dl>
+<dd>Die &Uuml;bungen in diesem Kapitel sind abgeschlossen. Als n&auml;chstes
+wird <a href="browse.html">Trainingshandbuch, Kapitel 4:  Durchsuchen
+eines Projekts</a> behandelt.
+</dl>
+<p>
+</body>
+</html>

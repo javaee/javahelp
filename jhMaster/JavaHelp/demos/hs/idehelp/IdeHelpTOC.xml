@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='ISO-8859-1'  ?>
+
+<!--
+ @(#)IdeHelpTOC.xml	1.16 06/10/30
+ 
+ Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+ 
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 
+ - Redistribution of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ 
+ - Redistribution in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+ 
+ Neither the name of Sun Microsystems, Inc. or the names of
+ contributors may be used to endorse or promote products derived
+ from this software without specific prior written permission.
+ 
+ This software is provided "AS IS," without a warranty of any
+ kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND
+ WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY
+ EXCLUDED. SUN MICROSYSTEMS, INC. ("SUN") AND ITS LICENSORS SHALL
+ NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF
+ USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+ DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR
+ ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,
+ CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND
+ REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR
+ INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGES.
+ 
+ You acknowledge that this software is not designed, licensed or
+ intended for use in the design, construction, operation or
+ maintenance of any nuclear facility. 
+-->
+
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN"
+         "../dtd/toc_2_0.dtd">
+<toc version="2.0">
+<tocitem text="Java Development Environment" image="toplevelfolder">
+
+   <tocitem text="Introduction to JDE Online Help" target="jde.intro"/>
+
+   <tocitem text="IDE Tutorial" target="tut.starttoc" expand="true">
+       <tocitem text="Introducing JDE" target="tut.overview"/>
+       <tocitem text="Tutorial One: Creating the Blink Project" target="tut.quickstart"/>
+       <tocitem text="Tutorial Two: Editing Project Attributes" target="tut.edit"/>
+       <tocitem text="Tutorial Three: Fixing Errors in Source Code" target="tut.errors"/>
+       <tocitem text="Tutorial Four: Browsing a Project" target="tut.browse"/>
+       <tocitem text="Tutorial Five: Debugging a Project" target="tut.simpledebug"/>
+       <tocitem text="Tutorial Six: Customizing a Run Page" target="tut.customize"/>
+       <tocitem text="Tutorial Seven: Creating a GUI" target="tut.visual"/>
+       <tocitem text="Tutorial Eight: Creating the Clock Project" target="tut.beansoverview"/>
+   </tocitem>
+
+   <tocitem text="Beans In JDE" target="bean.jbeanstory"/>
+   <tocitem text="Beans In JDE - in SecondaryWindow" target="bean.jbeanstory" presentationtype="javax.help.SecondaryWindow" presentationname="main"/>
+   <tocitem text="Beans In JDE - in Popup" target="bean.jbeanstory" presentationtype="javax.help.Popup"/>
+   <tocitem text="Tips on Using Beans Effectively" target="bean.beantips"/>
+
+   <tocitem text="Managing Projects" target="proj.managertoc">
+      <tocitem text="What Is a Portfolio?" target="proj.portfolio"/>
+      <tocitem text="Creating a Portfolio" target="proj.createportfolio"/>
+      <tocitem text="Adding an Existing Portfolio" target="proj.import"/>
+      <tocitem text="Changing the Current Portfolio" target="proj.changeportfolio"/>
+      <tocitem text="Removing a Portfolio" target="proj.removeportfolio"/>
+      <tocitem text="What Is a Project?" target="proj.projects"/>
+      <tocitem text="Where Are Project Files Stored?" target="proj.paths"/>
+   </tocitem>
+
+   <tocitem text="Editing Source Files" target="edit.editsource">
+      <tocitem text="Basic Editing" target="edit.basic"/>
+      <tocitem text="Editor Menu and Toolbar Commands" target="edit.controls"/>
+      <tocitem text="Source Editor Tabs and Indentation" target="edit.tabs"/>
+      <tocitem text="Syntax Highlighting and Colors" target="edit.syntax"/>
+      <tocitem text="Source Editor Fonts" target="edit.font"/>
+      <tocitem text="Source Editor Preferences" target="edit.preferences"/>
+      <tocitem text="Keyboard Preferences" target="edit.keyboard"/>
+      <tocitem text="Find Dialog Box" target="edit.find"/>
+      <tocitem text="Replace Dialog Box" target="edit.replace"/>
+   </tocitem>
+
+   <tocitem text="Building Projects" target="build.build">
+      <tocitem text="Compiling a Single File" target="build.compilefile"/>
+      <tocitem text="Builder Preferences Dialog Box" target="build.compiler_pref"/>
+   </tocitem>
+
+   <tocitem text="Debugging Projects">
+      <tocitem text="Debugging with Java Workshop" target="debug.overview"/>
+      <tocitem text="Starting a Debugging Session" target="debug.start"/>
+      <tocitem text="Debugging In the Source Editor" target="debug.editor"/>
+      <tocitem text="Specifying Program Arguments" target="debug.arguments"/>
+   </tocitem>
+
+   <tocitem text="Profiling Projects" target="prof.profile">
+      <tocitem text="Profiler Menus" target="prof.menus"/>
+      <tocitem text="Custom Filter Dialog Box" target="prof.custom"/>
+   </tocitem>
+
+   <tocitem text="Browsing Source Files" target="browse.sbrowse">
+      <tocitem text="Viewing Class Files" target="browse.class"/>
+      <tocitem text="Javadoc - The Java API Documentation Generator" target="browse.javadoc"/>
+      <tocitem text="Searching for Strings" target="browse.strings"/>
+   </tocitem>
+
+   <tocitem text="Version Control" target="version.version"/>
+
+   <tocitem text="Preferences">
+     <tocitem text="Source Editor" target="pref.preferences"/>
+     <tocitem text="Keyboard" target="pref.keyboard"/>
+     <tocitem text="Console Input" target="pref.console_input"/>
+     <tocitem text="Java Compiler" target="pref.compiler_pref"/>
+   </tocitem>
+
+   <tocitem text="Menus">
+      <tocitem text="File Menu" target="menus.file"/>
+      <tocitem text="Edit Menu" target="menus.edit"/>
+      <tocitem text="Build Menu" target="menus.build"/>
+      <tocitem text="Debug Menu" target="menus.debug"/>
+      <tocitem text="Preferences Menu" target="menus.preferences"/>
+      <tocitem text="Windows Menu" target="menus.windows"/>
+      <tocitem text="Help Menu" target="menus.help"/>
+   </tocitem>
+
+   <tocitem text="Toolbars">
+      <tocitem text="Main Toolbar" target="toolbar.main"/>
+      <tocitem text="Edit/Debug Toolbar" target="toolbar.pce_debug"/>
+   </tocitem>
+
+</tocitem>
+</toc>

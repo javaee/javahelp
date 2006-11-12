@@ -1,0 +1,3 @@
+Main-Class: sunw.demo.newmerge.Merge
+Class-Path: ../../javahelp/lib/jh.jar ../hs/newmerge/ ../hsjar/animals.jar
+

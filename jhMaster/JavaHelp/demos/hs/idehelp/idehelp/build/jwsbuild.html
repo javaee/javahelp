@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>jwsbuild - The Java WorkShop Batch Builder</title>
+</head>
+<BODY BGCOLOR="#FFFFFF">
+
+<h1>jwsbuild - The Java WorkShop Batch Builder</h1>
+<blockquote>
+<code>jwsbuild</code> compiles Java WorkShop projects.
+</blockquote>
+
+<h3>Synopsis</h3>
+<blockquote>
+<code>jwsbuild</code> <code>[</code> <a
+href="#Options"><em>options</em></a> <code>]</code>
+<em>project-name</em><code>.prj</code>
+</blockquote>
+
+<h3>Description</h3>
+<blockquote>
+The <code>jwsbuild</code> command builds Java WorkShop
+projects from the command line.  You can add
+<code>jwsbuild</code> commands to makefiles and scripts.
+Some of the advantages of using <code>jwsbuild</code>
+rather than calling the Java compiler directly are:
+<ul>
+<li><code>jwsbuild</code> gets its information from the same
+project file as the Java WorkShop builder.  This enables
+you to maintain the project definition a single location.
+<li><code>jwsbuild</code> automatically generates the map
+file used by the Java WorkShop debugger.
+</ul>
+
+
+<p>
+The <em>project-name</em> argument is the path name of
+the project file.
+<p>
+Options can be specified using the option's first character.
+For example, <code>/K</code> can be used in place of  <code>/KEEPGOING</code>.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13"><br>
+The <tt>/javac</tt> and <tt>/JDKClasspath</tt> options must
+be spelled out entirely.
+</blockquote>
+
+<a name=Options></a>
+<h3>Options</h3>
+<blockquote>
+Options are available in both Microsoft Windows 95/NT and
+UNIX syntax.  For compatibility, such as in makefiles and
+scripts, the Unix syntax ("-" delimiter) is recognized on
+both Microsoft Windows 95/NT and Solaris systems.  UNIX
+syntax must be used on Solaris systems.
+</blockquote>
+
+<p>
+</body>
+</html>

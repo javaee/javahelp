@@ -1,0 +1,18 @@
+An abbrivated German (de) HelpSet for the idedemo mockup
+example. This HelpSet demonstrates the I18N aspects of JavaHelp.
+
+The codeset for each file is ISO8859-1. It is defined in XML files as follows:
+
+	<?xml version='1.0' encoding='ISO-8859-1' standalone='yes' ?>
+
+It is not defined in HTML files and defaults to ISO-8859-1. The language is
+specified for the jhindexer using the "locale de" option.
+
+
+The German language is specified in the XML files as follows:
+
+	<toc xml:lang=de>
+
+The German language is specified in the HTML files as follows:
+
+	<META http-equiv="Content-Language" content="de">

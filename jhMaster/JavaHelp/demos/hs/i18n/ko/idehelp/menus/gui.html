@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          본 소스 코드 제품에 대한 판권 표시는 
+ *          발표한다는 의미가 아닙니다. 
+ * 
+ * 권리 제한 규정: 미국 정부에 의한 사용, 복제, 누설 등은 
+ * DFARS 252.227-7013 (1988년 10월)과 FAR 52.227-19 (c) 
+ * (1987년 6월)의 기술 관련 데이터와 컴퓨터 소프트웨어에
+ * 대한 권리 조항의 (c)(1)(ii) 항목에 서술된 제한 규정의 
+ * 적용을 받습니다.
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_KR">
+<HEAD>
+<TITLE>
+[GUI] 메뉴
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<!--
+<jhelp-index label="[GUI] 메뉴">
+-->
+
+<H1>[GUI] 메뉴</H1>
+
+<table BORDER=0 cellspacing=12>
+<tr valign="top">
+<td><strong>[GUI Builder 보기]</strong></td>
+<td>
+이 메뉴 명령을 선택하면 Java Development Environment 창에 GUI 빌더 조절 아이콘이 추가됩니다.
+이 메뉴 항목은 Visual Java GUI 빌더를 사용하여 만든 프로젝트에서만 활성 상태가 됩니다.
+</td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>[GUI 파일 병합]</b></td>
+<td valign="top">이 메뉴 명령을 선택하면 파일 선택창이 열리고 선택된 파일 (응용 프로그램에 포함시키려는 GUI 빌더 창이 들어 있는 파일)을 불러옵니다. 이 파일에는 반드시 <code>.gui</code> 확장자가 붙어 있어야 합니다.</td>
+</tr>
+<tr>
+<td valign="top"><b>[GUI 파일 저장 및 생성]</b> </td>
+<td valign="top">이 메뉴 명령을 선택하면 디스크의 <em>project-name</em><code>.gui</code> 파일에 레이아웃이 저장되고 그 레이아웃에서 Java 소스 코드가 생성됩니다. 더 자세한 내용은 <A HREF="../visual/generate.html">Java 소스 코드 생성하기</A>를 참조하십시오.</td>  
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>[컴포넌트 잘라내기]</b></td>
+<td valign="top">이 메뉴 명령을 선택하면 선택된 컴포넌트나 창을 잘라내어 클립보드에 올려 놓습니다. 잘라낸 컴포넌트나 창을 레이아웃의 다른 셀에 붙여 넣을 수 있습니다.</td> 
+</tr>
+<tr>
+<td valign="top"><b>[컴포넌트 복사]</b></td>
+<td valign="top">이 메뉴 명령을 선택하면 선택된 컴포넌트나 창을 복사하여 클립보드에 올려 놓습니다. 복사된 컴포넌트나 창을 클립보드에서 레이아웃의 다른 셀에 붙여 넣을 수 있습니다.</td>
+</tr>
+<tr>
+<td valign="top"><b>[컴포넌트 붙여넣기]</b></td>
+<td valign="top">이 메뉴 명령을 선택하면 잘라내거나 복사한 컴포넌트나 창을 레이아웃의 다른 셀로 붙여 넣습니다.</td>
+</tr>
+<tr>
+<td valign="top"><b>[컴포넌트 삭제]</b></td>
+<td valign="top">이 메뉴 명령을 선택하면 선택된 컴포넌트나 창을 지웁니다.  이 메뉴 명령은 <em>클립보드에 복사본을 올려 놓지 않으므로 실행을 취소할 수 없습니다.</em></td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>[속성 편집]</b><IMG
+SRC="../../../../images/24/vj_attributes_up.gif" ALIGN="left" WIDTH=24
+HEIGHT=24></td>
+<td valign="top">이 메뉴 명령을 선택하면 선택된 컴포넌트나 창의 속성이 나타나는 <A HREF="../visual/dialogs/attributes.html">속성 편집기</A>가 열립니다. 컴포넌트의 속성을 수정하는 방법에 관한 자세한 내용은 속성 편집기 도움말을 참조하십시오. 이 명령도 주 도구 모음에 해당 단추가 있습니다.</td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>[열 추가]</b></td>
+<td valign="top">이 명령을 선택하면 선택된 셀이나 컴포넌트의 왼쪽이나 오른쪽에 열을 추가합니다.</td>
+</tr>
+<tr>
+<td valign="top"><b>[행 추가]</b></td>
+<td valign="top">이 명령을 선택하면 선택된 셀이나 컴포넌트의 위나 아래에 행을 추가합니다. </td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>[새 창 추가]</b><IMG
+SRC="../../../../images/24/vj_newframe_up.gif" ALIGN="left" WIDTH=24 HEIGHT=24></td>
+<td valign="top">이 메뉴 명령을 선택하면 <A HREF="../visual/newwindow.html">[새 창]</A> 대화 상자가 열립니다. 목록에서 특정한 컨테이너를 선택한 다음 [만들기]를 마우스로 눌러서 지정된 컨테이너를 위한 새 그리드백 레이아웃을 여십시오. 이 명령은 컴포넌트 팔레트의 왼쪽에 그에 해당하는 단추가 있습니다.</td>
+</tr>
+<tr>
+<td valign="top" nowrap><b>[창 유형 설정]</b></td>
+<td  valign="top">이 메뉴 명령을 선택하면 <A HREF="../visual/chg_container.html">[주 컨테이너]</A> 대화 상자가 열립니다. 주 컨테이너의 유형을 프레임이나 패널로 변경하려면 이 대화 상자를 사용하십시오.</td> 
+</tr>
+<tr>
+<td valign="top"><b>[중첩 패널]</b></td>
+<td  valign="top">이 명령을 선택하면 선택된 레이아웃 패널 컴포넌트가 그리드백 레이아웃 패널 컴포넌트 안에 (제자리에) <A HREF="../visual/nest_panels.html">중첩</A>됩니다.</td> 
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top" nowrap><b>[팔레트 사용자 정의]</b></td>
+<td valign="top">이 메뉴 명령을 선택하면 <A HREF="../visual/chg_palette.html">팔레트 편집기</A>가 열립니다. 팔레트 편집기를 사용하면 팔레트 폴더 안에 있는 컴포넌트들을 수정하거나 삭제하거나 재배열할 수 있습니다.</td>
+</tr>
+<tr>
+<td valign="top" nowrap><b>[팔레트로 컴포넌트 임포트하기]</b></td>
+<td valign="top">이 메뉴 명령을 선택하면 [팔레트로 컴포넌트 임포트하기] 대화 상자가 열립니다. 이 대화 상자를 사용하면 JavaBeans이나 shadows 클래스가 있는 컴포넌트를 임포트할 수 있습니다. 더 자세한 내용은 <a href=../visual/importing.html>컴포넌트 임포트하기</a>를 참조하십시오.</td>  
+</tr>
+<tr>
+<td valign="top" nowrap><b>[팩토리 팔레트로 재설정]</b></td>
+<td valign="top">이 메뉴 명령을 선택하면 기본적인 GUI 빌더 팔레트의 내용 ([AWT] 탭, [패널] 탭, 및 [추가] 탭)이 원래의 상태로 돌아갑니다.</td> 
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top" nowrap><b>[선택한 컴포넌트의 Bean 정보]</b></td>
+<td valign="top">이 메뉴 명령을 선택하면 프로퍼티, 이벤트, 메서드 등을 포함하여 빈 관련 정보가 나오는 [Bean 정보] 대화 상자가 열립니다.</td>  
+</tr>
+<tr>
+<td valign="top" nowrap><b>[디자인에서 컴포넌트 클래스 업데이트]</b></td>
+<td valign="top">이 메뉴 명령을 선택하면 Bean 클래스 목록이 나오는 <a href=../visual/upgrade.html>[디자인에서 컴포넌트 클래스 업데이트]</a> 대화 상자가 열립니다. 갱신할 클래스(또는 클래스들)을 선택하십시오. 팔레트의 컴포넌트들은 갱신이 되지만, [레이아웃] 창의 컴포넌트들은 갱신이 되지 않습니다. 재로딩이 필요하면 Reload Component in Design 대화 상자가 나타납니다.</td>
+</tr>
+<tr>
+<td valign="top" nowrap><b>[클래스 사용 보고서]</b></td>
+<td valign="top">이 메뉴 명령을 선택하면 현재 프로젝트에서 사용된 컴포넌트 클래스 목록이 화면에 나타납니다.</td> 
+</tr>
+</table>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>참조:</strong>
+<dl>
+<dd><A HREF="../visual/palette.html">GUI 빌더 팔레트</A>
+<dd><A HREF="../visual/layout.html">인터페이스 배열하기</A>
+<dd><A HREF="../visual/menus.html">메뉴 표시줄과 메뉴 추가하기</A>
+<dd><A HREF="../visual/custom.html">사용자 정의 컴포넌트와 창 추가하기</A> 
+</dl>
+<p>
+</BODY>
+</HTML>

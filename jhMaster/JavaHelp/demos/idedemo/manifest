@@ -1,0 +1,3 @@
+Main-Class: sunw.demo.idedemo.ApiDemo
+Class-Path: ../../javahelp/lib/jh.jar ../lib/classviewer.jar ../hsjar/idehelp.jar ../hsjar/apidoc.jar
+

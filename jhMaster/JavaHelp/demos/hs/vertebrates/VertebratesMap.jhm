@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE map
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/map_1_0.dtd">
+
+<map version="1.0">
+	<mapID target="fish" url="Pages/Fish_Desc.html" />
+	<mapID target="amphibians" url="Pages/Amphibians_Desc.html" />
+        <mapID target="reptiles" url="Pages/Reptiles_Desc.html"/>
+	<mapID target="birds" url="Pages/Birds_Desc.html" />
+	<mapID target="mammals" url="Pages/Mammals_Desc.html" />
+	<mapID target="marsupials" url="Pages/Marsupials_Desc.html" />
+	<mapID target="primates" url="Pages/Primates_Desc.html" />
+	<mapID target="rodents" url="Pages/Rodents_Desc.html" />
+	<mapID target="cetaceans" url="Pages/Cetaceans_Desc.html" />
+	<mapID target="seals" url="Pages/Seals_Desc.html" />
+	<mapID target="vertebrates" url="Pages/Vertebrates.html" />
+	<mapID target="dolphin.picture" url="Pages/Pictures/Dolphin.html"/>
+	<mapID target="koala.picture" url="Pages/Pictures/Koala.html"/>
+	<mapID target="frog.picture" url="Pages/Pictures/Frog.html"/>
+	<mapID target="grizzly.picture" url="Pages/Pictures/Grizzly.html"/>
+	<mapID target="leopard.picture" url="Pages/Pictures/Leopard.html"/>
+	<mapID target="crocodile.picture" url="Pages/Pictures/Crocodile.html"/>
+	<mapID target="giraffe.picture" url="Pages/Pictures/Giraffe.html"/>
+	<mapID target="elephant.picture" url="Pages/Pictures/Elephant.html"/>
+	<mapID target="kangaroo.picture" url="Pages/Pictures/Kangaroo.html"/>
+	<mapID target="fish.picture" url="Pages/Pictures/Fish.html"/>
+	<mapID target="bird.picture" url="Pages/Pictures/Bird.html"/>
+	<mapID target="timberwolf.picture" url="Pages/Pictures/TimberWolf.html" />
+	<mapID target="arcticwolf.picture" url="Pages/Pictures/ArcticWolf.html"/>
+	<mapID target="blackbear.picture" url="Pages/Pictures/BlackBear.html"/>
+	<mapID target="lizard.picture" url="Pages/Pictures/Lizard.html"/>
+	<mapID target="snake.picture" url="Pages/Pictures/Snake.html"/>
+	<mapID target="cougar.picture" url="Pages/Pictures/Cougar.html"/>
+	<mapID target="bat.picture" url="Pages/Pictures/Bats.html"/>
+	<mapID target="chimp.picture" url="Pages/Pictures/Chimp.html"/>
+	<mapID target="orca.picture" url="Pages/Pictures/Orca.html"/>
+	<mapID target="seal.picture" url="Pages/Pictures/Seal.html"/>
+	<mapID target="shark.picture" url="Pages/Pictures/Shark.html"/>
+</map>

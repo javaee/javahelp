@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Esercizio 4: Avvio di un metodo eseguendo un'istruzione o una routine alla volta
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Esercizio 4: Avvio di un metodo eseguendo un'istruzione o una routine alla volta</h1>
+
+L'avvio di un metodo eseguendo un'istruzione o una routine alla volta
+rappresenta
+un metodo alternativo per l'individuazione della riga che provoca il problema. 
+In questo
+esercizio verr&agrave; spiegato come eseguire un metodo un'istruzione o una routine
+alla volta e come tenere traccia delle variazioni dei valori delle
+variabili nella finestra Thread/stack. Verr&agrave; inoltre spiegato come
+rimuovere un breakpoint.
+<ol>
+<li>Fare clic sul pulsante Istruzione/routine <img src="../../../../images/24/db-step-over_u.gif" align="BOTTOM"><img src="../../images/spacer2_t.gif"> sulla
+barra degli strumenti dell'editor/debug.
+<br>Verr&agrave; eseguita una riga di codice sorgente e
+l'esecuzione del programma verr&agrave; interrotta in questo punto:
+<p>
+<kbd>if (Math.random() < 0.5) {</kbd>
+<p>
+La riga contenente il breakpoint risulta evidenziata in rosso nell'editor
+del codice sorgente mentre quella in cui &egrave; stata interrotta l'esecuzione
+del programma &egrave; visualizzata in verde. Se la riga fosse stata una
+chiamata a un metodo, con il comando Esegui istruzione/routine
+sarebbe stata eseguita la riga successiva del programma. Se invece si fosse
+trattato di una riga di
+chiamata a un metodo e fosse stato immesso il comando Esegui istruzione,
+l'esecuzione del programma sarebbe stata interrotta dopo l'esecuzione della prima
+istruzione del metodo. <p>
+Nella finestra Thread/stack sono riportati lo stato corrente e i dati del programma. 
+Viene, ad esempio, indicato che l'esecuzione del programma
+<kbd>Blink.paint</kbd> &egrave; stata interrotta a riga 49.
+<li>Fare clic sul pulsante Istruzione/routine due volte
+e prestare attenzione al modo in cui il debugger passa all'istruzione successiva del
+programma.
+<li>Nell'editor del codice sorgente posizionare il puntatore sulla riga 45, in cui &egrave; stato
+inserito un breakpoint.
+<li>Fare clic sul pulsante Breakpoint <img src="../../../../images/24/db-stop-at_u.gif" align=MIDDLE> .
+<br>
+Il breakpoint verr&agrave; eliminato.</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Lezione successiva</strong>
+<dl>
+<dd><a href="evaluate.html">Esercizio 5:  Valutazione delle variabili</a>
+</dl>
+<p>
+
+</body>
+</html>

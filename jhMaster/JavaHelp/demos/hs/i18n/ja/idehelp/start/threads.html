@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    901 San Antonio Road
+ *    Palo Alto, California  94303
+ *
+-->
+
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_JP">
+<TITLE>
+実習 3: スレッドを調べる
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>実習 3: スレッドを調べる</h1>
+
+この実習では、プロジェクトを構成するスレッドグループ、スレッド、スタックフレームを調べます。また、プログラムの実行に伴って変化する変数の値を追跡する方法についても学習します。
+
+<ol>
+<li><nobr>「デバッグ」-&gt;「スレッド/スタック」</nobr>を選択します。
+<br>「スレッド/スタック」ウィンドウが表示されます。
+<p>
+Blink プロジェクトには 3 つのスレッドグループがあり、それぞれにアイコン<img src="../../images/spacer2_t.gif"><img src="../../../../images/db_01_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">が付いています。
+<ul>
+<li><kbd>main</kbd>
+<br>Java WorkShop 中で実行されるスレッドが含まれています。
+<li><kbd>sun.applet.AppletViewer.main</kbd>
+<br>アプレットビューアで実行されるスレッドが含まれています。
+<li><code>file:/<i>ホームディレクトリ名</i>/jws/Blink/-threadGroup</code>
+<br>Blink プロジェクトに直接関連するスレッドが含まれています。
+
+
+</ul>
+
+<kbd>sun.applet.AppletViewer.main</kbd> スレッドグループには 3 つのスレッド、<kbd>Blink</kbd> スレッドグループには 2 つのスレッドが含まれています。
+
+
+<li><kbd>sun.applet.AppletViewer.main</kbd> スレッドグループの下にある 1 つ目のスレッド <kbd>"AWT-EventQueue-0"</kbd> を見てください。
+<p>以下のことがわかります。
+
+<ul>
+<li>スレッド名は <kbd>java.awt.EventDispatch</kbd>
+<li>スレッドの状態は「ブレークポイント」 
+<li>スレッドを実行する優先順位は 5。優先順位が最も高いスレッドが最初に実行されます。
+</ul>
+
+<p>
+スレッドに付いているアイコンからも、スレッドの状態がわかります。アイコンとそれが示すスレッドの状態は、以下のとおりです。
+
+<br>
+<img src="../../../../images/db_19_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">スレッドは中断 (一時停止) 中です。
+<br>
+<img src="../../../../images/db_20_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">スレッドはブレークポイントで停止中です。
+<br>
+<img src="../../../../images/db_13_u.gif"><img src="../../images/spacer2_t.gif">スレッドの状態を特定できません。
+<br>
+<img src="../../../../images/db_14_u.gif"><img src="../../images/spacer2_t.gif">スレッドはゾンビ状態です。
+<br>
+<img src="../../../../images/db_15_u.gif"><img src="../../images/spacer2_t.gif">スレッドは実行中です。
+<br>
+<img src="../../../../images/db_16_u.gif"><img src="../../images/spacer2_t.gif">スレッドはスリープ中です。
+<br>
+<img src="../../../../images/db_18_u.gif"><img src="../../images/spacer2_t.gif">スレッドは条件付き変数で待機中です。
+
+
+<li>スレッドクラスを構成している呼び出しスタックを見てください。
+<br>呼び出しスタックには、呼び出されたけれども戻っていないメソッドがすべて含まれています。プログラムが停止した時に実行中であった <nobr><kbd>Blink.paint</kbd></nobr> が、呼び出しスタックの一番上にあります。プログラムが停止した位置がすぐわかるように、スタックフレームは強調表示されています。各スタックフレームには <img src="../../../../images/db_02_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">アイコンが付いています。
+
+<li><img src="../../../../images/db_02_u.gif" align=BOTTOM> アイコンの左にある「+」記号をクリックして、<kbd>Blink.paint</kbd> スタックフレームを開きます。
+<br><kbd>Blink.paint</kbd> 中の局所変数とその現在の値が表示されます。変数 <kbd>word</kbd> の値を確認してください。
+
+<li>編集デバッグツールバー上の「継続」ボタンをクリックします。
+<br>プログラムはループに入り、2 回目にブレークポイントに到達した時に実行を停止します。「スレッド/スタック」ウィンドウの表示内容は更新され、<kbd>word</kbd> の値が変わります。この変数の値は、<nobr>「Java WorkShop ってステキ！」</nobr>中の空白文字で区切られる部分で順に入れ替わります。
+
+
+
+<li><img src="../../../../images/db_24_u_data.gif" align=BOTTOM> アイコンの左にある「+」記号をクリックして、<kbd>this</kbd> オブジェクトを展開します。
+<br>このオブジェクト中のすべての変数が表示されます。<kbd>peer</kbd> など、入れ子になっているオブジェクトについて、同様にオブジェクトを展開して中の変数を確認することができます。
+<li><kbd>this</kbd> オブジェクトの左にある「-」記号をクリックします。
+<br>展開されているオブジェクトが閉じられます。
+
+
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>次のレッスン:</strong>
+<dl>
+<dd><a href="step.html">実習 4: メソッドをステップ実行する</a>
+</dl>
+
+<p>
+</body>
+</html>
+

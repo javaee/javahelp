@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Exercise 8:  Adding Operations to Desk Clock
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Exercise 8:  Adding Operations to Desk Clock</h1>
+
+In this exercise, you will add operations to the Clock bean so that an
+alarm will sound and a message will scroll across the marquee screen
+every 60 seconds. You will edit the Group file, <tt>DeskClock.java</tt>,
+displayed in the source editor:displayed in the source editor.
+
+<ol>
+<li>To the list of import statements near the top of the file, add the
+following statement: 
+<pre>
+import java.awt.event.*;
+</pre>
+<li>Implement <tt>ActionListener</tt> so that when Clock sends an
+event, the GUI class can detect it and call the appropriate methods in
+Marquee and SoundPlayer.
+Change: 
+<pre>public class DeskClock extends Group {
+</pre> 
+To: 
+<pre>
+public class DeskClock extends Group implements ActionListener {
+</pre>
+<li>Edit <tt>createGroup</tt> to make the Group an action listener of Clock:
+<pre>
+protected void createGroup() {
+      Clock body = (Clock)gui.clock1.getBody();
+      body.addActionListener(this);
+  }
+</pre>
+<li>Select the Marquee component in the layout and choose GUI
+-> Bean Info on Selected Component to find out the name of
+the method you want called for that bean when the Clock alarm event occurs.
+<li>In the Bean Information dialog box, click the Methods tab. You
+should see a method called <tt>public void displayMessage()</tt>.
+<li>Do the same for SoundPlayer. To seee bean information for
+SoundPlayer, select the bean's name from the Windows list and then
+choose GUI -> Bean Info on Selected Component.
+<li>In the Bean Information dialog box, click the Methods tab. You
+should see a method called <tt>public void play()</tt>.
+<li>Implement the <tt>actionPerformed</tt> method specified in the
+<tt>actionListener</tt> interface. <tt>actionPerformed</tt> is called
+when an action event occurs. Put the following piece of code at the
+end of the <tt>DeskClock.java</tt> file.  
+<pre>
+  public void actionPerformed(ActionEvent e) {
+    /* 
+     * When the action event is received from the clock, play the sound in
+     * the sound bean and show message.
+     */ 
+    SoundPlayer sBody = (SoundPlayer)gui.soundplayer1.getBody();
+    sBody.play();
+    Marquee mBody = (Marquee)gui.marquee1.getBody();
+    mBody.displayMessage();
+  }
+</pre>
+<li>Click Save <img src="../../images/file-save_u.gif"
+align=BOTTOM> on the Edit/Debug toolbar to save your edits.
+<li>Click Build <img src="../../images/tb-build_u.gif" align=MIDDLE> on the main toolbar to compile your file.
+<li>Click Run <img src="../../images/tb-run_u.gif" align=BOTTOM> on the main toolbar to test the DeskClock application after
+the build completes.
+<pre>
+<IMG SRC="deskclock.gif" WIDTH=68 HEIGHT=81>
+</pre>
+</ol>
+
+<p>
+<IMG SRC="../../../images/hg_see.gif"><strong>Next lesson:</strong>
+<dl>
+<dd><a href="EditJar.html">Exercise 9:  Modifying Clock</a>
+</dl>
+<p>
+  </body>
+</html>

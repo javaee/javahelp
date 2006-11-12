@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_CN">
+<HEAD>
+<TITLE>
+重要概念：项目和公文夹
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>重要概念：项目和公文夹</h1>
+
+项目是Java Development Environment的基本生成块。项目把需要生成applet小程序、独立程序、Java包或程序节的文件 组织起来。另外，项目还包含与自身有关的信息，比如项目名和主类文件等。
+<p>
+Java Development Environment将项目信息存储在一个名为<i>projectname</i><kbd>.prj</kbd>的文件中。此项目存储的是源文件。 Java Development Environment会利用您在创建项目时所提供的项目名、源文件名和其它信息来创建这个文件。
+<p>
+当项目创建完之后，您可以对其信息进行添加或更新。例如，您可以添加有关如何在HTML页面上 显示该项目的信息，或者使用哪一个编译器来生成该项目的信息。您绝对不可以直接编辑<kbd>.prj</kbd>文件。 Java Development Environment会根据您使用项目管理器所执行的动作来更新这个文件。
+<p>
+Java Development Environment会把项目集中放入一个公文夹中，所采取的方式与把文件集中放入目录相同。通常， 每个用户都有一个<kbd>personal</kbd>公文夹，其中只包含属于他或她个人的项目。当您第一次启动Java Development Environment时， 便已经“位于”您的个人公文夹中 -- 您当前“所在”的这个公文夹就叫做您的<i>当前公文夹</i>。
+<p>
+在源代码编辑器中显示的项目被称为<i>当前项目</i>。当前项目会对Java Development Environment中所有工具的上下文进行设置。 例如，当您使用调试工具时，所操作的对象就是当前项目。
+<p>
+Java Development Environment会将公文夹存储在一个名为<i>portfolioname</i><kbd>.psf</kbd>的文件中。公文夹文件列出了每个与该公文夹 有关的<kbd>.prj</kbd>文件的路径名。
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>下一课：</strong>
+<dl>
+<dd><a href="create.html">练习1：创建Blink项目</a> 
+<p>
+</BODY>
+</HTML>

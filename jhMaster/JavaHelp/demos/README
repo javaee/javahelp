@@ -1,0 +1,26 @@
+These are demos that show the JavaHelp API.
+
+Currently we have two helpsets and three demos.  We need a new
+dataset for (context-sensitive) Help on the apidemo.
+
+apidoc/
+	HelpSet for API documentation.
+	Shows extensibility of JavaHelp
+	(Also shows how to use the new doclect interface in javadoc)
+
+holidays/
+	HelpSet with a history of the holidays.
+	This is most useful to show JavaHelp as navigation of data
+
+idehelp/
+	HelpSet with (context-sensitive) help for the mock ide
+
+idedemo/
+	Mock-up of an IDE tool.
+	Uses apidoc helpset and idehelp.
+
+newdemo/
+	Uses holidays.  Shows LAF switching.
+
+browsers/
+	Notes & et al. to use activator.

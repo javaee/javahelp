@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    901 San Antonio Road
+ *    Palo Alto, California  94303
+ *
+-->
+
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_JP">
+<TITLE>
+重要な概念: プロジェクトとポートフォリオ
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>重要な概念: プロジェクトとポートフォリオ</h1>
+
+プロジェクトは、Java WorkShop が扱う基本単位です。アプレット、スタンドアロンプログラム (main メソッドを持ち、アプレットビューアなしで実行可能なプログラムのこと)、
+Java パッケージ、JavaBeans を作成するために必要なファイルを、プロジェクト単位でまとめて管理します。またプロジェクトには、プロジェクト名やメインクラスファイル名などのプロジェクトに関する情報も含まれています。
+<p>
+プロジェクトに関する情報は、「<i>プロジェクト名</i><kbd>.prj</kbd>」というファイルに保存され、ソースファイルと同じディレクトリに置かれます。このファイルは、プロジェクト名やソースファイル名など、プロジェクト作成時に指定する情報を使用して作成されます。
+<p>
+プロジェクト作成後に、プロジェクトの情報を追加したり変更したりすることができます。たとえば、HTML ページにプロジェクトを表示する方法や、プロジェクトの構築に使用するコンパイラオプションなどの情報を追加することができます。<kbd>.prj</kbd> ファイルは、直接編集しないでください。このファイルは、プロジェクトマネージャを使用して設定した内容にもとづいて、<nobr>Java WorkShop</nobr> によって更新されます。
+<p>
+ファイルがディレクトリ単位でグループ化されるのと同じように、プロジェクトはポートフォリオという単位でグループ化されます。通常各ユーザーは、ユーザー個人に属するプロジェクトだけで構成される personal という名前の個人用ポートフォリオを持っています。<nobr>Java WorkShop</nobr> を最初に起動した時には、personal ポートフォリオが現在のポートフォリオになります。現在自分がいるポートフォリオのことを、「現在のポートフォリオ」といいます。
+
+
+<p>
+ソースエディタに表示されているプロジェクトは、「現在のプロジェクト」です。<nobr>Java WorkShop</nobr> のすべてのツールは、現在のプロジェクトを対象として動作します。たとえば、デバッガを使用している時は現在のプロジェクトがデバッグ対象となります。
+
+
+<p>
+ポートフォリオは、「<i>ポートフォリオ名</i><kbd>.psf</kbd>」というファイルに保存されます。このファイルには、ポートフォリオから各 <kbd>.prj</kbd> ファイルへの相対パス名のリストが記録されています。
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>次のレッスン:</strong>
+<dl>
+<dd><a href="create.html">実習 1: Blink プロジェクトを作成する</a> 
+</dl>
+<p>
+</BODY>
+</HTML>

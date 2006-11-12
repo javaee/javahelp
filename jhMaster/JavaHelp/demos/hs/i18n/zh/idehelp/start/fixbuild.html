@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_CN">
+<HEAD>
+<TITLE>
+练习2：在生成过程中排错 
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>练习2：在生成过程中排错</h1>
+
+本练习将向您讲解如何在生成过程中对发现错误的源代码行进行定位和改正。生成错误通常包括不正确的语法、 未经说明的变量，以及拼错的关键字。
+<p>
+如果您还没有在Blink项目中添加使单词跳动的代码，现在应该先按<a href="editcode.html">编辑源代码</a>中的说明去完成这项工作。
+
+<h2>定位错误</h2>
+<ol>
+<li>在项目管理器中检查当前项目的名字。
+<br>如果当前项目不是Blink，就双击Blink项目名。
+<li>单击Java Development Environment主工具栏中的“生成”按钮<img src="../../../../images/24/tb-build_u.gif" align=BOTTOM>。
+<br>Java Development Environment在缺省情况下会用Java Development Environment Java编译器来编译Blink项目；此编译器要比标准的JDK Java编译器速度快。
+<p>
+“生成”制表项中列出了两个错误。源代码编辑器对第一个出错的源代码行用黄色高亮显示。
+</ol>
+
+<h2>排错</h2>
+<ol>
+<li>通过在<kbd>offset</kbd>两边加上括号来改正第55行上的第一个错误。
+<br>这一行现在应该是这样的：
+<br><code>if (offset)</code>
+<li>在“生成”制表项中，选择第二个错误<kbd>Blink.java: 61</kbd>
+<br>源代码编辑器将高亮显示下一个出现错误的源代码行。
+<li>通过在第60行的<kbd>y = y / 2</kbd>之后添加一个<kbd>;</kbd>来改正这个错误。
+<br>这一行现在变成这样：
+<br><kbd>y = y / 2;</kbd>
+<li>单击“编辑/调试”工具栏中的“保存文件”<img src="../../../../images/24/file-save_u.gif" align=BOTTOM>按钮。
+<br>现在已将程序中的错误排除掉，可以重新生成这个程序了。
+</ol>
+
+<h2>重新生成项目</h2>
+<ol>
+<li>单击主工具栏中的“生成”按钮<img src="../../../../images/24/tb-build_u.gif" align=BOTTOM>。
+<br>应该不会再出现任何错误了。如果还有错的话，请转回源代码编辑器并在代码上双击， 看看是不是有输入错误的地方。
+<li>单击Java Development Environment主工具栏中的“运行”按钮<img src="../../../../images/24/tb-run_u.gif" align=BOTTOM>。
+<br>Java Development Environment开始运行这个项目，其中的文本不但会闪烁，还会上下跳动。
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>下一课：</strong>
+<dl>
+<dd>您已经完成了本教程中的所有课程。下一个教程是<a href="browse.html">教程四：浏览项目</a>。
+</dl>
+<p>
+</body>
+</html>

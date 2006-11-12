@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    901 San Antonio Road
+ *    Palo Alto, California  94303
+ *
+-->
+
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_JP">
+<TITLE>
+実習 1: HTML ファイルを編集する
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>実習 1: HTML ファイルを編集する</h1>
+
+この実習では、Blink プロジェクトを実行した時に作成された HTML ファイルを編集します。アプレットのパラメータを指定し、ソースコードへのリンクを追加します。編集したファイルは、異なるファイル名で保存してください。同じファイル名で保存すると、次にプロジェクトを実行した時に編集内容は上書きされて無効になってしまいます。
+<p>
+まだ Blink プロジェクトを作成および構築していない場合は、ここで <a href="create.html">Blink プロジェクトを作成する</a>の手順に沿って Blink プロジェクトの作成および構築を行なってから、以下の実習に進んでください。
+
+<ol>
+<li>「プロジェクトマネージャ」ウィンドウで、現在のプロジェクトの名前を確認します。
+<br>現在のプロジェクトが Blink でない場合は、プロジェクト名「Blink」をダブルクリックします。
+<li>ソースエディタで、<nobr>「ファイル」-&gt;「開く」</nobr>を選択します。
+<br>「ファイルを開く」ダイアログが表示されます。
+<li><kbd>Blink</kbd> ディレクトリ中の <kbd>Blink.tmp.html</kbd> ファイルを開きます。
+<br>このファイルには、以下のような applet タグが含まれています。
+
+
+
+
+
+<p>
+<code>&lt;applet</code><br>
+<code>　name="Blink"</code><br>
+<code>　code="Blink.class"</code><br>
+<code>　codebase="file:/</code><i>自分のホームディレクトリ</i><code>/jws/Blink"</code><br>
+<code>　width="500"</code><br>
+<code>　height="600"</code><br>
+<code>　align="Top"</code><br>
+<code>　alt="ブラウザが Java に対応している場合は, ここにアプレットを表示することができます."</code><br>
+<code>&gt;</code><br>
+<code>&lt;param name="lbl" value="Java WorkShop ってステキ！"&gt;</code><br>
+<code>&lt;hr&gt;ブラウザが applet タグを認識すれば,</code><br>
+<code>　ここにアプレットが表示されます&lt;hr&gt;</code><br>
+<code>&lt;/applet&gt;</code><br>
+
+
+
+
+
+<p>
+このファイルは、プロジェクトを実行した時に Java WorkShop によって作成されています。このファイル中の情報は、「プロジェクト編集」ウィンドウの「実行」タブ付きページの情報にもとづいています。これまでにプロジェクトを実行したことがない場合は、<a href="run.html">プロジェクトを実行する</a>を参照してください。
+
+<li>ソースエディタのメニューバーから、<nobr>「ファイル」-&gt;「別名保存」</nobr>を選択します。
+<br>「現在のファイルを保存」ダイアログが表示されます。
+<li>Blink ディレクトリを選択し、新しい HTML ファイルの名前を入力して「了解」(または「OK」) ボタンをクリックします。
+
+<br>必ず HTML ファイルの名前を変更してください。変更しないと、次にプロジェクトを実行した時に変更内容は上書きされて無効になってしまいます。また、<kbd>Blink</kbd> ディレクトリに HTML ファイルを保存してください。
+
+<li>ソースエディタで、height の値を 75 に変更します。
+
+<li>空白文字で区切られた部分文字列の点滅速度を速くするために、<kbd>lbl</kbd> パラメータの前に次のパラメータを追加します。
+
+<pre>
+
+&lt;param name="speed" value="50"&gt;
+
+</pre>
+
+<li>以下のように、&lt;/applet&gt; タグの後にソースコードへのリンクを追加します。
+<pre>
+
+&lt;p&gt;
+&lt;a href="Blink.java"&gt;ソースコード&lt;/a&gt;
+
+</pre>
+
+ソースコードへのパスは、HTML ファイルがあるディレクトリからの相対パスで指定します。
+<li>編集デバッグツールバー上の「保存」ボタン <img src="../../../../images/24/file-save_u.gif" align=MIDDLE>をクリックします。
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>次のレッスン:</strong>
+<dl>
+<dd><a href="runpage.html">実習 2: 実行ページを更新する</a></dl>
+<p>
+</BODY>
+</HTML>

@@ -1,0 +1,3 @@
+Open JavaHelp_V2_0_Specification.fm 
+Print JavaHelp_V2_0_Specification.fm 
+Quit JavaHelp_V2_0_Specification.fm

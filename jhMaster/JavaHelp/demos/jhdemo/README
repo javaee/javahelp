@@ -1,0 +1,4 @@
+This is a demo of the a standalone helpset viewer.
+
+To run the demo either double click on the hsviewer.jar file or execute the
+command "java -jar hsviewer.jar".

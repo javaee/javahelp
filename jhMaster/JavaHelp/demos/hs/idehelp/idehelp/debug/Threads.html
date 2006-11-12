@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Threads/Stack Overview
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>
+Threads/Stack Overview
+</h1>The Threads/Stack window displays information for the current project. While the debugger is running, choose Debug -> Threads/Stack, to open the Threads/Stack window.
+<p>
+Using the Thread/Stack window you can:
+<ul>
+<li>Examine the threads, classes, and methods in the current project
+<li>Expand objects and arrays to show all embedded variables
+<li>View the stack frame in a thread
+<li>View the variables local to each stack
+<li>Expand objects and arrays to show all of their members 
+<li>Track the value of a variable as you step through your source code
+<li>Suspend and resume threads
+</ul>
+
+When you first open the Threads/Stack window, the stack frame in which program execution stopped is highlighted. Click the + and - icons to expand and contract the thread groups, threads, stacks, and variables.
+
+<h2>Thread Groups
+</h2>Initially, the Threads/Stack window lists the following thread groups that make up the current project:
+<ul>
+<li>The <kbd>main</kbd> thread group. Any keyboard action by the user interacts with the threads in the <kbd>main</kbd> thread group.
+<li>The thread group that represents the viewer that executes the project (for applet projects only). The applet runs in the Applet Viewer (the <kbd>sun.applet.AppletViewer.main</kbd> thread group).
+<li>The thread groups particular to the project. If you cannot find the current stopping point inside this thread, try looking inside the browser thread groups.
+</ul>
+
+<h2>Threads
+</h2>Click the + icon next to the <img src="../../../../images/db_01_u.gif" align=BOTTOM> glyph to list the threads that make up a thread group. 
+<p>Each thread is in the form of:
+<br><pre>"AWT-Motif" (java.lang.Thread) at breakpoint (priority 5)</pre>
+<br>for example.
+<p>
+Where, in the thread example above:
+<ul>
+<li><kbd>AWT-Motif</kbd> is the thread name
+<li><kbd>java.lang.Thread</kbd> is the thread class
+<li>"at breakpoint" is the thread state
+<li>priority 5 is the priority for running the thread (the thread with the highest priority is run first)
+</ul>
+<p>
+The glyph accompanying a thread is an additional clue as to the state of the thread. In all, a thread can be in one of seven states:
+<dl>
+<dd><img src="../../../../images/db_13_u.gif">
+<img src="../../images/spacer2_t.gif">The state of the thread cannot be determined.
+<dd><img src="../../../../images/db_14_u.gif">
+<img src="../../images/spacer2_t.gif"> Thread is a zombie (has been exited, but has not yet been reaped or has been constructed but not yet started).
+<dd><img src="../../../../images/db_15_u.gif">
+<img src="../../images/spacer2_t.gif"> Thread is running.
+<dd><img src="../../../../images/db_16_u.gif">
+<img src="../../images/spacer2_t.gif"> Thread is sleeping.
+<dd><img src="../../../../images/db_18_u.gif">
+<img src="../../images/spacer2_t.gif"> Thread is waiting on a conditional variable.
+<dd><img src="../../../../images/db_19_u.gif">
+<img src="../../images/spacer2_t.gif"> Thread is suspended.
+<dd><img src="../../../../images/db_20_u.gif">
+<img src="../../images/spacer2_t.gif">Thread is stopped at a breakpoint.
+</dl>
+
+
+<h2>Stack Frames
+</h2>When you expand a thread in the Threads/Stack window, the stack frames in the thread are shown. Each stack frame is marked with the <img src="../../../../images/db_02_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif"> icon. 
+<p>
+The stack frames are listed in the order in which they were called. The stack frame that was executing when the program stopped is at the top of the stack. The initial stack frame is at the bottom of the stack. If a class does not have a stack frame, try recompiling your program with the <kbd>-g</kbd> option.
+
+<h2>Local Variables</h2>Expanding a stack frame displays the arguments and local variables. Objects are marked with the <img src="../../../../images/db_24_u_data.gif"><img src="../../images/spacer2_t.gif"> icon. When you expand an object, all data members of the object are shown. Although only the first 100 elements of an array are shown. 
+<p>
+You can repeat this action on nested objects. Local variables that are out of scope are not shown.
+<p>
+</BODY>
+</HTML>
+

@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+GUI Builder Runtime Classes
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>GUI Builder Runtime Classes</H1>
+
+Applets and applications developed with GUI builder require GUI
+builder runtime classes to run outside of the Java WorkShop
+environment. The runtime classes consist of:
+
+<ul>
+<li>Shadow (wrapper) classes for the standard AWT components,
+including workarounds that help AWT-based programs run better
+<li>Framework base classes, required for writing custom groups and
+shadows 
+<li>Type converters that convert any type to a string and vice
+versa 
+<li>Components such as the Tabbed Folder Panel, Image
+Label, and Multiple Column List 
+</ul>
+<p>
+GUI builder uses runtime classes instead of duplicating runtime code
+in the application for a number of reasons:
+<ul>
+<li>Groups provide public interfaces and base classes that allow GUIs
+created with GUI builder to be included in other GUIs created with GUI
+builder. Any application generated using GUI builder can be included
+within another GUI builder application.
+<li>A number of workarounds for AWT problems have been
+included in the shadow classes and in AWT subclasses
+included in the runtime classes.  These workarounds make it
+possible to build complex applications that work on both
+Windows and Solaris systems.
+<li>Shadow classes permit delayed instantiation of
+components at runtime.  Components are not instantiated
+until they are displayed the first time--this results in
+better startup performance.  There is minimal overhead
+associated with using shadow classes.
+<li>Generated code is smaller and simpler. Browsers that
+can cache classes perform better when
+loading a second applet if the second applet uses the same
+runtime classes--only the small generated class specific to
+the second applet is loaded.
+<li>Shadow classes allow names and attributes for AWT
+components to be recorded.  This feature allows you to
+change the location of the component without having to
+change the operation information about the component.
+</ul>
+
+<a name=redisrunclasses></a>
+<h2>How to Use the Runtime Classes</h2>
+
+The runtime classes are located in the following
+directory:
+<p>
+On Solaris:
+<br>
+<em>install-dir-path</em><tt>/JWS/classes/sunsoft/jws/visual/rt</tt>
+
+<p>
+On Microsoft Windows 95 and Windows NT:
+<br>
+<em>install-dir-path</em><tt>\JWS\classes\sunsoft\jws\visual\rt</tt>
+
+<p>
+You can redistribute the GUI builder runtime classes with
+your applications. They can be copied into the directory
+containing your application's main class file, in which
+case they will be downloaded by the applet class loader of
+the browser or viewer. Or they can be installed locally on
+the client side and specified in the CLASSPATH variable.
+
+<a name=copyruntime></a>
+<p>
+To copy the runtime classes into an application directory,
+copy the contents of:
+
+<p>
+On Solaris:
+<br>
+<em>install-dir-path</em><tt>/JWS/lib/visualrt.zip</tt>
+
+<p>
+On Microsoft Windows 95 and Windows NT:
+<br>
+<em>install-dir-path</em><tt>\JWS\lib\visualrt.zip</tt>
+
+<p>
+into the directory that contains the main applet class. On
+a UNIX system, you can make a link to the sunsoft classes
+directory rather than an actual copy.
+<p>
+The first time you run an applet that requires the runtime classes,
+there is a delay while the runtime classes are down-loaded. Once the
+classes are cached, there is relatively little delay when subsequent
+applets are run, unless the applets use runtime classes not already
+used by the applets preceding it.
+
+<a name=localruntime></a>
+<p>
+Performance is significantly better if the runtime classes are
+installed locally and accessed via the CLASSPATH variable. The time it
+takes to download the runtime classes is affected more by the number
+of classes than the size. Most browsers create a new connection to
+download each class, which is very slow.
+
+<a name=runNetscape></a>
+<h2>Netscape Navigator</h2>
+
+For Solaris only: If an applet is run in Netscape Navigator and the GUI
+builder runtime classes are installed locally, Navigator must be
+started after the CLASSPATH variable has been set.
+<p>
+If Navigator fails to find the GUI builder runtime classes,
+you will probably see one of the following error messages:
+
+<ul>
+<li><code>Applet can't start: class bar got a security
+violation: method verification error.</code>
+<p>
+<li><code>Applet can't start: error.java.lang.NoClassDefFoundError</code>
+</ul>
+<p>
+You may run into situations where it is necessary to
+restart Navigator if it has previously failed to find the
+runtime classes.
+
+<a name=ziparchives></a>
+<h3>Use Zip Archives to Improve Performance</h3>
+
+Netscape Navigator version 3.0 and later can load the
+runtime classes from a zip archive. Loading the classes from
+the zip archive reduces the time it takes your applet to
+start because a single, large file is downloaded from the
+server rather than many smaller ones.
+<p>
+To use this method, copy the archive file:
+<p>
+On Solaris:
+<br>
+<em>install-dir</em><tt>/lib/visualrt.zip</tt>
+
+<p>
+On Microsoft Windows 95 and Windows NT:
+<br>
+<em>install-dir</em><tt>\lib\visualrt.zip</tt>
+
+<p>
+to the applet's codebase directory along with the applet's class files.
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="ops.html">What Is a Component Operation?</A>
+<dd><A HREF="groups_basic.html">What Are Groups and Shadows?</A>
+<dd><A HREF="groups_advanced.html">More On Using Groups and Shadows</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI
+Builder Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+
+</body>
+</HTML>

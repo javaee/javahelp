@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='ISO-8859-1'  ?>
+
+<!--
+ @(#)HolidayIndexAmerican.xml	1.2 06/10/30
+ 
+ Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+ 
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 
+ - Redistribution of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ 
+ - Redistribution in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+ 
+ Neither the name of Sun Microsystems, Inc. or the names of
+ contributors may be used to endorse or promote products derived
+ from this software without specific prior written permission.
+ 
+ This software is provided "AS IS," without a warranty of any
+ kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND
+ WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY
+ EXCLUDED. SUN MICROSYSTEMS, INC. ("SUN") AND ITS LICENSORS SHALL
+ NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF
+ USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+ DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR
+ ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,
+ CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND
+ REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR
+ INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGES.
+ 
+ You acknowledge that this software is not designed, licensed or
+ intended for use in the design, construction, operation or
+ maintenance of any nuclear facility. 
+-->
+
+<!DOCTYPE index
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Index Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/index_1_0.dtd">
+<index version="1.0">
+  <indexitem text="Historical Events">
+    <indexitem target="july4" text=" Independence Day"/>
+    <indexitem target="thanksgiving" text=" Thanksgiving"/>
+    <indexitem text=" Guy Fawkes" target="fawkes"/>
+  </indexitem>
+  <indexitem text="Historical Figures">
+    <indexitem text="Caesar Augustus" target="augustus"/>
+    <indexitem text="Guy Fawkes" target="fawkes"/>
+    <indexitem text="Herod" target="herod2"/>
+    <indexitem text="Martin Luther" target="mluther"/>
+    <indexitem text="Pontius Pilate" target="pilate"/>
+  </indexitem>
+  <indexitem text="Holidays">
+    <indexitem text="American">
+      <indexitem text="Father's Day" target="fathers"/>
+      <indexitem text="Independence Day" target="july4"/>
+      <indexitem text="Thanksgiving" target="thanksgiving">
+        <indexitem text="First Thanksgiving Proclamation - 1676" target="1thanksproc"/>
+        <indexitem text="George Washington's Thanksgiving Proclamation - 1789" target="gwthanksproc"/>
+        <indexitem text="Abraham Lincoln's Thanksgiving Proclamation - 1863" target="althanksproc"/>
+      </indexitem>
+      <indexitem text="Memorial Day" target="memorial"/>
+    </indexitem>
+    <indexitem text="British">
+      <indexitem text="Guy Fawkes" target="fawkes"/>
+    </indexitem>
+    <indexitem text="Irish">
+      <indexitem text="St. Patrick" target="stpatty"/>
+    </indexitem>
+    <indexitem text="Mexican">
+      <indexitem text="Cinco de Mayo" target="cinco"/>
+    </indexitem>
+  </indexitem>
+  <indexitem text="Music">
+    <indexitem text="Christmas" target="music"/>
+    <indexitem text="Handel's Messiah" target="handle"/>
+  </indexitem>
+</index>
+

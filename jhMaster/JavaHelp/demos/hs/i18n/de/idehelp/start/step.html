@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<META http-equiv="Content-Language" content="de">
+<TITLE>
+&Uuml;bung 4: &Uuml;berpr&uuml;fen der einzelnen Schritte
+einer Methode
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>&Uuml;bung 4: &Uuml;berpr&uuml;fen der einzelnen Schritte
+einer Methode</h1>
+
+Das schrittweise &Uuml;berpr&uuml;fen des Codes stellt eine weitere
+M&ouml;glichkeit zum Auffinden der fehlerverursachenden Zeile
+dar. In dieser &Uuml;bung &uuml;berpr&uuml;fen Sie den Code und
+verfolgen die &Auml;nderungen der Variablenwerte im Fenster
+"Threads/Stapel". Dar&uuml;ber hinaus entfernen Sie einen
+Haltepunkt.
+<ol>
+<li>Klicken Sie in der Symbolleiste "Bearbeiten/Debug" auf die
+Schaltfl&auml;che "&Uuml;berspringen". <img src="../../../../images/24/db-step-over_u.gif" align="BOTTOM"><img src="../../images/spacer2_t.gif"> 
+<br>Java Development Environment f&uuml;hrt eine Quellzeile aus und stoppt an
+folgender Position:
+<p>
+<kbd>If (Math.random() < 0.5) {</kbd>
+<p>
+Im Quelleditor wird die Zeile, die den Haltepunkt enth&auml;lt,
+rot gekennzeichnet. Die Zeile, in der die Programmausf&uuml;hrung
+unterbrochen wurde, erh&auml;lt eine gr&uuml;ne Kennzeichnung. Handelt
+es sich bei der Zeile um einen Methodenaufruf, wird bei Auswahl
+des Befehls "&Uuml;berspringen" die n&auml;chste Zeile im Programm
+ausgef&uuml;hrt. Handelt es sich bei der Zeile um einen
+Methodenaufruf und wurde der Befehl "Gehe zu" ausgew&auml;hlt, f&uuml;hrt Java Development Environment die erste Anweisung der Methode aus
+und stoppt anschlie&szlig;end.
+<p>
+Im Fenster "Threads/Stapel" werden der aktuelle Status des Programms
+und die zugeh&ouml;rigen Daten angezeigt. Beispielsweise gibt <kbd>Blink.paint</kbd> an, da&szlig; die Ausf&uuml;hrung in Zeile 49
+unterbrochen wurde.
+<li>Klicken Sie zweimal hintereinander auf die Schaltfl&auml;che
+"&Uuml;berspringen". Es wird nun angezeigt, wie das Programm
+durch den Debugger schrittweise auf Fehler &uuml;berpr&uuml;ft wird.
+<li>Bewegen Sie den Cursor im Quelleditor in Zeile 45. Diese Zeile
+enth&auml;lt einen Haltepunkt.
+<li>Klicken Sie auf die Schaltfl&auml;che "Haltepunkt". <img src="../../../../images/24/db-stop-at_u.gif" align=MIDDLE> 
+<br>
+Der Haltepunkt wird durch Java Development Environment entfernt.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;chste &Uuml;bung:</strong>
+<dl>
+<dd><a href="evaluate.html">&Uuml;bung 5:  Bewerten von Variablen</a>
+</dl>
+<p>
+
+</body>
+</html>

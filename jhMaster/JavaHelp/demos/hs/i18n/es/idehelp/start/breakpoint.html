@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Ejercicio 2: Definici&oacute;n de un punto de interrupci&oacute;n
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Ejercicio 2: Definici&oacute;n de un punto de interrupci&oacute;n</h1>
+
+La definici&oacute;n de un punto de interrupci&oacute;n es &uacute;til
+para poder realizar un seguimiento de los puntos conflictivos de su
+programa. En este ejercicio, definir&aacute; un punto de interrupci&oacute;n
+en <kbd>Blink.java</kbd> mientras se ejecuta el programa. El
+programa se ejecuta hasta el punto de interrupci&oacute;n y llegado aqu&iacute;,
+se detiene.
+<p>
+En este tutorial se asume, al dar los n&uacute;meros de la l&iacute;nea del c&oacute;digo fuente,
+que se ha a&ntilde;adido el c&oacute;digo adicional que se indica en
+<a href="editcode.html">Edici&oacute;n de c&oacute;digo fuente</a>.
+
+<ol>
+<li>Seleccione <nobr>"Depurar -&gt; Puntos de interrupci&oacute;n".</nobr>
+<br>Aparecer&aacute; la ventana de puntos de interrupci&oacute;n de Java Development Environment.
+<li>Escriba <kbd>Blink</kbd> en el cuadro de nombre "Clase".
+<li>Escriba <kbd>45</kbd> en el cuadro "Ubicaci&oacute;n".</b>
+<li>Pulse en "Definir punto de interrupci&oacute;n".
+<br>El editor de c&oacute;digo fuente resalta la l&iacute;nea:
+<br><pre>     if (x + w &gt; d.width) {</pre>
+<p>
+Se ha seleccionado esta l&iacute;nea para que pueda realizar un seguimiento
+de los cambios producidos en los valores de variables durante
+todo el proceso del programa. Por lo general, se
+definen los puntos de interrupci&oacute;n en las l&iacute;neas en donde se cree que se han producido
+errores en su programa.
+</ol>
+<p>
+Java Development Environment ejecuta el programa hasta que alcanza el punto de interrupci&oacute;n. La l&iacute;nea que contiene el nuevo punto de
+interrupci&oacute;n cambia a color verde para indicar d&oacute;nde se ha
+detenido la ejecuci&oacute;n del programa. La ventana "Subprocesos/Pila" queda actualizada.
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Lecci&oacute;n siguiente:</strong>
+<dl>
+<dd><a href="threads.html">Ejercicio 3: Examen de subprocesos</a>
+</dl>
+<p>
+
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JavaHelp 1.0 - Scenarios</title>
+  </head>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup><font size="-2">TM</font></sup> 1.0 - Scenarios
+</h1>
+      <h2 align=center>
+<br>
+<a href="../Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+<br>
+</h2>
+
+<hr>
+<h2>Introduction</h2>
+    <p>
+This document contains a number of scenarios that illustrate
+ways the JavaHelp system can be used to provide online help for
+different types of Java programs in a variety of network
+environments. These scenarios attempt to illustrate the
+flexibility and extensibility of the JavaHelp system.
+</p>
+    <p>
+Scenarios are presented in four areas:</p>
+
+<table width=98% border=0 cellpadding=5>
+<tr valign="top">
+<td width=30%><A HREF="#invocation">Invocation mechanisms</A>
+</td>
+<td width=70%>
+Scenarios that describe different ways that the JavaHelp system can be
+invoked from applications
+</td>
+</tr>
+
+<tr valign="top">
+<td width=30%><A HREF="#deployment">Presentation and deployment</A>
+</td>
+<td width=70%>
+Scenarios that describe different ways that the JavaHelp system can be used to
+present help information.  These scenarios also illustrate different
+methods for deploying the JavaHelp system classes and help data.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=30%><A HREF="#search">Search</A>
+</td>
+<td width=70%>
+Scenarios that describe different ways that full-text
+searches of JavaHelp system information can be implemented
+</td>
+</tr>
+
+<tr valign="top">
+<td width=30%><A HREF="#packaging">Packaging</A>
+</td>
+<td width=70%>
+Scenarios that describe different ways that JavaHelp system data can be encapsulated
+and compressed using Java Archive (JAR) files
+</td>
+</tr>
+
+<tr valign="top">
+<td width=30%><A HREF="#merging">Merging HelpSets</A>
+</td>
+<td width=70%>
+Scenarios that describe ways that JavaHelp system data can
+be merged.  You can use the merge functionality to append
+TOC, index, and full-text search information from one or
+more HelpSets to that of another HelpSet.
+</td>
+</tr>
+
+</table>
+
+<p>
+Code examples complementing these scenarios can be found in the
+<a href="RefImpl.html">reference implementation release</a>
+available at
+<a href="http://java.sun.com/products/javahelp">http://java.sun.com/products/javahelp</a>.
+
+<a name="invocation">
+<h2>Invocation Mechanisms</h2></a>
+<p>
+These scenarios describe the different ways the JavaHelp system can be invoked.
+</p>
+
+<a name="application-help">
+<a name="task-help"><h3>Menus and Buttons</h3></a></a>
+    <p>
+The JavaHelp system is often invoked from an application when a user chooses
+an item from a Help menu,
+clicks on a Help button in an application GUI,
+or uses one of the
+<a href="../CSH.html">context-sensitive help activation</a>
+gestures to request help on a GUI component.
+</p>
+    <p>
+The JavaHelp system provides a simple interface for
+requesting the creation of a help presentation
+by requesting that a topic ID (identified by a string)
+be displayed.
+Topic IDs are associated with URLs
+in the map file(s) mentioned in the HelpSet file.
+</p>
+    <p>
+For example, when coding a file chooser dialog box, a
+developer requests that the topic ID <code>fc.help</code> be displayed
+when the Help button at the bottom of the dialog box is clicked.
+In the HelpSet file (or in some cases the map file referred
+to in the HelpSet file) the ID <code>fc.help</code> is
+defined to be a file named <code>FileChooser.html</code> using the
+following syntax:
+<pre>
+&lt;mapID target="fc.help" url="FileChooser.html"/&gt;
+</pre></p>
+<p>
+Separating the specification of actual file names from
+the program code, provides content authors the freedom to
+control the information that is associated with the topic
+ID.</p>
+
+<a name="tooltips">
+<h3>Tooltips</h3></a>
+    <p>
+A <em>tooltip</em> is a brief message presented to
+the user when the cursor remains over a button for an
+interval longer than a given threshold.</p>
+    <p>
+Although tooltip information could be included in the JavaHelp system data,
+it will usually be delivered as part of the application and
+will be co-located with the code.</p>
+
+<a name="what-is-help">
+<h3>Context-Sensitive Help</h3></a>
+
+<p>
+<em>Context-sensitive help</em> (sometimes included in the
+term <em>What-is help</em>) is help information that
+describes graphical components in an application GUI.  It
+is triggered by gestures that activate context-sensitive help and
+then specify the component in question.  See
+<a href="../CSH.html">CSH.html</a> for more details.
+
+</p>
+
+
+<a name="helpers">
+<h3>Helpers</h3></a>
+
+<p>
+Recent products are exploring the notion of a Helper, or
+an Assistant, an example is the assistant in MS's Office 97.
+A helper is a mechanism that reacts to state and state transitions
+in applications and provides guidance and suggestions to
+the user.  Such a mechanism requires significant close interaction
+between the application and the information presented to the user.
+This is not directly supported in the 1.0 release of the
+JavaHelp system.
+</p>
+
+<a name="deployment">
+<h2>Presentation/Deployment Scenarios</h2></a>
+
+<p>
+The following scenarios illustrate different ways that
+the JavaHelp system can be used to present and deploy Help
+information.
+</p>
+
+<a name="kiosk">
+<h3>Information Kiosk</h3></a>
+    <p>
+The "kiosk" scenario is one where documents
+are presented independent of an application.</p>
+<p>
+An example on the Solaris platform is AnswerBook -- a
+technology used to display all of Sun's documentation
+online.  All that is required is a help browser that
+can be launched to present and navigate through the
+information.</p>
+    <p>
+<center>
+<IMG ALIGN=center ALT="Information Kiosk" SRC="../../images/kiosk_scenario.gif">
+</center></p>
+
+<p>
+In JDK1.2,
+a <a href="Jar.html#jax">JAR</a> file can indicate a containing
+Application class that will be invoked automatically by the system
+(by passing it to a "java -jar" command).
+</p>
+
+<a name="stand-alone">
+<h3>Stand-Alone Application</h3></a>
+    <p>
+The simplest scenario is
+one in which the Java application
+runs locally and accesses help data installed on the same machine.
+    <p>
+<center>
+<IMG ALIGN=center ALT="Stand Alone App" SRC="../../images/standalone_scenario.gif">
+</center></p>
+    <p>
+The application requests the creation of a
+JavaHelp instance, loads the help data on it, and then
+interacts with this instance, either by requesting the help information be presented and hidden, or by requesting a specific
+topic (identified by an ID) be presented.</p>
+
+<a name="network-application"><h3>Network Application</h3></a>
+When the help data is accessed across the network, the scenario
+is essentially the same --
+the location of the data is actually transparent.
+    <p>
+<center>
+<IMG ALIGN=center ALT="Network App" SRC="../../images/stand_net_scenario.gif">
+</center></p>
+
+<a name="embedded"><h3>Embedded Help</h3></a>
+Information can also be presented embedded directly in
+application windows.  The JFC components
+that implement the JavaHelp specification are embedded directly
+into the application frame.  The application can create its
+own customized presentation, by using the JFC components from the
+reference implementation.</p>
+<p>
+<center>
+<IMG ALIGN=center ALT="Embedded2" SRC="../../images/embedded_scenario.gif">
+</center></p>
+    <p>
+Embedded help is inherently application-specific since the
+application controls where each of the
+presentation UI components are located.
+The JavaHelp reference implementation is organized
+so that most applications will be able to achieve their
+needs very easily.
+
+<a name="component"><h3>Component Help</h3></a>
+<p>
+Many current applications are composed of a collection of
+interacting components.
+Examples range from large applications like Netscape navigator
+(with plugins) to applications
+where JavaBeans components are connected together using JavaScript
+or Visual Basic.</p>
+<p>
+<center>
+<IMG ALIGN=center ALT="Component Help" SRC="../../images/beans_scenario.gif">
+</center></p>
+<p>
+The help information can be
+<a href="../Merge.html">merged</a> in different
+ways.  For instance, the table-of-contents, index, and
+full-text search
+information from each component may be displayed one after
+the other to create a new, unified help system.</p>
+<p>
+As HelpSets are loaded/unloaded into a
+JavaHelp instance, the information presented needs to be updated.
+The JavaHelp system provides a flexible mechanism for
+merging this information.</p>
+
+<a name="help-server"><h3>A Help Server</h3></a>
+    <p>
+In some cases, it may be necessary to separate the
+application from the process that presents the help
+information.  In this case the application process can make
+requests into a JavaHelp process (help server) through an
+RPC mechanism (the RPC may be wrapped in a library and be
+invisible to the application developer).
+    <p>
+<center>
+<IMG ALIGN=center ALT="Help Server" SRC="../../images/server_scenario.gif">
+</center></p>
+<p>
+The help server model is useful if the application is not
+written in Java and does not include
+a JVM.  It would also be useful for a suite of Java applications
+that can share a common help server.</p>
+<a name="browser"><h3>Web Pages and Applets</h3></a>
+    <p>
+The final scenario describes how the JavaHelp system is used from within web-based applications.
+In this case an applet or some other
+triggering entity (perhaps a JavaScript event) on an HTML page
+creates a <code>HelpSet</code> object and then
+invokes
+<code>HelpSet.createJavaHelp()</code>.
+<p>
+This scenario can have a number of variations.  Here are a
+three:
+<ul>
+<li>In one case, the browser platform contains a customized
+implementation of the JavaHelp system.  This implementation may have
+been delivered with the browser, or it may have been
+downloaded by the client into the CLASSPATH.
+The implementation may use the Swing HTML viewer, or,
+more likely, it may use some the HTML viewer that comes with the
+Web Browser.</p>
+    <p>
+<center>
+<IMG ALIGN=center ALT="Web Pages1" SRC="../../images/applet_scenario.gif">
+</center></p>
+
+<li>Since the JavaHelp system is a Java "standard extension," it is possible that
+a fully-conforming JDK browser may not have it in its CLASSPATH.
+In this case, if the HTML page refers to the standard JavaHelp system implementation,
+the standard extension machinery will
+automatically download the implementation and execute it.
+Since our implementation is quite small,
+this approach will often be practical.
+Browsers may choose to provide some way of easily installing extensions
+downloaded through this mechanism.
+
+<p>
+This situation is depicted in the next picture where, for variety sake,
+we have changed the help presentation so the navigator is separate
+from the content.
+    <p>
+<center>
+<IMG ALIGN=center ALT="Web Pages2" SRC="../../images/download_scenario.gif">
+</center></p>
+    <p>
+The corresponding APPLET tag may look something like this:
+<pre>
+<code>
+&lt;APPLET
+    CODE=javax.help.HelpButton
+    ARCHIVE="JavaHelpDefault1_0.jar"
+&gt;
+&lt;PARAM
+    NAME=HelpSet
+    VALUE=MyHelp.JAR&gt;
+&lt;/APPLET&gt;
+</code>
+</pre>
+
+<li>In some cases, some client browsers may not have a fully-conformant
+Java Virtual Machine.  In that case we can use the
+<a href="http://java.sun.com/products/plugin">Java Plug-in technology</a>
+to request a compliant Java Virtual Machine.  The request may
+lead to a download request if the virtual machine is not available locally;
+once installed later requests will proceed with no download step.
+Once the appropriate JVM has been started,
+the situation is equivalent to the previous two steps.  The
+following figure illustrates this:
+<p>
+<center>
+<IMG ALIGN=center ALT="Web Pages3" SRC="../../images/activator_scenario.gif">
+</center></p>
+</ul>
+    <p>
+The JavaHelp system provides mechanisms for extending navigational views
+and content displayers, the classes providing this can be
+downloaded automatically using the standard classloader mechanisms
+of the Java platform (e.g. using ARCHIVE or CLASSPATH).
+
+<a name="search">
+<h2>Search Scenarios</h2></a>
+    <p>
+The JavaHelp system supports an extensible full-text search mechanism using the
+<a href="../Overview.html#Extensibility">extension framework</a>
+mechanism, plus a
+<a href="../../api/javax/help/search/package-tree.html">Search</a> interface.
+The JavaHelp1.0 specification requires all implementations
+to support some search types and formats. This mechanism can be used to support a number of different search
+scenarios:</p>
+
+<table width=98% border=0 cellpadding=5>
+<tr valign="top">
+<td width=30%><A HREF="#client-side search">Client-side search</A>
+</td>
+<td width=70%>
+The search database is downloaded from the server,
+then searched on the client
+</td>
+</tr>
+
+<tr valign="top">
+<td width=30%><A HREF="#server-side search">Server-side search</A>
+</td>
+<td width=70%>
+The search database and search engine are located on the server
+</td>
+</tr>
+
+<tr valign="top">
+<td width=30%><A HREF="#standalone search">Stand-alone search</A>
+</td>
+<td width=70%>
+The search database is included as part of the HelpSet and
+the search occurs in the application
+</td>
+</tr>
+
+</table>
+
+<a name="client-side search">
+<h3>Client-Side</h3></a>
+    <p>
+In a client-side search, searching is done locally on the
+"client-side", but the search data originates on the
+"server-side".  This commonly occurs with web-based
+applications (applets). The help data usually resides on
+the same server as the applet code. When a search is
+initiated the search data is downloaded from the server,
+read into the browser's memory, and searched.  The content
+files are downloaded only when they are presented.</p>
+
+<p>
+<center>
+<IMG ALIGN=center ALT="Client-side Search" SRC="../../images/client_search_scenario.gif">
+</center></p>
+    <p>
+Time is required for the search database to be downloaded
+during the initial search.
+Once downloaded the
+data can be kept in memory or in a temporary file on the client
+machine.  Once the database is downloaded, searches are quite fast.</p>
+
+<a name="server-side search">
+<h3>Server-Side</h3></a>
+    <p>
+In a server-side search, both the search data and the
+content files are located on the server side; only the
+results of the search are downloaded to the client.</p>
+<p>
+<center>
+<IMG ALIGN=center ALT="Client-side Search" SRC="../../images/server_search_scenario.gif">
+</center></p>
+    <p>
+This is another option for applets. It permits developers
+to use a choice of commonly available search engines and can provide quick
+start-up time (especially if the search engine is started ahead of time).  On
+the other hand, it requires additional administrative work to get the
+search engine installed.  Note that this approach works very well with Java
+servlets.</p>
+
+<a name="standalone search">
+<h3>Stand-Alone</h3></a>
+<p>
+In a stand-alone search, all of the components are local (search
+engine, search database, help content). From an implementation point-of-view, the stand-alone search is quite similar to the
+client-search except that there is no need to
+cache the search data in memory or in local files.<p>
+    <p>
+<center>
+<IMG ALIGN=center ALT="Stand-alone Search" SRC="../../images/standalone_search_scenario.gif">
+</center></p>
+<p>
+Note that help content files can be accessed locally and/or 
+across a network.
+</p>
+
+<a name="packaging">
+<h2>Packaging Scenarios</h2></a>
+<p>
+The following diagrams represent typical packaging scenarios.
+These scenarios are intended to be exemplary and are not exhaustive.
+</p>
+
+<p>
+<a name="package1"></a>
+The first picture represents a project in which the map file
+is packaged together with most (all?) of the content files.
+The "!" syntax is used to specify the URLs relative to the JAR where
+the map is located.
+The HelpSet file is packaged outside of the JAR file,
+perhaps to simplify updates later on.</P>
+<p>
+<center>
+<IMG ALIGN=center ALT="Help Server" SRC="../../images/map1.gif">
+</center></p>
+
+    <p>
+    <p>
+<a name="package3"></a>
+In the following scenario, the map file and the JAR file are in
+different locations.
+This is probably not a common scenario, but is shown to illustrate
+packaging flexibility.
+    <p>
+<center>
+<IMG ALIGN=center ALT="Help Server" SRC="../../images/map3.gif">
+</center></p>
+
+
+    <p>
+<a name="package4"></a>
+In the final scenario, the HelpSet file is bundled in the
+JAR file with the rest of the JavaHelp system data.</p>
+    <p>
+<center>
+<IMG ALIGN=center ALT="Help Server" SRC="../../images/map4.gif">
+</center></p>
+
+<p>
+The advantage of this arrangement is that all the URLs
+are relative to the base URL of the HelpSet file,
+and that there is no need to mention the jar: protocol
+within any JavaHelp system file.
+This JAR,
+when placed in a CLASSPATH,
+permits a JDK1.1 application to refer to the HelpSet within
+the JAR file transparently.
+A similar situation occurs with Applets,
+when the JAR file is listed in the ARCHIVE attribute.</p>
+
+<a name="merging">
+<h2>Merge Scenarios</h2></a>
+The JavaHelp system provides a mechanism for merging
+HelpSets.  You can use the merge functionality to append
+TOC, index, and full-text search information from one or
+more HelpSets to that of another HelpSet.
+<p>
+An example of where this functionality might be useful is
+in an application suite.  The application suite may be
+comprised of a collection of constituent applications. As
+constituent applications are purchased and installed, their
+help information can be merged with help information from
+the other applications in the suite.
+<p>
+In the following scenario an application suite is comprised
+of three possible suite components.  The help data for each
+component in the suite is delivered as its own HelpSet.
+The suite is shipped with a master HelpSet that lists the
+subcomponent HelpSets.  When the HelpSet object for the
+suite HelpSet file is created, each subcomponent HelpSet
+file (specified by means of the &lt;subhelpset&gt; tag) is
+read to create HelpSet objects that are then merged into
+the containing HelpSet.  Subcomponent HelpSet that are not
+installed are ignored.
+</p>
+<p><center>
+<IMG ALIGN=center ALT="Help Server" SRC="../../images/merge_scenario.gif">
+</center></p>
+
+For more information about merging see <A HREF="../Merge.html">Merge</A>
+in the specification or "Merging HelpSets" in the JavaHelp System
+User's Guide.
+
+<!--
+<p>
+<a name="package2"></a>
+In the next scenario, two search databases are
+combined for presentation to the user.
+This is achieved using the same mechanism as above.
+In this case there are two HelpSets:
+<ul>
+<li>The main HelpSet contains a search view with one search database,
+a name, and a few additional views
+<li>A secondary HelpSet contains a search view
+with the same name and a search database
+</ul>
+The first HelpSet file uses the <tt>&lt;subhelpset&gt;</tt> tag to <em>include</em> the second HelpSet file.
+When the first HelpSet object is created, the second is also
+created and merged automatically.
+    <p>
+<center>
+<IMG ALIGN=center ALT="Help Server" SRC="../../images/not_yet.gif">
+</center></p>
+
+<p>
+<a name="package13"></a>
+In following case,
+a existing set of documentation is modified by
+adding a new map file to the original HelpSet file to
+replace the some of the original topcs with new ones.
+
+</p>
+
+<p><center>
+<IMG ALIGN=center ALT="Help Server" SRC="../../images/not_yet.gif">
+</center></p>
+-->
+
+
+
+
+
+<hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 16:46:03 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>

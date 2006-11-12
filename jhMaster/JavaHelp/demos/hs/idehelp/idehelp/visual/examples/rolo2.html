@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding Behavior to the Card File
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Adding Behavior to the Card File</H1>
+
+Now that you have the GUI laid out for your card file, you
+need to add behaviors (also called "operations" or "callbacks") to the
+components in the layout.
+<p>
+First, identify which components have operations. The Name, Phone, and Email
+text boxes do not require operations since users only type a
+string in each field. The Entries list only displays names and numbers,
+so it has no operation.
+<p>
+The Add, Find, Email, and Delete buttons do have operations.
+Start by adding an operation to the Add button that takes the strings
+entered in the Name and Phone text boxes and adds them to a list of
+items.
+
+<p>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To define the operation
+for the Add button:</strong>
+<ol>
+<li>Select the Add button in the layout window.
+<li>Open the attributes editor by clicking on its button in the main tool bar.
+<li>Click on the Edit operations button in the attributes editor. 
+<li>Click on the Insert button to add an operation. 
+<p>
+For this example, you can use the default operations name, <tt>Op1</tt>,
+provided by Gui builder. Ordinarily, you would give the operation
+an easily identifiable name.
+<li>Click on the Actions button.
+<p>
+Since the filter type is Event and the Event id is Action Event (the
+default type and ID), you can accept the default values. There is no
+need to set the Filter parameters. 
+<li>Select the action type, Execute Code.
+<p>
+Use the Action dialog box to add code that transmits the number of
+calls into the group class:
+<pre>
+group.addButtonCallback(msg, evt);
+</pre>
+<li>In the source editor, add code that defines the behavior for the
+button. Code is added to the group file, which should already be
+displayed in the editor. If it isn't, click the Open button in the
+Edit/Debug toolbar and select the <i>project</i><tt>.java</tt> file for the
+card file project.
+<p>
+You need to add code that combines the strings in the Name, Phone, and
+E-mail text boxes and retrieves the combined string. The string then needs to
+be added to the Entries list. The following code example shows one way
+to produce the desired action.
+<pre>
+public void addButtonCallback(Message msg, Event evt) {
+String[] listContents = (String []) gui.namesList.get("items");
+String newItem = (String) gui.nameTextfield.get("text") + " " +
+                           (String) gui.phoneTextfield.get("text") + " " +
+                           (String) gui.emailTextfield.get("text");
+int len = 0;
+if (listContents != null){
+    len = listContents.length;
+}
+String[] newContents = new String[len + 1];
+int i = 0;
+
+for (i=0; i < len; i++) {
+  newContents[i] = listContents[i];
+}
+newContents[len] = newItem;
+gui.namesList.set("items",  newContents);
+}
+</pre>
+</ol>
+<p>
+For information on what attributes can be set for a particular 
+component, see <a href=../../../../../api/visual/packages.html>Visual Java GUI Builder Runtime Packages</a>.
+
+<p>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To define the operation
+for the Find button:</strong>
+<ol>
+<li>Select the Find button in the layout window.
+<li>Open the attributes editor by clicking on its button in the main tool bar.
+<li>Click on the Edit operations button in the attributes editor. 
+<li>Click on the Insert button to add an operation. 
+<p>
+For this example, you can use the default operations name, <tt>Op1</tt>
+provided by Gui builder.
+<li>Click on the Actions button.
+<p>
+Since the filter type is Event and the Event id is Action Event (the
+default type and ID), you can accept the default values. There is no
+need to set the Filter parameters. 
+<li>Select the action type, Execute Code.
+<p>
+Use the Action dialog box to add code that transmits the number of
+calls into the group class:
+<pre>
+group.findButtonCallback(msg, evt);
+</pre>
+<li>In the source editor, add code that defines the behavior for the
+button. Code is added to the group file, which should already be
+displayed in the editor. If it isn't, click the Open button in the
+Edit/Debug toolbar and select the <i>project</i><tt>.java</tt> file for the
+card file project.
+<p>
+You need to add code that takes the string in the Name text box,
+locates its match in the Entries list, and displays it.
+The following code shows one way to produce this action.
+<pre>
+public void findButtonCallback(Message msg, Event evt){
+    List listBody = (List) gui.namesList.getBody();
+    int numItems = listBody.countItems();
+    String nameToFind = (String) gui.nameTextfield.get("text");
+    String currentName = "";
+    int i = 0;
+    int j = 0;
+    int len = 0;
+    int nameLen = nameToFind.length();
+                          
+    for (i=0; i < numItems; i++) {
+         currentName = listBody.getItem(i);
+         len = currentName.length();
+         if (len >= nameLen && len != 0 && nameLen != 0) {
+             for (j=0; j < len - nameLen + 1; j++) {
+	          if (currentName.regionMatches(true, j, nameToFind,
+                                                0, nameLen) == true) {
+                      listBody.select(i);
+                      return;
+                  }
+             }
+         }
+    }
+}
+</pre>
+</ol>
+
+<p>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To define the operation
+for the Delete button:</strong>
+<ol>
+<li>Select the Delete button in the layout window.
+<li>Open the attributes editor by clicking on its button in the main tool bar.
+<li>Click on the Edit operations button in the attributes editor. 
+<li>Click on the Insert button to add an operation. 
+<p>
+For this example, you can use the default operations name, <tt>Op1</tt>,
+provided by GUI builder.
+<li>Click on the Actions button.
+<p>
+Since the filter type is Event and the Event id is Action Event (the
+default type and ID), you can accept the default values. There is no
+need to set the Filter parameters. 
+<li>Select the action type, Execute Code.
+<p>
+For the Delete button, you need to add code that takes the entry in
+the Name field and deletes it from the Entries list.
+<pre>
+import java.awt.List;
+List listBody = (List) gui.namesList.getBody();
+int selectedIndex = listBody.getSelectedIndex();
+
+listBody.delItem(selectedIndex);
+</pre>
+</ol>
+<p>
+When you have finished adding behavior to the buttons and saved the
+operations (click OK in the Operations dialog box), you need to save
+and generate the source file to include the newly added behavior:
+<p>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To generate the source file:</strong>
+<ul>
+<li>Choose GUI -> Save &amp; Generate GUI File.
+</ul>
+<p>
+<IMG SRC="../../../images/hg_proc.gif"><strong>To build the application:</strong>
+<ul>
+<li>Click the Build button on the main toolbar to build the
+card file.
+</ul>
+<p>
+ After the build process completes, you can test the card 
+file application by clicking on the Run button in the toolbar.
+<p>
+To attach another component created with GUI builder to the card file,
+see <a href=rolo3.html>Adding a Mail Dialog Box</a>.
+
+<p>
+<IMG SRC="../../../images/hg_see.gif"><strong>See also:</strong>
+<dl>
+<dd><A HREF="rolo1.html">Making Your Own Card File</A>
+<dd><A HREF="rolo3.html">Adding a Mail Dialog</A>
+<dd><A HREF="../ops.html">Adding Behavior to Components</A>
+</dl>
+  </body>
+</html>

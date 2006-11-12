@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+What Are Groups and Shadows?
+</TITLE>
+<!-- Changed by: Jacek Ambroziak - Sun Microsystems Labs BOS, 18-Mar-1998 -->
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+
+<H1>What Are Groups and Shadows?</H1>
+
+GUI builder introduces two new concepts: <em>groups</em>
+and <em>shadows</em>. A shadow is a wrapper class for an AWT
+component. A group is a collection of shadows and other groups.  
+
+<h2>Shadows</h2>
+
+Shadows are wrapper classes for AWT components. Shadows do several
+things for you:
+<ul>
+<li>Map component methods to attributes
+<li>Delay the instantiation of AWT components
+<li>Propagate AWT events to groups
+</ul>
+
+<p>
+Custom functionality may also be included in the shadow classes. For
+example, the window shadow resizes the window to its preferred size
+and maps the window when its <CODE>visible</CODE> attribute is set to
+true.
+
+<h2>Groups</h2>
+
+A group encapsulates a set of shadows and subgroups. GUI builder is
+used to create new groups out of existing shadows and groups.  When a
+new group is created, it can be imported into the GUI builder palette
+and can then be incorporated into other groups.  New groups must be
+subclasses of the Group class.
+<p>
+Groups that are included inside other groups are called subgroups.
+The top-level group is called the base group.  A tree of groups exists 
+while the application is running.  Messages sent by
+subgroups propagate up toward the top of the tree until they are
+handled or they reach the base group.
+<p>
+The interface to a group consists of a set of attributes and methods.
+The class Group defines a set of attributes and methods.
+Specific subclasses of the Group class add their own customized
+attributes and methods. The attributes and methods of the shadows and
+subgroups contained by a group are not automatically inherited.
+<p>
+Applications created using GUI builder are actually groups. A large
+application typically consists of a base group that contains
+many other shadows and subgroups.
+
+<h2>Attributes, Methods, and Messages</h2>
+
+From an external viewpoint, a group is a single component that has a
+set of attributes, public methods, and messages.
+
+<a name=grpattributes></a>
+<h3>Attributes</h3>
+
+Every shadow and group class has a set of attributes. Attributes for a
+group are defined in the constructor and are handled using the
+<tt>getOnGroup</tt> and <tt>setOnGroup</tt> methods. Support is
+provided for forwarding a set of attributes to one or more children of
+the group--a child being either a shadow or a subgroup.
+<p>
+When writing a group, many of your tasks involve setting and getting
+the attributes of the shadows contained by the group. Two methods are
+used to manipulate attributes:
+<pre>
+	public void set(String key, Object value);
+	public Object get(String key);
+</pre>
+<p>
+Example:
+<ul>
+<li>To set the text of the button named "OK":
+<pre>
+     gui.OK.set(<text>, <string>);
+</pre>
+<p>
+<li>To get the text of the button named "OK":
+<pre>
+     String text = (String)gui.OK.get(<text>);
+</pre>
+<p>
+</ul>
+Every AWT component shadow inherits the following attributes:
+<pre>
+   NAME		TYPE			DEFAULT VALUE
+   ----		----			-------------
+   name		java.lang.String	null
+   visible	java.lang.Boolean	TRUE
+   enabled	java.lang.Boolean	TRUE
+   foreground	java.awt.Color		null
+   background	java.awt.Color		null
+   font		java.awt.Font		null
+</pre>
+<p>
+The button shadow defines an additional attribute:
+<pre>
+   text		java.lang.String	button
+</pre>
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+In future releases the list of attributes will automatically be
+extracted from a shadow or group. This will make it possible to
+create a document listing all the attributes for each shadow class.
+<p>
+The <code>visible</code> attribute has a special behavior. When
+<code>visible</code> is set to true on a window for the first time,
+the window changes to its preferred size before display. Subsequent
+setting of the <code>visible</code> attribute to true or false will cause
+the window to be shown or hidden, but will cause no further resizing
+of the window.
+
+<a name=publicmethods></a>
+<h3>Methods</h3>
+
+Most methods are custom methods written by the author of 
+the group. There are some useful methods defined in the Group class
+itself, such as the <tt>get</tt>/<tt>set</tt> attribute methods.
+
+<a name=message></a>
+<h3>Message</h3>
+
+A group will create messages and post them to their parent groups. A
+group does not need to have any knowledge of its parent. Instead, the
+parent can listen for a particular message from its subgroup and
+perform an action based on the message. A message can be sent by a
+subgroup, or it can be sent as a result of the delivery of an AWT
+event.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+AWT stands for Abstract Windowing Toolkit. AWT is the GUI toolkit
+that is included with the JDK. This document assumes some familiarity
+with AWT, especially in the area of AWT events. For
+information on AWT, please refer to the JDK documentation.
+<p>
+A message has the following fields:
+<p>
+<pre>
+<strong>String name</strong>
+</pre>
+Name of the event; this is "AWT" for AWT events
+<pre>
+<strong>Object arg</strong>
+</pre>
+Same as the <CODE>arg</CODE> field in the AWT event
+<pre>
+<strong>Object target</strong>
+</pre>
+The shadow corresponding to the target field in the AWT event
+<pre>
+<strong>long when</strong>
+</pre>
+Time of event creation.
+<pre>
+<strong>String type</strong>
+</pre>
+Null for AWT events
+<pre>
+<strong>String targetName</strong>
+</pre>
+Null for AWT events
+<pre>
+<strong>boolean isAWT</strong>
+</pre>
+True for AWT events
+
+<a name=awtmsghandling></a>
+<h2>Message Handling (Operations)</h2>
+
+Operations are defined in the group. When an AWT event is generated by
+an AWT component, it is translated into a message and then sent to the
+group that contains the component. (Actually, the group contains the
+shadow corresponding to the AWT component.)  To intercept messages in
+the group, one or more of the following methods should be overridden
+(these are referred to as "message-handling methods"):
+<pre>
+  public boolean handleMessage(Message msg);
+  public boolean handleEvent(Message msg, Event evt);
+
+  public boolean action(Message msg, Event evt, Object what);
+
+  public boolean mouseDown(Message msg, Event evt, int x, int y);
+  public boolean mouseDrag(Message msg, Event evt, int x, int y);
+  public boolean mouseUp(Message msg, Event evt, int x, int y);
+  public boolean mouseMove(Message msg, Event evt, int x, int y);
+  public boolean mouseEnter(Message msg, Event evt, int x, int y);
+  public boolean mouseExit(Message msg, Event evt, int x, int y);
+  public boolean keyDown(Message msg, Event evt, int key);
+  public boolean keyUp(Message msg, Event evt, int key);
+  public boolean gotFocus(Message msg, Event evt, Object what);
+  public boolean lostFocus(Message msg, Event evt, Object what);
+</pre>
+
+<a name=handlemessage></a>
+<p>
+<tt>handleMessage</tt> is invoked for all messages, whether the
+message is from a subgroup or is the result of an AWT event. The
+implementation of <tt>handleMessage</tt> in the Group class invokes
+<tt>handleEvent</tt> for all AWT events.
+<p>
+Code excerpt from "Group.java":
+<pre>
+  public boolean handleMessage(Message msg) {
+    if (msg.isAWT)
+      return handleEvent(msg, (Event)msg.arg);
+    else
+      return true;
+  }
+</pre>
+<p>
+<tt>handleEvent</tt> is only invoked for messages that come from AWT
+events. The implementation of handleEvent in the Group class invokes other
+methods depending on the type of the event.  For example,
+<tt>MOUSE_DOWN</tt> events cause the <tt>mouseDown</tt> method to be
+invoked. By overridding the <tt>mouseDown</tt> method, all
+<tt>MOUSE_DOWN</tt> events originating inside the group will be caught.
+<p>
+Code excerpt from <tt>Group.java</tt>:
+<pre>
+  public boolean handleEvent(Message msg, Event evt) {
+    switch (evt.id) {
+    case Event.MOUSE_ENTER:
+      return mouseEnter(msg, evt, evt.x, evt.y);
+    case Event.MOUSE_EXIT:
+      return mouseExit(msg, evt, evt.x, evt.y);
+    case Event.MOUSE_MOVE:
+      return mouseMove(msg, evt, evt.x, evt.y);
+    case Event.MOUSE_DOWN:
+      return mouseDown(msg, evt, evt.x, evt.y);
+    case Event.MOUSE_DRAG:
+      return mouseDrag(msg, evt, evt.x, evt.y);
+    case Event.MOUSE_UP:
+      return mouseUp(msg, evt, evt.x, evt.y);
+
+    case Event.KEY_PRESS:
+    case Event.KEY_ACTION:
+      return keyDown(msg, evt, evt.key);
+    case Event.KEY_RELEASE:
+    case Event.KEY_ACTION_RELEASE:
+      return keyUp(msg, evt, evt.key);
+	    
+    case Event.ACTION_EVENT:
+      return action(msg, evt, evt.arg);
+    case Event.GOT_FOCUS:
+      return gotFocus(msg, evt, evt.arg);
+    case Event.LOST_FOCUS:
+      return lostFocus(msg, evt, evt.arg);
+
+    default:
+      return false;
+    }
+  }
+</pre>
+
+<a name=actioneventhandling></a>
+<p>
+The next example demonstrates action event handling. Action events are
+generated by AWT components and translated by <tt>handleEvent()</tt> into
+calls on the action method. The example assumes the creation of a 
+GUI description containing a button named "OK" and a
+button named "Cancel."  If an action event originates from the "OK"
+button or the "Cancel" button, a message is printed.
+<p>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+The AWT button component generates an action event when it is
+clicked.
+<pre>
+public boolean action(Message msg, Event evt, Object what) {
+  boolean handled = false;
+
+  if (msg.target == gui.ok) {
+    System.out.println("OK");
+    handled = true;
+  }
+  else if (msg.target == gui.cancel) {
+    System.out.println("Cancel");
+    handled = true;
+  }
+
+  // All message handling methods should be true if the message
+  // was handled, and false otherwise.
+  //
+  // The return value determines if the message should be passed
+  // on to the operation classes, and subsequently on up the
+  // group tree. AWT messages are never propagated up the group
+  // tree regardless of the return value, but they are forwarded
+  // to the operations classes depending on the return value.
+  // [ operation classes are currently not implemented ]
+
+  return handled;
+}
+</pre>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="groups_advanced.html">More On Groups and Shadows</A>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="ops.html">What Is a Component Operation?</A>
+<dd><A HREF="addcallbacks.html">Adding Operations to Components</A>
+<dd><A HREF="running.html">GUI Builder Runtime Classes</A>
+<dd><A HREF="menuops.html">Adding Operations to Menus</A>
+<dd><A HREF="importing.html">Importing Components</A> 
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI
+Builder Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of
+All Fields and Methods</A>
+</dl>
+</dl>
+<p>
+
+</body>
+</HTML>
+
+

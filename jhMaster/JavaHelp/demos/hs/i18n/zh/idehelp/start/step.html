@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML><META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_CN">
+<HEAD>
+<TITLE>
+练习4：单步执行一个方法
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>练习4：单步执行一个方法</h1>
+
+单步执行代码是找到出错行的另一种方法。您将在本练习中学习单步执行代码，并在“线程/堆栈”窗口中 跟踪变量值的变化。您还将学习如何删除一个断点。
+<ol>
+<li>单击“编辑/调试”工具栏中的“越过”按钮<img src="../../../../images/24/db-step-over_u.gif" align="BOTTOM"><img src="../../images/spacer2_t.gif">。
+<br>Java Development Environment在执行一行源代码后停止： 
+<p>
+<kbd>If (Math.random() < 0.5) {</kbd>
+<p>
+源代码编辑器会用红色高亮显示设有断点的一行内容，而程序所停止的那一行则显示为绿色。 假如这一行是一个方法调用，就应该对下一行程序执行“单步越过”命令。而如果这一行是 一个方法调用，您又发出了“单步进入”命令，Java Development Environment就会执行该方法的第一条语句， 然后停下来。
+<p>
+“线程/堆栈”窗口将显示程序当前的状态和数据。例如，<kbd>Blink.paint</kbd>现在指示它停止在第49行上。
+<li>再单击两次“越过”按钮，然后观察调试程序是如何单步执行程序的。
+<li>在源代码编辑器中，将指针移到第45行，其中有一个断点。
+<li>单击“断点”<img src="../../../../images/24/db-stop-at_u.gif" align=MIDDLE>按钮。
+<br>
+Java Development Environment又将该断点删除。
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>下一课：</strong>
+<dl>
+<dd><a href="evaluate.html">练习5：变量求值</a>
+</dl>
+<p>
+
+</body>
+</html>

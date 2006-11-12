@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JavaHelp 1.0 - Context-Sensitive Help</title>
+  </head>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup><font size="-2">TM</font></sup> 1.0 - Context Sensitive Help
+</h1>
+      <h2 align=center>
+<br>
+<a href="Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+<br>
+</h2>
+
+<hr>
+<p>
+
+<h2>Context-Sensitive Help</h2>
+<p>
+Context-sensitive help in the JavaHelp system is organized
+around the notion of the ID->URL map referred by the
+<tt>&lt;map&gt;</tt> section of a HelpSet file.
+
+The key concept is that of the <a
+href="../api/javax/help/Map.ID.html">Map.ID</a> which
+is comprised of a String/HelpSet instance pair.  The String
+is intented to be unique within the <a
+href="../api/javax/help/HelpSet.html#getLocalMap()">
+local map</a> of the HelpSet.  This is very important when
+considering HelpSet merging, otherwise IDs would be
+required to be unique over all HelpSets that might ever be
+merged.
+<p>
+There are three parts involved in assigning Context Sensitive Help
+to an application:
+
+<ol>
+<li>Define the appropriate String ID->URL map,
+<li>Assign an ID to each desired visual object,
+<li>Enable some user action to activate the help.
+</ol>
+
+<h3>Defining the ID->URL map</h3>
+<p>
+The
+<a href="../api/javax/help/Map.html">Map</a> interface provides
+a means for associating IDs (<em>HelpSet.string</em>)
+with URLs.  One such map is constructed from one or more map files
+that provide a simpler "String ID" to URL mapping, with the HelpSet
+being given either explicitly or implicitly.
+
+<p>
+JavaHelp has two classes that implement the Map interface:
+<a href="../api/javax/help/FlatMap.html"><tt>FlatMap</tt></a>
+and
+<a href="../api/javax/help/TryMap.html"><tt>TryMap</tt></a>.
+A <tt>FlatMap</tt> does not support nesting of other maps into it,
+while a <tt>TryMap</tt> does.
+A FlatMap is a simple implementation while TryMap should support
+inverse lookups (for example, <tt>getIDFromURL</tt>) more efficiently.
+The implementation of <tt>TryMap</tt> JavaHelp 1.0 is
+not particularly efficient.
+
+<p>
+Both <code>FlatMap</code> and <code>TryMap</code> have public
+constructors.
+The constructor for <code>FlatMap</code> takes two arguments:
+the first one provides a URL to a property file providing
+a list of String and URL pairs;
+the second argument is a HelpSet.
+The HelpSet is used together with each String-URL pair to create
+the actual <code>Map.ID</code> objects that comprise the <code>FlatMap</code>.
+The constructor for <code>TryMap</code> has no arguments:
+the Map is created empty and other <code>Map</code>s
+are added (or removed) from it.
+
+<p>
+The <code>Map</code> interface can also be implemented by some custom
+class.  One such class could be used to, for example, programatically
+generate the map.
+
+<h3>Assigning an ID to Each Visual Object</h3>
+
+<p>
+The next step is to assign to each desired GUI object an ID that
+will lead to the desired help topic.
+There are two mechanisms involved: an explicit ID, either a plain
+String, or a <code>Map.ID</code>, is assigned to
+the GUI object;
+and there is a rule that is used to infer the <code>Map.ID</code>
+for an GUI object based on its container hierachy.
+
+<p>
+The two basic methods to assign IDs are
+<a href="../api/javax/help/CSH.html#setHelpIDString(java.awt.Component, java.lang.String)"><tt>setHelpIDString(Component, String)</tt></a>
+and
+<a href="../api/javax/help/CSH.html#setHelpSet(java.awt.Component, javax.help.HelpSet)"><tt>setHelpSet(Component, String)</tt></a>.
+If both are applied to a Component,
+then a <code>Map.ID</code> is assigned to that Component.
+If only <code>setHelpIDString()</code> is applied,
+then the <code>HelpSet</code> instance is obtained implicitly,
+as indicated later.
+A method overload is provide for <code>MenuItem</code> objects.
+
+<p>
+These methods take a Component as an argument.  The
+implementation may vary depending on whether the argument is a
+JComponent or a plain AWT Component.
+
+<p>
+The methods
+<a href="../api/javax/help/CSH.html#getHelpIDString(java.awt.Component)">
+<tt>getHelpIDString(Component)</tt></a>
+and
+<a href="../api/javax/help/CSH.html#getHelpSet(javax.awt.Component)">
+<tt>getHelpSet(Component)</tt></a>
+recursively traverse up the container hierachy of the component
+trying to locate a Component that has been assigned a String ID.
+
+When found, the methods return the appropriate value.
+As before there is also an overloaded method for <code>MenuItem</code>. 
+
+<h3>Enabling a Help Action</h3>
+
+<p>
+The final step is to enable for some action to trigger the presentation
+of the help data.
+<a href="../api/javax/help/CSH.html">
+<tt>CSH</tt></a>
+currently provides several <code>ActionListener</code> classes that can be
+used:
+
+<table>
+<tr valign="top">
+<th align="left">Name
+<th align="left">Description
+</tr>
+
+
+<tr valign="top">
+<td><tt>DisplayHelpFromFocus()</tt>
+<td>Locate the Component currently owning the focus, then find the
+ID assigned to it and present it on the HelpBroker.
+This is to be used by "Help" keys.
+</tr>
+
+<tr valign="top">
+<td><tt>DisplayHelpAfterTracking()</tt>
+<td>Start tracking events until a mouse event is used to select a
+Component, then find the ID assigned and present it.
+This is to be used by a "What's this" type of interface.
+</tr>
+
+<tr valign="top">
+<td><tt>DisplayHelpFromSource()</tt>
+<td>Find the ID assigned to the source of the action event and present it.
+</tr>
+
+</table>
+
+<p>
+In addition, <tt>HelpBroker</tt> also provides some
+convenience methods that interact with these ActionListeners:
+
+<table>
+<tr valign="top">
+<th align="left">Name
+<th align="left">Description
+</tr>
+
+<tr valign="top">
+<td><tt>enableHelpKey(root, stringID, helpSet)</tt>
+<td>Set the ID and helpset of root which will act as the default
+help to present,
+then register an appropriate ActionListener to be activated via the
+"Help" key.
+DefaultHelpBroker uses <code>CSH.DisplayHelpFromFocus</code> as the
+ActionListener.
+</tr>
+
+<tr valign="top">
+<td><tt>enableHelp(Component, stringId, helpSet)</tt>
+<td>Set the ID and HelpSet to the component.
+This information is usually recovered either using the "Help" key or
+through the <code>DisplayHelpAfterTracking</code> class.
+</tr>
+
+<tr valign="top">
+<td><tt>enableHelpOnButton(Component, stringId, helpSet)</tt>
+<td>Set the ID and HelpSet to the component, which must be a "Button".
+When the button is "pressed" the Help information given in the arguments
+will be presented.
+</tr>
+
+</table>
+
+<p>
+Since these methods are from a specific HelpBroker,
+if a HelpSet is not associated with the GUI object then the
+HelpSet of the HelpBroker will be used automatically.
+
+<h3>Help Support for JDialogs</h3>
+
+<p>
+It is often useful to associate help information with dialog boxes
+using a Help button.  Ideally the standard
+<code>javax.swing.JOptionPane</code> would have direct support for
+this but, due to timing constraints this was not possible.  Expect
+full support for this feature in a forthcoming version of Swing.
+
+<hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 19:15:49 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>

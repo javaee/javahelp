@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+GUI Menu
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>GUI Menu</H1>
+
+<table BORDER=0 cellspacing=12>
+<tr valign="top">
+<td><strong>Show GUI Builder</strong></td>
+<td>
+Adds GUI builder controls to the Java WorkShop window.
+This item is active only for projects that were created
+using the Visual Java GUI builder.
+</td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>Merge GUI File</b></td>
+<td valign="top">Opens a file chooser and imports the selected file (a
+file that contains a GUI builder window that you want to include in
+your application). The file must have a <code>.gui</code> extension.</td>
+</tr>
+<tr>
+<td valign="top"><b>Save Generate GUI File</b> </td>
+<td valign="top">Saves your layout to disk in the file
+<em>project-name</em><code>.gui</code> and generates Java
+source code from your layout. See <A HREF="../visual/generate.html">Generate
+Java Source Code</A> for details.</td>  
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>Cut Component</b></td>
+<td valign="top">Cuts the selected component or window and places it
+on the clipboard. You can paste the cut component or window to another
+cell in the layout.</td> 
+</tr>
+<tr>
+<td valign="top"><b>Copy Component</b></td>
+<td valign="top">Copies the selected component or window to the clipboard.
+You can paste the copied component or window from the clipboard to another 
+cell in the layout.</td>
+</tr>
+<tr>
+<td valign="top"><b>Paste Component</b></td>
+<td valign="top">Pastes a cut or copied component or window to another 
+cell in the layout.</td>
+</tr>
+<tr>
+<td valign="top"><b>Delete Component</b></td>
+<td valign="top">Deletes the selected component or window. <em>Does not 
+place a copy on the clipboard and cannot be undone.</em></td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>Edit Attributes</b><IMG
+SRC="../images/vj_attributes_up.gif" ALIGN="left" WIDTH=24
+HEIGHT=24></td>
+<td valign="top">Opens the <A HREF="../visual/dialogs/attributes.html">attribute editor</A> displaying the attributes of the 
+selected component or window. See the attribute editor help
+for details on how to modify the attributes of a component. This
+command also has a button on the main toolbar.</td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>Add Column</b></td>
+<td valign="top">Adds a column to the left or right of the selected
+cell or component.</td>
+</tr>
+<tr>
+<td valign="top"><b>Add Row</b></td>
+<td valign="top">Adds a row above or below the selected
+cell or component. </td>
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top"><b>Add New Window</b><IMG
+SRC="../images/vj_newframe_up.gif" ALIGN="left" WIDTH=24 HEIGHT=24></td>
+<td valign="top">Opens the <A HREF="../visual/newwindow.html">New
+Window</A> dialog box. Select a specific container from the list and
+click Create to open a new gridbag layout for the given
+container. This command has a corresponding 
+button to the left of the component palette.</td>
+</tr>
+<tr>
+<td valign="top" nowrap><b>Set Window Type</b></td>
+<td  valign="top">Opens the <A HREF="../visual/chg_container.html">Main
+Container</A> dialog box. Use this dialog  box to change the type of a
+main container to a frame or a panel.</td> 
+</tr>
+<tr>
+<td valign="top"><b>Nest Panel</b></td>
+<td  valign="top"><A HREF="../visual/nest_panels.html">Nests</A> (in
+place) the selected layout panel component within a GridBag Layout
+Panel component.</td> 
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top" nowrap><b>Customize Palette</b></td>
+<td valign="top">Opens the <A HREF="../visual/chg_palette.html">palette
+editor</A>. Use the palette editor to customize, delete, and rearrange
+components in palette folders.</td>
+</tr>
+<tr>
+<td valign="top" nowrap><b>Import Components to Palette</b></td>
+<td valign="top">Opens the Import Components to Palette dialog
+box. Use this dialog box to import JavaBeans or components with
+shadow classes. See <a href=../visual/importing.html>Importing
+Components</a> for details.</td>  
+</tr>
+<tr>
+<td valign="top" nowrap><b>Reset to Factory Palette</b></td>
+<td valign="top">Returns the contents of the standard GUI builder
+palette (the AWT, Panels, and Additional tabs) to their original state.</td> 
+</tr>
+<tr>
+<th colspan=2><hr></th>
+</tr>
+<tr>
+<td valign="top" nowrap><b>Bean Info on Selected Component</b></td>
+<td valign="top">Opens the Bean Information dialog box that displays
+bean-specific information including properties, events, and
+methods.</td>  
+</tr>
+<tr>
+<td valign="top" nowrap><b>Update Component Classes in Design</b></td>
+<td valign="top">Opens the <a href=../visual/upgrade.html>Update
+Component Classes in Design</a> dialog box that displays a list of bean
+classes. Select a class (or classes) to update. The 
+component in the palette is updated, not the component in the layout
+window. A Reload Component in Design dialog box appears if a reload
+is required.</td>
+</tr>
+<tr>
+<td valign="top" nowrap><b>Class Usage Report</b></td>
+<td valign="top">Displays a list of component classes used in the
+current project.</td> 
+</tr>
+</table>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>See also:</strong>
+<dl>
+<dd><A HREF="../visual/palette.html">GUI Builder Palette</A>
+<dd><A HREF="../visual/layout.html">Laying Out the Interface</A>
+<dd><A HREF="../visual/menus.html">Adding a Menu Bar and Menus</A>
+<dd><A HREF="../visual/custom.html">Adding Custom Components and Windows</A> 
+</dl>
+<p>
+</BODY>
+</HTML>

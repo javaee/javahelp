@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>Creating Subprojects</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Creating Subprojects</h1>
+
+Projects can include subprojects. Subproject's are useful when you have a program that adds packages. You can create a project for the program and a subproject for each package.
+<p>
+Subprojects are created using the same Create Project wizard that you use when you create a project.
+<p>
+<img src="../../images/hg_proc.gif" width="18" height="13"><b>To create a subproject within a project:</b>
+<ol>
+<li>Click the Project's button <img src="../images/tb-project-manager_u.gif" align=MIDDLE><img src="../../images/spacer2_t.gif">on the Java WorkShop main toolbar.
+<li>In the project manager, double-click on the project name in which you want to include a subproject.
+<li>Choose File -> New -> Subproject.
+<br>The Create Project wizard is displayed.
+<li>Complete the <a href="ProjectWizard.html">Create Project wizard</a> using your subproject information.
+</ol>
+<H2>Example</H2>
+Suppose you want to create a project with many subprojects, each of which has <kbd>.java</kbd> files:
+<dl>
+<dd><kbd>/tina/myproj/main</kbd>--contains <kbd>Main.java</kbd> and several other <kbd>.java</kbd> files
+<dd><kbd>/tina/myproj/main/readers</kbd>--contains several <kbd>.java</kbd> files
+<dd><kbd>/tina/myproj/main/writers</kbd>--contains several <kbd>.java</kbd> files
+<dd><kbd>/tina/myproj/main/utils</kbd>--contains several <kbd>.java</kbd> files
+</dl>
+<p>
+Both the <kbd>readers</kbd> and <kbd>writers</kbd> subprojects have <kbd>.java</kbd> files that are added from <kbd>utils</kbd>. 
+<br>To set up the example:
+<ol>
+<li>Create a project named <kbd>Main</kbd> in the <kbd>main</kbd> directory.
+<li>Create a subproject named <kbd>readers</kbd> in the <kbd>readers</kbd> directory.
+<li>Create a subproject named <kbd>writers</kbd> in the <kbd>writers</kbd> directory.
+<li>Create a subproject named <kbd>utils</kbd> in the <kbd>utils</kbd> directory.
+<li>Make the <kbd>Main</kbd> project the current project and choose Project -> Edit.
+<li>In the Included Projects field in the General tab, list the projects as 
+follows:
+<ol>
+<li><kbd>utils</kbd>
+<li><kbd>readers</kbd>
+<li><kbd>writers</kbd>
+</ol>
+</ol>
+When you build the <kbd>main</kbd> project, the included projects are built in the order in which they are listed.
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><a href="ProjectWizard.html">Using the Create Project Wizard</a>
+<dd><a href="Run.html">Running a Project</a>
+<dd><a href="../build/build.html">Building Projects</a>
+</dl>
+<p>
+</body>
+</html>

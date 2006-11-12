@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Concetti importanti: Attributi del progetto
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>Concetti importanti: Attributi del progetto</h1>
+
+Gli attributi definiscono le singole caratteristiche di un progetto, quali il nome, il tipo e il
+modo in cui viene visualizzato in una pagina HTML. Nel progetto Blink creato
+in precedenza sono presenti degli attributi
+obbligatori che consentono di determinare:
+<ul>
+<li>Il tipo di progetto.
+<li>La directory che contiene i file sorgente <kbd>.java</kbd> relativi al progetto.
+<li>Il file di classe che contiene il metodo <kbd>init ()</kbd> dell'applet.
+</ul>
+
+<p>
+I valori relativi a questi attributi obbligatori sono stati forniti
+durante la creazione del progetto.
+<p>
+Il progetto Blink contiene inoltre numerosi attributi facoltativi. Gli attributi facoltativi
+determinano, ad esempio, il modo in cui il progetto viene visualizzato nel gestore progetti
+e le opzioni del compilatore utilizzate per compilare il progetto. I valori
+relativi a questi attributi sono stati forniti dal programma durante la creazione del
+progetto.
+<p>
+Nella lezione successiva verranno modificati gli attributi che compongono il tag
+&lt;applet&gt;. Tenere presente che quando &egrave; stato eseguito il progetto Blink nella lezione
+precedente, il tag &lt;applet&gt; &egrave; stato creato utilizzando i requisiti minimi per inserire
+l'applet in una pagina web. Il tag &egrave; stato inserito nel file <kbd>Blink.tmp.html</kbd>
+presente nella directory <kbd>Blink</kbd> e attualmente simile a quello riportato di seguito:<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+   codebase="/<i>directory_personale</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt="Se il browser in uso fosse compatibile Java, qui verrebbe visualizzata un'immagine."
+&gt;
+&lt;hr&gt;Se il browser in uso riconoscesse il tag applet,
+   qui verrebbe visualizzato un applet.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+<kbd>Blink.class</kbd> &egrave; il file che contiene il codice Java compilato dell'applet. <code>Codebase</code>
+&egrave; la directory che contiene il file <kbd>Blink.class</kbd>. La larghezza e l'altezza definiscono
+l'area, espressa in pixel, in cui il browser visualizza l'applet.
+<p>
+Il file <kbd>.html</kbd> non verr&agrave; modificato direttamente ma aggiornato in
+base alle azioni eseguite nel gestore progetti.
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>Lezione successiva</strong>
+<dl>
+<dd><a href="editlesson.html">Esercizio 1: Modifica degli attributi di esecuzione</a>
+</dl>
+<p>
+</body>
+</html>

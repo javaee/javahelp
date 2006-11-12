@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding Operations to Menus
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Adding Operations to Menus</H1> 
+
+Before adding operations to menu items, save your layout and generate
+a <i>project</i><tt>.gui</tt> file. To generate Java code for
+your layout, choose GUI -> Save Generate GUI File.
+<p>
+<ol>
+<li>Select the container in the layout window and open the attribute
+editor for the container(right click in the area outside the grid).
+<li>In the Layout window, select a menu item.
+<p>
+When a menu item is selected, the content of the attribute
+editor changes to display attributes for a menu item.
+<li>Click on the Edit operations button.
+<p>
+The ID for the menu item is displayed in the labeled bar at the top of
+the Operations dialog box. 
+<li>Click on the Insert button to add an operation (GUI builder
+provides a default name, Ops<i>number</i>, for the operation; you can
+rename the operation by typing a name in the Op Name box).
+<p>
+Use the Delete button to remove operations from the list.  
+If you accidentally delete operations, you can click Reset
+to return the list to its state after the last Apply
+operation. There is no undo operation; you cannot reverse changes you
+have applied. 
+<li>Click on the Filter button to set the triggering event, either an
+event filter or a message filter.
+<p> 
+Filters are described in <A HREF="ops.html#filtertypes">Filters</A>.
+<li>Click the Action button and set the desired response to the
+trigger by selecting an action type. 
+<p>
+Actions are described in <A HREF="ops.html#actiontypes">Actions</A>.
+</ol>
+<IMG SRC="../../images/hg_note.gif" width="18" height="13">
+<br>
+As you add more filters and actions, you can test them
+in the layout window.  Custom actions added in the
+Action dialog box are available only when running the
+application.
+<p>
+Save the operation settings by clicking OK in the Operations dialog
+box. When you are ready to test the application, choose GUI
+-> Save Generate GUI File to create or update the
+<tt>.gui</tt> file. Then build the application, and click the Run
+button in the Java WorkShop toolbar.
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="custom.html">Adding Custom Components and Windows</A>
+<dd><A HREF="menus.html">Adding a Menu Bar and Menus</A>
+<dd><A HREF="ops.html">What Is a Component Operation?</A>
+</dl>
+<p> 
+
+  </body>
+</html>

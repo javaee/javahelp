@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    901 San Antonio Road
+ *    Palo Alto, California  94303
+ *
+-->
+
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_JP">
+<TITLE>
+重要な概念: スレッド
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>重要な概念: スレッド</h1>
+
+Java のプログラムは、(通常複数の) スレッドで構成されています。スレッドとは、プログラム中で、独立して実行される一連の命令の流れのことです。
+
+1 つの Java プログラムを実行すると、複数のスレッドが同時に実行され、各スレッドで異なる処理が行われることもあります。このようなプログラムのことを、マルチスレッドプログラムといいます。
+<p>
+それぞれのスレッドはすべて、1 つのスレッドグループに属しています。スレッドグループとは、関連するスレッドを論理的にグループ化したものです。
+<p>
+プログラムには、<kbd>main</kbd> スレッドグループが必ず存在します。キーボードから入力するたびに、Java WorkShop が <kbd>main</kbd> スレッドグループ中のスレッドとやりとりを行います。
+
+<p>
+スレッドの停止中  は、スレッドを構成する呼び出しスタックの内容を確認することができます。実行中のスレッドの呼び出しスタックの内容も確認できますが、示される情報はスレッドの最後の状態を反映しています。
+<p>
+呼び出しスタックには、呼び出されたけれども呼び出し元には戻っていないメソッドがすべて含まれています。メソッドは、プロシージャや関数と同様の概念です。呼び出しスタック中のメソッドは、呼び出された順に並んでいます。プログラムが停止したときに実行されていたメソッドが、スタックの一番上になります。
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>次のレッスン:</strong>
+<dl>
+<dd><a href="startdebug.html">実習 1: デバッグセッションを開始する</a>
+</dl>
+<p>
+</body>
+</html>

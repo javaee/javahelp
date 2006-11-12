@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<html>
+<head>
+<META http-equiv="Content-Language" content="de">
+<title>
+&Uuml;bung 4: Sammeln von Profildaten
+</title>
+</head>
+<body bgcolor="#ffffff">
+
+<bodytext><h1>&Uuml;bung 4: Sammeln von Profildaten</h1>
+
+In dieser &Uuml;bung lernen Sie, wie ein Blink-Projekt mit dem Java
+WorkShop-Profiler ausgef&uuml;hrt wird. Der Profiler hilft Ihnen, die
+Leistung Ihres Programms zu analysieren, zu bestimmen, wieviel Zeit in
+jeder Programmethode verbracht wurde und wie oft jede Methode
+ausgef&uuml;hrt wurde.
+<ol>
+<li>&Uuml;berpr&uuml;fen Sie den Projekt-Manager f&uuml;r den Namen
+des aktuellen Projekts.
+<br>Wenn das aktuelle Projekt nicht Blink ist, doppelklicken Sie auf
+den Projektnamen Blink.</li>
+<li>Starten Sie die Profilerstellung des Blink-Projekts, indem Sie
+auf die Schaltfl&auml;che "Profil" <img src="../../../../images/24/tb-profile_u.gif"> auf
+der Hauptsymbolleiste von Java Development Environment klicken.
+<br>Das Fenster "Applet Viewer" wird angezeigt.</li>
+<li>Warten Sie mindestens 45 Sekunden, bis Sie den n&auml;chsten
+Schritt ausf&uuml;hren.</li>
+<br>So k&ouml;nnen gen&uuml;gend Daten bereitgestellt werden, um eine
+verwendbare Profilerstellungsanzeige zu produzieren.
+<li>Beenden Sie die Profilerstellungssitzung, indem Sie im Applet
+Viewer w&auml;hlen <nobr>"Applet" -&gt; "Beenden",</nobr> .
+<br>Nach der Profilerstellung des Programms werden im Fenster
+"Profil" die in die Datei <kbd>Blink.prof</kbd> des
+Projektquellverzeichnisses geschriebenen Daten angezeigt.</li>
+<li>W&auml;hlen Sie im Fenster "Profiler" <nobr>"Filter" -&gt; "Nicht
+filtern",</nobr> um die Daten der Systemklasse anzuzeigen.</li>
+<li>W&auml;hlen Sie <nobr>"Anzeigen" -&gt; "Nach Namen sortieren",</nobr> um
+die Methodendaten in alphabetischer Reihenfolge anzuzeigen.</li>
+<li>W&auml;hlen Sie die Methode <kbd>Blink.paint
+(Ljava/awt/Graphics;)</kbd>.</li>
+<li>Sehen Sie sich nochmals die Profildaten mit &auml;hnlichen
+Ergebnissen, wie in der unten gezeigten Abbildung an:</li>
+</ol>
+<p>
+<img src="../../images/tProfile.gif"></p>
+<p>
+Die Ergebnisse zeigen folgendes an:
+<ul>
+<li>Java Development Environment verbrachte 93 Millisekunden damit, die
+Methode
+<kbd>Blink.paint (Ljava/awt/Graphics;)</kbd> aufzurufen.</li>
+<li><kbd>Blink.paint (Ljava/awt/Graphics;)</kbd> ruft drei Methoden
+auf: <kbd>java.awt.Color.&lt;init&gt; (III)</kbd>,
+<kbd>java.awt.Component.size ()</kbd> und <kbd>java.awt.Font.getSize ()</kbd>.
+<li>Die zwei Methoden, die die <kbd>Blink.paint
+(Ljava/awt/Graphics;)</kbd> aufrufen sind:
+<kbd>java.awt.Component.dispatchEventImpl (Ljava/awt/AWTEvent;)</kbd>
+und <kbd>java.awt.Component.update (Ljava/awt/Graphics;)</kbd>.
+</ul>
+<p>
+<img src="../../images/hg_see.gif"><strong>N&auml;chste &Uuml;bung:</strong></p>
+<dl>
+<dd>Sie haben die &Uuml;bungen dieses Trainingshandbuchs abgeschlossen. Das
+n&auml;chste Trainingshandbuch ist
+<a href="edit.html">Trainingshandbuch, Kapitel 2:
+Bearbeiten von Projektattributen.</a>
+</dl></bodytext>
+</body>
+</html>

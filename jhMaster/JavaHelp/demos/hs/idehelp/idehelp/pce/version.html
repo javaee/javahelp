@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Version Control
+</TITLE>
+<!-- Changed by: Leif Samuelsson, 22-Apr-1996 -->
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Version Control</H1>
+JDE supports the following version
+control systems (VCS):
+<ul>
+<li>PVCS (Microsoft Windows 95/NT)
+<p>
+See <A HREF="#pvcs">PVCS Notes</A> for important information.
+<li>RCS (Solaris)
+<li>SCCS (Solaris)
+</ul>
+Choose Preferences -> Version Control (in
+the main JDE menu bar) to select one of these
+options.  Be sure that the VCS commands are in your
+execution path.
+<p>
+The file version control commands act on the file that is
+currently open in the editor window.  Choose File
+-> Version to see the version control
+commands.
+<p>
+The following VCS commands appear in the Version submenu:
+<table width=100% border=0 cellspacing=12>
+<tr valign=top>
+<td><strong>Checkout</strong></td>
+<td width=70%>
+Checks out the file currently open in the editor from the
+VCS--makes the file <em>writable</em>.
+</td>
+</tr>
+
+<tr valign=top>
+<td><strong>Check In</strong></td>
+<td>
+Checks in the file that is currently open in the editor back into the
+VCS--makes the file <em>read-only</em>.
+</td>
+</tr>
+
+<tr valign=top>
+<td><strong>Check In New</strong></td>
+<td>
+If the file that is currently open in the editor is not
+under the control of a VCS, this command places it under
+VCS control--makes the file <em>read-only</em>.
+</td>
+</tr>
+
+<tr valign=top>
+<td><strong>Uncheckout</strong></td>
+<td>
+Undoes the effect of the Checkout command.  Any modifications
+you made to the file are deleted and the file is checked
+back into the VCS--makes the file <em>read-only</em>.
+</td>
+</tr>
+
+</table>
+
+<A NAME="pvcs">
+<H3>PVCS Notes</H3>
+</A>
+If you use PVCS with JDE, be aware of the following:
+<ul>
+<li>You must define a suffix for your archive files.  You
+can define a suffix using the PVCS Version Manager, or you can edit the
+appropriate configuration file. 
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13">To define a suffix using the 
+Version Manager:
+<ol>
+<li>Select the project to configure in the left pane.
+For example, "Master Project"
+<li>Choose Project -> Configure Project
+<li>In the Categories box, select New Archives
+<li>In the File Extension grid, add the extension "<tt>.java</tt>"
+<li>In the Archive suffix grid, add the suffix "<tt>jvva</tt>"
+<li>Click OK
+<li>Click Save
+</ol>
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13">To define a suffix by
+editing the configuration file:
+<ul>
+<li>Typically, you add an entry to the file
+<tt>C:\PVCS\MASTER.CFG</tt>. The following is a
+suggestion for such an entry in <tt>C:\PVCS\MASTER.CFG</tt>:
+<p>
+<tt>ARCHIVESUFFIX .java = jvva</tt>
+</ul>
+
+
+<li>In order to use PVCS with JDE, you must set
+the variable <tt>VCSCFG</tt> to the name of your
+configuration file.
+
+<ul>
+<li>On Windows 95 systems, set <tt>VCSCFG</tt> in
+<tt>AUTOEXEC.BAT</tt>. For example:
+<p>
+<tt>SET VCSCFG=C:\PVCS\MASTER.CFG</tt>
+
+<li>On Windows NT systems, set <tt>VCSCFG</tt>
+in the System Control Panel or in <tt>AUTOEXEC.BAT</tt>.
+</ul>
+</ul>
+
+
+</BODY>
+</HTML>

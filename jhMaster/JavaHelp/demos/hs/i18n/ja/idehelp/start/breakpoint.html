@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    901 San Antonio Road
+ *    Palo Alto, California  94303
+ *
+-->
+
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_JP">
+<TITLE>
+実習 2: ブレークポイントを設定する
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>実習 2: ブレークポイントを設定する</h1>
+
+エラーの原因となっているプログラム中の問題箇所を特定するには、ブレークポイントの設定が役に立ちます。この実習では、プログラムを実行しながら、<kbd>Blink.java</kbd> にブレークポイントを設定します。プログラムはブレークポイントの位置まで実行して停止します。 
+<p>
+このチュートリアルで示す行番号は、<a href="editcode.html">ソースコードを編集する</a>の実習でコードを追加したことを前提としています。 
+
+<ol>
+<li><nobr>「デバッグ」-&gt;「ブレークポイント」</nobr>を選択します。
+<br>「ブレークポイント」ウィンドウが表示されます。
+
+<li>「クラス名」テキストフィールドに、<kbd>Blink</kbd> と入力します。
+
+<li>「場所」テキストフィールドに、<kbd>45</kbd> と入力します。
+
+<li>「ブレークポイント設定」をクリックします。
+<br>ソースエディタで、次の行が強調表示されます。
+<br><pre>   if (x + w &gt; d.width) {</pre>
+<p>
+上記の行にブレークポイントを設定したのは、プログラムがループを処理するにしたがって、変数の値がどのように変化するかを追跡するためです。通常ブレークポイントは、プログラム中でエラーの原因となっていると思われる箇所に設定します。
+</ol>
+<p>
+プログラムは、ブレークポイントに到達するまで実行されます。新しいブレークポイントが含まれている行の色は緑色に変わり、プログラムの実行が停止した場所が示されます。「スレッド/スタック」ウィンドウ中の表示内容が更新されます。
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>次のレッスン:</strong>
+<dl>
+<dd><a href="threads.html">実習 3: スレッドを調べる</a>
+</dl>
+<p>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Profiler Menus
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Profiler Menus</H1>
+This page describes the following menus in the
+JDE profiler:
+<ul>
+<li><A HREF=#file>File menu</A>
+<li><A HREF=#view>View menu</A>
+<li><A HREF=#data>Data menu</A>
+<li><A HREF=#filter>Filter menu</A>
+</ul>
+
+<A NAME="file"></A>
+<h2>File Menu</h2>
+<table width=100% border=0 cellspacing=12>
+<tr valign="top">
+<td width=40%><strong>Open</strong></td>
+<td width=60%>
+Opens a new profile data file.
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Print</strong></td>
+<td>
+Prints the profile data.
+All data is printed, including lines that are not visible in the
+display panes.
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Print text</strong></td>
+<td>
+Writes an ASCII version of the profile data to a named
+file.  All data is printed, even lines that are not visible
+in the display panes.
+</td>
+</tr>
+
+<tr>
+<th colspan=2><hr></th>
+</tr>
+
+
+<tr valign="top">
+<td><strong>Close</strong></td>
+<td>
+Closes the Profile Display window.
+</td>
+</tr>
+
+</table>
+
+<A NAME="view"></A>
+<H2>View Menu</H2>
+Use these menu items to control how profiling data is
+displayed.
+<table width=100% border=0 cellspacing=12>
+<tr valign="top">
+<td width=40%><strong>Sort by Name</strong></td>
+<td width=60%>
+Sorts method names alphabetically.
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Sort by Value</strong></td>
+<td>
+Sorts method names in descending order
+by time.  This is the default view.
+</td>
+</tr>
+
+<tr>
+<th colspan=2><hr></th>
+</tr>
+
+<tr valign="top">
+<td><strong>Short Method Names</strong></td>
+<td>
+Displays method names in the form: <em>class.method</em>
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Full Method Names</strong></td>
+<td>
+Displays method names in the form: <em>package.class.method</em>. Also
+shows arguments and return values. 
+</td>
+</tr>
+
+<tr>
+<th colspan=2><hr></th>
+</tr>
+
+<tr valign="top">
+<td><strong>Place Bar on Left</strong></td>
+<td>
+Displays histogram bars on the left side of the display. 
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Place Bar on Right</strong></td>
+<td>
+Displays histogram bars on the right side of the display. 
+</td>
+</tr>
+
+<tr>
+<th colspan=2><hr></th>
+</tr>
+
+<tr valign="top">
+<td><strong>Bar Color</strong></td>
+<td>
+Changes the color of the histogram bars. 
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Text Color</strong></td>
+<td>
+Changes the color of the text in the displays. 
+</td>
+</tr>
+
+</table>
+
+<A NAME="data"></A>
+<H2>Data Menu</H2>
+Use these menu items to control the type of profiling
+data that is displayed.
+<table width=100% border=0 cellspacing=12>
+<tr valign="top">
+<td width=40%><strong>Self Times</strong></td>
+<td width=60%>
+Includes only the time spent in the body of the displayed
+method.  Does not include the time spent in methods called
+by this method.
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Cumulative Times</strong></td>
+<td>
+The time (in milliseconds) spent in the displayed
+method, in all methods called by the displayed method,
+in all methods called by <em>those</em> methods, and so
+on
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Call Counts</strong></td>
+<td>
+Displays the number of times the method was called by any
+other methods.
+</td>
+</tr>
+</table>
+
+<A NAME="filter"></A>
+<H2>Filter</H2>
+Use these menu items to exclude and include methods.
+<table width=100% border=0 cellspacing=12>
+<tr valign="top">
+<td width=40%><strong>Filter None</strong></td>
+<td width=60%>
+Includes all methods, including system methods in the displays. 
+</tr>
+
+<tr valign="top">
+<td><strong>Filter System</strong></td>
+<td>
+Excludes system methods from the displays. 
+</tr>
+
+<tr valign="top">
+<td><strong>Custom Filter</strong></td>
+<td>
+Includes or excludes methods you name in the <A HREF="dialogs/custom.html">Custom Filter
+dialog box</A>.
+</tr>
+
+<tr valign="top">
+<td><strong>Set Custom Filter</strong></td>
+<td>
+Activates the <A HREF="dialogs/custom.html">Custom Filter
+dialog box</A>. Use the Custom Filter dialog box to create
+a custom list of methods to be included or excluded from
+the displays.
+</tr>
+
+
+</table>
+
+
+
+<p>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>See also:</strong>
+<dl>
+<dd><A HREF="profile.html">JDE Profiler</A>
+<dd><A HREF="dialogs/custom.html">Custom Filter Dialog Box</A>
+</dl>
+<p>
+</BODY>
+</HTML>

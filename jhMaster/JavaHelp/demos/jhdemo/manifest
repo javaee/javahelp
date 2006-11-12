@@ -1,0 +1,2 @@
+Main-Class: sunw.demo.jhdemo.JHLauncher
+Class-Path: ../../javahelp/lib/jh.jar

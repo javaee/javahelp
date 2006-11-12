@@ -1,0 +1,667 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>JavaHelp 1.0 - Overview</title>
+<!-- Changed by: Eduardo Pelegri-Llopart, 19-Jan-1998 -->
+  </head>
+
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+      <h1 align=center>
+<IMG ALT="JavaHelp" SRC="../images/superhero.big.gif" WIDTH=64>
+<br>
+JavaHelp<sup><font size="-2">TM</font></sup> 1.0 - Overview
+</h1>
+<h2 align=center>
+<a href="Copyright.html">Copyright 1998-1999 Sun Microsystems</a>
+</h2>
+
+
+<h2>Introduction</h2>
+    <p>
+JavaHelp<sup><font size=-2>TM</font></sup> is an online
+help system specifically tailored to the Java platform.
+JavaHelp consists of a fully featured,
+highly extensible specification and an implementation of that
+specification written
+entirely in the Java language.
+</p>
+<p>
+JavaHelp enables Java developers to provide online help for:
+<ul>
+<li>Applications (both network and stand-alone)
+<li>Applets
+<li>JavaBean components
+<li>Desktops
+<li>HTML pages
+</ul>
+This document is an overview of the <a href="#specification">JavaHelp specification</a>.
+API documentation generated using <tt>javadoc</tt> can be found starting at
+<a href="../api/index.html">api/index.html</a>
+</p>
+
+
+<h2>Features</h2>
+    <p>
+The main features of JavaHelp are:
+<table width=98% border=0 cellpadding=5>
+<tr valign="top">
+<td width=20%><font color="#000080"><strong>Help Viewer</strong></font>
+</td>
+<td width=80%>
+The standard JavaHelp viewer consists
+of a toolbar and two panes:
+<table width=98% border=0 cellpadding=5>
+<tr valign="top">
+<td width=20%>Content pane
+</td>
+<td width=80%>
+Displays help topics
+formatted using HTML.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=20%>Navigation pane
+</td>
+<td width=80%>
+A tabbed interface that allows users to switch
+between the table of contents, index, and full text search
+displays.
+</td>
+</tr>
+
+</table>
+
+<tr valign="top">
+<td width=20%><font color="#000080"><strong>Table of contents</strong></font>
+</td>
+<td width=80%>
+XML-based.
+Collapsible/expandable display of topics in the help
+system.  Supports unlimited levels and merging of multiple
+TOCs.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=20%><font color="#000080"><strong>Index</strong></font>
+</td>
+<td width=80%>
+XML-based.
+Supports merging of multiple indexes.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=20%><font color="#000080"><strong>Full text search</strong></font>
+</td>
+<td width=80%>
+The full text of the content is searchable.  Different engines can be used.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=20%><font color="#000080"><strong>Compression and encapsulation</strong></font>
+</td>
+<td width=80%>
+Encapsulation and compression are optional.
+Uses the standard Java JAR format to encapsulate the entire
+help system into a single, optionally compressed file.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=20%><font color="#000080"><strong>Embeddable help windows</strong></font>
+</td>
+<td width=80%>
+Help windows (individually or in combination) can be embedded directly
+into application interfaces.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=20%><font color="#000080"><strong>Customization</strong></font>
+</td>
+<td width=80%>
+JavaHelp is designed to permit great flexibility
+in customizing both the user interface and functionality.
+</td>
+</tr>
+</table>
+
+<p>
+The <a href="misc/RefImpl.html">reference implementation</a> adds the following to this list:
+
+<table width=98% border=0 cellpadding=5>
+
+<tr valign="top">
+<td width=20%><font color="#000080"><strong>Flexible Search Engine</strong></font>
+</td>
+<td width=80%>
+The full text of the content can be searched with a flexible search
+engine that supports multi-word queries.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=20%><font color="#000080"><strong>PopUps and Active Content</strong></font>
+</td>
+<td width=80%>
+PopUps can be obtained by embedding lightweight Java components
+in HMTL pages.
+Active content (e.g. a button that when pressed can act on the application)
+can be implemented using the same mechanism.
+</td>
+</tr>
+
+</table>
+
+<a name="serialization">
+<h2>Serialization</h2></a>
+<p>
+Serialized objects of JavaHelp Swing components will not be support in V1.0.
+A future release of JavaHelp will provide full serialization including 
+support for long term persistence.
+
+<a name="platform">
+<h2>Supported Platforms</h2></a>
+    <p>
+JavaHelp 1.0 is a standard extension for both the
+<a href="http://java.sun.com/products/jdk/1.1">JDK1.1</a>
+and the
+<a href="http://java.sun.com/products/jdk/1.2">JDK1.2</a>
+platforms.
+</p>
+
+    <p>
+Although JDK1.1 is in wider use at the time of writing of this
+document, JDK1.2 is fundamentally a better platform and
+it offers many features useful to JavaHelp customers, including:
+<ul>
+<li>The <tt>jar:</tt> protocol in the platform, which
+provides a general and consistent (and efficient) way to 
+refer to files within a JAR file.
+<li>Temporary files, providing improved full-text search performance.
+<li>More flexible ClassLoader classes that can,
+for example, easily be used to create a ClassLoader instance
+to a given URL.
+<li>An improved security model.
+<li>Safe access to the SystemEventQueue from an Applet to support
+some of the Context-Sensitive features.
+<li>Improved I18N support, including input methods.
+<li>Printing support.
+<li>Other improved set of APIs, including sound, 2D and 3D graphics.
+</ul>
+</p>
+
+<a name="specification">
+<h2>The Specification</h2></a>
+    <p>
+The JavaHelp specification has two main parts:
+<table width=98% border=0 cellpadding=5>
+
+<tr valign="top">
+<td width=20%><b><A HREF="#api">API</A></b>
+</td>
+<td width=80%>
+The interface between the application and the help system
+</td>
+</tr>
+
+<tr valign="top">
+<td><b><A HREF="#file formats">File formats</A></b>
+</td>
+<td>
+Formats of the files that are part of the help system
+(HelpSet, table-of-contents, map, index, search database)
+</td>
+</tr>
+
+</table>
+
+<a name="api">
+<h2>API Structure</h2></a>
+
+The classes and methods in JavaHelp 1.0 can be partitioned
+depending on the tasks so that clients of the API need
+only use as much as they need.
+The following are the most useful collections:
+
+<table width=98% border=0 cellpadding=5>
+
+<tr valign="top">
+<td width=20%><font color="#000080"><strong>Basic Content Presentation</strong></font>
+</td>
+<td width=80%>
+<code>HelpSet</code> and <code>HelpBroker</code>
+are used to locate and create HelpSets and then
+to present these to the user using the default HelpBroker.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=20%><font color="#000080"><strong>Complete Access to JavaHelp Functionality</strong></font>
+</td>
+<td width=80%>
+A number of classes provide for access to Help Data
+and for control of the navigation of the online content.
+For example, the <code>NavigatorView</code> class provides access to
+the data in a Navigator View.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=20%><font color="#000080">
+<strong>Full-Text Search</strong></font>
+</td>
+<td width=80%>
+The classes in the <code>javax.help.search</code>
+package provide a simple API for full-text search that can also be used
+independently of help applications.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=20%><font color="#000080">
+<strong>Swing Classes</strong></font>
+</td>
+<td width=80%>
+Finally,
+JavaHelp 1.0 defines  
+<a href="http://java.sun.com/products/jdk/1.2/docs/guide/swing/">Swing</a>
+components for Navigators,
+Content Viewer and Help Viewer
+which can be embedded into an Application if desired.
+Custom Navigators are also presented to the API as Swing components.
+</td>
+</tr>
+
+</table>
+
+<h2>Main Concepts</h2>
+
+<p>
+Below we describe the
+fundamental concepts in the specification.
+More details are available in other parts of this
+specification and in the <tt>javadoc</tt> comments of the classes.
+</p>
+
+<h3>HelpSet</h3>
+<p>
+A HelpSet is a collection of help <a href="#content_files">content</a>
+(topics), <a href="#navigational_view">navigational views</a>,
+and <a href="#map_file">mapping</a> information.
+A HelpSet can contain other
+HelpSets which are <a href="#merging">merged</a> merged
+together.
+
+<h3>HelpSet File</h3>
+<p>
+The <A HREF="FileFormat.html#HelpSet">HelpSet file</A></a>
+describes a HelpSet
+and contains:
+<ul>
+<li>Title and other global information
+<li><A HREF="FileFormat.html#map section">Map</a> information
+that associates topic IDs with topic files
+<li>One or more navigational views on the content
+</ul>
+</p>
+
+<h3>HelpBroker</h3>
+<p>
+A Help Broker object is the abstraction of the presentation
+to a HelpSet.  An application can use a HelpBroker object
+to interact programmatically with the presentation of
+information.  The default HelpBroker implementation uses a Swing
+JFrame, but other implementations are possible (for example,
+embedding help objects).
+</p>
+
+<a name="navigational_view">
+<h3>Help Views and Help Navigators</h3></a>
+<p>
+JavaHelp provides "context views" for navigating
+through content information;
+for example,
+most HelpSets will have a view displaying a Table of Contents.
+A view has
+a <em>name</em>,
+a <em>NavigatorView Class</em> identifying its behavior,
+some information (e.g. URLs,  arguments) used by the instance,
+and a <em>JHelpNavigator</em> which is a GUI component that
+presents the view to the user.
+Navigational views are visible to the JavaHelp APIs and the
+client can request to make a specific view active.</p>
+</p>
+
+<p>
+The view's class defines what data it reads,
+its format,
+how it will be presented visually,
+and it also defines the <a href="#merging">merging rules</a>.
+A view is a subclass of
+<a href="../api/javax/help/NavigatorView.html">NavigatorView</a>.
+The <tt>createNavigator()</tt> method of a view returns a component
+that is used to graphically present the view;
+for the <a href="#standard views">standard views</a>
+this component is a
+<a href="Classes.html">Swing component</a>,
+specifically, a subclass of
+<a href="../api/javax/help/JHelpNavigator.html">JHelpNavigator</a>.
+
+<p>
+Any JavaHelp implementation must support the standard <tt>NavigatorView</tt>
+classes,
+but a HelpSet may include views with other classes,
+as long as they are available (technically, as long
+as their definitions are available to the ClassLoader instance
+of the HelpSet).
+In many cases this means they are either in the implementation
+of JavaHelp, in the CLASSPATH, or they are listed in the ARCHIVE
+attribute of an APPLET.
+
+<a name="standard views">
+<h3>Standard Help Views and Help Navigators</h3></a>
+      <p>
+All JavaHelp implementations must provide the following
+classes:
+
+<p>
+<table width=100% border=0 cellpadding=4>
+
+<tr valign="top">
+<td width=20%>
+<font size="-1">
+<tt>javax.help.TOCView</tt>
+<tt>javax.help.JHelpTOCNavigator</tt>
+</font>
+</td>
+<td width=80%>
+NavigatorView for parsing Table of Contents data
+and the JHelpNavigator for its presentation.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=20%>
+<font size="-1">
+<tt>javax.help.IndexView</tt>
+<tt>javax.help.JHelpIndexNavigator</tt>
+</font>
+</td>
+<td width=80%>
+The NavigatorView and JHelpNavigator for parsing and presenting Index data.
+</td>
+</tr>
+
+<tr valign="top">
+<td width=20%>
+<font size="-1">
+<tt>javax.help.SearchView</tt>
+<tt>javax.help.JHelpSearchNavigator</tt>
+</font>
+</td>
+<td width=80%>
+The NavigatorView and JHelpNavigator for interacting with
+a search engine using the <em>javax.help.search.*</em>
+classes.
+</td>
+</tr>
+
+</table>
+
+<p>
+The formats used by the TOC and the Index Navigators are described in
+<a href="FileFormat.html">FileFormat</a>.
+The Search Navigator interacts with its data through a search engine
+that extends the
+<a href="../api/javax/help/search/SearchEngine.html">SearchEngine class</a>;
+one of the Search View arguments is the class name of the search
+engine,
+the rest of the data is passed directly to the search engine.
+</p>
+
+<A name="content_files">
+<h3>Content files</h3></A>
+<p>
+Help information (topics) is described through a collection
+of URLs.  These URLs may be files, may be within a JAR
+file, or they may be generated dynamically by the server.
+</p>
+
+<p>
+Content information is presented depending on its (MIME) type.
+JavaHelp system implementations are required to provide viewers for
+HTML3.2 content, but there is a registration mechanism in
+<a href="../api/javax/help/JHelpContentViewer.html">JHelpContentViewer</a>
+that is built upon the corresponding mechanism in <tt>JEditorPane</tt>
+in the Swing package.</p>
+
+<a name="url protocols">
+<h3>URL Protocols</h3></a>
+
+<p>
+JavaHelp authors can use a number of protocols
+in the URLs when they are used in the HelpSet file and map files.
+The specific protocols available depend on the underlying
+platform.
+For example, JDK1.1 provides <tt>file:</tt>, <tt>http:</tt>,
+<tt>ftp:</tt>, while JDK1.2 adds the
+<a href="misc/Jar.html"><tt>jar:</tt></a> protocol
+which provides access to files within a JAR file.
+Specific implementations may support additional URL formats.</p>
+</p>
+
+<a name="map_file">
+<h3>Map File</h3></a>
+
+<p>
+Applications (or navigational data) do not usually directly
+reference content files, instead they usually reference
+them through string identifiers (IDs). This use of IDs insulates
+content development from application development.
+Identifiers are mapped to content files in a <em>map
+file</em>.
+Multiple map files can be combined within a HelpSet,
+but an identifier must be unique within a HelpSet in the resulting combined
+map.
+</p>
+
+<a name="search">
+<h3>Search</h3></a>
+<p>
+JavaHelp contains a simple search API in the package
+<a href="../api/javax/help/search/package-summary.html">javax.help.search</a>.
+This package provides creation and access to the search databases
+used by JavaHelp.
+Different search engines will be identified as subclasses
+of <em>javax.help.search.SearchEngine</em>.
+The search engine included in the JavaHelp reference implementation
+is <tt>com.sun.java.help.search.DefaultSearchEngine</tt>.
+
+<a name="merging">
+<h3>Merging</h3></a>
+
+<p>
+In simple applications, the help data may be described
+in a single HelpSet file.
+Other situations are best described as a collection of HelpSets,
+for example:
+<ul>
+<li>An application can merge help information available locally on a user's disk, with information on a web site 
+<li>Product suites
+can merge help information when constituent applications
+are installed
+<li>HelpSets from an application's constituent 
+<a href="Beans.html">Beans</a> can be merged for a unified presentation
+</ul>
+</p>
+
+  <p>
+JavaHelp 1.0 provides a basic mechanism for merging  the
+contents of several HelpSets,
+the resulting HelpSet merges the map information and
+the navigational views.
+See <a href="Merge.html">Merge</a> for additional information.
+</p>
+
+
+<a name="Extensibility">
+<h3>Extensibility</h3></a>
+
+<p>
+The JavaHelp system is designed so it can be extended in
+several dimensions:
+<ul>
+<li>The <tt>JHelpContentViewer</tt>
+registration mechanism can be used to provide new content
+viewers<li>
+The <tt>NavigatorView</tt> and
+<tt>JHelpNavigator</tt> mechanisms can be used to provide
+new file formats, or new presentations
+<li>The
+<tt>javax.help.search</tt> classes can be used to
+replace search engines. 
+</ul>
+For more details see <a
+href="Customization.html">Customization</a></p>
+</p>
+
+<a name="evolution">
+<h3>Updating Help Information</h3></a>
+    <p>
+<p>
+It is often important to be able to update a product's
+online help after it has been released.  The JavaHelp system
+supports this in several ways--it is possible to entirely
+replace the information (if in a JAR), or replace parts of
+it (if spread over multiple files).  
+</p>
+<p>
+Because you can refer to multiple maps in the HelpSet file,
+the JavaHelp system provides additional flexibility in this
+update process. The HelpSet file can extend these maps,
+making it possible to modify the mapping without modifying
+any existing map files (which may be inside a JAR file).
+Finally, since the URL protocols support remote access, if
+the application is running in a connected environment, it
+is possible to keep some information remotely.</p>
+
+<a name="file formats">
+<h2>File Formats</h2></a>
+    <p>
+In summary,
+the JavaHelp system specifies the following file formats:
+<ul>
+<li>HelpSet encapsulation and compression
+using JAR files
+<li>HTML topic files - HTML 3.2 minus the APPLET tag (use
+the OBJECT tag to implement lightweight <A HREF="misc/RefImpl.html#jcomponents">JComponents</A> in the
+reference implementation)
+<li>HelpSet file
+<li>Map files
+<li>Standard navigation view formats (TOC, index, search)
+</ul>
+
+<p>
+More information is available in
+<a href="FileFormat.html">FileFormat.html</a>.
+</p>
+
+<h2>An Example</h2>
+    <p>
+The following is an example of a HelpSet file.</p>
+<p>
+<pre>
+<font size="-1">
+    &lt;?xml version='1.0' encoding='ISO-8859-1' ?&gt;
+    &lt;!DOCTYPE helpset
+       PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp HelpSet Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/helpset_1_0.dtd"&gt;
+
+    &lt;helpset version="1.0"&gt;
+
+	&lt;!-- the title for the helpset --&gt;
+	&lt;title&gt;An Example&lt;/title&gt;
+
+	&lt;!-- maps --&gt;
+	&lt;maps&gt;
+	    &lt;homeID&gt;top&lt;/homeID&gt;
+	    &lt;mapref location="jar:file:/c:/Program Files/JWS3.0/JWS3.0.jar!/TheMap.map" /&gt;
+	&lt;/maps&gt;
+
+	&lt;!-- A TOC view --&gt;
+	&lt;view&gt;
+	    &lt;name&gt;TOC&lt;/name&gt;
+	    &lt;label&gt;Table Of Contents&lt;/label&gt;
+	    &lt;type&gt;javax.help.TOCView&lt;/type&gt;
+	    &lt;data&gt;jar:file:/c:/Program Files/JWS3.0/JWS3.0.jar!/TOC.xml&lt;/data&gt;
+	&lt;/view&gt;
+
+	&lt;!-- Another TOC view; note that it has a different name --&gt;
+	&lt;view&gt;
+	    &lt;name&gt;LocalTOC&lt;/name&gt;
+	    &lt;label&gt;Appendix One&lt;/label&gt;
+	    &lt;type&gt;javax.help.TOCView&lt;/type&gt;
+	    &lt;data&gt;jar:file:/c:/Program Files/JWS3.0/JWS3.0.jar!/LocalTOC.xml&lt;/data&gt;
+	&lt;/view&gt;
+	
+	&lt;!-- An Index view --&gt;
+	&lt;view&gt;
+	    &lt;name&gt;Index&lt;/name&gt;
+	    &lt;label&gt;Index&lt;/label&gt;
+	    &lt;type&gt;javax.help.IndexView&lt;/type&gt;
+	    &lt;data&gt;jar:file:/c:/Program Files/JWS3.0/JWS3.0.jar!/Index.xml&lt;/data&gt;
+	&lt;/view&gt;
+
+	&lt;!-- A Search view; note the engine attribute --&gt;
+	&lt;view&gt;
+	    &lt;name&gt;Search&lt;/name&gt;
+	    &lt;label&gt;Search&lt;/label&gt;
+	    &lt;type&gt;javax.help.SearchView&lt;/type&gt;
+	    &lt;data engine="com.sun.java.help.search.SearchEngine"&gt;
+              jar:file:/c:/Program Files/JWS3.0/JWS3.0.jar!/SearchData
+	    &lt;/data&gt;
+	&lt;/view&gt;
+
+    &lt;/helpset&gt;
+</font>
+</pre>
+
+    <p>
+The HelpSet file starts a DOCTYPE identifying the DTD for the file.
+The DTD is versioned to allow for future changes.
+Next follows the title of the HelpSet.
+      <p>
+The next section provides information about ID->content
+file mapping.  An
+ID is given indicating what information within the
+HelpSet to show by default.
+Next a mapref tag indicates where to locate the map. 
+In our case the mapfile is contained within a JAR file on the
+local disk.</p>
+      <p>
+The next three sections of the HelpSet file provide information about different
+views of the content information.  The first view, "TheTOC",
+is in a local disk.
+The next section is a different Table of Contents view, ("MyLocalTOC"),
+that uses the same information as the first view, while the next section
+is an index on the local disk.
+The final section defines search information. </p>
+
+
+<hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 19:13:58 MDT 1999
+<!-- hhmts end -->
+  </body>
+</html>

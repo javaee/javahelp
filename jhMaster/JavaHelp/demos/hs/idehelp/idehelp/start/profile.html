@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<html>
+<head>
+<title>
+Exercise Four: Collecting Profile Data
+</title>
+</head>
+<body bgcolor="#ffffff">
+
+<bodytext><h1>Exercise Four: Collecting Profile Data</h1>
+
+This exercise shows you how to run the Blink project with the Java WorkShop profiler. The profiler helps you analyze the performance of your program to determine how much time is spent in each of the program's methods and how many times each of the methods are executed.
+<ol>
+<li>Check the project manager for the name of the current project.
+<br>If the current project is not Blink, double-click on the Blink project name.</li>
+<li>Start profiling the Blink project by clicking the Profile <img src="../images/tb-profile_u.gif"> button on the Java WorkShop main toolbar.
+<br>The Applet Viewer window is displayed.</li>
+<li>Wait at least 45 seconds before going on to the next step.</li>
+<br>This provides enough data to produce a useful profiling display.
+<li>End the profiling session by choosing Applet -> Quit, in the applet viewer.
+<br>After profiling the program, the Profiler window displays the data written to the project source directory's <kbd>Blink.prof</kbd> file.</li>
+<li>In the Profiler window, choose Filter -> None to display the system class data.</li>
+<li>Choose View -> Sort by Name to display the method data in alphabetical order.</li>
+<li>Select the <kbd>Blink.paint (Ljava/awt/Graphics;)</kbd> method.</li>
+<li>Review the profile data, with results similar to the figure below:</li>
+</ol>
+<p>
+<img src="../../images/tProfile.gif"></p>
+<p>
+The results indicate that:
+<ul>
+<li>Java WorkShop spent 93 milliseconds calling the <kbd>Blink.paint (Ljava/awt/Graphics;)</kbd> method.</li>
+<li><kbd>Blink.paint (Ljava/awt/Graphics;)</kbd> calls three methods: <kbd>java.awt.Color.<init> (III)</kbd>, <kbd>java.awt.Component.size ()</kbd>, and <kbd>java.awt.Font.getSize ()</kbd>.
+<li>The two methods that call the <kbd>Blink.paint (Ljava/awt/Graphics;)</kbd> method are: <kbd>java.awt.Component.dispatchEventImpl (Ljava/awt/AWTEvent;)</kbd> and <kbd>java.awt.Component.update (Ljava/awt/Graphics;)</kbd>.
+</ul>
+<p>
+<img src="../../images/hg_see.gif" width="18" height="13"><strong>Next lesson:</strong></p>
+<dl>
+<dd>You have completed the lessons in this tutorial. The next tutorial is <a href="edit.html">Tutorial Two: Editing Project Attributes</a>.</dd>
+</dl></bodytext>
+</body>
+</html>

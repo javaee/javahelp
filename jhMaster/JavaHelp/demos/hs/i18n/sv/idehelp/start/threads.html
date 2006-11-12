@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+&Ouml;vning 3: Granska tr&aring;dar
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>&Ouml;vning 3: Granska tr&aring;dar</h1>
+
+I den h&auml;r &ouml;vningen ska du visa tr&aring;dgrupperna, tr&aring;darna och
+stackramarna som utg&ouml;r projektet Blink. Dessutom f&aring;r du l&auml;ra dig hur
+du sp&aring;rar &auml;ndringar i variabelv&auml;rdena efterhand som programmet
+exekveras.
+<ol>
+<li>V&auml;lj <nobr>Fels&ouml;k -&gt; Tr&aring;dar/stack.</nobr>
+<br>D&aring; visas f&ouml;nstret Tr&aring;dar/stack i Java Development Environment.
+<p>
+Projektet Blink best&aring;r av tre tr&aring;dgrupper som var och en &aring;tf&ouml;ljs av
+f&ouml;ljande glyf: <img src="../../images/spacer2_t.gif"><img src="../../../../images/db_01_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">:
+
+<ul>
+<li><kbd>main</kbd> - inneh&aring;ller tre tr&aring;dar som k&ouml;rs i Java Development Environment
+<li><kbd>sun.applet.AppletViewer.main</kbd> - inneh&aring;ller tr&aring;dar
+som k&ouml;rs i miniprogramgranskaren
+<li><code>file:/<b>installationskatalog</b>/jws/Blink/-threadGroup</code>
+- inneh&aring;ller tr&aring;dar som &auml;r direkt relaterade till projektet Blink
+</ul>
+
+Tr&aring;dgruppen <kbd>sun.applet.AppletViewer.main</kbd> inneh&aring;ller tre
+tr&aring;dar och tr&aring;dgruppen f&ouml;r filen <kbd>Blink</kbd> inneh&aring;ller tv&aring;.
+<li>Titta p&aring; <kbd>"AWT-EventQueue-0"</kbd>, som &auml;r den f&ouml;rsta
+tr&aring;den i tr&aring;dgruppen <kbd>sun.applet.AppletViewer.main</kbd>.
+<p>D&aring; ser du f&ouml;ljande:
+
+<ul>
+<li>Tr&aring;dens namn &auml;r <kbd>java.awt.EventDispatch</kbd>.
+<li>Tr&aring;dens l&auml;ge &auml;r "vid brytpunkt".
+<li>Prioriteten f&ouml;r att k&ouml;ra tr&aring;den &auml;r 5. Tr&aring;den med h&ouml;gst
+prioritet k&ouml;rs f&ouml;rst.
+</ul>
+
+<p>
+Glyfen som &aring;tf&ouml;ljer tr&aring;den &auml;r ytterligare en anvisning om
+tr&aring;dens l&auml;ge. F&ouml;ljande giltiga glyfer finns:
+<br>
+<img src="../../../../images/db_19_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">Tr&aring;den
+har skjutits upp.
+<br>
+<img src="../../../../images/db_20_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif">Tr&aring;den
+har stoppats vid brytpunkten.
+<br>
+<img src="../../../../images/db_13_u.gif"><img src="../../images/spacer2_t.gif">Tr&aring;dens
+l&auml;ge kan inte tolkas.
+<br>
+<img src="../../../../images/db_14_u.gif"><img src="../../images/spacer2_t.gif">Tr&aring;den
+&auml;r en zombieprocess.
+<br>
+<img src="../../../../images/db_15_u.gif"><img src="../../images/spacer2_t.gif">Tr&aring;den
+k&ouml;rs.
+<br>
+<img src="../../../../images/db_16_u.gif"><img src="../../images/spacer2_t.gif">Tr&aring;den
+sover.
+<br>
+<img src="../../../../images/db_18_u.gif"><img src="../../images/spacer2_t.gif">Tr&aring;den
+v&auml;ntar p&aring; en villkorlig variabel.
+<li>Titta p&aring; anropsstacken som utg&ouml;r tr&aring;dklassen.
+<br>Anropsstacken omfattar alla metoderna som har anropats men inte <nobr>returnerats.<img src="../../images/spacer2_t.gif"></nobr><kbd>Blink.paint</kbd>,
+som exekverades n&auml;r programmet stoppades, ligger h&ouml;gst upp i stacken. Stackramen
+&auml;r markerad s&aring; att det &auml;r enkelt att se var programmet stoppades
+n&aring;gonstans. Varje stackram &aring;tf&ouml;ljs av glyfen <img src="../../../../images/db_02_u.gif" align=BOTTOM><img src="../../images/spacer2_t.gif"> .
+<li>&Ouml;ppna stackramen <kbd>Blink.paint</kbd> genom att klicka p&aring;
+plustecknet bredvid glyfen <img src="../../../../images/db_02_u.gif" align=BOTTOM> .
+<br>Java Development Environment visar variablerna och deras aktuella v&auml;rden lokalt
+f&ouml;r <kbd>Blink.paint</kbd>. Titta p&aring; variabeln <kbd>word</kbd>. Och
+titta p&aring; v&auml;rdet p&aring; variabeln <code>word</code>.
+<li>Klicka p&aring; knappen Fram&aring;t i verktygsf&auml;ltet f&ouml;r redigering och
+fels&ouml;kning.
+<br>Programmet k&ouml;rs igenom en slinga och stoppas n&auml;r det
+p&aring;tr&auml;ffar brytpunkten f&ouml;r andra g&aring;ngen. F&ouml;nstret
+Tr&aring;dar/stack uppdateras och v&auml;rdet p&aring; variabeln <kbd>word</kbd>
+&auml;ndras. V&auml;rdet g&aring;r igenom texten "Java Development Environment is really cool :-)".
+<li>&Ouml;ppna objektet <kbd>this</kbd> genom att klicka p&aring; plustecknet
+bredvid glyfen <img src="../../../../images/db_24_u_data.gif" align=BOTTOM> .
+<br>Java Development Environment ut&ouml;kar objektet s&aring; att alla de ing&aring;ende variablerna
+visas. Du kan upprepa den h&auml;r &aring;tg&auml;rden i kapslade objekt (exempelvis
+<kbd>peer</kbd>).
+<li>Klicka p&aring; minustecknet till v&auml;nster om <kbd>this</kbd>-objektet.
+<br>Java Development Environment komprimerar objektet.
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;sta lektion:</strong>
+<dl>
+<dd><a href="step.html">&Ouml;vning 4:  Stega igenom en metod</a>
+</dl>
+
+<p>
+</body>
+</html>

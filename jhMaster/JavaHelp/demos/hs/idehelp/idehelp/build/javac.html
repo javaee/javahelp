@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>javac - The Java Compiler</title>
+</head>
+<BODY BGCOLOR="#FFFFFF">
+
+
+<h1>javac - The Java Compiler</h1>
+<blockquote>
+The Java<sup>TM</sup> Compiler<sup>TM</sup> <tt>javac</tt>
+compiles Java programs.
+</blockquote>
+
+<h2>Synopsis</h2>
+<blockquote>
+<code>javac [</code> <a
+href="javac.html#Options"><em>options</em></a> <code>]
+filename.java ...</code>
+<br>
+<code>javac_g [</code> <a href="javac.html#Options"><em>options</em></a>
+<code>] filename.java ...</code>
+</blockquote>
+
+<h2>Description</h2>
+The <code>javac</code> command compiles Java source code into Java bytecodes.
+You then use the Java interpreter - the <code>java</code>
+command--to interpret the Java bytecodes.
+
+<p>
+Java source code must be contained in files whose file names
+end with the <code>.java</code> extension.  The file name
+must be constructed from the class name, as in
+<i>classname</i><code>.java</code>, if the class is public
+or is referenced from another source file.
+
+<p>
+For every class defined in each source file compiled by
+<code>javac</code>, the compiler stores the resulting
+bytecodes in a <em>class file</em> with a name of the form
+<i>classname</i><code>.class</code>.  Unless you specify
+the <code>-d</code> option, the compiler places each class
+file in the same directory as the corresponding source
+file.
+
+<p>
+When the compiler must refer to your own classes, you must
+specify their location.  Use the <code>-classpath</code>
+option or <code>CLASSPATH</code> environment variable to do
+this.  The class path is a sequence of directories (or zip
+files) which <code>javac</code> searches for classes that
+are not already defined in any of the files specified
+directly as command arguments.  The compiler looks in the
+class path for both a source file and a class file,
+recompiling the source (and regenerating the class file) if
+it is newer.
+
+<a name=Options>
+<h2>Options</h2>
+</a>
+
+<dl>
+
+<dt><code>-classpath</code><i> path</i>
+<dd>
+Specifies the path <code>javac</code> uses to look up
+classes. Overrides the default or the
+<code>CLASSPATH</code> environment variable if it is set.
+Directories are separated by colons on Solaris systems and
+by semicolons on Window 95/NT systems.  It is often useful
+for the directory containing the source files to be on the
+class path.  You should always include the system classes
+at the end of the path.  For example:
+<p>
+<code>
+javac -classpath .:/home/avh/classes:/usr/local/java/classes ...
+</code>
+<p>
+
+<dt><code>-d</code><i> directory</i>
+<dd>
+Specifies the root directory of the class file hierarchy.
+For example, typing:
+<p>
+<code>
+javac -d /home/avh/classes MyProgram.java
+</code>
+<p>
+causes the class files for the classes in the
+<code>MyProgram.java</code> source file to be saved in the
+directory <code>/home/avh/classes/demos/awt</code>,
+assuming that the classes are defined in the package
+<code>demos/awt</code>.
+
+<p>
+The <code>-d</code> and <code>-classpath</code>
+options have independent effects.  The compiler reads only
+from the class path, and writes only to the destination
+directory.  It is often useful for the destination
+directory to be on the class path.  If the <code>-d</code>
+option is not specified, the source files should be stored
+in a directory hierarchy that reflects the package
+structure, so that the resulting class files can be easily
+located.
+<p>
+
+<dt><code>-g</code>
+<dd>
+Enables generation of debugging tables. Debugging tables
+contain information about line numbers and local
+variables--information used by Java debugging tools. By
+default, only line numbers are generated, unless
+optimization (<code>-O</code>) is turned on.
+<p>
+
+<dt><code>-nowarn</code>
+<dd>
+Turns off warnings. If used, the compiler does not print
+out any warnings.
+<p>
+
+<dt><code>-O</code>
+<dd>
+Optimizes compiled code by inlining static, final, and
+private methods.  Your classes may get larger in
+size.
+<p>
+
+<dt><code>-verbose</code>
+<dd>
+Causes the compiler and linker to print out messages about
+what source files are being compiled and what class files
+are being loaded.
+<p>
+
+<dt><code>-depend</code>
+<dd>
+Makes the compiler consider recompiling class
+files that are referenced from other class files.
+(Normally, it only recompiles missing or out-of-date class
+files that are referred to from source code.)
+<p>
+
+<dt><code>-J</code><i>javaoption</i>
+<dd>
+Passes the string <i>javaoption</i> as a single
+argument to the Java interpreter, which runs the compiler.
+The argument should not contain spaces.  Multiple argument
+words must all begin with the prefix <code>-J</code>, which
+is stripped.  This is useful for adjusting the compiler's
+execution environment or memory usage.
+
+</dl>
+
+<h2>Environment Variables</h2>
+
+<dl>
+
+<dt><strong>CLASSPATH</strong>
+<dd>
+Provides the system a path to user-defined classes.
+Directories are separated by colons on Solaris systems
+and by semicolons on Windows 95/NT systems. For example:
+<p>
+<code>
+.:/home/avh/classes:/usr/local/java/classes
+</code>
+
+</dl>
+
+</body>
+</html>

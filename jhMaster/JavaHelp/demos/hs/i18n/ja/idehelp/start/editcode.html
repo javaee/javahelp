@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    901 San Antonio Road
+ *    Palo Alto, California  94303
+ *
+-->
+
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_JP">
+<TITLE>
+実習 1: ソースコードを編集する
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>実習 1: ソースコードを編集する</h1>
+
+ソースエディタでの作業に慣れるために、文字を上下にはずむように動かすためのコードを <kbd>Blink.java</kbd> ファイルに入力します。
+<p>
+まだ Blink プロジェクトを作成していない場合は、ここで <a href="create.html">Blink プロジェクトを作成する</a>の手順に沿ってプロジェクトを作成してから、以下の実習に進んでください。
+
+<ol>
+<li>「プロジェクトマネージャ」ウィンドウで、現在のプロジェクトの名前を確認します。
+<br>現在のプロジェクトが Blink でない場合は、プロジェクト名「Blink」をダブルクリックします。
+
+<li>次のソースコードを入力します。
+<br>次の実習でエラーの修正方法を学習するために、以下のソースコードにはエラーが含まれています。
+<p>
+特定の行に移動するには、<nobr>「編集」-&gt;「指定した行へ移動」</nobr>を選択します。
+ポインタが置かれている行の番号は、タブ付きページの右下 (編集ウィンドウのフッター) に示されます。 
+
+
+
+
+<dl>
+<dt>17 行目
+<dd><pre>int speed;</pre><br>
+<dt>の次の行に、以下のように入力して Return キーまたは Enter キーを押してください。
+
+<dd>
+<pre>
+boolean offset;</pre>
+<br>
+<dt>25 行目
+<dd><pre>lbl = (att == null) ? "Blink" : att;</pre><br>
+<dt>の次の行に、以下のように入力してください。
+<dd>
+<pre>
+offset = false;</pre> 
+<br>
+<dt>53 行目および 54 行目
+<dd><pre>g.setColor(Color.lightGray);
+}</pre><br>
+<dt>の次の行から、以下のように入力してください。
+<dd>
+<pre>
+if offset
+   y = y * 2;</pre>
+<br>
+<dt>57 行目
+<dd><pre>g.drawString(word, x, y);</pre><br>
+<dt>の次の行から、以下のように入力してください。
+<dd>
+<pre>
+if (offset) {
+   offset = false;
+   y = y / 2
+ } else {
+    offset = true;
+}</pre>
+</dl>
+
+
+
+<br>
+<li>編集デバッグツールバー上の「保存」ボタン <img src="../../../../images/24/file-save_u.gif" align=BOTTOM>をクリックします。
+<br>保存されるファイルのパス名が、編集ウィンドウのフッターに表示されます。
+</ol>
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>次のレッスン:</strong>
+<dl>
+<dd><a href="fixbuild.html">実習 2: 構築エラーを修正する</a>
+</dl>
+<p>
+</body>
+</html>

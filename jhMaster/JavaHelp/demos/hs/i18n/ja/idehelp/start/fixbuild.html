@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    901 San Antonio Road
+ *    Palo Alto, California  94303
+ *
+-->
+
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=EUC_JP">
+<TITLE>
+実習 2: 構築エラーを修正する
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>実習 2: 構築エラーを修正する</h1>
+
+この実習では、構築中に検出されたエラーの原因となっているソース行を特定し、修正する方法を説明します。構築エラーの原因は通常、言語構文の誤り、宣言されていない変数、キーワードのミススペルなどです。
+
+<p>
+Blink プロジェクトに、文字を上下にはずむように動かすためのコードを追加していない場合は、ここで<A HREF="editcode.html">ソースコードを編集する</A> の手順に沿ってコードを追加してから、以下の実習に進んでください。
+
+<h2>エラーを特定する</h2>
+<ol>
+<li>「プロジェクトマネージャ」ウィンドウで、現在のプロジェクトの名前を確認します。
+<br>現在のプロジェクトが Blink でない場合は、プロジェクト名「Blink」をダブルクリックします。
+<li>メインツールバー上の「構築」ボタン <img src="../../../../images/24/tb-build_u.gif" align=BOTTOM> をクリックします。
+<br>デフォルトでは Java WorkShop 付属の高速 Java コンパイラを使用して Blink プロジェクトがコンパイルされます。このコンパイラは、標準の JDK Java コンパイラよりも高速です。
+<p>
+「構築」タブ付きページに 2 つのエラーが表示されます。ソースエディタには、1 つ目のエラーの原因となっているソース行が、黄色で強調表示されています。
+</ol>
+
+<h2>エラーを修正する</h2>
+<ol>
+<li><kbd>offset</kbd> を括弧で囲んで、以下のように 1 つ目のエラーを修正します。
+<br><code>　　if (offset)</code>
+<li>「構築」タブ付きページで、2 つ目のエラー <kbd>Blink.java: 60</kbd> を選択します。
+
+<br>ソースエディタに、エラーの原因となったソース行が表示されます。
+<li>60 行目の <kbd>y = y / 2</kbd> の後に <kbd>;</kbd> を追加して、以下のように修正します。
+<br><kbd>　　y = y / 2;</kbd>
+<li>編集デバッグツールバー上の「保存」ボタン <img src="../../../../images/24/file-save_u.gif" align=BOTTOM> をクリックします。
+<br>これでプログラム中のエラーが修正できたので、プログラムを再構築することができます。
+</ol>
+
+<h2>プロジェクトを再構築する</h2>
+<ol>
+<li>メインツールバー上の「構築」ボタン <img src="../../../../images/24/tb-build_u.gif" align=BOTTOM>をクリックします。
+<br>エラーメッセージは表示されないはずです。エラーメッセージが表示された場合は、上記の説明どおりに入力されているかどうか、ソースコードを再確認してください。
+<li>メインツールバー上の「実行」ボタン <img src="../../../../images/24/tb-run_u.gif" align=BOTTOM>をクリックします。
+<br>プロジェクトが実行されます。テキストが点滅しながら上下に動きます。
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>次のレッスン:</strong>
+<dl>
+<dd>チュートリアル 3 の内容はこれで終わりです。次は、<a href="browse.html">チュートリアル 4: プロジェクトのブラウズ</a>に進んでください。
+</dl>
+<p>
+</body>
+</html>

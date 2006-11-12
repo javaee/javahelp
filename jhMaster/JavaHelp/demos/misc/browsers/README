@@ -1,0 +1,34 @@
+Instructions for this.
+(still to be double-checked)
+
+On your directory.
+
+1. copy holidays.jar into here, and unjar it.
+
+On Solaris/ AppletViewer
+
+1. sh cleanAW.sh
+
+On Solaris/ Navigator 4.0
+
+1. get a local copy of Navigator 4.0
+2. get a local webserver (only works when going through http: protocol?)
+3. install activator
+-. change the paths in the .bat file
+4. sh cleanNS.sh
+
+On NT4.0 / IE4.0
+
+1. install activator
+2. hack the swing.jar so it includes javahelp.jar
+-. change the paths in the .bat file
+3. cleanIE
+
+Settings of the Java Activator Properties:
+
+- Proxies are emtpy
+- Advanced is using Activator default for the JRE
+- Basic is show console, enable java
+  network access unrestricted
+  class access unrestricted
+  allow unsigned applets yes

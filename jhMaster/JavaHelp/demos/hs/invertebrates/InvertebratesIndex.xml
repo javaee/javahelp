@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='ISO-8859-1'  ?>
+
+<!--
+ @(#)InvertebratesIndex.xml	1.8 06/10/30
+ 
+ Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+ 
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 
+ - Redistribution of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ 
+ - Redistribution in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+ 
+ Neither the name of Sun Microsystems, Inc. or the names of
+ contributors may be used to endorse or promote products derived
+ from this software without specific prior written permission.
+ 
+ This software is provided "AS IS," without a warranty of any
+ kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND
+ WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY
+ EXCLUDED. SUN MICROSYSTEMS, INC. ("SUN") AND ITS LICENSORS SHALL
+ NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF
+ USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+ DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR
+ ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,
+ CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND
+ REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR
+ INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGES.
+ 
+ You acknowledge that this software is not designed, licensed or
+ intended for use in the design, construction, operation or
+ maintenance of any nuclear facility. 
+-->
+
+<!DOCTYPE index
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Index Version 1.0//EN" 
+         "http://java.sun.com/products/javahelp/index_1_0.dtd">
+
+<index version="1.0">
+   <indexitem text="Categories">
+    <indexitem text="Invertebrates" target="invertebrates">
+        <indexitem text="Protozoa" target="protozoa" />
+        <indexitem text="Echinoderms" target="echinoderms" />
+	<indexitem text="Marine Animals" target="echinoderms" />
+	<indexitem text="Starfish" target="echinoderms" />
+	<indexitem text="Sea urchins" target="echinoderms" />
+	<indexitem text="Amoebas" target="protozoa"/>
+        <indexitem text="Annelids" target="annelids" />
+	<indexitem text="Earthworm" target="annelids"/>
+	<indexitem text="Leeches" target="annelids"/>
+        <indexitem text="Mollusks" target="mollusks" />
+	<indexitem text="Oyster" target="mollusks" />
+	<indexitem text="Mussel" target="mollusks" />
+	<indexitem text="Clam" target="mollusks" />
+	<indexitem text="Squid" target="mollusks" />
+	<indexitem text="Octopus" target="mollusks" />
+	<indexitem text="Flagellates" target="protozoa"/>
+	<indexitem text="Limb" target="arthropods"/>
+        <indexitem text="Arthropods" target="arthropods" >
+                <indexitem text="Crustaceans" target="crustaceans">
+			<indexitem text="Crab" target="crustaceans"/>
+		        <indexitem text="Lobster" target="crustaceans"/>
+        		<indexitem text="Barnacle" target="crustaceans"/>
+		        <indexitem text="Claws" target="crustaceans"/>
+		</indexitem>
+                <indexitem text="Arachnids" target="arachnids" >
+			<indexitem text="Scorpion" target="arachnids"/>		
+			<indexitem text="Tick" target="arachnids"/>
+			<indexitem text="Mite" target="arachnids"/>
+			<indexitem text="Appendages" target="arachnids"/>
+			<indexitem text="Fangs" target="arachnids"/>
+		</indexitem>
+                <indexitem text="Insects" target="insects">
+			<indexitem text="Abdomen" target="insects"/>
+			<indexitem text="Thorax" target="insects"/>
+			<indexitem text="Antennae" target="insects"/>
+			<indexitem text="Compound eyes" target="insects"/>
+		</indexitem> 
+        </indexitem>
+    </indexitem>
+    <indexitem text="Pictures" mergetype="javax.help.SortMerge">
+        <indexitem text="Crab" target="crab.picture"/>
+        <indexitem text="Sea Star" target="seastar.picture"/>
+        <indexitem text="Sponge" target="sponge.picture"/>
+        <indexitem text="Worms" target="worms.picture"/>
+        <indexitem text="Clam" target="clam.picture"/>
+        <indexitem text="Spider" target="spider.picture"/>
+        <indexitem text="Butterfly" target="butterfly.picture"/>
+        <indexitem text="Dragon" target="dragon.picture"/>
+  </indexitem>
+ </indexitem>
+
+</index>
+

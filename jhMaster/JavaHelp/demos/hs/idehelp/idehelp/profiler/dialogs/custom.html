@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Custom Filter Dialog Box
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Custom Filter Dialog Box</H1>
+Use the Custom Filter dialog box to create a list of method
+names that you want included or excluded from the profiler
+displays.  Use the asterisk (<tt>*</tt>) character as a wildcard. For
+example, the following entries represent all methods that
+begin with the characters <tt>java.</tt> and <tt>sun.</tt>:
+<pre>
+   java.*
+   sun.*
+</pre>
+<p>
+<IMG SRC="../../../images/hg_note.gif">
+<br>
+You can create only lists that exclude or include methods.  You cannot
+create lists that both exclude <em>and</em> include methods.
+
+
+<table width=100% border=0 cellspacing=12>
+<tr valign="top">
+<td><strong>Exclude List button</strong></td>
+<td width=40%>
+Excludes all method names that match the names in the
+filter list
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Includes List button</strong></td>
+<td width=90%>
+Includes all method names that match the names in the
+filter list
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Delete button</strong></td>
+<td width=90%>
+Deletes the selected name from the filter list
+</td>
+</tr>
+
+<tr valign="top">
+<td><strong>Add button</strong></td>
+<td width=90%>
+Adds the name you've typed in the Method text box
+to the filter list
+</td>
+</tr>
+
+
+</table>
+
+<p>
+<IMG SRC="../../../images/hg_see.gif"><strong>See also:</strong>
+<dl>
+<dd><A HREF="../profile.html">JDE Profiler</A>
+<dd><A HREF="../menus.html">Profile Menus</A>
+</dl>
+<p>
+</BODY>
+</HTML>

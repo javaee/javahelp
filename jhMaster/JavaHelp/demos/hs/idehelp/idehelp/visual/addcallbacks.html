@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Adding Operations to Components
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Adding Operations to Components</H1>
+
+To add an operation to an individual component, add code 
+to the actual body class instead of the shadow class. Edit
+code for the shadow class when an operation is being added to a group or
+subgroup.
+<p>
+You can add operations in the following ways:
+<ul>
+<li><a href=#opsbox>Through the Operations dialog box</a>
+<li><a href=#editsource>By editing the source code</a>
+<li><a href=#opscombo>Through a combination of the Operations dialog
+box and source editing</a> 
+</ul>
+
+Operations can be added to beans with the Operations dialog box or by
+manual coding, see the section <a href=#addbeanops>Adding Operations to
+Beans</a>.
+
+<p>
+<a name=opsbox></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add an operation to a
+component through the Operations dialog box:</strong>
+<ol>
+<li>Select the component in the layout.
+<li>Open the attribute editor by clicking on its button in the main toolbar.
+<li>Open the Operations dialog box by clicking the Edit operations
+button in the attribute editor.
+<li>Click the Insert button to add an operation (GUI builder provides a
+default name, Ops<i>number</i>, for the operation; you can rename the
+operation by typing a name in the Op name box).
+<p>
+Use the Delete button to remove operations from the list.  
+If you accidentally delete operations, you can click Reset
+to reset the list to its state after the last Apply
+operation. There is no Undo, so you
+cannot reverse changes that you have applied.
+<li>Click the Filter button to set the triggering event--either an event
+filter or a message filter.
+<p> 
+Filters are described in <A HREF="ops.html#filtertypes">Filters</A>. 
+New style 1.1 events are not supported in this release. For
+information on new-style and old-event handling, see the JDK
+documentation, <a
+href="http://java.sun.com/products/jdk/1.1/docs/guide/awt/designspec/events.html">
+"Java AWT: Delegation Event Model"</a>. (You may have to reset the proxies
+on the Java Workshop help browser if you have difficulties reaching
+the Delegation Event Model.)
+<li>Click the Action button to set the desired response to the
+trigger.
+<li>Select the appropriate action type
+(action types are described in <A HREF="ops.html#actiontypes">Actions</A>).
+<p>
+As you add more filters and actions, you can test them
+in the layout window.  Custom actions added in the
+Action dialog box are available only when running the
+application.
+<li>Save the operation settings by clicking OK in the Operations
+dialog box.
+</ol>
+
+<a name=editsource></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add an operation
+directly to the source file:</strong> 
+
+<ol>
+<li>Create the layout with GUI builder.
+<li>Save the layout and generate a <tt>.gui</tt> file.
+<li>Click on the Open button in the Edit/Debug toolbar and select the
+<i>project</i><tt>.java</tt> file.
+<li>Add code to the "group" file in the <tt>handleEvent()</tt> method.
+For example:
+
+<pre>
+   public boolean handleEvent(Message msg, Event evt) {
+
+    if (evt.target == gui.button1.getBody() &&
+	evt.id == Event.ACTION_EVENT) {
+        System.out.println("got a click on button1");
+	return true;
+    }
+
+    return super.handleEvent(msg, evt);
+  }
+</pre>
+</ol>
+
+<a name=opscombo></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To add an operation
+using both methods:</strong>
+<ul>
+<li>Edit the source code directly in the source editor to add specific
+behavior. Use the Operations dialog box to set the filter. For
+example, if you had a project named TestProject defined as shown:
+<pre>
+   public class TestProject extends Group {
+     ...
+     ...
+     public void sayHello() {
+            system.out.println("Hello");
+     }
+   }
+</pre>
+You would add code in the Execute Code action type of the Action dialog box
+to call the method <tt>group.sayHello()</tt>.
+</ul>
+
+<a name=addbeanops></a>
+<h2>Adding Operations to Beans</h2>
+
+Adding operations to a bean with the Operations dialog box is done exactly
+as described at the beginning of <a href=#opsbox>this page</a>.
+Code generated for the operations are in the JDK 1.0.2 propagation-style
+events. To use new-style event handling, you must implement the code
+manually.
+<p>
+When you add operations to a bean using the Operations dialog box, the
+events fired by the bean do not show up on the list of event
+filters. You must manually add code to register listeners for those events.
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To register listeners:</strong>
+
+<ol>
+<li>Add a <tt>listener</tt> interface to the implementation line.
+<li>Add a <tt>listener</tt> function to the group.
+</ol>
+
+For example,
+<pre>
+public class MyApp extends Group implements ActionListener{
+  ...
+
+  protected void createGroup() { 
+      // make the group an action listener of the bean
+      Bean body = (Bean)gui.bean1.getBody();
+      body.addActionListener(this);
+
+  ...
+
+   public void actionPerformed(ActionEvent e) {
+     ...
+   }
+}
+</pre>
+
+<a name=beaninfo></a>
+<h3>Getting Bean Information</h3>
+ 
+When you are adding operations, you can find out what method can be
+called for a particular bean with the Bean Info dialog box. The Bean
+Info dialog box provides you with the following information about a
+selected bean:
+
+<ul>
+<li>Properties 
+<li>Property types 
+<li>Accessor methods 
+<li>Indexed properties 
+<li>Events 
+<li>Registration methods 
+<li>Listener methods
+<li>Methods (including inherited methods) 
+</ul>
+ 
+<p>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To look up the specific
+features of a bean:</strong>
+<ol>
+<li>Select the bean in the layout window.  
+<li>Choose  GUI -> Bean Info on Selected Component.
+<li>Click the Properties, Events, or Methods tab.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="ops.html">What Is a Component Operation?</A>
+<dd><A HREF="layout.html">Laying Out GUI Interfaces</A>
+<dd><A HREF="generate.html">Generating Java Source Code</A>
+<dd><A HREF="running.html">GUI Builder Runtime Classes</A>
+<dd><A HREF="groups_basic.html">What Are Groups and Shadows?</A>
+<dd><A HREF="groups_advanced.html">More On Groups and Shadows</A>
+<p>
+<dd><strong>Visual Java GUI Builder API Documentation</strong>
+<dl>
+<dd><A HREF="../../../../api/visual/packages.html">Visual Java GUI
+Builder Runtime Packages</A>
+<dd><A HREF="../../../../api/visual/tree.html">Class Hierarchy</A>
+<dd><A HREF="../../../../api/visual/AllNames.html">Index of All
+Fields and Methods</A>
+</dl>
+</dl>
+<p>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='ISO8859_1'  ?>
+
+<!--
+ @(#)IdeHelpTOC.xml	1.6 06/10/30
+ 
+ Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+ 
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 
+ - Redistribution of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ 
+ - Redistribution in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+ 
+ Neither the name of Sun Microsystems, Inc. or the names of
+ contributors may be used to endorse or promote products derived
+ from this software without specific prior written permission.
+ 
+ This software is provided "AS IS," without a warranty of any
+ kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND
+ WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY
+ EXCLUDED. SUN MICROSYSTEMS, INC. ("SUN") AND ITS LICENSORS SHALL
+ NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF
+ USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+ DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR
+ ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,
+ CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND
+ REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR
+ INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGES.
+ 
+ You acknowledge that this software is not designed, licensed or
+ intended for use in the design, construction, operation or
+ maintenance of any nuclear facility. 
+-->
+
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+<toc xml:lang="fr">
+<tocitem text="Java Development Environment" image="toplevelfolder">
+
+   <tocitem text="Page d'accueil de l'aide en ligne de Java Development Environment" target="jde.intro"/>
+
+   <tocitem text="Didacticiel de Java Development Environment" target="tut.starttoc">
+       <tocitem text="Présentation de Java Development Environment" target="tut.overview"/>
+       <tocitem text="Didacticiel Un : Création d'un projet" target="tut.quickstart"/>
+       <tocitem text="Didacticiel Deux : Edition des attributs du projet" target="tut.edit"/>
+       <tocitem text="Didacticiel Trois : Correction d'erreurs dans le code source" target="tut.errors"/>
+       <tocitem text="Didacticiel Quatre : Exploration d'un projet" target="tut.browse"/>
+       <tocitem text="Didacticiel Cinq : Débogage d'un projet" target="tut.simpledebug"/>
+       <tocitem text="Didacticiel Six : Personnalisation d'une page d'exécution" target="tut.customize"/>
+       <tocitem text="Didacticiel Sept : Création d'une interface" target="tut.visual"/>
+       <tocitem text="Didacticiel huit : Création du projet Clock" target="tut.beansoverview"/>
+   </tocitem>
+
+   <tocitem text="Menus">
+      <tocitem text="Menu Fichier" target="menus.file"/>
+      <tocitem text="Menu Editer" target="menus.edit"/>
+      <tocitem text="Menu Générer" target="menus.build"/>
+      <tocitem text="Menu Déboguer" target="menus.debug"/>
+      <tocitem text="Menu Préférences" target="menus.preferences"/>
+      <tocitem text="Menu Fenêtres" target="menus.windows"/>
+      <tocitem text="Menu Aide" target="menus.help"/>
+   </tocitem>
+
+</tocitem>
+</toc>

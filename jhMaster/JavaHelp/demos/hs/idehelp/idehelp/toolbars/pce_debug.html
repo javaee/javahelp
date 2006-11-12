@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Edit/Debug Tool Bar
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Edit/Debug Tool Bar</H1>
+
+<table width=90% border=0 cellspacing=12>
+<tr valign=top>
+<td width=5%><IMG SRC="../images/file-open_u.gif" ALIGN=MIDDLE></td>
+<td width=95%>
+<A HREF="../pce/basic.html#opening">Open a file for editing.</A>
+Starts a file chooser with which you can select a file to
+load into the the editor.
+</td>
+</tr>
+
+<tr valign=top>
+<td><IMG SRC="../images/file-save_u.gif" ALIGN=MIDDLE></td>
+<td width=95%>
+<A HREF="../pce/basic.html#saving">Save the current file</A>
+</td>
+</tr>
+
+<tr valign=top>
+<td><IMG SRC="../images/db-restart_u.gif" ALIGN=MIDDLE>
+</td>
+<td width=95%>
+<A HREF="../debug/Start.html">Start (or restart) the debugger</A>
+</td>
+</tr>
+
+<tr valign=top>
+<td><IMG SRC="../images/db-stop-at_u.gif" ALIGN=MIDDLE></td>
+<td width=95%>
+<A HREF="../debug/StopAtBreakpoint.html">Set a
+breakpoint</A> at the line in which the cursor is
+positioned
+</td>
+</tr>
+
+<tr valign=top>
+<td><IMG SRC="../images/db-eval_u.gif" ALIGN=MIDDLE></td>
+<td width=95%>
+<A HREF="../debug/Variables.html">Evaluate a variable that you've 
+selected in the editor</A>
+</td>
+</tr>
+
+<tr valign=top>
+<td><IMG SRC="../images/db-resume_u.gif" ALIGN=MIDDLE></td>
+<td width=95%>
+<A HREF="../debug/Resume.html">Resume execution of all
+threads.</A> The threads run until one reaches a breakpoint, is suspended, 
+or ends.
+</td>
+</tr>
+
+<tr valign=top>
+<td><IMG SRC="../images/db-run-to-here_u.gif" ALIGN=MIDDLE></td>
+<td width=95%>
+<A HREF="../debug/Run.html">Run to here.</A>  Runs the
+program to the source line in which the cursor is
+positioned.
+</td>
+</tr>
+
+<tr valign=top>
+<td><IMG SRC="../images/db-step-over_u.gif" ALIGN=MIDDLE></td>
+<td width=95%>
+<A HREF="../debug/StepOver.html">Step over a method.</A>
+Executes one source line; if the source line
+is a method call, JDE executes the entire method 
+without stepping through the individual method instructions.
+</td>
+</tr>
+
+<tr valign=top>
+<td><IMG SRC="../images/db-step-into_u.gif" ALIGN=MIDDLE></td>
+<td width=95%>
+<A HREF="../debug/Step.html">Step into a method.</A>
+Executes one source line; if the source line is a
+method call, the JDE executes the first statement of
+the method and stops.
+</td>
+</tr>
+
+<tr valign=top>
+<td><IMG SRC="../images/db-down-frame_u.gif" ALIGN=MIDDLE></td>
+<td width=95%>
+<A HREF="../debug/Stack.html">Move one level up the call
+stack.</A> The call stack includes all methods that have
+been called but have not returned to the caller. The
+methods in the call stack are listed in the order in which
+they were called.  The method that was executing when the
+program stopped is at the top of the stack.
+</td>
+</tr>
+
+<tr valign=top>
+<td><IMG SRC="../images/db-up-frame_u.gif" ALIGN=MIDDLE></td>
+<td width=95%>
+<A HREF="../debug/Stack.html">Move one level down the call
+stack.</A> The call stack includes all methods that have
+been called but have not returned to the caller. The
+methods in the call stack are listed in the order in which
+they were called.  The method that was executing when the
+program stopped is at the top of the stack.
+</td>
+</tr>
+
+</table>
+
+
+
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>See also:</strong>
+<dl>
+<dd><A HREF="../pce/edit_source.html">Editing Source</A>
+<dd><A HREF="../debug/DebugTOC.html">Debugging Projects</A>
+<dd><A HREF="../manager/Projects.html">What Is a Project?</A>
+</dl>
+<p>
+</body>
+</HTML>

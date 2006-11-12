@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+ *         Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+Updating a Bean
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Updating a Bean</h1>
+
+Using the GUI builder, you can update a bean in two ways:
+
+<ul>
+<li>Manually. By choosing  GUI -> Update Component Classes in
+Design, you can select the specific bean classes to update.
+<li>Automatically. By importing a bean to the
+palette. With automatic updating, all bean classes in the JAR are updated.
+</ul>
+
+<p>
+<a name=expupdate></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To manually update a
+bean:</strong>
+<ol>
+<li>Choose GUI -> Update Component Classes in Design.
+<li>Select the bean class or classes you want to update from the list. 
+<li>Click the Update button.
+<p>
+After you click Update, the project directory is updated with the new
+bean classes; however, the instance of the bean in the layout is not
+updated. A pop-up window appears, warning you that you now have an
+instance of the bean in the layout that is older than the version now
+recognized in the project:
+<ul>
+<li>You can update the bean in the layout by clicking Reload Design. 
+<li>You can leave the bean as is by clicking Cancel.  
+</ul>
+</ol>
+
+<p>
+<a name=impupdate></a>
+<IMG SRC="../../images/hg_proc.gif" width="18" height="13"><strong>To automatically update a bean:</strong>
+<ol>
+<li>Import a version of an existing bean into the GUI builder
+palette.  
+<p>
+A dialog box warns you that an update has
+been detected. It displays the bean classes that will be updated.
+<li>Click Import and Upgrade.
+<p>
+All the bean classes shown in the list are automatically updated. The project
+directory now contains the modified JAR file for the latest instance of the
+bean and the palette contains that version of the bean. The bean in
+the layout has not been updated yet. 
+<p>
+After the import and update has taken place, the Reload Design After
+Update dialog box appears.
+<li>Click Reload Design to update the bean in the layout. Now your
+layout contains the newest version of the bean. Build the
+application to test the latest instance of the bean.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif" width="18" height="13"><strong>See also:</strong>
+<dl>
+<dd><A HREF="importing.html">Importing Components</A>
+<dd><A HREF="editbean.html">Customizing Beans</A>
+<dd><A HREF="jbeanstory.html">Beans in JavaWorkShop</A>
+<dd><A
+HREF="http://splash.javasoft.com/beans/related.html">JavaBeans - Related APIs</A>
+</dl>
+<p>
+  </body>
+</html>

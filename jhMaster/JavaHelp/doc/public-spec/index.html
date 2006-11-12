@@ -1,0 +1,369 @@
+<HTML>
+<HEAD>
+
+<TITLE>JavaHelp</TITLE>
+<!-- Changed by: Eduardo Pelegri-Llopart, 19-Jan-1998 -->
+
+</HEAD>
+<BODY BGCOLOR="#FFFFFF"  TEXT="#000000">
+
+<H1 align=center>JavaHelp<sup><font size="-2">TM</font></sup> 1.0 Specification
+</H1>
+
+<hr>
+<!-- Begin copyright notice -->
+<img src="../images/smi.logo.gif" alt="Sun Microsystems, Inc">
+<font size="+2">
+Sun Microsystems, Inc.
+</font>
+<p>
+Copyright 1998 Sun Microsystems, Inc.
+<br>
+901 San Antonio Road, Palo Alto, California 94303 U.S.A.
+<p>
+All rights reserved.  Copyright in this document is owned by Sun
+Microsystems, Inc. 
+<p>
+Sun Microsystems, Inc. (SUN) hereby grants to you at no charge
+a nonexclusive, nontransferable, worldwide, limited license
+(without the right to sublicense) under SUN's intellectual
+property rights that are essential to practice the JavaHelp
+1.0 Specification "Specification") to use the
+Specification for internal evaluation purposes only. Other than
+this limited license, you acquire no right, title or interest
+in or to the Specification and you shall have no right to use
+the Specification for productive or commercial use.
+<p>
+<H3>RESTRICTED RIGHTS LEGEND</H3>
+Use, duplication, or disclosure by the U.S. Government is subject to restrictions of FAR 52.227-14(g)(2)(6/87) and FAR 52.227-19(6/87), or DFAR 252.227-7015(b)(6/95) and DFAR 227.7202-1(a).<P>
+
+<p>
+SUN MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE SUITABILITY OF THE
+SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, OR NON-INFRINGEMENT. SUN SHALL NOT BE LIABLE FOR ANY DAMAGES
+SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
+THIS SOFTWARE OR ITS DERIVATIVES.
+
+<H3>TRADEMARKS</H3>
+Sun, the Sun logo, Sun Microsystems, JavaSoft, JavaBeans, JavaHelp, JDK, Java,
+HotJava, HotJava Views, Visual Java, Solaris, NEO, Joe, Netra, NFS,
+ONC, ONC+, OpenWindows, PC-NFS, EmbeddedJava, PersonalJava, SNM,
+SunNet Manager, Solaris sunburst design, Solstice, SunCore, SolarNet,
+SunWeb, Sun Workstation, The Network Is The Computer, ToolTalk, Ultra,
+Ultracomputing, Ultraserver, Where The Network Is Going, Sun WorkShop,
+XView, Java WorkShop, the Java Coffee Cup logo, and Visual Java are
+trademarks or registered trademarks of Sun Microsystems, Inc. in the
+United States and other countries.<p>
+
+<HR>
+<EM>
+<BLOCKQUOTE>
+
+THIS PUBLICATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,
+EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR
+NON-INFRINGEMENT.
+<P>
+THIS PUBLICATION COULD INCLUDE TECHNICAL INACCURACIES OR TYPOGRAPHICAL
+ERRORS. CHANGES ARE PERIODICALLY ADDED TO THE INFORMATION HEREIN;
+THESE CHANGES WILL BE INCORPORATED IN NEW EDITIONS OF THE PUBLICATION.
+SUN MICROSYSTEMS, INC.  MAY MAKE IMPROVEMENTS AND/OR CHANGES IN THE
+PRODUCT(S) AND/OR THE PROGRAM(S) DESCRIBED IN THIS PUBLICATION AT ANY
+TIME.
+
+</BLOCKQUOTE>
+</EM>
+
+<!-- End copyright notice -->
+<hr>
+
+<table>
+<TD ALIGN="LEFT" COLSPAN="2">
+<IMG ALT="JavaHelp" SRC="../images/superhero.big.gif" WIDTH="196" HEIGHT="178"><P>
+</TD>
+
+<TD ALIGN="CENTER">
+<H1 align=center>JavaHelp 1.0 - Introduction</H1>
+</TD>
+</table>
+
+
+<hr>
+<h2>Status of this Specification</h2>
+    <p>
+JavaHelp<sup><font size=-2>TM</font></sup> is
+the Help system for the Java<sup><font size=-2>TM</font></sup> Platform.
+These documents describe the JavaHelp 1.0 specification.
+As of the publication of this document,
+the closest released implementation is the
+<a href="misc/RefImpl.html">JavaHelp 1.0 release</a>
+which follows this specification.
+<p>
+We followed
+<a href="http://java.sun.com/aboutJava/standardization/javaopen.html">
+Sun's Open Development Process for the Java Platform</a>,
+an open and inclusive process that 
+produces high-quality specifications in "Internet-time".
+Through this process
+the critical feedback from all reviewers
+helped us transform early
+specifications into a high quality final specifications that
+satisfied the needs of the user community.
+The release of this specification is part of this process.</p>
+<p>
+We expect the
+specification to continue to be extended in future updates.
+Please send us your feedback to guarantee that future specifications
+best suites your needs.
+</p>
+
+<p>
+<hr>
+<h2>How to read this Specification</h2>
+    <p>
+Two sets of documents are included.
+The first set is the actual specification that describes the JavaHelp API
+and its use.
+Also included are several related documents that,
+while not technically part of the specification,
+help in understanding it. These documents describe
+aspects of Sun's reference implementation.
+
+<p>
+We suggest that you begin by reading the specification
+<A HREF="Overview.html">Overview</A>.
+
+In order to make the JavaHelp system features more concrete
+and easy to understand, a number of <a
+href="misc/Scenarios.html">usage scenarios</a> are
+explained in a companion document.  These scenarios
+describe some of the different ways the JavaHelp system can
+be used in Java applications.
+</p>
+
+<p>
+You may want to complement your reading of this
+specification by exploring the <a href="#ref impl">JavaHelp
+1.0 release</a> which corresponds to this specification.
+
+This reference implementation also supports some features that
+are useful for online documentation systems but that we have judged to not
+be appropriate for inclusion in the specification at this time.
+The release also includes examples of documentation and
+applications that use this specification.
+</p>
+
+<h2>Table of Contents of Specification</h2>
+<table width=98% border=0 cellpadding=0>
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="index.html">Introduction to the JavaHelp API</A> (this document)
+</td>
+</tr>
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="Overview.html">Overview of the JavaHelp API</A>
+</td>
+</tr>
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="FileFormat.html">Formats of JavaHelp Data Files</A>
+</td>
+</tr>
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="I18N.html">Localizing JavaHelp</A>
+</td>
+</tr>
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="Customization.html">Customizing JavaHelp</A>
+</td>
+</tr>
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="Beans.html">JavaBeans Help Data</A>
+</td>
+</tr>
+
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="CSH.html">Context-Sensitive Help</A>
+</td>
+</tr>
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="Search.html">Search API</A>
+</td>
+</tr>
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="Merge.html">Merging Help Information</A>
+</td>
+</tr>
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="Changes.html">Specification Change History</A>
+</td>
+</tr>
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<strong>The JavaHelp Classes</strong>
+
+<table width=98% border=0 cellpadding=0>
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_see.gif">
+</td>
+<td width=99%>
+<A HREF="Classes.html">JavaHelp Class Architecture</A>
+</td>
+</tr>
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_see.gif">
+</td>
+<td width=99%>
+<a href="../api/javax/javahelp/package-frame.html">Package javax.javahelp</a></p>
+</td>
+</tr>
+
+</table>
+
+</table>
+
+<h2>Related Documents</h2>
+<table width=98% border=0 cellpadding=0>
+<a name="ref impl">
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="misc/Scenarios.html">JavaHelp Scenarios</A>
+</td>
+</tr>
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="misc/RefImpl.html">The JavaHelp 1.0 Reference Implementation</A>
+</td>
+</tr>
+</a>
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="misc/JComponents.html">Java Components</A>
+</td>
+</tr>
+
+<tr valign="top">
+<td width=1%><IMG SRC="../images/hg_proc.gif">
+</td>
+<td width=99%>
+<A HREF="misc/Jar.html"><code>jar:</code> Protocol Specification</A>
+</td>
+</tr>
+
+</table>
+
+<P>
+
+<hr>
+<h2>Further Reading</h2>
+
+<P>
+Up-to-date public information on JavaHelp technology,
+including our latest presentations at public forums,
+is available at our home page at
+<A HREF="http://java.sun.com/products/javahelp">
+http://java.sun.com/products/javahelp
+</A>.
+We also maintain a mailing list for regular information
+about JavaHelp updates and events.  To subscribe,
+send mail to
+<a href="mailto:listserv@javasoft.com">listserv@javasoft.com</a>.
+In the body of the message type SUBSCRIBE JAVAHELP-INFO
+</p>
+<p>
+Further information on Java technology can be found at
+Sun's Java web site at <A HREF="http://java.sun.com">
+http://java.sun.com
+</A>.
+Of special interest is the description of the next version of
+the Java Development Kit
+<a href="http://java.sun.com/products/jdk/1.2/">
+ JDK<sup><font size=-2>TM</font></sup>1.2
+</a>, and within it the information on
+<a href="http://java.sun.com/products/jdk/1.2/docs/guide/swing/">
+Swing</a>,
+<a href="http://java.sun.com/products/jdk/1.2/docs/guide/extensions/">
+standard extensions</a>
+and the
+<a href="http://java.sun.com/products/jdk/1.2/docs/guide/jar/">
+jar: protocol</a>.
+Slightly more up-to-date information on Swing can be obtained
+at
+<a href="http://java.sun.com/products/jfc/swingdoc-current/doc/">
+The Swing Connection's home page</a>.
+<p>
+
+<hr>
+<h2>Your Feedback</h2>
+    <p>
+We encourage your feedback at
+<A HREF="mailto:javahelp-comments@eng.sun.com">javahelp-comments@eng.sun.com</A>.
+</P>
+<p>
+We thank you for your help in making this, and future specifications, meet your needs!
+<p>
+
+<hr>
+JavaHelp<sup>TM</sup> 1.0
+<br>
+Send your comments to
+<a href="mailto:javahelp-comments@eng.sun.com">
+javahelp-comments@eng.sun.com</a>
+<br>
+<!-- Created: Fri Sep 26 23:43:53 PDT 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 12 19:13:58 MDT 1999
+<!-- hhmts end -->
+</BODY>
+</HTML>

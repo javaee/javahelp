@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--       
+ *        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<META http-equiv="Content-Language" content="de">
+<TITLE>
+Wichtige Konzepte: Projektattribute
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<h1>Wichtige Konzepte: Projektattribute</h1>
+
+Mit Attributen werden die einzelnen Charakteristika eines
+Projekts festgelegt, wie der Name, der Typ und die Art der
+Anzeige auf einer HTML-Seite. F&uuml;r das von Ihnen erstellte
+Blink-Projekt sind Attribute erforderlich, mit denen die folgenden
+Einzelheiten festgelegt werden:
+<ul>
+<li>Der Projekttyp
+<li>Das Verzeichnis, in welchem die <kbd>.java</kbd>-Quelldatei
+dieses Projekts gespeichert sind.
+<li>Die Klassendatei, in der die <kbd>init ()</kbd>-Methode des
+Applets enthalten ist.
+</ul>
+
+<p>
+Beim Erstellen dieses Projekts haben Sie die entsprechenden Werte
+zur Verf&uuml;gung gestellt.
+<p>
+Dar&uuml;ber hinaus enth&auml;lt Blink mehrere optionale
+Attribute. Durch diese optionalen Attribute wird unter anderem
+festgelegt, wie das Projekt im Projekt-Manager angezeigt und mit
+welchen Optionen es aufgebaut wird. Beim Erstellen dieses Projekts
+wurden die entsprechenden Werte von Java Development Environment zur Verf&uuml;gung
+gestellt.
+<p>
+In der n&auml;chsten &Uuml;bung werden Sie die Attribute bearbeiten,
+aus denen die &lt;applet&gt;-Markierung besteht. Sicher wissen Sie
+noch, da&szlig; Java Development Environment, als Sie in der vorherigen &Uuml;bung
+das Blink-Projekt ausgef&uuml;hrt haben, die
+&lt;applet&gt;-Markierung nur mit den zum Einbinden eines Applets in
+eine Web-Seite absolut erforderlichen Informationen ausgestattet
+hat. Die Markierung wurde im Verzeichnis <kbd>Blink</kbd> in der Datei
+<kbd>Blink.tmp.html</kbd> gespeichert. Diese Datei wird in etwa wie
+folgt angezeigt:
+<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+   codebase="/<i>Ihr_Basisverzeichnis</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt="Wenn Sie &uuml;ber einen Java-kompatiblen Browser verf&uuml;gen,
+wird hier ein Applet angezeigt."
+&gt;
+&lt;hr&gt;Wenn Ihr Browser die Applet-Markierung erkannt hat, wird
+das Applet entsprechend angezeigt.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+Bei <kbd>Blink.class</kbd> handelt es sich um die Datei, in welcher
+der kompilierte Java-Code des Applets enthalten ist. <code>Codebase</code>
+ist das Verzeichnis, in der die Datei <kbd>Blink.class</kbd>
+gespeichert ist. Mit <code>width</code> und <code>height</code> wird
+der Bereich in Pixel festgelegt, den der Browser ben&ouml;tigt, um
+das Applet anzuzeigen.
+<p>
+Sie werden diese <kbd>.html</kbd>-Datei nicht direkt bearbeiten. Java Development Environment
+aktualisiert die Datei, und zwar basierend auf den Aktionen, die Sie
+unter Verwendung des Projekt-Managers ausf&uuml;hren.
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;chste &Uuml;bung:</strong>
+<dl>
+<dd><a href="editlesson.html">&Uuml;bung 1:  Bearbeiten von
+Ausf&uuml;hr-Attributen</a>
+</dl>
+<p>
+</body>
+</html>

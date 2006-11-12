@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--
+        Copyright (C) 1997  Sun Microsystems, Inc
+ *                    All rights reserved.
+ *          Notice of copyright on this source code 
+ *          product does not indicate publication. 
+ * 
+ * RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by 
+ * the U.S. Government is subject to restrictions as set forth 
+ * in subparagraph (c)(1)(ii) of the Rights in Technical Data
+ * and Computer Software Clause at DFARS 252.227-7013 (Oct. 1988) 
+ * and FAR 52.227-19 (c) (June 1987).
+ *
+ *    Sun Microsystems, Inc., 2550 Garcia Avenue,
+ *    Mountain View, California 94043.
+ *
+-->
+<HTML>
+<HEAD>
+<TITLE>
+&Ouml;vning 1: Redigera HTML-filen
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="ffffff">
+
+<h1>&Ouml;vning 1: Redigera HTML-filen</h1>
+
+I den h&auml;r lektionen ska du redigera HTML-filen som Java
+WorkShop skapade &aring;t dig n&auml;r du k&ouml;rde projektet Blink. Du kommer
+att ange en miniprogramsparameter och l&auml;gga till en l&auml;nk i
+k&auml;llkoden. N&auml;r du redigerar filen kommer du att spara den under ett
+annat filnamn, s&aring; att dina &auml;ndringar inte skrivs &ouml;ver n&auml;sta g&aring;ng du
+k&ouml;r projektet.
+<p>
+Om du &auml;nnu inte har skapat ett Blink-projekt
+kan du g&ouml;ra det nu, utifr&aring;n anvisningarna i
+<a href="create.html">Skapa Blink-projektet</a>.
+<ol>
+<li>Kontakta projektledaren f&ouml;r att ta reda p&aring; vad det aktuella
+projektet heter.
+<br>Om projektet inte &auml;r Blink dubbelklickar du p&aring; namnet Blink.
+<li>V&auml;lj <nobr>Arkiv -&gt; &Ouml;ppna i redigeringsprogrammet f&ouml;r k&auml;llan</nobr>.
+<br>D&aring; &ouml;ppnas en filv&auml;ljare.
+<li>&Ouml;ppna filen <kbd>Blink.tmp.html</kbd> i katalogen
+<kbd>Blink</kbd>.
+<br>Filen inneh&aring;ller miniprogramkod som ser ut ungef&auml;r s&aring; h&auml;r:
+<pre>
+&lt;applet
+   name="Blink"
+   code="Blink.class"
+   codebase="/<i>your_home_directory</i>/jws/Blink"
+   width="500"
+   height="600"
+   align="Top"
+   alt="If you had a java-enabled browser,
+   you would see an applet here."
+&gt; 
+&lt;param name="lbl" value="Java Development Environment is really cool :-)"&gt;
+&lt;hr&gt;If your browser recognized the applet tag,
+      you would see an applet here.&lt;hr&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+Java Development Environment skapade den h&auml;r filen n&auml;r du k&ouml;rde projektet. Informationen
+i filen baseras p&aring; informationen p&aring; fliken K&ouml;r i f&ouml;nstret
+Redigera projekt. Om du inte har k&ouml;rt projektet &auml;n kan du f&aring; mer
+information i <a href="run.html">K&ouml;ra projektet</a>.
+<li>V&auml;lj <nobr>Arkiv -&gt; Spara som</nobr> p&aring; menyraden i Java Development Environment.
+<br>D&aring; visas dialogrutan Spara aktuell fil.
+<li>Markera katalogen Blink, ge HTML-filen ett nytt namn och klicka p&aring; OK.
+<br>Kom ih&aring;g att byta namn p&aring; HTML-filen, f&ouml;r annars kommer dina
+&auml;ndringar att skrivas &ouml;ver n&auml;sta g&aring;ng du k&ouml;r projektet. Kom dessutom
+ih&aring;g att spara filen i katalogen <kbd>Blink</kbd>.
+<li>G&aring; till redigeringsprogrammet f&ouml;r k&auml;llan och &auml;ndra v&auml;rdet p&aring;
+h&ouml;jden till 75.
+<li>L&auml;gg till f&ouml;ljande parameter f&ouml;re parametern <kbd>lbl</kbd>
+f&ouml;r att &ouml;ka ordens blinkningshastighet:
+<pre>
+&lt;param name="speed" value="50"&gt;
+</pre>
+
+<li>L&auml;gg till f&ouml;ljande l&auml;nk i k&auml;llkoden efter koden &lt;applet&gt;:
+<pre>
+&lt;p&gt;
+&lt;a href="Blink.java"&gt;Source Code&lt;/a&gt;
+</pre>
+
+S&ouml;kv&auml;gen till k&auml;llkoden m&aring;ste vara relativ katalogen som inneh&aring;ller HTML-filen.
+<li>Klicka p&aring; knappen Spara <img src="../../../../images/24/file-save_u.gif" align=MIDDLE>i
+verktygsf&auml;ltet f&ouml;r redigering och fels&ouml;kning.
+</ol>
+
+<p>
+<IMG SRC="../../images/hg_see.gif"><strong>N&auml;sta lektion:</strong>
+<dl>
+<dd><a href="runpage.html">&Ouml;vning 2: Uppdatera k&ouml;rsida</a></dl>
+<p>
+</BODY>
+</HTML>
