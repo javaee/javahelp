@@ -57,7 +57,8 @@ JHM_FILES := $(shell find hs object merge newmerge searchdemo ../doc -name 'SCCS
 XML_FILES := $(shell find hs object merge newmerge searchdemo ../doc -name 'SCCS*' -prune -o -name '*.xml' -print)
 JAXP_FILES := $(shell ls $(XMLHOME)/*.jar)
 
-all: validate
+#all: validate
+all:
 	@for dir in $(SUBDIRS) ; do \
 	   echo "" ; \
 	   cd $$dir ; \
