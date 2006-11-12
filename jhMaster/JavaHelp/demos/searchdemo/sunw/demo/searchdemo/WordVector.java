@@ -134,9 +134,9 @@ public class WordVector extends Vector {
 
     public final void addWordHashtable(WordHashtable hash, short docId) {
 	int total = hash.total();
-	Enumeration enum = hash.elements();
-	while(enum.hasMoreElements()) {
-	    Word node = (Word)enum.nextElement();
+	Enumeration enum1 = hash.elements();
+	while(enum1.hasMoreElements()) {
+	    Word node = (Word)enum1.nextElement();
 	    addWord(node, docId);
 	}
     }

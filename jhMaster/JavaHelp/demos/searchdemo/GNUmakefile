@@ -55,8 +55,7 @@ SEARCHDIR=sunw/demo/searchdemo
 CLASSPATH =.:$(JH_JAR)
 CLASSPATH2 =.:../$(JH_JAR)
 CLASSDIR=classes
-JAVACFLAGS=-target 1.1
-JAVAC = javac $(JAVACFLAGS)
+JAVAC = javac
 JAVA = java
 
 JHSEARCH_CLASSES = \

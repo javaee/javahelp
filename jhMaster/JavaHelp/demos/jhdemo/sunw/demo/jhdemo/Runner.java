@@ -77,9 +77,9 @@ public class Runner {
 	String runClass = null;
 	String arguments = null;
 	try {
-	    Enumeration enum = cl.getResources("META-INF/MANIFEST.MF");
-	    while (enum.hasMoreElements()) {
-		URL url = (URL)enum.nextElement();
+	    Enumeration enum1 = cl.getResources("META-INF/MANIFEST.MF");
+	    while (enum1.hasMoreElements()) {
+		URL url = (URL)enum1.nextElement();
 		InputStream manifestIS = url.openStream();
 		mf = new Manifest(manifestIS);
 		Attributes main = mf.getMainAttributes();
@@ -150,9 +150,9 @@ public class Runner {
 	}
 	// time to return
 	String [] returnArgs = new String[args.size()];
-	Enumeration enum = args.elements();
-	for (int count = 0;  enum.hasMoreElements(); count ++)  {
-	    returnArgs[count] = (String)enum.nextElement();
+	Enumeration enum1 = args.elements();
+	for (int count = 0;  enum1.hasMoreElements(); count ++)  {
+	    returnArgs[count] = (String)enum1.nextElement();
 	}
 	return returnArgs;
     }

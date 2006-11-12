@@ -183,14 +183,14 @@ public class IndexWriter {
 	    out.println("<?xml version='1.0' encoding='ISO-8859-1' standalone='yes' ?>");
 	    out.println("<index version=\"1.0\">");
 
-	    Enumeration enum=table.keys();
+	    Enumeration enum1=table.keys();
 
 	    String[] keys=new String[table.size()];
 
 	    int c=0;
 
-	    while (enum.hasMoreElements()) {
-		keys[c++]=(String)enum.nextElement();
+	    while (enum1.hasMoreElements()) {
+		keys[c++]=(String)enum1.nextElement();
 	    }
 	    
 	   

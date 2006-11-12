@@ -41,10 +41,10 @@
 -->
 
 <!DOCTYPE toc
-  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
-         "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN"
+         "http://java.sun.com/products/javahelp/toc_2_0.dtd">
 
-<toc version="1.0" categoryclosedimage="chapter" topicimage="topic">
+<toc version="2.0" categoryclosedimage="chapter" topicimage="topic">
   <tocitem text="History of the Holidays" image="toplevelfolder">
     <tocitem text="Introduction" target="hol_intro"/>
     <tocitem text=" History of American Holidays">

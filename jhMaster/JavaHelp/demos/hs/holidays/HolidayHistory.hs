@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='ISO-8859-1' ?>
 <!DOCTYPE helpset
   PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp HelpSet Version 2.0//EN"
-         "../dtd/helpset_2_0.dtd">
+         "http://java.sun.com/products/javahelp/helpset_2_0.dtd">
 
 <?MyFavoriteApplication this is data for my favorite application ?>
 
-<helpset version="1.0">
+<helpset version="2.0">
 
   <!-- title -->
   <title>History of the Holidays</title>

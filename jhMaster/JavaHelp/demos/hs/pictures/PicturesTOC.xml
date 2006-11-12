@@ -41,9 +41,9 @@
 -->
 
 <!DOCTYPE toc
-  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
-         "http://java.sun.com/products/javahelp/toc_1_0.dtd">
-<toc version="1.0">
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN"
+         "http://java.sun.com/products/javahelp/toc_2_0.dtd">
+<toc version="2.0">
     <tocitem text="Pictures of Animals" mergetype="javax.help.SortMerge">
 	<tocitem text="Bats" target="bats" />
 	<tocitem text="Cougar" target="cougar" />

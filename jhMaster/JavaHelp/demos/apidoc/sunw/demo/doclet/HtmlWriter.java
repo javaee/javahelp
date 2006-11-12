@@ -669,7 +669,7 @@ public class HtmlWriter extends PrintWriter {
 	    args[0] = a1;
 	    args[1] = a2;
 	    args[2] = a3;
-	    return MessageFormat.format(message, args);
+	    return MessageFormat.format(message, (java.lang.Object[]) args);
 	} catch (MissingResourceException e) {
 	    throw new Error("Fatal: Resource for javadoc is broken. There is no " + key + " key in resource.");
 	}

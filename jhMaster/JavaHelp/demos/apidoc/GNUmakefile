@@ -49,7 +49,6 @@ JDKHOME=/java/re/j2se/1.3.1/archive/fcs/solsparc
 endif
 
 CLASSPATH=.:../../javahelp/lib/jhall.jar:$(JDKHOME)/lib/tools.jar
-JAVACFLAGS=-target 1.1
 
 # doclet classes
 DCLASSDIR= dclasses
@@ -168,7 +167,7 @@ clean:
 
 $(DCLASSDIR)/$(DOCDIR)/%.class: $(DOCDIR)/%.java
 	export CLASSPATH; CLASSPATH=$(CLASSPATH) ; \
-	javac $(JAVACFLAGS) -d $(DCLASSDIR) $<
+	javac -d $(DCLASSDIR) $<
 
 $(DCLASSDIR)/$(DOCDIR)/resources/%.properties: $(DOCDIR)/resources/%.properties
 	cp $< $@

@@ -52,7 +52,6 @@ DEMO_JAR = merge.jar
 
 CLASSPATH =$(JH_JAR):.
 CLASSDIR=classes
-JAVACFLAGS=-target 1.1
 
 DEMODIR=sunw/demo/merge
 
@@ -84,7 +83,7 @@ $(DEMO_JAR): $(DEMO_CLASSES)  $(DEMO_PROPFILE)
 
 $(CLASSDIR)/%.class: %.java
 	export CLASSPATH; CLASSPATH=$(CLASSPATH) ; \
-	javac $(JAVACFLAGS) -d $(CLASSDIR) $<
+	javac -d $(CLASSDIR) $<
 
 $(CLASSDIR)/%.properties: %.properties
 	cp $< $@

@@ -59,7 +59,6 @@ DEMO_JAR = idedemo.jar
 
 CLASSPATH =$(JH_JAR):classviewer.jar:.
 CLASSDIR=classes
-JAVACFLAGS=-target 1.1
 
 DEMODIR=sunw/demo/idedemo
 
@@ -97,7 +96,7 @@ $(DEMO_JAR): $(DEMO_CLASSES)  $(DEMO_PROPFILE)
 
 $(CLASSDIR)/%.class: %.java
 	export CLASSPATH; CLASSPATH=$(CLASSPATH) ; \
-	javac $(JAVACFLAGS) -d $(CLASSDIR) $<
+	javac -d $(CLASSDIR) $<
 
 $(CLASSDIR)/%.properties: %.properties
 	cp $< $@

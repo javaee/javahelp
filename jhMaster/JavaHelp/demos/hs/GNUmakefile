@@ -46,8 +46,6 @@
 
 SUBDIRS = holidays i18n idehelp merge animals invertebrates pictures vertebrates newmerge
 
-JAVACFLAGS=-target 1.1
-
 all clean:
 	@for dir in $(SUBDIRS) ; do \
 	   echo "" ; \

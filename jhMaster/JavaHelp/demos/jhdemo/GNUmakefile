@@ -54,7 +54,6 @@ CLASSPATH =.:$(JH_JAR)
 CLASSDIR=classes
 JAVAC = javac
 JAVA = java
-JAVACFLAGS=-target 1.1
 
 DEMO_CLASSES = \
 	$(CLASSDIR)/$(DEMODIR)/JHLauncher.class \
@@ -75,6 +74,6 @@ $(HSVIEWER_JAR): $(DEMO_CLASSES)
 $(CLASSDIR)/$(DEMODIR)/%.class: $(DEMODIR)/%.java
 	mkdir -p $(CLASSDIR)
 	export CLASSPATH; CLASSPATH=$(CLASSPATH); \
-	$(JAVAC) $(JAVACFLAGS) -d $(CLASSDIR) $?
+	$(JAVAC) -d $(CLASSDIR) $?
 
 

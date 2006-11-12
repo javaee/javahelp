@@ -52,7 +52,6 @@ DEMO_JAR = newmerge.jar
 
 CLASSPATH =$(JH_JAR):.
 CLASSDIR=classes
-JAVACFLAGS=-target 1.1
 
 DEMODIR=sunw/demo/newmerge
 
@@ -83,5 +82,5 @@ $(DEMO_JAR): $(DEMO_CLASSES)
 
 $(CLASSDIR)/%.class: %.java
 	export CLASSPATH; CLASSPATH=$(CLASSPATH) ; \
-	javac $(JAVACFLAGS) -d $(CLASSDIR) $<
+	javac -d $(CLASSDIR) $<
 

@@ -55,7 +55,6 @@ IDEIMAGES_JAR = ../idedemo/images.jar
 
 CLASSPATH =classes:../../javahelp/lib/jhall.jar
 CLASSDIR=classes
-JAVACFLAGS=-target 1.1
 
 BROWSERDIR=sunw/demo/browser
 
@@ -96,7 +95,7 @@ clean:
 
 $(CLASSDIR)/%.class: %.java
 	export CLASSPATH; CLASSPATH=$(CLASSPATH) ; \
-	javac $(JAVACFLAGS) -d $(CLASSDIR) $<
+	javac -d $(CLASSDIR) $<
 
 $(CLASSDIR)/%.properties: %.properties
 	cp $< $@

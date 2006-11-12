@@ -46,7 +46,6 @@
 .PHONY: validate
 
 SUBDIRS = hs apidoc object jhdemo idedemo searchdemo merge newmerge browser newbrowser lib bin
-JAVACFLAGS=-target 1.1
 
 DTDPATH = ../doc/public-spec/dtd
 ifeq ($(XMLHOME),)
@@ -62,7 +61,7 @@ all: validate
 	@for dir in $(SUBDIRS) ; do \
 	   echo "" ; \
 	   cd $$dir ; \
-	   $(MAKE) "JAVACFLAGS=$(JAVACFLAGS)" $@ ; \
+	   $(MAKE) $@ ; \
 	   cd .. ; \
 	done
 
@@ -70,7 +69,7 @@ clean:
 	@for dir in $(SUBDIRS) ; do \
 	   echo "" ; \
 	   cd $$dir ; \
-	   $(MAKE) "JAVACFLAGS=$(JAVACFLAGS)" $@ ; \
+	   $(MAKE) $@ ; \
 	   cd .. ; \
 	done
 
@@ -82,7 +81,7 @@ validate: jaxp_jars Validator.class $(XML_FILES) $(HS_FILES) $(JHM_FILES)
 
 %.class: %.java
 	export CLASSPATH; CLASSPATH=$(CLASSPATH):parser.jar ; \
-	javac $(JAVACFLAGS) $<
+	javac $<
 
 jaxp_jars: $(JAXP_FILES)
 	cp -f $(JAXP_FILES) ./

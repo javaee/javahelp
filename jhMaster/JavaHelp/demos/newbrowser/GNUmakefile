@@ -55,8 +55,7 @@ BROWSERDIR=sunw/demo/browser
 CLASSPATH =.:$(JH_JAR)
 CLASSPATH2 =.:../$(JH_JAR)
 CLASSDIR=classes
-JAVACFLAGS=-target 1.1
-JAVAC = javac $(JAVACFLAGS)
+JAVAC = javac
 JAVA = java
 
 JHBROWSER_CLASSES = \

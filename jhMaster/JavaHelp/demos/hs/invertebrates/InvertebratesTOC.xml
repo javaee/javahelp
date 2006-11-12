@@ -42,8 +42,8 @@
 
 <!DOCTYPE toc
   PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
-         "http://java.sun.com/products/javahelp/toc_1_0.dtd">
-<toc version="1.0">
+         "http://java.sun.com/products/javahelp/toc_2_0.dtd">
+<toc version="2.0">
   <tocitem text="Animal Categories">
     <tocitem text="Invertebrates" target="invertebrates">
 	<tocitem text="Protozoa" target="protozoa" />
