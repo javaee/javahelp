@@ -158,11 +158,11 @@ public class QueryEngine
 	    l = Locale.ENGLISH;
 	}
 	//Try to find a locale version of LiteMorph
-	Enumeration enum = HelpUtilities.getCandidates(l);
+	Enumeration enum1 = HelpUtilities.getCandidates(l);
 	String front = "com.sun.java.help.search.LiteMorph";
 	ClassLoader cl = QueryEngine.class.getClassLoader();
-	while (enum.hasMoreElements()) {
-	    String tail = (String) enum.nextElement();
+	while (enum1.hasMoreElements()) {
+	    String tail = (String) enum1.nextElement();
 	    String name = new String(front + tail);
 	    try {
 		Class klass;
@@ -171,8 +171,10 @@ public class QueryEngine
 		} else {
 		    klass = cl.loadClass(name);
 		}
-		Method method = klass.getMethod ("getMorph", null);
-		return (LiteMorph) method.invoke(null, null);
+		Method method = klass.getMethod ("getMorph", 
+						 (java.lang.Class[]) null);
+		return (LiteMorph) method.invoke(null, 
+						 (java.lang.Object) null);
 	    } catch (Exception e) {
 		continue;
 	    }

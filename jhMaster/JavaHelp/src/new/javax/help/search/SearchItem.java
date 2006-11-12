@@ -176,11 +176,11 @@ public class SearchItem {
 	    result.append("}");
 	    return result.toString();
 	}
-	Enumeration enum = concepts.elements();
-	while(enum.hasMoreElements()) {
-	    String concept = (String)enum.nextElement();
+	Enumeration enum1 = concepts.elements();
+	while(enum1.hasMoreElements()) {
+	    String concept = (String)enum1.nextElement();
 	    result.append(concept);
-	    if (enum.hasMoreElements()) {
+	    if (enum1.hasMoreElements()) {
 		result.append(",");
 	    }
 	}

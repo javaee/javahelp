@@ -183,9 +183,9 @@ public abstract class SearchQuery {
 	Object[] listeners = listenerList.getListenerList();
 
 	Vector newItems = new Vector();
-	for (Enumeration enum = e.getSearchItems();
-	     enum.hasMoreElements(); ) {
-	    newItems.addElement((SearchItem) enum.nextElement());
+	for (Enumeration enum1 = e.getSearchItems();
+	     enum1.hasMoreElements(); ) {
+	    newItems.addElement((SearchItem) enum1.nextElement());
 	}
 
 	SearchEvent e2 = new SearchEvent(this, e.getParams(), 

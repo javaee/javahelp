@@ -30,7 +30,6 @@
 
 JHHOMEWS=../../JavaHelp
 VPATH = $(JHHOMEWS)/src/impl:$(JHHOMEWS)/src/new
-JAVACFLAGS=-target 1.1
 
 SEARCH_SRC=ConfigFile.java \
 	IndexBuilder.java \
@@ -61,7 +60,7 @@ jar:	../lib/jsearch-misc.jar
 	jar cf ../../lib/jsearch-misc.jar javax com
 
 classes/%.class: %.java
-	javac $(JAVACFLAGS) -d classes -classpath ../../JavaHelp/src/impl:../../JavaHelp/src/new $<
+	javac -d classes -classpath ../../JavaHelp/src/impl:../../JavaHelp/src/new $<
 
 classes:
 	mkdir classes

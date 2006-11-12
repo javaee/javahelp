@@ -29,7 +29,6 @@ SOURCES := $(shell find . -name 'SCCS*' -prune -o -name '*Old*' -prune -o -name 
 CLASSES = $(SOURCES:%.java=classes/%.class)
 
 RM=/bin/rm
-JAVACFLAGS=-target 1.1
 
 jar:	../lib/jsearch-indexer.jar
 
@@ -39,7 +38,7 @@ jar:	../lib/jsearch-indexer.jar
 
 classes/%.class: %.java classes
 	export CLASSPATH ; CLASSPATH=../lib/jsearch-misc.jar:../lib/jsearch-client.jar:. ; \
-	javac $(JAVACFLAGS) -d classes $<
+	javac -d classes $<
 
 classes:
 	mkdir classes

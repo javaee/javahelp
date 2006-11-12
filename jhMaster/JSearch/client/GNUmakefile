@@ -29,7 +29,6 @@ CLIENT_SRC := $(shell find . -name 'SCCS*' -prune -o -name '*.java' -print)
 CLIENT_CLASSES=$(CLIENT_SRC:%.java=classes/%.class)
 
 RM=/bin/rm
-JAVACFLAGS=-target 1.1
 
 jar:	../lib/jsearch-client.jar
 
@@ -39,7 +38,7 @@ jar:	../lib/jsearch-client.jar
 
 classes/%.class: %.java classes
 	export CLASSPATH ; CLASSPATH=../lib/jsearch-misc.jar:. ; \
-	javac $(JAVACFLAGS) -d classes $<
+	javac -d classes $<
 
 classes:
 	mkdir classes
