@@ -297,9 +297,9 @@ public class MergingSearchEngine extends SearchEngine {
 
 	    // Loop through all the queries and match this one
 	    if (queries != null) {
-		Enumeration enum = queries.elements();
-		while (enum.hasMoreElements()) {
-		    SearchQuery query = (SearchQuery) enum.nextElement();
+		Enumeration enum1 = queries.elements();
+		while (enum1.hasMoreElements()) {
+		    SearchQuery query = (SearchQuery) enum1.nextElement();
 		    if (query == queryin) {
 			// Redirect any Events as if they were from me
 			fireItemsFound(e);
@@ -319,9 +319,9 @@ public class MergingSearchEngine extends SearchEngine {
 		
 	    // Loop through all the queries and match this one
 	    if (queries != null) {
-		Enumeration enum = queries.elements();
-		while (enum.hasMoreElements()) {
-		    SearchQuery query = (SearchQuery) enum.nextElement();
+		Enumeration enum1 = queries.elements();
+		while (enum1.hasMoreElements()) {
+		    SearchQuery query = (SearchQuery) enum1.nextElement();
 		    if (query == queryin) {
 			queryin.removeSearchListener(this);
 			queries.removeElement(query);

@@ -53,8 +53,7 @@ ifeq ($(JDICHOME),)
 JDICHOME=/java/re/jdic/archive/binaries
 endif
 
-JAVACFLAGS=
-JAVAC=javac $(JAVACFLAGS)
+JAVAC=javac
 CP=/bin/cp -f
 
 JAVADOCFLAGS=-J-mx64m -J-ms64m

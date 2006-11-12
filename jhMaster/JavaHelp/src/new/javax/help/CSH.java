@@ -1464,9 +1464,9 @@ public class CSH {
             if (onItemCursor != null) {
                 cursors = new Hashtable();
                 topComponents = getTopContainers(e.getSource());
-                Enumeration enum = topComponents.elements();
-                while (enum.hasMoreElements()) {
-                    setAndStoreCursors((Container)enum.nextElement(), onItemCursor);
+                Enumeration enum1 = topComponents.elements();
+                while (enum1.hasMoreElements()) {
+                    setAndStoreCursors((Container)enum1.nextElement(), onItemCursor);
                 }
             }
             

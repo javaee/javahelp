@@ -420,9 +420,9 @@ public class BasicSearchNavigatorUI extends HelpNavigatorUI
                 if (helpmodel instanceof TextHelpModel) {
                     DefaultHighlight h[] = new DefaultHighlight[item.hitCount()];
                     int i = 0;
-                    Enumeration enum = item.getSearchHits();
-                    while (enum.hasMoreElements()) {
-                        SearchHit info = (SearchHit) enum.nextElement();
+                    Enumeration enum1 = item.getSearchHits();
+                    while (enum1.hasMoreElements()) {
+                        SearchHit info = (SearchHit) enum1.nextElement();
                         h[i] = new DefaultHighlight(info.getBegin(), info.getEnd());
                         i++;
                     }

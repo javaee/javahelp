@@ -418,10 +418,12 @@ public abstract class WindowPresentation extends Presentation {
 		    // So...
 
 		    try {
-			Method m = Frame.class.getMethod("getState", null);
+			Method m = Frame.class.getMethod("getState", 
+							 (java.lang.Class) null);
 
 			if (m != null) {
-			    int value =((Integer)(m.invoke(frame, null))).intValue();
+			    int value =((Integer)(m.invoke(frame, 
+							   (java.lang.Object)null))).intValue();
 			    if (value == 0)
 				return true;
 			    else 
@@ -901,10 +903,12 @@ public abstract class WindowPresentation extends Presentation {
 	    // replace dialog.getOwner() with the following code
 	    Window owner=null;
 	    try {
-		Method m = Window.class.getMethod("getOwner", null);
+		Method m = Window.class.getMethod("getOwner", 
+						  (java.lang.Class) null);
 		
 		if (m != null && dialog != null) {
-		    owner = (Window) m.invoke(dialog, null);
+		    owner = (Window) m.invoke(dialog, 
+					      (java.lang.Class) null);
 		}
 	    } catch (NoSuchMethodError ex) {
 		// as in JDK1.1

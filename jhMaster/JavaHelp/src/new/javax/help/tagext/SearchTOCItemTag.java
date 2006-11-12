@@ -187,12 +187,12 @@ public class SearchTOCItemTag extends BodyTagSupport implements SearchListener{
      */
     private String getSearchHits(SearchTOCItem item) {
 	String retval = "{ ";
-	for (Enumeration enum = item.getSearchHits();
-	     enum.hasMoreElements();) {
-	    SearchHit info = (SearchHit) enum.nextElement();
+	for (Enumeration enum1 = item.getSearchHits();
+	     enum1.hasMoreElements();) {
+	    SearchHit info = (SearchHit) enum1.nextElement();
 	    retval = retval + "{" + info.getBegin() + "," + info.getEnd() + 
 		"}";
-	    if (enum.hasMoreElements()) {
+	    if (enum1.hasMoreElements()) {
 		retval = retval + ", ";
 	    }
 	}
