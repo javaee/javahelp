@@ -174,7 +174,7 @@ public class QueryEngine
 		Method method = klass.getMethod ("getMorph", 
 						 (java.lang.Class[]) null);
 		return (LiteMorph) method.invoke(null, 
-						 (java.lang.Object) null);
+						 (java.lang.Object[]) null);
 	    } catch (Exception e) {
 		continue;
 	    }

@@ -364,7 +364,7 @@ public class CustomKit extends HTMLEditorKit {
 		    }
 		    String [] args = { value };
 		    try {
-			writer.invoke(comp, (java.lang.Object) args);
+			writer.invoke(comp, (java.lang.Object[]) args);
 			debug("Invocation succeeded");
 		    } catch (Exception ex) {
 			debug("Invocation failed");

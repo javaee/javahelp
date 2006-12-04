@@ -86,7 +86,7 @@ public class BasicHelpUI extends HelpUI implements PropertyChangeListener, Seria
         try {
             // Test if method introduced in 1.3 is available.
             Method m = DataFlavor.class.getMethod("getTextPlainUnicodeFlavor",
-						  (java.lang.Class) null);
+						  (java.lang.Class[]) null);
             on1dot2 = (m == null);
         } catch (NoSuchMethodException e) {
             on1dot2 = true;
