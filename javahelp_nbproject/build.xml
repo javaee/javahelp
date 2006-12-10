@@ -50,6 +50,20 @@ have any questions.
     <target name="release" description="Build the full JavaHelp JARs" 
             depends="build-jsearch-jars,copy-jsearch-jars,create-javahelp-jars"/>
             
+            
+    <target name="release-source" description="Build the source zip file">
+        <property name="version" value="2.0.02"/>
+        <mkdir dir="dist"/>
+        <zip destfile="dist/javahelp2-src-${version}.zip" >
+            <zipfileset dir=".." prefix="javahelp2-${version}">
+                <include name="**/*"/>
+                <exclude name="**/dist/**/*"/>
+                <exclude name="**/build/**/*"/>
+                <exclude name="www/**/*"/>
+            </zipfileset>
+        </zip>
+    </target>
+            
     <target name="unpack-servlet-jar" unless="servlet-jar-present" depends="download-tomcat-zip">
         <echo message="Unpacking ${tomcat-zip}"/>
         <unzip src="${tomcat-zip}" dest="${java.io.tmpdir}/"/>
