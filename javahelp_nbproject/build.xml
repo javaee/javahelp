@@ -59,7 +59,9 @@ have any questions.
                 <include name="**/*"/>
                 <exclude name="**/dist/**/*"/>
                 <exclude name="**/build/**/*"/>
-                <exclude name="www/**/*"/>
+		<exclude name="www/**/*"/>
+		<exclude name="**/*.jar"/>
+		<exclude name="**/*.zip"/>
             </zipfileset>
         </zip>
     </target>
