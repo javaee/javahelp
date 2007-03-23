@@ -23,7 +23,7 @@ Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
 CA 95054 USA or visit www.sun.com if you need additional information or
 have any questions.
  -->
-<project name="JavaHelp" default="default" basedir=".">
+<project name="JavaHelp" default="release" basedir=".">
     <description>Builds, tests, and runs the project JavaHelp.</description>
     <import file="nbproject/build-impl.xml"/>
     
@@ -117,7 +117,7 @@ Then copy the zip file to ${jdic-zip} and re-build
         <property name="jsearch-indexer-jar" value="../JSearchIndexer_nbproject/dist/jsearch-indexer.jar"/>
         <available property="jsearch-indexer-jar-present" file="${jsearch-client-jar}"/>
 
-        <property name="jsearch-jar" value="../JSearchIndexer_nbproject/dist/jsearch-indexer.jar"/>
+        <property name="jsearch-jar" value="../JSearchIndexer_nbproject/dist/jsearch.jar"/>
         <available property="jsearch-jar-present" file="${jsearch-jar}"/>
 
         <property name="jsearch-misc-jar" value="../JSearchIndexer_nbproject/dist/jsearch-misc.jar"/>
@@ -203,10 +203,17 @@ Then copy the zip file to ${jdic-zip} and re-build
             </manifest>
         </jar>
     </target>
-    
-    <target name="-post-clean">
+
+    <available property="post.clean.needed" file="${basedir}/build/allclasses"/>
+    <target name="-post-clean" if="post.clean.needed">
         <delete dir="dist"/>
         <delete dir="${basedir}/build/allclasses"/>
+        <subant target="clean">
+            <dirset dir="..">
+                <include name="JSearchClient_nbproject"/>
+                <include name="JSearchIndexer_nbproject"/>
+            </dirset>
+        </subant>
     </target>
     
     <target name="-post-jar">
