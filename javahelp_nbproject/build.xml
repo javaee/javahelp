@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+Copyright (c) 2007 Sun Microsystems, Inc.  All Rights Reserved.
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
 
 This code is free software; you can redistribute it and/or modify it
@@ -52,7 +52,7 @@ have any questions.
             
             
     <target name="release-source" description="Build the source zip file">
-        <property name="version" value="2.0.02"/>
+        <property name="version" value="2.0.05"/>
         <mkdir dir="dist"/>
         <zip destfile="dist/javahelp2-src-${version}.zip" >
             <zipfileset dir=".." prefix="javahelp2-${version}">

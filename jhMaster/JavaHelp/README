@@ -1,6 +1,6 @@
-                   README: JavaHelp 2.0_04 Release
+                   README: JavaHelp 2.0_05 Release
                    -------------------------------
-                            September 2006
+                            May 2007
 Contents:
 
 * Bug Fixes in this Release
@@ -17,6 +17,10 @@ Contents:
 * Copyright
 ---------------------------------------------------------------------
 BUG FIXES IN THIS RELEASE
+
+- Bug 6375606 - Regression: JavaHelp search highlighting broken in Java 1.5.0_06
+
+Bug Fixes in the V2.0_04 release
 
 - Bug 6394203 - ArrayIndexOutOfError thrown on multiple threaded machines under
   certian controled circumstances

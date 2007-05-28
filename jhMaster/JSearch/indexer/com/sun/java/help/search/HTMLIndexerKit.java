@@ -1,7 +1,7 @@
 /*
  * @(#)HTMLIndexerKit.java	1.26 06/10/30
  * 
- * Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+ * Copyright (c) 2007 Sun Microsystems, Inc.  All Rights Reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  * 
  * This code is free software; you can redistribute it and/or modify it
@@ -827,6 +827,10 @@ public class HTMLIndexerKit extends DefaultIndexerKit{
 	}
 
 	class AnchorAction extends CharacterAction {
+            // This class has a dependancy on the "one[0]" character
+	    // used in javax.swing.text.html.HTMLDocument$AnchorAction
+	    // we need to ensure we use the same character value.
+	    private boolean post4207472 = isPost4207472();
 
 	    public void start(HTML.Tag t, MutableAttributeSet attr) {
 		// set flag to catch empty anchors
@@ -841,13 +845,34 @@ public class HTMLIndexerKit extends DefaultIndexerKit{
 		    // named anchor point and we don't want to throw
 		    // it away.
 		    char[] one = new char[1];
-		    one[0] = ' ';
+		    if (post4207472)
+			one[0] = '\n';
+		    else
+		        one[0] = ' ';
 		    debug ("emptyAnchor currentPos=" + currentPos);
 		    addContent(one, 0, 1);
-		}
+                }
 		// remove tag done in super
 		super.end(t);
 	    }
+	   private boolean isPost4207472()  {
+		try {
+	   	    String ver = System.getProperty("java.version"); 
+		    int major = Integer.parseInt(ver.substring(2,3));
+		    int minor = 0;
+		    // allow for FCS case - we leave minor as 0 if dealing with FCS
+		    if (ver.length() > 6)
+		    	minor = Integer.parseInt(ver.substring(6,8)); 
+		    if ((major > 5 ) || (major==5 && minor >= 4)) {
+		    	return true;
+		    } else {
+		    	return false;
+		    }
+		} catch (Exception e) {
+		    debug ("Exception in isPost4207472 : " + e);
+		    return true;  // assume true if we encounter problem
+	        }	
+	   }
 	}
 
 	class TitleAction extends HiddenAction {
