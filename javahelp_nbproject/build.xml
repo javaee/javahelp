@@ -54,14 +54,24 @@ have any questions.
     <target name="release-source" description="Build the source zip file">
         <property name="version" value="2.0.05"/>
         <mkdir dir="dist"/>
-        <zip destfile="dist/javahelp2-src-${version}.zip" >
+        <zip destfile="dist/javahelp2-src-${version}.zip" filesonly="true">
             <zipfileset dir=".." prefix="javahelp2-${version}">
-                <include name="**/*"/>
-                <exclude name="**/dist/**/*"/>
-                <exclude name="**/build/**/*"/>
-		<exclude name="www/**/*"/>
-		<exclude name="**/*.jar"/>
-		<exclude name="**/*.zip"/>
+                <and>
+                    <filename name="**/*"/>
+                    <none>
+                        <filename name="**/dist/**/*"/>
+                        <filename name="**/build/**/*"/>
+                        <filename name="www/**/*"/>
+                        <filename name="**/*.jar"/>
+                        <filename name="**/*.zip"/>
+                    </none>
+                    <or>
+                        <contains text="GNU General Public License"/>
+                        <filename name="**/nbproject/*.xml"/>
+                        <filename name="**/nbproject/*.properties"/>
+                        <filename name="**/manifest.mf"/>
+                    </or>
+                </and>
             </zipfileset>
         </zip>
     </target>
