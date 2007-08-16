@@ -70,7 +70,9 @@ have any questions.
                         <filename name="**/nbproject/*.xml"/>
                         <filename name="**/nbproject/*.properties"/>
                         <filename name="**/manifest.mf"/>
-                    </or>
+                        <filename name="jhMaster/JavaHelp/javahelp/bin/jhindexer"/>
+                        <filename name="jhMaster/JavaHelp/javahelp/bin/jhsearch"/>
+                     </or>
                 </and>
             </zipfileset>
         </zip>
