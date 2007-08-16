@@ -81,7 +81,7 @@ have any questions.
     
     <target name="download-tomcat-zip" unless="tomcat-zip-present">
         <echo message="Downloading Apache Tomcat for servlet-api.jar and jsp-api.jar"/>
-        <get src="http://www.apache.org/dist/tomcat/tomcat-5/v5.5.20/bin/apache-tomcat-5.5.20.zip"
+        <get src="http://archive.apache.org/dist/tomcat/tomcat-5/v5.5.20/bin/apache-tomcat-5.5.20.zip"
             dest="${tomcat-zip}"/>
     </target>
     
