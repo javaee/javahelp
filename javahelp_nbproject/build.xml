@@ -68,7 +68,10 @@ have any questions.
                     <or>
                         <contains text="GNU General Public License"/>
                         <filename name="**/nbproject/*.xml"/>
-                        <filename name="**/nbproject/*.properties"/>
+                        <filename name="**/*.properties"/>
+                        <filename name="**/*.gif"/>
+                        <filename name="**/*.png"/>
+                        <filename name="**/*.jpg"/>
                         <filename name="**/manifest.mf"/>
                         <filename name="jhMaster/JavaHelp/javahelp/bin/jhindexer"/>
                         <filename name="jhMaster/JavaHelp/javahelp/bin/jhsearch"/>
