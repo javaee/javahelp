@@ -52,9 +52,14 @@ have any questions.
             
             
     <target name="release-source" description="Build the source zip file">
+        <property environment="env"/>
+        <condition property="svn" value="_svn${env.SVN_REVISION}">
+            <isset property="env.SVN_REVISION"/>
+        </condition>
+        <property name="svn" value=""/>
         <property name="version" value="2.0.05"/>
         <mkdir dir="dist"/>
-        <zip destfile="dist/javahelp2-src-${version}.zip" filesonly="true">
+        <zip destfile="dist/javahelp2-src-${version}${svn}.zip" filesonly="true">
             <zipfileset dir=".." prefix="javahelp2-${version}">
                 <and>
                     <filename name="**/*"/>
