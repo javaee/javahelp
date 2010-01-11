@@ -44,11 +44,7 @@
 .SUFFIXES:
 .SUFFIXES: .java .class $(SUFFIXES)
 
-ifeq ($(JDKHOME),)
-JDKHOME=/java/re/j2se/1.3.1/archive/fcs/solsparc
-endif
-
-CLASSPATH=.:../../javahelp/lib/jhall.jar:$(JDKHOME)/lib/tools.jar
+CLASSPATH=.:../../javahelp/lib/jhall.jar:$(JAVA_HOME)/lib/tools.jar
 
 # doclet classes
 DCLASSDIR= dclasses

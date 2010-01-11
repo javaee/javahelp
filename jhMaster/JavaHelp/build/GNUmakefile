@@ -40,17 +40,11 @@ SRCDIR=../src
 BINDIR=../javahelp/bin
 PKGDIR=javax/help
 PKGDIRIMPL=com/sun/java/help
+EXTLIBDIR=../../../javahelp_nbproject/lib
+EXTLIBS=$(EXTLIBDIR)/jdic.jar:$(EXTLIBDIR)/jsp-api.jar:$(EXTLIBDIR)/servlet-api.jar
 
 ifeq ($(JSEARCHHOME),)
 JSEARCHHOME=../../JSearch
-endif
-
-ifeq ($(J2EEHOME),)
-J2EEHOME=/java/re/j2sdkee/1.3/archive/fcs/latest/binaries/solsparc
-endif
-
-ifeq ($(JDICHOME),)
-JDICHOME=/java/re/jdic/archive/binaries
 endif
 
 JAVAC=javac
@@ -143,7 +137,7 @@ docs: $(APIDOC)
 $(APIDOC): $(CLASSDIR)/$(PKGDIR) $(ALL_CLASSES) 
 	rm -rf $(APIDOC)
 	mkdir -p $(APIDOC)
-	export CLASSPATH; CLASSPATH=$(SRCDIR)/new:$(SRCDIR)/impl:$(LIBDIR)/jh.jar:$(J2EEHOME)/lib/j2ee.jar:$(JDICHOME)/jdic.jar ; \
+	export CLASSPATH; CLASSPATH=$(SRCDIR)/new:$(SRCDIR)/impl:$(LIBDIR)/jh.jar:$(EXTLIBS) ; \
 	javadoc -public $(JAVADOCFLAGS) -d $(APIDOC) $(TARGETPKG)
 
 clean: 
@@ -153,11 +147,11 @@ clean:
 	$(MAKE) clean
 
 $(CLASSDIR)/%.class: $(SRCDIR)/new/%.java
-	export CLASSPATH; CLASSPATH=$(SRCDIR)/new:$(SRCDIR)/impl:$(CLASSPATH):$(J2EEHOME)/lib/j2ee.jar:$(JDICHOME)/jdic.jar ; \
+	export CLASSPATH; CLASSPATH=$(SRCDIR)/new:$(SRCDIR)/impl:$(CLASSPATH):$(EXTLIBS) ; \
 	$(JAVAC) -d $(CLASSDIR) $<
 
 $(CLASSDIR)/%.class: $(SRCDIR)/impl/%.java
-	export CLASSPATH; CLASSPATH=$(SRCDIR)/new:$(SRCDIR)/impl:$(CLASSPATH):$(J2EEHOME)/lib/j2ee.jar:$(JDICHOME)/jdic.jar ; \
+	export CLASSPATH; CLASSPATH=$(SRCDIR)/new:$(SRCDIR)/impl:$(CLASSPATH):$(EXTLIBS) ; \
 	$(JAVAC) -d $(CLASSDIR) $<
 
 $(CLASSDIR)/$(BASICPKGDIR)/images/%.gif: $(SRCDIR)/new/$(BASICPKGDIR)/images/%.gif
