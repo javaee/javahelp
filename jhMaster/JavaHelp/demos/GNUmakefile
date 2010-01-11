@@ -48,14 +48,10 @@
 SUBDIRS = hs apidoc object jhdemo idedemo searchdemo merge newmerge browser newbrowser lib bin
 
 DTDPATH = ../doc/public-spec/dtd
-ifeq ($(XMLHOME),)
-XMLHOME = /java/re/jaxp/1.0.1_001/archive/fcs/binaries
-endif
 
 HS_FILES := $(shell find hs object merge newmerge searchdemo ../doc -name 'SCCS*' -prune -o -name '*.hs' -print)
 JHM_FILES := $(shell find hs object merge newmerge searchdemo ../doc -name 'SCCS*' -prune -o -name '*.jhm' -print)
 XML_FILES := $(shell find hs object merge newmerge searchdemo ../doc -name 'SCCS*' -prune -o -name '*.xml' -print)
-JAXP_FILES := $(shell ls $(XMLHOME)/*.jar)
 
 #all: validate
 all:
@@ -76,13 +72,10 @@ clean:
 
 # Validate
 
-validate: jaxp_jars Validator.class $(XML_FILES) $(HS_FILES) $(JHM_FILES)
-	export CLASSPATH; CLASSPATH=$(CLASSPATH):parser.jar:$(DTDPATH):. ; \
+validate: Validator.class $(XML_FILES) $(HS_FILES) $(JHM_FILES)
+	export CLASSPATH; CLASSPATH=$(CLASSPATH):$(DTDPATH):. ; \
 	java Validator $(XML_FILES) $(HS_FILES) $(JHM_FILES)
 
 %.class: %.java
-	export CLASSPATH; CLASSPATH=$(CLASSPATH):parser.jar ; \
+	export CLASSPATH; CLASSPATH=$(CLASSPATH) ; \
 	javac $<
-
-jaxp_jars: $(JAXP_FILES)
-	cp -f $(JAXP_FILES) ./

@@ -39,41 +39,30 @@
  */
 
 import java.io.File;
-import com.sun.xml.parser.Resolver;
-import com.sun.xml.parser.ValidatingParser;
-import com.sun.xml.parser.Parser;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
-import org.xml.sax.HandlerBase;
+import org.xml.sax.helpers.DefaultHandler;
 
 public class Validator
 {
-    private static String hsID = "-//Sun Microsystems Inc.//DTD JavaHelp HelpSet Version 1.0//EN";
-    private static String hsDTD = "helpset_1_0.dtd";
 
-    private static String tocID = "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN";
-    private static String tocDTD = "toc_1_0.dtd";
-
-    private static String indexID = "-//Sun Microsystems Inc.//DTD JavaHelp Index Version 1.0//EN";
-    private static String indexDTD = "index_1_0.dtd";
-
-    private static String mapID = "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN";
-    private static String mapDTD = "map_1_0.dtd";
-
-    private static void updateResolver(Resolver r,
-				       String pid,
-				       String dtd) {
-	r.registerCatalogEntry(pid, dtd, null);
-	
-	if (false)
-	try {
-	    java.net.URL u = ClassLoader.getSystemResource(dtd);
-	    String sid = u.toExternalForm();
-	    r.registerCatalogEntry(pid, sid);
-	} catch (Exception e) {
-	    System.err.println("caught "+e);
-	}
+    private static final Map ID_TO_DTD = new HashMap();
+    static {
+        ID_TO_DTD.put("-//Sun Microsystems Inc.//DTD JavaHelp HelpSet Version 1.0//EN", "helpset_1_0.dtd");
+        ID_TO_DTD.put("-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN", "toc_1_0.dtd");
+        ID_TO_DTD.put("-//Sun Microsystems Inc.//DTD JavaHelp Index Version 1.0//EN", "index_1_0.dtd");
+        ID_TO_DTD.put("-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN", "map_1_0.dtd");
+        ID_TO_DTD.put("-//Sun Microsystems Inc.//DTD JavaHelp HelpSet Version 2.0//EN", "helpset_2_0.dtd");
+        ID_TO_DTD.put("-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN", "toc_2_0.dtd");
+        ID_TO_DTD.put("-//Sun Microsystems Inc.//DTD JavaHelp Index Version 2.0//EN", "index_2_0.dtd");
+        ID_TO_DTD.put("-//Sun Microsystems Inc.//DTD JavaHelp Map Version 2.0//EN", "map_2_0.dtd");
+        ID_TO_DTD.put("-//Sun Microsystems Inc.//DTD JavaHelp Favorites Version 2.0//EN", "favorites_2_0.dtd");
     }
 
     //
@@ -83,7 +72,6 @@ public class Validator
     public static void main (String argv [])
     {
 	InputSource	input;
-	Resolver	resolver;
 
 	if (argv.length < 1) {
 	    System.err.println ("Usage: cmd filename ...");
@@ -91,25 +79,16 @@ public class Validator
 	}
 
 	try {
-	    // register some publicIDs
-	    resolver = new Resolver();
-	    
-	    updateResolver(resolver, hsID, hsDTD);
-	    updateResolver(resolver, tocID, tocDTD);
-	    updateResolver(resolver, indexID, indexDTD);
-	    updateResolver(resolver, mapID, mapDTD);
-					  
 	    // create a parser
-	    Parser p = new ValidatingParser();
-	    p.setEntityResolver(resolver);
-	    p.setErrorHandler(new MyHandler());
+
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        factory.setValidating(true);
+        SAXParser p = factory.newSAXParser();
 
 	    for (int i=0; i<argv.length; i++) {
-		// turn the filename into an input source and parse
-		input = resolver.createInputSource(new File (argv [i]));
 		try {
 		    System.err.println("Parsing "+argv[i]+"...");
-		    p.parse(input);
+		    p.parse(new File(argv[i]), new MyHandler());
 		} catch (SAXParseException err) {
 		    System.out.println ("** Parsing error" 
 					+ ", line " + err.getLineNumber ()
@@ -130,13 +109,8 @@ public class Validator
 
 	System.exit (0);
     }
-}
-    // An error handler
 
-class MyHandler extends HandlerBase {
-    public MyHandler() {
-	super();
-    }
+private static class MyHandler extends DefaultHandler {
 
     public void error(SAXParseException err) throws SAXException {
 	System.out.println ("** Parsing error" 
@@ -159,5 +133,15 @@ class MyHandler extends HandlerBase {
 	System.out.println("   " + err.getMessage ());
 	super.warning(err);
     }
+
+    public InputSource resolveEntity(String publicId, String systemId) throws IOException, SAXException {
+        String dtd = (String) ID_TO_DTD.get(publicId);
+        if (dtd != null) {
+            return new InputSource(Validator.class.getResourceAsStream(dtd));
+        } else {
+            return null;
+        }
+    }
 }
 
+}
