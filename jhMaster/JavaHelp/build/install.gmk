@@ -32,7 +32,7 @@ NAME=jh2.0
 #
 # needs resolve the hardcoding 
 #
-REALNAME=javahelp2_0_04
+REALNAME=javahelp2_0_06
 REALNAME-SOLSPARC-12=$(REALNAME)-solsparc
 REALNAME-WIN32-12=$(REALNAME)-win
 DJH=../$(NAME)
@@ -78,11 +78,11 @@ Ddemosrc=$(DJH)/demos/src/sunw/demo/jhdemo \
          $(DJH)/demos/src/sunw/demo/merge \
          $(DJH)/demos/src/sunw/demo/newmerge \
          $(DJH)/demos/src/sunw/demo/browser
-	
+
 Dimplsrc=com/sun/java/help/impl/JHSecondaryViewer.java \
 	 com/sun/java/help/impl/JHSecondaryViewerBeanInfo.java \
 	 com/sun/java/help/impl/ViewAwareComponent.java
-	
+
 DDOC=$(DJH)/doc
 
 Ddocs=$(DDOC)/jhug $(DDOC)/jhug/overview $(DDOC)/jhug/author \
@@ -114,7 +114,8 @@ TOP=..
 
 CP=/bin/cp -p -f
 RM=/bin/rm -f
-TAR=/usr/sbin/tar
+#Solaris: TAR=/usr/sbin/tar -FF
+TAR=tar --exclude=.svn
 MV=/bin/mv -f
 JAR=jar
 
@@ -205,14 +206,14 @@ spec: $(Dspecs) docimages
 #
 docs: $(Ddocs) docimages $(JHUGDIR)/$(JHUG)
 	cd $(DOCD) ; \
-	$(TAR) cFFf - jhug | (cd $(DDOC) ; $(TAR) xf - )
+	$(TAR) -cf - jhug | (cd $(DDOC) ; $(TAR) -xf - )
 	$(MV) $(DDOC)/jhug/$(JHUG) $(DDOC)/$(JHUG)
 	$(CPDIR) $(DOCD)/api/* $(DDOC)/api/
 	$(CP) $(DOCD)/css/default.css $(DDOC)/css/default.css
 
 docimages: $(Ddocimages)
 	cd $(DOCD) ; \
-	$(TAR) cFFf - images | (cd $(DDOC) ; $(TAR) xf - )
+	$(TAR) -cf - images | (cd $(DDOC) ; $(TAR) -xf - )
 
 #
 # HelpSets
@@ -231,11 +232,11 @@ helpset: $(Ddemos)
 	$(CP) $(DD)/hsjar/idehelp_ja.jar $(DJH)/demos/hsjar/idehelp_ja.jar
 	mkdir -p $(DJH)/demos/hs ; \
 	( cd $(DD)/hs ; echo merge/GNUmakefile > exclude.tmp ) ; \
-	( cd $(DD)/hs ; $(TAR) cFFXf exclude.tmp - merge ) | (cd $(DJH)/demos/hs ; $(TAR) xf - ) ; \
+	( cd $(DD)/hs ; $(TAR) -cXf exclude.tmp - merge ) | (cd $(DJH)/demos/hs ; $(TAR) -xf - ) ; \
 	rm $(DD)/hs/exclude.tmp
 	mkdir -p $(DJH)/demos/hs ; \
 	( cd $(DD)/hs ; echo newmerge/GNUmakefile > exclude.tmp ) ; \
-	( cd $(DD)/hs ; $(TAR) cFFXf exclude.tmp - newmerge ) | (cd $(DJH)/demos/hs ; $(TAR) xf - ) ; \
+	( cd $(DD)/hs ; $(TAR) -cXf exclude.tmp - newmerge ) | (cd $(DJH)/demos/hs ; $(TAR) -xf - ) ; \
 	rm $(DD)/hs/exclude.tmp
 	cd $(DJH)/demos/hs ; find . -name "META-INF" -exec /bin/rm -rf {} \;
 
@@ -259,7 +260,7 @@ demo: $(Ddemos)
 	$(CP) $(DD)/newbrowser/*.html $(DJH)/demos/browser/
 	$(CP) $(DD)/newbrowser/demo_instructions $(DJH)/demos/browser/
 	cd $(DD)/serverhelp ; \
-	$(TAR) cFFf - . | (cd ../$(DJH)/demos/serverhelp ; $(TAR) xf - )
+	$(TAR) -cf - . | (cd ../$(DJH)/demos/serverhelp ; $(TAR) -xf - )
 
 #
 # Demo sources
@@ -296,9 +297,9 @@ source:
 	mkdir -p $(DSRC)
 	rm -rf $(DSRC)/*
 	cd $(SRCD)/new ; \
-	$(TAR) cFFf - . | (cd ../$(DSRC) ; $(TAR) xf - )
+	$(TAR) -cf - . | (cd ../$(DSRC) ; $(TAR) -xf - )
 	cd $(SRCD)/impl; \
-	$(TAR) cf - $(Dimplsrc) | (cd ../$(DSRC) ; $(TAR) xf - )
+	$(TAR) -cf - $(Dimplsrc) | (cd ../$(DSRC) ; $(TAR) -xf - )
 	cd $(DSRC); cd .. ;jar -cMvf $(DJH)/src.jar src
 	rm -rf $(DSRC);
 
