@@ -66,7 +66,7 @@ demos/holidays:
 	mkdir -p demos/holidays
 	cd demos/holidays ; export to ; to=`pwd` ; \
 	cd ${JHHOMEWS}/demos/hs/holidays ; \
-	tar cFFf - hol | ( cd $${to} ; tar xvf - )
+	tar cf - hol | ( cd $${to} ; tar xvf - )
 
 
 ## JAR files
