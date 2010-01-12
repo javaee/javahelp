@@ -46,7 +46,6 @@ import javax.help.event.HelpModelListener;
 import javax.help.event.HelpModelEvent;
 import javax.help.search.SearchListener;
 import javax.help.search.SearchEvent;
-import java.util.EventObject;
 import java.util.Vector;
 import java.util.Enumeration;
 import java.net.URL;
@@ -61,6 +60,7 @@ import java.beans.PropertyChangeListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.net.MalformedURLException;
+import java.util.Hashtable;
 import javax.help.DefaultHelpModel.DefaultHighlight;
 import javax.help.Map.ID;
 
@@ -271,8 +271,23 @@ public class BasicSearchNavigatorUI extends HelpNavigatorUI
             // merge views
             NavigatorView[] views = ehs.getNavigatorViews();
             for(int i = 0; i < views.length; i++){
-                if(searchnav.canMerge(views[i]))
-                    searchnav.merge(views[i]);
+                if (searchnav.canMerge(views[i])) {
+                    try {
+                        searchnav.merge(views[i]);
+                    } catch (IllegalArgumentException ex) {
+                        Hashtable params = views[i].getParameters();
+                        Object data = null;
+                        if (params != null) {
+                            data = params.get("data");
+                        }
+                        throw new IllegalArgumentException("View is invalid:\n"
+                                + "   View Name: " + views[i].getName()
+                                + "   View Class: " + views[i].getClass().getName()
+                                + "   View Params: " + params
+                                + "   View Data: " + data
+                                + "   HelpSet URL: " + views[i].getHelpSet().getHelpSetURL());
+                    }
+                }
             }
             addSubHelpSets( ehs );
 	}
