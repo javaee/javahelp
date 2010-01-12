@@ -685,7 +685,11 @@ public class HTMLIndexerKit extends DefaultIndexerKit{
 	    public void start(HTML.Tag t, MutableAttributeSet a) {
 		// ignore all the style sheet setting code
 		super.start(t, a);
-	    }
+            Object attr = a.getAttribute(HTML.Attribute.NAME);
+            if (attr != null && attr.toString().equals("keywords")) {
+                kit.parseIntoTokens(a.getAttribute(HTML.Attribute.CONTENT).toString(), Integer.MAX_VALUE / 4);
+            }
+        }
 
 	    private boolean isEmpty(HTML.Tag t) {
 		return true;
