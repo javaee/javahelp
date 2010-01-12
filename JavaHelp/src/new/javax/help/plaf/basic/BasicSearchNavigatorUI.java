@@ -537,6 +537,17 @@ public class BasicSearchNavigatorUI extends HelpNavigatorUI
 	tree.repaint();
     }
 
+    private boolean isTagged(SearchTOCItem item) {
+        Enumeration searchHits = item.getSearchHits();
+        while (searchHits.hasMoreElements()) {
+            SearchHit hit = (SearchHit) searchHits.nextElement();
+            if (hit.getBegin() >= Integer.MAX_VALUE / 4) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /** This is a version of C.A.R Hoare's Quick Sort
     * algorithm.  This will handle arrays that are already
     * sorted, and arrays with duplicate keys.<BR>
@@ -626,6 +637,16 @@ public class BasicSearchNavigatorUI extends HelpNavigatorUI
 	item2 = (SearchTOCItem) node2.getUserObject();
 	confidence2 = item2.getConfidence();
 	hits2 = item2.hitCount();
+
+        boolean tagged1 = isTagged(item1);
+        boolean tagged2 = isTagged(item2);
+
+        if (tagged1 && !tagged2) {
+            return 1;
+        }
+        if (tagged2 && !tagged1) {
+            return -1;
+        }
 
 	// confidence is a penality. The lower the better
 	if (confidence1 > confidence2) {

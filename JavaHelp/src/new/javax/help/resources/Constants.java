@@ -107,6 +107,7 @@ public class Constants extends ListResourceBundle {
 	    { "search.findLabel", "Find: "},
 	    { "search.hitDesc", "Number of occurances in document"},
 	    { "search.qualityDesc", "Lowest penality value in document" },
+	    { "search.veryhigh", "Very High"},
 	    { "search.high", "High"},
 	    { "search.midhigh", "Medium high"},
 	    { "search.mid", "Medium"},

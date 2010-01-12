@@ -246,7 +246,8 @@ public class SwingHelpUtilities implements PropertyChangeListener {
              "SearchMedLow.icon", makeBasicIcon("images/SearchMedLow.gif"),
                 "SearchMed.icon", makeBasicIcon("images/SearchMed.gif"),
             "SearchMedHigh.icon", makeBasicIcon("images/SearchMedHigh.gif"),
-               "SearchHigh.icon", makeBasicIcon("images/SearchHigh.gif")
+               "SearchHigh.icon", makeBasicIcon("images/SearchHigh.gif"),
+           "SearchVeryHigh.icon", makeBasicIcon("images/SearchVeryHigh.gif")
 	};
 
 	table.putDefaults(uiDefaults);

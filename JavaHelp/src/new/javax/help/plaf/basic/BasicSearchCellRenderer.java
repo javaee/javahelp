@@ -39,16 +39,14 @@ package javax.help.plaf.basic;
  */
 
 import java.awt.*;
-import java.net.URL;
+import java.util.Enumeration;
 import java.util.Locale;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.tree.TreeCellRenderer;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.help.Map;
-import javax.help.Map.ID;
 import javax.help.SearchTOCItem;
 import javax.help.SearchHit;
 import javax.help.HelpUtilities;
@@ -229,6 +227,16 @@ public class BasicSearchCellRenderer extends JPanel implements TreeCellRenderer
 	super.setBackground(color);
     }
 
+    private boolean isTagged(SearchTOCItem item) {
+        Enumeration searchHits = item.getSearchHits();
+        while (searchHits.hasMoreElements()) {
+            SearchHit hit = (SearchHit) searchHits.nextElement();
+            if (hit.getBegin() >= Integer.MAX_VALUE / 4) {
+                return true;
+            }
+        }
+        return false;
+    }
     /**
       * Configures the renderer based on the components passed in.
       * Sets the value from messaging value with toString().
@@ -285,7 +293,10 @@ public class BasicSearchCellRenderer extends JPanel implements TreeCellRenderer
 	    String qualityLevel=null;
 	    // Set the quality index
 	    double penalty = item.getConfidence();
-	    if (penalty < 1) {
+        if (isTagged(item)) {
+            quality.setIcon(veryhigh);
+            qualityLevel = HelpUtilities.getString(locale, "search.veryhigh");
+        } else if (penalty < 1) {
 		quality.setIcon(high);
 		qualityLevel = HelpUtilities.getString(locale, "search.high");
 	    } else if (penalty < 5) {
@@ -408,6 +419,7 @@ public class BasicSearchCellRenderer extends JPanel implements TreeCellRenderer
     }
 
     // icons used for the BasicSearchCellRender
+    private static Icon veryhigh = UIManager.getIcon("SearchVeryHigh.icon");
     private static Icon high = UIManager.getIcon("SearchHigh.icon");
     private static Icon medhigh = UIManager.getIcon("SearchMedHigh.icon");
     private static Icon med = UIManager.getIcon("SearchMed.icon");
