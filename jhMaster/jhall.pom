@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>javax.help</groupId>
+    <artifactId>javahelp</artifactId>
+    <version>2.0.05</version>
+    <packaging>jar</packaging>
+    <name>JavaHelp API</name>
+    <description>The JavaHelp API provides a platform-independent help framework.</description>
+    <url>https://javahelp.dev.java.net/</url>
+    <licenses>
+        <license>
+            <name>GNU General Public License - Version 2 with the class path exception</name>
+            <url>https://javahelp.dev.java.net/license.txt</url>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:svn:https://javahelp.dev.java.net/svn/javahelp/tags/2.0_05/</connection>
+        <developerConnection>scm:svn:https://javahelp.dev.java.net/svn/javahelp/tags/2.0_05/</developerConnection>
+        <url>https://javahelp.dev.java.net/source/browse/javahelp/tags/2.0_05/</url>
+    </scm>
+    <distributionManagement>
+        <downloadUrl>http://download.java.net/javadesktop/javahelp/javahelp2_0_05.zip</downloadUrl>
+    </distributionManagement>
+    <issueManagement>
+        <system>issueZilla</system>
+        <url>https://javahelp.dev.java.net/issues/</url>
+    </issueManagement>
+    <developers>
+        <developer>
+            <id>jglick</id>
+            <name>Jesse Glick</name>
+            <email>jglick@dev.java.net</email>
+            <organization>java.net</organization>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>jst</id>
+            <name>Jaroslav Tulach</name>
+            <email>jst@dev.java.net</email>
+            <organization>java.net</organization>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>lmhoffman</id>
+            <name>Larry Hoffman</name>
+            <email>lmhoffman@dev.java.net</email>
+            <organization>java.net</organization>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+</project>
