@@ -41,7 +41,7 @@ BINDIR=../javahelp/bin
 PKGDIR=javax/help
 PKGDIRIMPL=com/sun/java/help
 EXTLIBDIR=../../../javahelp_nbproject/lib
-EXTLIBS=$(EXTLIBDIR)/jdic.jar:$(EXTLIBDIR)/jsp-api.jar:$(EXTLIBDIR)/servlet-api.jar
+EXTLIBS=$(EXTLIBDIR)/jdic-stub.jar:$(EXTLIBDIR)/jsp-api.jar:$(EXTLIBDIR)/servlet-api.jar
 
 ifeq ($(JSEARCHHOME),)
 JSEARCHHOME=../../JSearch
