@@ -131,6 +131,9 @@ public class DefaultIndexerKit extends IndexerKit {
 	    }
 	    currentPos += source.length();
 	}
+    catch (RuntimeException e) {
+        throw e;
+    }
 	catch (Exception e) {
 	    e.printStackTrace();
 	}
@@ -139,21 +142,21 @@ public class DefaultIndexerKit extends IndexerKit {
 
     protected void startStoreDocument (String file) throws Exception {
 	if ((config == null) || (builder == null)) {
-	    throw new Exception("ConfigFile and/or IndexBuilder not set");
+	    throw new IllegalStateException("ConfigFile and/or IndexBuilder not set");
 	}
 	builder.openDocument(config.getURLString(file));
     }
 
     protected void endStoreDocument () throws Exception {
 	if ((config == null) || (builder == null)) {
-	    throw new Exception("ConfigFile and/or IndexBuilder not set");
+	    throw new IllegalStateException("ConfigFile and/or IndexBuilder not set");
 	}
 	builder.closeDocument();
     }
 
     protected void storeToken (String token, int pos) throws Exception {
 	if ((config == null) || (builder == null)) {
-	    throw new Exception("ConfigFile and/or IndexBuilder not set");
+	    throw new IllegalStateException("ConfigFile and/or IndexBuilder not set");
 	}
 	if (!documentStarted) {
 	    try {
@@ -169,7 +172,7 @@ public class DefaultIndexerKit extends IndexerKit {
 
     protected void storeTitle (String title) throws Exception {
 	if ((config == null) || (builder == null)) {
-	    throw new Exception("ConfigFile and/or IndexBuilder not set");
+	    throw new IllegalStateException("ConfigFile and/or IndexBuilder not set");
 	}
 	builder.storeTitle(title);
     }

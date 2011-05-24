@@ -81,14 +81,9 @@ public class Indexer {
      * @param args[]   the command line arguments
      **/
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws Exception {
 	Indexer compiler = new Indexer();
-	try {
-	    compiler.compile(args);
-	}
-	catch (Exception e) {
-	    e.printStackTrace();
-	}
+    compiler.compile(args);
     }
 
     /**
