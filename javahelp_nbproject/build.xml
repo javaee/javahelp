@@ -61,7 +61,6 @@ have any questions.
                         <filename name="**/dist/**/*"/>
                         <filename name="**/build/**/*"/>
                         <filename name="www/**/*"/>
-                        <filename name="**/*.jar"/>
                         <filename name="**/*.zip"/>
                     </none>
                     <or>
@@ -74,6 +73,7 @@ have any questions.
                         <filename name="**/manifest.mf"/>
                         <filename name="jhMaster/JavaHelp/javahelp/bin/jhindexer"/>
                         <filename name="jhMaster/JavaHelp/javahelp/bin/jhsearch"/>
+                        <filename name="javahelp_nbproject/lib/jdic-stub.jar"/>
                      </or>
                 </and>
             </zipfileset>
