@@ -31,7 +31,6 @@
 
 package com.sun.java.help.search;
 
-import java.io.IOException;
 
 /**
  * This class can be used to read/write the contents of a RAF type files
@@ -47,7 +46,6 @@ import java.io.IOException;
  * @version	1.14	10/30/06
  */
 
-import java.net.URL;
 import java.io.RandomAccessFile;
 import java.io.File;
 import java.io.IOException;
@@ -58,9 +56,9 @@ public class RAFFile {
     protected RAFFile() {
     }
 
-    public RAFFile(String name, boolean update) throws IOException {
-	debug("RAFFile " + name);
-	raf = new RandomAccessFile(name, update?"rw":"r");
+    public RAFFile(File file, boolean update) throws IOException {
+	debug("RAFFile " + file);
+	raf = new RandomAccessFile(file, update?"rw":"r");
     }
 
     public long length() throws IOException { 

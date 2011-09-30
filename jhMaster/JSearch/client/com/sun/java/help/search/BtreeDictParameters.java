@@ -176,7 +176,7 @@ class BtreeDictParameters extends BlockManagerParameters
     //      new BtreeDictParameters(tmapURL, blockSize, rootPosition, freeID);
 
     if (hsBase == null) {
-      bdp.setDirName(Utilities.URLDecoder(baseURL.getFile()));
+      bdp.setDirName(new File(baseURL.toURI()).getAbsolutePath());
     }
     return bdp;
   }

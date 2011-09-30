@@ -92,7 +92,7 @@ class DocumentCompressor
 	}
 	catch (java.io.FileNotFoundException e) {;}
 	_posFile = 
-	    new RandomAccessFile(Utilities.URLDecoder(posURL.getFile()), 
+	    new RandomAccessFile(new File(posURL.toURI()),
 				 "rw");
       }
     else

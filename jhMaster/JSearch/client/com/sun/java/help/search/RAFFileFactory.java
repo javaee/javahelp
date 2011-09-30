@@ -33,7 +33,6 @@ package com.sun.java.help.search;
 
 import java.io.*;
 import java.net.*;
-import java.util.*;
 import java.lang.reflect.*;
 
 /**
@@ -85,12 +84,7 @@ class RAFFileFactory {
 
 	if (isFileURL(url)) {
 	    try {
-		String f = url.getFile();
-
-		// Normalize the string. This is required because of a
-		// backwards incompatability change in JDK 1.4.0 and later
-		// releases.
-		f = Utilities.URLDecoder(f);
+        File f = new File(url.toURI());
 
 		// refactor so it runs with verification on...
 
@@ -101,7 +95,9 @@ class RAFFileFactory {
 		debug ("Opened Dict file with file protocol:" +  f);
 	    } catch (SecurityException e) {
 		// cannot do "it" -- code is not yet in place
-	    }
+	    } catch (URISyntaxException x) {
+            throw (IOException) new IOException(x.toString()).initCause(x);
+        }
 	}
 	if (result == null) {
 	    result = createLocalRAFFile(url);

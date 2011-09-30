@@ -68,7 +68,7 @@ public class DefaultIndexBuilder extends IndexBuilder
 	_tmapParams.setFreeID(1);
       }
     
-    URL url = new URL("file", "", indexDir);
+    URL url = new File(indexDir).toURI().toURL();
     /*
     try {
       params = BtreeDictParameters.read(indexDir, null);
@@ -117,9 +117,9 @@ public class DefaultIndexBuilder extends IndexBuilder
       new BtreeDictParameters(url, _tmapParams.getBlockSize(), 0, freeID);
     source.compact(params);
     URL tmapURL = new URL("file", "", indexDir + "TMAP");
-    File tmap = new File(Utilities.URLDecoder(tmapURL.getFile()));
+    File tmap = new File(tmapURL.toURI());
     tmap.delete();
-    File compacted = new File(Utilities.URLDecoder(url.getFile()));
+    File compacted = new File(url.toURI());
     compacted.renameTo(tmap);
     _tmapParams.setRoot(params.getRootPosition());
     _tmapParams.updateSchema();
